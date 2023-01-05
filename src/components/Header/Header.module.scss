@@ -1,0 +1,627 @@
+.header {
+  width: 100%;
+  z-index: 5;
+  background: transparent;
+  position: absolute;
+}
+
+.closeBlindOptions {
+  top: -15px;
+  padding: 0;
+  background: #fff;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  right: 50%;
+  transition: all .5s ease;
+}
+
+.headerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0 0;
+  position: relative;
+}
+
+.headerLogo:hover,
+.headerLogo:focus-visible {
+  opacity: .7;
+  transition: all .2s ease;
+}
+
+.headerLogo:active {
+  opacity: .5;
+}
+
+.headerLogo {
+  transition: all .2s ease;
+  outline: none;
+}
+
+.headerNav {
+  width: 32%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerNavLink:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  left: 50%;
+  border-bottom: 1px solid #618135;
+  transition: all .2s ease-in-out;
+}
+
+.headerNavLink:hover,
+.headerNavLink:focus,
+.headerNavLink.headerActiveNavLink {
+  position: relative;
+  color: #618135;
+  transition: all .2s ease;
+  .headerNavLinkLabel {
+    display: block;
+    transform: translateY(-10px);
+    transition: all .2s ease-in-out;
+  }
+  &:before {
+    width: 100%;
+    left: 0;
+    transition: all .2s ease-in-out;
+  }
+}
+
+.headerNavLinkLabel {
+  display: block;
+  transition: all .2s ease-in-out;
+}
+
+.headerBtnWrap {
+  display: flex;
+  .headerNavItem {
+    display: flex;
+    outline: none;
+    background: #618135;
+    border: 1px solid #618135;
+    border-radius: 50px;
+    align-items: center;
+    padding: 0 80px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 600;
+    transition: all .2s ease;
+    &:hover,
+    &:focus-visible {
+      color: #618135;
+      background-color: #fff;
+      transition: all .2s ease;
+    }
+    &:hover:before {
+      opacity: 1;
+    }
+    &:hover:after {
+      border-color: #618135;
+      background-color: #618135;
+    }
+  }
+}
+
+.headerNavLink {
+  position: relative;
+  font-size: 18px;
+  line-height: 21px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  transition: all .5s ease;
+}
+
+.mobileAccountLink {
+  display: none;
+}
+
+.mobileWrap {
+  display: flex;
+  justify-content: space-between;
+  width: 74%;
+
+  .mobileLogo,
+  .mobileNavItem {
+    display: none;
+  }
+}
+
+.mobileNav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerNav.notMainPage {
+  width: 45%;
+}
+
+.revert {
+  transform: rotate(180deg);
+  transition: all .5s ease;
+}
+
+.medium {
+  .headerNavLink,
+  .headerNavItem {
+    font-size: 22px;
+    transition: all .2s ease;
+  }
+}
+
+.large {
+  .headerNavLink,
+  .headerNavItem {
+    font-size: 24px;
+    transition: all .2s ease;
+  }
+}
+
+.notMainPageWrapper {
+  display: flex;
+  margin-top: 30px;
+  align-items: center;
+  height: 88px;
+  background: #F7F5EC;
+}
+
+.headerSearch {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  height: 63px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  input {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #E5E5E5;
+    &:focus,
+    &:hover {
+      border: 1px solid #618135;
+    }
+  }
+  button {
+    background: transparent;
+    margin-left: auto;
+    padding: 15px;
+    border: 1px solid #E5E5E5;
+    border-left: none;
+    outline: none;
+    svg {
+      transition: all .2s ease;
+    }
+    &:focus,
+    &:hover {
+      border: 1px solid #618135;
+      svg {
+        transform: scale(1.1);
+        transition: all .2s ease;
+      }
+    }
+  }
+}
+
+.logoWrap {
+  display: flex;
+  align-items: center;
+
+  &:hover .computerLight,
+  &:focus .computerLight {
+    -webkit-animation: blink-1 0.6s both;
+    animation: blink-1 0.6s both;
+  }
+
+  @-webkit-keyframes blink-1 {
+    0%,
+    50%,
+    100% {
+      opacity: .5;
+    }
+    25%,
+    75% {
+      opacity: 0;
+    }
+  }
+  @keyframes blink-1 {
+    0%,
+    50%,
+    100% {
+      opacity: .5;
+    }
+    25%,
+    75% {
+      opacity: 0;
+    }
+  }
+}
+.logoText {
+  padding-left: 10px;
+}
+
+.burgerBtn,
+.socialList,
+.burgerContactWrap {
+  display: none;
+}
+
+.header.yellowTheme {
+  .headerNavLink {
+    color: yellow;
+    &:before {
+      border-bottom: 1px solid yellow;
+    }
+  }
+  .blindButton {
+    color: yellow;
+    font-weight: 600;
+    background: #000;
+    border: 1px solid yellow;
+    padding: 10px 15px;
+
+    svg {
+      fill: yellow;
+    }
+
+    &:hover {
+      color: #000;
+      background: rgb(0, 255, 255);
+      border: 1px solid rgb(0, 255, 255);
+
+      svg {
+        fill: #000;
+      }
+    }
+  }
+  .closeBlindOptions {
+    background: aqua;
+  }
+  .headerNavItem {
+    background: yellow;
+    color: #000;
+    border: 1px solid yellow;
+    transition: all .2s ease;
+    &:hover {
+      background: #000;
+      color: yellow;
+      transition: all .2s ease;
+    }
+  }
+  .headerSearch {
+    input {
+      border-color: yellow;
+      &::placeholder {
+        color: yellow;
+      }
+    }
+    button {
+      border-color: yellow;
+      border-left: none;
+      svg path {
+        fill: yellow;
+      }
+    }
+  }
+}
+
+.header.whiteTheme {
+  .headerNavLink {
+    color: #000;
+    &:before {
+      border-bottom: 1px solid #000;
+    }
+  }
+  .blindButton {
+    color: #000;
+    font-weight: 600;
+    border: 1px solid #000;
+    padding: 10px 15px;
+
+    svg {
+      fill: #000;
+    }
+
+    &:hover {
+      color: #fff;
+      background: #000;
+      border: 1px solid #000;
+
+      svg {
+        fill: #fff;
+      }
+    }
+  }
+  .closeBlindOptions {
+    background: #000;
+    path {
+      fill: #fff;
+    }
+  }
+  .headerNavItem {
+    background: #000;
+    color: #fff;
+    border: 1px solid #000;
+    transition: all .2s ease;
+    &:hover {
+      background: #fff;
+      color: #000;
+      transition: all .2s ease;
+    }
+  }
+  .headerSearch {
+    input {
+      border-color: #000;
+      &::placeholder {
+        color: #000;
+      }
+    }
+    button {
+      border-color: #000;
+      border-left: none;
+      svg path {
+        fill: #000;
+      }
+    }
+  }
+}
+
+.header.blueTheme {
+  .headerNavLink {
+    color: #273a64;
+    &:before {
+      border-bottom: 1px solid #273a64;
+    }
+  }
+  .blindButton {
+    color: #273a64;
+    font-weight: 600;
+    border: 1px solid #273a64;
+    padding: 10px 15px;
+
+    svg {
+      fill: #273a64;
+    }
+
+    &:hover {
+      color: #fff;
+      background: #273a64;
+      border: 1px solid #273a64;
+
+      svg {
+        fill: #fff;
+      }
+    }
+  }
+  .headerNavItem {
+    background: #273a64;
+    color: #fff;
+    border: 1px solid #273a64;
+    transition: all .2s ease;
+    &:hover {
+      background: #fff;
+      color: #273a64;
+      transition: all .2s ease;
+    }
+  }
+  .headerSearch {
+    input {
+      border-color: #273a64;
+      &::placeholder {
+        color: #273a64;
+      }
+    }
+    button {
+      border-color: #273a64;
+      border-left: none;
+      svg path {
+        fill: #273a64;
+      }
+    }
+  }
+}
+
+.notMainPageWrapper.yellowTheme {
+  background: rgb(25, 25, 1);
+}
+
+.notMainPageWrapper.whiteTheme {
+  background: #f5f5f5;
+}
+
+.notMainPageWrapper.blueTheme {
+  background: #afe2ef;
+}
+
+@media (max-width: 1220px) {
+  .header {
+    .headerTop {
+      padding: 25px 0;
+      img {
+        width: 105px;
+      }
+    }
+    .blindButton,
+    .headerNavItem {
+      font-size: 14px;
+    }
+    .headerNavItem {
+      padding: 0 50px;
+    }
+    .headerNavLink {
+      font-size: 15px;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .blindButton {
+    font-size: 0 !important;
+
+    svg {
+      margin: 0;
+    }
+  }
+  .logoText {
+    display: none;
+  }
+  .logoWrap {
+    width: auto;
+  }
+  .headerNav {
+    width: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    position: fixed;
+    background: #f7f5ec;
+    .headerTop {
+      padding: 25px 15px;
+    }
+    .blindButton,
+    .headerNavItem {
+      display: none;
+    }
+    .logoText {
+      display: block;
+    }
+    .mobileAccountLink {
+      display: flex;
+      align-items: center;
+      color: #618135;
+      font-weight: 600;
+      svg {
+        margin-right: 8px;
+      }
+    }
+    .burgerBtn {
+      position: relative;
+      display: block;
+      right: 0;
+      border: none;
+      background: transparent;
+      width: 60px;
+      height: 60px;
+      padding: 0;
+    }
+    .burger-btn-line {
+      display: block;
+      position: absolute;
+      width: 35px;
+      border-top: 2px solid #202020;
+      transform-origin: 50% 50%;
+    }
+    .ham {
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform 400ms;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .hamRotate.active {
+      transform: rotate(45deg);
+    }
+    .hamRotate180.active {
+      transform: rotate(180deg);
+    }
+    .line {
+      fill:none;
+      transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+      stroke:#618135;
+      stroke-width:5.5;
+      stroke-linecap:round;
+    }
+    .ham6 .top {
+      stroke-dasharray: 40 172;
+    }
+    .ham6 .middle {
+      stroke-dasharray: 40 111;
+    }
+    .ham6 .bottom {
+      stroke-dasharray: 40 172;
+    }
+    .ham6.active .top {
+      stroke-dashoffset: -132px;
+    }
+    .ham6.active .middle {
+      stroke-dashoffset: -71px;
+    }
+    .ham6.active .bottom {
+      stroke-dashoffset: -132px;
+    }
+    .headerNav {
+      position: fixed;
+      opacity: 0;
+      top: 110px;
+      left: -1000px;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: calc(100vh - 110px);
+      width: 100vw;
+      padding: 20px 45px 45px;
+      background: #f7f5ec;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 23px;
+      transition: all .3s ease;
+      .headerNavLink {
+        padding: 10px 0;
+      }
+      .burgerContactWrap {
+        display: block;
+        margin-top: 55px;
+        .row {
+          display: flex;
+          padding: 10px 0;
+          address,
+          a {
+            color: #618135;
+            text-decoration: none;
+          }
+          svg {
+            min-width: 20px;
+            margin-right: 15px;
+          }
+        }
+      }
+      .socialList {
+        display: flex;
+        width: 70%;
+        justify-content: space-evenly;
+        margin: auto auto 0;
+        svg {
+          fill: #618135;
+        }
+      }
+    }
+    .active .headerNav {
+      left: 0;
+      opacity: 1;
+      transition: all .3s ease;
+    }
+  }
+}
+
+@media (max-width: 620px) {
+  .header {
+    .headerNav {
+      padding: 20px 25px 45px;
+    }
+  }
+}

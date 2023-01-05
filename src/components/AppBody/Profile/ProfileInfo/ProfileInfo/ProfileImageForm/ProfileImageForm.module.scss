@@ -1,0 +1,65 @@
+.profileImageForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  flex-wrap: wrap;
+  height: fit-content;
+  min-height: 100%;
+  padding: 23px 0 23px 43px;
+  background: #F7F5EC;
+  border-radius: 26px 0 0 26px;
+  max-width: 500px;
+  min-width: 430px;
+  width: 35%;
+  h3 {
+    width: 100%;
+    margin: 0 0 10px;
+    font-size: 18px;
+    line-height: 23px;
+    color: #717070;
+  }
+  .userPhoto {
+    max-width: 132px;
+    max-height: 132px;
+    display: block;
+    margin-right: 30px;
+  }
+  .inputControlsWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 220px;
+    .userPhotoSizeInfo {
+      font-size: 12px;
+      line-height: 15px;
+      color: #717070;
+      margin-top: 10px;
+    }
+    .userPhotoLabel {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 12px;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 23px;
+      color: #618135;
+      border: 1px solid #618135;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+  }
+  &:after {
+    content: "";
+    display: flex;
+    height: inherit;
+    min-height: 100%;
+    width: 100%;
+    position: absolute;
+    right: -100%;
+    top: 0;
+    background: #f8f5ec;
+  }
+}

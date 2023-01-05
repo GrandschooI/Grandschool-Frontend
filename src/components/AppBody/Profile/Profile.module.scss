@@ -1,0 +1,91 @@
+section.profilePage {
+  padding-top: 210px;
+  padding-bottom: 160px;
+
+  .profileTitle {
+    font-weight: 600;
+    font-size: 36px;
+  }
+
+  .profilePageInfoWrap {
+    display: flex;
+  }
+
+  .optionEnter {
+    opacity: 0;
+    transform: translate(1000px, 1000px);
+    transition: all .3s ease;
+  }
+
+  .optionEnterActive {
+    opacity: 1;
+    transform: translate(0);
+    transition: all .3s ease;
+  }
+
+  .optionExitActive {
+    opacity: 0;
+    transform: translate(1000px, 1000px);
+    transition: all .3s ease;
+  }
+
+  .logoutBtn {
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    margin: 30px auto 0;
+    cursor: pointer;
+
+    span {
+      margin-left: 15px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 18px;
+      color: #717070;
+      transition: all .3s ease;
+    }
+
+    svg {
+      fill: #717070;
+      transition: all .3s ease;
+    }
+
+    &:hover {
+      span {
+        color: red;
+        transition: all .3s ease;
+      }
+
+      svg {
+        fill: red;
+        transition: all .3s ease;
+      }
+    }
+  }
+
+  .logoutDesk {
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 33px;
+    text-align: center;
+    color: #717070;
+  }
+
+  .logoutBtnWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+
+    button {
+      width: 40%;
+    }
+  }
+}
+
+.yellowTheme.profilePage {
+  background: #000;
+}

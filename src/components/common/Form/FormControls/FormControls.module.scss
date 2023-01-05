@@ -1,0 +1,20 @@
+.inputWrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  .changeType {
+    display: flex;
+    padding: 0;
+    width: 24px;
+    height: 20px;
+    position: absolute;
+    right: 12px;
+    top: 32%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    &.hidePassword {
+      top: 26%;
+    }
+  }
+}

@@ -1,0 +1,622 @@
+.callToActionBGWrap {
+  background-image: -webkit-image-set(
+                  url('../../../../assets/images/mainPageBackground.png') 1x,
+                  url('../../../../assets/images/mainPageBackgroundRetina.png') 2x  );
+  background-image: image-set(
+                  url('../../../../assets/images/mainPageBackground.png') 1x,
+                  url('../../../../assets/images/mainPageBackgroundRetina.png') 2x  );
+  background-size: cover;
+
+  .callToAction {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    .mainTitle {
+      font-weight: 500;
+      font-size: 45px;
+      line-height: 58px;
+      margin: 0 0 20px;
+      .firmNameInMainTitle {
+        color: #618135;
+      }
+    }
+    .slogan {
+      margin: 0;
+      font-size: 22px;
+      line-height: 28px;
+      color: #717070;
+      width: 45%;
+    }
+    .mainToCourseLink {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 64px;
+      margin-top: 45px;
+      padding: 0 65px;
+      border: 2px solid #618135;
+      border-radius: 50px;
+      color: #618135;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 23px;
+      text-decoration: none;
+      transition: all .2s ease;
+      &:hover,
+      &:focus {
+        color: #fff;
+        background: #618135;
+        transition: all .2s ease;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    background: linear-gradient(145deg, #F7F5EC, #F7F5EC calc(60% - 10px), transparent calc(50% - 10px)),
+    url('../../../../assets/images/webp/mainbgmobile.webp') 70% bottom no-repeat;
+    background-size: contain;
+    .callToAction {
+      height: calc(60vh - 10px);
+      padding-bottom: 25px;
+      padding-top: 150px;
+      justify-content: flex-start;
+      .mainTitle {
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 38px;
+        text-align: center;
+        width: 100%;
+        .firmNameInMainTitle {
+          display: block;
+        }
+      }
+      .slogan {
+        width: 100%;
+        text-align: center;
+      }
+      .mainToCourseLink {
+        background: #618135;
+        color: #fff;
+        margin: 20px auto 0;
+      }
+    }
+  }
+}
+
+.callToActionBGWrap.yellowTheme {
+  background: linear-gradient(90deg, #000, #000 40%, transparent 80%),
+  url('../../../../assets/images/webp/preload.webp') 70% center no-repeat;
+  background-size: cover;
+  .mainTitle {
+    .firmNameInMainTitle {
+      color: aqua;
+    }
+  }
+  .slogan {
+    color: yellow;
+  }
+  .mainToCourseLink {
+    color: aqua;
+    border: 1px solid aqua;
+    transition: all .2s ease;
+    &:hover,
+    &:focus {
+      color: #000;
+      background: aqua;
+      transition: all .2s ease;
+    }
+  }
+  @media (max-width: 900px) {
+    background: #000;
+  }
+
+  .title,
+  .featureTitle,
+  .featureDesc,
+  .firstCTA,
+  .secondCTA {
+    color: yellow;
+    -webkit-text-fill-color: yellow;
+  }
+
+  .item:nth-child(1):before {
+    background: url('../../../../assets/images/coronavirus.svg') no-repeat center, #191901;
+    background-size: 75%;
+  }
+
+  .item:nth-child(2):before {
+    background: url('../../../../assets/images/key.svg') no-repeat center, #191901;
+    background-size: 65%;
+  }
+
+  .item:nth-child(3):before {
+    background: url('../../../../assets/images/pillow.svg') no-repeat center, #191901;
+    background-size: 60%;
+  }
+
+  .item:nth-child(4):before {
+    background: url('../../../../assets/images/aim.svg') no-repeat center, #191901;
+    background-size: 60%;
+  }
+
+  .donateLink {
+    color: #000;
+    background: yellow;
+    &:hover,
+    &:focus {
+      background: aqua;
+      opacity: 1;
+    }
+  }
+
+}
+
+.callToActionBGWrap.whiteTheme {
+  background: linear-gradient(90deg, #fff, #fff 40%, transparent 80%),
+  url('../../../../assets/images/webp/preload.webp') 70% center no-repeat;
+  background-size: cover;
+
+  @media (max-width: 900px) {
+    background: #fff;
+  }
+
+  .mainTitle {
+    .firmNameInMainTitle {
+      color: #000;
+    }
+  }
+
+  .slogan {
+    color: #000;
+  }
+
+  .mainToCourseLink {
+    color: #000;
+    border: 1px solid #000;
+    transition: all .2s ease;
+    &:hover,
+    &:focus {
+      color: #fff;
+      background: #000;
+      transition: all .2s ease;
+    }
+  }
+
+  .title,
+  .featureTitle,
+  .featureDesc,
+  .firstCTA,
+  .secondCTA {
+    color: #000;
+    -webkit-text-fill-color: #000;
+  }
+
+  .item:nth-child(1):before {
+    background: url('../../../../assets/images/coronavirus.svg') no-repeat center, #000;
+    background-size: 75%;
+  }
+
+  .item:nth-child(2):before {
+    background: url('../../../../assets/images/key.svg') no-repeat center, #000;
+    background-size: 65%;
+  }
+
+  .item:nth-child(3):before {
+    background: url('../../../../assets/images/pillow.svg') no-repeat center, #000;
+    background-size: 60%;
+  }
+
+  .item:nth-child(4):before {
+    background: url('../../../../assets/images/aim.svg') no-repeat center, #000;
+    background-size: 60%;
+  }
+
+  .donateLink {
+    color: #fff;
+    background: #000;
+    &:hover,
+    &:focus {
+      opacity: .8;
+    }
+  }
+
+}
+
+.callToActionBGWrap.blueTheme {
+  background: linear-gradient(90deg, #b8eefb, #b8eefb 40%, transparent 80%),
+  url('../../../../assets/images/webp/preload.webp') 70% center no-repeat;
+  background-size: cover;
+
+  @media (max-width: 900px) {
+    background: #b8eefb;
+  }
+
+  .mainTitle {
+    .firmNameInMainTitle {
+      color: #273a64;
+    }
+  }
+
+  .slogan {
+    color: #273a64;
+  }
+
+  .mainToCourseLink {
+    color: #273a64;
+    border: 1px solid #273a64;
+    transition: all .2s ease;
+    &:hover,
+    &:focus {
+      color: #fff;
+      background: #273a64;
+      transition: all .2s ease;
+    }
+  }
+
+  .title,
+  .featureTitle,
+  .featureDesc,
+  .firstCTA,
+  .secondCTA {
+    color: #273a64;
+    -webkit-text-fill-color: #273a64;
+  }
+
+  .item:nth-child(1):before {
+    background: url('../../../../assets/images/coronavirus.svg') no-repeat center, #273a64;
+    background-size: 75%;
+  }
+
+  .item:nth-child(2):before {
+    background: url('../../../../assets/images/key.svg') no-repeat center, #273a64;
+    background-size: 65%;
+  }
+
+  .item:nth-child(3):before {
+    background: url('../../../../assets/images/pillow.svg') no-repeat center, #273a64;
+    background-size: 60%;
+  }
+
+  .item:nth-child(4):before {
+    background: url('../../../../assets/images/aim.svg') no-repeat center, #273a64;
+    background-size: 60%;
+  }
+
+  .donateLink {
+    color: #fff;
+    background: #273a64;
+    &:hover,
+    &:focus {
+      opacity: .8;
+    }
+  }
+
+}
+
+.title {
+  margin-top: 0;
+  text-transform: uppercase;
+  color: rgb(31, 123, 118);
+  text-align: left;
+  line-height: 45px;
+  letter-spacing: 0;
+  font-weight: 700;
+  font-size: 35px;
+  background: linear-gradient(to bottom, rgba(117, 180, 130, 1) 0%, rgba(31, 123, 118, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  @media (max-width: 1000px) {
+    & {
+      font-size: 42px;
+      line-height: 50px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    & {
+      font-size: 29px;
+      line-height: 30px;
+    }
+  }
+
+  @media (max-width: 425px) {
+    & {
+      font-size: 20px;
+    }
+  }
+}
+
+.positionWrap {
+  width: 45%;
+  padding: 50px 0;
+  @media (max-width: 1000px) {
+    width: 60%;
+  }
+  @media (max-width: 900px) {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.callToActionWrap {
+  padding: 50px 0 0;
+}
+
+.firstCTA {
+  text-transform: uppercase;
+  margin: 0 0 20px;
+  color: #618135;
+  line-height: 45px;
+  letter-spacing: 0;
+  font-weight: 700;
+  font-size: 35px;
+
+  @media (max-width: 1000px) {
+    & {
+      font-size: 42px;
+      line-height: 50px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    & {
+      font-size: 29px;
+      line-height: 30px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    & {
+      font-size: 20px;
+    }
+  }
+
+  strong {
+    color: #3b7c76;
+  }
+}
+
+.secondCTA {
+  font-weight: 500;
+  font-size: 25px;
+  margin-bottom: 20px;
+  margin-top: 0;
+  color: #666666;
+  @media (max-width: 768px) {
+    &{
+      font-size: 20px;
+    }
+  }
+}
+
+.featureTitle {
+  color: rgb(117, 180, 130);
+  line-height: 38px;
+  font-weight: 500;
+  font-size: 25px;
+  margin-bottom: 5px;
+  @media (max-width: 768px) {
+    &{
+      font-size: 23px;
+    }
+  }
+  @media (max-width: 425px) {
+    &{
+      font-size: 18px;
+    }
+  }
+}
+
+.featureDesc {
+  color: #000;
+  line-height: 22px;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0;
+  padding-left: 3px;
+  @media (max-width: 768px) {
+    &{
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 425px) {
+    &{
+      font-size: 14px;
+    }
+  }
+}
+
+.item {
+  position: relative;
+  padding-left: 80px;
+}
+
+.item:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  height: 65px;
+  width: 65px;
+  box-sizing: border-box;
+}
+
+.item:nth-child(1):before {
+  background: url('../../../../assets/images/coronavirus.svg') no-repeat center, rgb(31, 123, 118);
+  background-size: 75%;
+}
+
+.item:nth-child(2):before {
+  background: url('../../../../assets/images/key.svg') no-repeat center, rgb(31, 123, 118);
+  background-size: 65%;
+}
+
+.item:nth-child(3):before {
+  background: url('../../../../assets/images/pillow.svg') no-repeat center, rgb(31, 123, 118);
+  background-size: 60%;
+}
+
+.item:nth-child(4):before {
+  background: url('../../../../assets/images/aim.svg') no-repeat center, rgb(31, 123, 118);
+  background-size: 60%;
+}
+
+.donateLink {
+  margin: 50px auto 0;
+  display: block;
+  width: fit-content;
+  border-radius: 0 15px;
+  font-size: 16px;
+  padding: 20px 40px 18px;
+  background: #fd6ca3;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  -webkit-animation: heartbeat 2s ease-in-out infinite both;
+  animation: heartbeat 2s ease-in-out infinite both;
+  cursor: pointer;
+  transition: all .2s linear;
+}
+
+.donateLink:hover,
+.donateLink:focus {
+  opacity: .7;
+  transition: all .2s linear;
+}
+
+@keyframes heartbeat {
+  from {
+    border-radius: 0 15px;
+    animation-timing-function: ease-in;
+  }
+  50% {
+    border-radius: 15px 0;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    border-radius: 0 15px;
+    animation-timing-function: ease-in;
+  }
+}
+
+.callToActionBGWrap.withoutImg {
+  background: none;
+}
+
+.medium {
+  .mainTitle {
+    font-size: 47px!important;
+    transition: all .2s ease;
+  }
+  .slogan {
+     font-size: 24px!important;
+    transition: all .2s ease;
+   }
+  .mainToCourseLink {
+    font-size: 20px!important;
+    transition: all .2s ease;
+  }
+  .title,
+  .firstCTA {
+    font-size: 40px;
+    @media (max-width: 768px) {
+      font-size: 31px;
+    }
+    @media (max-width: 425px) {
+      font-size: 27px;
+    }
+  }
+  .featureTitle,
+  .secondCTA {
+    font-size: 30px;
+    @media (max-width: 768px) {
+      font-size: 22px;
+    }
+    @media (max-width: 425px) {
+      font-size: 20px;
+    }
+  }
+  .featureDesc {
+    font-size: 22px;
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
+    @media (max-width: 425px) {
+      font-size: 16px;
+    }
+  }
+  .donateLink {
+    font-size: 20px;
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+    @media (max-width: 425px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.large {
+  .mainTitle {
+    font-size: 50px!important;
+    transition: all .2s ease;
+  }
+  .slogan {
+    font-size: 27px!important;
+    transition: all .2s ease;
+  }
+  .mainToCourseLink {
+    font-size: 22px!important;
+    transition: all .2s ease;
+  }
+  .title,
+  .firstCTA {
+    font-size: 42px;
+    line-height: 40px;
+    @media (max-width: 768px) {
+      font-size: 31px;
+    }
+    @media (max-width: 425px) {
+      font-size: 27px;
+    }
+  }
+  .featureTitle,
+  .secondCTA {
+    font-size: 32px;
+    line-height: 30px;
+    @media (max-width: 768px) {
+      font-size: 31px;
+    }
+    @media (max-width: 425px) {
+      font-size: 27px;
+    }
+  }
+  .featureDesc {
+    font-size: 22px;
+    line-height: 25px;
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
+    @media (max-width: 425px) {
+      font-size: 18px;
+    }
+  }
+  .donateLink {
+    font-size: 19px;
+    line-height: 20px;
+    @media (max-width: 768px) {
+      font-size: 17px;
+    }
+    @media (max-width: 425px) {
+      font-size: 15px;
+    }
+  }
+}

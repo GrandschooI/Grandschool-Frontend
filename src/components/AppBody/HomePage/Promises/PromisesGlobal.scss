@@ -1,0 +1,33 @@
+.carousel-root {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .carousel-root {
+    display: block;
+    .carousel-slider {
+      padding: 0 0 15px;
+    }
+    .carousel {
+      .slide,
+      .slider-wrapper {
+        min-width: auto;
+      }
+
+      .control-dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        bottom: -16px;
+        li {
+          border-radius: 2px;
+          background: #83A358;
+          margin: 7px;
+          width: 12px;
+          height: 12px;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}

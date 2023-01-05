@@ -1,0 +1,352 @@
+.counterBlock {
+  background: #fff;
+  background: url('../../../../assets/images/features-bottom.png') top;
+  background-size: cover;
+}
+
+.counterContainer {
+  display: flex;
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 45%;
+    h3 {
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 46px;
+      margin: 0 0 15px;
+    }
+    p {
+      font-weight: 400;
+      font-size: 18px;
+      margin: 0 0 35px;
+    }
+    a {
+      display: block;
+      width: max-content;
+      padding: 20px 60px;
+      background: #618135;
+      border-radius: 50px;
+      font-size: 18px;
+      line-height: 25px;
+      color: #fff;
+      text-decoration: none;
+      transition: all .2s ease;
+      border: none;
+      &:hover {
+        background: #32487d;
+        transition: all .2s ease;
+      }
+    }
+  }
+}
+
+.counterIcon {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  fill: #618135;
+  opacity: .8;
+  transition: all .5s ease;
+}
+
+.counterItem:hover .counterIcon,
+.counterItem:focus .counterIcon {
+  opacity: 1;
+  transform: scale(.8) translate(20%, 15%);
+  transition: all .5s ease;
+}
+
+.yellowTheme,
+.whiteTheme,
+.blueTheme {
+  * {
+    font-weight: bold;
+  }
+}
+
+.counterBlock.yellowTheme {
+  background: #191901;
+  color: yellow;
+
+  .counterIcon {
+    fill: aqua;
+  }
+
+  h4 {
+    color: yellow;
+  }
+
+  .counterNumber,
+  .description {
+    color: yellow;
+  }
+
+  .counterItem:before {
+    border-color: rgb(0, 255, 255);
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+  }
+
+  .counterItem:after {
+    border-color: rgb(0, 255, 255);
+    border-top-color: transparent;
+    border-left-color: transparent;
+  }
+
+  a {
+    background: #000;
+    transition: all .2s ease;
+    &:hover {
+      color: #000;
+      background: aqua;
+      transition: all .2s ease;
+    }
+  }
+}
+
+.counterBlock.whiteTheme {
+  background: #fff;
+  color: #000;
+
+  h4 {
+    color: #000;
+  }
+
+  a {
+    background: #000;
+    transition: all .2s ease;
+    border: 1px solid #000;
+    &:hover {
+      background: #fff;
+      color: #000;
+      transition: all .2s ease;
+    }
+  }
+
+  .counterIcon {
+    fill: #000;
+  }
+
+  .counterNumber,
+  .description {
+    color: #000;
+  }
+
+  .counterItem:before {
+    border-color: #000;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+  }
+
+  .counterItem:after {
+    border-color: #000;
+    border-top-color: transparent;
+    border-left-color: transparent;
+  }
+}
+
+.counterBlock.blueTheme {
+  background: #b8eefb;
+  color: #273a64;
+
+  .counterIcon {
+    fill: #273a64;
+  }
+
+  .counterNumber,
+  .description {
+    color: #273a64;
+  }
+
+  .counterItem {
+    background: #fff;
+  }
+
+  .counterItem:before {
+    border-color: #273a64;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+  }
+
+  .counterItem:after {
+    border-color: #273a64;
+    border-top-color: transparent;
+    border-left-color: transparent;
+  }
+
+  h4 {
+    color: #273a64;
+  }
+
+  a {
+    background: #273a64;
+    transition: all .2s ease;
+    border: 1px solid #273a64;
+    &:hover {
+      background: #fff;
+      color: #273a64;
+      transition: all .2s ease;
+    }
+  }
+}
+
+ul.counterWrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  padding: 180px 25px 125px 65px;
+}
+
+.counterItem {
+  width: 47%;
+  margin-bottom: 55px;
+  padding: 30px 35px 30px;
+  position: relative;
+  background: transparent;
+  box-shadow: 0 0 30px rgba(97, 129, 53, 0.1);
+  border-radius: 10px;
+  h4 {
+    color: #618135;
+  }
+}
+
+.counterNumber {
+  font-size: 40px;
+  color: #2d2d2d;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-right: 10px;
+}
+
+.description {
+  font-size: 20px;
+  color: #2d2d2d;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.medium {
+  .counterContainer {
+    .counterNumber,
+    .donateLink {
+      font-size: 42px;
+    }
+    .description {
+      font-size: 22px;
+    }
+    .counterItem h4 {
+      font-size: 16px;
+    }
+    h3 {
+      font-size: 38px!important;
+      transition: all .2s ease;
+    }
+    p {
+      font-size: 20px!important;
+      transition: all .2s ease;
+    }
+    a {
+      font-size: 20px;
+      transition: all .2s ease;
+    }
+  }
+}
+
+.large {
+  .counterContainer {
+    .counterNumber,
+    .donateLink {
+      font-size: 44px;
+    }
+    .description {
+      font-size: 24px;
+    }
+    .counterItem h4 {
+      font-size: 18px;
+    }
+    h3 {
+      font-size: 40px!important;
+      transition: all .2s ease;
+    }
+    p {
+      font-size: 22px!important;
+      transition: all .2s ease;
+    }
+    a {
+      font-size: 22px;
+      transition: all .2s ease;
+    }
+  }
+}
+
+@media (max-width: 1150px) {
+  .counterBlock {
+    padding-top: 140px;
+    .counterContainer {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      > div {
+        width: 80%;
+        align-items: center;
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  ul.counterWrap {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px 0;
+    margin: 15px auto;
+  }
+  .counterItem {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .counterItem {
+    width: 70%;
+    min-width: 330px;
+    padding: 20px 25px;
+    margin: 25px 0;
+  }
+  ul.counterWrap {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .counterBlock {
+    .counterContainer > div {
+      width: 100%;
+      h3 {
+        text-align: center;
+      }
+    }
+  }
+  .counterItem {
+    width: 100%;
+    min-width: auto;
+    margin: 15px 0;
+    svg {
+      width: 25%;
+    }
+  }
+  .counterNumber {
+    font-size: 25px;
+  }
+  .counterItem h4 {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,55 @@
+.asideList {
+    width: 25%;
+    min-width: 397px;
+    list-style: none;
+    background: #fff;
+    box-shadow: 0 0 3px rgb(0 0 0 / 5%);
+    padding: 0;
+    margin: 0;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+    overflow: hidden;
+    li {
+        border-bottom: 1px solid #E5E5E5;
+    }
+}
+
+.aside {
+    min-width: 310px;
+    max-width: 310px;
+    height: fit-content;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 3px rgb(0 0 0 / 5%);
+    overflow: hidden;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebarItem {
+    display: flex;
+    align-items: center;
+    color: #000;
+    text-decoration: none;
+    padding: 0 1.875rem;
+    height: 4.5rem;
+    transition: all .2s ease;
+}
+
+.sidebarItem:hover,
+.sidebarItem:focus {
+    color: #e62e2d;
+    background: rgba(0,0,0,.02);
+    transition: all .2s ease;
+}
+
+.yellowTheme {
+    background: rgb(25, 25, 1);
+    .activeItem {
+        background: #00ffff;
+        color: #000;
+    }
+}

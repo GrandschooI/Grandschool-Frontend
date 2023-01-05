@@ -1,0 +1,207 @@
+.authBackground {
+  background: url('../../../assets/images/reviews.png') center 33vh no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  padding: 190px 0 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: padding .3s ease;
+}
+
+.authWrapper {
+  width: 700px;
+  border-radius: 25px;
+  overflow: hidden;
+  .authHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 88px;
+    background: #F7F5EC;
+  }
+  .authSwitcherWrapper {
+    display: flex;
+    background: #fff;
+    padding: 0 23px;
+    margin-bottom: 10px;
+    .authSwitcher {
+      position: relative;
+      width: 50%;
+      padding: 37px 0 17px;
+      font-weight: 600;
+      font-size: 24px;
+      text-transform: uppercase;
+      text-align: center;
+      color: #000;
+      text-decoration: none;
+      border-bottom: 2px solid #EAEAEA;
+      &.active {
+        border-color: #31477C;
+      }
+    }
+  }
+}
+
+.authBackground.blindOptionsOpen {
+  padding-top: 298px;
+  transition: all .3s ease;
+}
+
+.authBackground.yellowTheme {
+  background: #000;
+  .authWrapper {
+    background: rgb(25, 25, 1);
+    .authHeader {
+      background: rgb(25, 25, 1);
+    }
+    .authSwitcherWrapper {
+      background: transparent;
+      a {
+        color: yellow;
+        border-color: #000;
+        &.active {
+          border-color: aqua;
+        }
+      }
+    }
+  }
+}
+
+.authBackground.medium {
+  .authWrapper {
+    .authSwitcherWrapper {
+      a {
+        font-size: 26px;
+        transition: all .3s ease;
+      }
+    }
+  }
+}
+.authBackground.large {
+  .authWrapper {
+    .authSwitcherWrapper {
+      a {
+        font-size: 28px;
+        transition: all .3s ease;
+      }
+    }
+  }
+}
+
+.authBackground.whiteTheme {
+  background: #fff;
+  .authWrapper {
+    background: #000;
+    .authHeader {
+      background: #000;
+    }
+    .authSwitcherWrapper {
+      background: transparent;
+      a {
+        color: #fff;
+        border-color: #666;
+        &.active {
+          border-color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.authBackground.blueTheme {
+  background: #afe2ef;
+  .authWrapper {
+    background: #afe2ef;
+    .authHeader {
+      background: #afe2ef;
+    }
+    .authSwitcherWrapper {
+      background: transparent;
+      a {
+        color: #273a64;
+        border-color: #fff;
+        &.active {
+          border-color: #273a64;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .authHeader .logoText {
+    display: block;
+  }
+}
+
+@media (max-width: 730px) {
+  .authBackground {
+    padding-top: 155px;
+    .authWrapper {
+      width: calc(100% - 30px);
+      .authHeader {
+        svg:first-child {
+          width: 55px;
+        }
+
+        svg:last-child {
+          width: 85px;
+        }
+      }
+
+      .authSwitcherWrapper {
+        padding: 0 15px;
+        .authSwitcher {
+          font-size: 18px;
+          padding: 22px 0 13px;
+        }
+      }
+
+      .formLabel,
+      .orWord {
+        width: calc(100% - 20px);
+        span {
+          font-size: 14px;
+        }
+        .textField {
+          font-size: 16px;
+        }
+      }
+
+      .formLabel:last-child {
+        margin-bottom: 24px;
+      }
+
+      .signWithTitle {
+        font-size: 18px;
+      }
+
+      .anotherTypeLoginBtnWrap {
+        .anotherTypeLogin {
+          width: 63px;
+          height: 58px;
+          align-items: center;
+          justify-content: center;
+          padding: 0 17px;
+          svg {
+            margin: 0;
+          }
+          span {
+            display: none;
+          }
+        }
+        .anotherTypeLogin:first-child {
+          margin-right: 7%;
+        }
+      }
+
+      .signWithTitle {
+        margin-bottom: 20px;
+      }
+      .anotherTypeLogin {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}

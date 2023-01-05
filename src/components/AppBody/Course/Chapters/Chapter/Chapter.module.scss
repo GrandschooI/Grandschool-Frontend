@@ -1,0 +1,32 @@
+.topicTitle {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 28px;
+  color: #618135;
+}
+
+.questionWrap {
+  background: #F7F5EC;
+  padding: 20px 24px;
+  .topicTitle {
+    margin: 0;
+  }
+  .question {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    color: #000000;
+  }
+
+  .answer {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #717070;
+  }
+  .submitBtn {
+    margin-left: 0;
+  }
+}

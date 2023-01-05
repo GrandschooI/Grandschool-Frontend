@@ -1,0 +1,96 @@
+.yellowTheme {
+  .formLabel {
+    span {
+      color: yellow;
+    }
+    input {
+      background: #000;
+      border: 1px solid aqua;
+      color: yellow;
+    }
+    path,
+    line {
+      fill: aqua;
+      stroke: aqua;
+    }
+  }
+}
+
+.whiteTheme {
+  .formLabel {
+    span {
+      color: #fff;
+    }
+    input {
+      background: #000;
+      border: 1px solid #fff;
+      color: #fff;
+    }
+    path,
+    line {
+      fill: #fff;
+      stroke: #fff;
+    }
+  }
+}
+
+.blueTheme {
+  .formLabel {
+    span {
+      color: #273a64;
+    }
+    input {
+      background: #273a64;
+      border: 1px solid #fff;
+      color: #fff;
+    }
+    path,
+    line {
+      fill: #fff;
+      stroke: #fff;
+    }
+  }
+}
+
+.small {
+  .formLabel {
+    span {
+      font-size: 16px;
+      transition: all .3s ease;
+    }
+  }
+}
+
+.medium {
+  .formLabel {
+    span {
+      font-size: 18px;
+      transition: all .3s ease;
+    }
+  }
+  .submitBtn {
+    font-size: 22px;
+    transition: all .3s ease;
+  }
+}
+
+.large {
+  .formLabel {
+    span {
+      font-size: 20px;
+      transition: all .3s ease;
+    }
+  }
+  .submitBtn {
+    font-size: 24px;
+    transition: all .3s ease;
+  }
+}
+
+@media (max-width: 1000px) {
+  .authHeader {
+    .logoText {
+      display: block;
+    }
+  }
+}

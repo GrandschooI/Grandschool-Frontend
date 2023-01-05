@@ -1,0 +1,105 @@
+.courseHeaderBlock {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 210px;
+    width: 100%;
+    border-bottom: 1px solid #E5E5E5;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.courseHeaderTitleBlock {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    h1 {
+        margin-top: 42px;
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 46px;
+        span {
+            color: #618135;
+        }
+    }
+    h3 {
+        margin: 0;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 28px;
+        color: #717070;
+    }
+}
+
+.courseHeaderButtonBlock {
+    ul {
+        display: flex;
+        list-style: none;
+        li {
+            a {
+                align-items: center;
+                justify-content: center;
+                transition: all .2s;
+                display: inline-flex;
+                padding: 20px 60px;
+                height: 3.125rem;
+                background-color: #618135;
+                border: 1px solid #618135;
+                border-radius: 50px;
+                box-shadow: none;
+                color: #fff;
+                white-space: nowrap;
+                cursor: pointer;
+                outline: 0 none;
+                width: 100%;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 23px;
+                text-decoration: none;
+                &:hover,
+                &:focus {
+                    background-color: #fff;
+                    border-color: #618135;
+                    color: #618135;
+                    transition: all .2s;
+                    svg {
+                        fill: #618135;
+                        transition: all .2s;
+                    }
+                }
+
+                svg {
+                    min-width: 30px;
+                    margin-left: 10px;
+                    fill: #fff;
+                }
+
+                .testYourselfIcon {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+        li:last-child {
+            margin-left: 25px;
+            a {
+                background-color: #fff;
+                border: 1px solid #618135;
+                color: #618135;
+                svg {
+                    fill: #618135;
+                    transition: all .2s;
+                }
+                &:hover,
+                &:focus {
+                    background: #618135;
+                    color: #fff;
+                    transition: all .2s;
+                    svg {
+                        fill: #fff;
+                        transition: all .2s;
+                    }
+                }
+            }
+        }
+    }
+}

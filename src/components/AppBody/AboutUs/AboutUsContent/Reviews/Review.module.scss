@@ -1,0 +1,152 @@
+.reviewBody {
+  width: 70%;
+  margin-left: 40px;
+  & > p:first-child {
+    margin-top: 0;
+  }
+  .reviewTitle {
+    margin: 0 0 25px;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 36px;
+    text-transform: capitalize;
+    color: #618135;
+  }
+  .reviewDescWrap {
+    display: flex;
+    background: #F7F5EC;
+    margin-bottom: 35px;
+    p {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 20px;
+      font-size: 22px;
+      line-height: 28px;
+      span {
+        color: #618135;
+      }
+    }
+  }
+  .reviewForm {
+    .reviewCAT {
+      display: flex;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 23px;
+      color: #717070;
+      margin-bottom: 15px;
+    }
+    .assesmentRadioList {
+      display: flex;
+      margin: 15px 0 35px;
+      cursor: pointer;
+      li {
+        margin-right: 50px;
+        &.active {
+          svg {
+            opacity: 1;
+            path {
+              fill: green;
+            }
+          }
+        }
+        svg {
+          transition: all .3s ease;
+          opacity: .7;
+        }
+        &:hover svg {
+          opacity: 1;
+          transform: scale(1.1);
+          transition: all .3s ease;
+        }
+      }
+    }
+    .textareaWrap {
+      display: flex;
+      flex-direction: column;
+      label {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #717070;
+      }
+      textarea {
+        padding: 15px;
+        margin-top: 10px;
+        min-height: 210px;
+        resize: none;
+        font-family: 'Proba', arial, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+    .buttonWrapper {
+      display: flex;
+      .reviewAttached {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 10px 0;
+        height: 64px;
+        span {
+          font-size: 16px;
+          line-height: 20px;
+          margin-left: 10px;
+        }
+        small {
+          font-size: 10px;
+          font-weight: 400;
+          width: 100%;
+        }
+      }
+      .sendFeedback {
+        margin-left: 20px;
+      }
+    }
+  }
+  .reviewList {
+    list-style: none;
+  }
+}
+
+.reviewBody.yellowTheme {
+  h3, .reviewCAT {
+    color: yellow;
+  }
+  .reviewDescWrap {
+    background: #191901;
+    span {
+      color: #00ffff;
+    }
+  }
+  .assesmentRadioList {
+    li {
+      &.active {
+        svg {
+          opacity: 1;
+          path {
+            fill: #00ffff;
+          }
+        }
+      }
+      svg {
+        transition: all .3s ease;
+        opacity: .5;
+        path {
+          fill: yellow;
+        }
+      }
+      &:hover svg {
+        opacity: 1;
+        transform: scale(1.1);
+        transition: all .3s ease;
+      }
+    }
+  }
+  textarea {
+    background: #191901;
+  }
+}

@@ -1,0 +1,34 @@
+.chapterItem {
+  display: block;
+  position: relative;
+  margin-bottom: 1rem;
+  padding-left: 20px;
+  a {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: #717070;
+    text-decoration: none;
+    transition: all .2s ease;
+    &:hover {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 23px;
+      color: #618135;
+      transition: all .2s ease;
+    }
+  }
+}
+
+.chapterItem::before {
+  display: block;
+  position: absolute;
+  left: .125rem;
+  top: 12px;
+  margin-top: -3px;
+  width: 6px;
+  height: 6px;
+  background: #618135;
+  border-radius: 100%;
+  content: '';
+}

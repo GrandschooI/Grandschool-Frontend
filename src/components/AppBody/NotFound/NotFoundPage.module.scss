@@ -1,0 +1,158 @@
+.notFoundWrapper {
+  display: flex;
+  align-items: center;
+  padding-top: 90px;
+  min-height: 100vh;
+  background: url('../../../assets/images/reviews.png') bottom no-repeat;
+  background-size: cover;
+
+  .contentWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .notFoundNumber {
+      position: relative;
+      font-weight: 600;
+      font-size: 240px;
+      line-height: 240px;
+      letter-spacing: 0.195em;
+      color: #CCCCCC;
+      transition: all .3s ease;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    h1 {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 44px;
+      line-height: 44px;
+      color: #5D5D5D;
+      margin: 20px auto 15px;
+      transition: all .3s ease;
+    }
+
+    p {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 20px;
+      color: #5D5D5D;
+      margin-bottom: 22px;
+      transition: all .3s ease;
+    }
+
+    .buttonWrap {
+      display: flex;
+      justify-content: space-between;
+      min-width: 450px;
+      button, a {
+        width: 45%;
+        text-align: center;
+        text-decoration: none;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .notFoundNumber {
+        font-size: 155px;
+      }
+      h1 {
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 35px;
+      }
+      p {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 20px;
+        text-align: center;
+      }
+      .buttonWrap {
+        max-width: 100%;
+        min-width: 320px;
+        button, a {
+          width: 45%;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  &.yellowTheme {
+    background: #000;
+    & .contentWrap {
+      & .notFoundNumber, h1, p {
+        color: yellow;
+      }
+    }
+    .buttonWrap {
+      a {
+        color: #000;
+      }
+    }
+  }
+
+  &.whiteTheme {
+    background: #fff;
+    & .contentWrap {
+      & .notFoundNumber, h1, p {
+        color: #000;
+      }
+    }
+  }
+
+  &.blueTheme {
+    background: #b8eefb;
+    & .contentWrap {
+      & .notFoundNumber, h1, p {
+        color: #273a64;
+      }
+    }
+  }
+
+  &.medium {
+    .notFoundNumber {
+      font-size: 270px;
+      transition: all .3s ease;
+    }
+    h1 {
+      font-size: 46px;
+      transition: all .3s ease;
+    }
+    p {
+      font-size: 22px;
+      transition: all .3s ease;
+    }
+    .buttonWrap {
+      button, a {
+        font-size: 22px;
+      }
+    }
+  }
+  &.large {
+    .notFoundNumber {
+      font-size: 280px;
+      transition: all .3s ease;
+    }
+    h1 {
+      font-size: 48px;
+      transition: all .3s ease;
+    }
+    p {
+      font-size: 24px;
+      transition: all .3s ease;
+    }
+    .buttonWrap {
+      button, a {
+        font-size: 24px;
+      }
+    }
+  }
+}

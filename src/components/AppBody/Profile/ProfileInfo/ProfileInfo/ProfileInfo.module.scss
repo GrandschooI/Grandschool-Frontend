@@ -1,0 +1,15 @@
+.profileInfoWrap {
+  width: 100%;
+  margin-left: 40px;
+  .title {
+    margin-top: 0;
+    font-weight: 600;
+    font-size: 28px;
+    text-transform: capitalize;
+    color: #618135;
+  }
+  .formWrap {
+    display: flex;
+    justify-content: space-between;
+  }
+}

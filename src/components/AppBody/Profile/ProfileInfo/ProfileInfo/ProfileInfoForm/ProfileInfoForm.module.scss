@@ -1,0 +1,20 @@
+.profileInfoForm {
+  max-width: 388px;
+  .radioWrap {
+    display: flex;
+    label:first-child {
+      margin-right: 50px;
+    }
+  }
+  textarea {
+    width: 388px;
+    min-height: 123px;
+    padding: 15px;
+    font-size: 18px;
+    border: 1px solid #EAEAEA;
+    border-radius: 4px;
+    resize: none;
+    outline: none;
+    font-family: 'Proba', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;;
+  }
+}

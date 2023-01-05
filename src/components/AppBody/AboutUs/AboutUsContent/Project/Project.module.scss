@@ -1,0 +1,15 @@
+.movie {
+  display: flex;
+  justify-content: center;
+}
+
+.projectBody {
+  width: 70%;
+  margin-left: 40px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  & > p:first-child {
+    margin-top: 0;
+  }
+}

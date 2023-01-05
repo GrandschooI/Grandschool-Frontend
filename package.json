@@ -1,0 +1,81 @@
+{
+  "name": "grandschool",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@julienvanbeveren/react-datetime-picker": "^1.0.4",
+    "@stripe/react-stripe-js": "^1.15.0",
+    "@stripe/stripe-js": "^1.44.1",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/aos": "^3.0.4",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^12.20.36",
+    "@types/react": "^17.0.34",
+    "@types/react-datepicker": "^4.4.2",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-facebook-login": "^4.1.5",
+    "@types/react-transition-group": "^4.4.5",
+    "aos": "^2.3.4",
+    "axios": "^0.21.1",
+    "classnames": "^2.3.1",
+    "formik": "^2.2.9",
+    "gapi-script": "^1.2.0",
+    "react": "^17.0.1",
+    "react-awesome-slider": "^4.1.0",
+    "react-countup": "^4.3.3",
+    "react-datepicker": "^4.8.0",
+    "react-dom": "^17.0.1",
+    "react-facebook-login": "^4.1.1",
+    "react-google-login": "^5.2.2",
+    "react-player": "^2.9.0",
+    "react-redux": "^7.2.2",
+    "react-responsive-carousel": "^3.2.18",
+    "react-router-dom": "^5.3.4",
+    "react-scripts": "4.0.3",
+    "react-scroll-up-button": "^1.6.4",
+    "react-share": "^4.4.0",
+    "react-toastify": "^8.1.0",
+    "react-transition-group": "^4.4.2",
+    "react-visibility-sensor": "^5.1.1",
+    "react-youtube": "^7.13.1",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "sass": "^1.32.8",
+    "typescript": "^4.4.4",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/react-redux": "^7.1.16",
+    "@types/react-router-dom": "^5.1.7",
+    "react-error-overlay": "6.0.9",
+    "react-image-webp": "^0.7.0"
+  }
+}

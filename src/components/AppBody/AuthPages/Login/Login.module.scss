@@ -1,0 +1,171 @@
+.forgotPassword {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 20px 0 45px;
+  font-size: 18px;
+  line-height: 23px;
+  color: #717070;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.signWithTitle {
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+.anotherTypeLoginBtnWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .anotherTypeLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 190px;
+    height: 61px;
+    border: 0.5px solid #31477C;
+    border-radius: 4px;
+    background: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:first-child {
+      margin-right: 8px;
+    }
+    svg {
+      margin-right: 15px;
+    }
+  }
+}
+
+.errorTextField {
+  min-width: 300px;
+  min-height: 30px;
+  border: 1px solid red;
+  cursor: text;
+}
+
+.popupBtnWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  button {
+    width: 40%;
+  }
+}
+.optionEnter {
+  opacity: 0;
+  transform: translate(1000px, 1000px);
+  transition: all .3s ease;
+}
+
+.optionEnterActive {
+  opacity: 1;
+  transform: translate(0);
+  transition: all .3s ease;
+}
+
+.optionExitActive {
+  opacity: 0;
+  transform: translate(1000px, 1000px);
+  transition: all .3s ease;
+}
+
+.resultForgotPassPopup {
+  .desc {
+    width: 80%;
+    margin: 25px auto 0;
+    text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.yellowTheme {
+  .forgotPassword {
+    color: aqua;
+  }
+  .signWithTitle {
+    color: yellow;
+  }
+  .anotherTypeLogin {
+    background: #000;
+    color: yellow;
+    border: 0.5px solid aqua;
+  }
+}
+
+.whiteTheme {
+  .forgotPassword {
+    color: #000;
+  }
+  .signWithTitle {
+    color: #fff;
+  }
+  .anotherTypeLogin {
+    background: #000;
+    color: #fff;
+    border: 0.5px solid #000;
+  }
+}
+
+.blueTheme {
+  .forgotPassword {
+    color: #273a64;
+  }
+  .signWithTitle {
+    color: #273a64;
+  }
+  .anotherTypeLogin {
+    background: #273a64;
+    color: #afe2ef;
+    border: 0.5px solid #fff;
+  }
+}
+
+.medium {
+  .signWithTitle {
+    font-size: 26px;
+    transition: all .3s ease;
+  }
+  .forgotPassword {
+    font-size: 20px;
+    transition: all .3s ease;
+  }
+  .anotherTypeLoginBtnWrap {
+    button {
+      font-size: 20px;
+      transition: all .3s ease;
+    }
+  }
+}
+
+.large {
+  .signWithTitle {
+    font-size: 28px;
+    transition: all .3s ease;
+  }
+  .forgotPassword {
+    font-size: 22px;
+    transition: all .3s ease;
+  }
+  .anotherTypeLoginBtnWrap {
+    button {
+      font-size: 22px;
+      transition: all .3s ease;
+    }
+  }
+}

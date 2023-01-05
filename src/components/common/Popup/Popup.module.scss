@@ -1,0 +1,43 @@
+.popupWrapper {
+  width: 700px;
+  border-radius: 25px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 30px rgba(97, 129, 53, 0.1);
+  padding: 0 0 80px 0;
+  .popupHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 88px;
+    background: #F7F5EC;
+  }
+  .popupSwitcherWrapper {
+    display: flex;
+    background: #fff;
+    padding: 0 23px;
+    margin-bottom: 10px;
+  }
+
+  &.yellowTheme {
+    background: #191901;
+    .popupHeader {
+      background: #000;
+    }
+  }
+
+  &.whiteTheme {
+    background: #000;
+    .popupHeader {
+      background: #000;
+    }
+  }
+
+  &.blueTheme {
+    background: #aee2ef;
+    .popupHeader {
+      background: #aee2ef;
+    }
+  }
+}
+

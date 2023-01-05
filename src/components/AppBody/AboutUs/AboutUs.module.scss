@@ -1,0 +1,54 @@
+div.aboutUsBody {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 210px;
+  padding-bottom: 165px;
+  h2 {
+    width: 100%;
+    margin: 40px 0;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 46px;
+    color: #000000;
+  }
+}
+
+.aboutUsSection {
+  padding-top: 0;
+  transition: all .3s ease;
+}
+
+.yellowTheme {
+  background: #000;
+  color: yellow;
+  .aboutUsBody {
+    h2 {
+      color: yellow;
+    }
+  }
+}
+
+.whiteTheme {
+  background: #fff;
+  color: #000;
+  .aboutUsBody {
+    h2 {
+      color: #000;
+    }
+  }
+}
+
+.blueTheme {
+  background: #afe2ef;
+  color: #273a64;
+  .aboutUsBody {
+    h2 {
+      color: #273a64;
+    }
+  }
+}
+
+.aboutUsSection.blindOptionsOpen {
+  padding-top: 90px;
+  transition: all .3s ease;
+}
