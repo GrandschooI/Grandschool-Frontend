@@ -10,7 +10,7 @@ export const InfoAPI = {
   },
   getWebsites (category: any) {
     return (
-        instance.get<any>(`websites?category=${category}`).then(response => response.data)
+        instance.get<any>(`websites?category=${category}`).then(response => response.data.data.records)
     )
   }
 }
