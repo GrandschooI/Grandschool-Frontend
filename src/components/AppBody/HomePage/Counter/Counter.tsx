@@ -88,7 +88,7 @@ const Counter:React.FC<propsType> = ({themeStyle, fontSize, images}) => {
             }
           </li>
           <li className={s.counterItem}>
-            <CountUp end={11644} className={s.counterNumber}/><span className={s.description}>zł</span>
+            <CountUp end={11844} className={s.counterNumber}/><span className={s.description}>zł</span>
             <h4>ZEBRANA KWOTA</h4>
             {images && <svg className={s.counterIcon} width="116" height="116" viewBox="0 0 116 116"
               fill="none" xmlns="http://www.w3.org/2000/svg">

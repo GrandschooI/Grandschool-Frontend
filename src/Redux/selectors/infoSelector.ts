@@ -3,7 +3,7 @@ import {websitesTopic} from '../reducers/infoReducer'
 
 export const getWebsites = (state: any): Array<websitesTopic> => {
   return state.info.websites.map((el: any) => {
-    return {itemTitle: el.itemTitle, itemLink: el.itemLink}
+    return {itemTitle: el.name, itemLink: el.link}
   })
 }
 
