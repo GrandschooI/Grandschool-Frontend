@@ -74,7 +74,7 @@ export const getWebsitesCategoryThunkCreator = (): ThunkType  => {
       const websiteCategories = response.map((el: any) => {
         return ({
           topicTitle: el.name,
-          topicLink: el.slug
+          topicLink: `/info/websites/${el.slug}`
         })
       })
       dispatch(InfoActions.setWebsiteCategories(websiteCategories))
