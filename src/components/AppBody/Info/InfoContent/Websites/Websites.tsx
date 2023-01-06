@@ -4,9 +4,9 @@ import WebsitesTopic from "./WebsitesTopic";
 import {useLocation} from "react-router-dom";
 
 const Websites: React.FC<propsType> = ({websitesData, getWebsitesThunkCreator}) => {
-    let location: string = useLocation().pathname
+    let location = useLocation().pathname.split('/').pop()
     useEffect(() => {
-        getWebsitesThunkCreator('rozrywka-w-sieci-dla-seniorow-internetowe-biblioteki-multimedialne')
+        getWebsitesThunkCreator(location)
     }, [])
     return (
         <>
