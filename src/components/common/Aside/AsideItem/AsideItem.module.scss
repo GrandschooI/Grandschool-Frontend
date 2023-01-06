@@ -76,6 +76,8 @@ span.activeItem {
 .asideSubmenu {
   li {
     position: relative;
+    cursor: pointer;
+    transition: all .3s ease;
 
     a {
       display: flex;
@@ -97,6 +99,11 @@ span.activeItem {
       a {
         padding: 10px 24px 24px;
       }
+    }
+
+    &:hover {
+      background: #f7f5ec;
+      transition: all .3s ease;
     }
   }
 }
