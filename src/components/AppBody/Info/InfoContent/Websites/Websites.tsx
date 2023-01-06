@@ -1,17 +1,19 @@
 import React, {useEffect} from 'react'
 import s from './Websites.module.scss'
 import WebsitesTopic from "./WebsitesTopic";
-import {useHistory} from "react-router-dom";
+import {useLocation} from "react-router-dom";
 
 const Websites: React.FC<propsType> = ({websitesData, getWebsitesThunkCreator}) => {
-    let history = useHistory()
+    let location: string = useLocation().pathname
     useEffect(() => {
         getWebsitesThunkCreator('rozrywka-w-sieci-dla-seniorow-internetowe-biblioteki-multimedialne')
     }, [])
     return (
-    <ul className={s.websitesList}>
-      {websitesData.map((el: any) => <WebsitesTopic websitesData={el} key={el.id}/>)}
-    </ul>
+        <>
+            <ul className={s.websitesList}>
+                {websitesData.map((el: any) => <WebsitesTopic websitesData={el} key={el.id}/>)}
+            </ul>
+        </>
     )
 }
 
