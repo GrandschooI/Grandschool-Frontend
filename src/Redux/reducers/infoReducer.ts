@@ -1,5 +1,5 @@
 import {BaseThunkType, InferActionType} from '../redux-store'
-import {InfoAPI} from '../../api/infoAPI'
+import {InfoAPI, WebsiteCategoryItemType, WebsiteItemType} from '../../api/infoAPI'
 
 
 const initialState = {
@@ -24,7 +24,7 @@ const initialState = {
       topics: [] as any
     }
   ],
-  websites: [] as Array<websitesTopic>
+  websites: [] as Array<WebsiteItemType>
 }
 
 // Reducer
@@ -51,15 +51,15 @@ export const infoReducer = (state = initialState, action: getWebsiteActionType):
 // Actions
 
 export const InfoActions = {
-  setWebsites: (websites: Array<websitesTopic>) => ({type: 'info/SET_WEBSITES', data: websites} as const),
+  setWebsites: (websites: Array<WebsiteItemType>) => ({type: 'info/SET_WEBSITES', data: websites} as const),
   setWebsiteCategories: (websiteCategories: any) => ({type: 'info/SET_WEBSITE_CATEGORIES', data: websiteCategories} as const)
 }
 
 // ThunkCreators
 
-export const getWebsitesThunkCreator = (category: any): ThunkType => {
+export const getWebsitesThunkCreator = (category: string): ThunkType => {
   return async (dispatch) => {
-    await InfoAPI.getWebsites(category).then((response: any) => {
+    await InfoAPI.getWebsites(category).then((response: Array<WebsiteItemType>) => {
       dispatch(InfoActions.setWebsites(response))
     })
       .catch((error: any) => {
@@ -70,8 +70,8 @@ export const getWebsitesThunkCreator = (category: any): ThunkType => {
 
 export const getWebsitesCategoryThunkCreator = (): ThunkType  => {
   return async (dispatch) => {
-    await InfoAPI.getWebsiteCategories().then((response: any) => {
-      const websiteCategories = response.map((el: any) => {
+    await InfoAPI.getWebsiteCategories().then((response: Array<WebsiteCategoryItemType>) => {
+      const websiteCategories = response.map((el) => {
         return ({
           topicTitle: el.name,
           topicLink: `/info/websites/${el.slug}`
@@ -92,17 +92,5 @@ export default infoReducer
 // Types
 
 export type InitialStateType = typeof initialState
-export type websitesTopic = {
-    category: string,
-    id: number,
-    websites: Array<websiteType>
-}
-export type websiteType = {
-    description: string
-    id: number
-    link: string
-    name: string
-    visible: boolean
-}
 type getWebsiteActionType = InferActionType<typeof InfoActions>
 type ThunkType = BaseThunkType<getWebsiteActionType>
