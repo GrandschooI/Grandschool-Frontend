@@ -1,7 +1,7 @@
 import {appStateType} from '../redux-store'
-import {websitesTopic} from '../reducers/infoReducer'
+import {WebsiteItemType} from '../../api/infoAPI'
 
-export const getWebsites = (state: any): Array<websitesTopic> => {
+export const getWebsites = (state: any): Array<WebsiteItemType> => {
   return state.info.websites.map((el: any) => {
     return {itemTitle: el.name, itemLink: el.link}
   })

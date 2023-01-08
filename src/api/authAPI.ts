@@ -31,31 +31,27 @@ export const AuthAPI = {
 
 export type AuthDataType = {
     access_token: string
-    user: {
-        id: number,
-        name: Nullable<string>,
-        email: string,
-        phone: Nullable<string>,
-        gender: Nullable<string>,
-        birthday: Nullable<string>,
-        country: Nullable<string>,
-        city: Nullable<string>,
-        description: Nullable<string>,
-        photo: Nullable<string>,
-        roles: Array<string>,
-        email_verified: boolean,
-        created_at: string,
-        updated_at: string
-    }
+    user: UserDataResponseType
 }
 export type AuthResponseType = {
     data: AuthDataType
     errors: [{ message: string }]
 }
 export type UserDataResponseType = {
-    id: Nullable<number>,
+    id: number,
+    name: Nullable<string>,
     email: string,
-    userRole: 0
+    phone: Nullable<string>,
+    gender: Nullable<string>,
+    birthday: Nullable<string>,
+    country: Nullable<string>,
+    city: Nullable<string>,
+    description: Nullable<string>,
+    photo: Nullable<string>,
+    roles: Array<string>,
+    email_verified: boolean,
+    created_at: string,
+    updated_at: string
 }
 export type RefreshTokenResponseType = {
     userId: string,
