@@ -6,7 +6,7 @@ import {
   getStyleMode,
   getThemeStyle
 } from '../../../Redux/selectors/styleSelector'
-import {appStateType, Nullable} from '../../../Redux/redux-store'
+import {AppStateType, Nullable} from '../../../Redux/redux-store'
 import HomePage from './HomePage'
 
 export type propsType = {
@@ -17,7 +17,7 @@ export type propsType = {
   isOptionsOpen: boolean
 }
 
-const mapStateToProps = (state: appStateType): propsType => {
+const mapStateToProps = (state: AppStateType): propsType => {
   return {
     blindMode: getStyleMode(state),
     themeStyle: getThemeStyle(state),

@@ -13,11 +13,11 @@ const rootReducer = combineReducers({
 })
 
 type rootReducerType = typeof rootReducer
-export type appStateType = ReturnType<rootReducerType>
+export type AppStateType = ReturnType<rootReducerType>
 
 export type Nullable<T> = null | T
 export type InferActionType<T> = T extends {[key: string]: (...args: any[]) => infer U} ? U : never
-export type BaseThunkType<A extends Action, R = Promise<void>> = ThunkAction<R, appStateType, unknown, A>
+export type BaseThunkType<A extends Action, R = Promise<void>> = ThunkAction<R, AppStateType, unknown, A>
 
 
 // @ts-ignore

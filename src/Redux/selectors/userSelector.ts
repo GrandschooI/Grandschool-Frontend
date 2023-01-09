@@ -1,38 +1,38 @@
-import {appStateType, Nullable} from '../redux-store'
+import {AppStateType, Nullable} from '../redux-store'
 
-export const getAuthStatus = (state: appStateType): boolean => {
+export const getAuthStatus = (state: AppStateType): boolean => {
   return state.userData.isAuth
 }
 
-export const getUserName = (state: appStateType): Nullable<string> => {
+export const getUserName = (state: AppStateType): Nullable<string> => {
   return state.userData.currentUser.name
 }
 
-export const getUserSex = (state: appStateType): Nullable<string> => {
+export const getUserSex = (state: AppStateType): Nullable<string> => {
   return state.userData.currentUser.gender
 }
 
-export const getUserBirthData = (state: appStateType): Nullable<Date> => {
+export const getUserBirthData = (state: AppStateType): Nullable<Date> => {
   return state.userData.currentUser.birthday
 }
 
-export const getUserCountry = (state: appStateType): Nullable<string> => {
+export const getUserCountry = (state: AppStateType): Nullable<string> => {
   return state.userData.currentUser.country
 }
 
-export const getUserCity = (state: appStateType): Nullable<string> => {
+export const getUserCity = (state: AppStateType): Nullable<string> => {
   return state.userData.currentUser.city
 }
 
-export const getAboutUserText = (state: appStateType): Nullable<string> => {
+export const getAboutUserText = (state: AppStateType): Nullable<string> => {
   return state.userData.currentUser.description
 }
 
-export const getUserPhotoLink = (state: appStateType): Nullable<string> => {
+export const getUserPhotoLink = (state: AppStateType): Nullable<string> => {
   return state.userData.currentUser.photo
 }
 
-export const getUserAsideItems = (state: appStateType): AsideItemsType => {
+export const getUserAsideItems = (state: AppStateType): AsideItemsType => {
   return state.userData.asideMenuItems
 }
 export type AsideItemsType = Array<AsideItemType>

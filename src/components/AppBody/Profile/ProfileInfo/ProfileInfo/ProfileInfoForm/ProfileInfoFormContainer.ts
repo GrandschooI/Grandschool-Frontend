@@ -1,6 +1,6 @@
 import {connect} from 'react-redux'
 import ProfileInfoForm from "./ProfileInfoForm";
-import {appStateType, Nullable} from "../../../../../../Redux/redux-store";
+import {AppStateType, Nullable} from "../../../../../../Redux/redux-store";
 import {
     getAboutUserText,
     getUserBirthData, getUserCity,
@@ -21,7 +21,7 @@ type mapStatePropsType = {
     aboutUserText: Nullable<string>
 }
 
-const mapStateToProps = (state: appStateType): mapStatePropsType => ({
+const mapStateToProps = (state: AppStateType): mapStatePropsType => ({
     name: getUserName(state),
     sex: getUserSex(state),
     birthData: getUserBirthData(state),

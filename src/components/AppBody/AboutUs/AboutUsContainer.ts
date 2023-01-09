@@ -1,5 +1,5 @@
 import {connect} from 'react-redux'
-import {appStateType, Nullable} from '../../../Redux/redux-store'
+import {AppStateType, Nullable} from '../../../Redux/redux-store'
 import {getInfoAboutUs} from '../../../Redux/selectors/infoSelector'
 import AboutUs from './AboutUs'
 import {
@@ -19,7 +19,7 @@ type mapStatePropsType = {
     isOptionsOpen: boolean
 }
 
-const mapStateToProps = (state: appStateType): mapStatePropsType => ({
+const mapStateToProps = (state: AppStateType): mapStatePropsType => ({
     asideItems: getInfoAboutUs(state),
     blindMode: getStyleMode(state),
     themeStyle: getThemeStyle(state),

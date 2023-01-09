@@ -5,14 +5,14 @@ import {Provider} from 'react-redux'
 import {BrowserRouter} from 'react-router-dom'
 import {ToastContainer} from 'react-toastify'
 import reportWebVitals from './reportWebVitals'
-import AppContainer from './AppContainer'
 import store from './Redux/redux-store'
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <AppContainer/>
+        <App/>
       </Provider>
     </BrowserRouter>
     <ToastContainer/>

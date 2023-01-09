@@ -1,6 +1,6 @@
 import {connect} from 'react-redux'
 import {getFontSize, getImgAvailability, getStyleMode, getThemeStyle} from '../../Redux/selectors/styleSelector'
-import {appStateType, Nullable} from '../../Redux/redux-store'
+import {AppStateType, Nullable} from '../../Redux/redux-store'
 import Footer from './Footer'
 
 type mapStatePropsType = {
@@ -10,7 +10,7 @@ type mapStatePropsType = {
     fontSize: string
 }
 
-const mapStateToProps = (state: appStateType): mapStatePropsType => {
+const mapStateToProps = (state: AppStateType): mapStatePropsType => {
   return {
     blindMode: getStyleMode(state),
     themeStyle: getThemeStyle(state),

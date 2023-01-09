@@ -23,5 +23,3 @@ const Preloader = () => {
     </svg>
   )
 }
-
-export default Preloader
