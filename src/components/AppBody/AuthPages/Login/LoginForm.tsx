@@ -7,9 +7,9 @@ import s from './Login.module.scss'
 import {loginDataType} from '../AuthPage'
 import {Nullable} from '../../../../Redux/redux-store'
 import cn from 'classnames'
-import GoogleLogin from "react-google-login";
-import FacebookLogin from "react-facebook-login";
-import Popup from "../../../common/Popup/Popup";
+import GoogleLogin from 'react-google-login';
+import FacebookLogin from 'react-facebook-login';
+import Popup from '../../../common/Popup/Popup';
 
 const loginFormFormValidation = (values: loginFormValidationType) => {
     const errors: any = {}
@@ -128,7 +128,7 @@ const LoginForm: React.FC<propsType> = ({
                 unmountOnExit
             >
                 <section className='overlay'>
-                    <Popup blindMode={blindMode} themeStyle={themeStyle} images={images} fontSize={fontSize}>
+                    <Popup>
                         <Formik initialValues={{email: ''}}
                                 validate={forgotPasswordFormValidation}
                                 onSubmit={sendResetPasswordFlow}>
@@ -165,7 +165,7 @@ const LoginForm: React.FC<propsType> = ({
                 }}
                 unmountOnExit>
                 <section className={cn('overlay', s.resultForgotPassPopup)}>
-                    <Popup blindMode={blindMode} themeStyle={themeStyle} images={images} fontSize={fontSize}>
+                    <Popup>
                         <p className={s.desc}>
                             На указанный тобой адрес электронной почты было отправлено письмо с дальнейшими инструкциями
                         </p>

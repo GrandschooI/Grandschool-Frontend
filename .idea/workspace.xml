@@ -4,21 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d662ad8-0c70-4c7e-a76d-cc96c9a94c16" name="Changes" comment="Refactored AboutUs and Aside">
+    <list default="true" id="9d662ad8-0c70-4c7e-a76d-cc96c9a94c16" name="Changes" comment="Refactored Course and HomePage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AppBody/AppBody.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/AppBody.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppBody/Course/Course.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/Course/Course.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppBody/Course/CourseContainer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppBody/HomePage/CallToAction/CallToAction.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/HomePage/CallToAction/CallToAction.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppBody/HomePage/CallToAction/CallToActionContainer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppBody/HomePage/Counter/Counter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/HomePage/Counter/Counter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppBody/HomePage/Donate/Donate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/HomePage/Donate/Donate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppBody/HomePage/Features/Features.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/HomePage/Features/Features.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppBody/HomePage/Greetings/Greetings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/HomePage/Greetings/Greetings.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppBody/HomePage/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/HomePage/HomePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppBody/HomePage/News/News.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/HomePage/News/News.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppBody/HomePage/Promises/Promises.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/HomePage/Promises/Promises.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppBody/HomePage/Reviews/Reviews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/HomePage/Reviews/Reviews.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/AppBodyContainer.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/AuthPages/AuthPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/AuthPages/AuthPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/AuthPages/Login/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/AuthPages/Login/LoginForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/Info/Info.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/Info/Info.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/Info/InfoContainer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/NotFound/NotFound.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/NotFound/NotFound.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/NotFound/NotFoundContainer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/Profile/Profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/Profile/ProfileContainer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Popup/Popup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Popup/Popup.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673246659322</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Refactored Course and HomePage">
+      <created>1673248782512</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1673248782512</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +256,8 @@
     <MESSAGE value="set websitesThunkCreator to Websites component" />
     <MESSAGE value="start set logic of upload user photo to userReducer" />
     <MESSAGE value="Refactored AboutUs and Aside" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored AboutUs and Aside" />
+    <MESSAGE value="Refactored Course and HomePage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored Course and HomePage" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

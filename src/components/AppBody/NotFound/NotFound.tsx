@@ -1,11 +1,15 @@
 import React from 'react'
 import s from './NotFoundPage.module.scss'
 import notFoundNumber from '../../../assets/images/404.png'
-import {NavLink, useHistory} from "react-router-dom"
-import cn from "classnames";
-import {mapStatePropsType} from "./NotFoundContainer";
+import {NavLink, useHistory} from 'react-router-dom'
+import cn from 'classnames';
+import {useAppSelector} from '../../../utils/Hooks/useAppSelector';
+import {getFontSize, getThemeStyle} from '../../../Redux/selectors/styleSelector';
 
-const NotFound: React.FC<mapStatePropsType> = ({themeStyle, fontSize}) => {
+const NotFound = () => {
+
+  const themeStyle = useAppSelector(getThemeStyle)
+  const fontSize = useAppSelector(getFontSize)
 
     let history = useHistory();
 

@@ -63,8 +63,7 @@ const AuthPage: React.FC<propsType> = (
     <section className={cn(s.authBackground, s[themeStyle ? themeStyle : ''],
       s[isOptionsOpen ? 'blindOptionsOpen' : ''], s[fontSize ? fontSize : ''])}>
 
-      <Popup blindMode={blindMode} themeStyle={themeStyle} images={images}
-             fontSize={fontSize}>
+      <Popup>
         <div className={s.authWrapper}>
           <div className={s.authSwitcherWrapper}>
             <NavLink className={cn(s.authSwitcher, location === '/registration' ? s.active : '')}

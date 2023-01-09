@@ -2,13 +2,17 @@ import React, {useEffect} from 'react'
 import {Route, Switch} from 'react-router-dom'
 import cn from 'classnames'
 import s from './Info.module.scss'
-import {Nullable} from '../../../Redux/redux-store'
 import WebsitesContainer from './InfoContent/Websites/WebsitesContainer';
 import Aside from '../../common/Aside/Aside';
+import {useDispatch} from 'react-redux';
+import {getWebsitesCategoryThunkCreator} from '../../../Redux/reducers/infoReducer';
 
-const Info: React.FC<PropsType> = ({themeStyle, infoItems, getWebsitesCategoryThunkCreator}) => {
+const Info= () => {
+
+    const dispatch = useDispatch()
+
     useEffect(() => {
-        getWebsitesCategoryThunkCreator()
+        dispatch(getWebsitesCategoryThunkCreator())
     }, [])
     return (
         <div className={cn('container', s.infoWrapper)}>
@@ -24,9 +28,3 @@ const Info: React.FC<PropsType> = ({themeStyle, infoItems, getWebsitesCategoryTh
 }
 
 export default Info
-
-type PropsType = {
-    infoItems: any
-    themeStyle: Nullable<string>
-    getWebsitesCategoryThunkCreator: () => void
-}
