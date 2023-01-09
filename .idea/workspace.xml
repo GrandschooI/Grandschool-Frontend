@@ -4,17 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d662ad8-0c70-4c7e-a76d-cc96c9a94c16" name="Changes" comment="start set logic of upload user photo to userReducer">
+    <list default="true" id="9d662ad8-0c70-4c7e-a76d-cc96c9a94c16" name="Changes" comment="Refactored AboutUs and Aside">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/selectors/infoSelector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/selectors/infoSelector.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppBody/AboutUs/AboutUs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/AboutUs/AboutUs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppBody/AboutUs/AboutUsContainer.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AppBody/AppBody.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/AppBody.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AppBody/Course/Course.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/Course/Course.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppBody/Info/Info.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/Info/Info.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppBody/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/Profile/Profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Aside/Aside.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Aside/Aside.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Aside/AsideContainer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/Course/CourseContainer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/HomePage/CallToAction/CallToAction.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/HomePage/CallToAction/CallToAction.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/HomePage/CallToAction/CallToActionContainer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/HomePage/Counter/Counter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/HomePage/Counter/Counter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/HomePage/Donate/Donate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/HomePage/Donate/Donate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/HomePage/Features/Features.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/HomePage/Features/Features.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/HomePage/Greetings/Greetings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/HomePage/Greetings/Greetings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/HomePage/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/HomePage/HomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/HomePage/News/News.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/HomePage/News/News.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/HomePage/Promises/Promises.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/HomePage/Promises/Promises.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/HomePage/Reviews/Reviews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/HomePage/Reviews/Reviews.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672869591409</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Refactored AboutUs and Aside">
+      <created>1673246659322</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1673246659322</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,6 +249,19 @@
     <MESSAGE value="set types to of websitedata to website container" />
     <MESSAGE value="set websitesThunkCreator to Websites component" />
     <MESSAGE value="start set logic of upload user photo to userReducer" />
-    <option name="LAST_COMMIT_MESSAGE" value="start set logic of upload user photo to userReducer" />
+    <MESSAGE value="Refactored AboutUs and Aside" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored AboutUs and Aside" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/AppBody/Course/Course.tsx</url>
+          <line>14</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
