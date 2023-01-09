@@ -2,7 +2,7 @@ import {connect} from 'react-redux'
 import {getFontSize, getImgAvailability, getOptionsState, getStyleMode, getThemeStyle} from '../../Redux/selectors/styleSelector'
 import {getAuthStatus} from '../../Redux/selectors/userSelector'
 import {styleActions} from '../../Redux/reducers/styleReducer'
-import {appStateType, Nullable} from '../../Redux/redux-store'
+import {AppStateType, Nullable} from '../../Redux/redux-store'
 import {logoutThunkCreator} from '../../Redux/reducers/userReducer'
 import Header from './Header'
 
@@ -18,7 +18,7 @@ type mapStatePropsType = {
     routesWithDefaultHeader: Array<string>
 }
 
-const mapStateToProps = (state: appStateType): mapStatePropsType => {
+const mapStateToProps = (state: AppStateType): mapStatePropsType => {
   return {
     blindMode: getStyleMode(state),
     themeStyle: getThemeStyle(state),

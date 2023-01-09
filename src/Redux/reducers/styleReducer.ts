@@ -6,7 +6,7 @@ const initialState = {
   themeStyle: null as Nullable<string>, // has yellowTheme, whiteTheme and blueTheme
   images: true,
   // todo remove isLoaded
-  isLoaded: false,
+  isLoaded: true,
   isOptionsOpen: false
 }
 
@@ -14,17 +14,17 @@ const initialState = {
 
 const styleReducer = (state = initialState, action: styleActionType) => {
   switch (action.type) {
-  case 'SWITCH_BLIND_MODE':
-    // todo refactring
-    if (action.blindMode) {
-      return {
-        ...state,
-        themeStyle: 'yellowTheme',
-        blindMode: action.blindMode,
-        isOptionsOpen: true
+    case 'SWITCH_BLIND_MODE':
+      // todo refactring
+      if (action.blindMode) {
+        return {
+          ...state,
+          themeStyle: 'yellowTheme',
+          blindMode: action.blindMode,
+          isOptionsOpen: true
+        }
       }
-    }
-    return {
+      return {
         ...state,
         blindMode: false,
         themeStyle: null,
@@ -32,28 +32,30 @@ const styleReducer = (state = initialState, action: styleActionType) => {
         fontSize: 'small',
         isOptionsOpen: false
       }
-  case 'SET_FONTSIZE_MODE':
-    return {
-      ...state,
-      fontSize: action.fontSizeMode
-    }
-  case 'SET_THEMESTYLE_MODE':
-    return {
-      ...state,
-      themeStyle: action.themeStyleMode
-    }
-  case 'SET_IMGAVAILABILITY_MODE':
-    return {
-      ...state,
-      images: action.imgAvailabilityMode
-    }
-  case 'SET_OPTIONS_MODE':
-    return  {
-      ...state,
-      isOptionsOpen: action.optionsMode
-    }
-  default:
-    return state
+    case 'SET_FONTSIZE_MODE':
+      return {
+        ...state,
+        fontSize: action.fontSizeMode
+      }
+    case 'SET_THEMESTYLE_MODE':
+      return {
+        ...state,
+        themeStyle: action.themeStyleMode
+      }
+    case 'SET_IMGAVAILABILITY_MODE':
+      return {
+        ...state,
+        images: action.imgAvailabilityMode
+      }
+    case 'SET_OPTIONS_MODE':
+      return {
+        ...state,
+        isOptionsOpen: action.optionsMode
+      }
+    case 'TOGGLE_IS-LOADED':
+      return {...state, isLoaded: action.isLoaded}
+    default:
+      return state
   }
 }
 
@@ -64,7 +66,11 @@ export const styleActions = {
   setFontSizeModeAC: (fontSizeMode: string) => ({type: 'SET_FONTSIZE_MODE', fontSizeMode} as const),
   setThemeStyleModeAC: (themeStyleMode: string) => ({type: 'SET_THEMESTYLE_MODE', themeStyleMode} as const),
   setOptionsModeAC: (optionsMode: boolean) => ({type: 'SET_OPTIONS_MODE', optionsMode} as const),
-  setImgAvailabilityAC: (imgAvailabilityMode: boolean) => ({type: 'SET_IMGAVAILABILITY_MODE', imgAvailabilityMode} as const)
+  setImgAvailabilityAC: (imgAvailabilityMode: boolean) => ({
+    type: 'SET_IMGAVAILABILITY_MODE',
+    imgAvailabilityMode
+  } as const),
+  toggleIsLoadedAC: (isLoaded: boolean) => ({type: 'TOGGLE_IS-LOADED', isLoaded} as const)
 }
 
 

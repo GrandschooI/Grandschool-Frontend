@@ -1,25 +1,25 @@
-import {appStateType, Nullable} from '../redux-store'
+import {AppStateType, Nullable} from '../redux-store'
 
-export const getStyleMode = (state: appStateType): boolean => {
+export const getStyleMode = (state: AppStateType): boolean => {
   return state.styleMode.blindMode
 }
 
-export const getFontSize = (state: appStateType): string => {
+export const getFontSize = (state: AppStateType): string => {
   return state.styleMode.fontSize
 }
 
-export const getThemeStyle = (state: appStateType): Nullable<string> => {
+export const getThemeStyle = (state: AppStateType): Nullable<string> => {
   return state.styleMode.themeStyle
 }
 
-export const getImgAvailability = (state: appStateType): boolean => {
+export const getImgAvailability = (state: AppStateType): boolean => {
   return state.styleMode.images
 }
 
-export const getLoadedInfo = (state: appStateType): boolean | undefined => {
+export const getLoadedInfo = (state: AppStateType): boolean | undefined => {
   return state.styleMode.isLoaded
 }
 
-export const getOptionsState = (state: appStateType): boolean => {
+export const getOptionsState = (state: AppStateType): boolean => {
   return state.styleMode.isOptionsOpen
 }

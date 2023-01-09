@@ -1,4 +1,4 @@
-import {appStateType} from '../redux-store'
+import {AppStateType} from '../redux-store'
 import {WebsiteItemType} from '../../api/infoAPI'
 
 export const getWebsites = (state: any): Array<WebsiteItemType> => {
@@ -7,11 +7,11 @@ export const getWebsites = (state: any): Array<WebsiteItemType> => {
   })
 }
 
-export const getInfoAboutUs = (state: appStateType): Array<object> => {
+export const getInfoAboutUs = (state: AppStateType): Array<object> => {
   return state.info.aboutUs
 }
 
-export const getInfoMenu = (state: appStateType): Array<object> => {
+export const getInfoMenu = (state: AppStateType): Array<object> => {
   return state.info.infoPageAsideMenu.map(el => {
     return {itemLink: el.itemLink, itemTitle: el.itemTitle, topics: el.topics}
   })

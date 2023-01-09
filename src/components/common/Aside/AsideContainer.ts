@@ -1,5 +1,5 @@
 import {connect} from 'react-redux'
-import {appStateType, Nullable} from '../../../Redux/redux-store'
+import {AppStateType, Nullable} from '../../../Redux/redux-store'
 import Aside from './Aside'
 import {topicType} from '../../../Redux/reducers/courseReducer'
 import {getThemeStyle} from '../../../Redux/selectors/styleSelector'
@@ -12,7 +12,7 @@ type mapStatePropsType = {
     themeStyle: Nullable<string>
 }
 
-const mapStateToProps = (state: appStateType, props: any): mapStatePropsType => ({
+const mapStateToProps = (state: AppStateType, props: any): mapStatePropsType => ({
     asideItems: props.asideItems,
     themeStyle: getThemeStyle(state)
 })
