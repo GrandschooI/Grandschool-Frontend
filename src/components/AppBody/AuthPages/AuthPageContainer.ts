@@ -1,6 +1,6 @@
 import {connect} from 'react-redux'
 import AuthPage from './AuthPage'
-import {appStateType, Nullable} from '../../../Redux/redux-store'
+import {AppStateType, Nullable} from '../../../Redux/redux-store'
 import {getAuthStatus} from '../../../Redux/selectors/userSelector'
 import {
     getFontSize,
@@ -27,7 +27,7 @@ type mapStatePropsType = {
     FACEBOOK_CLIENT_ID: string
 }
 
-const mapStateToProps = (state: appStateType): mapStatePropsType => ({
+const mapStateToProps = (state: AppStateType): mapStatePropsType => ({
     isAuth: getAuthStatus(state),
     themeStyle: getThemeStyle(state),
     blindMode: getStyleMode(state),

@@ -1,5 +1,5 @@
 import {connect} from 'react-redux'
-import {appStateType, Nullable} from '../../../Redux/redux-store'
+import {AppStateType, Nullable} from '../../../Redux/redux-store'
 import Profile from './Profile';
 import {getUserAsideItems} from '../../../Redux/selectors/userSelector';
 import {
@@ -25,7 +25,7 @@ type mapStatePropsType = {
     isAuth: boolean
 }
 
-const mapStateToProps = (state: appStateType): mapStatePropsType => ({
+const mapStateToProps = (state: AppStateType): mapStatePropsType => ({
         asideItems: getUserAsideItems(state),
         blindMode: getStyleMode(state),
         themeStyle: getThemeStyle(state),

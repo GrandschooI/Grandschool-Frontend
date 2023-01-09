@@ -1,5 +1,5 @@
 import {connect} from 'react-redux'
-import {appStateType, Nullable} from '../../../../../Redux/redux-store'
+import {AppStateType, Nullable} from '../../../../../Redux/redux-store'
 import {
     getFontSize,
     getImgAvailability, getOptionsState,
@@ -16,7 +16,7 @@ type mapStatePropsType = {
     isOptionsOpen: boolean
 }
 
-const mapStateToProps = (state: appStateType): mapStatePropsType => ({
+const mapStateToProps = (state: AppStateType): mapStatePropsType => ({
     blindMode: getStyleMode(state),
     themeStyle: getThemeStyle(state),
     images: getImgAvailability(state),

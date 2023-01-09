@@ -1,5 +1,5 @@
 import {connect} from 'react-redux'
-import {appStateType, Nullable} from '../../../Redux/redux-store'
+import {AppStateType, Nullable} from '../../../Redux/redux-store'
 import {getFontSize, getThemeStyle} from '../../../Redux/selectors/styleSelector'
 import NotFound from './NotFound'
 
@@ -8,7 +8,7 @@ export type mapStatePropsType = {
     fontSize: string
 }
 
-const mapStateToProps = (state: appStateType): mapStatePropsType => ({
+const mapStateToProps = (state: AppStateType): mapStatePropsType => ({
     themeStyle: getThemeStyle(state),
     fontSize: getFontSize(state)
 })

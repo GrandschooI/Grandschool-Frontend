@@ -7,7 +7,7 @@ import {
   getOptionsState
 } from '../../../Redux/selectors/styleSelector'
 import {styleActions} from '../../../Redux/reducers/styleReducer'
-import {appStateType, Nullable} from '../../../Redux/redux-store'
+import {AppStateType, Nullable} from '../../../Redux/redux-store'
 import BlindModeOptions from './BlindModeOptions'
 
 type mapStatePropsType = {
@@ -21,7 +21,7 @@ type mapStatePropsType = {
     imagesFromLocalStorage: Nullable<string>
 }
 
-const mapStateToProps = (state: appStateType): mapStatePropsType => {
+const mapStateToProps = (state: AppStateType): mapStatePropsType => {
   return {
     blindMode: getStyleMode(state),
     fontSize: getFontSize(state),
