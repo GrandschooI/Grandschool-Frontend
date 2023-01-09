@@ -1,20 +1,24 @@
 import React from 'react'
-import {Switch, Route, Redirect} from 'react-router-dom'
+import {Redirect, Route, Switch} from 'react-router-dom'
 import cn from 'classnames'
 import s from './AboutUs.module.scss'
 import Project from './AboutUsContent/Project/Project'
 import News from './AboutUsContent/News/News'
-import AsideContainer, {AsideItemsType} from '../../common/Aside/AsideContainer'
-import {Nullable} from '../../../Redux/redux-store'
 import ReviewContainer from './AboutUsContent/Reviews/ReviewContainer'
+import {useAppSelector} from '../../../utils/Hooks/useAppSelector';
+import {getOptionsState, getThemeStyle} from '../../../Redux/selectors/styleSelector';
+import Aside from '../../common/Aside/Aside';
 
-const AboutUs: React.FC<propsType> = ({asideItems, isOptionsOpen, themeStyle}) => {
+const AboutUs = () => {
+  const themeStyle = useAppSelector(getThemeStyle)
+  const isOptionsOpen = useAppSelector(getOptionsState)
+
   return (
     <section
       className={cn(s.aboutUsSection, s[themeStyle ? themeStyle : ''], s[isOptionsOpen ? 'blindOptionsOpen' : ''])}>
       <div className={cn(s.aboutUsBody, 'container')}>
         <h2>O nas</h2>
-        <AsideContainer themeStyle={themeStyle} asideItems={asideItems}/>
+        <Aside/>
 
         <Switch>
           <Route path="/about-us/project" render={Project}/>
@@ -28,12 +32,3 @@ const AboutUs: React.FC<propsType> = ({asideItems, isOptionsOpen, themeStyle}) =
 }
 
 export default AboutUs
-
-type propsType = {
-  asideItems: AsideItemsType
-  blindMode: boolean
-  themeStyle: Nullable<string>
-  images: boolean
-  fontSize: Nullable<string>
-  isOptionsOpen: boolean
-}

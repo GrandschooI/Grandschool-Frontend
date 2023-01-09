@@ -3,11 +3,11 @@ import s from './Profile.module.scss'
 import {Redirect, Route, Switch} from 'react-router-dom';
 import ProfileInfo from './ProfileInfo/ProfileInfo/ProfileInfo';
 import cn from 'classnames';
-import AsideContainer from '../../common/Aside/AsideContainer';
 import AccountSettings from './AccountSettings/AccountSettings'
 import {Nullable} from '../../../Redux/redux-store'
-import Popup from "../../common/Popup/Popup";
+import Popup from '../../common/Popup/Popup';
 import {CSSTransition} from 'react-transition-group'
+import Aside from '../../common/Aside/Aside';
 
 const Profile: React.FC<PropsType> = ({
                                           asideItems, themeStyle, isAuth, blindMode,
@@ -25,7 +25,7 @@ const Profile: React.FC<PropsType> = ({
                 <h1 className={s.profileTitle}>Profile page</h1>
                 <div className={s.profilePageInfoWrap}>
                     <div>
-                        <AsideContainer asideItems={asideItems}/>
+                        <Aside/>
                         <button onClick={() => setPopupStatus(!isPopup)} className={s.logoutBtn}>
                             <svg width="25px" height="25px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
                                 <path

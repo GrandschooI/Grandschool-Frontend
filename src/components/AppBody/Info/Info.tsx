@@ -2,9 +2,9 @@ import React, {useEffect} from 'react'
 import {Route, Switch} from 'react-router-dom'
 import cn from 'classnames'
 import s from './Info.module.scss'
-import AsideContainer from "../../common/Aside/AsideContainer"
-import {Nullable} from "../../../Redux/redux-store"
-import WebsitesContainer from "./InfoContent/Websites/WebsitesContainer";
+import {Nullable} from '../../../Redux/redux-store'
+import WebsitesContainer from './InfoContent/Websites/WebsitesContainer';
+import Aside from '../../common/Aside/Aside';
 
 const Info: React.FC<PropsType> = ({themeStyle, infoItems, getWebsitesCategoryThunkCreator}) => {
     useEffect(() => {
@@ -14,7 +14,7 @@ const Info: React.FC<PropsType> = ({themeStyle, infoItems, getWebsitesCategoryTh
         <div className={cn('container', s.infoWrapper)}>
             <h1>Info</h1>
             <div className={s.infoContentWrap}>
-                <AsideContainer themeStyle={themeStyle} asideItems={infoItems}/>
+                <Aside/>
                 <Switch>
                     <Route path="/info/websites" render={() => <WebsitesContainer/>}/>
                 </Switch>
