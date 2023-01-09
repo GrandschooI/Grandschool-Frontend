@@ -3,7 +3,6 @@ import {NavLink, Redirect, Route, Switch, useLocation} from 'react-router-dom'
 import s from './AuthPages.module.scss'
 import '../../../style.scss'
 import './AuthPagesGlobal.scss'
-import {Nullable} from '../../../Redux/redux-store'
 import RegistrationForm from './Registration/RegistrationForm'
 import LoginForm from './Login/LoginForm'
 import ConfirmRegistrationForm from './ConfirmRegistration/ConfirmRegistrationForm'
@@ -12,25 +11,38 @@ import {toast} from 'react-toastify'
 import ForgotPassword from './ForgotPassword/ForgotPassword';
 import {gapi} from 'gapi-script';
 import Popup from '../../common/Popup/Popup';
+import {useDispatch} from 'react-redux';
+import {
+  forgotPasswordThunkCreator,
+  GOOGLE_CLIENT_ID,
+  loginThunkCreator,
+  registerThunkCreator
+} from '../../../Redux/reducers/userReducer';
+import {useAppSelector} from '../../../utils/Hooks/useAppSelector';
+import {getFontSize, getOptionsState, getThemeStyle} from '../../../Redux/selectors/styleSelector';
+import {getAuthStatus} from '../../../Redux/selectors/userSelector';
 
-const AuthPage: React.FC<propsType> = (
-  {
-    registerThunkCreator, loginThunkCreator, isAuth, blindMode,
-    themeStyle, isOptionsOpen, images,
-    fontSize, forgotPasswordThunkCreator, FACEBOOK_CLIENT_ID, GOOGLE_CLIENT_ID
-  }) => {
+const AuthPage = () => {
+
+  const themeStyle = useAppSelector(getThemeStyle)
+  const isOptionsOpen = useAppSelector(getOptionsState)
+  const fontSize = useAppSelector(getFontSize)
+  const isAuth = useAppSelector(getAuthStatus)
+
+  const dispatch = useDispatch()
+
   const location: string = useLocation().pathname
 
   const onRegistrationSubmit = (formData: registrationFormDataType) => {
     toast('In progress')
-    registerThunkCreator(formData.email, formData.password, formData.confirmPassword)
+    dispatch(registerThunkCreator(formData.email, formData.password, formData.confirmPassword))
   }
   const onLoginSubmit = (formData: loginDataType, onSubmitProps: any) => {
-    loginThunkCreator(formData.email, formData.password)
+    dispatch(loginThunkCreator(formData.email, formData.password))
     onSubmitProps.setSubmitting(false)
   }
   const onSocialRegistrationButtonClick = (driver: string, access_token: string) => {
-    loginThunkCreator(undefined, undefined, driver, access_token)
+    dispatch(loginThunkCreator(undefined, undefined, driver, access_token))
   }
   const onConfirmRegistrationSubmit = () => {
     toast('In progress')
@@ -52,7 +64,7 @@ const AuthPage: React.FC<propsType> = (
     onSocialRegistrationButtonClick('facebook', res.accessToken)
   }
   const onForgotPasswordFormSubmit = (email: any) => {
-    forgotPasswordThunkCreator(email.email)
+    dispatch(forgotPasswordThunkCreator(email.email))
   }
 
   if (isAuth) {
@@ -72,24 +84,19 @@ const AuthPage: React.FC<propsType> = (
               in</NavLink>
           </div>
           <Switch>
-            <Route path="/registration"
-                   render={() => <RegistrationForm themeStyle={themeStyle} fontSize={fontSize}
-                                                   onSubmit={onRegistrationSubmit}
-                                                   startGoogleAPI={startGoogleAPI}
-                                                   onGoogleButtonClick={onGoogleButtonClick}
-                                                   onFacebookButtonClick={onFacebookButtonClick}
-                                                   FACEBOOK_CLIENT_ID={FACEBOOK_CLIENT_ID}
-                                                   GOOGLE_CLIENT_ID={GOOGLE_CLIENT_ID}
+            <Route path="/registration" render={() => <RegistrationForm
+              onSubmit={onRegistrationSubmit}
+              startGoogleAPI={startGoogleAPI}
+              onGoogleButtonClick={onGoogleButtonClick}
+              onFacebookButtonClick={onFacebookButtonClick}
                    />}/>
-            <Route path="/login" render={() => <LoginForm fontSize={fontSize} themeStyle={themeStyle}
-                                                          images={images} blindMode={blindMode}
-                                                          startGoogleAPI={startGoogleAPI}
-                                                          onGoogleButtonClick={onGoogleButtonClick}
-                                                          onFacebookButtonClick={onFacebookButtonClick}
-                                                          onSubmit={onLoginSubmit}
-                                                          onForgotPasswordFormSubmit={onForgotPasswordFormSubmit}
-                                                          FACEBOOK_CLIENT_ID={FACEBOOK_CLIENT_ID}
-                                                          GOOGLE_CLIENT_ID={GOOGLE_CLIENT_ID}/>}/>
+            <Route path="/login" render={() => <LoginForm
+              startGoogleAPI={startGoogleAPI}
+              onGoogleButtonClick={onGoogleButtonClick}
+              onFacebookButtonClick={onFacebookButtonClick}
+              onSubmit={onLoginSubmit}
+              onForgotPasswordFormSubmit={onForgotPasswordFormSubmit}
+            />}/>
             <Route path="/confirm-registration"
                    render={() => <ConfirmRegistrationForm fontSize={fontSize} themeStyle={themeStyle}
                                                           onSubmit={onConfirmRegistrationSubmit}/>}/>
@@ -114,17 +121,4 @@ export type registrationFormDataType = {
 export type loginDataType = {
   email: string
   password: string
-}
-type propsType = {
-  isAuth: boolean
-  blindMode: boolean
-  themeStyle: Nullable<string>
-  isOptionsOpen: boolean
-  images: boolean,
-  fontSize: Nullable<string>
-  GOOGLE_CLIENT_ID: string
-  FACEBOOK_CLIENT_ID: string
-  registerThunkCreator: (email: string, password: string, confirmPassword: string) => void
-  loginThunkCreator: (email?: string, password?: string, driver?: string, access_token?: string) => any
-  forgotPasswordThunkCreator: (email: string) => void
 }

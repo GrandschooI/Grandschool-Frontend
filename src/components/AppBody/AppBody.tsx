@@ -2,7 +2,6 @@ import React from 'react'
 import {Redirect, Route, Switch} from 'react-router-dom'
 import s from './AppBody.module.scss'
 import Teachers from './Teachers/Teachers'
-import AuthPageContainer from './AuthPages/AuthPageContainer'
 import cn from 'classnames';
 import Payment from './Payment/Payment'
 import AboutUs from './AboutUs/AboutUs';
@@ -13,6 +12,7 @@ import NotFound from './NotFound/NotFound';
 import Profile from './Profile/Profile';
 import {useAppSelector} from '../../utils/Hooks/useAppSelector';
 import {getOptionsState} from '../../Redux/selectors/styleSelector';
+import AuthPage from './AuthPages/AuthPage';
 
 const AppBody = () => {
   const isOptionsOpen = useAppSelector(getOptionsState)
@@ -20,9 +20,9 @@ const AppBody = () => {
     <div className={cn(s.appBody, isOptionsOpen ? s.openedBlindOption : '')}>
       <Switch>
         <Route exact path="/" render={() => <HomePage/>}/>
-        <Route path="/registration" render={() => <AuthPageContainer/>}/>
-        <Route path="/confirm-registration" render={() => <AuthPageContainer/>}/>
-        <Route path="/login" render={() => <AuthPageContainer/>}/>
+        <Route path="/registration" render={() => <AuthPage/>}/>
+        <Route path="/confirm-registration" render={() => <AuthPage/>}/>
+        <Route path="/login" render={() => <AuthPage/>}/>
         <Route path="/profile" render={() => <Profile/>}/>
         <Route path="/about-us" render={() => <AboutUs/>}/>
         <Route path="/course" render={() => <Course/>}/>

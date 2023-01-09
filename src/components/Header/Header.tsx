@@ -18,10 +18,16 @@ import LogoWordsBlueTheme from '../SVGConponents/Header/LogoWordsBlueTheme'
 import {Nullable} from '../../Redux/redux-store'
 import s from './Header.module.scss'
 import BlindModeOptionsContainer from './BlindModeOptions/BlindModeOptionsContainer'
+import {useAppSelector} from '../../utils/Hooks/useAppSelector';
+import {getStyleMode, getThemeStyle} from '../../Redux/selectors/styleSelector';
 
-const Header: React.FC<propsType> = ({blindMode, switchBlindModeAC, setOptionsModeAC, themeStyle,
-                                         fontSize, isOptionsOpen,
-                                         blindModeFromLocalStorage, routesWithDefaultHeader}) => {
+const Header: React.FC<propsType> = (
+  { switchBlindModeAC, setOptionsModeAC,
+    fontSize, isOptionsOpen,
+    blindModeFromLocalStorage, routesWithDefaultHeader}) => {
+
+  const themeStyle = useAppSelector(getThemeStyle)
+  const blindMode = useAppSelector(getStyleMode)
 
   const [isBurgerActive, setBurgerClass] = useState(false)
   useEffect(() => {
