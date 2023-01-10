@@ -69,7 +69,7 @@ const Header = () => {
           </a>
           {!isHeaderChange ? <SearchField themeStyle={themeStyle}/> : <HeaderNavForMainPage/>}
 
-          {blindMode && <button onClick={() => setOptionsModeAC(!isOptionsOpen)}
+          {blindMode && <button onClick={() => dispatch(setOptionsModeAC(!isOptionsOpen))}
                                 className={cn(s.closeBlindOptions, s[(isOptionsOpen ? '' : 'revert')])}>
               <svg x="0px" y="0px" width="35" viewBox="0 0 512 512" fill="fff">
                   <g>
