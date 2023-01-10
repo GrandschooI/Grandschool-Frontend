@@ -4,12 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d662ad8-0c70-4c7e-a76d-cc96c9a94c16" name="Changes" comment="start set logic of upload user photo to userReducer">
+    <list default="true" id="9d662ad8-0c70-4c7e-a76d-cc96c9a94c16" name="Changes" comment="Refactored Footer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/FooterContainer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/AboutUs/AboutUs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/AboutUs/AboutUs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/AboutUs/AboutUsContent/Reviews/Review.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/AboutUs/AboutUsContent/Reviews/Review.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/AboutUs/AboutUsContent/Reviews/ReviewContainer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/HomePage/CallToAction/CallToAction.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/HomePage/CallToAction/CallToAction.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/Info/InfoContent/Websites/Websites.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBody/Info/InfoContent/Websites/Websites.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBody/Info/InfoContent/Websites/WebsitesContainer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/BlindModeOptions/BlindModeOptions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/BlindModeOptions/BlindModeOptions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/BlindModeOptions/BlindModeOptionsContainer.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderContainer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/utils/BlindButton/BlindButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/BlindButton/BlindButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/utils/BlindButton/BlindButtonContainer.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +105,7 @@
       <workItem from="1673215355937" duration="1006000" />
       <workItem from="1673216388172" duration="2935000" />
       <workItem from="1673222939246" duration="10386000" />
-      <workItem from="1673352430360" duration="1931000" />
+      <workItem from="1673352430360" duration="10373000" />
     </task>
     <task id="LOCAL-00001" summary="commit before push from new laptop">
       <created>1672694449475</created>
@@ -224,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673250321791</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Refactored Footer">
+      <created>1673354411257</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1673354411257</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,7 +276,8 @@
     <MESSAGE value="Refactored AboutUs and Aside" />
     <MESSAGE value="Refactored Course and HomePage" />
     <MESSAGE value="Finished Refactoring AppBody" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished Refactoring AppBody" />
+    <MESSAGE value="Refactored Footer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored Footer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

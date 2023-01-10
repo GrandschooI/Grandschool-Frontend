@@ -4,10 +4,10 @@ import cn from 'classnames'
 import s from './AboutUs.module.scss'
 import Project from './AboutUsContent/Project/Project'
 import News from './AboutUsContent/News/News'
-import ReviewContainer from './AboutUsContent/Reviews/ReviewContainer'
 import {useAppSelector} from '../../../utils/Hooks/useAppSelector';
 import {getOptionsState, getThemeStyle} from '../../../Redux/selectors/styleSelector';
 import Aside from '../../common/Aside/Aside';
+import Review from './AboutUsContent/Reviews/Review';
 
 const AboutUs = () => {
   const themeStyle = useAppSelector(getThemeStyle)
@@ -23,7 +23,7 @@ const AboutUs = () => {
         <Switch>
           <Route path="/about-us/project" render={Project}/>
           <Route path="/about-us/news" render={News}/>
-          <Route path="/about-us/reviews" render={() => <ReviewContainer/>}/>
+          <Route path="/about-us/reviews" render={() => <Review/>}/>
           <Redirect path="/about-us" to={'/about-us/project'}/>
         </Switch>
       </div>

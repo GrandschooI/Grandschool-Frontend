@@ -6,7 +6,6 @@ import './HeaderGlobal.scss'
 import SearchField from '../common/SearchField'
 import HeaderNavForMainPage from '../common/HeaderNavForMainPage'
 import HeaderNav from '../common/HeaderNav'
-import BlindButtonContainer from '../utils/BlindButton/BlindButtonContainer'
 import LogoPicture from '../SVGConponents/Header/LogoPicture'
 import LogoPictureWhiteTheme from '../SVGConponents/Header/LogoPictureWhiteTheme'
 import LogoPictureYellowTheme from '../SVGConponents/Header/LogoPictureYellowTheme'
@@ -15,17 +14,25 @@ import LogoWords from '../SVGConponents/Header/LogoWords'
 import LogoWordsYellowTheme from '../SVGConponents/Header/LogoWordsYellowTheme'
 import LogoWordsWhiteTheme from '../SVGConponents/Header/LogoWordsWhiteTheme'
 import LogoWordsBlueTheme from '../SVGConponents/Header/LogoWordsBlueTheme'
-import {Nullable} from '../../Redux/redux-store'
 import s from './Header.module.scss'
-import BlindModeOptionsContainer from './BlindModeOptions/BlindModeOptionsContainer'
+import {styleActions} from '../../Redux/reducers/styleReducer';
+import {useAppSelector} from '../../utils/Hooks/useAppSelector';
+import {getFontSize, getOptionsState, getStyleMode, getThemeStyle} from '../../Redux/selectors/styleSelector';
+import BlindModeOptions from './BlindModeOptions/BlindModeOptions';
+import BlindButton from '../utils/BlindButton/BlindButton';
+import {useDispatch} from 'react-redux';
 
-const Header: React.FC<propsType> = (
-  {
-    switchBlindModeAC, setOptionsModeAC, themeStyle,
-    fontSize, isOptionsOpen, blindMode,
-    blindModeFromLocalStorage, routesWithDefaultHeader
-  }) => {
+const Header = () => {
 
+  const blindModeFromLocalStorage = localStorage.getItem('blindModeFromLocalStorage')
+  const routesWithDefaultHeader = ['/', '/login', '/registration', '/confirm-registration', '/not-found']
+  const themeStyle = useAppSelector(getThemeStyle)
+  const fontSize = useAppSelector(getFontSize)
+  const blindMode = useAppSelector(getStyleMode)
+  const isOptionsOpen = useAppSelector(getOptionsState)
+
+  const dispatch = useDispatch()
+  const {switchBlindModeAC, setOptionsModeAC} = styleActions
 
   const [isBurgerActive, setBurgerClass] = useState(false)
   useEffect(() => {
@@ -36,9 +43,18 @@ const Header: React.FC<propsType> = (
   const location: string = useLocation().pathname
   const isHeaderChange: boolean = routesWithDefaultHeader.some((element: string) => element === location)
 
+  const toggleBlindModeHandler = () => {
+    dispatch(switchBlindModeAC(!blindMode))
+  }
+  useEffect(() => {
+    if (blindModeFromLocalStorage) {
+      dispatch(switchBlindModeAC(true))
+    }
+  }, [blindModeFromLocalStorage])
+
   return (
     <div className={cn(s.header, s[(themeStyle ? themeStyle : '')], 'header')}>
-      <BlindModeOptionsContainer/>
+      <BlindModeOptions/>
       <div className={cn(s[fontSize], 'container')}>
         <div className={cn(s.headerTop, s[(isBurgerActive ? 'active' : '')])}>
           <a href="/" className={s.logoWrap} rel="noreferrer">
@@ -68,7 +84,7 @@ const Header: React.FC<propsType> = (
           }
 
           <div className={s.headerBtnWrap}>
-            <BlindButtonContainer/>
+            <BlindButton switchBlindModeAC={toggleBlindModeHandler} themeStyle={themeStyle} blindMode={blindMode} fontSize={fontSize}/>
             <NavLink className={s.headerNavItem} to="/profile">Twoje konto</NavLink>
             <button className={s.burgerBtn} onClick={() => setBurgerClass(!isBurgerActive)}>
               <svg className={cn(s.ham, s.ham6, s[(isBurgerActive ? 'active' : '')])} viewBox="0 0 100 100" width="60">
@@ -90,13 +106,3 @@ const Header: React.FC<propsType> = (
 
 export default Header
 
-type propsType = {
-  blindMode: boolean
-  switchBlindModeAC: (param: boolean) => void
-  setOptionsModeAC: (param: boolean) => void
-  themeStyle: Nullable<string>
-  fontSize: string
-  isOptionsOpen: boolean
-  blindModeFromLocalStorage: Nullable<string>
-  routesWithDefaultHeader: Array<string>
-}

@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react'
 import {VerticleButton as ScrollUpButton} from 'react-scroll-up-button'
-import HeaderContainer from './components/Header/HeaderContainer'
 import {Route, Switch} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import {useAppSelector} from './utils/Hooks/useAppSelector';
@@ -9,6 +8,7 @@ import {setUserFromLocalStorage} from './Redux/reducers/userReducer';
 import Preloader from './components/utils/Preloader/Preloader';
 import AppBody from './components/AppBody/AppBody';
 import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
 
 
 const App = () => {
@@ -24,7 +24,7 @@ const App = () => {
         <div className="App">
             <Switch>
                 <Route path="/" render={() => <section>
-                    <HeaderContainer/>
+                    <Header />
                     <AppBody/>
                     <Footer/>
                     <ScrollUpButton/>
