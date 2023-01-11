@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d662ad8-0c70-4c7e-a76d-cc96c9a94c16" name="Changes" comment="Finished refactoring project (useSelector,useDispatch)">
+    <list default="true" id="9d662ad8-0c70-4c7e-a76d-cc96c9a94c16" name="Changes" comment="fixed bug with closeBlindOptions button">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +93,9 @@
       <workItem from="1673215355937" duration="1006000" />
       <workItem from="1673216388172" duration="2935000" />
       <workItem from="1673222939246" duration="10386000" />
-      <workItem from="1673352430360" duration="11425000" />
+      <workItem from="1673352430360" duration="11638000" />
+      <workItem from="1673381839843" duration="177000" />
+      <workItem from="1673403976358" duration="870000" />
     </task>
     <task id="LOCAL-00001" summary="commit before push from new laptop">
       <created>1672694449475</created>
@@ -234,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673366364847</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="fixed bug with closeBlindOptions button">
+      <created>1673367186817</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1673367186817</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,7 +282,8 @@
     <MESSAGE value="Finished Refactoring AppBody" />
     <MESSAGE value="Refactored Footer" />
     <MESSAGE value="Finished refactoring project (useSelector,useDispatch)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished refactoring project (useSelector,useDispatch)" />
+    <MESSAGE value="fixed bug with closeBlindOptions button" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bug with closeBlindOptions button" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
