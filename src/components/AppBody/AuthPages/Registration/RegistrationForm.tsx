@@ -7,10 +7,12 @@ import s from './Registration.module.scss'
 import '../../../../style.scss'
 import 'react-toastify/dist/ReactToastify.css'
 import {registrationFormDataType} from '../AuthPage'
-import {Nullable} from '../../../../Redux/redux-store'
 import cn from 'classnames'
 import GoogleLogin from 'react-google-login';
 import FacebookLoginIcon from '../../../SVGConponents/Forms/FacebookLoginIcon';
+import {useAppSelector} from '../../../../utils/Hooks/useAppSelector';
+import {getFontSize, getThemeStyle} from '../../../../Redux/selectors/styleSelector';
+import {FACEBOOK_CLIENT_ID, GOOGLE_CLIENT_ID} from '../../../../Redux/reducers/userReducer';
 
 const MIN_PASSWORD_LENGTH = 8
 const MAX_PASSWORD_LENGTH = 8
@@ -49,11 +51,14 @@ const registrationFormValidation = (values: registrationFormValidationType) => {
 
 const RegistrationForm: React.FC<propsType> = (
   {
-    onSubmit, themeStyle, fontSize, GOOGLE_CLIENT_ID,
-    FACEBOOK_CLIENT_ID,
-    onGoogleButtonClick, onFacebookButtonClick, startGoogleAPI
+    onSubmit,
+    onGoogleButtonClick,
+    onFacebookButtonClick,
+    startGoogleAPI
   }) => {
 
+  const themeStyle = useAppSelector(getThemeStyle)
+  const fontSize = useAppSelector(getFontSize)
 
   useEffect(() => {
     startGoogleAPI()
@@ -139,13 +144,10 @@ export default RegistrationForm
 
 type propsType = {
   onSubmit: (formData: registrationFormDataType) => void
-  themeStyle: Nullable<string>
-  fontSize: Nullable<string>
   onGoogleButtonClick: any
   onFacebookButtonClick: any
   startGoogleAPI: any
-  GOOGLE_CLIENT_ID: string
-  FACEBOOK_CLIENT_ID: string
+
 }
 type registrationFormValidationType = {
   email: string

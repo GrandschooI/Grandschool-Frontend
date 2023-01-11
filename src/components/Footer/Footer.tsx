@@ -10,21 +10,22 @@ import FooterMailIcon from '../SVGConponents/Footer/FooterMailIcon'
 import FacebookIcon from '../SVGConponents/Footer/FacebookIcon'
 import YoutubeIcon from '../SVGConponents/Footer/YoutubeIcon'
 import InstagramIcon from '../SVGConponents/Footer/InstagramIcon'
-import {Nullable} from '../../Redux/redux-store'
 import s from './Footer.module.scss'
 import FooterLogoWords from '../SVGConponents/Footer/FooterLogoWords'
 import FooterLogoWordsYellowTheme from '../SVGConponents/Footer/FooterLogoWordsYellowTheme'
 import FooterLogoWordsWhiteTheme from '../SVGConponents/Footer/FooterLogoWordsWhiteTheme'
 import FooterLogoWordsBlueTheme from '../SVGConponents/Footer/FooterLogoWordsBlueTheme'
+import {useAppSelector} from '../../utils/Hooks/useAppSelector';
+import {getFontSize, getImgAvailability, getStyleMode, getThemeStyle} from '../../Redux/selectors/styleSelector';
 
-type propsType = {
-    themeStyle: Nullable<string>
-    images: boolean
-    blindMode: boolean
-    fontSize: string
-}
 
-const Footer: React.FC<propsType> = ({themeStyle, images, blindMode, fontSize}) => {
+const Footer = () => {
+
+    const images = useAppSelector(getImgAvailability)
+    const themeStyle = useAppSelector(getThemeStyle)
+    const fontSize = useAppSelector(getFontSize)
+    const blindMode = useAppSelector(getStyleMode)
+
 
     const withoutImgClassName = images ? '' : 'withoutImg'
 
