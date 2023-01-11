@@ -8,21 +8,21 @@ import {Nullable} from '../../../Redux/redux-store'
 type propsType = {
     blindMode: boolean
     themeStyle: Nullable<string>
-    images: boolean
+    images?: boolean
     fontSize: Nullable<string>
-    switchBlindModeAC: (param: boolean) => void
+    switchBlindModeAC: () => void
 }
 
-const BlindButton: React.FC<propsType> = ({blindMode, themeStyle, images, fontSize,
+const BlindButton: React.FC<propsType> = ({blindMode, themeStyle,  fontSize,
                                               switchBlindModeAC}) => {
   return (
     <button className={cn(s.blindButton, 'blindButton', s[themeStyle ? themeStyle : ''], s[fontSize ? fontSize : ''])}
       onClick={() => {
         if (blindMode) {
-          switchBlindModeAC(!blindMode)
+          switchBlindModeAC()
           window.localStorage.removeItem('blindModeFromLocalStorage')
         }else {
-          switchBlindModeAC(!blindMode)
+          switchBlindModeAC()
           window.localStorage.setItem('blindModeFromLocalStorage', 'true')
         }
       }}>
