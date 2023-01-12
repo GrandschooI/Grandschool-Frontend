@@ -11,12 +11,13 @@ import {getCourseData} from '../../../Redux/selectors/courseSelector';
 const Course = () => {
   const courseData = useAppSelector(getCourseData)
   const location: string = useLocation().pathname
+  const courseAsideItems = useAppSelector(state => state.courses.courses)
   return (
     <div className={'container'}>
       {location === '/course' && <Redirect to={courseData[0].itemLink}/>}
       <CourseHeader/>
       <div className={s.courseBody}>
-        <Aside/>
+        <Aside asideItems={courseAsideItems}/>
         <Chapters courseData={courseData}/>
       </div>
     </div>
