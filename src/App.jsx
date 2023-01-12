@@ -19,7 +19,6 @@ const App = () => {
         dispatch(setUserFromLocalStorage())
     }, [])
 
-    if (!isLoaded) return <Preloader/>
     return (
         <div className="App">
             <Switch>
@@ -30,6 +29,7 @@ const App = () => {
                     <ScrollUpButton/>
                 </section>}/>
             </Switch>
+            {!isLoaded && <Preloader/>}
         </div>
     );
 }
