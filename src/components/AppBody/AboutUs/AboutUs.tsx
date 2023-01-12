@@ -8,17 +8,19 @@ import {useAppSelector} from '../../../utils/Hooks/useAppSelector';
 import {getOptionsState, getThemeStyle} from '../../../Redux/selectors/styleSelector';
 import Aside from '../../common/Aside/Aside';
 import Review from './AboutUsContent/Reviews/Review';
+import {getInfoAboutUs} from '../../../Redux/selectors/infoSelector';
 
 const AboutUs = () => {
   const themeStyle = useAppSelector(getThemeStyle)
   const isOptionsOpen = useAppSelector(getOptionsState)
+  const asideItems = useAppSelector(getInfoAboutUs)
 
   return (
     <section
       className={cn(s.aboutUsSection, s[themeStyle ? themeStyle : ''], s[isOptionsOpen ? 'blindOptionsOpen' : ''])}>
       <div className={cn(s.aboutUsBody, 'container')}>
         <h2>O nas</h2>
-        <Aside/>
+        <Aside asideItems={asideItems}/>
 
         <Switch>
           <Route path="/about-us/project" render={Project}/>
