@@ -6,11 +6,13 @@ import Aside from '../../common/Aside/Aside';
 import {useDispatch} from 'react-redux';
 import {getWebsitesCategoryThunkCreator} from '../../../Redux/reducers/infoReducer';
 import Websites from './InfoContent/Websites/Websites';
+import {useAppSelector} from '../../../utils/Hooks/useAppSelector';
+import {getInfoMenu} from '../../../Redux/selectors/infoSelector';
 
 const Info = () => {
 
   const dispatch = useDispatch()
-
+  const infoAsideItems = useAppSelector(getInfoMenu)
   useEffect(() => {
     dispatch(getWebsitesCategoryThunkCreator())
   }, [])
@@ -18,7 +20,7 @@ const Info = () => {
     <div className={cn('container', s.infoWrapper)}>
       <h1>Info</h1>
       <div className={s.infoContentWrap}>
-        <Aside/>
+        <Aside asideItems={infoAsideItems}/>
         <Switch>
           <Route path="/info/websites" render={() => <Websites/>}/>
         </Switch>

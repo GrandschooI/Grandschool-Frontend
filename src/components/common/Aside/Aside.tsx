@@ -4,11 +4,15 @@ import AsideItem from './AsideItem/AsideItem'
 import cn from 'classnames'
 import {useAppSelector} from '../../../utils/Hooks/useAppSelector';
 import {getThemeStyle} from '../../../Redux/selectors/styleSelector';
-import {getInfoAboutUs} from '../../../Redux/selectors/infoSelector';
 
-const Aside = () => {
 
-  const asideItems = useAppSelector(getInfoAboutUs)
+type PropsType = {
+  asideItems: Array<any>
+}
+
+const Aside: React.FC<PropsType> = ({asideItems}) => {
+
+
   const themeStyle = useAppSelector(getThemeStyle)
 
   return (
