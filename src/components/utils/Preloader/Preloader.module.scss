@@ -1,13 +1,21 @@
-.preloader {
-  width: 400px;
-  height: 100px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  circle {
-    stroke: #618135;
-    fill: transparent;
+.preloaderOverlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background: #ffffffd9;
+  .preloader {
+    width: 400px;
+    height: 100px;
+    position: absolute;
+    circle {
+      stroke: #618135;
+      fill: transparent;
+    }
   }
 }
