@@ -1,7 +1,7 @@
 import React from 'react'
-import ProfileImageFormContainer from './ProfileImageForm/ProfileImageFormContainer';
 import s from './ProfileInfo.module.scss'
 import ProfileInfoFormContainer from './ProfileInfoForm/ProfileInfoFormContainer';
+import ProfileImageForm from './ProfileImageForm/ProfileImageForm';
 
 const ProfileInfo = () => {
     return (
@@ -9,7 +9,7 @@ const ProfileInfo = () => {
             <h2 className={s.title}>Personal information</h2>
             <div className={s.formWrap}>
                 <ProfileInfoFormContainer />
-                <ProfileImageFormContainer/>
+                <ProfileImageForm/>
             </div>
         </section>
     )
