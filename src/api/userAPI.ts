@@ -8,15 +8,16 @@ export const userAPI = {
       instance.post(`users/${userId}/upload-photo`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
-          'Authorization': 'Bearer ' + token,
+          'Authorization': `Bearer ${token}`,
           "Accept": "application/json"
         }
       })
     )
   },
-    verifyMail (getParam: string) {
+    verifyMail (param: string) {
+      debugger
         return (
-            instance.post
+            instance.post(`verification${param}`).then(response => response.data)
         )
     }
 }
