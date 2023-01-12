@@ -2,31 +2,31 @@ import React, {useEffect} from 'react'
 import {Route, Switch} from 'react-router-dom'
 import cn from 'classnames'
 import s from './Info.module.scss'
-import AsideContainer from "../../common/Aside/AsideContainer"
-import {Nullable} from "../../../Redux/redux-store"
-import WebsitesContainer from "./InfoContent/Websites/WebsitesContainer";
+import Aside from '../../common/Aside/Aside';
+import {useDispatch} from 'react-redux';
+import {getWebsitesCategoryThunkCreator} from '../../../Redux/reducers/infoReducer';
+import Websites from './InfoContent/Websites/Websites';
+import {useAppSelector} from '../../../utils/Hooks/useAppSelector';
+import {getInfoMenu} from '../../../Redux/selectors/infoSelector';
 
-const Info: React.FC<PropsType> = ({themeStyle, infoItems, getWebsitesCategoryThunkCreator}) => {
-    useEffect(() => {
-        getWebsitesCategoryThunkCreator()
-    }, [])
-    return (
-        <div className={cn('container', s.infoWrapper)}>
-            <h1>Info</h1>
-            <div className={s.infoContentWrap}>
-                <AsideContainer themeStyle={themeStyle} asideItems={infoItems}/>
-                <Switch>
-                    <Route path="/info/websites" render={() => <WebsitesContainer/>}/>
-                </Switch>
-            </div>
-        </div>
-    )
+const Info = () => {
+
+  const dispatch = useDispatch()
+  const infoAsideItems = useAppSelector(getInfoMenu)
+  useEffect(() => {
+    dispatch(getWebsitesCategoryThunkCreator())
+  }, [])
+  return (
+    <div className={cn('container', s.infoWrapper)}>
+      <h1>Info</h1>
+      <div className={s.infoContentWrap}>
+        <Aside asideItems={infoAsideItems}/>
+        <Switch>
+          <Route path="/info/websites" render={() => <Websites/>}/>
+        </Switch>
+      </div>
+    </div>
+  )
 }
 
 export default Info
-
-type PropsType = {
-    infoItems: any
-    themeStyle: Nullable<string>
-    getWebsitesCategoryThunkCreator: () => void
-}

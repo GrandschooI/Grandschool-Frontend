@@ -6,23 +6,28 @@ import Counter from './Counter/Counter'
 import News from './News/News'
 import Greetings from './Greetings/Greetings'
 import s from './HomePage.module.scss'
-import CallToActionContainer from './CallToAction/CallToActionContainer'
 import Promises from './Promises/Promises'
 import Donate from './Donate/Donate'
-import {propsType} from './HomePageContainer'
+import CallToAction from './CallToAction/CallToAction';
+import {useAppSelector} from '../../../utils/Hooks/useAppSelector';
+import {getOptionsState, getThemeStyle} from '../../../Redux/selectors/styleSelector';
 
 
-const HomePage: React.FC<propsType> = ({blindMode, images, themeStyle, fontSize, isOptionsOpen}) => {
+const HomePage = () => {
+
+  const themeStyle = useAppSelector(getThemeStyle)
+  const isOptionsOpen = useAppSelector(getOptionsState)
+
   return (
     <div className={cn(s.homepage, themeStyle ? s[themeStyle] : '', isOptionsOpen ? s.openedBlindOption : '')}>
-      <CallToActionContainer/>
-      <Greetings blindMode={blindMode} themeStyle={themeStyle} isOptionsOpen={isOptionsOpen}/>
-      <Promises images={images} themeStyle={themeStyle} fontSize={fontSize}/>
-      <Donate images={images} themeStyle={themeStyle} fontSize={fontSize}/>
-      <News themeStyle={themeStyle} images={images} fontSize={fontSize}/>
-      <Features themeStyle={themeStyle} images={images} fontSize={fontSize}/>
-      <Counter themeStyle={themeStyle} fontSize={fontSize} images={images}/>
-      <Reviews blindMode={blindMode} themeStyle={themeStyle} images={images} fontSize={fontSize}/>
+      <CallToAction/>
+      <Greetings/>
+      <Promises/>
+      <Donate/>
+      <News/>
+      <Features/>
+      <Counter/>
+      <Reviews/>
     </div>
   )
 }

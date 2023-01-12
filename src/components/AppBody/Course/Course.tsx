@@ -1,27 +1,27 @@
 import React from 'react'
-import AsideContainer from '../../common/Aside/AsideContainer'
 import Chapters from './Chapters/Chapters'
 import CourseHeader from './CourseHeader/CourseHeader'
 import s from './Course.module.scss'
-import {courseType} from '../../../Redux/reducers/courseReducer'
 import {Redirect, useLocation} from 'react-router-dom'
+import Aside from '../../common/Aside/Aside';
+import {useAppSelector} from '../../../utils/Hooks/useAppSelector';
+import {getCourseData} from '../../../Redux/selectors/courseSelector';
 
-type PropsType = {
-    courseData: Array<courseType>
-}
 
-const Course: React.FC<PropsType> = ({courseData}) => {
-    const location: string = useLocation().pathname
-    return (
-        <div className={'container'}>
-            {location === '/course' && <Redirect to={courseData[0].itemLink}/>}
-            <CourseHeader/>
-            <div className={s.courseBody}>
-                <AsideContainer asideItems={courseData}/>
-                <Chapters courseData={courseData}/>
-            </div>
-        </div>
-    )
+const Course = () => {
+  const courseData = useAppSelector(getCourseData)
+  const location: string = useLocation().pathname
+  const courseAsideItems = useAppSelector(state => state.courses.courses)
+  return (
+    <div className={'container'}>
+      {location === '/course' && <Redirect to={courseData[0].itemLink}/>}
+      <CourseHeader/>
+      <div className={s.courseBody}>
+        <Aside asideItems={courseAsideItems}/>
+        <Chapters courseData={courseData}/>
+      </div>
+    </div>
+  )
 }
 
 export default Course

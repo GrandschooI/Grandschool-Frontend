@@ -10,7 +10,6 @@ import LogoWordsYellowTheme from '../../../SVGConponents/Header/LogoWordsYellowT
 import LogoWordsWhiteTheme from '../../../SVGConponents/Header/LogoWordsWhiteTheme'
 import LogoWordsBlueTheme from '../../../SVGConponents/Header/LogoWordsBlueTheme'
 import QuotesIcon from '../../../SVGConponents/Reviews/QuotesIcon'
-import {Nullable} from '../../../../Redux/redux-store'
 import s from './Reviews.module.scss'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import eugene from '../../../../assets/images/eugene.jpg'
@@ -19,19 +18,20 @@ import eugenesign from '../../../../assets/images/eugenesign.png'
 import eugenesignWebp from '../../../../assets/images/webp/eugenesign.webp'
 import eugeneBlindsign from '../../../../assets/images/eugenesignblind.png'
 import eugeneBlindsignWebp from '../../../../assets/images/webp/eugenesignblind.webp'
+import {useAppSelector} from '../../../../utils/Hooks/useAppSelector';
+import {getFontSize, getImgAvailability, getStyleMode, getThemeStyle} from '../../../../Redux/selectors/styleSelector';
 
-type PropsType = {
-    themeStyle: Nullable<string>
-    images: boolean
-    fontSize: Nullable<string>
-    blindMode: boolean
-}
 
-const Reviews:React.FC<PropsType> = ({themeStyle, images, fontSize, blindMode}) => {
+const Reviews = () => {
+  const images = useAppSelector(getImgAvailability)
+  const themeStyle = useAppSelector(getThemeStyle)
+  const fontSize = useAppSelector(getFontSize)
+  const blindMode = useAppSelector(getStyleMode)
 
   const withoutImgClass = !images ? 'withoutImg' : ''
   return (
-    <section className={cn(s.reviewsBlock, themeStyle ? s[themeStyle] : '', s[withoutImgClass], fontSize ? s[fontSize] : '')}>
+    <section
+      className={cn(s.reviewsBlock, themeStyle ? s[themeStyle] : '', s[withoutImgClass], fontSize ? s[fontSize] : '')}>
       <div className={'container'}>
         <h2 className={s.reviewsMainTitle}>Słowo od twórca</h2>
         <div className={s.reviewsLogo}>
@@ -40,8 +40,8 @@ const Reviews:React.FC<PropsType> = ({themeStyle, images, fontSize, blindMode}) 
           {themeStyle === 'whiteTheme' && <LogoPictureWhiteTheme/>}
           {themeStyle === 'blueTheme' && <LogoPictureBlueTheme/>}
           {!blindMode && <LogoWords/>}
-          {themeStyle === 'yellowTheme' && <LogoWordsYellowTheme/> }
-          {themeStyle === 'whiteTheme' && <LogoWordsWhiteTheme/> }
+          {themeStyle === 'yellowTheme' && <LogoWordsYellowTheme/>}
+          {themeStyle === 'whiteTheme' && <LogoWordsWhiteTheme/>}
           {themeStyle === 'blueTheme' && <LogoWordsBlueTheme/>}
         </div>
         <div className={s.citesWrap}>
@@ -49,10 +49,10 @@ const Reviews:React.FC<PropsType> = ({themeStyle, images, fontSize, blindMode}) 
             <QuotesIcon/>
             <div>
               <blockquote>
-                                “Powstanie kursu podyktowane zostało nowymi wyzwaniami stawianymi przez społeczeństwo -
-                                osobom starszym, którym brak podstawowej wiedzy z zakresu informatyki trudno o swobodną
-                                asymilacje ze społeczeństwem, co prowadzi do lokalnej izolacji oraz bezradności.
-                                GrandSchool ma na celu dodanie Twoim bliskim pewności siebie oraz pomoc w poszerzaniu horyzontów.”
+                “Powstanie kursu podyktowane zostało nowymi wyzwaniami stawianymi przez społeczeństwo -
+                osobom starszym, którym brak podstawowej wiedzy z zakresu informatyki trudno o swobodną
+                asymilacje ze społeczeństwem, co prowadzi do lokalnej izolacji oraz bezradności.
+                GrandSchool ma na celu dodanie Twoim bliskim pewności siebie oraz pomoc w poszerzaniu horyzontów.”
               </blockquote>
               <div className={s.authorData}>
                 <div className={s.authorBlock}>
@@ -61,22 +61,22 @@ const Reviews:React.FC<PropsType> = ({themeStyle, images, fontSize, blindMode}) 
                       className={s.sign}
                       src={eugeneBlindsign}
                       webp={eugeneBlindsignWebp}
-                      alt='Eugene Kuhot Signature'
+                      alt="Eugene Kuhot Signature"
                     />
                     : <Image
                       className={s.sign}
                       src={eugenesign}
                       webp={eugenesignWebp}
-                      alt='Eugene Kuhot Signature'
+                      alt="Eugene Kuhot Signature"
                     />
                   }
                   <div className={s.authorDataWrap}>
                     {images && <div className={s.authorWrap}>
-                      <Image
-                        src={eugene}
-                        webp={eugeneWebp}
-                        alt='Eugene Kuhot'
-                      />
+                        <Image
+                            src={eugene}
+                            webp={eugeneWebp}
+                            alt="Eugene Kuhot"
+                        />
                     </div>}
                     <cite>
                       <span>Eugene Kuhot</span>

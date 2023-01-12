@@ -8,15 +8,16 @@ import time from '../../../../assets/images/news2.png'
 import timeWebp from '../../../../assets/images/webp/news2.webp'
 import teach from '../../../../assets/images/news3.png'
 import teachWebp from '../../../../assets/images/webp/news3.webp'
-import {Nullable} from '../../../../Redux/redux-store'
+import {useAppSelector} from '../../../../utils/Hooks/useAppSelector';
+import {getFontSize, getImgAvailability, getThemeStyle} from '../../../../Redux/selectors/styleSelector';
 
-type PropsType = {
-    themeStyle: Nullable<string>
-    fontSize: Nullable<string>
-    images: boolean
-}
 
-const News: React.FC<PropsType> = ({images, themeStyle, fontSize}) => {
+const News = () => {
+
+    const images = useAppSelector(getImgAvailability)
+    const themeStyle = useAppSelector(getThemeStyle)
+    const fontSize = useAppSelector(getFontSize)
+
     return (
         <section className={cn(s.newsWrap, s[fontSize ? fontSize : ''], s[themeStyle ? themeStyle : ''])}>
             <div className={'container'}>
