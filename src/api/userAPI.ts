@@ -11,5 +11,10 @@ export const userAPI = {
                 }
             })
         )
+    },
+    verifyMail (getParam: string) {
+        return (
+            instance.post
+        )
     }
 }

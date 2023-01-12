@@ -12,6 +12,7 @@ import AuthPageContainer from './AuthPages/AuthPageContainer'
 import cn from "classnames";
 import {propsType} from "./AppBodyContainer";
 import Payment from "./Payment/Payment"
+import ConfirmMail from "./ConfirmMail/ConfirmMail";
 
 const AppBody: React.FC<propsType> = ({isOptionsOpen}) => {
   return (
@@ -28,6 +29,7 @@ const AppBody: React.FC<propsType> = ({isOptionsOpen}) => {
         <Route path='/info' render={() => <InfoContainer/>}/>
         <Route path='/payment' render={() => <Payment/>}/>
         <Route path='/not-found' render={() => <NotFoundContainer/>}/>
+        <Route path='/confirm-mail' render={() => <ConfirmMail/>}/>
         <Redirect path='*' to={'/not-found'}/>
       </Switch>
     </div>
