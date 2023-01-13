@@ -12,13 +12,14 @@ import {getThemeStyle} from '../../../Redux/selectors/styleSelector';
 import {useDispatch} from 'react-redux';
 import {logoutThunkCreator} from '../../../Redux/reducers/userReducer';
 import {getAuthStatus} from '../../../Redux/selectors/userSelector';
+import {getProfileAsideItems} from '../../../Redux/selectors/profileSelector';
 
 const Profile = () => {
   const [isPopup, setPopupStatus] = useState(false)
 
   const themeStyle = useAppSelector(getThemeStyle)
   const isAuth = useAppSelector(getAuthStatus)
-
+  const profileAsideItems = useAppSelector(getProfileAsideItems)
   const dispatch = useDispatch()
 
   if (!isAuth) {
@@ -34,7 +35,7 @@ const Profile = () => {
         <h1 className={s.profileTitle}>Profile page</h1>
         <div className={s.profilePageInfoWrap}>
           <div>
-            <Aside/>
+            <Aside asideItems={profileAsideItems}/>
             <button onClick={() => setPopupStatus(!isPopup)} className={s.logoutBtn}>
               <svg width="25px" height="25px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
                 <path

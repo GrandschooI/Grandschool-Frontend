@@ -15,7 +15,7 @@ import {getFontSize, getThemeStyle} from '../../../../Redux/selectors/styleSelec
 import {FACEBOOK_CLIENT_ID, GOOGLE_CLIENT_ID} from '../../../../Redux/reducers/userReducer';
 
 const MIN_PASSWORD_LENGTH = 8
-const MAX_PASSWORD_LENGTH = 8
+const MAX_PASSWORD_LENGTH = 50
 
 const registrationFormValidation = (values: registrationFormValidationType) => {
   const errors: any = {}
@@ -36,7 +36,7 @@ const registrationFormValidation = (values: registrationFormValidationType) => {
   } else if (values.password.length < MIN_PASSWORD_LENGTH) {
     errors.password = 'Password must be at least 8 characters'
     toast.error('Password must be at least 8 characters')
-  } else if (values.password.length < MAX_PASSWORD_LENGTH) {
+  } else if (values.password.length > MAX_PASSWORD_LENGTH) {
     errors.password = 'Password must not be greater than 50 characters.'
     toast.error('Password must not be greater than 50 characters.')
   } else if (values.password !== values.confirmPassword) {
@@ -130,7 +130,8 @@ const RegistrationForm: React.FC<propsType> = (
               <Checkbox label={'I agree to'} name={'terms'} propValue={true} className={'checkboxLabel'}/>
               <a href={'/'} className={s.termsLabel}>terms & conditions</a>
             </label>
-             <button type="submit" disabled={isSubmitting} className={cn('whiteBtn', 'inverseBtn')}>Wyślij</button>
+             <button type="submit" disabled={isSubmitting}
+                     className={cn('whiteBtn', themeStyle !== 'whiteTheme' ? 'submitBtn' : 'inverseBtn')}>Wyślij</button>
           </Form>
         )}
       </Formik>

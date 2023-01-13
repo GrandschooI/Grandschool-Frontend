@@ -60,7 +60,7 @@ export const userReducer = (state = initialState, action: UserActionTypes): init
       }
     case 'user/SET_PHOTO':
       return {
-        ...state
+        ...state, currentUser: {...state.currentUser, photo: action.data}
       }
     default:
       return state
@@ -152,11 +152,17 @@ export const forgotPasswordThunkCreator = (email: string) => {
   }
 }
 
-export const setUserPhotoThunkCreator = (file: any) => async (dispatch: Dispatch) => {
+export const setUserPhotoThunkCreator = (userId: number, token: string, file: any) => async (dispatch: Dispatch) => {
   dispatch(styleActions.toggleIsLoadedAC(false))
-  let response = await userAPI.setProfilePhoto(file)
-  dispatch(userActions.setPhoto(response.data.data.photos))
-  dispatch(styleActions.toggleIsLoadedAC(true))
+  try {
+    let response = await userAPI.setProfilePhoto(userId, token, file)
+    dispatch(userActions.setPhoto(response.data.data.photo))
+  } catch (error) {
+    errorHandler(error)
+  } finally {
+    dispatch(styleActions.toggleIsLoadedAC(true))
+  }
+
 }
 
 // Scaffolding functions
