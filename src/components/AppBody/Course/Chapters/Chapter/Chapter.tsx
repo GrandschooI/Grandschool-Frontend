@@ -9,8 +9,9 @@ const Chapter: React.FC<PropsType> = () => {
             <ReactPlayer url="https://www.youtube.com/watch?v=S_zMbLa_nAE"
                          controls={true}
                          loop={true}
-                         width={'100%'}
-                         height={'492px'}
+                         width={'861px'}
+                         height={'485px'}
+                         className={s.movie}
             />
             <ul>
                 <li>
