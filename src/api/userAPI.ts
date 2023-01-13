@@ -1,4 +1,5 @@
 import {instance} from './api'
+import axios from "axios";
 
 export const userAPI = {
   setProfilePhoto(userId: number, token: string, photoFile: any) {
@@ -14,10 +15,9 @@ export const userAPI = {
       })
     )
   },
-    verifyMail (param: string) {
-      debugger
+    verifyMail (url: string) {
         return (
-            instance.post(`verification${param}`).then(response => response.data)
+            axios.create({withCredentials: true}).post(url)
         )
     }
 }
