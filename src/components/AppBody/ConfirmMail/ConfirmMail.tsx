@@ -1,16 +1,20 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import Preloader from "../../utils/Preloader/Preloader";
 import s from './ConfirmMail.module.scss'
-import {useLocation} from "react-router-dom";
+import {Redirect, useLocation} from "react-router-dom";
 import {userAPI} from "../../../api/userAPI";
+import {HttpStatusCode} from "../../../api/api";
 
 const ConfirmMail = () => {
-    const paramsForConfirmRequest = useLocation().search
-    //todo remove debuggers after fix confirmMail
-    debugger
+    const urlForConfirmRequest = useLocation().search.replace("?url=", "");
+    const [isMailConfirmed, setMailConfirmStatus] = useState(false)
     useEffect(() => {
-        userAPI.verifyMail(paramsForConfirmRequest).then(res => console.log(res))
+        userAPI.verifyMail(urlForConfirmRequest).then(res => {
+            if (res.status === HttpStatusCode.OK) setMailConfirmStatus(true)
+        })
     }, [])
+
+    if (isMailConfirmed) return <Redirect to={'/profile'}/>
     return (
         <section className={s.confirmMailPage}>
             <Preloader/>
