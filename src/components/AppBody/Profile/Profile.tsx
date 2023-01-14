@@ -61,7 +61,7 @@ const Profile = () => {
           >
             <div className="overlay">
               <Popup>
-                <p className={s.logoutDesk}>Вы уверены что хотите покинуть свою учётную запись</p>
+                <p className={s.logoutDesc}>Вы уверены что хотите покинуть свою учётную запись</p>
                 <div className={s.logoutBtnWrap}>
                   <button className={'submitBtn'} onClick={onLogoutClickHandler}>Logout</button>
                   <button className={'inverseBtn'}
