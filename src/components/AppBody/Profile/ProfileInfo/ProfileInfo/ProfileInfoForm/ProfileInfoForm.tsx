@@ -24,7 +24,7 @@ const ProfileInfoForm: React.FC<propsType> = ({
         <Formik
             initialValues={{name: '', gender: '', birthDate: new Date(), country: '', city: '', aboutUserText: ''}}
             onSubmit={(formData) => {
-                setProfileInfo(formData.name, formData.gender, formData.birthDate, formData.country, formData.city, '', '')
+                setProfileInfo(formData.name, formData.gender, formData.birthDate, formData.country, formData.city, '')
             }}
         >
             {({isSubmitting}) => (
@@ -119,5 +119,5 @@ type propsType = {
     country: Nullable<string>
     city: Nullable<string>
     aboutUserText: Nullable<string>
-    setProfileInfo: (name: string, gender: string, birthDate: Date, country: string, city: string, aboutUserText: string, userPhoto: string) => void
+    setProfileInfo: (name: string, gender: string, birthDate: Date, country: string, city: string, aboutUserText: string) => void
 }

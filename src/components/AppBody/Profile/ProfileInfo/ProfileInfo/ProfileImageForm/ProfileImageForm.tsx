@@ -36,4 +36,3 @@ const ProfileImageForm = () => {
 }
 
 export default ProfileImageForm
-
