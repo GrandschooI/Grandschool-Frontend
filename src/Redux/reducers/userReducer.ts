@@ -156,6 +156,7 @@ export const setUserPhotoThunkCreator = (userId: number, token: string, file: an
   try {
     let response = await userAPI.setProfilePhoto(userId, token, file)
     dispatch(userActions.setPhoto(response.data.data.photo))
+    setDataToLocalStorage('user', JSON.stringify(response.data.data))
   } catch (error) {
     errorHandler(error)
   } finally {
