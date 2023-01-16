@@ -24,7 +24,7 @@ const confirmRegistrationFormValidation = (values: confirmRegistrationFormValida
 
 const confirmRegistrationForm: React.FC<propsType> = ({onSubmit, themeStyle, fontSize}) => {
     return (
-        <div className={cn(themeStyle ? themeStyle : '', s[themeStyle ? themeStyle : ''],
+        <div className={cn(s.confirmRegistrationWrap, themeStyle ? themeStyle : '', s[themeStyle ? themeStyle : ''],
             s[fontSize ? fontSize : ''], [fontSize ? fontSize : ''])}>
             <Formik
                 initialValues={{email: '', password: '', confirmPassword: ''}}
@@ -35,7 +35,7 @@ const confirmRegistrationForm: React.FC<propsType> = ({onSubmit, themeStyle, fon
             >
                 {({isSubmitting}) => (
                     <Form>
-                        <label className={'formLabel'}>
+                        <label className={cn(s.confirmLabel, 'formLabel')}>
                             <span>Confirmation code was sent to:</span>
                             <p className={s.phone}>+ 380 (50) - 888 - 28 - **</p>
                             {TextField({
@@ -59,7 +59,7 @@ const confirmRegistrationForm: React.FC<propsType> = ({onSubmit, themeStyle, fon
                 )}
             </Formik>
             <div>
-                <label className={'formLabel'}>
+                <label className={cn(s.confirmLabel, 'formLabel')}>
                     <span>Confirm your email address. Please check your mailbox and follow the instructions below. Email sent to: </span>
                     <p className={s.phone}>test@gmail.com</p>
                 </label>

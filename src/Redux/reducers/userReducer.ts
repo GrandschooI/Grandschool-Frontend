@@ -54,8 +54,7 @@ export const userReducer = (state = initialState, action: UserActionTypes): init
           birthday: action.data.birthDate,
           country: action.data.country,
           city: action.data.city,
-          description: action.data.aboutUserText,
-          photo: action.data.userPhoto
+          description: action.data.aboutUserText
         }
       }
     case 'user/SET_PHOTO':
@@ -71,10 +70,10 @@ export const userReducer = (state = initialState, action: UserActionTypes): init
 
 export const userActions = {
   setAuth: (authData: any, isAuth: boolean) => ({type: 'auth/SET_AUTH', data: {authData, isAuth}} as const),
-  setProfileInfo: (name: string, gender: string, birthDate: Date, country: string, city: string, aboutUserText: string, userPhoto: string) => ({
-    type: 'user/SET_USER_INFO', data: {name, gender, birthDate, country, city, aboutUserText, userPhoto}
+  setProfileInfo: (name: string, gender: string, birthDate: Date, country: string, city: string, aboutUserText: string) => ({
+    type: 'user/SET_USER_INFO', data: {name, gender, birthDate, country, city, aboutUserText}
   } as const),
-  setPhoto: (photo: any) => ({type: 'user/SET_PHOTO', data: photo} as const)
+  setPhoto: (photo: string) => ({type: 'user/SET_PHOTO', data: photo} as const)
 }
 
 // ThunkCreators

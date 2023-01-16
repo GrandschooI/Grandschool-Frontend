@@ -52,3 +52,28 @@ test('Set auth', () => {
     expect(newState.currentUser.email).toBe('test-email@gmail.com')
     expect(newState.isAuth).toBeTruthy()
 })
+
+test('Set Profile Info', () => {
+    const newState = userReducer(state, userActions.setProfileInfo(
+        "Eugene Kuhot",
+        'male',
+        new Date('2019-05-14T11:01:58.135Z'),
+         'Poland',
+         'Cracow',
+         'testText'
+    ))
+
+
+    expect(newState.currentUser.name).toBe('Eugene Kuhot')
+    expect(newState.currentUser.gender).toBe('male')
+    expect(newState.currentUser.birthday).toEqual(new Date('2019-05-14T11:01:58.135Z'))
+    expect(newState.currentUser.country).toBe('Poland')
+    expect(newState.currentUser.city).toBe('Cracow')
+    expect(newState.currentUser.description).toBe('testText')
+})
+
+test ('Set user photo', () => {
+    const newState = userReducer(state, userActions.setPhoto('/photoUrl'))
+
+    expect(newState.currentUser.photo).toBe('/photoUrl')
+})
