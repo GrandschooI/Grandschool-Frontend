@@ -1,10 +1,13 @@
-export const cropImage = (url: any) =>
+import {Nullable} from '../../../../../../../Redux/redux-store';
+import {Area} from '../cropImageModal/types/cropImageTypes';
+
+export const cropImage = (url: Nullable<string>) =>
   new Promise((resolve, reject) => {
     const image = new Image();
     image.addEventListener('load', () => resolve(image));
     image.addEventListener('error', (error) => reject(error));
     image.setAttribute('crossOrigin', 'anonymous'); // needed to avoid cross-origin issues on CodeSandbox
-    image.src = url;
+    image.src = url as string;
   });
 
 export function getRadianAngle(degreeValue: number) {
@@ -25,12 +28,9 @@ export function rotateSize(width: number, height: number, rotation: number) {
   };
 }
 
-/**
- * This function was adapted from the one in the ReadMe of https://github.com/DominicTobias/react-image-crop
- */
 export default async function getCroppedImg(
-  imageSrc: any,
-  pixelCrop: any,
+  imageSrc: string,
+  pixelCrop: Area,
   rotation = 0,
   flip = { horizontal: false, vertical: false }
 ) {
@@ -66,6 +66,7 @@ export default async function getCroppedImg(
   ctx.translate(-image.width / 2, -image.height / 2);
 
   // draw rotated image
+
   // @ts-ignore
   ctx.drawImage(image, 0, 0);
 

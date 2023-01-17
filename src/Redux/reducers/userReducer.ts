@@ -195,7 +195,7 @@ function accessHandler(response: any) {
   }
 }
 
-function errorHandler(error: any) {
+export function errorHandler(error: any) {
   if (error?.length) {
     error.forEach((el: any) => {
       toast.error(el.message, {autoClose: 5000})

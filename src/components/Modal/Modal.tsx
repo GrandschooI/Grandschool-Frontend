@@ -1,6 +1,5 @@
 import React from 'react'
 import s from './Modal.module.scss'
-import Icon from './Icon/Icon'
 import Portal from '../utils/Portal/Portal';
 
 type propsType = {
