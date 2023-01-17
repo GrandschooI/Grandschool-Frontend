@@ -156,6 +156,7 @@ export const setUserPhotoThunkCreator = (userId: number, token: string, file: an
   try {
     let response = await userAPI.setProfilePhoto(userId, token, file)
     dispatch(userActions.setPhoto(response.data.data.photo))
+    setDataToLocalStorage('user', JSON.stringify(response.data.data))
   } catch (error) {
     errorHandler(error)
   } finally {
@@ -194,7 +195,7 @@ function accessHandler(response: any) {
   }
 }
 
-function errorHandler(error: any) {
+export function errorHandler(error: any) {
   if (error?.length) {
     error.forEach((el: any) => {
       toast.error(el.message, {autoClose: 5000})
