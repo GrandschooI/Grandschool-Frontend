@@ -39,7 +39,7 @@ const ProfileImageForm = () => {
         <label htmlFor="userPhotoInput" className={cn(s.userPhotoLabel, 'inverseBtn')}>Select file</label>
         <span className={s.userPhotoSizeInfo}>File size should not exceed 1 MB</span>
       </div>
-      <Modal title={'Crop your image'} isOpen={openCrop} onSubmit={() => setOpenCrop(false)}>
+      <Modal isOpen={openCrop} onSubmit={() => setOpenCrop(false)}>
         <CropImageModal
           photoUrl={photoUrl}
           setOpenCrop={setOpenCrop}

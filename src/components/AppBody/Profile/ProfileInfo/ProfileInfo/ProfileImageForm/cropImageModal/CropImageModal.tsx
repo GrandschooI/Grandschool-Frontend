@@ -7,6 +7,7 @@ import {useAppSelector} from '../../../../../../../utils/Hooks/useAppSelector';
 import {Area, Point} from './types/cropImageTypes';
 import {Nullable} from '../../../../../../../Redux/redux-store';
 import s from './сropImageModal.module.scss'
+import cn from "classnames";
 
 type PropsType = {
   photoUrl: any
@@ -58,7 +59,7 @@ const CropImageModal: React.FC<PropsType> = ({photoUrl, setOpenCrop, setPhotoUrl
   }
   return (
     <>
-      <div className={s.cropper__wrapper}>
+      <div className={s.cropperWrapper}>
         <Cropper
           image={photoUrl}
           crop={crop}
@@ -71,26 +72,26 @@ const CropImageModal: React.FC<PropsType> = ({photoUrl, setOpenCrop, setPhotoUrl
           onCropComplete={cropComplete}
         />
       </div>
-      <div className={s.cropper__actions}>
-        <div className={s.cropper__sliders__container}>
-          <div className={s.slider__wrapper}>
-            <p className={s.cropper__input__value}> Zoom : {zoomPercent(zoom)}</p>
+      <div className={s.cropperActions}>
+        <div className={s.cropperSlidersContainer}>
+          <div className={s.sliderWrapper}>
+            <p className={s.cropperInputValue}> Zoom : {zoomPercent(zoom)}</p>
             <input className={s.cropper__range} type={'range'} min={1} max={3} step={0.1}
                    value={zoom}
                    onChange={onZoomChangeHandler}
             />
           </div>
-          <div className={s.slider__wrapper}>
-            <p className={s.cropper__input__value}> Rotation : {rotation}</p>
+          <div className={s.sliderWrapper}>
+            <p className={s.cropperInputValue}> Rotation : {rotation}</p>
             <input className={s.cropper__range} type={'range'} min={0} max={360}
                    value={rotation}
                    onChange={onRotationChangeHandler}
             />
           </div>
         </div>
-        <div className={s.cropper__btn__container}>
-          <button className={s.cropper__btn} onClick={toggleImageCrop}>Cancel</button>
-          <button className={s.cropper__btn} onClick={onCroppedImageConfirm}>Save</button>
+        <div className={s.cropperBtnContainer}>
+          <button className={cn(s.cropperBtn, 'inverseBtn')} onClick={toggleImageCrop}>Cancel</button>
+          <button className={cn(s.cropperBtn, 'submitBtn')} onClick={onCroppedImageConfirm}>Save</button>
         </div>
       </div>
     </>

@@ -1,16 +1,14 @@
 import React from 'react'
 import s from './Modal.module.scss'
 import Portal from '../utils/Portal/Portal';
-import projectLogo from '../../assets/images/grandSchoolLogo.png'
 
 type propsType = {
-  title: string
   isOpen: boolean
   onSubmit: () => void
   children: React.ReactNode
 }
 
-const Modal: React.FC<propsType> = ({title, isOpen, onSubmit, children}) => {
+const Modal: React.FC<propsType> = ({ isOpen, onSubmit, children}) => {
   return (
     <>
       {
@@ -18,10 +16,6 @@ const Modal: React.FC<propsType> = ({title, isOpen, onSubmit, children}) => {
           <Portal element={document.getElementById('root')}>
               <div className={s.modalOverlay}>
                   <div className={s.modalWindow}>
-                      <div className={s.modalHeader__container}>
-                          <img src={projectLogo} alt="company logo"/>
-                          <h4 className={s.modalHeader}>{title}</h4>
-                      </div>
                       <div className={s.modalBody}>
                         {children}
                       </div>
