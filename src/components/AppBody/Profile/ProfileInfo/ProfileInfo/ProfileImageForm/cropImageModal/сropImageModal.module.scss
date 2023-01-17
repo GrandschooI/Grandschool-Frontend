@@ -1,0 +1,75 @@
+.cropper__wrapper {
+  background: #555;
+  position: relative;
+  height: 400px;
+  width: auto;
+}
+
+.cropper__actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .cropper__sliders__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0 10px;
+
+    .slider__wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+
+      .cropper__input__value {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 24px;
+        width: 150px;
+      }
+    }
+  }
+  .cropper__btn__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+    .cropper__btn {
+      justify-content: center;
+      min-width: 120px;
+      padding: 12px;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 23px;
+      color: #618135;
+      border: 1px solid #618135;
+      border-radius: 50px;
+      cursor: pointer;
+      &:hover {
+        background: #618135;
+        color: #FFFFFF;
+        transition: .3s ease-in-out;
+      }
+      &:last-child {
+        color: #FFFFFF;
+        background: #618135;
+
+        &:hover {
+          background: #FFFFFF;
+          color: #618135;
+          transition: .3s ease-in-out;
+        }
+      }
+    }
+  }
+}
+input[type=range] {
+  width: 60%;
+}
