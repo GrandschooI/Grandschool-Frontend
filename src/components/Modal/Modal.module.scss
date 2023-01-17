@@ -8,13 +8,39 @@
   right: 0;
   bottom: 0;
   z-index: 1000000;
+
+  .modalWindow {
+    position: absolute;
+    min-width: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .modalHeader__container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      gap: 40px;
+      padding-left: 10px;
+
+      .modalHeader {
+        font-size: 28px;
+      }
+    }
+
+    .modalBody {
+      width: 100%;
+    }
+  }
 }
 
-.modalWindow {
-  position: absolute;
-  min-width: 600px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  background: #fff;
-}
+
+
+

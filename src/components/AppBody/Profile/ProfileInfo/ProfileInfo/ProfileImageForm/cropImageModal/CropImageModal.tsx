@@ -6,6 +6,7 @@ import {useDispatch} from 'react-redux';
 import {useAppSelector} from '../../../../../../../utils/Hooks/useAppSelector';
 import {Area, Point} from './types/cropImageTypes';
 import {Nullable} from '../../../../../../../Redux/redux-store';
+import s from './сropImageModal.module.scss'
 
 type PropsType = {
   photoUrl: any
@@ -40,7 +41,7 @@ const CropImageModal: React.FC<PropsType> = ({photoUrl, setOpenCrop, setPhotoUrl
       setPhotoUrl(url)
       setFile(file)
       setOpenCrop(false)
-      dispatch(setUserPhotoThunkCreator(userId,token, file))
+      dispatch(setUserPhotoThunkCreator(userId, token, file))
     } catch (e) {
       errorHandler(e)
     }
@@ -57,7 +58,7 @@ const CropImageModal: React.FC<PropsType> = ({photoUrl, setOpenCrop, setPhotoUrl
   }
   return (
     <>
-      <div style={{background: '#555', position: 'relative', height: '400px', width: 'auto'}}>
+      <div className={s.cropper__wrapper}>
         <Cropper
           image={photoUrl}
           crop={crop}
@@ -70,22 +71,26 @@ const CropImageModal: React.FC<PropsType> = ({photoUrl, setOpenCrop, setPhotoUrl
           onCropComplete={cropComplete}
         />
       </div>
-      <div className="actions" style={{flexDirection: 'column', margin: '3px 2px'}}>
-        <div className="slidersContainer" style={{width: '100%', marginBottom: '1px'}}>
-          <p> Zoom : {zoomPercent(zoom)}</p>
-          <input type={'range'} min={1} max={3} step={0.1}
-                 value={zoom}
-                 onChange={onZoomChangeHandler}
-          />
-          <p> Rotation : {rotation}</p>
-          <input type={'range'} min={0} max={360}
-                 value={rotation}
-                 onChange={onRotationChangeHandler}
-          />
+      <div className={s.cropper__actions}>
+        <div className={s.cropper__sliders__container}>
+          <div className={s.slider__wrapper}>
+            <p className={s.cropper__input__value}> Zoom : {zoomPercent(zoom)}</p>
+            <input className={s.cropper__range} type={'range'} min={1} max={3} step={0.1}
+                   value={zoom}
+                   onChange={onZoomChangeHandler}
+            />
+          </div>
+          <div className={s.slider__wrapper}>
+            <p className={s.cropper__input__value}> Rotation : {rotation}</p>
+            <input className={s.cropper__range} type={'range'} min={0} max={360}
+                   value={rotation}
+                   onChange={onRotationChangeHandler}
+            />
+          </div>
         </div>
-        <div className={'btnContainer'} style={{display: 'flex', gap: '2px', flexWrap: 'wrap'}}>
-          <button onClick={toggleImageCrop}>Cancel</button>
-          <button onClick={onCroppedImageConfirm}>Save</button>
+        <div className={s.cropper__btn__container}>
+          <button className={s.cropper__btn} onClick={toggleImageCrop}>Cancel</button>
+          <button className={s.cropper__btn} onClick={onCroppedImageConfirm}>Save</button>
         </div>
       </div>
     </>
