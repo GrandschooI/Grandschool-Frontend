@@ -4,10 +4,11 @@ import Portal from '../utils/Portal/Portal';
 
 type propsType = {
   isOpen: boolean
+  onSubmit: () => void
   children: React.ReactNode
 }
 
-const Modal: React.FC<propsType> = ({ isOpen, children}) => {
+const Modal: React.FC<propsType> = ({ isOpen, onSubmit, children}) => {
   return (
     <>
       {
