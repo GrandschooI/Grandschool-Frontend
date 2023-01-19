@@ -93,7 +93,8 @@ export const registerThunkCreator = (email: string, password: string, confirmPas
         }
       })
       .catch((error: any) => {
-        errorHandler(error)
+        const errorMessage = error.response.data.errors
+        errorHandler(errorMessage)
       }).finally(() => {
       dispatch(styleActions.toggleIsLoadedAC(true))
     })
@@ -113,8 +114,8 @@ export const loginThunkCreator = (email?: string, password?: string, driver?: st
         }
       })
       .catch((error: any) => {
-        const errorMesage = error.response.data.errors
-        errorHandler(errorMesage)
+        const errorMessage = error.response.data.errors
+        errorHandler(errorMessage)
       }).finally(() => {
       dispatch(styleActions.toggleIsLoadedAC(true))
     })
