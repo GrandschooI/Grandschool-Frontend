@@ -39,6 +39,7 @@
 }
 
 .termsCheck {
+  position: relative;
   display: flex;
   align-items: center;
   width: 388px;
@@ -48,7 +49,12 @@
     padding-left: 7px;
   }
 }
-
+.terms__error {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  color: #e50707;
+}
 .yellowTheme {
   color: yellow;
   .anotherTypeLoginBtnWrap {
