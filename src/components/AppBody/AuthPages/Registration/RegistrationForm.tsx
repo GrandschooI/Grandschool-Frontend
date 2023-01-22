@@ -80,7 +80,7 @@ const RegistrationForm: React.FC<propsType> = (
               {TextField({
                 type: 'email',
                 name: 'email',
-                placeholder: 'Wpisz adres e-mail',
+                placeholder: 'test@gmail.com / +48547323456',
                 className: `textField`,
                 errorClassname: `errorTextField`
               })}
@@ -128,17 +128,10 @@ const RegistrationForm: React.FC<propsType> = (
 
 export default RegistrationForm
 
-
 type propsType = {
   onSubmit: (formData: registrationFormDataType) => void
   onGoogleButtonClick: any
   onFacebookButtonClick: any
   startGoogleAPI: any
 
-}
-type registrationFormValidationType = {
-  email: string
-  password: string
-  confirmPassword: string,
-  terms: boolean
 }

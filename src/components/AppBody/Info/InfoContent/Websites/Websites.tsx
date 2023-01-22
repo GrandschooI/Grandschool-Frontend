@@ -19,11 +19,9 @@ const Websites = () => {
     dispatch(getWebsitesThunkCreator(location))
   }, [])
   return (
-    <>
-      <ul className={s.websitesList}>
-        {websitesData.map((el: any) => <WebsitesTopic websitesData={el} key={el.id}/>)}
-      </ul>
-    </>
+    <ul className={s.websitesList}>
+      {websitesData.map((el: any) => <WebsitesTopic websitesData={el} key={el.id}/>)}
+    </ul>
   )
 }
 
