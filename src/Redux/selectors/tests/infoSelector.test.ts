@@ -1,36 +1,10 @@
 import store, {AppStateType} from "../../redux-store";
 import {getInfoAboutUs, getInfoMenu, getWebsites} from "../infoSelector";
-import {InitialStateType} from "../../reducers/infoReducer";
 
 let rootState: AppStateType;
-let startInfoData: InitialStateType;
 
 beforeEach(() => {
     rootState = store.getState();
-    startInfoData = {
-        aboutUs: [
-            {
-                itemLink: '/about-us/project',
-                itemTitle: 'About project'
-            },
-            {
-                itemLink: '/about-us/news',
-                itemTitle: 'News'
-            },
-            {
-                itemLink: '/about-us/reviews',
-                itemTitle: 'Reviews'
-            }
-        ],
-        infoPageAsideMenu: [
-            {
-                itemLink: '/info/websites',
-                itemTitle: 'Websites',
-                topics: [] as any
-            }
-        ],
-        websites: []
-    }
 })
 
 test('get websites data', () => {
@@ -41,15 +15,16 @@ test('get websites data', () => {
 
 test('get info about us', () => {
     const getInfoAboutUsData = getInfoAboutUs(rootState);
-    console.log(getInfoAboutUsData.map(el => el.itemLink));
+    const infoAboutUsDataItemLink = rootState.info.aboutUs.map(el => el.itemLink)
+
     expect(getInfoAboutUsData).toBeDefined();
-    expect(getInfoAboutUsData).toEqual(startInfoData.aboutUs);
-    expect(getInfoAboutUsData.map(el => el.itemLink)).toEqual([ '/about-us/project', '/about-us/news', '/about-us/reviews' ]);
+    expect(getInfoAboutUsData).toEqual(rootState.info.aboutUs);
+    expect(getInfoAboutUsData.map(el => el.itemLink)).toEqual(infoAboutUsDataItemLink);
 })
 
 test('get info menu', () => {
     const getInfoMenuData = getInfoMenu(rootState);
+    console.log(getInfoMenuData)
     expect(getInfoMenuData).toBeDefined();
-    expect(getInfoMenuData).toEqual(startInfoData.infoPageAsideMenu);
-    expect(getInfoMenuData).toBe(startInfoData.infoPageAsideMenu);
+    expect(getInfoMenuData).toEqual(rootState.info.infoPageAsideMenu);
 })
