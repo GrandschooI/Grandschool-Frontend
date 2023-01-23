@@ -7,7 +7,7 @@ beforeEach(() => {
     rootState = store.getState();
 })
 
-it('get profile aside items', () => {
+test('get profile aside items', () => {
     const profileAsideItemsData = getProfileAsideItems(rootState);
     const rootAsideMenuItemsLink = rootState.userData.asideMenuItems.map(item => item.itemLink);
     const profileItemsLink = profileAsideItemsData.map(item => item.itemLink)

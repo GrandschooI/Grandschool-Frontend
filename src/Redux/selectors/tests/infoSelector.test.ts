@@ -24,7 +24,7 @@ test('get info about us', () => {
 
 test('get info menu', () => {
     const getInfoMenuData = getInfoMenu(rootState);
-    console.log(getInfoMenuData)
+
     expect(getInfoMenuData).toBeDefined();
     expect(getInfoMenuData).toEqual(rootState.info.infoPageAsideMenu);
 })

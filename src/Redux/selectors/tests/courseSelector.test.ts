@@ -8,7 +8,7 @@ beforeEach(() => {
 })
 
 
-it('get courses data', () => {
+test('get courses data', () => {
     const courseData = getCourseData(rootState);
     const courseItemLink = courseData.map(course => course.itemLink)
     const rootCourseItemLink = rootState.courses.courses.map(curse => curse.itemLink)
