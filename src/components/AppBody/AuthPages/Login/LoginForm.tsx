@@ -12,29 +12,21 @@ import Popup from '../../../common/Popup/Popup';
 import {useAppSelector} from '../../../../utils/Hooks/useAppSelector';
 import {getFontSize, getThemeStyle} from '../../../../Redux/selectors/styleSelector';
 import {FACEBOOK_CLIENT_ID, GOOGLE_CLIENT_ID} from '../../../../Redux/reducers/userReducer';
+import * as yup from 'yup'
+import FormErrorMessage from '../../../utils/FormErrorMessage/FormErrorMessage';
 
-const loginFormFormValidation = (values: loginFormValidationType) => {
-  const errors: any = {}
-  if (!values.email) {
-    errors.email = 'Required'
-  } else if (
-    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-  ) {
-    errors.email = 'Invalid email address'
-  }
-  return errors
-}
 
-const forgotPasswordFormValidation = (values: forgotPasswordFormValidationType) => {
-  const errors: any = {}
-  if (!values.email) {
-    errors.email = 'Required'
-  } else if (
-    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-  ) {
-    errors.email = 'Invalid email address'
-  }
-}
+const loginFormValidationSchema = yup.object().shape({
+  email: yup.string().email('Invalid email address').required('Email address is required'),
+  password: yup.string()
+    .required('Password is required')
+    .min(8, 'Password must be at least 8 characters')
+    .max(50, 'Password must not be greater than 50 characters.'),
+})
+const forgotPasswordSchema = yup.object().shape({
+  email: yup.string().required('Email is required').email('Invalid email address')
+})
+
 
 const LoginForm: React.FC<propsType> = (
   {
@@ -66,10 +58,12 @@ const LoginForm: React.FC<propsType> = (
     <section>
       <Formik
         initialValues={{email: '', password: ''}}
-        validate={loginFormFormValidation}
+        validationSchema={loginFormValidationSchema}
         onSubmit={onSubmit}
+        validateOnChange={true}
+        validateOnBlur={true}
       >
-        {({isSubmitting}) => (
+        {({isSubmitting, errors, touched}) => (
           <Form
             className={cn(themeStyle ? themeStyle : '', s[themeStyle ? themeStyle : ''], s[fontSize ? fontSize : ''],
               [fontSize ? fontSize : ''])}>
@@ -82,6 +76,7 @@ const LoginForm: React.FC<propsType> = (
                 className: `textField`,
                 errorClassname: `errorTextField`
               })}
+              {errors.email && touched.email && <FormErrorMessage>{errors.email}</FormErrorMessage>}
             </label>
             <label className={'formLabel'}>
               <span>Hasło</span>
@@ -93,6 +88,7 @@ const LoginForm: React.FC<propsType> = (
                 errorClassname: `errorTextField`,
                 changeToText: true
               })}
+              {errors.password && touched.password && <FormErrorMessage>{errors.password}</FormErrorMessage>}
             </label>
             {
               !isSubmitting ? <button type="submit" className="submitBtn">Wyślij</button>
@@ -131,26 +127,32 @@ const LoginForm: React.FC<propsType> = (
         <section className="overlay">
           <Popup>
             <Formik initialValues={{email: ''}}
-                    validate={forgotPasswordFormValidation}
-                    onSubmit={sendResetPasswordFlow}>
-              <Form>
-                <label className={'formLabel'}>
-                  <span>Укажи адрес электронной почты</span>
-                  {TextField({
-                    type: 'email',
-                    name: 'email',
-                    placeholder: 'Wpisz adres e-mail',
-                    className: `textField`,
-                    errorClassname: `errorTextField`
-                  })}
-                </label>
-                <div className={s.popupBtnWrapper}>
-                  <button type="submit" className="submitBtn">Wyślij</button>
-                  <button onClick={() => setForgotPassPopupStatus(!isForgotPassPopup)}
-                          className={'inverseBtn'}>Zamknij
-                  </button>
-                </div>
-              </Form>
+                    validationSchema={forgotPasswordSchema}
+                    onSubmit={sendResetPasswordFlow}
+                    validateOnBlur={true}
+                    validateOnChange={true}
+            >
+              {({touched, errors}) => (
+                <Form>
+                  <label className={'formLabel'}>
+                    <span>Укажи адрес электронной почты</span>
+                    {TextField({
+                      type: 'email',
+                      name: 'email',
+                      placeholder: 'Wpisz adres e-mail',
+                      className: `textField`,
+                      errorClassname: `errorTextField`
+                    })}
+                    {errors.email && touched.email && <FormErrorMessage>{errors.email}</FormErrorMessage>}
+                  </label>
+                  <div className={s.popupBtnWrapper}>
+                    <button type="submit" className="submitBtn">Wyślij</button>
+                    <button onClick={() => setForgotPassPopupStatus(!isForgotPassPopup)}
+                            className={'inverseBtn'}>Zamknij
+                    </button>
+                  </div>
+                </Form>
+              )}
             </Formik>
           </Popup>
         </section>
@@ -190,11 +192,4 @@ type propsType = {
   onFacebookButtonClick: any
   onForgotPasswordFormSubmit: any
   startGoogleAPI: any
-}
-type loginFormValidationType = {
-  email: string
-  password: string
-}
-type forgotPasswordFormValidationType = {
-  email: string
 }
