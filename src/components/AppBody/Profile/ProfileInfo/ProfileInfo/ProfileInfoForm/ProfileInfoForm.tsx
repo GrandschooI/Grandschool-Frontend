@@ -6,6 +6,9 @@ import {Form, Formik} from 'formik';
 import {RadioButton, TextField} from '../../../../../common/Form/FormControls/FormControls';
 import '../../../../../../style.scss'
 import {Nullable} from '../../../../../../Redux/redux-store';
+import * as yup from 'yup'
+
+const profileInfoFormSchema = yup.object().shape({})
 
 const ProfileInfoForm: React.FC<propsType> = ({
                                                   name,

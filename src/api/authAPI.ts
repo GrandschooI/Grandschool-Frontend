@@ -8,7 +8,7 @@ export const AuthAPI = {
                 email,
                 password,
                 password_confirmation
-            }).then(response => response.data)
+            }).then(response => response.data).finally()
         )
     },
     login(email?: string, password?: string, driver?: string, access_token?: string) {
