@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import DatePicker from 'react-datepicker';
 import './dataPicker.scss'
 import s from './ProfileInfoForm.module.scss'
-import {Form, Formik} from 'formik';
+import {ErrorMessage, Form, Formik} from 'formik';
 import {RadioButton, TextField} from '../../../../../common/Form/FormControls/FormControls';
 import '../../../../../../style.scss'
 import * as yup from 'yup'
@@ -63,6 +63,7 @@ const ProfileInfoForm = () => {
               errorClassname: `errorTextField`,
               propValue: name ? name : '',
             })}
+            {errors.name && touched.name && <ErrorMessage name={errors.name}/>}
           </label>
 
           <label className={'formLabel'}>
