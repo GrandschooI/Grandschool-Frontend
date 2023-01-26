@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import DatePicker from 'react-datepicker';
 import './dataPicker.scss'
 import s from './ProfileInfoForm.module.scss'
-import {ErrorMessage, Form, Formik} from 'formik';
+import {Form, Formik} from 'formik';
 import {RadioButton, TextField} from '../../../../../common/Form/FormControls/FormControls';
 import '../../../../../../style.scss'
 import * as yup from 'yup'
@@ -17,12 +17,13 @@ import {
 } from '../../../../../../Redux/selectors/userSelector';
 import {useDispatch} from 'react-redux';
 import {userActions} from '../../../../../../Redux/reducers/userReducer';
+import FormErrorMessage from '../../../../../utils/FormErrorMessage/FormErrorMessage';
 
 const profileInfoFormSchema = yup.object().shape({
   name: yup.string(),
   birthDate: yup.date(),
   country: yup.string(),
-  city: yup.string().required(),
+  city: yup.string(),
   aboutUserText: yup.string()
 })
 
@@ -63,7 +64,7 @@ const ProfileInfoForm = () => {
               errorClassname: `errorTextField`,
               propValue: name ? name : '',
             })}
-            {errors.name && touched.name && <ErrorMessage name={errors.name}/>}
+            {errors.name && touched.name && <FormErrorMessage>{errors.name}</FormErrorMessage>}
           </label>
 
           <label className={'formLabel'}>
@@ -95,6 +96,7 @@ const ProfileInfoForm = () => {
           <label className={'formLabel'}>
             <span>Birth Date</span>
             <DatePicker selected={startDate} onChange={(date: Date) => setStartDate(date)}/>
+            {errors.birthDate && touched.birthDate && <FormErrorMessage>{errors.birthDate}</FormErrorMessage>}
           </label>
 
           <label className={'formLabel'}>
@@ -107,6 +109,7 @@ const ProfileInfoForm = () => {
               errorClassname: `errorTextField`,
               propValue: country ? country : ''
             })}
+            {errors.country && touched.country && <FormErrorMessage>{errors.country}</FormErrorMessage>}
           </label>
 
           <label className={'formLabel'}>
@@ -119,6 +122,7 @@ const ProfileInfoForm = () => {
               errorClassname: `errorTextField`,
               propValue: city ? city : ''
             })}
+            {errors.city && touched.city && <FormErrorMessage>{errors.city}</FormErrorMessage>}
           </label>
 
           <label className={'formLabel'}>

@@ -1,9 +1,10 @@
 import React from 'react'
-import {ErrorMessage, Form, Formik} from 'formik'
+import {Form, Formik} from 'formik'
 import '../../../../../style.scss'
 import {TextField} from '../../../../common/Form/FormControls/FormControls'
 import s from './ChangePasswordForm.module.scss'
 import * as yup from 'yup'
+import FormErrorMessage from '../../../../utils/FormErrorMessage/FormErrorMessage';
 
 type propsType = {}
 const changePasswordValidationSchema = yup.object().shape({
@@ -15,7 +16,7 @@ const changePasswordValidationSchema = yup.object().shape({
     .max(50, 'Password must not be greater than 50 characters'),
   reenteredNewPassword: yup.string()
     .oneOf([yup.ref('newPassword'), null], 'Passwords must be identical')
-    .required(),
+    .required('This field is required'),
 })
 const ProfileInfoForm: React.FC<propsType> = () => {
 
@@ -23,6 +24,8 @@ const ProfileInfoForm: React.FC<propsType> = () => {
     <Formik
       initialValues={{password: '', newPassword: '', reenteredNewPassword: ''}}
       validationSchema={changePasswordValidationSchema}
+      validateOnChange={true}
+      validateOnBlur={true}
       onSubmit={() => {
       }}
     >
@@ -38,7 +41,7 @@ const ProfileInfoForm: React.FC<propsType> = () => {
               className: `textField`,
               errorClassname: `errorTextField`
             })}
-            {errors.password && touched.password && <ErrorMessage name={errors.password}/>}
+            {errors.password && touched.password && <FormErrorMessage>{errors.password}</FormErrorMessage>}
           </label>
 
           <label className={'formLabel'}>
@@ -50,7 +53,7 @@ const ProfileInfoForm: React.FC<propsType> = () => {
               className: `textField`,
               errorClassname: `errorTextField`
             })}
-            {errors.newPassword && touched.newPassword && <ErrorMessage name={errors.newPassword}/>}
+            {errors.newPassword && touched.newPassword && <FormErrorMessage>{errors.newPassword}</FormErrorMessage>}
           </label>
 
           <label className={'formLabel'}>
@@ -63,7 +66,7 @@ const ProfileInfoForm: React.FC<propsType> = () => {
               errorClassname: `errorTextField`
             })}
             {errors.reenteredNewPassword && touched.reenteredNewPassword &&
-                <ErrorMessage name={errors.reenteredNewPassword}/>}
+                <FormErrorMessage>{errors.reenteredNewPassword}</FormErrorMessage>}
           </label>
           {!isSubmitting ? <button type="submit" className="submitBtn">Wyślij</button> : <span>Pending</span>}
         </Form>
