@@ -42,19 +42,21 @@ export const TextField: React.FC<propsForTextFieldType> = (
 export const RadioButton: React.FC<propsForRadioType> = ({
                                                            name, className,
                                                            errorClassname, label,
-                                                           propValue
+                                                           propValue, getRadioStatus, checked
                                                          }) => {
-  const [radioStatus, setRadioStatus] = useState('')
 
+  const onClickHandler = () => {
+    getRadioStatus && getRadioStatus(propValue)
+  }
   return (
     <div className={s.inputWrap}>
       <Field type="radio"
              name={name}
+             value={propValue}
              className={className}
              errorclassname={errorClassname}
-             value={propValue}
-             onClick={() => setRadioStatus(propValue)}
-             checked={radioStatus === propValue}
+             onClick={onClickHandler}
+             checked={checked}
       />
       {label && <span className={'radioLabel'}>{label}</span>}
     </div>
@@ -106,6 +108,8 @@ type propsForRadioType = {
   propValue: string,
   checked?: boolean,
   handleChange: () => void
+  getRadioStatus?: (status: string) => void
+
 }
 type propsForCheckboxType = {
   name: string
