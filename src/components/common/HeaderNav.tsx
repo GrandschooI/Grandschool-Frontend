@@ -22,7 +22,7 @@ const HeaderNav:React.FC<PropsType> = ({themeStyle}) => {
           <NavLink to='/teachers' className={cn(s.headerNavLink, location.includes('/teachers') ? s.headerActiveNavLink : '')}>
             <span className={s.headerNavLinkLabel}>Nauczycielowi</span>
           </NavLink>
-          <NavLink to='/info/websites' className={cn(s.headerNavLink, location.includes('/websites') ? s.headerActiveNavLink : '')}>
+          <NavLink to='/info' className={cn(s.headerNavLink, location.includes('/websites') ? s.headerActiveNavLink : '')}>
             <span className={s.headerNavLinkLabel}>Więcej</span>
           </NavLink>
         </nav>

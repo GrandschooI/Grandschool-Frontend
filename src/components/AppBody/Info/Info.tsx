@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import {Route, Switch} from 'react-router-dom'
+import {Redirect, Route, Switch} from 'react-router-dom'
 import cn from 'classnames'
 import s from './Info.module.scss'
 import Aside from '../../common/Aside/Aside';
@@ -12,10 +12,14 @@ import {getInfoMenu} from '../../../Redux/selectors/infoSelector';
 const Info = () => {
 
   const dispatch = useDispatch()
-  const infoAsideItems = useAppSelector(getInfoMenu)
+  const infoAsideItems:asideItemsType = useAppSelector(getInfoMenu)
+  let defaultLinkForRedirect = ''
   useEffect(() => {
     dispatch(getWebsitesCategoryThunkCreator())
   }, [])
+
+  if (infoAsideItems[0].topics.length) defaultLinkForRedirect = infoAsideItems[0].topics[0].topicLink
+
   return (
     <div className={cn('container', s.infoWrapper)}>
       <h1>Info</h1>
@@ -23,6 +27,7 @@ const Info = () => {
         <Aside asideItems={infoAsideItems}/>
         <Switch>
           <Route path="/info/websites" render={() => <Websites/>}/>
+          {infoAsideItems && <Redirect path="/info" to={defaultLinkForRedirect}/>}
         </Switch>
       </div>
     </div>
@@ -30,3 +35,5 @@ const Info = () => {
 }
 
 export default Info
+
+type asideItemsType = Array<any>
