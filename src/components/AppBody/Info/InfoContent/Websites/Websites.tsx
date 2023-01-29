@@ -9,7 +9,6 @@ import {getWebsitesThunkCreator} from '../../../../../Redux/reducers/infoReducer
 import Preloader from "../../../../utils/Preloader/Preloader";
 
 const Websites = () => {
-
   const dispatch = useDispatch()
   const websitesData = useAppSelector(getWebsites)
   const [loadedStatus, setLoadedStatus] = useState<boolean>(false)
