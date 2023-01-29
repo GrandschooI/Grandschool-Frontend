@@ -24,7 +24,7 @@ const AsideItem: React.FC<PropsType> = ({itemTitle, itemLink, topics, themeStyle
                     <span
                         className={cn(s.asideLink,
                             activeItem ? [s.activeItem, s.upArrow] : '',
-                            location === itemLink ? s.rightArrow : '')}
+                            location.includes(itemLink) ? s.rightArrow : '')}
                         onClick={() => setActiveItem(!activeItem)}>{itemTitle}</span>
                     <CSSTransition
                         in={activeItem}
