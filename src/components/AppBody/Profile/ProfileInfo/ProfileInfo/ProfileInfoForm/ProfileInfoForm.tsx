@@ -39,12 +39,17 @@ const ProfileInfoForm = () => {
   const dispatch = useDispatch()
   const [startDate, setStartDate] = useState(new Date())
   const [aboutMeDescription, setAboutMeDescription] = useState('')
+  const [statusAssessment, setStatusAssessment] = useState('')
+
   const onChangeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
     setAboutMeDescription(e.target.value);
   };
+  const getRadioStatus = (status: string) => {
+    setStatusAssessment(status)
+  };
   return (
     <Formik
-      initialValues={{name: '', gender: '', birthDate: new Date(), country: '', city: '', aboutUserText: ''}}
+      initialValues={{name: '', gender: statusAssessment, birthDate: new Date(), country: '', city: '', aboutUserText: ''}}
       validationSchema={profileInfoFormSchema}
       validateOnBlur={true}
       validateOnChange={true}
@@ -75,7 +80,8 @@ const ProfileInfoForm = () => {
                   name: 'gender',
                   propValue: 'male',
                   label: 'Male',
-                  checked: sex === 'male',
+                  checked: statusAssessment === 'male',
+                  getRadioStatus: getRadioStatus,
                   handleChange: () => {
                   }
                 })}
@@ -85,7 +91,8 @@ const ProfileInfoForm = () => {
                   name: 'gender',
                   propValue: 'female',
                   label: 'Female',
-                  checked: sex === 'female',
+                  checked: statusAssessment === 'female',
+                  getRadioStatus: getRadioStatus,
                   handleChange: () => {
                   }
                 })}
