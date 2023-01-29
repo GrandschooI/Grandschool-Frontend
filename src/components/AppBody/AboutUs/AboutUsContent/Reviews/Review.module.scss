@@ -40,10 +40,12 @@
     .assesmentRadioList {
       display: flex;
       margin: 15px 0 35px;
-      cursor: pointer;
       li {
         margin-right: 50px;
-        &.active {
+        label{
+          cursor: pointer;
+        }
+        &.active_green {
           svg {
             opacity: 1;
             path {
@@ -97,6 +99,7 @@
           margin-left: 10px;
         }
         small {
+          text-align: center;
           font-size: 10px;
           font-weight: 400;
           width: 100%;
