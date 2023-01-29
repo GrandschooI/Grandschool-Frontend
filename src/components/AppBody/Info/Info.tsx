@@ -10,7 +10,6 @@ import {useAppSelector} from '../../../utils/Hooks/useAppSelector';
 import {getInfoMenu} from '../../../Redux/selectors/infoSelector';
 
 const Info = () => {
-  debugger
   const dispatch = useDispatch()
   const infoAsideItems:asideItemsType = useAppSelector(getInfoMenu)
   let defaultLinkForRedirect = null
