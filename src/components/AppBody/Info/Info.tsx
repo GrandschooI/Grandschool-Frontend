@@ -10,10 +10,10 @@ import {useAppSelector} from '../../../utils/Hooks/useAppSelector';
 import {getInfoMenu} from '../../../Redux/selectors/infoSelector';
 
 const Info = () => {
-
+  debugger
   const dispatch = useDispatch()
   const infoAsideItems:asideItemsType = useAppSelector(getInfoMenu)
-  let defaultLinkForRedirect = ''
+  let defaultLinkForRedirect = null
   useEffect(() => {
     dispatch(getWebsitesCategoryThunkCreator())
   }, [])
@@ -27,7 +27,7 @@ const Info = () => {
         <Aside asideItems={infoAsideItems}/>
         <Switch>
           <Route path="/info/websites" render={() => <Websites/>}/>
-          {infoAsideItems && <Redirect path="/info" to={defaultLinkForRedirect}/>}
+          {defaultLinkForRedirect && <Redirect path="/info" to={defaultLinkForRedirect}/>}
         </Switch>
       </div>
     </div>

@@ -1,6 +1,8 @@
 import {BaseThunkType, InferActionType} from '../redux-store'
 import {InfoAPI, WebsiteCategoryItemType, WebsiteItemType} from '../../api/infoAPI'
 import {reviewsAPI} from "../../api/reviewsAPI";
+import {styleActions} from "./styleReducer";
+import {Dispatch} from "redux";
 
 
 const initialState = {
@@ -72,8 +74,9 @@ export const getWebsitesThunkCreator = (category: string): ThunkType => {
   }
 }
 
-export const getWebsitesCategoryThunkCreator = (): ThunkType => {
-  return async (dispatch) => {
+export const getWebsitesCategoryThunkCreator = () => {
+  return async (dispatch: Dispatch) => {
+    dispatch(styleActions.toggleIsLoadedAC(false))
     await InfoAPI.getWebsiteCategories().then((response: Array<WebsiteCategoryItemType>) => {
       const websiteCategories = response.map((el) => {
         return ({
@@ -85,6 +88,9 @@ export const getWebsitesCategoryThunkCreator = (): ThunkType => {
     })
       .catch((error: any) => {
         console.log(error)
+      })
+      .finally(() => {
+        dispatch(styleActions.toggleIsLoadedAC(true))
       })
   }
 }
