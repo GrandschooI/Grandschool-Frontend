@@ -10,7 +10,7 @@ const AsideItem: React.FC<PropsType> = ({itemTitle, itemLink, topics, themeStyle
     const location: string = useLocation().pathname
     const [activeItem, setActiveItem] = useState(false)
     useEffect(() => {
-        if (location === itemLink) {
+        if (location.includes(itemLink)) {
             setActiveItem(true)
         }
     }, [location, itemLink])
@@ -38,7 +38,8 @@ const AsideItem: React.FC<PropsType> = ({itemTitle, itemLink, topics, themeStyle
                         unmountOnExit
                     >
                         <ul className={s.asideSubmenu}>
-                            {topics.map((el, index) => <li key={index}>
+                            {topics.map((el, index) => <li key={index}
+                                                           className={location === el.topicLink ? s.activeTopic : ''}>
                                 <NavLink to={el.topicLink}>
                                     {el.topicTitle}
                                 </NavLink>

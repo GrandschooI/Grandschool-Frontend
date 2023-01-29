@@ -101,6 +101,7 @@ span.activeItem {
       }
     }
 
+    &.activeTopic,
     &:hover {
       background: #f7f5ec;
       transition: all .3s ease;
