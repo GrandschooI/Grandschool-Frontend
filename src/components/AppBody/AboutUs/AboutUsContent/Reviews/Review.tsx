@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useRef, useState} from 'react'
 import s from './Review.module.scss'
 import feedBackImgWebp from '../../../../../assets/images/webp/feedbackIMG.webp'
 import feedBackImg from '../../../../../assets/images/feedbackIMG.jpg'
@@ -16,20 +16,34 @@ import {useAppSelector} from '../../../../../utils/Hooks/useAppSelector';
 import {getThemeStyle} from '../../../../../Redux/selectors/styleSelector';
 import * as yup from "yup";
 import {useDispatch} from "react-redux";
-import {sendFeedbackReviewsThunkCreator} from "../../../../../Redux/reducers/infoReducer";
+import {sendFeedbackReviewsThunkCreator, sendFeedbackType} from "../../../../../Redux/reducers/infoReducer";
 
 const profileInfoFormSchema = yup.object().shape({
-  // assessment: yup.boolean(),
-  textareaAssessment: yup.string(),
+  assessment: yup.string(),
+  text: yup.string()
+    .max(500, 'Maximum 5 characters')
+    .required('Required')
+
 })
 const Review = () => {
   const dispatch = useDispatch()
   const themeStyle = useAppSelector(getThemeStyle)
 
   const [statusAssessment, setStatusAssessment] = useState('')
+  const inputFileData = useRef<any>()
+
 
   const getRadioStatus = (status: string) => {
     setStatusAssessment(status)
+  }
+  const sendSubmitForm = (reviewsFormData: sendFeedbackType) =>{
+    const reviewsData = {
+      assessment: reviewsFormData.assessment,
+      text: reviewsFormData.text,
+      attachment: inputFileData.current?.files[0]
+    }
+    dispatch(sendFeedbackReviewsThunkCreator(reviewsData))
+    setStatusAssessment('')
   }
   return (
     <div className={cn(s.reviewBody, s[themeStyle ? themeStyle : ''], [themeStyle ? themeStyle : ''])}>
@@ -50,22 +64,24 @@ const Review = () => {
       </div>
 
       <Formik
-        initialValues={{assessment: '', textareaAssessment: '', reviewAttached: null}}
+        initialValues={{assessment: '', text: '', attachment: null}}
         validationSchema={profileInfoFormSchema}
         validateOnBlur={true}
         validateOnChange={true}
-        onSubmit={(reviewsFormData) => {
-          dispatch(sendFeedbackReviewsThunkCreator(reviewsFormData))
+        onSubmit={(reviewsFormData: sendFeedbackType,{resetForm}) => {
+          sendSubmitForm(reviewsFormData)
+          resetForm()
         }}
       >
-        {({isSubmitting, handleChange,values}) => (
+        {({isSubmitting, handleChange, values}) => (
           <Form className={s.reviewForm}>
             <span className={s.reviewCAT}>Give an overall assessment of our course</span>
             <ul className={s.assesmentRadioList}>
               {
-                radioAssessmentData.map(assessment => {
+                radioAssessmentData.map((assessment, index) => {
                   return (
-                    <li key={assessment.label} className={statusAssessment === assessment.propValue ? s.active_green : ''}>
+                    <li key={assessment.label}
+                        className={statusAssessment === assessment.propValue ? assessmentStyles[index] : ''}>
                       <label>
                         {assessment.icon}
                         {
@@ -88,14 +104,15 @@ const Review = () => {
             <span className={s.reviewCAT}>Leave your feedback</span>
             <label className={s.textareaWrap}>
               Tell us exactly what you liked or disliked about our course
-              <textarea name={'textareaAssessment'} onChange={handleChange} value={values.textareaAssessment} placeholder="- Who recommended our course to you?
+              <textarea name={'text'} onChange={handleChange} value={values.text} placeholder="- Who recommended our course to you?
 - What you liked best?
 - What you liked best, would you recommend our course to your friends?"/>
             </label>
 
             <div className={s.buttonWrapper}>
               <label>
-                <input name={'reviewAttached'} type="file" accept=".png, .jpg, .jpeg, .gif" id={'reviewAttached'}/>
+                <input ref={inputFileData} name={'reviewAttached'} type="file" accept=".png, .jpg, .jpeg, .gif"
+                       id={'reviewAttached'}/>
                 <label htmlFor={'reviewAttached'} className={cn(s.reviewAttached, 'inverseBtn')}>
                   <ClipIcon/>
                   <span>Attach file</span>
@@ -142,6 +159,8 @@ const Review = () => {
 }
 
 export default Review
+
+const assessmentStyles = [s.active_green, s.active_lightOrange, s.active_orange, s.active_darkOrange, s.active_red]
 
 const radioAssessmentData = [
   {
