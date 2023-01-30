@@ -95,18 +95,13 @@ export const getWebsitesCategoryThunkCreator = () => {
   }
 }
 
-export const sendFeedbackReviewsThunkCreator = (reviewsFormData: any)
+export const sendFeedbackReviewsThunkCreator = (reviewsFormData: sendFeedbackType)
   : ThunkType => {
   return async (dispatch) => {
-    const reviewData = {
-      assessment: Number(reviewsFormData.assessment),
-      text: reviewsFormData.textareaAssessment,
-    }
     try {
-      await reviewsAPI.sendFeedback(reviewData)
-
-    } catch (e) {
-      console.log(e)
+      await reviewsAPI.sendFeedback(reviewsFormData)
+    } catch (error: any) {
+      console.log(error)
     }
   }
 }
@@ -118,9 +113,10 @@ export default infoReducer
 // Types
 
 export type sendFeedbackType = {
+  user_id?: number
   assessment: number | string,
-  textareaAssessment: string,
-  reviewAttached?: null
+  text: string,
+  attachment?: null | File
 }
 
 export type InitialStateType = typeof initialState
