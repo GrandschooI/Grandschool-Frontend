@@ -43,13 +43,55 @@
       li {
         margin-right: 50px;
         label{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          row-gap: 10px;
           cursor: pointer;
         }
         &.active_green {
           svg {
             opacity: 1;
+            transition: 1s;
             path {
+              transition: 0.5s;
               fill: green;
+            }
+          }
+        }
+        &.active_lightOrange {
+          svg {
+            opacity: 1;
+            path {
+              transition: 0.5s;
+              fill: #738000;
+            }
+          }
+        }
+        &.active_orange {
+          svg {
+            opacity: 1;
+            path {
+              transition: 0.5s;
+              fill: orange;
+            }
+          }
+        }
+        &.active_darkOrange {
+          svg {
+            opacity: 1;
+            path {
+              transition: 0.5s;
+              fill: #e16527;
+            }
+          }
+        }
+        &.active_red {
+          svg {
+            opacity: 1;
+            path {
+              transition: 0.5s;
+              fill: red;
             }
           }
         }
