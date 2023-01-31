@@ -22,7 +22,7 @@ const MAX_PASSWORD_LENGTH = 50
 
 const registrationSchema = yup.object().shape({
   // @ts-ignore
-  email: yup.string().required('Email / Phone address is required').test('email', 'Email / Phone is invalid', (value) => {
+  emailOrPhone: yup.string().required('Email / Phone address is required').test('email', 'Email / Phone is invalid', (value) => {
     return validateEmail(value) || validatePhone(value)
   }),
   password: yup.string()
@@ -79,7 +79,7 @@ const RegistrationForm: React.FC<propsType> = (
 
       <p className={s.orWord}>or</p>
       <Formik
-        initialValues={{email: '', password: '', confirmPassword: '', terms: false}}
+        initialValues={{emailOrPhone: '', password: '', confirmPassword: '', terms: false}}
         validationSchema={registrationSchema}
         onSubmit={onSubmit}
         validateOnChange={true}
@@ -91,12 +91,12 @@ const RegistrationForm: React.FC<propsType> = (
               <span>Enter PHONE NUMBER or E-MAIL</span>
               {TextField({
                 type: 'email',
-                name: 'email',
+                name: 'emailOrPhone',
                 placeholder: 'test@gmail.com / +48547323456',
                 className: `textField`,
                 errorClassname: `errorTextField`
               })}
-              {errors.email && touched.email && <FormErrorMessage>{errors.email}</FormErrorMessage>}
+              {errors.emailOrPhone && touched.emailOrPhone && <FormErrorMessage>{errors.emailOrPhone}</FormErrorMessage>}
             </label>
             <label className={cn('formLabel', s.formLabel)}>
               <span>PASSWORD</span>
@@ -146,5 +146,4 @@ type propsType = {
   onGoogleButtonClick: any
   onFacebookButtonClick: any
   startGoogleAPI: any
-
 }

@@ -114,9 +114,10 @@ export const loginThunkCreator = (email?: string, password?: string, driver?: st
             true, 'token', userData.access_token)
         }
       })
-      .catch((error: any) => {
-        const errorMessage = error.response.data.errors
-        errorHandler(errorMessage)
+      .catch((error: AxiosError) => {
+        debugger
+        const errorMessage = error?.response?.data.message
+        toast.error(errorMessage)
       }).finally(() => {
       dispatch(styleActions.toggleIsLoadedAC(true))
     })
@@ -125,18 +126,23 @@ export const loginThunkCreator = (email?: string, password?: string, driver?: st
 
 export const logoutThunkCreator = () => async (dispatch: Dispatch) => {
   dispatch(styleActions.toggleIsLoadedAC(false))
-  const token = localStorage.token
-  const response = await AuthAPI.logout(token)
-  if (response.status === 204) {
-    dispatch(userActions.setAuth({}, false))
-    removeDataFromLocalStorage('token')
-    removeDataFromLocalStorage('user')
-    dispatch(styleActions.toggleIsLoadedAC(true))
+  try {
+    const token = localStorage.token
+    const response = await AuthAPI.logout(token)
+    if (response.status === 204) {
+      dispatch(userActions.setAuth({}, false))
+      removeDataFromLocalStorage('token')
+      removeDataFromLocalStorage('user')
+      dispatch(styleActions.toggleIsLoadedAC(true))
 
-  } else {
-    toast.error('Coś poszło nie tak', {autoClose: 5000})
-    dispatch(styleActions.toggleIsLoadedAC(true))
+    } else {
+      toast.error('Coś poszło nie tak', {autoClose: 5000})
+      dispatch(styleActions.toggleIsLoadedAC(true))
+    }
+  } catch (error) {
+    toast.error((error as AxiosError).response?.data.message)
   }
+
 }
 
 export const forgotPasswordThunkCreator = (email: string) => {
@@ -145,8 +151,8 @@ export const forgotPasswordThunkCreator = (email: string) => {
     AuthAPI.forgotPassword(email)
       .then(() => {
       })
-      .catch((error: any) => {
-        errorHandler(error)
+      .catch((error: AxiosError) => {
+        toast.error(error?.response?.data.message)
       }).finally(() => {
       dispatch(styleActions.toggleIsLoadedAC(true))
     })
@@ -160,7 +166,7 @@ export const setUserPhotoThunkCreator = (userId: number, token: string, file: an
     dispatch(userActions.setPhoto(response.data.data.photo))
     setDataToLocalStorage('user', JSON.stringify(response.data.data))
   } catch (error) {
-    errorHandler(error)
+    toast.error((error as AxiosError).response?.data.message)
   } finally {
     dispatch(styleActions.toggleIsLoadedAC(true))
   }
