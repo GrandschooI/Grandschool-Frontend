@@ -19,8 +19,12 @@ import FormErrorMessage from '../../../utils/FormErrorMessage/FormErrorMessage';
 const MIN_PASSWORD_LENGTH = 8
 const MAX_PASSWORD_LENGTH = 50
 
+
 const registrationSchema = yup.object().shape({
-  email: yup.string().email('Invalid email address').required('Email address is required'),
+  emailOrPhone: yup.string().required('Email / Phone address is required')
+    .test('email_or_phone', 'Email / Phone is invalid', (value) => {
+      return validateEmail(value) || validatePhone(value);
+    }),
   password: yup.string()
     .required('Password is required')
     .min(MIN_PASSWORD_LENGTH, 'Password must be at least 8 characters')
@@ -28,6 +32,18 @@ const registrationSchema = yup.object().shape({
   confirmPassword: yup.string().oneOf([yup.ref('password'), null], 'Passwords must be identical').required(),
   terms: yup.boolean().isTrue('Accept terms is required')
 })
+// need to find better RegExp and should be fine
+const phoneRegExp = /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/
+
+const validateEmail = (email: string | undefined) => {
+  return yup.string().email().isValidSync(email)
+}
+const validatePhone = (phone: string | undefined) => {
+  return yup.string()
+    .matches(phoneRegExp, 'Phone must be valid')
+    .isValidSync(phone);
+};
+
 
 const RegistrationForm: React.FC<propsType> = (
   {
@@ -67,7 +83,7 @@ const RegistrationForm: React.FC<propsType> = (
 
       <p className={s.orWord}>or</p>
       <Formik
-        initialValues={{email: '', password: '', confirmPassword: '', terms: false}}
+        initialValues={{emailOrPhone: '', password: '', confirmPassword: '', terms: false}}
         validationSchema={registrationSchema}
         onSubmit={onSubmit}
         validateOnChange={true}
@@ -78,13 +94,14 @@ const RegistrationForm: React.FC<propsType> = (
             <label className={cn('formLabel', s.formLabel)}>
               <span>Enter PHONE NUMBER or E-MAIL</span>
               {TextField({
-                type: 'email',
-                name: 'email',
+                type: 'emailOrPhone',
+                name: 'emailOrPhone',
                 placeholder: 'test@gmail.com / +48547323456',
                 className: `textField`,
                 errorClassname: `errorTextField`
               })}
-              {errors.email && touched.email && <FormErrorMessage>{errors.email}</FormErrorMessage>}
+              {errors.emailOrPhone && touched.emailOrPhone &&
+                  <FormErrorMessage>{errors.emailOrPhone}</FormErrorMessage>}
             </label>
             <label className={cn('formLabel', s.formLabel)}>
               <span>PASSWORD</span>
@@ -108,10 +125,11 @@ const RegistrationForm: React.FC<propsType> = (
                 errorClassname: `errorTextField`,
                 changeToText: true
               })}
-              {errors.confirmPassword && touched.confirmPassword && <FormErrorMessage>{errors.confirmPassword}</FormErrorMessage>}
+              {errors.confirmPassword && touched.confirmPassword &&
+                  <FormErrorMessage>{errors.confirmPassword}</FormErrorMessage>}
             </label>
             <label className={s.termsCheck}>
-              <Checkbox label={'I agree to'} name={'terms'} propValue={true} className={'checkboxLabel'} />
+              <Checkbox label={'I agree to'} name={'terms'} propValue={true} className={'checkboxLabel'}/>
               <a href={'/'} className={s.termsLabel}>terms & conditions</a>
               {errors.terms && touched.terms && <span className={s.terms__error}>{errors.terms}</span>}
             </label>
@@ -133,5 +151,4 @@ type propsType = {
   onGoogleButtonClick: any
   onFacebookButtonClick: any
   startGoogleAPI: any
-
 }
