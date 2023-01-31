@@ -23,7 +23,6 @@ import {getFontSize, getOptionsState, getThemeStyle} from '../../../Redux/select
 import {getAuthStatus} from '../../../Redux/selectors/userSelector';
 
 const AuthPage = () => {
-
   const themeStyle = useAppSelector(getThemeStyle)
   const isOptionsOpen = useAppSelector(getOptionsState)
   const fontSize = useAppSelector(getFontSize)
@@ -34,8 +33,7 @@ const AuthPage = () => {
   const location: string = useLocation().pathname
 
   const onRegistrationSubmit = (formData: registrationFormDataType) => {
-    toast('In progress')
-    dispatch(registerThunkCreator(formData.email, formData.password, formData.confirmPassword))
+    dispatch(registerThunkCreator(formData.emailOrPhone, formData.password, formData.confirmPassword))
   }
   const onLoginSubmit = (formData: loginDataType, onSubmitProps: any) => {
     dispatch(loginThunkCreator(formData.email, formData.password))
@@ -114,7 +112,7 @@ const AuthPage = () => {
 export default AuthPage
 
 export type registrationFormDataType = {
-  email: string
+  emailOrPhone: string
   password: string
   confirmPassword: string
 }

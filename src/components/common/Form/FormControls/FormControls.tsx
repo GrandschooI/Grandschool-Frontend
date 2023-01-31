@@ -17,7 +17,6 @@ export const TextField: React.FC<propsForTextFieldType> = (
     e.preventDefault()
     setValue(value === fieldPasswordType ? fieldTextType : fieldPasswordType)
   }
-
   return (
     <div className={s.inputWrap}>
       <Field type={value}
@@ -26,7 +25,6 @@ export const TextField: React.FC<propsForTextFieldType> = (
              className={className}
              errorclassname={errorClassname}
              validate={validators}
-             value={propValue}
       />
       {type === 'password' && value === fieldPasswordType && <button onClick={onChange} className={s.changeType}>
           <EyeIcon/>
