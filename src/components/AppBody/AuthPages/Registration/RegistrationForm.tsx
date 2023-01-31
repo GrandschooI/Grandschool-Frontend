@@ -22,24 +22,28 @@ const MAX_PASSWORD_LENGTH = 50
 
 const registrationSchema = yup.object().shape({
   // @ts-ignore
-  emailOrPhone: yup.string().required('Email / Phone address is required').test('email', 'Email / Phone is invalid', (value) => {
-    return validateEmail(value) || validatePhone(value)
-  }),
+/*  emailOrPhone: yup.string().required('Email / Phone address is required').when()
+  ,
   password: yup.string()
     .required('Password is required')
     .min(MIN_PASSWORD_LENGTH, 'Password must be at least 8 characters')
     .max(MAX_PASSWORD_LENGTH, 'Password must not be greater than 50 characters.'),
   confirmPassword: yup.string().oneOf([yup.ref('password'), null], 'Passwords must be identical').required(),
-  terms: yup.boolean().isTrue('Accept terms is required')
+  terms: yup.boolean().isTrue('Accept terms is required')*/
 })
 
-const validateEmail = (email: string | undefined) => {
-  return yup.string().isValidSync(email)
+/*const validateEmail = (email: string | undefined) => {
+  return yup.string().email().isValidSync(email)
 }
-const validatePhone = (phone: string | undefined) => {
-  return yup.string().matches(/^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/, 'Phone must be valid')
-    .isValidSync(phone)
-}
+const validatePhone = (phone: number | undefined) => {
+  return yup.number().integer().positive().test(
+    // @ts-ignore
+    (phone) => {
+      return (phone && phone.toString().match(/^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/));
+    }
+  ).isValidSync(phone);
+};*/
+
 
 const RegistrationForm: React.FC<propsType> = (
   {
@@ -90,13 +94,14 @@ const RegistrationForm: React.FC<propsType> = (
             <label className={cn('formLabel', s.formLabel)}>
               <span>Enter PHONE NUMBER or E-MAIL</span>
               {TextField({
-                type: 'email',
+                type: 'emailOrPhone',
                 name: 'emailOrPhone',
                 placeholder: 'test@gmail.com / +48547323456',
                 className: `textField`,
                 errorClassname: `errorTextField`
               })}
-              {errors.emailOrPhone && touched.emailOrPhone && <FormErrorMessage>{errors.emailOrPhone}</FormErrorMessage>}
+              {errors.emailOrPhone && touched.emailOrPhone &&
+                  <FormErrorMessage>{errors.emailOrPhone}</FormErrorMessage>}
             </label>
             <label className={cn('formLabel', s.formLabel)}>
               <span>PASSWORD</span>
