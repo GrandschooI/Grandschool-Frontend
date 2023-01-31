@@ -95,13 +95,16 @@ export const getWebsitesCategoryThunkCreator = () => {
   }
 }
 
-export const sendFeedbackReviewsThunkCreator = (reviewsFormData: sendFeedbackType)
-  : ThunkType => {
-  return async (dispatch) => {
+export const sendFeedbackReviewsThunkCreator = (reviewsFormData: sendFeedbackType) => {
+  return async (dispatch: Dispatch) => {
+    dispatch(styleActions.toggleIsLoadedAC(false))
+
     try {
       await reviewsAPI.sendFeedback(reviewsFormData)
     } catch (error: any) {
       console.log(error)
+    } finally {
+      dispatch(styleActions.toggleIsLoadedAC(true))
     }
   }
 }
