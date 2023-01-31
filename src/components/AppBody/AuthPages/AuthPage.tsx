@@ -23,7 +23,6 @@ import {getFontSize, getOptionsState, getThemeStyle} from '../../../Redux/select
 import {getAuthStatus} from '../../../Redux/selectors/userSelector';
 
 const AuthPage = () => {
-
   const themeStyle = useAppSelector(getThemeStyle)
   const isOptionsOpen = useAppSelector(getOptionsState)
   const fontSize = useAppSelector(getFontSize)

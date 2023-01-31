@@ -5,6 +5,7 @@ import {AuthAPI, AuthResponseType} from '../../api/authAPI'
 import {userAPI} from '../../api/userAPI';
 import {styleActions} from './styleReducer';
 import {Dispatch} from 'redux';
+import {AxiosError} from 'axios';
 
 export const FACEBOOK_CLIENT_ID = '1166464030893684'
 export const GOOGLE_CLIENT_ID = '959593221954-sl41n7108b6se8uqtm4c64q81g1v49ap.apps.googleusercontent.com'
@@ -92,9 +93,9 @@ export const registerThunkCreator = (email: string, password: string, confirmPas
           toast.error('Coś poszło nie tak', {autoClose: 5000})
         }
       })
-      .catch((error: any) => {
-        const errorMessage = error.response.data.errors
-        errorHandler(errorMessage)
+      .catch((error: AxiosError) => {
+        const errorMessage = error?.response?.data.message
+        toast.error(errorMessage)
       }).finally(() => {
       dispatch(styleActions.toggleIsLoadedAC(true))
     })

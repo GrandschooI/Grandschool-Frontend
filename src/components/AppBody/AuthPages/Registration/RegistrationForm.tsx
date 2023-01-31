@@ -19,8 +19,12 @@ import FormErrorMessage from '../../../utils/FormErrorMessage/FormErrorMessage';
 const MIN_PASSWORD_LENGTH = 8
 const MAX_PASSWORD_LENGTH = 50
 
+
 const registrationSchema = yup.object().shape({
-  email: yup.string().email('Invalid email address').required('Email address is required'),
+  // @ts-ignore
+  email: yup.string().required('Email / Phone address is required').test('email', 'Email / Phone is invalid', (value) => {
+    return validateEmail(value) || validatePhone(value)
+  }),
   password: yup.string()
     .required('Password is required')
     .min(MIN_PASSWORD_LENGTH, 'Password must be at least 8 characters')
@@ -28,6 +32,14 @@ const registrationSchema = yup.object().shape({
   confirmPassword: yup.string().oneOf([yup.ref('password'), null], 'Passwords must be identical').required(),
   terms: yup.boolean().isTrue('Accept terms is required')
 })
+
+const validateEmail = (email: string | undefined) => {
+  return yup.string().isValidSync(email)
+}
+const validatePhone = (phone: string | undefined) => {
+  return yup.string().matches(/^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/, 'Phone must be valid')
+    .isValidSync(phone)
+}
 
 const RegistrationForm: React.FC<propsType> = (
   {
@@ -108,10 +120,11 @@ const RegistrationForm: React.FC<propsType> = (
                 errorClassname: `errorTextField`,
                 changeToText: true
               })}
-              {errors.confirmPassword && touched.confirmPassword && <FormErrorMessage>{errors.confirmPassword}</FormErrorMessage>}
+              {errors.confirmPassword && touched.confirmPassword &&
+                  <FormErrorMessage>{errors.confirmPassword}</FormErrorMessage>}
             </label>
             <label className={s.termsCheck}>
-              <Checkbox label={'I agree to'} name={'terms'} propValue={true} className={'checkboxLabel'} />
+              <Checkbox label={'I agree to'} name={'terms'} propValue={true} className={'checkboxLabel'}/>
               <a href={'/'} className={s.termsLabel}>terms & conditions</a>
               {errors.terms && touched.terms && <span className={s.terms__error}>{errors.terms}</span>}
             </label>
