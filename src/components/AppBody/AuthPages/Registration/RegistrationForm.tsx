@@ -21,28 +21,28 @@ const MAX_PASSWORD_LENGTH = 50
 
 
 const registrationSchema = yup.object().shape({
-  // @ts-ignore
-/*  emailOrPhone: yup.string().required('Email / Phone address is required').when()
-  ,
+  emailOrPhone: yup.string().required('Email / Phone address is required')
+    .test('email_or_phone', 'Email / Phone is invalid', (value) => {
+      return validateEmail(value) || validatePhone(value);
+    }),
   password: yup.string()
     .required('Password is required')
     .min(MIN_PASSWORD_LENGTH, 'Password must be at least 8 characters')
     .max(MAX_PASSWORD_LENGTH, 'Password must not be greater than 50 characters.'),
   confirmPassword: yup.string().oneOf([yup.ref('password'), null], 'Passwords must be identical').required(),
-  terms: yup.boolean().isTrue('Accept terms is required')*/
+  terms: yup.boolean().isTrue('Accept terms is required')
 })
+// need to find better RegExp and should be fine
+const phoneRegExp = /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/
 
-/*const validateEmail = (email: string | undefined) => {
+const validateEmail = (email: string | undefined) => {
   return yup.string().email().isValidSync(email)
 }
-const validatePhone = (phone: number | undefined) => {
-  return yup.number().integer().positive().test(
-    // @ts-ignore
-    (phone) => {
-      return (phone && phone.toString().match(/^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/));
-    }
-  ).isValidSync(phone);
-};*/
+const validatePhone = (phone: string | undefined) => {
+  return yup.string()
+    .matches(phoneRegExp, 'Phone must be valid')
+    .isValidSync(phone);
+};
 
 
 const RegistrationForm: React.FC<propsType> = (
