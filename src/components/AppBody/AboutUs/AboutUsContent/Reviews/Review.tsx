@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react'
+import React, {ChangeEvent, useState} from 'react'
 import s from './Review.module.scss'
 import feedBackImgWebp from '../../../../../assets/images/webp/feedbackIMG.webp'
 import feedBackImg from '../../../../../assets/images/feedbackIMG.jpg'
@@ -30,20 +30,35 @@ const Review = () => {
   const themeStyle = useAppSelector(getThemeStyle)
 
   const [statusAssessment, setStatusAssessment] = useState('')
-  const inputFileData = useRef<any>()
+  const [inputFilePathImg, setInputFilePathImg] = useState<string>('')
+  const [inputFile, setInputFile] = useState<File | null>(null)
 
 
+  const onChangeFileHandle = (event: ChangeEvent<HTMLInputElement>) => {
+    let file = event.target.files && event.target.files[0];
+    setInputFile(file)
+    let reader = new FileReader();
+    reader.onloadend = function () {
+      file && setInputFilePathImg(URL.createObjectURL(file));
+    };
+    reader.readAsDataURL(file as Blob);
+  }
+  const deleteSelectedFileHandle = () => {
+    setInputFile(null)
+    setInputFilePathImg('')
+  }
   const getRadioStatus = (status: string) => {
     setStatusAssessment(status)
   }
-  const sendSubmitForm = (reviewsFormData: sendFeedbackType) =>{
+  const sendSubmitForm = (reviewsFormData: sendFeedbackType) => {
     const reviewsData = {
       assessment: reviewsFormData.assessment,
       text: reviewsFormData.text,
-      attachment: inputFileData.current?.files[0]
+      attachment: inputFile
     }
     dispatch(sendFeedbackReviewsThunkCreator(reviewsData))
     setStatusAssessment('')
+    setInputFilePathImg('')
   }
   return (
     <div className={cn(s.reviewBody, s[themeStyle ? themeStyle : ''], [themeStyle ? themeStyle : ''])}>
@@ -68,7 +83,7 @@ const Review = () => {
         validationSchema={profileInfoFormSchema}
         validateOnBlur={true}
         validateOnChange={true}
-        onSubmit={(reviewsFormData: sendFeedbackType,{resetForm}) => {
+        onSubmit={(reviewsFormData: sendFeedbackType, {resetForm}) => {
           sendSubmitForm(reviewsFormData)
           resetForm()
         }}
@@ -110,15 +125,22 @@ const Review = () => {
             </label>
 
             <div className={s.buttonWrapper}>
-              <label>
-                <input ref={inputFileData} name={'reviewAttached'} type="file" accept=".png, .jpg, .jpeg, .gif"
-                       id={'reviewAttached'}/>
-                <label htmlFor={'reviewAttached'} className={cn(s.reviewAttached, 'inverseBtn')}>
-                  <ClipIcon/>
-                  <span>Attach file</span>
-                  <small>File .jpg, .png, .svg to 2 MB.</small>
+              {!inputFilePathImg ?
+                <label>
+                  <input onChange={onChangeFileHandle} name={'reviewAttached'} type="file"
+                         accept=".png, .jpg, .jpeg, .gif"
+                         id={'reviewAttached'}/>
+                  <label htmlFor={'reviewAttached'} className={cn(s.reviewAttached, 'inverseBtn')}>
+                    <ClipIcon/>
+                    <span>Attach file</span>
+                    <small>File .jpg, .png, .svg to 2 MB.</small>
+                  </label>
                 </label>
-              </label>
+                : <div className={s.reviewsFile}>
+                  <img style={{width: '100%'}} src={inputFilePathImg} alt="file"/>
+                  <span className={s.reviewsFileDelete} onClick={deleteSelectedFileHandle}>&#10006;</span>
+                </div>
+              }
               <button type="submit" disabled={isSubmitting} className={cn(s.sendFeedback, 'submitBtn')}>
                 Send Feedback
               </button>
@@ -160,7 +182,7 @@ const Review = () => {
 
 export default Review
 
-const assessmentStyles = [s.active_green, s.active_lightOrange, s.active_orange, s.active_darkOrange, s.active_red]
+const assessmentStyles = [s.activeGreen, s.activeLightOrange, s.activeOrange, s.activeDarkOrange, s.activeRed]
 
 const radioAssessmentData = [
   {
