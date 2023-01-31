@@ -21,7 +21,7 @@ import {sendFeedbackReviewsThunkCreator, sendFeedbackType} from "../../../../../
 const profileInfoFormSchema = yup.object().shape({
   assessment: yup.string(),
   text: yup.string()
-    .max(500, 'Maximum 5 characters')
+    .max(500, 'Maximum 500 characters')
     .required('Required')
 
 })
@@ -138,7 +138,14 @@ const Review = () => {
                 </label>
                 : <div className={s.reviewsFile}>
                   <img style={{width: '100%'}} src={inputFilePathImg} alt="file"/>
-                  <span className={s.reviewsFileDelete} onClick={deleteSelectedFileHandle}>&#10006;</span>
+                  <button className={s.reviewsFileDelete} onClick={deleteSelectedFileHandle}>
+                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="30px" height="30px">
+                      <path fill="none" stroke="#fff" strokeMiterlimit="10" strokeWidth="3" d="M29.5,11.5V11c0-3-2.5-5.5-5.5-5.5S18.5,8,18.5,11v0.5"/>
+                      <line x1="7.5" x2="40.5" y1="11.5" y2="11.5" fill="none" stroke="#fff" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="3"/>
+                      <line x1="36.5" x2="38" y1="27" y2="11.5" fill="none" stroke="#fff" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="3"/>
+                      <path fill="none" stroke="#fff" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="3" d="M10.7,18.6l2,20.3c0.2,2.1,1.9,3.6,4,3.6h14.7c2.1,0,3.8-1.6,4-3.6l0.5-4.8"/>
+                    </svg>
+                  </button>
                 </div>
               }
               <button type="submit" disabled={isSubmitting} className={cn(s.sendFeedback, 'submitBtn')}>
@@ -154,8 +161,6 @@ const Review = () => {
       <ul className={s.reviewList}>
         <li>
           <div>
-            <img src="src/components/AppBody/AboutUs/AboutUsContent/Reviews" alt=""/>
-
             <div>
               <h3>Agnieszka Nazim</h3>
               <p>m. Gdańsk, 56 lat, Uczestnik konkursu "Dziękuję za Internet 2020".</p>
