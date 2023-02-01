@@ -39,7 +39,7 @@
 
 .asideLink:hover,
 .asideLink:focus {
-  background: rgba(250, 250, 250);
+  background: #F7F5EC;
   color: inherit;
 }
 
@@ -101,6 +101,7 @@ span.activeItem {
       }
     }
 
+    &.activeTopic,
     &:hover {
       background: #f7f5ec;
       transition: all .3s ease;

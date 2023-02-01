@@ -1,5 +1,8 @@
 import {BaseThunkType, InferActionType} from '../redux-store'
 import {InfoAPI, WebsiteCategoryItemType, WebsiteItemType} from '../../api/infoAPI'
+import {reviewsAPI} from "../../api/reviewsAPI";
+import {styleActions} from "./styleReducer";
+import {Dispatch} from "redux";
 
 
 const initialState = {
@@ -31,11 +34,11 @@ const initialState = {
 
 export const infoReducer = (state = initialState, action: getWebsiteActionType): InitialStateType => {
   switch (action.type) {
-  case 'info/SET_WEBSITES':
-    return {
-      ...state,
-      websites: action.data
-    }
+    case 'info/SET_WEBSITES':
+      return {
+        ...state,
+        websites: action.data
+      }
 
     case 'info/SET_WEBSITE_CATEGORIES':
       return {
@@ -43,8 +46,8 @@ export const infoReducer = (state = initialState, action: getWebsiteActionType):
         infoPageAsideMenu: [{...state.infoPageAsideMenu[0], topics: [...action.data]}]
       }
 
-  default:
-    return state
+    default:
+      return state
   }
 }
 
@@ -52,7 +55,10 @@ export const infoReducer = (state = initialState, action: getWebsiteActionType):
 
 export const InfoActions = {
   setWebsites: (websites: Array<WebsiteItemType>) => ({type: 'info/SET_WEBSITES', data: websites} as const),
-  setWebsiteCategories: (websiteCategories: any) => ({type: 'info/SET_WEBSITE_CATEGORIES', data: websiteCategories} as const)
+  setWebsiteCategories: (websiteCategories: any) => ({
+    type: 'info/SET_WEBSITE_CATEGORIES',
+    data: websiteCategories
+  } as const)
 }
 
 // ThunkCreators
@@ -68,8 +74,9 @@ export const getWebsitesThunkCreator = (category: string): ThunkType => {
   }
 }
 
-export const getWebsitesCategoryThunkCreator = (): ThunkType  => {
-  return async (dispatch) => {
+export const getWebsitesCategoryThunkCreator = () => {
+  return async (dispatch: Dispatch) => {
+    dispatch(styleActions.toggleIsLoadedAC(false))
     await InfoAPI.getWebsiteCategories().then((response: Array<WebsiteCategoryItemType>) => {
       const websiteCategories = response.map((el) => {
         return ({
@@ -79,9 +86,26 @@ export const getWebsitesCategoryThunkCreator = (): ThunkType  => {
       })
       dispatch(InfoActions.setWebsiteCategories(websiteCategories))
     })
-        .catch((error: any) => {
-          console.log(error)
-        })
+      .catch((error: any) => {
+        console.log(error)
+      })
+      .finally(() => {
+        dispatch(styleActions.toggleIsLoadedAC(true))
+      })
+  }
+}
+
+export const sendFeedbackReviewsThunkCreator = (reviewsFormData: sendFeedbackType) => {
+  return async (dispatch: Dispatch) => {
+    dispatch(styleActions.toggleIsLoadedAC(false))
+
+    try {
+      await reviewsAPI.sendFeedback(reviewsFormData)
+    } catch (error: any) {
+      console.log(error)
+    } finally {
+      dispatch(styleActions.toggleIsLoadedAC(true))
+    }
   }
 }
 
@@ -90,6 +114,13 @@ export default infoReducer
 
 
 // Types
+
+export type sendFeedbackType = {
+  user_id?: number
+  assessment: number | string,
+  text: string,
+  attachment?: null | File
+}
 
 export type InitialStateType = typeof initialState
 type getWebsiteActionType = InferActionType<typeof InfoActions>

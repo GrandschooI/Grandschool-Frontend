@@ -1,8 +1,25 @@
-import {registerThunkCreator} from "../userReducer";
+import {
+    forgotPasswordThunkCreator,
+    loginThunkCreator,
+    logoutThunkCreator,
+    registerThunkCreator,
+    setUserPhotoThunkCreator
+} from "../userReducer";
 import {AuthAPI, AuthResponseType} from "../../../api/authAPI";
+import {AxiosResponse} from "axios";
+import {userAPI} from "../../../api/userAPI";
+import {styleActions} from "../styleReducer";
+
+jest.mock("../../../api/authAPI")
+jest.mock("../../../api/userAPI")
 
 const AuthAPIMock = AuthAPI as jest.Mocked<typeof AuthAPI>
+const UserAPIMock = userAPI as jest.Mocked<typeof userAPI>
+const dispatchMock = jest.fn()
 
+beforeEach(() => {
+    dispatchMock.mockClear();
+})
 const result: AuthResponseType = {
     data: {
         access_token: 'test',
@@ -29,10 +46,56 @@ const result: AuthResponseType = {
 AuthAPIMock.register.mockReturnValue(Promise.resolve(result))
 
 test('Set register', async () => {
+    AuthAPIMock.register.mockResolvedValue(result)
+
     const thunk = registerThunkCreator('test@gmail.com', '123123123', '123123123')
-    const dispatchMock = jest.fn()
+
+    await thunk(dispatchMock)
+    console.log(thunk(dispatchMock))
+
+    expect(dispatchMock).toBeCalledTimes(3)
+    expect(dispatchMock).toHaveBeenNthCalledWith(1, styleActions.toggleIsLoadedAC(false))
+
+    expect(dispatchMock).toHaveBeenNthCalledWith(3, styleActions.toggleIsLoadedAC(false))
+})
+
+test('Login user', async () => {
+    AuthAPIMock.login.mockResolvedValue(result)
+
+    const thunk = loginThunkCreator('test@gmail.com', '123123123','', 'test')
+
+    await thunk(dispatchMock)
+    expect(dispatchMock).toBeCalledTimes(2)
+})
+
+test('Logout user', async () => {
+    AuthAPIMock.logout.mockResolvedValue({} as AxiosResponse)
+    const thunk = logoutThunkCreator()
 
     await thunk(dispatchMock)
 
     expect(dispatchMock).toBeCalledTimes(2)
+})
+
+// todo test forgot password : Expected number of calls: 2 -> Received number of calls: 1
+
+test('Forgot password', async () => {
+    AuthAPIMock.forgotPassword.mockResolvedValue(result)
+
+    const thunk = forgotPasswordThunkCreator('test@gmail.com')
+
+    await thunk(dispatchMock)
+
+    expect(dispatchMock).toBeCalledTimes(2)
+})
+
+//todo test Set User Photo : Expected number of calls: 3 -> Received number of calls: 2
+
+test('Set User Photo', async () => {
+    UserAPIMock.setProfilePhoto.mockResolvedValue({} as AxiosResponse)
+    const thunk = setUserPhotoThunkCreator(1, 'test', null)
+
+    await thunk(dispatchMock)
+
+    expect(dispatchMock).toBeCalledTimes(3)
 })

@@ -25,7 +25,7 @@ const HeaderNavForMainPage = () => {
       <NavLink to='/teachers' className={s.headerNavLink}>
         <span className={s.headerNavLinkLabel}>Nauczycielowi</span>
       </NavLink>
-      <NavLink to='/info/websites' className={s.headerNavLink}>
+      <NavLink to='/info' className={s.headerNavLink}>
         <span className={s.headerNavLinkLabel}>Więcej</span>
       </NavLink>
 

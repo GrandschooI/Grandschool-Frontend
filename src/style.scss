@@ -109,6 +109,7 @@ input[type='radio']:checked + .radioLabel:after {
 }
 
 .formLabel {
+  position: relative;
   display: block;
   margin: auto;
   width: 388px;
@@ -285,7 +286,7 @@ address {
   border-radius: 50px;
   width: 388px;
   max-width: 100%;
-  min-height: 64px;
+  height: 64px;
   font-weight: 600;
   font-size: 20px;
 
@@ -302,7 +303,7 @@ address {
 
 .inverseBtn {
   font-family: 'Proba', sans-serif;
-  min-height: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   background-color: #ffffff;

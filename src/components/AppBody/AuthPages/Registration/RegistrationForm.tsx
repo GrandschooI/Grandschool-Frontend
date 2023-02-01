@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import {Form, Formik} from 'formik'
-import {toast, ToastContainer} from 'react-toastify'
+import {ToastContainer} from 'react-toastify'
 import {Checkbox, TextField} from '../../../common/Form/FormControls/FormControls'
 import FacebookLogin from 'react-facebook-login'
 import s from './Registration.module.scss'
@@ -13,41 +13,37 @@ import FacebookLoginIcon from '../../../SVGConponents/Forms/FacebookLoginIcon';
 import {useAppSelector} from '../../../../utils/Hooks/useAppSelector';
 import {getFontSize, getThemeStyle} from '../../../../Redux/selectors/styleSelector';
 import {FACEBOOK_CLIENT_ID, GOOGLE_CLIENT_ID} from '../../../../Redux/reducers/userReducer';
+import * as yup from 'yup'
+import FormErrorMessage from '../../../utils/FormErrorMessage/FormErrorMessage';
 
 const MIN_PASSWORD_LENGTH = 8
 const MAX_PASSWORD_LENGTH = 50
 
-const registrationFormValidation = (values: registrationFormValidationType) => {
-  const errors: any = {}
-  if (!values.email) {
-    errors.email = 'Required'
-    toast.error('Email address is required')
-  } else if (
-    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-  ) {
-    errors.email = 'Invalid email address'
-    toast.error('Invalid email address')
-  } else if (!values.password) {
-    errors.password = 'Password is required'
-    toast.error('Password is required')
-  } else if (!values.confirmPassword) {
-    errors.confirmPassword = 'Confirm Password is required'
-    toast.error('Confirm Password is required')
-  } else if (values.password.length < MIN_PASSWORD_LENGTH) {
-    errors.password = 'Password must be at least 8 characters'
-    toast.error('Password must be at least 8 characters')
-  } else if (values.password.length > MAX_PASSWORD_LENGTH) {
-    errors.password = 'Password must not be greater than 50 characters.'
-    toast.error('Password must not be greater than 50 characters.')
-  } else if (values.password !== values.confirmPassword) {
-    errors.password = 'Passwords must be identical'
-    toast.error('Passwords must be identical')
-  } else if (!values.terms) {
-    errors.password = 'Accept terms is required'
-    toast.error('Accept terms is required')
-  }
-  return errors
+
+const registrationSchema = yup.object().shape({
+  emailOrPhone: yup.string().required('Email / Phone address is required')
+    .test('email_or_phone', 'Email / Phone is invalid', (value) => {
+      return validateEmail(value) || validatePhone(value);
+    }),
+  password: yup.string()
+    .required('Password is required')
+    .min(MIN_PASSWORD_LENGTH, 'Password must be at least 8 characters')
+    .max(MAX_PASSWORD_LENGTH, 'Password must not be greater than 50 characters.'),
+  confirmPassword: yup.string().oneOf([yup.ref('password'), null], 'Passwords must be identical').required(),
+  terms: yup.boolean().isTrue('Accept terms is required')
+})
+// need to find better RegExp and should be fine
+const phoneRegExp = /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/
+
+const validateEmail = (email: string | undefined) => {
+  return yup.string().email().isValidSync(email)
 }
+const validatePhone = (phone: string | undefined) => {
+  return yup.string()
+    .matches(phoneRegExp, 'Phone must be valid')
+    .isValidSync(phone);
+};
+
 
 const RegistrationForm: React.FC<propsType> = (
   {
@@ -63,6 +59,7 @@ const RegistrationForm: React.FC<propsType> = (
   useEffect(() => {
     startGoogleAPI()
   })
+
 
   return (
     <div className={cn(themeStyle ? themeStyle : '', s[themeStyle ? themeStyle : ''], s[fontSize ? fontSize : ''],
@@ -86,23 +83,25 @@ const RegistrationForm: React.FC<propsType> = (
 
       <p className={s.orWord}>or</p>
       <Formik
-        initialValues={{email: '', password: '', confirmPassword: '', terms: false}}
-        validate={registrationFormValidation}
+        initialValues={{emailOrPhone: '', password: '', confirmPassword: '', terms: false}}
+        validationSchema={registrationSchema}
         onSubmit={onSubmit}
-        validateOnChange={false}
-        validateOnBlur={false}
+        validateOnChange={true}
+        validateOnBlur={true}
       >
-        {({isSubmitting}) => (
+        {({isSubmitting, errors, touched}) => (
           <Form>
             <label className={cn('formLabel', s.formLabel)}>
               <span>Enter PHONE NUMBER or E-MAIL</span>
               {TextField({
-                type: 'email',
-                name: 'email',
-                placeholder: 'Wpisz adres e-mail',
+                type: 'emailOrPhone',
+                name: 'emailOrPhone',
+                placeholder: 'test@gmail.com / +48547323456',
                 className: `textField`,
                 errorClassname: `errorTextField`
               })}
+              {errors.emailOrPhone && touched.emailOrPhone &&
+                  <FormErrorMessage>{errors.emailOrPhone}</FormErrorMessage>}
             </label>
             <label className={cn('formLabel', s.formLabel)}>
               <span>PASSWORD</span>
@@ -112,8 +111,9 @@ const RegistrationForm: React.FC<propsType> = (
                 placeholder: 'Wpisz hasło',
                 className: `textField`,
                 errorClassname: `errorTextField`,
-                changeToText: true
+                changeToText: true,
               })}
+              {errors.password && touched.password && <FormErrorMessage>{errors.password}</FormErrorMessage>}
             </label>
             <label className={cn('formLabel', s.formLabel)}>
               <span>CONFIRM PASSWORD</span>
@@ -125,13 +125,17 @@ const RegistrationForm: React.FC<propsType> = (
                 errorClassname: `errorTextField`,
                 changeToText: true
               })}
+              {errors.confirmPassword && touched.confirmPassword &&
+                  <FormErrorMessage>{errors.confirmPassword}</FormErrorMessage>}
             </label>
             <label className={s.termsCheck}>
               <Checkbox label={'I agree to'} name={'terms'} propValue={true} className={'checkboxLabel'}/>
               <a href={'/'} className={s.termsLabel}>terms & conditions</a>
+              {errors.terms && touched.terms && <span className={s.terms__error}>{errors.terms}</span>}
             </label>
-             <button type="submit" disabled={isSubmitting}
-                     className={cn('whiteBtn', themeStyle !== 'whiteTheme' ? 'submitBtn' : 'inverseBtn')}>Wyślij</button>
+            <button type="submit" disabled={isSubmitting}
+                    className={cn('whiteBtn', themeStyle !== 'whiteTheme' ? 'submitBtn' : 'inverseBtn')}>Wyślij
+            </button>
           </Form>
         )}
       </Formik>
@@ -142,17 +146,9 @@ const RegistrationForm: React.FC<propsType> = (
 
 export default RegistrationForm
 
-
 type propsType = {
   onSubmit: (formData: registrationFormDataType) => void
   onGoogleButtonClick: any
   onFacebookButtonClick: any
   startGoogleAPI: any
-
-}
-type registrationFormValidationType = {
-  email: string
-  password: string
-  confirmPassword: string,
-  terms: boolean
 }
