@@ -73,8 +73,7 @@ const ProfileInfoForm = () => {
               type: 'text',
               name: 'name',
               placeholder: 'Wpisz Name',
-              className: `textField`,
-              errorClassname: `errorTextField`,
+              className: `textField ${errors.name && touched.name ? 'errorTextField' : ''}`
             })}
             {errors.name && touched.name && <FormErrorMessage>{errors.name}</FormErrorMessage>}
           </label>
@@ -119,8 +118,7 @@ const ProfileInfoForm = () => {
               type: 'text',
               name: 'country',
               placeholder: 'Wpisz Country',
-              className: `textField`,
-              errorClassname: `errorTextField`,
+              className: `textField ${errors.country && touched.country ? 'errorTextField' : ''}`
             })}
             {errors.country && touched.country && <FormErrorMessage>{errors.country}</FormErrorMessage>}
           </label>
@@ -131,8 +129,7 @@ const ProfileInfoForm = () => {
               type: 'text',
               name: 'city',
               placeholder: 'Wpisz City',
-              className: `textField`,
-              errorClassname: `errorTextField`,
+              className: `textField ${errors.city && touched.city ? 'errorTextField' : ''}`
             })}
             {errors.city && touched.city && <FormErrorMessage>{errors.city}</FormErrorMessage>}
           </label>

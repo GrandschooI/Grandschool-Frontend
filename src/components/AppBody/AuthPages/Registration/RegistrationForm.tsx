@@ -97,8 +97,7 @@ const RegistrationForm: React.FC<propsType> = (
                 type: 'emailOrPhone',
                 name: 'emailOrPhone',
                 placeholder: 'test@gmail.com / +48547323456',
-                className: `textField`,
-                errorClassname: `errorTextField`
+                  className: `textField ${errors.emailOrPhone && touched.emailOrPhone ? 'errorTextField' : ''}`
               })}
               {errors.emailOrPhone && touched.emailOrPhone &&
                   <FormErrorMessage>{errors.emailOrPhone}</FormErrorMessage>}
@@ -109,8 +108,7 @@ const RegistrationForm: React.FC<propsType> = (
                 type: 'password',
                 name: 'password',
                 placeholder: 'Wpisz hasło',
-                className: `textField`,
-                errorClassname: `errorTextField`,
+                  className: `textField ${errors.password && touched.password ? 'errorTextField' : ''}`,
                 changeToText: true,
               })}
               {errors.password && touched.password && <FormErrorMessage>{errors.password}</FormErrorMessage>}
@@ -121,8 +119,7 @@ const RegistrationForm: React.FC<propsType> = (
                 type: 'password',
                 name: 'confirmPassword',
                 placeholder: 'Potwierdź hasło',
-                className: `textField`,
-                errorClassname: `errorTextField`,
+                  className: `textField ${errors.confirmPassword && touched.confirmPassword ? 'errorTextField' : ''}`,
                 changeToText: true
               })}
               {errors.confirmPassword && touched.confirmPassword &&

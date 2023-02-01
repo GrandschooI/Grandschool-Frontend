@@ -73,8 +73,7 @@ const LoginForm: React.FC<propsType> = (
                 type: 'email',
                 name: 'email',
                 placeholder: 'Wpisz adres e-mail',
-                className: `textField`,
-                errorClassname: `errorTextField`
+                className: `textField ${errors.email && touched.email ? 'errorTextField' : ''}`
               })}
               {errors.email && touched.email && <FormErrorMessage>{errors.email}</FormErrorMessage>}
             </label>
@@ -84,8 +83,7 @@ const LoginForm: React.FC<propsType> = (
                 type: 'password',
                 name: 'password',
                 placeholder: 'Wpisz hasło',
-                className: `textField`,
-                errorClassname: `errorTextField`,
+                  className: `textField ${errors.password && touched.password ? 'errorTextField' : ''}`,
                 changeToText: true
               })}
               {errors.password && touched.password && <FormErrorMessage>{errors.password}</FormErrorMessage>}
@@ -140,8 +138,7 @@ const LoginForm: React.FC<propsType> = (
                       type: 'email',
                       name: 'email',
                       placeholder: 'Wpisz adres e-mail',
-                      className: `textField`,
-                      errorClassname: `errorTextField`
+                        className: `textField ${errors.email && touched.email ? 'errorTextField' : ''}`
                     })}
                     {errors.email && touched.email && <FormErrorMessage>{errors.email}</FormErrorMessage>}
                   </label>
