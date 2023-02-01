@@ -33,8 +33,7 @@ const confirmRegistrationForm: React.FC<propsType> = ({onSubmit, themeStyle, fon
                 type: 'number',
                 name: 'confirmationCode',
                 placeholder: 'Enter the code from the message',
-                className: `textField`,
-                errorClassname: `errorTextField`
+                  className: `textField ${errors.confirmationCode && touched.confirmationCode ? 'errorTextField' : ''}`
               })}
               {errors.confirmationCode && touched.confirmationCode &&
                   <FormErrorMessage>{errors.confirmationCode}</FormErrorMessage>}

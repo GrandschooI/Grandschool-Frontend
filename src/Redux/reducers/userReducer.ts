@@ -115,7 +115,6 @@ export const loginThunkCreator = (email?: string, password?: string, driver?: st
         }
       })
       .catch((error: AxiosError) => {
-        debugger
         const errorMessage = error?.response?.data.message
         toast.error(errorMessage)
       }).finally(() => {
