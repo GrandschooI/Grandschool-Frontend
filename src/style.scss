@@ -108,6 +108,10 @@ input[type='radio']:checked + .radioLabel:after {
   background: url('./assets/images/circle.svg') center;
 }
 
+#root form input.errorTextField {
+  border: 1px solid red;
+}
+
 .formLabel {
   position: relative;
   display: block;
@@ -235,7 +239,6 @@ input[type='radio']:checked + .radioLabel:after {
   }
 }
 
-/* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
 }
@@ -432,7 +435,6 @@ address {
     }
   }
 }
-
 .blueTheme {
   .submitBtn {
     background-color: #273a64;
