@@ -108,7 +108,9 @@ input[type='radio']:checked + .radioLabel:after {
   background: url('./assets/images/circle.svg') center;
 }
 
-#root form input.errorTextField {
+#root form input.errorTextField,
+#root form textarea.errorTextField
+{
   border: 1px solid red;
 }
 
