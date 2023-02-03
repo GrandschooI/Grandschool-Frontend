@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@julienvanbeveren/react-datetime-picker": "^1.0.4",
+    "@reduxjs/toolkit": "^1.9.2",
     "@stripe/react-stripe-js": "^1.15.0",
     "@stripe/stripe-js": "^1.44.1",
     "@testing-library/jest-dom": "^5.16.5",
