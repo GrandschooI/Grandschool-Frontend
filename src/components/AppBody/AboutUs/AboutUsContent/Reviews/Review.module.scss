@@ -38,6 +38,7 @@
       margin-bottom: 15px;
     }
     .assesmentRadioList {
+      position: relative;
       display: flex;
       margin: 15px 0 35px;
       li {
@@ -50,48 +51,52 @@
           cursor: pointer;
         }
         &.activeGreen {
+          transition: .5s;
           svg {
             opacity: 1;
-            transition: 1s;
             path {
-              transition: 0.5s;
               fill: green;
+              transition: .5s;
             }
           }
         }
         &.activeLightOrange {
+          transition: .5s;
           svg {
             opacity: 1;
             path {
-              transition: .5s;
               fill: #738000;
+              transition: .5s;
             }
           }
         }
         &.activeOrange {
+          transition: .5s;
           svg {
             opacity: 1;
             path {
-              transition: .5s;
               fill: orange;
+              transition: .5s;
             }
           }
         }
         &.activeDarkOrange {
+          transition: .5s;
           svg {
             opacity: 1;
             path {
-              transition: .5s;
               fill: #e16527;
+              transition: .5s;
             }
           }
         }
         &.activeRed {
+          transition: .5s;
           svg {
             opacity: 1;
             path {
-              transition: .5s;
               fill: red;
+              transition: .5s;
             }
           }
         }
@@ -107,6 +112,7 @@
       }
     }
     .textareaWrap {
+      position: relative;
       display: flex;
       flex-direction: column;
       label {

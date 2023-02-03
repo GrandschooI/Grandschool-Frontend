@@ -34,8 +34,7 @@ const ForgotPassword: React.FC<propsType> = ({onSubmit, themeStyle, fontSize}) =
               type: 'email',
               name: 'forgotPasswordEmailField',
               placeholder: 'Enter your email',
-              className: `textField`,
-              errorClassname: `errorTextField`
+              className: `textField ${errors.forgotPasswordEmailField && touched.forgotPasswordEmailField ? 'errorTextField' : ''}`
             })}
             {errors.forgotPasswordEmailField && touched.forgotPasswordEmailField &&
                 <FormErrorMessage>{errors.forgotPasswordEmailField}</FormErrorMessage>}

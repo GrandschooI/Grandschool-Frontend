@@ -38,8 +38,7 @@ const ProfileInfoForm: React.FC<propsType> = () => {
               type: 'password',
               name: 'password',
               placeholder: 'Enter current password',
-              className: `textField`,
-              errorClassname: `errorTextField`
+              className: `textField ${errors.password && touched.password ? 'errorTextField' : ''}`
             })}
             {errors.password && touched.password && <FormErrorMessage>{errors.password}</FormErrorMessage>}
           </label>
@@ -50,8 +49,7 @@ const ProfileInfoForm: React.FC<propsType> = () => {
               type: 'password',
               name: 'newPassword',
               placeholder: 'Enter new password',
-              className: `textField`,
-              errorClassname: `errorTextField`
+              className: `textField ${errors.newPassword && touched.newPassword ? 'errorTextField' : ''}`
             })}
             {errors.newPassword && touched.newPassword && <FormErrorMessage>{errors.newPassword}</FormErrorMessage>}
           </label>
@@ -62,8 +60,7 @@ const ProfileInfoForm: React.FC<propsType> = () => {
               type: 'password',
               name: 'reenteredNewPassword',
               placeholder: 'Re-enter the password',
-              className: `textField`,
-              errorClassname: `errorTextField`
+              className: `textField ${errors.reenteredNewPassword && touched.reenteredNewPassword ? 'errorTextField' : ''}`
             })}
             {errors.reenteredNewPassword && touched.reenteredNewPassword &&
                 <FormErrorMessage>{errors.reenteredNewPassword}</FormErrorMessage>}
