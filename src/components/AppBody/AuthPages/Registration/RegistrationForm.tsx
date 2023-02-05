@@ -85,7 +85,11 @@ const RegistrationForm: React.FC<propsType> = (
       <Formik
         initialValues={{emailOrPhone: '', password: '', confirmPassword: '', terms: false}}
         validationSchema={registrationSchema}
-        onSubmit={onSubmit}
+        onSubmit={(values, {setSubmitting}) => {
+          setSubmitting(true)
+          onSubmit(values)
+          setSubmitting(false)
+        }}
         validateOnChange={true}
         validateOnBlur={true}
       >
@@ -97,7 +101,7 @@ const RegistrationForm: React.FC<propsType> = (
                 type: 'emailOrPhone',
                 name: 'emailOrPhone',
                 placeholder: 'test@gmail.com / +48547323456',
-                  className: `textField ${errors.emailOrPhone && touched.emailOrPhone ? 'errorTextField' : ''}`
+                className: `textField ${errors.emailOrPhone && touched.emailOrPhone ? 'errorTextField' : ''}`
               })}
               {errors.emailOrPhone && touched.emailOrPhone &&
                   <FormErrorMessage>{errors.emailOrPhone}</FormErrorMessage>}
@@ -108,7 +112,7 @@ const RegistrationForm: React.FC<propsType> = (
                 type: 'password',
                 name: 'password',
                 placeholder: 'Wpisz hasło',
-                  className: `textField ${errors.password && touched.password ? 'errorTextField' : ''}`,
+                className: `textField ${errors.password && touched.password ? 'errorTextField' : ''}`,
                 changeToText: true,
               })}
               {errors.password && touched.password && <FormErrorMessage>{errors.password}</FormErrorMessage>}
@@ -119,7 +123,7 @@ const RegistrationForm: React.FC<propsType> = (
                 type: 'password',
                 name: 'confirmPassword',
                 placeholder: 'Potwierdź hasło',
-                  className: `textField ${errors.confirmPassword && touched.confirmPassword ? 'errorTextField' : ''}`,
+                className: `textField ${errors.confirmPassword && touched.confirmPassword ? 'errorTextField' : ''}`,
                 changeToText: true
               })}
               {errors.confirmPassword && touched.confirmPassword &&

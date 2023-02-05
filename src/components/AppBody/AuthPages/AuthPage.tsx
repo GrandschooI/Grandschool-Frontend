@@ -87,7 +87,7 @@ const AuthPage = () => {
               startGoogleAPI={startGoogleAPI}
               onGoogleButtonClick={onGoogleButtonClick}
               onFacebookButtonClick={onFacebookButtonClick}
-                   />}/>
+            />}/>
             <Route path="/login" render={() => <LoginForm
               startGoogleAPI={startGoogleAPI}
               onGoogleButtonClick={onGoogleButtonClick}
