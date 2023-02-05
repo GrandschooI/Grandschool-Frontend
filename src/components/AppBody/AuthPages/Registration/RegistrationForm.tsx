@@ -33,7 +33,7 @@ const registrationSchema = yup.object().shape({
   terms: yup.boolean().isTrue('Accept terms is required')
 })
 // need to find better RegExp and should be fine
-const phoneRegExp = /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/
+const phoneRegExp = /^\+[0-9]{3}[0-9]{9}$/
 
 const validateEmail = (email: string | undefined) => {
   return yup.string().email().isValidSync(email)
