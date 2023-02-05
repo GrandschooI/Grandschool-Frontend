@@ -32,8 +32,8 @@ const registrationSchema = yup.object().shape({
   confirmPassword: yup.string().oneOf([yup.ref('password'), null], 'Passwords must be identical').required(),
   terms: yup.boolean().isTrue('Accept terms is required')
 })
-// need to find better RegExp and should be fine
-const phoneRegExp = /^\+[0-9]{3}[0-9]{9}$/
+
+const phoneRegExp = /^\+[4,8]{2}?[0-9]{9}$/
 
 const validateEmail = (email: string | undefined) => {
   return yup.string().email().isValidSync(email)
