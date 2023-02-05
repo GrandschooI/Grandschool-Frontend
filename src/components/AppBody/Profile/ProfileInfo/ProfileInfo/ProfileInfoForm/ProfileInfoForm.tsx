@@ -40,21 +40,29 @@ const ProfileInfoForm = () => {
   const [startDate, setStartDate] = useState(new Date())
   const [aboutMeDescription, setAboutMeDescription] = useState('')
   const [statusAssessment, setStatusAssessment] = useState('')
+  const [localName, setLocalName] = useState(name)
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
-    setAboutMeDescription(e.target.value);
+    setAboutMeDescription(e.currentTarget.value);
   };
   const getRadioStatus = (status: string) => {
     setStatusAssessment(status)
   };
   return (
     <Formik
-      initialValues={{name: '', gender: statusAssessment, birthDate: new Date(), country: '', city: '', aboutUserText: ''}}
+      initialValues={{
+        name: '',
+        gender: statusAssessment,
+        birthDate: new Date(),
+        country: '',
+        city: '',
+        aboutUserText: ''
+      }}
       validationSchema={profileInfoFormSchema}
       validateOnBlur={true}
       validateOnChange={true}
       onSubmit={(formData) => {
-        dispatch(setProfileInfo(formData.name, formData.gender, formData.birthDate, formData.country, formData.city, ''))
+        dispatch(setProfileInfo(formData.name, formData.gender, formData.birthDate, formData.country, formData.city, aboutMeDescription))
       }}
     >
       {({isSubmitting, touched, errors}) => (
@@ -65,9 +73,7 @@ const ProfileInfoForm = () => {
               type: 'text',
               name: 'name',
               placeholder: 'Wpisz Name',
-              className: `textField`,
-              errorClassname: `errorTextField`,
-              propValue: name ? name : '',
+              className: `textField ${errors.name && touched.name ? 'errorTextField' : ''}`
             })}
             {errors.name && touched.name && <FormErrorMessage>{errors.name}</FormErrorMessage>}
           </label>
@@ -112,9 +118,7 @@ const ProfileInfoForm = () => {
               type: 'text',
               name: 'country',
               placeholder: 'Wpisz Country',
-              className: `textField`,
-              errorClassname: `errorTextField`,
-              propValue: country ? country : ''
+              className: `textField ${errors.country && touched.country ? 'errorTextField' : ''}`
             })}
             {errors.country && touched.country && <FormErrorMessage>{errors.country}</FormErrorMessage>}
           </label>
@@ -125,9 +129,7 @@ const ProfileInfoForm = () => {
               type: 'text',
               name: 'city',
               placeholder: 'Wpisz City',
-              className: `textField`,
-              errorClassname: `errorTextField`,
-              propValue: city ? city : ''
+              className: `textField ${errors.city && touched.city ? 'errorTextField' : ''}`
             })}
             {errors.city && touched.city && <FormErrorMessage>{errors.city}</FormErrorMessage>}
           </label>

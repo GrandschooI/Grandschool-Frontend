@@ -7,8 +7,8 @@ import s from './FormControls.module.scss'
 
 export const TextField: React.FC<propsForTextFieldType> = (
   {
-    type, name, placeholder, className,
-    errorClassname, validators, propValue
+    type, name, placeholder, className, validators,
+      propValue
   }) => {
   const [value, setValue] = useState(type)
   const fieldTextType = 'text'
@@ -17,14 +17,12 @@ export const TextField: React.FC<propsForTextFieldType> = (
     e.preventDefault()
     setValue(value === fieldPasswordType ? fieldTextType : fieldPasswordType)
   }
-
   return (
     <div className={s.inputWrap}>
       <Field type={value}
              name={name}
              placeholder={placeholder}
              className={className}
-             errorclassname={errorClassname}
              validate={validators}
              value={propValue}
       />
@@ -95,7 +93,6 @@ type propsForTextFieldType = {
   name: string
   placeholder?: string
   className?: string
-  errorClassname?: string
   validators?: object
   changeToText?: boolean,
   propValue?: string,

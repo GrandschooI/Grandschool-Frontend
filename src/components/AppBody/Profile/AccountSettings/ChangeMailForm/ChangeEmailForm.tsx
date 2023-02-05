@@ -30,8 +30,7 @@ const ProfileInfoForm: React.FC<propsType> = () => {
               type: 'email',
               name: 'email',
               placeholder: 'Enter new email',
-              className: `textField`,
-              errorClassname: `errorTextField`
+              className: `textField ${errors.email && touched.email ? 'errorTextField' : ''}`
             })}
             {errors.email && touched.email && <FormErrorMessage>{errors.email}</FormErrorMessage>}
           </label>
