@@ -1,13 +1,13 @@
 import React, {ChangeEvent, useState} from 'react';
-import {sendFeedbackReviewsThunkCreator, sendFeedbackType} from "../../../../../Redux/reducers/infoReducer";
+import {sendFeedbackReviewsThunkCreator, sendFeedbackType} from "../../../../../../Redux/reducers/infoReducer";
 import {Form, Formik} from "formik";
-import s from "./Review.module.scss";
+import s from "../Review.module.scss";
 import cn from "classnames";
-import ClipIcon from "../../../../SVGConponents/ReviewIcons/ClipIcon";
+import ClipIcon from "../../../../../SVGConponents/ReviewIcons/ClipIcon";
 import {useDispatch} from "react-redux";
 import * as yup from "yup";
-import ReviewsAssessmentItems from "./ReviewsAssessmentItems";
-import FormErrorMessage from "../../../../utils/FormErrorMessage/FormErrorMessage";
+import ReviewsAssessmentList from "./ReviewsAssessmentList";
+import FormErrorMessage from "../../../../../utils/FormErrorMessage/FormErrorMessage";
 
 const profileInfoFormSchema = yup.object().shape({
   assessment: yup.string()
@@ -65,17 +65,16 @@ const ReviewsForm = () => {
         <Form className={s.reviewForm}>
           <span className={s.reviewCAT}>Give an overall assessment of our course</span>
           <ul className={s.assesmentRadioList}>
-            <ReviewsAssessmentItems statusAssessment={statusAssessment} setStatusAssessment={setStatusAssessment}/>
-            {errors.assessment && <FormErrorMessage>{errors.assessment}</FormErrorMessage>}
+            <ReviewsAssessmentList statusAssessment={statusAssessment} setStatusAssessment={setStatusAssessment}/>
+            {touched.assessment && errors.assessment && <FormErrorMessage>{errors.assessment}</FormErrorMessage>}
           </ul>
-
           <span className={s.reviewCAT}>Leave your feedback</span>
           <label className={s.textareaWrap}>
             Tell us exactly what you liked or disliked about our course
-            <textarea className={errors.text ? 'errorTextField' : ''} name={'text'} onChange={handleChange} value={values.text} placeholder="- Who recommended our course to you?
+            <textarea className={touched.text && errors.text ? 'errorTextField' : ''} name={'text'} onChange={handleChange} value={values.text} placeholder="- Who recommended our course to you?
 - What you liked best?
 - What you liked best, would you recommend our course to your friends?"/>
-            {errors.text && touched.text && <FormErrorMessage>{errors.text}</FormErrorMessage>}
+            {touched.text && errors.text && <FormErrorMessage>{errors.text}</FormErrorMessage>}
           </label>
 
           <div className={s.buttonWrapper}>
