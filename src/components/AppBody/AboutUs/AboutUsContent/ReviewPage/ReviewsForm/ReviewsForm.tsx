@@ -1,7 +1,7 @@
 import React, {ChangeEvent, useState} from 'react';
 import {sendFeedbackReviewsThunkCreator, sendFeedbackType} from "../../../../../../Redux/reducers/infoReducer";
 import {Form, Formik} from "formik";
-import s from "../Review.module.scss";
+import s from "../ReviewPage.module.scss";
 import cn from "classnames";
 import ClipIcon from "../../../../../SVGConponents/ReviewIcons/ClipIcon";
 import {useDispatch} from "react-redux";

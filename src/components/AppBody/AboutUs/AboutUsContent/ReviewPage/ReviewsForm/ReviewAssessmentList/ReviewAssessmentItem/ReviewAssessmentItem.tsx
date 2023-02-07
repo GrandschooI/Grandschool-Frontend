@@ -1,6 +1,6 @@
 import React from 'react';
 import {RadioButton} from "../../../../../../../common/Form/FormControls/FormControls";
-import s from "../../../Review.module.scss";
+import s from "../../../ReviewPage.module.scss";
 
 const ReviewAssessmentItem: React.FC<propsReviewItemType> = (
   {

@@ -1,5 +1,5 @@
 import React from 'react'
-import s from './Review.module.scss'
+import s from './ReviewPage.module.scss'
 import feedBackImgWebp from '../../../../../assets/images/webp/feedbackIMG.webp'
 import feedBackImg from '../../../../../assets/images/feedbackIMG.jpg'
 import Image from 'react-image-webp'
