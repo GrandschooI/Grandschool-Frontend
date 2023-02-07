@@ -2,7 +2,7 @@ import React from 'react';
 import {RadioButton} from "../../../../../../../common/Form/FormControls/FormControls";
 import s from "../../../Review.module.scss";
 
-const ReviewItem: React.FC<propsReviewItemType> = (
+const ReviewAssessmentItem: React.FC<propsReviewItemType> = (
   {
     label,
     getRadioStatus,
@@ -35,7 +35,7 @@ const ReviewItem: React.FC<propsReviewItemType> = (
   );
 };
 
-export default ReviewItem;
+export default ReviewAssessmentItem;
 
 const assessmentStyles = [s.activeGreen, s.activeLightOrange, s.activeOrange, s.activeDarkOrange, s.activeRed]
 
