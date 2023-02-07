@@ -116,6 +116,9 @@ input[type='radio']:checked + .radioLabel:after {
     color: red;
   }
 }
+#root form textarea.errorTextField::placeholder{
+  color: red;
+}
 
 .formLabel {
   position: relative;

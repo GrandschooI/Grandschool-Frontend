@@ -6,7 +6,7 @@ import Image from 'react-image-webp'
 import cn from 'classnames'
 import {useAppSelector} from '../../../../../utils/Hooks/useAppSelector';
 import {getThemeStyle} from '../../../../../Redux/selectors/styleSelector';
-import ReviewsForm from "./ReviewsForm";
+import ReviewsForm from "./ReviewPage/ReviewsForm/ReviewsForm";
 
 
 const Review = () => {
