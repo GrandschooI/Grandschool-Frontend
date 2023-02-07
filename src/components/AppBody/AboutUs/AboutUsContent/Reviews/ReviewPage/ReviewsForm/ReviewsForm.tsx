@@ -1,13 +1,13 @@
 import React, {ChangeEvent, useState} from 'react';
-import {sendFeedbackReviewsThunkCreator, sendFeedbackType} from "../../../../../../Redux/reducers/infoReducer";
+import {sendFeedbackReviewsThunkCreator, sendFeedbackType} from "../../../../../../../Redux/reducers/infoReducer";
 import {Form, Formik} from "formik";
-import s from "../Review.module.scss";
+import s from "../../Review.module.scss";
 import cn from "classnames";
-import ClipIcon from "../../../../../SVGConponents/ReviewIcons/ClipIcon";
+import ClipIcon from "../../../../../../SVGConponents/ReviewIcons/ClipIcon";
 import {useDispatch} from "react-redux";
 import * as yup from "yup";
-import ReviewsAssessmentList from "./ReviewsAssessmentList";
-import FormErrorMessage from "../../../../../utils/FormErrorMessage/FormErrorMessage";
+import ReviewsAssessmentList from "../ReviewList/ReviewsAssessmentList";
+import FormErrorMessage from "../../../../../../utils/FormErrorMessage/FormErrorMessage";
 
 const profileInfoFormSchema = yup.object().shape({
   assessment: yup.string()
