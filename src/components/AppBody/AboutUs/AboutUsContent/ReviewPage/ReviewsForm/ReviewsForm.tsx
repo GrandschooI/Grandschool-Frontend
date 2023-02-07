@@ -1,13 +1,13 @@
 import React, {ChangeEvent, useState} from 'react';
-import {sendFeedbackReviewsThunkCreator, sendFeedbackType} from "../../../../../../../Redux/reducers/infoReducer";
+import {sendFeedbackReviewsThunkCreator, sendFeedbackType} from "../../../../../../Redux/reducers/infoReducer";
 import {Form, Formik} from "formik";
-import s from "../../Review.module.scss";
+import s from "../Review.module.scss";
 import cn from "classnames";
-import ClipIcon from "../../../../../../SVGConponents/ReviewIcons/ClipIcon";
+import ClipIcon from "../../../../../SVGConponents/ReviewIcons/ClipIcon";
 import {useDispatch} from "react-redux";
 import * as yup from "yup";
-import ReviewsAssessmentList from "../ReviewList/ReviewsAssessmentList";
-import FormErrorMessage from "../../../../../../utils/FormErrorMessage/FormErrorMessage";
+import ReviewsAssessmentList from "./ReviewAssessmentList/ReviewsAssessmentList";
+import FormErrorMessage from "../../../../../utils/FormErrorMessage/FormErrorMessage";
 
 const profileInfoFormSchema = yup.object().shape({
   assessment: yup.string()
@@ -22,7 +22,7 @@ const profileInfoFormSchema = yup.object().shape({
 const ReviewsForm = () => {
   const dispatch = useDispatch()
 
-  const [statusAssessment, setStatusAssessment] = useState('')
+  const [statusAssessment, setStatusAssessment] = useState('5')
   const [inputFilePathImg, setInputFilePathImg] = useState<string>('')
   const [inputFile, setInputFile] = useState<File | null>(null)
 
@@ -47,12 +47,12 @@ const ReviewsForm = () => {
       attachment: inputFile
     }
     dispatch(sendFeedbackReviewsThunkCreator(reviewsData))
-    setStatusAssessment('')
+    setStatusAssessment('5')
     setInputFilePathImg('')
   }
   return (
     <Formik
-      initialValues={{assessment: '', text: '', attachment: null}}
+      initialValues={{assessment: '5', text: '', attachment: null}}
       validationSchema={profileInfoFormSchema}
       validateOnBlur={true}
       validateOnChange={true}
@@ -66,7 +66,6 @@ const ReviewsForm = () => {
           <span className={s.reviewCAT}>Give an overall assessment of our course</span>
           <ul className={s.assesmentRadioList}>
             <ReviewsAssessmentList statusAssessment={statusAssessment} setStatusAssessment={setStatusAssessment}/>
-            {touched.assessment && errors.assessment && <FormErrorMessage>{errors.assessment}</FormErrorMessage>}
           </ul>
           <span className={s.reviewCAT}>Leave your feedback</span>
           <label className={s.textareaWrap}>
