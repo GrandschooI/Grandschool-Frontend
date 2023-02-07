@@ -4,7 +4,7 @@ import GoodIcon from "../../../../../../SVGConponents/ReviewIcons/GoodIcon";
 import OkIcon from "../../../../../../SVGConponents/ReviewIcons/OKIcon";
 import BadIcon from "../../../../../../SVGConponents/ReviewIcons/BadIcon";
 import UglyIcon from "../../../../../../SVGConponents/ReviewIcons/UglyIcon";
-import ReviewItem from "./ReviewItem/ReviewItem";
+import ReviewAssessmentItem from "./ReviewAssessmentItem/ReviewAssessmentItem";
 
 const ReviewsAssessmentList: FC<propsReviewsAssessmentListType> = ({statusAssessment, setStatusAssessment}) => {
 
@@ -16,7 +16,7 @@ const ReviewsAssessmentList: FC<propsReviewsAssessmentListType> = ({statusAssess
       {
         radioAssessmentData.map((assessment, index) => {
             return (
-              <ReviewItem
+              <ReviewAssessmentItem
                 key={assessment.label}
                 index={index}
                 icon={assessment.icon}
