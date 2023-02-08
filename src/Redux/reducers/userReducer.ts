@@ -42,7 +42,7 @@ export const userReducer = (state = initialState, action: UserActionTypes): init
     case 'auth/SET_AUTH':
       return {
         ...state,
-        currentUser: action.data.authData,
+        currentUser: {...action.data.authData},
         isAuth: action.data.isAuth
       }
     case 'user/SET_USER_INFO':
@@ -180,6 +180,7 @@ export const setUserToStateAndStorage =
    isAuth: boolean,
    accessTokenName?: string | undefined,
    accessTokenData?: string | undefined) => {
+    debugger
     dispatch(userActions.setAuth(userData, isAuth))
     setDataToLocalStorage('user', JSON.stringify(userData))
     if (accessTokenName && accessTokenData) {

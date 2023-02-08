@@ -1,3 +1,10 @@
 .confirmMailPage {
+  position: relative;
   height: calc(100vh - 155px);
+  .confirmMailPage__wrapper {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }

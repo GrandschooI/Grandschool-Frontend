@@ -19,6 +19,12 @@ export const getUserBirthData = (state: AppStateType): Nullable<Date> => {
 export const getUserCountry = (state: AppStateType): Nullable<string> => {
   return state.userData.currentUser.country
 }
+export const getUserPhone = (state: AppStateType): Nullable<string> => {
+  return state.userData.currentUser.phone
+}
+export const getUserEmail = (state: AppStateType): Nullable<string> => {
+  return state.userData.currentUser.email
+}
 
 export const getUserCity = (state: AppStateType): Nullable<string> => {
   return state.userData.currentUser.city
@@ -36,4 +42,4 @@ export const getUserAsideItems = (state: AppStateType): AsideItemsType => {
   return state.userData.asideMenuItems
 }
 export type AsideItemsType = Array<AsideItemType>
-export type AsideItemType = {itemTitle: string, itemLink: string}
+export type AsideItemType = { itemTitle: string, itemLink: string }

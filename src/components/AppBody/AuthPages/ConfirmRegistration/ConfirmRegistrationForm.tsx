@@ -6,19 +6,24 @@ import 'react-toastify/dist/ReactToastify.css'
 import {Nullable} from '../../../../Redux/redux-store'
 import PhoneForm from './PhoneForm/PhoneForm';
 import EmailNotification from './EmailNotification/EmailNotification';
+import {useAppSelector} from '../../../../utils/Hooks/useAppSelector';
+import {getUserEmail, getUserPhone} from '../../../../Redux/selectors/userSelector';
 
 
-const confirmRegistrationForm: React.FC<PropsType> = ({onSubmit, themeStyle, fontSize}) => {
+const ConfirmRegistrationForm: React.FC<PropsType> = ({onSubmit, themeStyle, fontSize}) => {
+
+  const phone = useAppSelector(getUserPhone)
+  const email = useAppSelector(getUserEmail)
   return (
     <div className={cn(s.confirmRegistrationWrap, themeStyle ? themeStyle : '', s[themeStyle ? themeStyle : ''],
       s[fontSize ? fontSize : ''], [fontSize ? fontSize : ''])}>
-      <PhoneForm onSubmit={onSubmit}/>
-      <EmailNotification/>
+      {email && <EmailNotification email={email}/>}
+      {phone && <PhoneForm onSubmit={onSubmit} userPhone={phone}/>}
     </div>
   )
 }
 
-export default confirmRegistrationForm
+export default ConfirmRegistrationForm
 
 type PropsType = {
   onSubmit: (formData: any) => void
