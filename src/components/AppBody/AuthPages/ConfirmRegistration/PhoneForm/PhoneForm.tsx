@@ -10,7 +10,7 @@ const confirmRegistrationFormSchema = yup.object().shape({
   confirmationCode: yup.number().required('Code is required')
 })
 
-const PhoneForm: React.FC<PropsType> = ({onSubmit}) => {
+const PhoneForm: React.FC<PropsType> = ({onSubmit, userPhone}) => {
   return (
     <Formik
       initialValues={{confirmationCode: ''}}
@@ -27,7 +27,7 @@ const PhoneForm: React.FC<PropsType> = ({onSubmit}) => {
         <Form>
           <label className={cn(s.confirmLabel, 'formLabel')}>
             <span>Confirmation code was sent to:</span>
-            <p className={s.phone}>+ 380 (50) - 888 - 28 - **</p>
+            <p className={s.phone}>{userPhone}</p>
             {TextField({
               type: 'number',
               name: 'confirmationCode',
@@ -56,4 +56,5 @@ export default PhoneForm;
 
 type PropsType = {
   onSubmit: (formData: any) => void
+  userPhone: string
 }

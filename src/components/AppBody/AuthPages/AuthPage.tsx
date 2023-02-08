@@ -66,7 +66,7 @@ const AuthPage = () => {
   }
 
   if (isAuth) {
-    return <Redirect to={'/profile/personal-info'}/>
+    return <Redirect to={'/email-verification'}/>
   }
 
   return (
