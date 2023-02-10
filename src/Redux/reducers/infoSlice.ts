@@ -1,5 +1,5 @@
 import {InfoAPI, WebsiteCategoryItemType, WebsiteItemType} from "../../api/infoAPI";
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import {Dispatch} from "redux";
 import {styleActions} from "./styleReducer";
 import {reviewsAPI} from "../../api/reviewsAPI";
@@ -42,7 +42,6 @@ const infoSlice = createSlice({
             state.infoPageAsideMenu[0].topics = action.data
         }
     }
-
 })
 
 
@@ -95,6 +94,8 @@ export const sendFeedbackReviewsThunkCreator = (reviewsFormData: sendFeedbackTyp
 
 export default infoSlice.reducer
 export const { setWebsites, setWebsiteCategories } = infoSlice.actions;
+
+// Types
 
 type getWebsiteActionType = InferActionType<typeof InfoActions>
 type ThunkType = BaseThunkType<getWebsiteActionType>
