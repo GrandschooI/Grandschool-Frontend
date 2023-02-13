@@ -5,7 +5,6 @@ const initialState = {
   fontSize: 'small', //also has medium and large
   themeStyle: null as Nullable<string>, // has yellowTheme, whiteTheme and blueTheme
   images: true,
-  // todo remove isLoaded
   isLoaded: true,
   isOptionsOpen: false
 }
