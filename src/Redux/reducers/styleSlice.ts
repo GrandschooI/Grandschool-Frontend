@@ -14,14 +14,28 @@ const styleSlice = createSlice({
     name: 'style',
     initialState: initialState,
     reducers: {
-        switchBlindMode: (state, blindMode: boolean) => ({type: 'SWITCH_BLIND_MODE', blindMode} as const),
-        setFontSizeMode: (fontSizeMode: string) => ({type: 'SET_FONTSIZE_MODE', fontSizeMode} as const),
-        setThemeStyleMode: (themeStyleMode: string) => ({type: 'SET_THEMESTYLE_MODE', themeStyleMode} as const),
-        setOptionsMode: (optionsMode: boolean) => ({type: 'SET_OPTIONS_MODE', optionsMode} as const),
-        setImgAvailability: (imgAvailabilityMode: boolean) => ({
-            type: 'SET_IMGAVAILABILITY_MODE',
-            imgAvailabilityMode
-        } as const),
-        toggleIsLoaded: (isLoaded: boolean) => ({type: 'TOGGLE_IS-LOADED', isLoaded} as const)
+        /*switchBlindMode (state: any, action: any) {
+            action.blindMode ?
+                {state.themeStyle = 'yellowTheme', state.blindMode = action.blindMode, state.isOptionsOpen = true} :
+                {state.blindMode = false, state.themeStyle = null, state.images = true, state.fontSize = 'small', state.isOptionsOpen = false}
+        },*/
+        setFontSizeMode (state: any, action: any) {
+            state.fontSize = action.fontSizeMode
+        },
+        setThemeStyleMode (state: any, action: any) {
+            state.themeStyle = action.themeStyleMode
+        },
+        setOptionsMode (state: any, action: any) {
+            state.optionsMode = action.optionsMode
+        },
+        setImgAvailability (state: any, action: any) {
+            state.imgAvailabilityMode = action.imgAvailabilityMode
+        },
+        toggleIsLoaded (state: any, action: any) {
+            state.isLoaded = action.isLoaded
+        }
     }
 })
+
+export default styleSlice.reducer
+export const { setFontSizeMode, setThemeStyleMode, setOptionsMode, setImgAvailability, toggleIsLoaded } = styleSlice.actions;
