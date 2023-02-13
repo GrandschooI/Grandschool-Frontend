@@ -9,5 +9,8 @@ export const reviewsAPI = {
     formData.append('text', reviewsFormData.text)
     formData.append('assessment', reviewsFormData.assessment)
     return instance.post('reviews', formData)
+  },
+  getFeedback(){
+    return instance.get('reviews')
   }
 }
