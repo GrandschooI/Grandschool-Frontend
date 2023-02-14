@@ -14,7 +14,7 @@ const ReviewList = () => {
           <ReviewItem/>
       </ul>
     </>
-  );
-};
+  )
+}
 
 export default ReviewList;
