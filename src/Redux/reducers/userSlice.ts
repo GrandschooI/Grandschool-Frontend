@@ -6,8 +6,7 @@ import {AuthAPI, AuthResponseType} from "../../api/authAPI";
 import {toast} from "react-toastify";
 import {AxiosError} from "axios";
 import {removeDataFromLocalStorage, setDataToLocalStorage} from "../../utils/scaffolding";
-import {userAPI} from "../../api/userAPI";
-import userReducer, {userActions} from "./userReducer";
+import {userAPI} from "../../api/userAPI"
 
 export const FACEBOOK_CLIENT_ID = '1166464030893684'
 export const GOOGLE_CLIENT_ID = '959593221954-sl41n7108b6se8uqtm4c64q81g1v49ap.apps.googleusercontent.com'
@@ -41,20 +40,20 @@ const userSlice = createSlice({
     name: 'user',
     initialState: initialState,
     reducers: {
-        setAuth (state = initialState, action: any) {
-            state.currentUser = action.authData
-            state.isAuth = action.isAuth
+        setAuth (state = initialState, action: PayloadAction<setAuthActionType>) {
+            state.currentUser = action.payload.authData
+            state.isAuth = action.payload.isAuth
         },
-        setProfileInfo (state = initialState, action: any) {
-           state.currentUser.name = action.data.name
-           state.currentUser.gender = action.data.gender
-           state.currentUser.birthday = action.data.birthDate
-           state.currentUser.country = action.data.country
-           state.currentUser.city = action.data.city
-           state.currentUser.description = action.data.aboutUserText
+        setProfileInfo (state = initialState, action: PayloadAction<setProfileActionType>) {
+           state.currentUser.name = action.payload.name
+           state.currentUser.gender = action.payload.gender
+           state.currentUser.birthday = action.payload.birthDate
+           state.currentUser.country = action.payload.country
+           state.currentUser.city = action.payload.city
+           state.currentUser.description = action.payload.aboutMeDescription
         },
         setPhoto (state = initialState, action: any) {
-            state.currentUser.photo = action.data
+            state.currentUser.photo = action.payload
         }
     }
 })
@@ -85,6 +84,7 @@ export const registerThunkCreator = (email: string, password: string, confirmPas
 
 export const loginThunkCreator = (email?: string, password?: string, driver?: string, access_token?: string) => {
     return (dispatch: Dispatch) => {
+        debugger
         dispatch(styleActions.toggleIsLoadedAC(false))
         AuthAPI.login(email, password, driver, access_token)
             .then((response: AuthResponseType) => {
@@ -110,7 +110,7 @@ export const logoutThunkCreator = () => async (dispatch: Dispatch) => {
         const token = localStorage.token
         const response = await AuthAPI.logout(token)
         if (response.status === 204) {
-            dispatch(userActions.setAuth({}, false))
+            dispatch(setAuth({authData: {}, isAuth: false}))
             removeDataFromLocalStorage('token')
             removeDataFromLocalStorage('user')
             dispatch(styleActions.toggleIsLoadedAC(true))
@@ -143,7 +143,7 @@ export const setUserPhotoThunkCreator = (userId: number, token: string, file: an
     dispatch(styleActions.toggleIsLoadedAC(false))
     try {
         let response = await userAPI.setProfilePhoto(userId, token, file)
-        dispatch(userActions.setPhoto(response.data.data.photo))
+        dispatch(setPhoto(response.data.data.photo))
         setDataToLocalStorage('user', JSON.stringify(response.data.data))
     } catch (error) {
         toast.error((error as AxiosError).response?.data.message)
@@ -157,13 +157,12 @@ export const setUserPhotoThunkCreator = (userId: number, token: string, file: an
 
 export const setUserToStateAndStorage =
     (dispatch: Dispatch,
-     userData: any,
+     authData: any,
      isAuth: boolean,
      accessTokenName?: string | undefined,
      accessTokenData?: string | undefined) => {
-        debugger
-        dispatch(userActions.setAuth(userData, isAuth))
-        setDataToLocalStorage('user', JSON.stringify(userData))
+        dispatch(setAuth({authData, isAuth}))
+        setDataToLocalStorage('user', JSON.stringify(authData))
         if (accessTokenName && accessTokenData) {
             setDataToLocalStorage(accessTokenName, accessTokenData)
         }
@@ -173,7 +172,7 @@ export const setUserFromLocalStorage = () => {
     return (dispatch: Dispatch) => {
         const userFromLocalstorage = window.localStorage.getItem('user')
         if (userFromLocalstorage) {
-            dispatch(userActions.setAuth(JSON.parse(userFromLocalstorage), true))
+            dispatch(setAuth({authData: JSON.parse(userFromLocalstorage), isAuth: true}))
         }
     }
 }
@@ -196,3 +195,16 @@ export default userSlice.reducer
 export const { setAuth, setProfileInfo, setPhoto } = userSlice.actions;
 
 export type initialStateType = typeof initialState
+type setProfileActionType = {
+    name: string
+    gender: string
+    birthDate: Date
+    country: string
+    city: string
+    aboutMeDescription: string
+}
+
+type setAuthActionType = {
+    authData: any
+    isAuth: boolean
+}
