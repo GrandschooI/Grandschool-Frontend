@@ -1,10 +1,9 @@
 import {InfoAPI, WebsiteCategoryItemType, WebsiteItemType} from "../../api/infoAPI";
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {Dispatch} from "redux";
 import {styleActions} from "./styleReducer";
 import {reviewsAPI} from "../../api/reviewsAPI";
-import {InfoActions, sendFeedbackType} from "./infoReducer";
-import {BaseThunkType, InferActionType} from "../redux-store";
+
 
 const initialState = {
     aboutUs: [
@@ -35,11 +34,11 @@ const infoSlice = createSlice({
     name: 'info',
     initialState: initialState,
     reducers: {
-        setWebsites (state: any, action: any) {
-            state.websites = action.data
+        setWebsites (state = initialState, action: PayloadAction<websitesActionType>) {
+            state.websites = action.payload.data
         },
-        setWebsiteCategories (state: any, action: any) {
-            state.infoPageAsideMenu[0].topics = action.data
+        setWebsiteCategories (state = initialState, action: PayloadAction<websiteCategoriesActionType>) {
+            state.infoPageAsideMenu[0].topics = action.payload.data
         }
     }
 })
@@ -97,5 +96,10 @@ export const { setWebsites, setWebsiteCategories } = infoSlice.actions;
 
 // Types
 
-type getWebsiteActionType = InferActionType<typeof InfoActions>
-type ThunkType = BaseThunkType<getWebsiteActionType>
+type websitesActionType = {
+    data: Array<WebsiteItemType>
+}
+
+type websiteCategoriesActionType = {
+    data: Array<any>
+}
