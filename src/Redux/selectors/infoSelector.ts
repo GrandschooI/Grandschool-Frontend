@@ -19,3 +19,27 @@ export const getInfoMenu = (state: AppStateType): Array<object> => {
     return {itemLink: el.itemLink, itemTitle: el.itemTitle, topics: el.topics}
   })
 }
+
+export const getTotalCount = (state: AppStateType) => {
+  return state.info.reviews.meta.total
+}
+
+export const getReviewData = (state: AppStateType) => {
+  return state.info.reviews.records
+}
+
+export const getLastPage = (state: AppStateType) => {
+  return state.info.reviews.meta.last_page
+}
+
+export const getCurrentPage = (state: AppStateType) => {
+  return state.info.reviews.meta.current_page
+}
+
+export const getNextPageURL = (state: AppStateType) => {
+  return state.info.reviews.meta.next_page_url
+}
+
+export const getPrevPageURL = (state: AppStateType) => {
+  return state.info.reviews.meta.previous_page_url
+}
