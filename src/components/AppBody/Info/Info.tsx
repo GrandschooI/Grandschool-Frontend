@@ -4,7 +4,7 @@ import cn from 'classnames'
 import s from './Info.module.scss'
 import Aside from '../../common/Aside/Aside';
 import {useDispatch} from 'react-redux';
-import {getWebsitesCategoryThunkCreator} from '../../../Redux/reducers/infoReducer';
+import {getWebsitesCategoryThunkCreator} from '../../../Redux/reducers/infoSlice'
 import Websites from './InfoContent/Websites/Websites';
 import {useAppSelector} from '../../../utils/Hooks/useAppSelector';
 import {getInfoMenu} from '../../../Redux/selectors/infoSelector';

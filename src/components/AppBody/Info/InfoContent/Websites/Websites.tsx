@@ -5,7 +5,7 @@ import {useLocation} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import {useAppSelector} from '../../../../../utils/Hooks/useAppSelector';
 import {getWebsites} from '../../../../../Redux/selectors/infoSelector';
-import {getWebsitesThunkCreator} from '../../../../../Redux/reducers/infoReducer';
+import {getWebsitesThunkCreator} from '../../../../../Redux/reducers/infoSlice'
 import Preloader from "../../../../utils/Preloader/Preloader";
 
 const Websites = () => {

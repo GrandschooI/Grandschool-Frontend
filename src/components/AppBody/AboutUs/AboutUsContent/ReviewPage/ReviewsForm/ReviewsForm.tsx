@@ -1,5 +1,5 @@
 import React, {ChangeEvent, useState} from 'react';
-import {sendFeedbackReviewsThunkCreator, sendFeedbackType} from "../../../../../../Redux/reducers/infoReducer";
+import {sendFeedbackReviewsThunkCreator, sendFeedbackType} from "../../../../../../Redux/reducers/infoSlice";
 import {Form, Formik} from "formik";
 import s from "../ReviewPage.module.scss";
 import cn from "classnames";
