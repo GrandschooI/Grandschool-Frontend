@@ -52,7 +52,7 @@ const userSlice = createSlice({
            state.currentUser.city = action.payload.city
            state.currentUser.description = action.payload.aboutMeDescription
         },
-        setPhoto (state = initialState, action: any) {
+        setPhoto (state = initialState, action: PayloadAction<setPhotoActionType>) {
             state.currentUser.photo = action.payload
         }
     }
@@ -194,7 +194,6 @@ export function errorHandler(error: any) {
 export default userSlice.reducer
 export const { setAuth, setProfileInfo, setPhoto } = userSlice.actions;
 
-export type initialStateType = typeof initialState
 type setProfileActionType = {
     name: string
     gender: string
@@ -203,8 +202,10 @@ type setProfileActionType = {
     city: string
     aboutMeDescription: string
 }
-
 type setAuthActionType = {
     authData: any
     isAuth: boolean
+}
+type setPhotoActionType = {
+    photo: string
 }
