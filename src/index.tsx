@@ -5,7 +5,7 @@ import {Provider} from 'react-redux'
 import {BrowserRouter} from 'react-router-dom'
 import {ToastContainer} from 'react-toastify'
 import reportWebVitals from './reportWebVitals'
-import store from './Redux/redux-store'
+import store from "./Redux/redux-toolkit-store"
 import App from './App';
 
 ReactDOM.render(
