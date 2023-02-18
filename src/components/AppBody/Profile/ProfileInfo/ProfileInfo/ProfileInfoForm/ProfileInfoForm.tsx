@@ -16,7 +16,7 @@ import {
   getUserSex
 } from '../../../../../../Redux/selectors/userSelector';
 import {useDispatch} from 'react-redux';
-import {userActions} from '../../../../../../Redux/reducers/userReducer';
+import {setProfileInfo} from '../../../../../../Redux/reducers/userSlice';
 import FormErrorMessage from '../../../../../utils/FormErrorMessage/FormErrorMessage';
 
 const profileInfoFormSchema = yup.object().shape({
@@ -35,7 +35,6 @@ const ProfileInfoForm = () => {
   const city = useAppSelector(getUserCity)
   const aboutUserText = useAppSelector(getAboutUserText)
 
-  const {setProfileInfo} = userActions
   const dispatch = useDispatch()
   const [startDate, setStartDate] = useState(new Date())
   const [aboutMeDescription, setAboutMeDescription] = useState('')

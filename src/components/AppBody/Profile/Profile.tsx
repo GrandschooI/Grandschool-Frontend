@@ -10,7 +10,7 @@ import Aside from '../../common/Aside/Aside';
 import {useAppSelector} from '../../../utils/Hooks/useAppSelector';
 import {getThemeStyle} from '../../../Redux/selectors/styleSelector';
 import {useDispatch} from 'react-redux';
-import {logoutThunkCreator} from '../../../Redux/reducers/userReducer';
+import {logoutThunkCreator} from '../../../Redux/reducers/userSlice';
 import {getAuthStatus} from '../../../Redux/selectors/userSelector';
 import {getProfileAsideItems} from '../../../Redux/selectors/profileSelector';
 

@@ -1,4 +1,4 @@
-import userReducer, {userActions, initialStateType} from '../userReducer'
+import userReducer, {setPhoto, setAuth, setProfileInfo, initialStateType} from '../userSlice'
 
 let state: initialStateType
 
@@ -31,7 +31,7 @@ beforeEach(() => {
 
 
 test('Set auth', () => {
-    const newState = userReducer(state, userActions.setAuth({
+    const newState = userReducer(state, setAuth({
         id: 5,
         name: "test",
         email: "test-email@gmail.com",
@@ -54,7 +54,7 @@ test('Set auth', () => {
 })
 
 test('Set Profile Info', () => {
-    const newState = userReducer(state, userActions.setProfileInfo(
+    const newState = userReducer(state, setProfileInfo(
         "Eugene Kuhot",
         'male',
         new Date('2019-05-14T11:01:58.135Z'),
@@ -73,7 +73,7 @@ test('Set Profile Info', () => {
 })
 
 test ('Set user photo', () => {
-    const newState = userReducer(state, userActions.setPhoto('/photoUrl'))
+    const newState = userReducer(state, setPhoto('/photoUrl'))
 
     expect(newState.currentUser.photo).toBe('/photoUrl')
 })
