@@ -8,11 +8,13 @@ import {useAppSelector} from '../../../../../utils/Hooks/useAppSelector';
 import {getThemeStyle} from '../../../../../Redux/selectors/styleSelector';
 import ReviewsForm from "./ReviewsForm/ReviewsForm";
 import ReviewList from "./ReviewList/ReviewList";
+import {NavLink} from "react-router-dom";
+import {getAuthStatus} from "../../../../../Redux/selectors/userSelector";
 
 
 const ReviewPage = () => {
   const themeStyle = useAppSelector(getThemeStyle)
-
+  const isAuth = useAppSelector(getAuthStatus)
   return (
     <div className={cn(s.reviewBody, s[themeStyle ? themeStyle : ''], [themeStyle ? themeStyle : ''])}>
       <h3 className={s.reviewTitle}>Leave feedback</h3>
@@ -30,7 +32,11 @@ const ReviewPage = () => {
           alt="Feedback background"
         />
       </div>
-      <ReviewsForm/>
+      {
+        isAuth
+          ? <ReviewsForm/>
+          : <NavLink to={'/registration'}>go to register</NavLink>
+      }
       <ReviewList/>
     </div>
   )
