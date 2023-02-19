@@ -1,6 +1,6 @@
 import {AppStateType} from '../redux-store'
 import {WebsiteItemType} from '../../api/infoAPI'
-import {topicType} from '../reducers/courseReducer';
+import {topicType} from '../reducers/courseSlice'
 
 
 export const getWebsites = (state: any): Array<WebsiteItemType> => {
