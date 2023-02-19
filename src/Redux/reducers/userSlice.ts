@@ -206,6 +206,4 @@ type setAuthActionType = {
     authData: any
     isAuth: boolean
 }
-type setPhotoActionType = {
-    photo: string
-}
+type setPhotoActionType = Nullable<string>

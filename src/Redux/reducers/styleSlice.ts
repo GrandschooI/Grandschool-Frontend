@@ -14,13 +14,12 @@ const styleSlice = createSlice({
     name: 'style',
     initialState: initialState,
     reducers: {
-        switchBlindMode (state = initialState, action: PayloadAction<blindModeActionType>) {
-            if (action.blindMode) {
+        /*switchBlindMode (state = initialState, action: PayloadAction<blindModeActionType>) {
+            if (action.payload.blindMode) {
                 return state.themeStyle = 'yellowTheme', state.blindMode = action.payload.blindMode, state.isOptionsOpen = true
-            } else {
-                return state.blindMode = false, state.themeStyle = null, state.images = true, state.fontSize = 'small', state.isOptionsOpen = false
             }
-        },
+            return state.themeStyle = null, state.blindMode = false, state.images = true, state.fontSize = 'small', state.isOptionsOpen = false
+        },*/
         setFontSizeMode (state = initialState, action: PayloadAction<fontSizeModeActionType>) {
             state.fontSize = action.payload.fontSizeMode
         },
@@ -28,10 +27,10 @@ const styleSlice = createSlice({
             state.themeStyle = action.payload.themeStyleMode
         },
         setOptionsMode (state = initialState, action: PayloadAction<optionsModeActionType>) {
-            state.optionsMode = action.payload.optionsMode
+            state.isOptionsOpen = action.payload.optionsMode
         },
         setImgAvailability (state = initialState, action: PayloadAction<imgAvailabilityActionType>) {
-            state.imgAvailabilityMode = action.payload.imgAvailabilityMode
+            state.images = action.payload.imgAvailabilityMode
         },
         toggleIsLoaded (state = initialState, action: PayloadAction<isLoadedActionType>) {
             state.isLoaded = action.payload.isLoaded
@@ -53,7 +52,7 @@ type themeStyleModeActionType = {
     themeStyleMode: string
 }
 type optionsModeActionType = {
-    optionsMode: string
+    optionsMode: boolean
 }
 type imgAvailabilityActionType = {
     imgAvailabilityMode: boolean
