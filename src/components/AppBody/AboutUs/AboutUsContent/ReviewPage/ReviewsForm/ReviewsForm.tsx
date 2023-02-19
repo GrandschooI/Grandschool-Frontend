@@ -1,5 +1,5 @@
 import React, {ChangeEvent, useState} from 'react';
-import {sendFeedbackReviewsThunkCreator, sendFeedbackType} from "../../../../../../Redux/reducers/infoSlice";
+
 import {Form, Formik} from "formik";
 import s from "../ReviewPage.module.scss";
 import cn from "classnames";
@@ -8,6 +8,8 @@ import {useDispatch} from "react-redux";
 import * as yup from "yup";
 import ReviewsAssessmentList from "./ReviewAssessmentList/ReviewsAssessmentList";
 import FormErrorMessage from "../../../../../utils/FormErrorMessage/FormErrorMessage";
+import {sendFeedbackReviewsThunkCreator} from "../../../../../../Redux/reducers/infoSlice";
+import {sendFeedbackType} from "../../../../../../Redux/reducers/infoReducer";
 
 const profileInfoFormSchema = yup.object().shape({
   assessment: yup.string()
