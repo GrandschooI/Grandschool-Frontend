@@ -25,13 +25,13 @@ const AppBody = () => {
         <Route path="/confirm-registration" render={() => <AuthPage/>}/>
         <Route path="/login" render={() => <AuthPage/>}/>
         <Route path="/profile" render={() => <Profile/>}/>
-        {/*<Route path="/about-us" render={() => <AboutUs/>}/>
+        <Route path="/about-us" render={() => <AboutUs/>}/>
         <Route path="/course" render={() => <Course/>}/>
         <Route path="/teachers" render={() => <Teachers/>}/>
         <Route path="/info" render={() => <Info/>}/>
         <Route path="/payment" render={() => <Payment/>}/>
         <Route path="/email-verification" render={() => <ConfirmMail/>}/>
-        <Route path="/not-found" render={() => <NotFound/>}/>*/}
+        <Route path="/not-found" render={() => <NotFound/>}/>
         <Redirect path="*" to={'/not-found'}/>
       </Switch>
     </div>

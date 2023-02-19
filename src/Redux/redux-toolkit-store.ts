@@ -5,7 +5,7 @@ import courseSlice from "./reducers/courseSlice";
 import userSlice from "./reducers/userSlice";
 import styleSlice from "./reducers/styleSlice";
 
-export const rootReducer = configureStore({
+const store = configureStore({
     reducer: {
         userData: userSlice,
         styleMode: styleSlice,
@@ -15,7 +15,6 @@ export const rootReducer = configureStore({
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().prepend(thunkMiddleware),
 });
 
-type rootReducerType = typeof rootReducer
-/*export type AppStateType = ReturnType<rootReducerType>*/
-
-export default rootReducer
+//todo implement new appStateType
+export type StoreType = ReturnType<typeof store.getState>
+export default store

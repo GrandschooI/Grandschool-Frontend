@@ -1,5 +1,5 @@
 import {Nullable} from "../redux-store";
-import {createSlice} from "@reduxjs/toolkit";
+import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 const initialState = {
     blindMode: false,
@@ -14,28 +14,49 @@ const styleSlice = createSlice({
     name: 'style',
     initialState: initialState,
     reducers: {
-        /*switchBlindMode (state: any, action: any) {
-            action.blindMode ?
-                {state.themeStyle = 'yellowTheme', state.blindMode = action.blindMode, state.isOptionsOpen = true} :
-                {state.blindMode = false, state.themeStyle = null, state.images = true, state.fontSize = 'small', state.isOptionsOpen = false}
+        /*switchBlindMode (state = initialState, action: PayloadAction<blindModeActionType>) {
+            if (action.payload.blindMode) {
+                return state.themeStyle = 'yellowTheme', state.blindMode = action.payload.blindMode, state.isOptionsOpen = true
+            }
+            return state.themeStyle = null, state.blindMode = false, state.images = true, state.fontSize = 'small', state.isOptionsOpen = false
         },*/
-        setFontSizeMode (state: any, action: any) {
-            state.fontSize = action.fontSizeMode
+        setFontSizeMode (state = initialState, action: PayloadAction<fontSizeModeActionType>) {
+            state.fontSize = action.payload.fontSizeMode
         },
-        setThemeStyleMode (state: any, action: any) {
-            state.themeStyle = action.themeStyleMode
+        setThemeStyleMode (state = initialState, action: PayloadAction<themeStyleModeActionType>) {
+            state.themeStyle = action.payload.themeStyleMode
         },
-        setOptionsMode (state: any, action: any) {
-            state.optionsMode = action.optionsMode
+        setOptionsMode (state = initialState, action: PayloadAction<optionsModeActionType>) {
+            state.isOptionsOpen = action.payload.optionsMode
         },
-        setImgAvailability (state: any, action: any) {
-            state.imgAvailabilityMode = action.imgAvailabilityMode
+        setImgAvailability (state = initialState, action: PayloadAction<imgAvailabilityActionType>) {
+            state.images = action.payload.imgAvailabilityMode
         },
-        toggleIsLoaded (state: any, action: any) {
-            state.isLoaded = action.isLoaded
+        toggleIsLoaded (state = initialState, action: PayloadAction<isLoadedActionType>) {
+            state.isLoaded = action.payload.isLoaded
         }
     }
 })
 
 export default styleSlice.reducer
-export const { setFontSizeMode, setThemeStyleMode, setOptionsMode, setImgAvailability, toggleIsLoaded } = styleSlice.actions;
+export const { setFontSizeMode, setThemeStyleMode, setOptionsMode, setImgAvailability, toggleIsLoaded } = styleSlice.actions
+
+type blindModeActionType = {
+    themeStyle: any
+    blindMode: boolean
+}
+type fontSizeModeActionType = {
+    fontSizeMode: string
+}
+type themeStyleModeActionType = {
+    themeStyleMode: string
+}
+type optionsModeActionType = {
+    optionsMode: boolean
+}
+type imgAvailabilityActionType = {
+    imgAvailabilityMode: boolean
+}
+type isLoadedActionType = {
+    isLoaded: boolean
+}
