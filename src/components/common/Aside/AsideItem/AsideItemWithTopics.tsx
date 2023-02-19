@@ -3,7 +3,7 @@ import cn from "classnames";
 import s from "./AsideItem.module.scss";
 import {CSSTransition} from "react-transition-group";
 import {NavLink} from "react-router-dom";
-import {topicType} from "../../../../Redux/reducers/courseReducer";
+import {topicType} from "../../../../Redux/reducers/courseSlice";
 
 const AsideItemWithTopics: React.FC<PropsType> = ({activeItem, location, itemLink, setActiveItem, itemTitle, topics}) => {
     return (

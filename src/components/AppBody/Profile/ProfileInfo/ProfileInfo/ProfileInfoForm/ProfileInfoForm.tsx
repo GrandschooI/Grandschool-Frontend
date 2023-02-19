@@ -61,7 +61,8 @@ const ProfileInfoForm = () => {
       validateOnBlur={true}
       validateOnChange={true}
       onSubmit={(formData) => {
-        dispatch(setProfileInfo(formData.name, formData.gender, formData.birthDate, formData.country, formData.city, aboutMeDescription))
+        const {name, gender, birthDate, country, city} = formData
+        dispatch(setProfileInfo({name, gender, birthDate, country, city, aboutMeDescription}))
       }}
     >
       {({isSubmitting, touched, errors}) => (

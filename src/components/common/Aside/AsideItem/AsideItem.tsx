@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import {useLocation} from 'react-router-dom'
 import s from './AsideItem.module.scss'
-import {topicType} from '../../../../Redux/reducers/courseReducer'
 import {Nullable} from '../../../../Redux/redux-store'
 import AsideItemWithoutTopics from "./AsideItemWithoutTopics";
 import AsideItemWithTopics from "./AsideItemWithTopics";
+import {topicType} from "../../../../Redux/reducers/courseSlice";
 
 const AsideItem: React.FC<PropsType> = ({itemTitle, itemLink, topics, themeStyle}) => {
     const location: string = useLocation().pathname
