@@ -29,7 +29,7 @@ const initialState = {
 
 // Reducer
 
-const courseReducer = (state = initialState, action: courseActionsTypes): InitialStateType => {
+const courseReducer = (state = initialState): any => {
   return state
 }
 
