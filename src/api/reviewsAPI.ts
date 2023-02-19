@@ -10,7 +10,7 @@ export const reviewsAPI = {
     formData.append('assessment', reviewsFormData.assessment)
     return instance.post('reviews', formData)
   },
-  getFeedback(){
-    return instance.get('reviews')
+  getFeedback(page: number){
+    return instance.get(`reviews?page=${page}`)
   }
 }

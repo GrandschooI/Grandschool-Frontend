@@ -60,7 +60,7 @@ const initialState = {
         created_at: "2023-01-23T19:04:44.000000Z",
         updated_at: "2023-01-23T19:04:44.000000Z"
       }
-    ] as Array<feedbackResponseType>,
+    ],
     meta: {
       current_page: 1,
       per_page: 1,
@@ -70,12 +70,11 @@ const initialState = {
       next_page_url: "https://api.staging.grandschool.pl/api/reviews?page=2",
       has_more_pages: true,
       last_page: 1,
-      total: 46
-    } as metaType,
-  },
+      total: 0
+    }
+  } as reviewsDataType,
   websites: [] as Array<WebsiteItemType>
 }
-
 // Reducer
 
 export const infoReducer = (state = initialState, action: getWebsiteActionType): InitialStateType => {
@@ -110,7 +109,7 @@ export const InfoActions = {
     type: 'info/SET_WEBSITE_CATEGORIES',
     data: websiteCategories
   } as const),
-  setReviewsData: (reviewsData: any) => ({type: 'info/SET_RESPONSE_REVIEWS', data: reviewsData} as const)
+  setReviewsData: (reviewsData: reviewsDataType) => ({type: 'info/SET_RESPONSE_REVIEWS', data: reviewsData} as const)
 }
 
 // ThunkCreators
@@ -159,10 +158,10 @@ export const sendFeedbackReviewsThunkCreator = (reviewsFormData: sendFeedbackTyp
     }
   }
 }
-export const getReviewsThunkCreator = () => {
+export const getReviewsThunkCreator = (page: number) => {
   return async (dispatch: Dispatch) => {
     try {
-      const response = await reviewsAPI.getFeedback()
+      const response = await reviewsAPI.getFeedback(page)
       dispatch(InfoActions.setReviewsData(response.data.data))
     } catch (error: any) {
       console.log(error)
@@ -176,19 +175,11 @@ export default infoReducer
 
 // Types
 
-export type metaType = {
-  current_page: number,
-  per_page: number,
-  from: number,
-  to: number,
-  previous_page_url: null,
-  next_page_url: string,
-  has_more_pages: boolean,
-  last_page: number,
-  total: number
+export type reviewsDataType = {
+  records: Array<reviewsRecordsType>
+  meta: reviewsMetaType
 }
-
-export type feedbackResponseType = {
+export type reviewsRecordsType = {
   id: number,
   user: {
     id: number,
@@ -218,6 +209,17 @@ export type feedbackResponseType = {
   attachment: null,
   created_at: string,
   updated_at: string
+}
+export type reviewsMetaType = {
+  current_page: number,
+  per_page: number,
+  from: number,
+  to: number,
+  previous_page_url: null,
+  next_page_url: string,
+  has_more_pages: boolean,
+  last_page: number,
+  total: number
 }
 
 export type sendFeedbackType = {

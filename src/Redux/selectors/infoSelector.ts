@@ -1,6 +1,7 @@
 import {AppStateType} from '../redux-store'
 import {WebsiteItemType} from '../../api/infoAPI'
 import {topicType} from '../reducers/courseSlice'
+import {reviewsRecordsType} from "../reducers/infoReducer";
 
 
 export const getWebsites = (state: any): Array<WebsiteItemType> => {
@@ -18,4 +19,28 @@ export const getInfoMenu = (state: AppStateType): Array<object> => {
   return state.info.infoPageAsideMenu.map(el => {
     return {itemLink: el.itemLink, itemTitle: el.itemTitle, topics: el.topics}
   })
+}
+
+export const getTotalCount = (state: AppStateType): number => {
+  return state.info.reviews.meta.total
+}
+
+export const getReviewData = (state: AppStateType): Array<reviewsRecordsType> => {
+  return state.info.reviews.records
+}
+
+export const getLastPage = (state: AppStateType): number => {
+  return state.info.reviews.meta.last_page
+}
+
+export const getCurrentPage = (state: AppStateType): number => {
+  return state.info.reviews.meta.current_page
+}
+
+export const getNextPageURL = (state: AppStateType): string | null => {
+  return state.info.reviews.meta.next_page_url
+}
+
+export const getPrevPageURL = (state: AppStateType): string | null => {
+  return state.info.reviews.meta.previous_page_url
 }
