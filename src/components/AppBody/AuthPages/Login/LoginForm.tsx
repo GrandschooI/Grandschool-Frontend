@@ -11,7 +11,7 @@ import FacebookLogin from 'react-facebook-login';
 import Popup from '../../../common/Popup/Popup';
 import {useAppSelector} from '../../../../utils/Hooks/useAppSelector';
 import {getFontSize, getThemeStyle} from '../../../../Redux/selectors/styleSelector';
-import {FACEBOOK_CLIENT_ID, GOOGLE_CLIENT_ID} from '../../../../Redux/reducers/userReducer';
+import {FACEBOOK_CLIENT_ID, GOOGLE_CLIENT_ID} from '../../../../Redux/reducers/userSlice';
 import * as yup from 'yup'
 import FormErrorMessage from '../../../utils/FormErrorMessage/FormErrorMessage';
 

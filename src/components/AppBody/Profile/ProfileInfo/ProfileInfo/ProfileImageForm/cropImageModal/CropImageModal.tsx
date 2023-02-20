@@ -1,7 +1,7 @@
 import React, {ChangeEvent, useState} from 'react';
 import Cropper from 'react-easy-crop';
 import getCroppedImg from '../utils/cropImage';
-import {errorHandler, setUserPhotoThunkCreator} from '../../../../../../../Redux/reducers/userReducer';
+import {errorHandler, setUserPhotoThunkCreator} from '../../../../../../../Redux/reducers/userSlice';
 import {useDispatch} from 'react-redux';
 import {useAppSelector} from '../../../../../../../utils/Hooks/useAppSelector';
 import {Area, Point} from './types/cropImageTypes';

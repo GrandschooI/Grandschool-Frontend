@@ -17,7 +17,7 @@ import {
   GOOGLE_CLIENT_ID,
   loginThunkCreator,
   registerThunkCreator
-} from '../../../Redux/reducers/userReducer';
+} from '../../../Redux/reducers/userSlice';
 import {useAppSelector} from '../../../utils/Hooks/useAppSelector';
 import {getFontSize, getOptionsState, getThemeStyle} from '../../../Redux/selectors/styleSelector';
 import {getAuthStatus} from '../../../Redux/selectors/userSelector';
@@ -36,6 +36,7 @@ const AuthPage = () => {
     dispatch(registerThunkCreator(formData.emailOrPhone, formData.password, formData.confirmPassword))
   }
   const onLoginSubmit = (formData: loginDataType, onSubmitProps: any) => {
+    debugger
     dispatch(loginThunkCreator(formData.email, formData.password))
     onSubmitProps.setSubmitting(false)
   }

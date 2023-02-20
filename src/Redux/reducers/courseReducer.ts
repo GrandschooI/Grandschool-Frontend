@@ -29,7 +29,7 @@ const initialState = {
 
 // Reducer
 
-const courseReducer = (state = initialState, action: courseActionsTypes): InitialStateType => {
+const courseReducer = (state = initialState): any => {
   return state
 }
 
@@ -37,14 +37,13 @@ export default courseReducer
 
 
 // Types
-export type courseType = {
+type courseType = {
   itemTitle: Nullable<string>
   itemLink: string
   topics: Nullable<Array<topicType>>
 }
-export type topicType = {
+type topicType = {
   topicTitle: string
   topicLink: string
 }
-type InitialStateType = typeof initialState
-type courseActionsTypes = {}
+

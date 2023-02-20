@@ -1,10 +1,10 @@
 import {InfoAPI, WebsiteCategoryItemType, WebsiteItemType} from "../../api/infoAPI";
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {Dispatch} from "redux";
 import {styleActions} from "./styleReducer";
 import {reviewsAPI} from "../../api/reviewsAPI";
-import {InfoActions, sendFeedbackType} from "./infoReducer";
-import {BaseThunkType, InferActionType} from "../redux-store";
+import {BaseThunkType} from "../redux-store";
+
 
 const initialState = {
     aboutUs: [
@@ -35,26 +35,26 @@ const infoSlice = createSlice({
     name: 'info',
     initialState: initialState,
     reducers: {
-        setWebsites (state: any, action: any) {
-            state.websites = action.data
+        setWebsites (state = initialState, action: PayloadAction<websitesActionType>) {
+            state.websites = action.payload
         },
-        setWebsiteCategories (state: any, action: any) {
-            state.infoPageAsideMenu[0].topics = action.data
+        setWebsiteCategories (state = initialState, action: PayloadAction<websiteCategoriesActionType>) {
+            state.infoPageAsideMenu[0].topics = action.payload
         }
     }
 })
 
 
-export const getWebsitesThunkCreator = (category: string): ThunkType => {
+/*export const getWebsitesThunkCreator = (category: string): Dispatch => {
     return async (dispatch) => {
         await InfoAPI.getWebsites(category).then((response: Array<WebsiteItemType>) => {
-            dispatch(InfoActions.setWebsites(response))
+            dispatch(setWebsites(response))
         })
             .catch((error: any) => {
                 console.log(error)
             })
     }
-}
+}*/
 
 export const getWebsitesCategoryThunkCreator = () => {
     return async (dispatch: Dispatch) => {
@@ -66,7 +66,7 @@ export const getWebsitesCategoryThunkCreator = () => {
                     topicLink: `/info/websites/${el.slug}`
                 })
             })
-            dispatch(InfoActions.setWebsiteCategories(websiteCategories))
+            dispatch(setWebsiteCategories(websiteCategories))
         })
             .catch((error: any) => {
                 console.log(error)
@@ -97,5 +97,55 @@ export const { setWebsites, setWebsiteCategories } = infoSlice.actions;
 
 // Types
 
-type getWebsiteActionType = InferActionType<typeof InfoActions>
-type ThunkType = BaseThunkType<getWebsiteActionType>
+type websitesActionType = Array<WebsiteItemType>
+type websiteCategoriesActionType = Array<any>
+type metaType = {
+    current_page: number,
+    per_page: number,
+    from: number,
+    to: number,
+    previous_page_url: null,
+    next_page_url: string,
+    has_more_pages: boolean,
+    last_page: number,
+    total: number
+}
+type feedbackResponseType = {
+    id: number,
+    user: {
+        id: number,
+        name: string,
+        email: string,
+        phone: null,
+        gender: null,
+        birthday: null,
+        country: null,
+        city: null,
+        description: null,
+        photo: null,
+        roles: [
+            string
+        ],
+        verified: boolean,
+        created_at: string,
+        updated_at: string
+    },
+    assessment: {
+        key: string,
+        value: number,
+        description: string
+    },
+    text: string,
+    visible: boolean,
+    attachment: null,
+    created_at: string,
+    updated_at: string
+}
+type sendFeedbackType = {
+    user_id?: number
+    assessment: number | string,
+    text: string,
+    attachment?: null | File
+}
+/*
+type ThunkType = BaseThunkType<getWebsiteActionType>*/

@@ -49,5 +49,3 @@ export type topicType = {
     topicTitle: string
     topicLink: string
 }
-type InitialStateType = typeof initialState
-type courseActionsTypes = {}
