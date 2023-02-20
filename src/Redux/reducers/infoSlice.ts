@@ -47,7 +47,7 @@ const infoSlice = createSlice({
 export const getWebsitesThunkCreator = (category: string): ThunkType => {
     return async (dispatch) => {
         await InfoAPI.getWebsites(category).then((response: Array<WebsiteItemType>) => {
-            dispatch(InfoActions.setWebsites(response))
+            dispatch(setWebsites(response))
         })
             .catch((error: any) => {
                 console.log(error)
@@ -65,27 +65,27 @@ export const getWebsitesCategoryThunkCreator = () => {
                     topicLink: `/info/websites/${el.slug}`
                 })
             })
-            dispatch(InfoActions.setWebsiteCategories(websiteCategories))
+            dispatch(setWebsiteCategories(websiteCategories))
         })
             .catch((error: any) => {
                 console.log(error)
             })
             .finally(() => {
-                dispatch(styleActions.toggleIsLoadedAC(true))
+                dispatch(toggleIsLoadedAC(true))
             })
     }
 }
 
 export const sendFeedbackReviewsThunkCreator = (reviewsFormData: sendFeedbackType) => {
     return async (dispatch: Dispatch) => {
-        dispatch(styleActions.toggleIsLoadedAC(false))
+        dispatch(toggleIsLoadedAC(false))
 
         try {
             await reviewsAPI.sendFeedback(reviewsFormData)
         } catch (error: any) {
             console.log(error)
         } finally {
-            dispatch(styleActions.toggleIsLoadedAC(true))
+            dispatch(toggleIsLoadedAC(true))
         }
     }
 }

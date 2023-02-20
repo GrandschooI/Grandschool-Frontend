@@ -15,11 +15,9 @@ const styleSlice = createSlice({
     initialState: initialState,
     reducers: {
         switchBlindMode (state = initialState, action: PayloadAction<blindModeActionType>) {
-            if (action.blindMode) {
-                return state.themeStyle = 'yellowTheme', state.blindMode = action.payload.blindMode, state.isOptionsOpen = true
-            } else {
-                return state.blindMode = false, state.themeStyle = null, state.images = true, state.fontSize = 'small', state.isOptionsOpen = false
-            }
+            action.payload.blindMode ?
+                (state.themeStyle = 'yellowTheme', state.blindMode = action.payload.blindMode, state.isOptionsOpen = true) :
+                (state.blindMode = false, state.themeStyle = null, state.images = true, state.fontSize = 'small', state.isOptionsOpen = false)
         },
         setFontSizeMode (state = initialState, action: PayloadAction<fontSizeModeActionType>) {
             state.fontSize = action.payload.fontSizeMode
