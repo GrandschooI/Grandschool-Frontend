@@ -6,13 +6,11 @@ import s from './CallToAction.module.scss'
 import {useAppSelector} from '../../../../utils/Hooks/useAppSelector';
 import {getFontSize, getImgAvailability, getStyleMode, getThemeStyle} from '../../../../Redux/selectors/styleSelector';
 import BlindButton from '../../../utils/BlindButton/BlindButton';
-import {styleActions} from '../../../../Redux/reducers/styleReducer';
 import {useDispatch} from 'react-redux';
+import {switchBlindMode} from "../../../../Redux/reducers/styleSlice";
 
 
 const CallToAction = () => {
-
-  const {switchBlindModeAC} = styleActions
 
   const dispatch = useDispatch()
 
@@ -24,7 +22,7 @@ const CallToAction = () => {
   const withoutImgClassName = images ? '' : 'withoutImg'
 
   const toggleBlindModeHandler = () => {
-    dispatch(switchBlindModeAC(!blindMode))
+    dispatch(switchBlindMode({blindMode: !blindMode}))
   }
   return (
     <section

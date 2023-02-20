@@ -1,8 +1,8 @@
 import React from 'react'
 import s from '../Header/Header.module.scss'
 import SearchIcon from '../SVGConponents/SearchField/SearchIcon'
-import {Nullable} from '../../Redux/redux-store'
 import cn from 'classnames'
+import {Nullable} from "../../Redux/redux-toolkit-store";
 
 const SearchField:React.FC<PropsType> = ({themeStyle}) => {
   return (

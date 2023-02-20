@@ -1,4 +1,4 @@
-import {InferActionType, Nullable} from '../redux-store'
+import {Nullable} from "../redux-toolkit-store";
 
 const initialState = {
   blindMode: false,
@@ -9,8 +9,6 @@ const initialState = {
   isLoaded: true
 
 }
-
-// Reducer
 
 const styleReducer = (state = initialState, action: styleActionType) => {
   switch (action.type) {

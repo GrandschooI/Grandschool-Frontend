@@ -15,12 +15,12 @@ import LogoWordsYellowTheme from '../SVGConponents/Header/LogoWordsYellowTheme'
 import LogoWordsWhiteTheme from '../SVGConponents/Header/LogoWordsWhiteTheme'
 import LogoWordsBlueTheme from '../SVGConponents/Header/LogoWordsBlueTheme'
 import s from './Header.module.scss'
-import {styleActions} from '../../Redux/reducers/styleReducer';
 import {useAppSelector} from '../../utils/Hooks/useAppSelector';
 import {getFontSize, getOptionsState, getStyleMode, getThemeStyle} from '../../Redux/selectors/styleSelector';
 import BlindModeOptions from './BlindModeOptions/BlindModeOptions';
 import BlindButton from '../utils/BlindButton/BlindButton';
 import {useDispatch} from 'react-redux';
+import {setOptionsMode, switchBlindMode} from "../../Redux/reducers/styleSlice";
 
 const Header = () => {
 
@@ -32,23 +32,22 @@ const Header = () => {
   const isOptionsOpen = useAppSelector(getOptionsState)
 
   const dispatch = useDispatch()
-  const {switchBlindModeAC, setOptionsModeAC} = styleActions
 
   const [isBurgerActive, setBurgerClass] = useState(false)
   useEffect(() => {
     if (blindModeFromLocalStorage === 'true' && !blindMode) {
-      switchBlindModeAC(true)
+      switchBlindMode({blindMode: true})
     }
   })
   const location: string = useLocation().pathname
   const isHeaderChange: boolean = routesWithDefaultHeader.some((element: string) => element === location)
 
   const toggleBlindModeHandler = () => {
-    dispatch(switchBlindModeAC(!blindMode))
+    dispatch(switchBlindMode({blindMode: !blindMode}))
   }
   useEffect(() => {
     if (blindModeFromLocalStorage) {
-      dispatch(switchBlindModeAC(true))
+      dispatch(switchBlindMode({blindMode: true}))
     }
   }, [blindModeFromLocalStorage])
 
@@ -69,7 +68,7 @@ const Header = () => {
           </a>
           {!isHeaderChange ? <SearchField themeStyle={themeStyle}/> : <HeaderNavForMainPage/>}
 
-          {blindMode && <button onClick={() => dispatch(setOptionsModeAC(!isOptionsOpen))}
+          {blindMode && <button onClick={() => dispatch(setOptionsMode({optionsMode: !isOptionsOpen}))}
                                 className={cn(s.closeBlindOptions, s[(isOptionsOpen ? '' : 'revert')])}>
               <svg x="0px" y="0px" width="35" viewBox="0 0 512 512" fill="fff">
                   <g>

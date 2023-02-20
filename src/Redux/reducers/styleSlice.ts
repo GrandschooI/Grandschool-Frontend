@@ -1,5 +1,6 @@
-import {Nullable} from "../redux-store";
+
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {Nullable} from "../redux-toolkit-store";
 
 const initialState = {
     blindMode: false,
@@ -14,12 +15,24 @@ const styleSlice = createSlice({
     name: 'style',
     initialState: initialState,
     reducers: {
-        /*switchBlindMode (state = initialState, action: PayloadAction<blindModeActionType>) {
-            if (action.payload.blindMode) {
-                return state.themeStyle = 'yellowTheme', state.blindMode = action.payload.blindMode, state.isOptionsOpen = true
+        switchBlindMode (state = initialState, action: PayloadAction<blindModeActionType>) {
+            switch (action.payload.blindMode) {
+                case true:
+                    state.themeStyle = 'yellowTheme'
+                    state.blindMode = action.payload.blindMode
+                    state.isOptionsOpen = true
+                    break
+                case false:
+                    state.themeStyle = null
+                    state.blindMode = false
+                    state.images = true
+                    state.fontSize = 'small'
+                    state.isOptionsOpen = false
+                    break
+                default:
+                    return state
             }
-            return state.themeStyle = null, state.blindMode = false, state.images = true, state.fontSize = 'small', state.isOptionsOpen = false
-        },*/
+        },
         setFontSizeMode (state = initialState, action: PayloadAction<fontSizeModeActionType>) {
             state.fontSize = action.payload.fontSizeMode
         },
@@ -39,10 +52,9 @@ const styleSlice = createSlice({
 })
 
 export default styleSlice.reducer
-export const { setFontSizeMode, setThemeStyleMode, setOptionsMode, setImgAvailability, toggleIsLoaded } = styleSlice.actions
+export const { switchBlindMode, setFontSizeMode, setThemeStyleMode, setOptionsMode, setImgAvailability, toggleIsLoaded } = styleSlice.actions
 
 type blindModeActionType = {
-    themeStyle: any
     blindMode: boolean
 }
 type fontSizeModeActionType = {

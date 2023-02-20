@@ -1,5 +1,5 @@
-import {Nullable} from '../../../../../../../Redux/redux-store';
 import {Area} from '../cropImageModal/types/cropImageTypes';
+import {Nullable} from "../../../../../../../Redux/redux-toolkit-store";
 
 export const cropImage = (url: Nullable<string>) =>
   new Promise((resolve, reject) => {

@@ -1,4 +1,3 @@
-import store, {AppStateType} from "../../redux-store";
 import {
     getAboutUserText,
     getAuthStatus, getUserAsideItems,
@@ -8,6 +7,7 @@ import {
     getUserName, getUserPhotoLink,
     getUserSex
 } from "../userSelector";
+import store, {AppStateType} from "../../redux-toolkit-store";
 
 let rootState: AppStateType;
 

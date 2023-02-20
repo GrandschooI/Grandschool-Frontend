@@ -1,4 +1,3 @@
-import store, {AppStateType} from "../../redux-store";
 import {
     getFontSize,
     getImgAvailability,
@@ -7,6 +6,7 @@ import {
     getStyleMode,
     getThemeStyle
 } from "../styleSelector";
+import store, {AppStateType} from "../../redux-toolkit-store";
 
 let rootState: AppStateType;
 

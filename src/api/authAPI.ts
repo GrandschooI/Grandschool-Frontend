@@ -1,5 +1,5 @@
 import {instance} from './api'
-import {Nullable} from '../Redux/redux-store';
+import {Nullable} from "../Redux/redux-toolkit-store";
 
 export const AuthAPI = {
   register(emailOrPhone: string, password: string, password_confirmation: string) {

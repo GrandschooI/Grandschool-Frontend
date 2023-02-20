@@ -1,8 +1,8 @@
 import {InfoAPI, WebsiteCategoryItemType, WebsiteItemType} from "../../api/infoAPI";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {Dispatch} from "redux";
-import {styleActions} from "./styleReducer";
 import {reviewsAPI} from "../../api/reviewsAPI";
+import {toggleIsLoaded} from "./styleSlice";
 
 
 const initialState = {
@@ -57,7 +57,7 @@ const infoSlice = createSlice({
 
 export const getWebsitesCategoryThunkCreator = () => {
     return async (dispatch: Dispatch) => {
-        dispatch(styleActions.toggleIsLoadedAC(false))
+        dispatch(toggleIsLoaded({isLoaded: false}))
         await InfoAPI.getWebsiteCategories().then((response: Array<WebsiteCategoryItemType>) => {
             const websiteCategories = response.map((el) => {
                 return ({
@@ -71,21 +71,20 @@ export const getWebsitesCategoryThunkCreator = () => {
                 console.log(error)
             })
             .finally(() => {
-                dispatch(toggleIsLoadedAC(true))
+                dispatch(toggleIsLoaded({isLoaded: true}))
             })
     }
 }
 
 export const sendFeedbackReviewsThunkCreator = (reviewsFormData: sendFeedbackType) => {
     return async (dispatch: Dispatch) => {
-        dispatch(toggleIsLoadedAC(false))
-
+        dispatch(toggleIsLoaded({isLoaded: false}))
         try {
             await reviewsAPI.sendFeedback(reviewsFormData)
         } catch (error: any) {
             console.log(error)
         } finally {
-            dispatch(toggleIsLoadedAC(true))
+            dispatch(toggleIsLoaded({isLoaded: true}))
         }
     }
 }

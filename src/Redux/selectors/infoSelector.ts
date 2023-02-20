@@ -1,7 +1,7 @@
-import {AppStateType} from '../redux-store'
 import {WebsiteItemType} from '../../api/infoAPI'
 import {topicType} from '../reducers/courseSlice'
 import {reviewsRecordsType} from "../reducers/infoReducer";
+import {AppStateType} from "../redux-toolkit-store";
 
 
 export const getWebsites = (state: any): Array<WebsiteItemType> => {

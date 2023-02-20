@@ -1,4 +1,5 @@
-import {AppStateType, Nullable} from '../redux-store'
+import {AppStateType, Nullable} from "../redux-toolkit-store";
+
 
 export const getStyleMode = (state: AppStateType): boolean => {
   return state.styleMode.blindMode

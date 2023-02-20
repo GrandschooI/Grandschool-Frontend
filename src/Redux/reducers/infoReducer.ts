@@ -1,4 +1,3 @@
-import {BaseThunkType, InferActionType} from '../redux-store'
 import {InfoAPI, WebsiteCategoryItemType, WebsiteItemType} from '../../api/infoAPI'
 import {reviewsAPI} from "../../api/reviewsAPI";
 import {styleActions} from "./styleReducer";

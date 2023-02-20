@@ -3,7 +3,7 @@ import cn from 'classnames'
 import GlassesIcon from '../../SVGConponents/BlindButton/GlassesIcon'
 import EyesIcon from '../../SVGConponents/BlindButton/EyesIcon'
 import s from './BlindButton.module.scss'
-import {Nullable} from '../../../Redux/redux-store'
+import {Nullable} from "../../../Redux/redux-toolkit-store";
 
 type propsType = {
     blindMode: boolean

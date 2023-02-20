@@ -1,12 +1,13 @@
-import {Nullable} from "../redux-store";
+
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {Dispatch} from "redux";
-import {styleActions} from "./styleReducer";
 import {AuthAPI, AuthResponseType} from "../../api/authAPI";
 import {toast} from "react-toastify";
 import {AxiosError} from "axios";
 import {removeDataFromLocalStorage, setDataToLocalStorage} from "../../utils/scaffolding";
 import {userAPI} from "../../api/userAPI"
+import {toggleIsLoaded} from "./styleSlice";
+import {Nullable} from "../redux-toolkit-store";
 
 export const FACEBOOK_CLIENT_ID = '1166464030893684'
 export const GOOGLE_CLIENT_ID = '959593221954-sl41n7108b6se8uqtm4c64q81g1v49ap.apps.googleusercontent.com'
@@ -61,7 +62,7 @@ const userSlice = createSlice({
 
 export const registerThunkCreator = (email: string, password: string, confirmPassword: string) => {
     return (dispatch: Dispatch) => {
-        dispatch(styleActions.toggleIsLoadedAC(false))
+        dispatch(toggleIsLoaded({isLoaded: false}))
         AuthAPI.register(email, password, confirmPassword)
             .then((response: AuthResponseType) => {
                 const userData = response.data
@@ -77,7 +78,7 @@ export const registerThunkCreator = (email: string, password: string, confirmPas
                 const errorMessage = error?.response?.data.message
                 toast.error(errorMessage)
             }).finally(() => {
-            dispatch(styleActions.toggleIsLoadedAC(true))
+            dispatch(toggleIsLoaded({isLoaded: true}))
         })
     }
 }
@@ -85,7 +86,7 @@ export const registerThunkCreator = (email: string, password: string, confirmPas
 export const loginThunkCreator = (email?: string, password?: string, driver?: string, access_token?: string) => {
     return (dispatch: Dispatch) => {
         debugger
-        dispatch(styleActions.toggleIsLoadedAC(false))
+        dispatch(toggleIsLoaded({isLoaded: false}))
         AuthAPI.login(email, password, driver, access_token)
             .then((response: AuthResponseType) => {
                 const userData = response.data
@@ -99,13 +100,13 @@ export const loginThunkCreator = (email?: string, password?: string, driver?: st
                 const errorMessage = error?.response?.data.message
                 toast.error(errorMessage)
             }).finally(() => {
-            dispatch(styleActions.toggleIsLoadedAC(true))
+            dispatch(toggleIsLoaded({isLoaded: true}))
         })
     }
 }
 
 export const logoutThunkCreator = () => async (dispatch: Dispatch) => {
-    dispatch(styleActions.toggleIsLoadedAC(false))
+    dispatch(toggleIsLoaded({isLoaded: false}))
     try {
         const token = localStorage.token
         const response = await AuthAPI.logout(token)
@@ -113,11 +114,11 @@ export const logoutThunkCreator = () => async (dispatch: Dispatch) => {
             dispatch(setAuth({authData: {}, isAuth: false}))
             removeDataFromLocalStorage('token')
             removeDataFromLocalStorage('user')
-            dispatch(styleActions.toggleIsLoadedAC(true))
+            dispatch(toggleIsLoaded({isLoaded: true}))
 
         } else {
             toast.error('Coś poszło nie tak', {autoClose: 5000})
-            dispatch(styleActions.toggleIsLoadedAC(true))
+            dispatch(toggleIsLoaded({isLoaded: true}))
         }
     } catch (error) {
         toast.error((error as AxiosError).response?.data.message)
@@ -127,20 +128,20 @@ export const logoutThunkCreator = () => async (dispatch: Dispatch) => {
 
 export const forgotPasswordThunkCreator = (email: string) => {
     return (dispatch: Dispatch) => {
-        dispatch(styleActions.toggleIsLoadedAC(false))
+        dispatch(toggleIsLoaded({isLoaded: false}))
         AuthAPI.forgotPassword(email)
             .then(() => {
             })
             .catch((error: AxiosError) => {
                 toast.error(error?.response?.data.message)
             }).finally(() => {
-            dispatch(styleActions.toggleIsLoadedAC(true))
+            dispatch(toggleIsLoaded({isLoaded: true}))
         })
     }
 }
 
 export const setUserPhotoThunkCreator = (userId: number, token: string, file: any) => async (dispatch: Dispatch) => {
-    dispatch(styleActions.toggleIsLoadedAC(false))
+    dispatch(toggleIsLoaded({isLoaded: false}))
     try {
         let response = await userAPI.setProfilePhoto(userId, token, file)
         dispatch(setPhoto(response.data.data.photo))
@@ -148,7 +149,7 @@ export const setUserPhotoThunkCreator = (userId: number, token: string, file: an
     } catch (error) {
         toast.error((error as AxiosError).response?.data.message)
     } finally {
-        dispatch(styleActions.toggleIsLoadedAC(true))
+        dispatch(toggleIsLoaded({isLoaded: true}))
     }
 
 }
