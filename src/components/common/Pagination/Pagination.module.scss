@@ -1,0 +1,27 @@
+.paginationList {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  .paginationItem {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-family: 'Proba Pro', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: #717070;
+  }
+  .active {
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background-color: #83A358;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+  }
+}

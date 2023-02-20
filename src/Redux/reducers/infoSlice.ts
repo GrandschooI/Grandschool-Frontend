@@ -35,16 +35,16 @@ const infoSlice = createSlice({
     initialState: initialState,
     reducers: {
         setWebsites (state = initialState, action: PayloadAction<websitesActionType>) {
-            state.websites = action.payload.data
+            state.websites = action.payload
         },
         setWebsiteCategories (state = initialState, action: PayloadAction<websiteCategoriesActionType>) {
-            state.infoPageAsideMenu[0].topics = action.payload.data
+            state.infoPageAsideMenu[0].topics = action.payload
         }
     }
 })
 
 
-export const getWebsitesThunkCreator = (category: string): ThunkType => {
+/*export const getWebsitesThunkCreator = (category: string): Dispatch => {
     return async (dispatch) => {
         await InfoAPI.getWebsites(category).then((response: Array<WebsiteItemType>) => {
             dispatch(setWebsites(response))
@@ -53,7 +53,7 @@ export const getWebsitesThunkCreator = (category: string): ThunkType => {
                 console.log(error)
             })
     }
-}
+}*/
 
 export const getWebsitesCategoryThunkCreator = () => {
     return async (dispatch: Dispatch) => {
@@ -96,10 +96,55 @@ export const { setWebsites, setWebsiteCategories } = infoSlice.actions;
 
 // Types
 
-type websitesActionType = {
-    data: Array<WebsiteItemType>
+type websitesActionType = Array<WebsiteItemType>
+type websiteCategoriesActionType = Array<any>
+type metaType = {
+    current_page: number,
+    per_page: number,
+    from: number,
+    to: number,
+    previous_page_url: null,
+    next_page_url: string,
+    has_more_pages: boolean,
+    last_page: number,
+    total: number
 }
-
-type websiteCategoriesActionType = {
-    data: Array<any>
+type feedbackResponseType = {
+    id: number,
+    user: {
+        id: number,
+        name: string,
+        email: string,
+        phone: null,
+        gender: null,
+        birthday: null,
+        country: null,
+        city: null,
+        description: null,
+        photo: null,
+        roles: [
+            string
+        ],
+        verified: boolean,
+        created_at: string,
+        updated_at: string
+    },
+    assessment: {
+        key: string,
+        value: number,
+        description: string
+    },
+    text: string,
+    visible: boolean,
+    attachment: null,
+    created_at: string,
+    updated_at: string
 }
+type sendFeedbackType = {
+    user_id?: number
+    assessment: number | string,
+    text: string,
+    attachment?: null | File
+}
+/*
+type ThunkType = BaseThunkType<getWebsiteActionType>*/

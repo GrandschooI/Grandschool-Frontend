@@ -6,7 +6,7 @@ import {BrowserRouter} from 'react-router-dom'
 import {ToastContainer} from 'react-toastify'
 import reportWebVitals from './reportWebVitals'
 import App from './App';
-import store from "./Redux/redux-toolkit-store";
+import store from "./Redux/redux-store";
 
 ReactDOM.render(
   <React.StrictMode>

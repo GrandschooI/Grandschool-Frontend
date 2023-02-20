@@ -1,63 +1,24 @@
-import React, {useEffect} from 'react';
-import {useAppSelector} from "../../../../../../../utils/Hooks/useAppSelector";
-import {useDispatch} from "react-redux";
-import {
-  feedbackResponseType,
-  getReviewsThunkCreator
-} from "../../../../../../../Redux/reducers/infoReducer";
+import React, {FC} from 'react';
+import {reviewsRecordsType} from "../../../../../../../Redux/reducers/infoReducer";
 import s from './ReviewItem.module.scss'
 
-const ReviewItem = () => {
-  const dispatch = useDispatch()
-  const reviewsData = useAppSelector<Array<feedbackResponseType>>(state => state.info.reviews.records)
+type reviewItemType = {
+  review: reviewsRecordsType
+}
 
-  useEffect(() => {
-    dispatch(getReviewsThunkCreator())
-  }, [])
+const ReviewItem: FC<reviewItemType> = ({review}) => {
   return (
-    <>
-      {
-        reviewsData.map(review => {
-          return (
-            <li key={review.id} className={s.reviewItemWrapper}>
-              <div>
-                <div>
-                  <h3>{review.user?.name ? review.user?.name : "Anonymous" }</h3>
-                  <p>m. Gdańsk, 56 lat, Uczestnik konkursu "Dziękuję za Internet 2020".</p>
-                </div>
-              </div>
-
-              <p>
-                {review.text}
-              </p>
-            </li>
-          )
-        })
-      }
-
-    </>
-
-    // <li>
-    //   <div>
-    //     <div>
-    //       <h3>Agnieszka Nazim</h3>
-    //       <p>m. Gdańsk, 56 lat, Uczestnik konkursu "Dziękuję za Internet 2020".</p>
-    //     </div>
-    //   </div>
-    //
-    //   <p>
-    //     "
-    //     ..Ten internetowy podręcznik szkoleniowy dla starszych użytkowników był dla mnie nieocenioną
-    //     pomocą w wyjaśnianiu tak trudnego materiału w bardzo prostych słowach.
-    //     Uważam, że jest to nieoceniona pomoc metodologiczna, która pozwala wyjaśnić tak trudny materiał
-    //     w bardzo prosty sposób.
-    //     i zrozumiałym językiem dla zwykłych ludzi. Kiedyś wiedziałem co nieco o sprzęcie komputerowym,
-    //     jak
-    //     Wcześniej wiedziałem co nieco o komputerach, tworzeniu plików i folderów, używaniu aplikacji
-    //     biurowych i wyszukiwaniu różnych informacji w Internecie.
-    //     Ale po odbyciu kursu mogę teraz wrócić do Internetu i wysyłać e-maile."
-    //   </p>
-    // </li>
+    <li className={s.reviewItemWrapper}>
+      <div>
+        <div>
+          <h3>{review.user?.name ? review.user?.name : 'Anonymous' }</h3>
+          <p>{`${review.user?.city ?  review.user?.city : ''} ${review.user?.birthday}`} Uczestnik konkursu "Dziękuję za Internet 2020".</p>
+        </div>
+      </div>
+      <p>
+        {review.text}
+      </p>
+    </li>
   );
 };
 

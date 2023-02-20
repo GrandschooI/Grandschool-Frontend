@@ -5,7 +5,7 @@ import {useLocation} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import {useAppSelector} from '../../../../../utils/Hooks/useAppSelector';
 import {getWebsites} from '../../../../../Redux/selectors/infoSelector';
-import {getWebsitesThunkCreator} from '../../../../../Redux/reducers/infoSlice'
+/*import {getWebsitesThunkCreator} from '../../../../../Redux/reducers/infoSlice'*/
 import Preloader from "../../../../utils/Preloader/Preloader";
 
 const Websites = () => {
@@ -15,7 +15,7 @@ const Websites = () => {
   let location = useLocation().pathname.split('/').pop() as string
   useEffect(() => {
     setLoadedStatus(false)
-    dispatch(getWebsitesThunkCreator(location))
+    /*dispatch(getWebsitesThunkCreator(location))*/
   }, [location])
   useEffect(() => {
     setLoadedStatus(true)
