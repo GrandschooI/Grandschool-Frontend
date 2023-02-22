@@ -14,6 +14,7 @@ import {useAppSelector} from '../../utils/Hooks/useAppSelector';
 import {getOptionsState} from '../../Redux/selectors/styleSelector';
 import AuthPage from './AuthPages/AuthPage';
 import ConfirmMail from "./ConfirmMail/ConfirmMail";
+import CourseActivation from "./CourseActivation/CourseActivation";
 
 const AppBody = () => {
   const isOptionsOpen = useAppSelector(getOptionsState)
@@ -32,6 +33,7 @@ const AppBody = () => {
         <Route path="/payment" render={() => <Payment/>}/>
         <Route path="/email-verification" render={() => <ConfirmMail/>}/>
         <Route path="/not-found" render={() => <NotFound/>}/>
+        <Route path="/course-activation" render={() => <CourseActivation/>}/>
         <Redirect path="*" to={'/not-found'}/>
       </Switch>
     </div>
