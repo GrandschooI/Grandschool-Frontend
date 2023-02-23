@@ -211,6 +211,9 @@ ul.counterWrap {
   h4 {
     color: #618135;
   }
+  @media (min-width: 1150px) and (max-width: 1400px){
+    height: 19em;
+  }
 }
 
 .counterNumber {
