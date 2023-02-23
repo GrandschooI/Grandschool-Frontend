@@ -106,6 +106,53 @@
   }
 }
 
+@media (max-width: 1100px) {
+  .blindButton.large {
+    font-size: 0;
+    margin-right: 30px;
+    width: 150px;
+
+    svg {
+      margin: 0;
+      width: 60px;
+    }
+  }
+}
+@media (max-width: 870px) {
+  .blindButton.large {
+    font-size: 0;
+    width: 100px;
+
+    svg {
+      margin: 0;
+      width: 40px;
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .blindButton.medium {
+    font-size: 0;
+    margin-right: 30px;
+    width: 130px;
+
+    svg {
+      margin: 0;
+      width: 45px;
+    }
+  }
+}
+@media (max-width: 870px) {
+  .blindButton.medium {
+    font-size: 0;
+    width: 90px;
+
+    svg {
+      margin: 0;
+    }
+  }
+}
+
 @media (max-width: 1000px) {
   .blindButton {
     font-size: 0;
