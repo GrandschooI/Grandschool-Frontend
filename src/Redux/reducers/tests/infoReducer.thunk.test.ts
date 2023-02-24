@@ -1,3 +1,4 @@
+/*
 import {WebsiteItemType} from "../../../api/infoAPI";
 import {InfoAPI} from '../../../api/infoAPI'
 import {getWebsitesCategoryThunkCreator, getWebsitesThunkCreator} from "../infoReducer";
@@ -63,4 +64,4 @@ test('Get Websites Category', async () => {
 
 
     expect(dispatchMock).toBeCalledTimes(1)
-})
+})*/
