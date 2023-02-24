@@ -10,26 +10,27 @@ import AppBody from './components/AppBody/AppBody'
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
 
-
 const App = () => {
     const dispatch = useDispatch()
     const isLoaded = useAppSelector(getLoadedInfo)
 
     useEffect(() => {
         dispatch(setUserFromLocalStorage())
-    }, [])
+    }, [dispatch]);
 
     return (
         <div className="App">
             <Switch>
-                <Route path="/" render={() => <section>
-                    <Header />
-                    <AppBody/>
-                    <Footer/>
-                    <ScrollUpButton/>
-                </section>}/>
+                <Route path="/">
+                    <section>
+                        <Header />
+                        <AppBody />
+                        <Footer />
+                        <ScrollUpButton />
+                    </section>
+                </Route>
             </Switch>
-            {!isLoaded && <Preloader/>}
+            {!isLoaded && <Preloader />}
         </div>
     )
 }

@@ -45,6 +45,18 @@ const Header = () => {
   const toggleBlindModeHandler = () => {
     dispatch(switchBlindMode({blindMode: !blindMode}))
   }
+  const onBurgerClickHandler = () => {
+    setBurgerClass(!isBurgerActive)
+    if (isOptionsOpen) {
+      dispatch(setOptionsMode({optionsMode: !isOptionsOpen}))
+    }
+  }
+  const optionsModeHandler = () => {
+    dispatch(setOptionsMode({optionsMode: !isOptionsOpen}))
+    if (isBurgerActive) {
+      setBurgerClass(false)
+    }
+  }
   useEffect(() => {
     if (blindModeFromLocalStorage) {
       dispatch(switchBlindMode({blindMode: true}))
@@ -68,7 +80,7 @@ const Header = () => {
           </a>
           {!isHeaderChange ? <SearchField themeStyle={themeStyle}/> : <HeaderNavForMainPage/>}
 
-          {blindMode && <button onClick={() => dispatch(setOptionsMode({optionsMode: !isOptionsOpen}))}
+          {blindMode && <button onClick={optionsModeHandler}
                                 className={cn(s.closeBlindOptions, s[(isOptionsOpen ? '' : 'revert')])}>
               <svg x="0px" y="0px" width="35" viewBox="0 0 512 512" fill="fff">
                   <g>
@@ -84,14 +96,14 @@ const Header = () => {
 
           <div className={s.headerBtnWrap}>
             <BlindButton switchBlindModeAC={toggleBlindModeHandler} themeStyle={themeStyle} blindMode={blindMode} fontSize={fontSize}/>
-            <NavLink className={s.headerNavItem} to="/profile">Twoje konto</NavLink>
-            <button className={s.burgerBtn} onClick={() => setBurgerClass(!isBurgerActive)}>
+            <NavLink className={cn(s.headerNavItem, s[fontSize ? fontSize : ''])} to="/profile">Twoje konto</NavLink>
+            <button className={s.burgerBtn} onClick={onBurgerClickHandler}>
               <svg className={cn(s.ham, s.ham6, s[(isBurgerActive ? 'active' : '')])} viewBox="0 0 100 100" width="60">
-                <path className={cn(s.line, s.top)}
+                <path className={cn(s.line, s.top, s[(themeStyle ? themeStyle : '')])}
                       d="m 30,33 h 40 c 13.100415,0 14.380204,31.80258 6.899646,33.421777 -24.612039,5.327373 9.016154,-52.337577 -12.75751,-30.563913 l -28.284272,28.284272"></path>
-                <path className={cn(s.line, s.middle)}
+                <path className={cn(s.line, s.middle, s[(themeStyle ? themeStyle : '')])}
                       d="m 70,50 c 0,0 -32.213436,0 -40,0 -7.786564,0 -6.428571,-4.640244 -6.428571,-8.571429 0,-5.895471 6.073743,-11.783399 12.286435,-5.570707 6.212692,6.212692 28.284272,28.284272 28.284272,28.284272"></path>
-                <path className={cn(s.line, s.bottom)}
+                <path className={cn(s.line, s.bottom, s[(themeStyle ? themeStyle : '')])}
                       d="m 69.575405,67.073826 h -40 c -13.100415,0 -14.380204,-31.80258 -6.899646,-33.421777 24.612039,-5.327373 -9.016154,52.337577 12.75751,30.563913 l 28.284272,-28.284272"></path>
               </svg>
             </button>

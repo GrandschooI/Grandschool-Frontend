@@ -7,7 +7,19 @@
                   url('../../../../assets/images/mainPageBackgroundRetina.png') 2x  );
   background-size: cover;
 
+  .isOptionOpen {
+    @media (max-width: 1000px) {
+      margin-top: 200px;
+      transition: all .2s ease;
+    }
+    @media (max-width: 768px) {
+      margin-top: 220px;
+      transition: all .2s ease;
+    }
+  }
+
   .callToAction {
+    transition: all .2s ease;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -82,6 +94,9 @@
         background: #618135;
         color: #fff;
         margin: 20px auto 0;
+        &.yellowTheme, &.blueTheme, &.whiteTheme {
+          background-color: rgba(1, 1, 1, 0);
+        }
       }
     }
   }
@@ -296,6 +311,7 @@
   }
 
 }
+
 
 .title {
   margin-top: 0;

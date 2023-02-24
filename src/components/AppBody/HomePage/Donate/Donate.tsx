@@ -19,7 +19,7 @@ const Donate = () => {
         <div className={s.contentWrap}>
           <h2>Тo wszystko może się stać <strong>z twoją pomocą</strong></h2>
           <p>Wnieś swój wkład w rozwój swoich bliskich</p>
-          <a href="https://zrzutka.pl/znu2ed" rel="noreferrer">Wesprzyj nas</a>
+          <a className={s[themeStyle ? themeStyle : '']} href="https://zrzutka.pl/znu2ed" rel="noreferrer">Wesprzyj nas</a>
         </div>
       </div>
     </section>
