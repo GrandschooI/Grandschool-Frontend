@@ -34,6 +34,10 @@
       text-decoration: none;
       transition: all .2s ease;
       border: none;
+      &.yellowTheme {
+        color: aqua;
+        border: 1px solid aqua;
+      }
       &:hover {
         background: #32487d;
         transition: all .2s ease;
