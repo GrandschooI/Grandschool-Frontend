@@ -1,10 +1,10 @@
-import { configureStore } from "@reduxjs/toolkit";
-import thunkMiddleware, {ThunkAction} from "redux-thunk";
-import infoSlice from "./reducers/infoSlice";
-import courseSlice from "./reducers/courseSlice";
-import userSlice from "./reducers/userSlice";
-import styleSlice from "./reducers/styleSlice";
-import {Action} from "redux";
+import { configureStore } from "@reduxjs/toolkit"
+import thunkMiddleware, {ThunkAction} from "redux-thunk"
+import infoSlice from "./reducers/infoSlice"
+import courseSlice from "./reducers/courseSlice"
+import userSlice from "./reducers/userSlice"
+import styleSlice from "./reducers/styleSlice"
+import {Action} from "redux"
 
 const store = configureStore({
     reducer: {
