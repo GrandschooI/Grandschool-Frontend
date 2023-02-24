@@ -1,13 +1,12 @@
-
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {Dispatch} from "redux";
-import {AuthAPI, AuthResponseType} from "../../api/authAPI";
-import {toast} from "react-toastify";
-import {AxiosError} from "axios";
-import {removeDataFromLocalStorage, setDataToLocalStorage} from "../../utils/scaffolding";
+import {createSlice, PayloadAction} from "@reduxjs/toolkit"
+import {Dispatch} from "redux"
+import {AuthAPI} from "../../api/authAPI"
+import {toast} from "react-toastify"
+import {AxiosError} from "axios"
+import {removeDataFromLocalStorage, setDataToLocalStorage} from "../../utils/scaffolding"
 import {userAPI} from "../../api/userAPI"
-import {toggleIsLoaded} from "./styleSlice";
-import {Nullable} from "../redux-toolkit-store";
+import {toggleIsLoaded} from "./styleSlice"
+import {Nullable} from "../redux-toolkit-store"
 
 export const FACEBOOK_CLIENT_ID = '1166464030893684'
 export const GOOGLE_CLIENT_ID = '959593221954-sl41n7108b6se8uqtm4c64q81g1v49ap.apps.googleusercontent.com'
@@ -59,91 +58,78 @@ const userSlice = createSlice({
     }
 })
 
-
-export const registerThunkCreator = (email: string, password: string, confirmPassword: string) => {
-    return (dispatch: Dispatch) => {
-        dispatch(toggleIsLoaded({isLoaded: false}))
-        AuthAPI.register(email, password, confirmPassword)
-            .then((response: AuthResponseType) => {
-                const userData = response.data
-                if (userData) {
-                    setUserToStateAndStorage(dispatch, userData.user,
-                        true, 'token', userData.access_token)
-                    accessHandler(userData)
-                } else {
-                    toast.error('Coś poszło nie tak', {autoClose: 5000})
-                }
-            })
-            .catch((error: AxiosError) => {
-                const errorMessage = error?.response?.data.message
-                toast.error(errorMessage)
-            }).finally(() => {
-            dispatch(toggleIsLoaded({isLoaded: true}))
-        })
+export const registerThunkCreator = (email: string, password: string, confirmPassword: string) => async (dispatch: Dispatch) => {
+    try {
+        dispatch(toggleIsLoaded({ isLoaded: false }))
+        const response = await AuthAPI.register(email, password, confirmPassword)
+        const userData = response.data
+        if (userData) {
+            setUserToStateAndStorage(dispatch, userData.user, true, "token", userData.access_token)
+            accessHandler(userData)
+        } else {
+            toast.error("Coś poszło nie tak", { autoClose: 5000 })
+        }
+    } catch (error: any) {
+        const errorMessage = error?.response?.data.message
+        toast.error(errorMessage)
+    } finally {
+        dispatch(toggleIsLoaded({ isLoaded: true }))
     }
 }
 
 export const loginThunkCreator = (email?: string, password?: string, driver?: string, access_token?: string) => {
-    return (dispatch: Dispatch) => {
-        debugger
-        dispatch(toggleIsLoaded({isLoaded: false}))
-        AuthAPI.login(email, password, driver, access_token)
-            .then((response: AuthResponseType) => {
-                const userData = response.data
-                if (userData) {
-                    accessHandler(response)
-                    setUserToStateAndStorage(dispatch, userData.user,
-                        true, 'token', userData.access_token)
-                }
-            })
-            .catch((error: AxiosError) => {
-                const errorMessage = error?.response?.data.message
-                toast.error(errorMessage)
-            }).finally(() => {
-            dispatch(toggleIsLoaded({isLoaded: true}))
-        })
+    return async (dispatch: Dispatch) => {
+        try {
+            dispatch(toggleIsLoaded({ isLoaded: false }))
+            const response = await AuthAPI.login(email, password, driver, access_token)
+            const userData = response.data
+            if (userData) {
+                accessHandler(response)
+                setUserToStateAndStorage(dispatch, userData.user, true, 'token', userData.access_token)
+            }
+            dispatch(toggleIsLoaded({ isLoaded: true }))
+        } catch (error: any) {
+            const errorMessage = error?.response?.data.message
+            toast.error(errorMessage)
+            dispatch(toggleIsLoaded({ isLoaded: true }))
+        }
     }
 }
 
 export const logoutThunkCreator = () => async (dispatch: Dispatch) => {
-    dispatch(toggleIsLoaded({isLoaded: false}))
     try {
+        dispatch(toggleIsLoaded({isLoaded: false}))
         const token = localStorage.token
         const response = await AuthAPI.logout(token)
         if (response.status === 204) {
             dispatch(setAuth({authData: {}, isAuth: false}))
             removeDataFromLocalStorage('token')
             removeDataFromLocalStorage('user')
-            dispatch(toggleIsLoaded({isLoaded: true}))
-
         } else {
             toast.error('Coś poszło nie tak', {autoClose: 5000})
-            dispatch(toggleIsLoaded({isLoaded: true}))
         }
     } catch (error) {
         toast.error((error as AxiosError).response?.data.message)
+    } finally {
+        dispatch(toggleIsLoaded({isLoaded: true}))
     }
-
 }
 
-export const forgotPasswordThunkCreator = (email: string) => {
-    return (dispatch: Dispatch) => {
+export const forgotPasswordThunkCreator = (email: string) => async (dispatch: Dispatch) => {
+    try {
         dispatch(toggleIsLoaded({isLoaded: false}))
-        AuthAPI.forgotPassword(email)
-            .then(() => {
-            })
-            .catch((error: AxiosError) => {
-                toast.error(error?.response?.data.message)
-            }).finally(() => {
-            dispatch(toggleIsLoaded({isLoaded: true}))
-        })
+        await AuthAPI.forgotPassword(email)
+    } catch (error) {
+        toast.error((error as AxiosError).response?.data.message)
+    } finally {
+        dispatch(toggleIsLoaded({isLoaded: true}))
     }
 }
 
 export const setUserPhotoThunkCreator = (userId: number, token: string, file: any) => async (dispatch: Dispatch) => {
-    dispatch(toggleIsLoaded({isLoaded: false}))
     try {
-        let response = await userAPI.setProfilePhoto(userId, token, file)
+        dispatch(toggleIsLoaded({isLoaded: false}))
+        const response = await userAPI.setProfilePhoto(userId, token, file)
         dispatch(setPhoto(response.data.data.photo))
         setDataToLocalStorage('user', JSON.stringify(response.data.data))
     } catch (error) {
@@ -151,49 +137,47 @@ export const setUserPhotoThunkCreator = (userId: number, token: string, file: an
     } finally {
         dispatch(toggleIsLoaded({isLoaded: true}))
     }
-
 }
 
 // Scaffolding functions
 
-export const setUserToStateAndStorage =
-    (dispatch: Dispatch,
-     authData: any,
-     isAuth: boolean,
-     accessTokenName?: string | undefined,
-     accessTokenData?: string | undefined) => {
-        dispatch(setAuth({authData, isAuth}))
-        setDataToLocalStorage('user', JSON.stringify(authData))
-        if (accessTokenName && accessTokenData) {
-            setDataToLocalStorage(accessTokenName, accessTokenData)
-        }
-    }
-
-export const setUserFromLocalStorage = () => {
-    return (dispatch: Dispatch) => {
-        const userFromLocalstorage = window.localStorage.getItem('user')
-        if (userFromLocalstorage) {
-            dispatch(setAuth({authData: JSON.parse(userFromLocalstorage), isAuth: true}))
-        }
+export const setUserToStateAndStorage = (
+    dispatch: Dispatch,
+    authData: any,
+    isAuth: boolean,
+    accessTokenName?: string | undefined,
+    accessTokenData?: string | undefined
+) => {
+    dispatch(setAuth({ authData, isAuth }))
+    setDataToLocalStorage("user", JSON.stringify(authData))
+    if (accessTokenName && accessTokenData) {
+        setDataToLocalStorage(accessTokenName, accessTokenData)
     }
 }
 
-function accessHandler(response: any) {
+export const setUserFromLocalStorage = () => (dispatch: Dispatch) => {
+    const userFromLocalstorage = window.localStorage.getItem("user")
+    if (userFromLocalstorage) {
+        dispatch(setAuth({ authData: JSON.parse(userFromLocalstorage), isAuth: true }))
+    }
+}
+
+const accessHandler = (response: any) => {
     if (response) {
-        toast('Jesteś zalogowany', {autoClose: 5000})
+        toast("Jesteś zalogowany", { autoClose: 5000 })
     }
 }
 
-export function errorHandler(error: any) {
+export const errorHandler = (error: any) => {
     if (error?.length) {
         error.forEach((el: any) => {
-            toast.error(el.message, {autoClose: 5000})
+            toast.error(el.message, { autoClose: 5000 })
         })
     }
 }
 
 export default userSlice.reducer
-export const { setAuth, setProfileInfo, setPhoto } = userSlice.actions;
+export const { setAuth, setProfileInfo, setPhoto } = userSlice.actions
 
 type setProfileActionType = {
     name: string
