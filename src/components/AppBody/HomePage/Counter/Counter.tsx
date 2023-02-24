@@ -17,7 +17,7 @@ const Counter = () => {
           <h3>Наш проект в цифрах</h3>
           <p>Здесь пару слов о том, что ты можешь стать частью нашего проекта и выйти на путь единомышлия
             простым движением руки - нажав на кнопку “Задонатить”</p>
-          <a href="https://zrzutka.pl/znu2ed" rel="noreferrer" target="_blank">Wesprzyj nas</a>
+          <a className={s[themeStyle ? themeStyle : '']} href="https://zrzutka.pl/znu2ed" rel="noreferrer" target="_blank">Wesprzyj nas</a>
         </div>
         <ul className={cn(s.counterWrap, 'container')}>
           <li className={s.counterItem}>
