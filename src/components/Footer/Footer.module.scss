@@ -43,7 +43,7 @@ address,
   background-repeat: no-repeat;
   color: yellow;
   &.withoutImg {
-    background: linear-gradient(115deg, #000000, #000000 75%, transparent 50%);
+    background: linear-gradient(115deg, #000000, #000000 75%, black 50%);
   }
   .footerSlogan {
     color: yellow;
@@ -88,7 +88,7 @@ address,
   background-repeat: no-repeat;
   color: #fff;
   &.withoutImg {
-    background: linear-gradient(115deg, #000000, #000000 75%, transparent 50%);
+    background: linear-gradient(115deg, #000000, #000000 75%, #000000 50%);
   }
   .footerSlogan {
     color: #fff;
@@ -129,7 +129,7 @@ address,
   background-repeat: no-repeat;
   color: #b8eefb;
   &.withoutImg {
-    background: linear-gradient(115deg, #273a64, #273a64 75%, transparent 50%);
+    background: linear-gradient(115deg, #273a64, #273a64 75%, #273a64 50%);
   }
   .footerSlogan {
     color: #b8eefb;

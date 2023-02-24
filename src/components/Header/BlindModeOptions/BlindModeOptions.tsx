@@ -10,13 +10,12 @@ import {
   getStyleMode,
   getThemeStyle
 } from '../../../Redux/selectors/styleSelector';
-import {styleActions} from '../../../Redux/reducers/styleReducer';
 import {useDispatch} from 'react-redux';
+import {setFontSizeMode, setImgAvailability, setThemeStyleMode} from "../../../Redux/reducers/styleSlice";
 
 const BlindModeOptions = () => {
 
   const dispatch = useDispatch()
-  const {setFontSizeModeAC, setThemeStyleModeAC, setImgAvailabilityAC} = styleActions
 
 
   const fontSizeFromLocalStorage = localStorage.getItem('fontSizeFromLocalStorage')
@@ -33,16 +32,16 @@ const BlindModeOptions = () => {
     if (blindMode) {
       if (fontSizeFromLocalStorage) {
         if (fontSize !== fontSizeFromLocalStorage) {
-          dispatch(setFontSizeModeAC(fontSizeFromLocalStorage))
+          dispatch(setFontSizeMode({fontSizeMode: fontSizeFromLocalStorage}))
         }
       }
       if (themeStyleFromLocalStorage) {
         if (themeStyle !== themeStyleFromLocalStorage) {
-          dispatch(setThemeStyleModeAC(themeStyleFromLocalStorage))
+          dispatch(setThemeStyleMode({themeStyleMode: themeStyleFromLocalStorage}))
         }
       }
       if (imagesFromLocalStorage === 'false') {
-        images && dispatch(setImgAvailabilityAC(false))
+        images && dispatch(setImgAvailability({imgAvailabilityMode: false}))
       }
     }
   })
@@ -66,19 +65,19 @@ const BlindModeOptions = () => {
             <span className={cn(s.optionLabel, s.first)}>Rozmiar czcionki:</span>
             <button className={cn(s.button, s.small, isFontSizeActive('small'))}
                     onClick={() => {
-                      dispatch(setFontSizeModeAC('small'))
+                      dispatch(setFontSizeMode({fontSizeMode: 'small'}))
                       window.localStorage.setItem('fontSizeFromLocalStorage', 'small')
                     }}>A
             </button>
             <button className={cn(s.button, s.medium, isFontSizeActive('medium'))}
                     onClick={() => {
-                      dispatch(setFontSizeModeAC('medium'))
+                      dispatch(setFontSizeMode({fontSizeMode: 'medium'}))
                       window.localStorage.setItem('fontSizeFromLocalStorage', 'medium')
                     }}>A
             </button>
             <button className={cn(s.button, s.large, isFontSizeActive('large'))}
                     onClick={() => {
-                      dispatch(setFontSizeModeAC('large'))
+                      dispatch(setFontSizeMode({fontSizeMode: 'large'}))
                       window.localStorage.setItem('fontSizeFromLocalStorage', 'large')
                     }}>A
             </button>
@@ -88,19 +87,19 @@ const BlindModeOptions = () => {
             <span className={s.optionLabel}>Kolor:</span>
             <button className={cn(s.button, s.yellow, isThemeStyleActive('yellowTheme'))}
                     onClick={() => {
-                      dispatch(setThemeStyleModeAC('yellowTheme'))
+                      dispatch(setThemeStyleMode({themeStyleMode: 'yellowTheme'}))
                       window.localStorage.setItem('themeStyleFromLocalStorage', 'yellowTheme')
                     }}>K
             </button>
             <button className={cn(s.button, s.white, isThemeStyleActive('whiteTheme'))}
                     onClick={() => {
-                      dispatch(setThemeStyleModeAC('whiteTheme'))
+                      dispatch(setThemeStyleMode({themeStyleMode: 'whiteTheme'}))
                       window.localStorage.setItem('themeStyleFromLocalStorage', 'whiteTheme')
                     }}>K
             </button>
             <button className={cn(s.button, s.blue, isThemeStyleActive('blueTheme'))}
                     onClick={() => {
-                      dispatch(setThemeStyleModeAC('blueTheme'))
+                      dispatch(setThemeStyleMode({themeStyleMode: 'blueTheme'}))
                       window.localStorage.setItem('themeStyleFromLocalStorage', 'blueTheme')
                     }}>K
             </button>
@@ -111,10 +110,10 @@ const BlindModeOptions = () => {
             <button className={cn(s.button, s.images, s.active, s.imagesSwitcher)}
                     onClick={() => {
                       if (images) {
-                        dispatch(setImgAvailabilityAC(!images))
+                        dispatch(setImgAvailability({imgAvailabilityMode: !images}))
                         window.localStorage.setItem('imagesFromLocalStorage', 'false')
                       } else {
-                        dispatch(setImgAvailabilityAC(!images))
+                        dispatch(setImgAvailability({imgAvailabilityMode: !images}))
                         window.localStorage.setItem('imagesFromLocalStorage', 'true')
                       }
                     }}>

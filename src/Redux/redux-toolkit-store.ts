@@ -1,9 +1,10 @@
-import { configureStore } from "@reduxjs/toolkit";
-import thunkMiddleware from "redux-thunk";
-import infoSlice from "./reducers/infoSlice";
-import courseSlice from "./reducers/courseSlice";
-import userSlice from "./reducers/userSlice";
-import styleSlice from "./reducers/styleSlice";
+import { configureStore } from "@reduxjs/toolkit"
+import { Action } from "redux"
+import thunkMiddleware, { ThunkAction } from "redux-thunk"
+import courseSlice from "./reducers/courseSlice"
+import infoSlice from "./reducers/infoSlice"
+import styleSlice from "./reducers/styleSlice"
+import userSlice from "./reducers/userSlice"
 
 const store = configureStore({
     reducer: {
@@ -13,8 +14,11 @@ const store = configureStore({
         info: infoSlice
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().prepend(thunkMiddleware),
-});
+})
 
-//todo implement new appStateType
-export type StoreType = ReturnType<typeof store.getState>
+export type AppStateType = ReturnType<typeof store.getState>
 export default store
+
+export type Nullable<T> = null | T
+export type InferActionType<T> = T extends {[key: string]: (...args: any[]) => infer U} ? U : never
+export type BaseThunkType<A extends Action, R = Promise<void>> = ThunkAction<R, AppStateType, unknown, A>

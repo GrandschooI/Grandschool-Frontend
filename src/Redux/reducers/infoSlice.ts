@@ -1,9 +1,8 @@
-import {InfoAPI, WebsiteCategoryItemType, WebsiteItemType} from "../../api/infoAPI";
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {Dispatch} from "redux";
-import {styleActions} from "./styleReducer";
-import {reviewsAPI} from "../../api/reviewsAPI";
-import {BaseThunkType} from "../redux-store";
+import {InfoAPI, WebsiteCategoryItemType, WebsiteItemType} from "../../api/infoAPI"
+import {createSlice, PayloadAction} from "@reduxjs/toolkit"
+import {Dispatch} from "redux"
+import {reviewsAPI} from "../../api/reviewsAPI"
+import {toggleIsLoaded} from "./styleSlice"
 
 
 const initialState = {
@@ -28,6 +27,52 @@ const initialState = {
             topics: [] as any
         }
     ],
+    reviews: {
+        records: [
+            {
+                id: 1,
+                user: {
+                    id: 2,
+                    name: "Manager GrandSchool",
+                    email: "manager@grandschool.com",
+                    phone: null,
+                    gender: null,
+                    birthday: null,
+                    country: null,
+                    city: null,
+                    description: null,
+                    photo: null,
+                    roles: [
+                        "manager"
+                    ],
+                    verified: true,
+                    created_at: "2023-01-04T08:11:29.000000Z",
+                    updated_at: "2023-01-04T08:11:29.000000Z"
+                },
+                assessment: {
+                    key: "Great",
+                    value: 5,
+                    description: "Great"
+                },
+                text: "hello",
+                visible: false,
+                attachment: null,
+                created_at: "2023-01-23T19:04:44.000000Z",
+                updated_at: "2023-01-23T19:04:44.000000Z"
+            }
+        ],
+        meta: {
+            current_page: 1,
+            per_page: 1,
+            from: 1,
+            to: 1,
+            previous_page_url: null,
+            next_page_url: "https://api.staging.grandschool.pl/api/reviews?page=2",
+            has_more_pages: true,
+            last_page: 1,
+            total: 0
+        }
+    } as reviewsDataType,
     websites: [] as Array<WebsiteItemType>
 }
 
@@ -40,13 +85,16 @@ const infoSlice = createSlice({
         },
         setWebsiteCategories (state = initialState, action: PayloadAction<websiteCategoriesActionType>) {
             state.infoPageAsideMenu[0].topics = action.payload
+        },
+        setReviewsData (state = initialState, action: PayloadAction<reviewsDataType>) {
+            state.reviews = action.payload
         }
     }
 })
 
 
-/*export const getWebsitesThunkCreator = (category: string): Dispatch => {
-    return async (dispatch) => {
+export const getWebsitesThunkCreator = (category: string) => {
+    return async (dispatch: Dispatch) => {
         await InfoAPI.getWebsites(category).then((response: Array<WebsiteItemType>) => {
             dispatch(setWebsites(response))
         })
@@ -54,11 +102,11 @@ const infoSlice = createSlice({
                 console.log(error)
             })
     }
-}*/
+}
 
 export const getWebsitesCategoryThunkCreator = () => {
     return async (dispatch: Dispatch) => {
-        dispatch(styleActions.toggleIsLoadedAC(false))
+        dispatch(toggleIsLoaded({isLoaded: false}))
         await InfoAPI.getWebsiteCategories().then((response: Array<WebsiteCategoryItemType>) => {
             const websiteCategories = response.map((el) => {
                 return ({
@@ -72,45 +120,48 @@ export const getWebsitesCategoryThunkCreator = () => {
                 console.log(error)
             })
             .finally(() => {
-                dispatch(styleActions.toggleIsLoadedAC(true))
+                dispatch(toggleIsLoaded({isLoaded: true}))
             })
     }
 }
 
 export const sendFeedbackReviewsThunkCreator = (reviewsFormData: sendFeedbackType) => {
     return async (dispatch: Dispatch) => {
-        dispatch(styleActions.toggleIsLoadedAC(false))
-
+        dispatch(toggleIsLoaded({isLoaded: false}))
         try {
             await reviewsAPI.sendFeedback(reviewsFormData)
         } catch (error: any) {
             console.log(error)
         } finally {
-            dispatch(styleActions.toggleIsLoadedAC(true))
+            dispatch(toggleIsLoaded({isLoaded: true}))
+        }
+    }
+}
+
+export const getReviewsThunkCreator = (page: number) => {
+    return async (dispatch: Dispatch) => {
+        try {
+            const response = await reviewsAPI.getFeedback(page)
+            dispatch(setReviewsData(response.data.data))
+        } catch (error: any) {
+            console.log(error)
         }
     }
 }
 
 
 export default infoSlice.reducer
-export const { setWebsites, setWebsiteCategories } = infoSlice.actions;
+export const { setWebsites, setWebsiteCategories, setReviewsData } = infoSlice.actions
 
 // Types
 
 type websitesActionType = Array<WebsiteItemType>
 type websiteCategoriesActionType = Array<any>
-type metaType = {
-    current_page: number,
-    per_page: number,
-    from: number,
-    to: number,
-    previous_page_url: null,
-    next_page_url: string,
-    has_more_pages: boolean,
-    last_page: number,
-    total: number
+export type reviewsDataType = {
+    records: Array<reviewsRecordsType>
+    meta: reviewsMetaType
 }
-type feedbackResponseType = {
+export type reviewsRecordsType = {
     id: number,
     user: {
         id: number,
@@ -141,11 +192,23 @@ type feedbackResponseType = {
     created_at: string,
     updated_at: string
 }
-type sendFeedbackType = {
+export type reviewsMetaType = {
+    current_page: number,
+    per_page: number,
+    from: number,
+    to: number,
+    previous_page_url: null,
+    next_page_url: string,
+    has_more_pages: boolean,
+    last_page: number,
+    total: number
+}
+export type sendFeedbackType = {
     user_id?: number
     assessment: number | string,
     text: string,
     attachment?: null | File
 }
+export type InitialStateType = typeof initialState
 /*
 type ThunkType = BaseThunkType<getWebsiteActionType>*/

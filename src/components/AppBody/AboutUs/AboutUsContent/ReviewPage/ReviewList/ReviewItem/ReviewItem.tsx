@@ -1,9 +1,9 @@
-import React, {FC} from 'react';
-import {reviewsRecordsType} from "../../../../../../../Redux/reducers/infoReducer";
+import React, {FC} from 'react'
 import s from './ReviewItem.module.scss'
+import {reviewsRecordsType} from "../../../../../../../Redux/reducers/infoSlice"
 
 type reviewItemType = {
-  review: reviewsRecordsType
+    review: reviewsRecordsType
 }
 
 const ReviewItem: FC<reviewItemType> = ({review}) => {

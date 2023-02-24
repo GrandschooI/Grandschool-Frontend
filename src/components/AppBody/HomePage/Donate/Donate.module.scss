@@ -33,6 +33,10 @@
       color: #fff;
       text-decoration: none;
       transition: all .2s ease;
+      &.yellowTheme {
+        border: 1px solid aqua;
+        color: aqua;
+      }
       &:hover,
       &:focus {
         background: #32487d;

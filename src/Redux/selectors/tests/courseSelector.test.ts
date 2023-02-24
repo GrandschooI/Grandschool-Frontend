@@ -1,5 +1,5 @@
-import store, {AppStateType} from "../../redux-store";
 import {getCourseData} from "../courseSelector";
+import store, {AppStateType} from "../../redux-toolkit-store";
 
 let rootState: AppStateType;
 

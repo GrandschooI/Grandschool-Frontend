@@ -2,7 +2,7 @@ import React from 'react'
 import cn from 'classnames'
 import {NavLink, useLocation} from 'react-router-dom'
 import s from '../Header/Header.module.scss'
-import {Nullable} from '../../Redux/redux-store'
+import {Nullable} from "../../Redux/redux-toolkit-store";
 
 const HeaderNav:React.FC<PropsType> = ({themeStyle}) => {
   const location: string = useLocation().pathname

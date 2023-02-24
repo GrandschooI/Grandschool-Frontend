@@ -5,9 +5,9 @@ import {errorHandler, setUserPhotoThunkCreator} from '../../../../../../../Redux
 import {useDispatch} from 'react-redux';
 import {useAppSelector} from '../../../../../../../utils/Hooks/useAppSelector';
 import {Area, Point} from './types/cropImageTypes';
-import {Nullable} from '../../../../../../../Redux/redux-store';
 import s from './сropImageModal.module.scss'
 import cn from "classnames";
+import {Nullable} from "../../../../../../../Redux/redux-toolkit-store";
 
 type PropsType = {
   photoUrl: any

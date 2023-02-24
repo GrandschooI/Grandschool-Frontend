@@ -1,5 +1,6 @@
-import {Nullable} from '../redux-store'
-import {createSlice} from "@reduxjs/toolkit";
+
+import {createSlice} from "@reduxjs/toolkit"
+import {Nullable} from "../redux-toolkit-store"
 
 const initialState = {
     courses: [
@@ -28,16 +29,14 @@ const initialState = {
     ] as Array<courseType>
 }
 
-// Reducer
-
 const courseSlice = createSlice({
     name: 'course',
-    initialState:  initialState,
+    initialState,
     reducers: {}
 })
 
 export default courseSlice.reducer
-export const {} = courseSlice.actions;
+export const {} = courseSlice.actions
 
 // Types
 export type courseType = {

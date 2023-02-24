@@ -1,10 +1,10 @@
-import {Nullable} from "../redux-store";
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {createSlice, PayloadAction} from "@reduxjs/toolkit"
+import {Nullable} from "../redux-toolkit-store"
 
 const initialState = {
     blindMode: false,
-    fontSize: 'small', //also has medium and large
-    themeStyle: null as Nullable<string>, // has yellowTheme, whiteTheme and blueTheme
+    fontSize: 'small',
+    themeStyle: null as Nullable<string>,
     images: true,
     isLoaded: true,
     isOptionsOpen: false
@@ -12,37 +12,40 @@ const initialState = {
 
 const styleSlice = createSlice({
     name: 'style',
-    initialState: initialState,
+    initialState,
     reducers: {
-        /*switchBlindMode (state = initialState, action: PayloadAction<blindModeActionType>) {
-            if (action.payload.blindMode) {
-                return state.themeStyle = 'yellowTheme', state.blindMode = action.payload.blindMode, state.isOptionsOpen = true
+        switchBlindMode: (state = initialState, action: PayloadAction<blindModeActionType>) => {
+            const { blindMode } = action.payload;
+            state.themeStyle = blindMode ? 'yellowTheme' : null;
+            state.blindMode = blindMode;
+            state.isOptionsOpen = blindMode;
+            if (!blindMode) {
+                state.images = true;
+                state.fontSize = 'small';
             }
-            return state.themeStyle = null, state.blindMode = false, state.images = true, state.fontSize = 'small', state.isOptionsOpen = false
-        },*/
-        setFontSizeMode (state = initialState, action: PayloadAction<fontSizeModeActionType>) {
-            state.fontSize = action.payload.fontSizeMode
         },
-        setThemeStyleMode (state = initialState, action: PayloadAction<themeStyleModeActionType>) {
-            state.themeStyle = action.payload.themeStyleMode
+        setFontSizeMode: (state = initialState, action: PayloadAction<fontSizeModeActionType>) => {
+            state.fontSize = action.payload.fontSizeMode;
         },
-        setOptionsMode (state = initialState, action: PayloadAction<optionsModeActionType>) {
-            state.isOptionsOpen = action.payload.optionsMode
+        setThemeStyleMode: (state= initialState, action: PayloadAction<themeStyleModeActionType>) => {
+            state.themeStyle = action.payload.themeStyleMode;
         },
-        setImgAvailability (state = initialState, action: PayloadAction<imgAvailabilityActionType>) {
-            state.images = action.payload.imgAvailabilityMode
+        setOptionsMode: (state= initialState, action: PayloadAction<optionsModeActionType>) => {
+            state.isOptionsOpen = action.payload.optionsMode;
         },
-        toggleIsLoaded (state = initialState, action: PayloadAction<isLoadedActionType>) {
-            state.isLoaded = action.payload.isLoaded
+        setImgAvailability: (state= initialState, action: PayloadAction<imgAvailabilityActionType>) => {
+            state.images = action.payload.imgAvailabilityMode;
+        },
+        toggleIsLoaded: (state= initialState, action: PayloadAction<isLoadedActionType>) => {
+            state.isLoaded = action.payload.isLoaded;
         }
     }
 })
 
 export default styleSlice.reducer
-export const { setFontSizeMode, setThemeStyleMode, setOptionsMode, setImgAvailability, toggleIsLoaded } = styleSlice.actions
+export const {switchBlindMode, setFontSizeMode, setThemeStyleMode, setOptionsMode, setImgAvailability, toggleIsLoaded} = styleSlice.actions
 
 type blindModeActionType = {
-    themeStyle: any
     blindMode: boolean
 }
 type fontSizeModeActionType = {
