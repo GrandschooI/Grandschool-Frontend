@@ -6,7 +6,6 @@ import { ToastContainer } from 'react-toastify';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 import store from "./Redux/redux-toolkit-store";
-import store from './Redux/redux-store';
 import './index.css';
 
 ReactDOM.render(
