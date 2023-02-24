@@ -8,8 +8,7 @@ import {useDispatch} from "react-redux";
 import * as yup from "yup";
 import ReviewsAssessmentList from "./ReviewAssessmentList/ReviewsAssessmentList";
 import FormErrorMessage from "../../../../../utils/FormErrorMessage/FormErrorMessage";
-import {sendFeedbackReviewsThunkCreator} from "../../../../../../Redux/reducers/infoSlice";
-import {sendFeedbackType} from "../../../../../../Redux/reducers/infoReducer";
+import {sendFeedbackReviewsThunkCreator, sendFeedbackType} from "../../../../../../Redux/reducers/infoSlice";
 
 const profileInfoFormSchema = yup.object().shape({
   assessment: yup.string()
