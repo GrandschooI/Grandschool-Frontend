@@ -1,3 +1,4 @@
+// @ts-ignore
 import styleReducer, {styleActions, styleInitialStateType} from '../styleReducer'
 
 let state: styleInitialStateType

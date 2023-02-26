@@ -14,7 +14,6 @@ const AboutUs = () => {
   const themeStyle = useAppSelector(getThemeStyle)
   const isOptionsOpen = useAppSelector(getOptionsState)
   const asideItems = useAppSelector(getInfoAboutUs)
-
   return (
     <section
       className={cn(s.aboutUsSection, s[themeStyle ? themeStyle : ''], s[isOptionsOpen ? 'blindOptionsOpen' : ''])}>
