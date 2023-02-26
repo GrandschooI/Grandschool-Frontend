@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-wrap: wrap;
   position: relative;
   padding: 0 25px;
   height: 4.5rem;
@@ -24,6 +25,16 @@
     background: url('../../../../assets/images/Shape.png') no-repeat;
     opacity: 0;
     transition: opacity .5s ease;
+  }
+}
+
+@media (max-width: 1280px) {
+  .asideLink {
+    &:after {
+      background: url('../../../../assets/images/Shape.png') no-repeat;
+      transform: rotate(-90deg);
+      transition: all .3s ease;
+    }
   }
 }
 
@@ -117,13 +128,16 @@ span.activeItem {
   }
 }
 
+
 .rightArrow {
   background: #F7F5EC;
   color: inherit;
   z-index: 10;
+
   &:hover {
     background: #F7F5EC;
   }
+
   &:after {
     opacity: 1;
     background: url('../../../../assets/images/Shape.png') no-repeat;
@@ -190,5 +204,3 @@ span.activeItem {
     color: inherit;
   }
 }
-
-

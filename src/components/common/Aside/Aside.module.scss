@@ -16,13 +16,21 @@
 
 .aside {
     min-width: 310px;
-    max-width: 310px;
+    max-width: 1440px;
     height: fit-content;
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 0 3px rgb(0 0 0 / 5%);
     overflow: hidden;
 }
+
+@media (max-width: 1280px) {
+    .aside{
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
 
 .sidebar {
     display: flex;

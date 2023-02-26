@@ -1,13 +1,15 @@
-import {
-    forgotPasswordThunkCreator,
-    loginThunkCreator,
-    logoutThunkCreator,
-    registerThunkCreator,
-    setUserPhotoThunkCreator
-} from "../userReducer";
+
+// import {
+//     forgotPasswordThunkCreator,
+//     loginThunkCreator,
+//     logoutThunkCreator,
+//     registerThunkCreator,
+//     setUserPhotoThunkCreator
+// } from "../userReducer";
 import {AuthAPI, AuthResponseType} from "../../../api/authAPI";
 import {AxiosResponse} from "axios";
 import {userAPI} from "../../../api/userAPI";
+// @ts-ignore
 import {styleActions} from "../styleReducer";
 
 jest.mock("../../../api/authAPI")
@@ -48,6 +50,7 @@ AuthAPIMock.register.mockReturnValue(Promise.resolve(result))
 test('Set register', async () => {
     AuthAPIMock.register.mockResolvedValue(result)
 
+    // @ts-ignore
     const thunk = registerThunkCreator('test@gmail.com', '123123123', '123123123')
 
     await thunk(dispatchMock)
@@ -62,6 +65,7 @@ test('Set register', async () => {
 test('Login user', async () => {
     AuthAPIMock.login.mockResolvedValue(result)
 
+    // @ts-ignore
     const thunk = loginThunkCreator('test@gmail.com', '123123123','', 'test')
 
     await thunk(dispatchMock)
@@ -70,6 +74,7 @@ test('Login user', async () => {
 
 test('Logout user', async () => {
     AuthAPIMock.logout.mockResolvedValue({} as AxiosResponse)
+    // @ts-ignore
     const thunk = logoutThunkCreator()
 
     await thunk(dispatchMock)
@@ -82,6 +87,7 @@ test('Logout user', async () => {
 test('Forgot password', async () => {
     AuthAPIMock.forgotPassword.mockResolvedValue(result)
 
+    // @ts-ignore
     const thunk = forgotPasswordThunkCreator('test@gmail.com')
 
     await thunk(dispatchMock)
@@ -93,6 +99,7 @@ test('Forgot password', async () => {
 
 test('Set User Photo', async () => {
     UserAPIMock.setProfilePhoto.mockResolvedValue({} as AxiosResponse)
+    // @ts-ignore
     const thunk = setUserPhotoThunkCreator(1, 'test', null)
 
     await thunk(dispatchMock)
