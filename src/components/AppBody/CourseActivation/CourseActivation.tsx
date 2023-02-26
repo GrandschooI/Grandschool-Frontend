@@ -6,7 +6,7 @@ import s from './CourseActivation.module.scss';
 const CourseActivation = () => {
   const [otp, setOtp] = useState<string[]>(new Array(5).fill(''));
   const [activeOtpIndex, setActiveOtpIndex] = useState<number>(0);
-  const inputRefs = useRef<HTMLInputElement[]>([]);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const onChangeHandle = (event: ChangeEvent<HTMLInputElement>, index: number): void => {
     const { value } = event.currentTarget;
@@ -17,17 +17,14 @@ const CourseActivation = () => {
   };
 
   const onKeyDownHandle = (event: KeyboardEvent<HTMLInputElement>, index: number) => {
-    if (event.key === 'Backspace' && index > 0) {
+    if (event.key === 'Backspace') {
       setActiveOtpIndex(index - 1);
-      inputRefs.current[index - 1].focus();
     }
   };
 
   useEffect(() => {
-    if (activeOtpIndex < otp.length) {
-      inputRefs.current[activeOtpIndex].focus();
-    }
-  }, [activeOtpIndex, otp.length]);
+    inputRef.current?.focus();
+  }, [activeOtpIndex]);
 
   return (
       <div className={cn(s.courseActivationBody, 'container')}>
@@ -40,9 +37,9 @@ const CourseActivation = () => {
             {otp.map((value, index) => (
                 <input
                     key={index}
-                    ref={(el) => (inputRefs.current[index] = el as HTMLInputElement)}
+                    ref={activeOtpIndex === index ? inputRef : null}
                     type="number"
-                    value={value}
+                    value={otp[index]}
                     onChange={(event) => onChangeHandle(event, index)}
                     onKeyDown={(event) => onKeyDownHandle(event, index)}
                 />
