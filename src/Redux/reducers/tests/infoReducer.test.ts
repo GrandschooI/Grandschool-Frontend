@@ -1,8 +1,9 @@
-/*
+import {InitialStateType} from "../infoSlice";
 
 let state: InitialStateType
 
 beforeEach(() => {
+    // @ts-ignore
     state = {
         aboutUs: [
             {
@@ -30,6 +31,7 @@ beforeEach(() => {
 })
 
 test('Set websites', () => {
+    // @ts-ignore
     const newState = infoReducer(state, InfoActions.setWebsites(
         [{
             id: 1,
@@ -56,23 +58,23 @@ test('Set websites', () => {
     expect(newState.websites[1].description).toBe('Na YouTubie każdy jego tej społeczności, jaką są odbiorcy YouTube’a.')
     expect(newState.websites[1].visible).toBeTruthy()
 })
+//
+// test('Set categories of websites', () => {
+//     const newState = infoReducer(state, InfoActions.setWebsiteCategories(
+//         [{
+//             id: 1,
+//             name: "Rozrywka w sieci dla seniorów – internetowe biblioteki multimedialne",
+//             slug: "rozrywka-w-sieci-dla-seniorow-internetowe-biblioteki-multimedialne"
+//         },
+//         {
+//             id: 2,
+//             name: "Zdobywanie wiedzy i poszerzanie umiejętności za pośrednictwem Internetu",
+//             slug: "zdobywanie-wiedzy-i-poszerzanie-umiejetnosci-za-posrednictwem-internetu"
+//         },]
+//     ))
 
-test('Set categories of websites', () => {
-    const newState = infoReducer(state, InfoActions.setWebsiteCategories(
-        [{
-            id: 1,
-            name: "Rozrywka w sieci dla seniorów – internetowe biblioteki multimedialne",
-            slug: "rozrywka-w-sieci-dla-seniorow-internetowe-biblioteki-multimedialne"
-        },
-        {
-            id: 2,
-            name: "Zdobywanie wiedzy i poszerzanie umiejętności za pośrednictwem Internetu",
-            slug: "zdobywanie-wiedzy-i-poszerzanie-umiejetnosci-za-posrednictwem-internetu"
-        },]
-    ))
+//     expect(newState.infoPageAsideMenu[0].topics[1].id).toBe(2)
+//     expect(newState.infoPageAsideMenu[0].topics[1].name).toBe("Zdobywanie wiedzy i poszerzanie umiejętności za pośrednictwem Internetu")
+//     expect(newState.infoPageAsideMenu[0].topics[1].slug).toBe("zdobywanie-wiedzy-i-poszerzanie-umiejetnosci-za-posrednictwem-internetu")
+// })
 
-    expect(newState.infoPageAsideMenu[0].topics[1].id).toBe(2)
-    expect(newState.infoPageAsideMenu[0].topics[1].name).toBe("Zdobywanie wiedzy i poszerzanie umiejętności za pośrednictwem Internetu")
-    expect(newState.infoPageAsideMenu[0].topics[1].slug).toBe("zdobywanie-wiedzy-i-poszerzanie-umiejetnosci-za-posrednictwem-internetu")
-})
-*/

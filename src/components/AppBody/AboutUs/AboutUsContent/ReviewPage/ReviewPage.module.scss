@@ -1,9 +1,11 @@
 .reviewBody {
   width: 70%;
-  margin-left: 40px;
+  margin: 0 auto;
+
   & > p:first-child {
     margin-top: 0;
   }
+
   .reviewTitle {
     margin: 0 0 25px;
     font-weight: 600;
@@ -12,10 +14,12 @@
     text-transform: capitalize;
     color: #618135;
   }
+
   .reviewDescWrap {
     display: flex;
     background: #F7F5EC;
     margin-bottom: 35px;
+
     p {
       display: flex;
       flex-direction: column;
@@ -23,11 +27,13 @@
       padding: 0 20px;
       font-size: 22px;
       line-height: 28px;
+
       span {
         color: #618135;
       }
     }
   }
+
   .reviewForm {
     .reviewCAT {
       display: flex;
@@ -37,73 +43,93 @@
       color: #717070;
       margin-bottom: 15px;
     }
+
     .assesmentRadioList {
       position: relative;
       display: flex;
       margin: 15px 0 35px;
+
       li {
         margin-right: 50px;
-        label{
+
+        label {
           display: flex;
           flex-direction: column;
           align-items: center;
           row-gap: 10px;
           cursor: pointer;
         }
+
         &.activeGreen {
           transition: .5s;
+
           svg {
             opacity: 1;
+
             path {
               fill: green;
               transition: .5s;
             }
           }
         }
+
         &.activeLightOrange {
           transition: .5s;
+
           svg {
             opacity: 1;
+
             path {
               fill: #738000;
               transition: .5s;
             }
           }
         }
+
         &.activeOrange {
           transition: .5s;
+
           svg {
             opacity: 1;
+
             path {
               fill: orange;
               transition: .5s;
             }
           }
         }
+
         &.activeDarkOrange {
           transition: .5s;
+
           svg {
             opacity: 1;
+
             path {
               fill: #e16527;
               transition: .5s;
             }
           }
         }
+
         &.activeRed {
           transition: .5s;
+
           svg {
             opacity: 1;
+
             path {
               fill: red;
               transition: .5s;
             }
           }
         }
+
         svg {
           transition: all .3s ease;
           opacity: .7;
         }
+
         &:hover svg {
           opacity: 1;
           transform: scale(1.1);
@@ -111,16 +137,19 @@
         }
       }
     }
+
     .textareaWrap {
       position: relative;
       display: flex;
       flex-direction: column;
+
       label {
         font-weight: 400;
         font-size: 16px;
         line-height: 20px;
         color: #717070;
       }
+
       textarea {
         padding: 15px;
         margin-top: 10px;
@@ -133,20 +162,24 @@
         line-height: 20px;
       }
     }
+
     .buttonWrapper {
       display: flex;
       align-items: flex-start;
       margin-top: 30px;
+
       .reviewAttached {
         display: flex;
         flex-wrap: wrap;
         padding: 10px 0;
         margin: 0;
+
         span {
           font-size: 16px;
           line-height: 20px;
           margin-left: 10px;
         }
+
         small {
           text-align: center;
           font-size: 10px;
@@ -154,6 +187,7 @@
           width: 100%;
         }
       }
+
       .reviewsFile {
         display: flex;
         position: relative;
@@ -161,6 +195,7 @@
         width: 208.53px;
         border-radius: 15px;
         overflow: hidden;
+
         .reviewsFileDelete {
           position: absolute;
           width: 100%;
@@ -172,53 +207,81 @@
           cursor: pointer;
           opacity: 0;
           transition: 0.5s;
+
           &:hover {
             transition: 0.5s;
             opacity: 1;
           }
         }
+
         img {
           border-radius: 10px;
           height: max-content;
         }
       }
+
       .sendFeedback {
         margin: 0 0 0 20px;
       }
     }
   }
+
   .reviewList {
     list-style: none;
   }
 }
 
+@media (max-width: 1280px) {
+  .reviewBody{
+    width: 91%;
+  }
+  .reviewDescWrap{
+    flex-direction: column;
+  }
+  .reviewBody {
+    margin-top: 20px;
+  }
+}
+
+//.sign{
+//  display: flex;
+//  flex-direction: column;
+//}
+
 .reviewBody.yellowTheme {
   h3, .reviewCAT {
     color: yellow;
   }
+
   .reviewDescWrap {
     background: #191901;
-    span {
+    .share {
       color: #00ffff;
     }
   }
+
+
   .assesmentRadioList {
     li {
       &.active {
         svg {
           opacity: 1;
+
           path {
             fill: #00ffff;
           }
         }
       }
+
       svg {
         transition: all .3s ease;
         opacity: .5;
+
         path {
           fill: yellow;
         }
       }
+
       &:hover svg {
         opacity: 1;
         transform: scale(1.1);
@@ -226,7 +289,29 @@
       }
     }
   }
+
   textarea {
     background: #191901;
   }
+}
+
+.reviewDescWrap.whiteTheme {
+  .share {
+    color: #000;
+  }
+}
+
+.reviewTitle.whiteTheme {
+  color: #000;
+
+}
+
+.reviewDescWrap.blueTheme {
+  .share {
+    color: #273a64;
+  }
+}
+
+.reviewTitle.blueTheme {
+  color: #273a64;
 }
