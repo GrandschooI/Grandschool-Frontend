@@ -74,7 +74,7 @@
 }
 
 .blindButton.blueTheme {
-  background: #fff;
+  background: #afe2ef;
   color: #273a64;
   border-color: #273a64;
   svg {
@@ -82,10 +82,10 @@
   }
   &:hover {
     background: #273a64;
-    color: #fff;
-    border-color: #fff;
+    color: #afe2ef;
+    border-color: #afe2ef;
     svg {
-      fill: #fff;
+      fill: #afe2ef;
     }
   }
 }
