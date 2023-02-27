@@ -36,6 +36,7 @@
       color: #000;
       text-decoration: none;
       border-bottom: 2px solid #EAEAEA;
+      transition: all .3s ease;
       &.active {
         border-color: #31477C;
       }

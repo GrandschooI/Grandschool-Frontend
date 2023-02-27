@@ -65,7 +65,7 @@ const RegistrationForm: React.FC<propsType> = (
     <div className={cn(themeStyle ? themeStyle : '', s[themeStyle ? themeStyle : ''], s[fontSize ? fontSize : ''],
       [fontSize ? fontSize : ''])}>
       <p className={s.signWithTitle}>Sign up with...</p>
-      <div className={s.anotherTypeLoginBtnWrap}>
+      <div className={cn(s.anotherTypeLoginBtnWrap, [fontSize ? fontSize : ''])}>
         <GoogleLogin
           className="anotherTypeLogin"
           clientId={GOOGLE_CLIENT_ID}

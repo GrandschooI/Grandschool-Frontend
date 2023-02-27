@@ -13,6 +13,7 @@
 }
 
 .orWord {
+  transition: all .3s ease;
   position: relative;
   margin: 37px auto 48px;
   max-width: 388px;
@@ -129,7 +130,7 @@
   .termsCheck {
     span {
       &:before {
-        border: 3px solid #273a64;
+        border: 3px solid #fff;
       }
     }
   }
@@ -160,6 +161,12 @@
       transition: all .3s ease;
     }
   }
+  .anotherTypeLoginBtnWrap {
+    button {
+      font-size: 20px;
+      transition: all .3s ease;
+    }
+  }
 }
 
 .large {
@@ -184,6 +191,12 @@
   .termsCheck {
     span {
       font-size: 20px;
+      transition: all .3s ease;
+    }
+  }
+  .anotherTypeLoginBtnWrap {
+    button {
+      font-size: 22px;
       transition: all .3s ease;
     }
   }
