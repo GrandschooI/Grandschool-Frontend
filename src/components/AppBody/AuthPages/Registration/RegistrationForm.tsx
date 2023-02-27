@@ -129,7 +129,7 @@ const RegistrationForm: React.FC<propsType> = (
               {errors.confirmPassword && touched.confirmPassword &&
                   <FormErrorMessage>{errors.confirmPassword}</FormErrorMessage>}
             </label>
-            <label className={s.termsCheck}>
+            <label className={cn(s.termsCheck, [fontSize ? fontSize : ''], [themeStyle ? themeStyle : ''])}>
               <Checkbox label={'I agree to'} name={'terms'} propValue={true} className={'checkboxLabel'}/>
               <a href={'/'} className={s.termsLabel}>terms & conditions</a>
               {errors.terms && touched.terms && <span className={s.terms__error}>{errors.terms}</span>}

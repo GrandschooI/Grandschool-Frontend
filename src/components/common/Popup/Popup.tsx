@@ -4,7 +4,6 @@ import '../../../style.scss'
 import cn from 'classnames';
 import LogoPicture from '../../SVGConponents/Header/LogoPicture';
 import LogoWords from '../../SVGConponents/Header/LogoWords';
-import LogoWordsWhiteTheme from '../../SVGConponents/Header/LogoWordsWhiteTheme';
 import LogoPictureWhiteTheme from '../../SVGConponents/Header/LogoPictureWhiteTheme';
 import LogoPictureYellowTheme from '../../SVGConponents/Header/LogoPictureYellowTheme';
 import LogoPictureBlueTheme from '../../SVGConponents/Header/LogoPictureBlueTheme';
@@ -12,6 +11,7 @@ import LogoWordsYellowTheme from '../../SVGConponents/Header/LogoWordsYellowThem
 import LogoWordsBlueTheme from '../../SVGConponents/Header/LogoWordsBlueTheme';
 import {useAppSelector} from '../../../utils/Hooks/useAppSelector';
 import {getThemeStyle} from '../../../Redux/selectors/styleSelector';
+import LogoWordsWhiteThemeForLogin from "../../SVGConponents/Forms/LogoWordsWhiteThemeForLogin";
 
 
 const Popup: React.FC<PropsWithChildren<ReactNode>> = ({children}) => {
@@ -29,7 +29,7 @@ const Popup: React.FC<PropsWithChildren<ReactNode>> = ({children}) => {
         {themeStyle === 'blueTheme' && <LogoPictureBlueTheme/>}
         {!blindMode && <LogoWords/>}
         {themeStyle === 'yellowTheme' && <LogoWordsYellowTheme/>}
-        {themeStyle === 'whiteTheme' && <LogoWordsWhiteTheme/>}
+        {themeStyle === 'whiteTheme' && <LogoWordsWhiteThemeForLogin/>}
         {themeStyle === 'blueTheme' && <LogoWordsBlueTheme/>}
       </div>
       <div>{children}</div>
