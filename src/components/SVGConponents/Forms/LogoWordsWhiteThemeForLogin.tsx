@@ -3,7 +3,7 @@ import s from '../../Header/Header.module.scss'
 import cn from 'classnames'
 
 
-const LogWordsWhiteTheme = () => {
+const LogoWordsWhiteTheme = () => {
   return (
     <svg className={cn(s.logoText, 'logoText', 'logoTextWhiteTheme')} width="100" viewBox="0 0 564 230" fill="none">
       <path
@@ -40,4 +40,4 @@ const LogWordsWhiteTheme = () => {
   )
 }
 
-export default LogWordsWhiteTheme
+export default LogoWordsWhiteTheme
