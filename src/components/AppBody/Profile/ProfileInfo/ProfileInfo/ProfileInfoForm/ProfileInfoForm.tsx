@@ -39,10 +39,10 @@ const ProfileInfoForm = () => {
       initialValues={{
         name: '',
         gender: statusAssessment,
-        birthDate: new Date(),
+        birthday: new Date(),
         country: '',
         city: '',
-        aboutUserText: ''
+        description: ''
       }}
       validationSchema={profileInfoFormSchema}
       validateOnBlur={true}
@@ -95,7 +95,7 @@ const ProfileInfoForm = () => {
           <label className={'formLabel'}>
             <span>Birth Date</span>
             <DatePicker selected={startDate} onChange={(date: Date) => setStartDate(date)}/>
-            {errors.birthDate && touched.birthDate && <FormErrorMessage>{errors.birthDate}</FormErrorMessage>}
+            {errors.birthday && touched.birthday && <FormErrorMessage>{errors.birthday}</FormErrorMessage>}
           </label>
 
           <label className={'formLabel'}>
@@ -123,9 +123,9 @@ const ProfileInfoForm = () => {
           <label className={'formLabel'}>
             <span>A little about yourself</span>
             <textarea
-              name={'aboutUserText'}
+              name={'description'}
               onChange={handleChange}
-              value={values.aboutUserText}
+              value={values.description}
               placeholder={'Tell us a little about yourself'}
             />
           </label>
