@@ -50,7 +50,7 @@ const userSlice = createSlice({
            state.currentUser.birthday = action.payload.birthDate
            state.currentUser.country = action.payload.country
            state.currentUser.city = action.payload.city
-           state.currentUser.description = action.payload.aboutMeDescription
+           state.currentUser.description = action.payload.aboutUserText
         },
         setPhoto (state = initialState, action: PayloadAction<setPhotoActionType>) {
             state.currentUser.photo = action.payload
@@ -139,6 +139,18 @@ export const setUserPhotoThunkCreator = (userId: number, token: string, file: an
     }
 }
 
+export const setProfileInfoFormThunkCreator = (userId: Nullable<number>, token: string, userFormData: setProfileActionType) => async (dispatch: Dispatch) => {
+    try {
+        dispatch(toggleIsLoaded({isLoaded: false}))
+        const response = await userAPI.setProfileIfoForm(userId, token, userFormData)
+        dispatch(setProfileInfo(response.data))
+    } catch (error){
+        toast.error((error as AxiosError).response?.data.message)
+    } finally {
+        dispatch(toggleIsLoaded({isLoaded: true}))
+    }
+}
+
 // Scaffolding functions
 
 export const setUserToStateAndStorage = (
@@ -179,13 +191,13 @@ export const errorHandler = (error: any) => {
 export default userSlice.reducer
 export const { setAuth, setProfileInfo, setPhoto } = userSlice.actions
 
-type setProfileActionType = {
-    name: string
+export type setProfileActionType = {
+    name: Nullable<string>
     gender: string
     birthDate: Date
     country: string
     city: string
-    aboutMeDescription: string
+    aboutUserText: string
 }
 type setAuthActionType = {
     authData: any
