@@ -11,7 +11,7 @@ type PropsType = {
 
 const Aside: React.FC<PropsType> = ({asideItems}) => {
     const themeStyle = useAppSelector(getThemeStyle)
-    const aside =cn(s.aside, s[themeStyle ? themeStyle : ''])
+    const aside = cn(s.aside, s[themeStyle ? themeStyle : ''])
 
     return (
         <aside className={aside}>

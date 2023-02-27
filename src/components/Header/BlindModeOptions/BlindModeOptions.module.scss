@@ -127,7 +127,7 @@
 }
 
 .blueTheme {
-  background: #afe2ef;
+  background: #fff;
   color: #273a64;
 
   @media (max-width: 1000px) {
@@ -179,6 +179,10 @@
   line-height: 21px;
   margin: 0 .625rem 0 0;
   transition: all .3s ease;
+}
+
+.pics{
+  transition: all .2s linear;
 }
 
 .optionsBlock .button.small {

@@ -20,15 +20,12 @@ import {getFontSize, getImgAvailability, getStyleMode, getThemeStyle} from '../.
 
 
 const Footer = () => {
-
     const images = useAppSelector(getImgAvailability)
     const themeStyle = useAppSelector(getThemeStyle)
     const fontSize = useAppSelector(getFontSize)
     const blindMode = useAppSelector(getStyleMode)
 
-
     const withoutImgClassName = images ? '' : 'withoutImg'
-
     return (
         <div data-aos="fade" data-aos-once="true"
              className={cn(s.footer, s[(themeStyle ? themeStyle : '')], s[fontSize], s[withoutImgClassName])}>

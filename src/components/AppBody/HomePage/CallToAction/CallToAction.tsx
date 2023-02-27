@@ -28,7 +28,6 @@ const CallToAction = () => {
 
   const withoutImgClassName = images ? '' : 'withoutImg'
 
-
   const toggleBlindModeHandler = () => {
     dispatch(switchBlindMode({blindMode: !blindMode}))
   }

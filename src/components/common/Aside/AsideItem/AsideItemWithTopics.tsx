@@ -9,7 +9,7 @@ const AsideItemWithTopics: React.FC<PropsType> = ({activeItem, location, itemLin
     return (
         <>
             <span className={cn(s.asideLink, activeItem ? [s.activeItem, s.upArrow] : '',
-                location.includes(itemLink) ? s.rightArrow : '')}
+                location.includes(itemLink) ? s.rightArrow : '',  )}
                   onClick={() => setActiveItem(!activeItem)}>{itemTitle}</span>
             <CSSTransition
                 in={activeItem}

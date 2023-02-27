@@ -23,14 +23,14 @@ const App = () => {
             <Switch>
                 <Route path="/">
                     <section>
-                        <Header />
-                        <AppBody />
-                        <Footer />
-                        <ScrollUpButton />
+                        <Header/>
+                        <AppBody/>
+                        <Footer/>
+                        <ScrollUpButton/>
                     </section>
                 </Route>
             </Switch>
-            {!isLoaded && <Preloader />}
+            {!isLoaded && <Preloader/>}
         </div>
     )
 }
