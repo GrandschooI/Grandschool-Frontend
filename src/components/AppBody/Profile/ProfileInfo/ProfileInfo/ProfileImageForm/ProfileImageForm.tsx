@@ -6,7 +6,7 @@ import {useAppSelector} from '../../../../../../utils/Hooks/useAppSelector';
 import {getUserPhotoLink} from '../../../../../../Redux/selectors/userSelector';
 import Modal from '../../../../../Modal/Modal';
 import CropImageModal from './cropImageModal/CropImageModal';
-import {Nullable} from '../../../../../../Redux/redux-store';
+import {Nullable} from "../../../../../../Redux/redux-toolkit-store";
 
 const ProfileImageForm = () => {
 

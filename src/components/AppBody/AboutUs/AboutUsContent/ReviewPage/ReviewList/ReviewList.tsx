@@ -3,7 +3,6 @@ import s from "../ReviewPage.module.scss";
 import ReviewItem from "./ReviewItem/ReviewItem";
 import {useAppSelector} from "../../../../../../utils/Hooks/useAppSelector";
 import {useDispatch} from "react-redux";
-import {getReviewsThunkCreator, reviewsRecordsType} from "../../../../../../Redux/reducers/infoReducer";
 import Pagination from "../../../../../common/Pagination/Pagination";
 import {
   getCurrentPage,
@@ -11,6 +10,7 @@ import {
   getReviewData,
   getTotalCount
 } from "../../../../../../Redux/selectors/infoSelector";
+import {getReviewsThunkCreator, reviewsRecordsType} from "../../../../../../Redux/reducers/infoSlice";
 
 const ReviewList = () => {
   const dispatch = useDispatch()

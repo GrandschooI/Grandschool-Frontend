@@ -3,11 +3,11 @@ import cn from 'classnames'
 import s from './ConfirmRegistration.module.scss'
 import '../../../../style.scss'
 import 'react-toastify/dist/ReactToastify.css'
-import {Nullable} from '../../../../Redux/redux-store'
 import PhoneForm from './PhoneForm/PhoneForm';
 import EmailNotification from './EmailNotification/EmailNotification';
 import {useAppSelector} from '../../../../utils/Hooks/useAppSelector';
 import {getUserEmail, getUserPhone} from '../../../../Redux/selectors/userSelector';
+import {Nullable} from "../../../../Redux/redux-toolkit-store";
 
 
 const ConfirmRegistrationForm: React.FC<PropsType> = ({onSubmit, themeStyle, fontSize}) => {

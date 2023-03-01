@@ -1,6 +1,8 @@
+
 import {WebsiteItemType} from "../../../api/infoAPI";
 import {InfoAPI} from '../../../api/infoAPI'
-import {getWebsitesCategoryThunkCreator, getWebsitesThunkCreator} from "../infoReducer";
+import {getWebsitesCategoryThunkCreator, getWebsitesThunkCreator} from "../infoSlice";
+//import {getWebsitesCategoryThunkCreator, getWebsitesThunkCreator} from "../infoReducer";
 
 jest.mock("../../../api/infoAPI")
 
@@ -45,6 +47,7 @@ test('Get Websites', async () => {
     const thunk = getWebsitesThunkCreator('News')
 
 
+    // @ts-ignore
     await thunk(dispatchMock, getStateMock, {})
 
     expect(dispatchMock).toBeCalledTimes(1)
@@ -59,6 +62,7 @@ test('Get Websites Category', async () => {
     const dispatchMock = jest.fn()
     const getStateMock = jest.fn()
 
+    // @ts-ignore
     await thunk(dispatchMock, getStateMock, {})
 
 

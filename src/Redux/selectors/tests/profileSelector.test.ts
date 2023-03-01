@@ -1,5 +1,6 @@
-import store, {AppStateType} from "../../redux-store";
+
 import {getProfileAsideItems} from "../profileSelector";
+import store, {AppStateType} from "../../redux-toolkit-store";
 
 let rootState: AppStateType;
 

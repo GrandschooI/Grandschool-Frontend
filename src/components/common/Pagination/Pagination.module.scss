@@ -2,16 +2,30 @@
   display: flex;
   align-items: center;
   gap: 20px;
+
   .paginationItem {
     cursor: pointer;
     border: none;
     background-color: transparent;
-    font-family: 'Proba Pro';
+    font-family: 'Proba Pro', Arial, sans-serif;
     font-weight: 400;
     font-size: 18px;
     line-height: 23px;
     color: #717070;
   }
+
+  .paginationItem.yellowTheme {
+    color: #ff0;
+  }
+
+  .paginationItem.whiteTheme {
+    color: #191901;
+  }
+
+  .paginationItem.blueTheme {
+    color: #273a64;
+  }
+
   .active {
     cursor: pointer;
     border: none;
@@ -25,3 +39,17 @@
     border-radius: 50%;
   }
 }
+
+.active.yellowTheme {
+  color: #191901;
+  background-color: #0ff;
+}
+
+.active.whiteTheme {
+  background-color: #191901;
+}
+
+.active.blueTheme {
+  background-color: #273a64;
+}
+

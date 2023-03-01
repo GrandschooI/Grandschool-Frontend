@@ -1,5 +1,6 @@
-import store, {AppStateType} from "../../redux-store";
+
 import {getInfoAboutUs, getInfoMenu, getWebsites} from "../infoSelector";
+import store, {AppStateType} from "../../redux-toolkit-store";
 
 let rootState: AppStateType;
 

@@ -7,16 +7,10 @@ import {RadioButton, TextField} from '../../../../../common/Form/FormControls/Fo
 import '../../../../../../style.scss'
 import * as yup from 'yup'
 import {useAppSelector} from '../../../../../../utils/Hooks/useAppSelector';
-import {
-  getAboutUserText,
-  getUserBirthData,
-  getUserCity,
-  getUserCountry,
-  getUserName,
-  getUserSex
-} from '../../../../../../Redux/selectors/userSelector';
 import {useDispatch} from 'react-redux';
-import {setProfileInfo} from '../../../../../../Redux/reducers/userSlice';
+import {
+  setProfileInfoFormThunkCreator
+} from '../../../../../../Redux/reducers/userSlice';
 import FormErrorMessage from '../../../../../utils/FormErrorMessage/FormErrorMessage';
 
 const profileInfoFormSchema = yup.object().shape({
@@ -28,22 +22,15 @@ const profileInfoFormSchema = yup.object().shape({
 })
 
 const ProfileInfoForm = () => {
-  const name = useAppSelector(getUserName)
-  const country = useAppSelector(getUserCountry)
-  const sex = useAppSelector(getUserSex)
-  const birthData = useAppSelector(getUserBirthData)
-  const city = useAppSelector(getUserCity)
-  const aboutUserText = useAppSelector(getAboutUserText)
-
   const dispatch = useDispatch()
-  const [startDate, setStartDate] = useState(new Date())
-  const [aboutMeDescription, setAboutMeDescription] = useState('')
-  const [statusAssessment, setStatusAssessment] = useState('')
-  const [localName, setLocalName] = useState(name)
+  const token = localStorage.getItem('token') as string
 
-  const onChangeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
-    setAboutMeDescription(e.currentTarget.value);
-  };
+  const currentUserId = useAppSelector(state => state.userData.currentUser.id)
+
+  const [startDate, setStartDate] = useState(new Date())
+  const [statusAssessment, setStatusAssessment] = useState('')
+
+
   const getRadioStatus = (status: string) => {
     setStatusAssessment(status)
   };
@@ -52,20 +39,19 @@ const ProfileInfoForm = () => {
       initialValues={{
         name: '',
         gender: statusAssessment,
-        birthDate: new Date(),
+        birthday: new Date(),
         country: '',
         city: '',
-        aboutUserText: ''
+        description: ''
       }}
       validationSchema={profileInfoFormSchema}
       validateOnBlur={true}
       validateOnChange={true}
       onSubmit={(formData) => {
-        const {name, gender, birthDate, country, city} = formData
-        dispatch(setProfileInfo({name, gender, birthDate, country, city, aboutMeDescription}))
+        dispatch(setProfileInfoFormThunkCreator(currentUserId, token, formData))
       }}
     >
-      {({isSubmitting, touched, errors}) => (
+      {({touched, errors, values, handleChange}) => (
         <Form className={s.profileInfoForm}>
           <label className={'formLabel'}>
             <span>Full name</span>
@@ -109,7 +95,7 @@ const ProfileInfoForm = () => {
           <label className={'formLabel'}>
             <span>Birth Date</span>
             <DatePicker selected={startDate} onChange={(date: Date) => setStartDate(date)}/>
-            {errors.birthDate && touched.birthDate && <FormErrorMessage>{errors.birthDate}</FormErrorMessage>}
+            {errors.birthday && touched.birthday && <FormErrorMessage>{errors.birthday}</FormErrorMessage>}
           </label>
 
           <label className={'formLabel'}>
@@ -136,11 +122,14 @@ const ProfileInfoForm = () => {
 
           <label className={'formLabel'}>
             <span>A little about yourself</span>
-            <textarea onChange={onChangeHandler}
-                      value={aboutUserText ? aboutUserText : aboutMeDescription}
-                      placeholder={'Tell us a little about yourself'}/>
+            <textarea
+              name={'description'}
+              onChange={handleChange}
+              value={values.description}
+              placeholder={'Tell us a little about yourself'}
+            />
           </label>
-          {!isSubmitting ? <button type="submit" className="submitBtn">Wyślij</button> : <span>Pending</span>}
+          <button type="submit" className="submitBtn">Wyślij</button>
         </Form>
       )}
     </Formik>

@@ -46,7 +46,11 @@
   width: 32%;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 1100px) {
+      width: 34%;
+  }
 }
+
 
 .headerNavLink:before {
   content: "";
@@ -97,6 +101,10 @@
     line-height: 26px;
     font-weight: 600;
     transition: all .2s ease;
+    @media (max-width: 1270px) {
+      font-size: 16px;
+      transition: all .2s ease;
+    }
     &:hover,
     &:focus-visible {
       color: #618135;
@@ -121,6 +129,10 @@
   color: #000;
   font-weight: 500;
   transition: all .5s ease;
+  @media (max-width: 1270px) {
+    font-size: 14px;
+    transition: all .2s ease;
+  }
 }
 
 .mobileAccountLink {
@@ -158,6 +170,22 @@
   .headerNavItem {
     font-size: 22px;
     transition: all .2s ease;
+    @media (max-width: 1370px) {
+      font-size: 20px;
+      transition: all .2s ease;
+    }
+    @media (max-width: 1270px) {
+      font-size: 18px;
+      transition: all .2s ease;
+    }
+    @media (max-width: 1040px) {
+      font-size: 16px;
+      transition: all .2s ease;
+    }
+    @media (max-width: 800px) {
+      font-size: 14px;
+      transition: all .2s ease;
+    }
   }
 }
 
@@ -166,7 +194,23 @@
   .headerNavItem {
     font-size: 24px;
     transition: all .2s ease;
+    @media (max-width: 1370px) {
+      font-size: 22px;
+      transition: all .2s ease;
   }
+    @media (max-width: 1270px) {
+      font-size: 20px;
+      transition: all .2s ease;
+    }
+    @media (max-width: 1040px) {
+      font-size: 18px;
+      transition: all .2s ease;
+    }
+    @media (max-width: 800px) {
+      font-size: 16px;
+      transition: all .2s ease;
+    }
+}
 }
 
 .notMainPageWrapper {
@@ -407,11 +451,11 @@
   }
   .headerNavItem {
     background: #273a64;
-    color: #fff;
+    color: #afe2ef;
     border: 1px solid #273a64;
     transition: all .2s ease;
     &:hover {
-      background: #fff;
+      background: #afe2ef;
       color: #273a64;
       transition: all .2s ease;
     }
@@ -454,17 +498,18 @@
       }
     }
     .blindButton,
-    .headerNavItem {
-      font-size: 14px;
-    }
+    //.headerNavItem {
+    //  font-size: 14px;
+    //}
     .headerNavItem {
       padding: 0 50px;
     }
-    .headerNavLink {
-      font-size: 15px;
-    }
+    //.headerNavLink {
+    //  font-size: 15px;
+    //}
   }
 }
+
 
 @media (max-width: 1000px) {
   .blindButton {
@@ -489,6 +534,9 @@
   .header {
     position: fixed;
     background: #f7f5ec;
+    &.yellowTheme {
+      background: rgb(25, 25, 1);
+    }
     .headerTop {
       padding: 25px 15px;
     }
@@ -546,6 +594,15 @@
       stroke:#618135;
       stroke-width:5.5;
       stroke-linecap:round;
+      &.yellowTheme {
+        stroke: yellow;
+      }
+      &.whiteTheme {
+        stroke: black;
+      }
+      &.blueTheme {
+        stroke: #273a64;
+      }
     }
     .ham6 .top {
       stroke-dasharray: 40 172;
@@ -591,8 +648,21 @@
           padding: 10px 0;
           address,
           a {
+            font-size: 16px;
             color: #618135;
             text-decoration: none;
+            &.yellowTheme {
+              color: yellow;
+            }
+            &.whiteTheme, &.blueTheme {
+              color: black;
+            }
+            &.large {
+              font-size: 20px;
+            }
+            &.medium {
+              font-size: 18px;
+            }
           }
           svg {
             min-width: 20px;
@@ -614,6 +684,12 @@
       left: 0;
       opacity: 1;
       transition: all .3s ease;
+      &.yellowTheme {
+        background-color: black;
+      }
+      &.whiteTheme, &.blueTheme {
+        background-color: white;
+      }
     }
   }
 }

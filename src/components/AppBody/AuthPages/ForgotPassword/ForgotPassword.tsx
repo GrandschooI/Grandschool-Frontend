@@ -5,9 +5,9 @@ import {TextField} from '../../../common/Form/FormControls/FormControls'
 import s from './ForgotPassword.module.scss'
 import '../../../../style.scss'
 import 'react-toastify/dist/ReactToastify.css'
-import {Nullable} from '../../../../Redux/redux-store'
 import * as yup from 'yup';
 import FormErrorMessage from '../../../utils/FormErrorMessage/FormErrorMessage';
+import {Nullable} from "../../../../Redux/redux-toolkit-store";
 
 
 const forgotPasswordSchema = yup.object().shape({

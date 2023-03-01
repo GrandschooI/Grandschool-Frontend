@@ -1,7 +1,11 @@
-export const setDataToLocalStorage = (item: string, data: string) => {
-  localStorage.setItem(item, data)
-}
+type LocalStorageKey = string;
 
-export const removeDataFromLocalStorage = (item: string) => {
-  localStorage.removeItem(item)
-}
+const setDataToLocalStorage = (key: LocalStorageKey, value: string): void => {
+    localStorage.setItem(key, value);
+};
+
+const removeDataFromLocalStorage = (key: LocalStorageKey): void => {
+    localStorage.removeItem(key);
+};
+
+export {setDataToLocalStorage, removeDataFromLocalStorage};
