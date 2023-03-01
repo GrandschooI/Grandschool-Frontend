@@ -34,7 +34,7 @@ const AppBody = () => {
         <Route path="/email-verification" render={() => <ConfirmMail/>}/>
         <Route path="/not-found" render={() => <NotFound/>}/>
         <Route path="/course-activation" render={() => <CourseActivation/>}/>
-        <Redirect path="*" to={'/not-found'}/>
+        {/*<Redirect path="*" to={'/not-found'}/>*/}
       </Switch>
     </div>
   )
