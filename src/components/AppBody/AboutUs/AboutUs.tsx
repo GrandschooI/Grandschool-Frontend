@@ -23,7 +23,7 @@ const AboutUs = () => {
                 <Aside asideItems={asideItems}/>
                 <Switch>
                     <Route path="/about-us/project" render={() => <Project/>}/>
-                    <Route path="/about-us/news" render={News}/>
+                    <Route path="/about-us/news" render={() => <News/>}/>
                     <Route path="/about-us/reviews" render={() => <ReviewPage/>}/>
                     <Redirect path="/about-us" to={'/about-us/project'}/>
                 </Switch>

@@ -8,3 +8,32 @@
   border-bottom: 1px solid #ededed;
   padding: 10px 15px;
 }
+
+h3 {
+  transition: all .2s linear;
+}
+
+.date {
+  transition: all .2s linear;
+}
+
+.medium {
+  font-size: 18px;
+}
+
+.medium {
+  h3 {
+    font-size: 23px;
+  }
+}
+
+.large {
+  font-size: 21px;
+}
+
+.large {
+  h3 {
+    font-size: 26px;
+  }
+}
+

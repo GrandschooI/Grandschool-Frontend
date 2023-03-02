@@ -5,7 +5,7 @@ import feedBackImg from '../../../../../assets/images/feedbackIMG.jpg'
 import Image from 'react-image-webp'
 import cn from 'classnames'
 import {useAppSelector} from '../../../../../utils/Hooks/useAppSelector';
-import {getThemeStyle} from '../../../../../Redux/selectors/styleSelector';
+import {getFontSize, getThemeStyle} from '../../../../../Redux/selectors/styleSelector';
 import ReviewsForm from "./ReviewsForm/ReviewsForm";
 import ReviewList from "./ReviewList/ReviewList";
 import {NavLink} from "react-router-dom";
@@ -14,7 +14,8 @@ import {getAuthStatus} from "../../../../../Redux/selectors/userSelector";
 const ReviewPage = () => {
     const isAuth = useAppSelector(getAuthStatus)
     const themeStyle = useAppSelector(getThemeStyle)
-    const changeTheme = (name: string) => cn(name, s[themeStyle ? themeStyle : ''], [themeStyle ? themeStyle : ''])
+    const fontSize = useAppSelector(getFontSize)
+    const changeTheme = (name: string) => cn(name, s[themeStyle ? themeStyle : ''], [themeStyle ? themeStyle : ''], s[fontSize])
 
     const reviewBody = changeTheme((s.reviewBody))
     const reviewTitle = changeTheme((s.reviewTitle))

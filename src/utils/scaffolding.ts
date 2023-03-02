@@ -1,7 +1,4 @@
-import cn from "classnames";
-import s from "../components/AppBody/AboutUs/AboutUsContent/ReviewPage/ReviewPage.module.scss";
-import {useAppSelector} from "./Hooks/useAppSelector";
-import {getThemeStyle} from "../Redux/selectors/styleSelector";
+import {useState} from "react";
 
 type LocalStorageKey = string;
 

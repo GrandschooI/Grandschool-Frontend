@@ -15,6 +15,7 @@
     color: #618135;
   }
 
+
   .reviewDescWrap {
     display: flex;
     background: #F7F5EC;
@@ -232,10 +233,10 @@
 }
 
 @media (max-width: 1280px) {
-  .reviewBody{
+  .reviewBody {
     width: 91%;
   }
-  .reviewDescWrap{
+  .reviewDescWrap {
     flex-direction: column;
   }
   .reviewBody {
@@ -255,6 +256,7 @@
 
   .reviewDescWrap {
     background: #191901;
+
     .share {
       color: #00ffff;
     }
@@ -314,4 +316,56 @@
 
 .reviewTitle.blueTheme {
   color: #273a64;
+}
+
+.medium {
+  .reviewTitle {
+    font-size: 32px;
+  }
+}
+
+.large {
+  .reviewTitle {
+    font-size: 37px;
+  }
+}
+
+.medium {
+  .reviewDescWrap {
+    p {
+      font-size: 24px;
+    }
+  }
+}
+
+.large {
+  .reviewDescWrap {
+    p {
+      font-size: 27px;
+    }
+  }
+}
+
+.medium {
+  .reviewTotalCount {
+    font-size: 16px;
+  }
+}
+
+.large {
+  .reviewTotalCount {
+    font-size: 18px;
+  }
+}
+
+.medium{
+  .reviewList{
+    font-size: 20px;
+  }
+}
+
+.large{
+  .reviewList{
+    font-size: 22px;
+  }
 }
