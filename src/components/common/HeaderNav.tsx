@@ -4,10 +4,10 @@ import {NavLink, useLocation} from 'react-router-dom'
 import s from '../Header/Header.module.scss'
 import {Nullable} from "../../Redux/redux-toolkit-store";
 
-const HeaderNav:React.FC<PropsType> = ({themeStyle}) => {
+const HeaderNav:React.FC<PropsType> = ({themeStyle, fontSize}) => {
   const location: string = useLocation().pathname
   return (
-    <div className={cn(s.notMainPageWrapper, s[themeStyle ? themeStyle : ''])}>
+    <div className={cn(s.notMainPageWrapper, s[themeStyle ? themeStyle : ''], s[fontSize ? fontSize : ''])}>
       <div className={'container'}>
         <nav className={cn(s.headerNav, s.notMainPage)}>
           <NavLink to='/' className={s.headerNavLink}>
@@ -35,4 +35,5 @@ export default HeaderNav
 
 type PropsType = {
   themeStyle: Nullable<string>
+  fontSize: Nullable<string>
 }

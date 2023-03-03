@@ -55,9 +55,9 @@
 }
 
 .yellowTheme {
-    background: rgb(25, 25, 1);
-    .activeItem {
-        background: #00ffff;
-        color: #000;
-    }
+    border: 1px solid rgb(25, 25, 1);
+}
+
+.medium {
+    font-size: 20px;
 }

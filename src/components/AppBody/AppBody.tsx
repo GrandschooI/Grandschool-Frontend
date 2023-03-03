@@ -11,15 +11,16 @@ import Info from './Info/Info';
 import NotFound from './NotFound/NotFound';
 import Profile from './Profile/Profile';
 import {useAppSelector} from '../../utils/Hooks/useAppSelector';
-import {getOptionsState} from '../../Redux/selectors/styleSelector';
+import {getOptionsState, getThemeStyle} from "../../Redux/selectors/styleSelector";
 import AuthPage from './AuthPages/AuthPage';
 import ConfirmMail from "./ConfirmMail/ConfirmMail";
 import CourseActivation from "./CourseActivation/CourseActivation";
 
 const AppBody = () => {
   const isOptionsOpen = useAppSelector(getOptionsState)
+  const themeStyle = useAppSelector(getThemeStyle)
   return (
-    <div className={cn(s.appBody, isOptionsOpen ? s.openedBlindOption : '')}>
+    <div className={cn(s.appBody, isOptionsOpen ? s.openedBlindOption : '', s[themeStyle ? themeStyle : ''])}>
       <Switch>
         <Route exact path="/" render={() => <HomePage/>}/>
         <Route path="/registration" render={() => <AuthPage/>}/>

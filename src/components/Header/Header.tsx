@@ -110,7 +110,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      {!isHeaderChange && <HeaderNav themeStyle={themeStyle}/>}
+      {!isHeaderChange && <HeaderNav themeStyle={themeStyle} fontSize={fontSize}/>}
     </div>
   )
 }
