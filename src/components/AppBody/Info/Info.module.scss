@@ -2,6 +2,7 @@ div.infoWrapper {
   padding-top: 210px;
   padding-bottom: 195px;
   h1 {
+    transition: all .3s ease;
     margin-top: 42px;
     font-weight: 600;
     font-size: 36px;
@@ -9,7 +10,26 @@ div.infoWrapper {
     padding-bottom: 20px;
     margin-bottom: 20px;
   }
+  &.yellowTheme {
+    padding: 210px 55px 195px;
+    width: 100%;
+    border-bottom: 1px solid yellow;
+    h1 {
+      color: yellow;
+    }
+  }
+  &.medium {
+    h1 {
+      font-size: 45px;
+    }
+  }
+  &.large {
+    h1 {
+      font-size: 55px;
+    }
+  }
   .infoContentWrap {
     display: flex;
   }
 }
+
