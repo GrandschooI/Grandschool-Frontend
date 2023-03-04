@@ -5,11 +5,11 @@ import './CallToActionGlobal.scss'
 import s from './CallToAction.module.scss'
 import {useAppSelector} from '../../../../utils/Hooks/useAppSelector';
 import {
-  getFontSize,
-  getImgAvailability,
-  getOptionsState,
-  getStyleMode,
-  getThemeStyle
+    getFontSize,
+    getImgAvailability,
+    getOptionsState,
+    getStyleMode,
+    getThemeStyle
 } from "../../../../Redux/selectors/styleSelector";
 import BlindButton from '../../../utils/BlindButton/BlindButton';
 import {useDispatch} from 'react-redux';
@@ -17,33 +17,33 @@ import {switchBlindMode} from "../../../../Redux/reducers/styleSlice";
 
 
 const CallToAction = () => {
+    const dispatch = useDispatch()
 
-  const dispatch = useDispatch()
+    const images = useAppSelector(getImgAvailability)
+    const themeStyle = useAppSelector(getThemeStyle)
+    const fontSize = useAppSelector(getFontSize)
+    const blindMode = useAppSelector(getStyleMode)
+    const isOptionsOpen = useAppSelector(getOptionsState)
 
-  const images = useAppSelector(getImgAvailability)
-  const themeStyle = useAppSelector(getThemeStyle)
-  const fontSize = useAppSelector(getFontSize)
-  const blindMode = useAppSelector(getStyleMode)
-  const isOptionsOpen = useAppSelector(getOptionsState)
+    const withoutImgClassName = images ? '' : 'withoutImg'
 
-  const withoutImgClassName = images ? '' : 'withoutImg'
-
-  const toggleBlindModeHandler = () => {
-    dispatch(switchBlindMode({blindMode: !blindMode}))
-  }
-  return (
-    <section
-      className={cn(s.callToActionBGWrap, s[(themeStyle ? themeStyle : '')], s[withoutImgClassName], s[fontSize])}>
-      <div className={cn(s.callToAction, 'container', 'callToAction', isOptionsOpen ? s.isOptionOpen : '')}>
-        <h1 className={s.mainTitle}>Online kursy komputerowe <br/> dla seniorów <span
-          className={s.firmNameInMainTitle}>GRANDSCHOOL</span></h1>
-        <p className={s.slogan}>Новые технологии для взрослого поколения перестали быть их ночным кошмаром</p>
-        <NavLink to="/course" className={cn(s.mainToCourseLink, s[(themeStyle ? themeStyle : '')])}>Zacząć naukę</NavLink>
-        <BlindButton fontSize={fontSize} themeStyle={themeStyle} blindMode={blindMode}
-                     switchBlindModeAC={toggleBlindModeHandler}/>
-      </div>
-    </section>
-  )
+    const toggleBlindModeHandler = () => {
+        dispatch(switchBlindMode({blindMode: !blindMode}))
+    }
+    return (
+        <section
+            className={cn(s.callToActionBGWrap, s[(themeStyle ? themeStyle : '')], s[withoutImgClassName], s[fontSize])}>
+            <div className={cn(s.callToAction, 'container', 'callToAction', isOptionsOpen ? s.isOptionOpen : '')}>
+                <h1 className={s.mainTitle}>Online kursy komputerowe <br/> dla seniorów <span
+                    className={s.firmNameInMainTitle}>GRANDSCHOOL</span></h1>
+                <p className={s.slogan}>Новые технологии для взрослого поколения перестали быть их ночным кошмаром</p>
+                <NavLink to="/course" className={cn(s.mainToCourseLink, s[(themeStyle ? themeStyle : '')])}>Zacząć
+                    naukę</NavLink>
+                <BlindButton fontSize={fontSize} themeStyle={themeStyle} blindMode={blindMode}
+                             switchBlindModeAC={toggleBlindModeHandler}/>
+            </div>
+        </section>
+    )
 }
 
 export default CallToAction

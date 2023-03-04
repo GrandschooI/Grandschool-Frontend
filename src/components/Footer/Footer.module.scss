@@ -2,18 +2,47 @@
   color: #fff;
   background-image: -webkit-image-set(
                   url('../../assets/images/footerbg.png') 1x,
-                  url('../../assets/images/footerbgretina.png') 2x  );
+                  url('../../assets/images/footerbgretina.png') 2x);
   background-image: image-set(
                   url('../../assets/images/footerbg.png') 1x,
-                  url('../../assets/images/footerbgretina.png') 2x  );
+                  url('../../assets/images/footerbgretina.png') 2x);
   background-position: right top;
   background-repeat: no-repeat;
   background-size: cover;
+
   &.withoutImg {
     background: linear-gradient(115deg, #618135, #618135 75%, transparent 50%);
   }
+
   a {
     fill: #fff;
+  }
+}
+
+@media (max-width: 1165px) {
+  .footer {
+    //background-image: -webkit-image-set(
+    //  //url('../../assets/images/mine/newOne/Rectangle 22.png') 1x,
+    //                url('../../assets/images/mine/newOne/RectangleDid.png') 2x,
+    //                url('../../assets/images/mine/newOne/RectangleDidRetina.png') 3x);
+    //background-image: image-set(
+    //  // url('../../assets/images/mine/newOne/Rectangle 22.png') 1x,
+    //                url('../../assets/images/mine/newOne/RectangleDid.png') 2x,
+    //                url('../../assets/images/mine/newOne/RectangleDidRetina.png') 3x
+    //);
+    background-position: unset;
+    border: 2px solid red;
+    background-image: url("../../assets/images/mine/newOne/RectangleDid.png"),
+    url("../../assets/images/mine/newOne/Rectangle 22.png");
+
+
+    &.withoutImg {
+      background: linear-gradient(115deg, #618135, #618135 75%, transparent 50%);
+    }
+
+    a {
+      fill: #fff;
+    }
   }
 }
 
@@ -35,26 +64,31 @@ address,
 .footer.yellowTheme {
   background-image: -webkit-image-set(
                   url('../../assets/images/footerbgBlack.png') 1x,
-                  url('../../assets/images/footerbgBlackRetina.png') 2x  );
+                  url('../../assets/images/footerbgBlackRetina.png') 2x);
   background-image: image-set(
                   url('../../assets/images/footerbgBlack.png') 1x,
-                  url('../../assets/images/footerbgBlackRetina.png') 2x  );
+                  url('../../assets/images/footerbgBlackRetina.png') 2x);
   background-position: right;
   background-repeat: no-repeat;
   color: yellow;
+
   &.withoutImg {
     background: linear-gradient(115deg, #000000, #000000 75%, black 50%);
   }
+
   .footerSlogan {
     color: yellow;
   }
+
   .footerTitle:before {
     background-color: rgb(0, 255, 255);
   }
+
   .contactWrap {
     svg {
       fill: rgb(0, 255, 255);
     }
+
     a {
       color: yellow;
 
@@ -72,6 +106,7 @@ address,
     fill: rgb(0, 255, 255);
 
   }
+
   .footerBottom {
     background: transparent;
   }
@@ -80,26 +115,31 @@ address,
 .footer.whiteTheme {
   background-image: -webkit-image-set(
                   url('../../assets/images/footerbgBlack.png') 1x,
-                  url('../../assets/images/footerbgBlackRetina.png') 2x  );
+                  url('../../assets/images/footerbgBlackRetina.png') 2x);
   background-image: image-set(
                   url('../../assets/images/footerbgBlack.png') 1x,
-                  url('../../assets/images/footerbgBlackRetina.png') 2x  );
+                  url('../../assets/images/footerbgBlackRetina.png') 2x);
   background-position: right;
   background-repeat: no-repeat;
   color: #fff;
+
   &.withoutImg {
     background: linear-gradient(115deg, #000000, #000000 75%, #000000 50%);
   }
+
   .footerSlogan {
     color: #fff;
   }
+
   .footerTitle:before {
     background-color: #fff;
   }
+
   .contactWrap {
     svg {
       fill: #fff;
     }
+
     a {
       color: #fff;
     }
@@ -109,10 +149,12 @@ address,
   .socialLink:focus {
     background: transparent;
     opacity: .6;
+
     svg {
       fill: #fff;
     }
   }
+
   .footerBottom {
     background: transparent;
   }
@@ -121,32 +163,39 @@ address,
 .footer.blueTheme {
   background-image: -webkit-image-set(
                   url('../../assets/images/footerbgBlue.png') 1x,
-                  url('../../assets/images/footerbgBlueRetina.png') 2x  );
+                  url('../../assets/images/footerbgBlueRetina.png') 2x);
   background-image: image-set(
                   url('../../assets/images/footerbgBlue.png') 1x,
-                  url('../../assets/images/footerbgBlueRetina.png') 2x  );
+                  url('../../assets/images/footerbgBlueRetina.png') 2x);
   background-position: right;
   background-repeat: no-repeat;
   color: #b8eefb;
+
   &.withoutImg {
     background: linear-gradient(115deg, #273a64, #273a64 75%, #273a64 50%);
   }
+
   .footerSlogan {
     color: #b8eefb;
   }
+
   .footerTop {
     border-top: 1px solid #273a64;
+
     &:before {
       background: #b8eefb;
     }
   }
+
   .footerTitle:before {
     background-color: #273a64;
   }
+
   .contactWrap {
     svg {
       fill: #b8eefb;
     }
+
     a {
       color: #b8eefb;
     }
@@ -156,15 +205,18 @@ address,
     svg {
       fill: #b8eefb;
     }
-     &:hover,
-     &:focus {
-       background-color: #273a64;
-       svg {
-         opacity: .6;
-         fill: #b8eefb;
-       }
-     }
+
+    &:hover,
+    &:focus {
+      background-color: #273a64;
+
+      svg {
+        opacity: .6;
+        fill: #b8eefb;
+      }
+    }
   }
+
   .footerBottom {
     background: transparent;
   }
@@ -203,6 +255,13 @@ address,
 .footerTopWrap {
   display: flex;
   z-index: 1;
+}
+
+//Mine
+@media (min-width: 375px) and (max-width: 1285px) {
+  .footerTopWrap {
+    flex-direction: column;
+  }
 }
 
 .socialItem:not(:last-child) {
@@ -265,6 +324,7 @@ address,
   line-height: 24px;
   width: fit-content;
   margin-right: 70px;
+
   &:not(:first-child) {
     padding-top: 39px;
   }
@@ -292,6 +352,7 @@ address,
 .logoWrap {
   display: flex;
   align-items: center;
+
   .logoText {
     padding-left: 10px;
   }
@@ -430,6 +491,7 @@ address,
   a {
     font-size: 20px;
   }
+
   .footerTitle {
     font-size: 24px;
   }
@@ -441,6 +503,7 @@ address,
   a {
     font-size: 22px;
   }
+
   .footerTitle {
     font-size: 26px;
   }

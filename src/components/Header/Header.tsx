@@ -77,7 +77,6 @@ const Header = () => {
                         {themeStyle === 'blueTheme' && <LogoWordsBlueTheme/>}
                     </a>
                     {!isHeaderChange ? <SearchField themeStyle={themeStyle}/> : <HeaderNavForMainPage/>}
-
                     {blindMode && <button onClick={optionsModeHandler}
                                           className={cn(s.closeBlindOptions, s[(isOptionsOpen ? '' : 'revert')])}>
                         <svg x="0px" y="0px" width="35" viewBox="0 0 512 512" fill="fff">
@@ -95,6 +94,7 @@ const Header = () => {
                     <div className={s.headerBtnWrap}>
                         <BlindButton switchBlindModeAC={toggleBlindModeHandler} themeStyle={themeStyle}
                                      blindMode={blindMode} fontSize={fontSize}/>
+
                         <NavLink className={cn(s.headerNavItem, s[fontSize ? fontSize : ''])} to="/profile">Twoje
                             konto</NavLink>
 
@@ -112,8 +112,10 @@ const Header = () => {
                     </div>
 
                 </div>
-                {!isHeaderChange && <HeaderNav themeStyle={themeStyle}/>}
+
             </div>
+            <div className={cn(s[(isBurgerActive ? 'active' : '')])}>{!isHeaderChange &&
+                <HeaderNav themeStyle={themeStyle}/>}</div>
         </div>
     )
 }
