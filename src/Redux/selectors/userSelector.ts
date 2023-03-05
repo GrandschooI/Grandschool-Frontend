@@ -4,6 +4,7 @@ export const getAuthStatus = (state: AppStateType): boolean => state.userData.is
 export const getUserName = (state: AppStateType): Nullable<string> => state.userData.currentUser.name
 export const getUserSex = (state: AppStateType): Nullable<string> => state.userData.currentUser.gender
 export const getUserId = (state: AppStateType): Nullable<number> => state.userData.currentUser.id
+export const getUserDescription = (state: AppStateType): Nullable<string> => state.userData.currentUser.description
 export const getUserBirthData = (state: AppStateType): Nullable<Date> => state.userData.currentUser.birthday
 export const getUserCountry = (state: AppStateType): Nullable<string> => state.userData.currentUser.country
 export const getUserPhone = (state: AppStateType): Nullable<string> => state.userData.currentUser.phone
