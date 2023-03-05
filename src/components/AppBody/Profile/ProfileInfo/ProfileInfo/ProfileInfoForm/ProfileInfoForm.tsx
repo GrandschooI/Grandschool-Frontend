@@ -12,6 +12,7 @@ import {
   setProfileInfoFormThunkCreator
 } from '../../../../../../Redux/reducers/userSlice';
 import FormErrorMessage from '../../../../../utils/FormErrorMessage/FormErrorMessage';
+import {getUserId} from "../../../../../../Redux/selectors/userSelector";
 
 const profileInfoFormSchema = yup.object().shape({
   name: yup.string(),
@@ -25,7 +26,7 @@ const ProfileInfoForm = () => {
   const dispatch = useDispatch()
   const token = localStorage.getItem('token') as string
 
-  const currentUserId = useAppSelector(state => state.userData.currentUser.id)
+  const currentUserId = useAppSelector(getUserId)
 
   const [startDate, setStartDate] = useState(new Date())
   const [statusAssessment, setStatusAssessment] = useState('')
