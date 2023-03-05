@@ -12,7 +12,13 @@ import {
   setProfileInfoFormThunkCreator
 } from '../../../../../../Redux/reducers/userSlice';
 import FormErrorMessage from '../../../../../utils/FormErrorMessage/FormErrorMessage';
-import {getUserId} from "../../../../../../Redux/selectors/userSelector";
+import {
+  getUserCity,
+  getUserCountry,
+  getUserDescription,
+  getUserId,
+  getUserName
+} from "../../../../../../Redux/selectors/userSelector";
 
 const profileInfoFormSchema = yup.object().shape({
   name: yup.string(),
@@ -27,6 +33,10 @@ const ProfileInfoForm = () => {
   const token = localStorage.getItem('token') as string
 
   const currentUserId = useAppSelector(getUserId)
+  const currentUserName = useAppSelector(getUserName)
+  const currentUserCountry = useAppSelector(getUserCountry)
+  const currentUserCity = useAppSelector(getUserCity)
+  // const currentUserDescription = useAppSelector(getUserDescription)
 
   const [startDate, setStartDate] = useState(new Date())
   const [statusAssessment, setStatusAssessment] = useState('')
@@ -38,11 +48,11 @@ const ProfileInfoForm = () => {
   return (
     <Formik
       initialValues={{
-        name: '',
+        name: currentUserName,
         gender: statusAssessment,
         birthday: new Date(),
-        country: '',
-        city: '',
+        country: currentUserCountry,
+        city: currentUserCity,
         description: ''
       }}
       validationSchema={profileInfoFormSchema}
@@ -59,6 +69,7 @@ const ProfileInfoForm = () => {
             {TextField({
               type: 'text',
               name: 'name',
+              propValue: values.name,
               placeholder: 'Wpisz Name',
               className: `textField ${errors.name && touched.name ? 'errorTextField' : ''}`
             })}
@@ -104,6 +115,7 @@ const ProfileInfoForm = () => {
             {TextField({
               type: 'text',
               name: 'country',
+              propValue: values.country,
               placeholder: 'Wpisz Country',
               className: `textField ${errors.country && touched.country ? 'errorTextField' : ''}`
             })}
@@ -115,6 +127,7 @@ const ProfileInfoForm = () => {
             {TextField({
               type: 'text',
               name: 'city',
+              propValue: values.city,
               placeholder: 'Wpisz City',
               className: `textField ${errors.city && touched.city ? 'errorTextField' : ''}`
             })}
