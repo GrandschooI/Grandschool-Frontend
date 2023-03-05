@@ -23,7 +23,6 @@ div.aboutUsBody {
 .yellowTheme {
   background: #000;
   color: yellow;
-  margin-top: -90px;
 
   .aboutUsBody {
     h2 {
@@ -32,10 +31,10 @@ div.aboutUsBody {
   }
 }
 
+
 .whiteTheme {
   background: #fff;
   color: #000;
-  margin-top: -90px;
 
   .aboutUsBody {
     h2 {
@@ -47,7 +46,7 @@ div.aboutUsBody {
 .blueTheme {
   background: #afe2ef;
   color: #273a64;
-  margin-top: -90px;
+
 
   .aboutUsBody {
     h2 {
@@ -57,8 +56,14 @@ div.aboutUsBody {
 }
 
 .aboutUsSection.blindOptionsOpen {
-  padding-top: 90px;
+  padding-top: 3px;
   transition: all .3s ease;
+}
+
+@media (max-width: 997px) {
+  .aboutUsSection.blindOptionsOpen {
+    padding-top: 228px;
+  }
 }
 
 .medium {
@@ -77,4 +82,15 @@ div.aboutUsBody {
   }
 }
 
-
+//@media(max-width: 1000px) {
+//  .yellowTheme,
+//  {
+//    margin-top: 0px;
+//  }
+//  .whiteTheme {
+//    margin-top: 150px;
+//  }
+//  .blueTheme {
+//    margin-top: 150px;
+//  }
+//}

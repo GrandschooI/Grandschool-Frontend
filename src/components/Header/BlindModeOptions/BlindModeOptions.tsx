@@ -14,14 +14,10 @@ import {useDispatch} from 'react-redux';
 import {setFontSizeMode, setImgAvailability, setThemeStyleMode} from "../../../Redux/reducers/styleSlice";
 
 const BlindModeOptions = () => {
-
     const dispatch = useDispatch()
-
-
     const fontSizeFromLocalStorage = localStorage.getItem('fontSizeFromLocalStorage')
     const themeStyleFromLocalStorage = localStorage.getItem('themeStyleFromLocalStorage')
     const imagesFromLocalStorage = localStorage.getItem('imagesFromLocalStorage')
-
     const themeStyle = useAppSelector(getThemeStyle)
     const fontSize = useAppSelector(getFontSize)
     const blindMode = useAppSelector(getStyleMode)
