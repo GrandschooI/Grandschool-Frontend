@@ -195,8 +195,8 @@ export type setProfileActionType = {
   name: Nullable<string>
   gender: string
   birthday: Date
-  country: string
-  city: string
+  country: Nullable<string>
+  city: Nullable<string>
   description: string
 }
 type setAuthActionType = {
