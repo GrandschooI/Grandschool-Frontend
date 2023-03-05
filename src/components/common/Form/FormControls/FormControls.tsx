@@ -4,6 +4,7 @@ import cn from 'classnames'
 import EyeIcon from '../../../SVGConponents/Forms/EyeIcon'
 import CrossEyeIcon from '../../../SVGConponents/Forms/CrossEyeIcon'
 import s from './FormControls.module.scss'
+import {Nullable} from "../../../../Redux/redux-toolkit-store";
 
 export const TextField: React.FC<propsForTextFieldType> = (
   {
@@ -95,7 +96,7 @@ type propsForTextFieldType = {
   className?: string
   validators?: object
   changeToText?: boolean,
-  propValue?: string,
+  propValue?: Nullable<string>,
 }
 type propsForRadioType = {
   name: string
