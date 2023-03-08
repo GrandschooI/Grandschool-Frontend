@@ -36,7 +36,6 @@ const AuthPage = () => {
     dispatch(registerThunkCreator(formData.emailOrPhone, formData.password, formData.confirmPassword))
   }
   const onLoginSubmit = (formData: loginDataType, onSubmitProps: any) => {
-    debugger
     dispatch(loginThunkCreator(formData.email, formData.password))
     onSubmitProps.setSubmitting(false)
   }
