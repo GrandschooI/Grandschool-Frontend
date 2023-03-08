@@ -11,7 +11,7 @@ type propsType = {
 const WebsitesTopic: React.FC<propsType> = ({websitesData}) => {
     const themeStyle = useAppSelector(getThemeStyle)
     const fontSize = useAppSelector(getFontSize)
-    const fill = themeStyle === 'yellowTheme' ? 'yellow'
+    const fill = themeStyle === 'yellowTheme' ? 'aqua'
         : themeStyle === 'whiteTheme' ? '#000'
             : themeStyle === 'blueTheme' ? '#273a64'
                 : '#83A358'
