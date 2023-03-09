@@ -23,7 +23,6 @@ const App = () => {
             <Switch>
                 <Route path="/">
                     <section>
-                        {/*<Footer/>*/}
                         <Header/>
                         <AppBody/>
                         <Footer/>
