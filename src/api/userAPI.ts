@@ -1,5 +1,4 @@
 import {instance} from './api'
-import axios from "axios";
 import {Nullable} from "../Redux/redux-toolkit-store";
 import {setProfileActionType} from "../Redux/reducers/userSlice";
 
@@ -26,9 +25,9 @@ export const userAPI = {
       })
     )
   },
-  verifyMail(url: string) {
+  verifyMail(url: {email: Nullable<string>}) {
     return (
-      axios.create({withCredentials: true}).post(url)
+      instance.post('send-email-verification', url)
     )
   }
 }
