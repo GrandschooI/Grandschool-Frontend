@@ -4,13 +4,7 @@ import cn from 'classnames'
 import './CallToActionGlobal.scss'
 import s from './CallToAction.module.scss'
 import {useAppSelector} from '../../../../utils/Hooks/useAppSelector';
-import {
-  getFontSize,
-  getImgAvailability,
-  getOptionsState,
-  getStyleMode,
-  getThemeStyle
-} from "../../../../Redux/selectors/styleSelector";
+import {getFontSize, getImgAvailability, getStyleMode, getThemeStyle} from '../../../../Redux/selectors/styleSelector';
 import BlindButton from '../../../utils/BlindButton/BlindButton';
 import {useDispatch} from 'react-redux';
 import {switchBlindMode} from "../../../../Redux/reducers/styleSlice";
@@ -24,10 +18,8 @@ const CallToAction = () => {
   const themeStyle = useAppSelector(getThemeStyle)
   const fontSize = useAppSelector(getFontSize)
   const blindMode = useAppSelector(getStyleMode)
-  const isOptionsOpen = useAppSelector(getOptionsState)
 
   const withoutImgClassName = images ? '' : 'withoutImg'
-
 
   const toggleBlindModeHandler = () => {
     dispatch(switchBlindMode({blindMode: !blindMode}))
@@ -35,11 +27,11 @@ const CallToAction = () => {
   return (
     <section
       className={cn(s.callToActionBGWrap, s[(themeStyle ? themeStyle : '')], s[withoutImgClassName], s[fontSize])}>
-      <div className={cn(s.callToAction, 'container', 'callToAction', isOptionsOpen ? s.isOptionOpen : '')}>
+      <div className={cn(s.callToAction, 'container', 'callToAction')}>
         <h1 className={s.mainTitle}>Online kursy komputerowe <br/> dla seniorów <span
           className={s.firmNameInMainTitle}>GRANDSCHOOL</span></h1>
         <p className={s.slogan}>Новые технологии для взрослого поколения перестали быть их ночным кошмаром</p>
-        <NavLink to="/course" className={cn(s.mainToCourseLink, s[(themeStyle ? themeStyle : '')])}>Zacząć naukę</NavLink>
+        <NavLink to="/course" className={s.mainToCourseLink}>Zacząć naukę</NavLink>
         <BlindButton fontSize={fontSize} themeStyle={themeStyle} blindMode={blindMode}
                      switchBlindModeAC={toggleBlindModeHandler}/>
       </div>

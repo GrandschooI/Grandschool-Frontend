@@ -192,7 +192,7 @@ const Promises = () => {
         </li>
       </ul>
 
-      <Carousel autoPlay={false} swipeable={true} infiniteLoop={false} interval={5000} centerMode={false}>
+      <Carousel autoPlay={false} swipeable={true} infiniteLoop={false} interval={5000} centerMode={true}>
         <div className={s.promisesItem}>
           {images && <div className={s.promisesIconWrap}>
               <svg className={s.promisesIcon} width="51" height="50" viewBox="0 0 51 50" fill="none"
