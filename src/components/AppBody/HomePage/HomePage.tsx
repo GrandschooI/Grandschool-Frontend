@@ -13,10 +13,8 @@ import {useAppSelector} from '../../../utils/Hooks/useAppSelector';
 import {getOptionsState, getThemeStyle} from '../../../Redux/selectors/styleSelector';
 
 const HomePage = () => {
-
     const themeStyle = useAppSelector(getThemeStyle)
     const isOptionsOpen = useAppSelector(getOptionsState)
-
     return (
         <div className={cn(s.homepage, themeStyle ? s[themeStyle] : '', isOptionsOpen ? s.openedBlindOption : '')}>
             <CallToAction/>

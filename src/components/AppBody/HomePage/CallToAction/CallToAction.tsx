@@ -15,7 +15,6 @@ import BlindButton from '../../../utils/BlindButton/BlindButton';
 import {useDispatch} from 'react-redux';
 import {switchBlindMode} from "../../../../Redux/reducers/styleSlice";
 
-
 const CallToAction = () => {
     const dispatch = useDispatch()
 
@@ -39,8 +38,11 @@ const CallToAction = () => {
                 <p className={s.slogan}>Новые технологии для взрослого поколения перестали быть их ночным кошмаром</p>
                 <NavLink to="/course" className={cn(s.mainToCourseLink, s[(themeStyle ? themeStyle : '')])}>Zacząć
                     naukę</NavLink>
-                <BlindButton fontSize={fontSize} themeStyle={themeStyle} blindMode={blindMode}
-                             switchBlindModeAC={toggleBlindModeHandler}/>
+                <BlindButton fontSize={fontSize}
+                             themeStyle={themeStyle}
+                             blindMode={blindMode}
+                             switchBlindModeAC={toggleBlindModeHandler}
+                />
             </div>
         </section>
     )

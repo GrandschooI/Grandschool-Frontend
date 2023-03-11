@@ -17,27 +17,28 @@ import ConfirmMail from "./ConfirmMail/ConfirmMail";
 import CourseActivation from "./CourseActivation/CourseActivation";
 
 const AppBody = () => {
-  const isOptionsOpen = useAppSelector(getOptionsState)
-  return (
-    <div className={cn(s.appBody, isOptionsOpen ? s.openedBlindOption : '')}>
-      <Switch>
-        <Route exact path="/" render={() => <HomePage/>}/>
-        <Route path="/registration" render={() => <AuthPage/>}/>
-        <Route path="/confirm-registration" render={() => <AuthPage/>}/>
-        <Route path="/login" render={() => <AuthPage/>}/>
-        <Route path="/profile" render={() => <Profile/>}/>
-        <Route path="/about-us" render={() => <AboutUs/>}/>
-        <Route path="/course" render={() => <Course/>}/>
-        <Route path="/teachers" render={() => <Teachers/>}/>
-        <Route path="/info" render={() => <Info/>}/>
-        <Route path="/payment" render={() => <Payment/>}/>
-        <Route path="/email-verification" render={() => <ConfirmMail/>}/>
-        <Route path="/not-found" render={() => <NotFound/>}/>
-        <Route path="/course-activation" render={() => <CourseActivation/>}/>
-        <Redirect path="*" to={'/not-found'}/>
-      </Switch>
-    </div>
-  )
+    const isOptionsOpen = useAppSelector(getOptionsState)
+    return (
+        <div className={cn(s.appBody, isOptionsOpen ? s.openedBlindOption : '')}>
+
+            <Switch>
+                <Route exact path={"/"} render={() => <HomePage/>}/>
+                <Route path="/registration" render={() => <AuthPage/>}/>
+                <Route path="/confirm-registration" render={() => <AuthPage/>}/>
+                <Route path="/login" render={() => <AuthPage/>}/>
+                <Route path="/profile" render={() => <Profile/>}/>
+                <Route path="/about-us" render={() => <AboutUs/>}/>
+                <Route path="/course" render={() => <Course/>}/>
+                <Route path="/teachers" render={() => <Teachers/>}/>
+                <Route path="/info" render={() => <Info/>}/>
+                <Route path="/payment" render={() => <Payment/>}/>
+                <Route path="/email-verification" render={() => <ConfirmMail/>}/>
+                <Route path="/not-found" render={() => <NotFound/>}/>
+                <Route path="/course-activation" render={() => <CourseActivation/>}/>
+                <Redirect path="*" to={'/not-found'}/>
+            </Switch>
+        </div>
+    )
 }
 
 export default AppBody

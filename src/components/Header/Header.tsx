@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import {NavLink, useLocation} from 'react-router-dom'
 import cn from 'classnames'
 import '../../style.scss'
@@ -18,9 +18,9 @@ import s from './Header.module.scss'
 import {useAppSelector} from '../../utils/Hooks/useAppSelector';
 import {getFontSize, getOptionsState, getStyleMode, getThemeStyle} from '../../Redux/selectors/styleSelector';
 import BlindModeOptions from './BlindModeOptions/BlindModeOptions';
-import BlindButton from '../utils/BlindButton/BlindButton';
 import {useDispatch} from 'react-redux';
 import {setOptionsMode, switchBlindMode} from "../../Redux/reducers/styleSlice";
+import BlindButton from "../utils/BlindButton/BlindButton";
 
 const Header = () => {
     const blindModeFromLocalStorage = localStorage.getItem('blindModeFromLocalStorage')
@@ -61,6 +61,19 @@ const Header = () => {
             dispatch(switchBlindMode({blindMode: true}))
         }
     }, [blindModeFromLocalStorage])
+    const getWindowSize = () => {
+        const {innerWidth} = window
+        return {innerWidth}
+    }
+    const [windowSize, setWindowSize] = useState(getWindowSize())
+    useEffect(() => {
+        const handleWindowSize = () => setWindowSize(getWindowSize)
+        window.addEventListener("resize", handleWindowSize)
+        return () => window.removeEventListener("resize", handleWindowSize)
+    }, [])
+
+    const screen = windowSize.innerWidth <= 768
+
     return (
         <div className={cn(s.header, s[(themeStyle ? themeStyle : '')], 'header', s[fontSize])}>
             <BlindModeOptions/>
@@ -90,14 +103,16 @@ const Header = () => {
                         </svg>
                     </button>
                     }
-
                     <div className={s.headerBtnWrap}>
-                        <BlindButton switchBlindModeAC={toggleBlindModeHandler} themeStyle={themeStyle}
-                                     blindMode={blindMode} fontSize={fontSize}/>
+                        {
+                            useLocation().pathname === "/" && screen ? null :
+                                <BlindButton switchBlindModeAC={toggleBlindModeHandler} themeStyle={themeStyle}
+                                             blindMode={blindMode} fontSize={fontSize}/>
+                        }
 
-                        <NavLink className={cn(s.headerNavItem, s[fontSize ? fontSize : ''])} to="/profile">Twoje
-                            konto</NavLink>
-
+                        <NavLink className={cn(s.headerNavItem, s[fontSize ? fontSize : ''])} to="/profile">
+                            Twoje konto
+                        </NavLink>
                         <button className={s.burgerBtn} onClick={onBurgerClickHandler}>
                             <svg className={cn(s.ham, s.ham6, s[(isBurgerActive ? 'active' : '')])}
                                  viewBox="0 0 100 100" width="60">
