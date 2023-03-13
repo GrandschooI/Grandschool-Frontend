@@ -35,5 +35,6 @@ export default HeaderNav
 
 type PropsType = {
   themeStyle: Nullable<string>
+  themeStyle: Nullable<string>
   fontSize: Nullable<string>
 }

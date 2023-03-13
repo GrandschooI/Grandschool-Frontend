@@ -181,6 +181,7 @@ span.activeItem {
   .asideLink {
     background-color: transparent;
     color: yellow;
+    font-size: 18px;
     &:after {
       background: url('../../../../assets/images/asideBlackMode.svg') no-repeat;
     }
@@ -229,6 +230,7 @@ span.activeItem {
     background: #000;
     color: #fff;
   }
+
 
   .asideLink {
     &:after {
@@ -296,6 +298,20 @@ span.activeItem {
   }
 }
 
+.title {
+  transition: all .2s linear;
+}
+
+.medium {
+  .title {
+    font-size: 20px;
+  }
+}
+
+.large {
+  .title {
+    font-size: 22px;
+  }
 .medium {
   .asideLink {
     font-size: 20px;

@@ -15,6 +15,18 @@
   }
 }
 
+p {
+  transition: all .2s linear;
+}
+
+.medium {
+  font-size: 20px;
+}
+
+.large {
+  font-size: 22px;
+}
+
 @media (min-width: 985px) and (max-width: 1280px) {
   .projectBody {
     margin-left: 41px;

@@ -20,15 +20,12 @@ import {getFontSize, getImgAvailability, getStyleMode, getThemeStyle} from '../.
 
 
 const Footer = () => {
-
     const images = useAppSelector(getImgAvailability)
     const themeStyle = useAppSelector(getThemeStyle)
     const fontSize = useAppSelector(getFontSize)
     const blindMode = useAppSelector(getStyleMode)
 
-
     const withoutImgClassName = images ? '' : 'withoutImg'
-
     return (
         <div data-aos="fade" data-aos-once="true"
              className={cn(s.footer, s[(themeStyle ? themeStyle : '')], s[fontSize], s[withoutImgClassName])}>
@@ -47,54 +44,61 @@ const Footer = () => {
                         </div>
                         <p className={s.footerSlogan}>
                             Brak profesjonalnej pomocy przekłada się na słabe wyniki w nauce. Indywidualne
-                            podejście do każdego ucznia, przejrzysta forma prezentacji materiału i odpowiednia motywacja
+                            podejście do każdego ucznia, przejrzysta forma prezentacji materiału i odpowiednia
+                            motywacja
                             - to trzy podstawy efektywnej nauki
                         </p>
                     </div>
                     <div className={s.topWrapColumn}>
-                        <h3 className={s.footerTitle}>Contact</h3>
-                        <div className={s.contactWrap}>
-                            {images && <MapPoint/>}
-                            <address>Kraków, Polska</address>
+                        <div className={s.contacts}>
+                            <h3 className={s.footerTitle}>Contact</h3>
+                            <div className={s.contactWrap}>
+                                {images && <MapPoint/>}
+                                <address>Kraków, Polska</address>
+                            </div>
+                            <p className={s.contactWrap}>
+                                {images && <FooterMailIcon/>}
+                                <a className={s.mail} href="mailto:contact@grandschool.pl"
+                                   rel="noreferrer">contact@grandschool.pl</a>
+                            </p>
                         </div>
-                        <p className={s.contactWrap}>
-                            {images && <FooterMailIcon/>}
-                            <a className={s.mail} href="mailto:contact@grandschool.pl"
-                               rel="noreferrer">contact@grandschool.pl</a>
-                        </p>
                     </div>
                     <div className={s.topWrapColumn}>
-                        <h3 className={s.footerTitle}>Follow Us</h3>
-                        <ul className={s.socialList}>
-                            <li className={s.socialItem}>
-                                <a href="https://www.facebook.com/grandschool.poland" target="_blank" rel="noreferrer"
-                                   className={s.socialLink}>
-                                    <FacebookIcon/>
-                                </a>
-                            </li>
-                            <li className={s.socialItem}>
-                                <a href="https://www.youtube.com/channel/UC9EqiOq_ieypXdoXq8FLRkg" target="_blank"
-                                   rel="noreferrer"
-                                   className={s.socialLink}>
-                                    <YoutubeIcon/>
-                                </a>
-                            </li>
-                            <li className={s.socialItem}>
-                                <a href="https://www.instagram.com/grandschool.poland" target="_blank" rel="noreferrer"
-                                   className={s.socialLink}>
-                                    <InstagramIcon/>
-                                </a>
-                            </li>
-                        </ul>
+                        <div className={s.footerPosition}>
+                            <h3 className={s.footerTitle}>Follow Us</h3>
+                            <ul className={s.socialList}>
+                                <li className={s.socialItem}>
+                                    <a href="https://www.facebook.com/grandschool.poland" target="_blank"
+                                       rel="noreferrer"
+                                       className={s.socialLink}>
+                                        <FacebookIcon/>
+                                    </a>
+                                </li>
+                                <li className={s.socialItem}>
+                                    <a href="https://www.youtube.com/channel/UC9EqiOq_ieypXdoXq8FLRkg"
+                                       target="_blank"
+                                       rel="noreferrer"
+                                       className={s.socialLink}>
+                                        <YoutubeIcon/>
+                                    </a>
+                                </li>
+                                <li className={s.socialItem}>
+                                    <a href="https://www.instagram.com/grandschool.poland" target="_blank"
+                                       rel="noreferrer"
+                                       className={s.socialLink}>
+                                        <InstagramIcon/>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div className={cn(s.footerBottom)}>
+            <span className={cn(s.footerBottom)}>
                 <p className="container">
                     © Copyright 2021 GrandSchool Sp. z o.o.
                 </p>
-            </div>
+            </span>
         </div>
     )
 }

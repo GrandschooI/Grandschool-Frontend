@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import s from './Pagination.module.scss'
 import cn from "classnames";
 import {useAppSelector} from "../../../utils/Hooks/useAppSelector";
-import {getThemeStyle} from "../../../Redux/selectors/styleSelector";
+import {getFontSize, getThemeStyle} from "../../../Redux/selectors/styleSelector";
 
 const Pagination: FC<paginationPropsType> = (
     {
@@ -13,6 +13,8 @@ const Pagination: FC<paginationPropsType> = (
         nextPageURL
     }) => {
     const themeStyle = useAppSelector(getThemeStyle)
+
+    const fontSize = useAppSelector(getFontSize)
     const changeTheme = (name: string) => cn(name, s[themeStyle ? themeStyle : ''], [themeStyle ? themeStyle : ''])
     const paginationItem = changeTheme(s.paginationItem)
     const active = changeTheme(s.active)
@@ -26,7 +28,7 @@ const Pagination: FC<paginationPropsType> = (
         sendCurrentPage(pageNumber)
     }
     return (
-        <div className={s.paginationWrapper}>
+        <div className={cn(s.paginationWrapper, s[fontSize])}>
             <ul className={s.paginationList}>
                 <li className={paginationItem}>
                     <button className={paginationItem} type='button'
