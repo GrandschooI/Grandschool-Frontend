@@ -17,7 +17,8 @@ const AsideItemWithTopics: React.FC<PropsType> = ({activeItem, location, itemLin
                 classNames={{
                     enter: s.optionEnter,
                     enterActive: s.optionEnterActive,
-                    exit: s.optionExitActive
+                    exit: s.optionExit,
+                    exitActive: s.optionExitActive
                 }}
                 appear
                 unmountOnExit

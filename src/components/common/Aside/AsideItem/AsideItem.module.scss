@@ -1,3 +1,9 @@
+.asideItem {
+  max-width: 310px;
+  @media (max-width: 1280px) {
+    max-width: 100%;
+  }
+}
 .asideLink {
   display: flex;
   flex-direction: column;
@@ -56,15 +62,16 @@
 
 .optionEnter {
   max-height: 0;
-  transition: all 1s ease;
+  overflow: hidden;
 }
 
 .optionEnterActive {
-  max-height: 300px;
-  overflow: hidden;
-  transition: all 1s ease;
+  max-height: 800px;
+  transition: all 1.5s ease;
 }
-
+.optionExit {
+  max-height: 800px;
+}
 .optionExitActive {
   max-height: 0;
   overflow: hidden;
