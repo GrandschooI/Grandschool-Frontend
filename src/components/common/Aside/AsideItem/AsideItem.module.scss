@@ -1,5 +1,8 @@
 .asideItem {
   max-width: 310px;
+  @media (max-width: 1280px) {
+    max-width: 100%;
+  }
 }
 .asideLink {
   display: flex;
