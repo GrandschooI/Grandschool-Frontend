@@ -133,6 +133,10 @@ const Header = () => {
                 <HeaderNav themeStyle={themeStyle}/>}</div>
         </div>
     )
+      </div>
+      {!isHeaderChange && <HeaderNav themeStyle={themeStyle} fontSize={fontSize}/>}
+    </div>
+  )
 }
 export default Header
 

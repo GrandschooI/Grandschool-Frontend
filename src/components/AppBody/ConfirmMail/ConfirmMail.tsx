@@ -7,18 +7,26 @@ import ConfirmRegistrationForm from '../AuthPages/ConfirmRegistration/ConfirmReg
 import {useAppSelector} from '../../../utils/Hooks/useAppSelector';
 import {getFontSize, getThemeStyle} from '../../../Redux/selectors/styleSelector';
 import {toast} from 'react-toastify';
+import {getUserEmail} from "../../../Redux/selectors/userSelector";
+import {useDispatch} from "react-redux";
+import {toggleIsLoaded} from "../../../Redux/reducers/styleSlice";
 
 const ConfirmMail = () => {
+  const dispatch = useDispatch()
 
   const themeStyle = useAppSelector(getThemeStyle)
   const fontSize = useAppSelector(getFontSize)
+  const emailCurrentUser = useAppSelector(getUserEmail)
 
-  const urlForConfirmRequest = useLocation().search.replace('?url=', '');
+  // const urlForConfirmRequest = useLocation().search.replace('?url=', '');
   const [isMailConfirmed, setMailConfirmStatus] = useState(false)
 
   useEffect(() => {
-    userAPI.verifyMail(urlForConfirmRequest).then(res => {
+    dispatch(toggleIsLoaded({isLoaded: false}))
+    userAPI.verifyMail({email: emailCurrentUser}).then(res => {
       if (res.status === HttpStatusCode.OK) setMailConfirmStatus(true)
+    }).finally(() => {
+      dispatch(toggleIsLoaded({isLoaded: true}))
     })
   }, [])
 

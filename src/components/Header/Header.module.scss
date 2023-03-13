@@ -24,7 +24,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 35px 0 0;
+  padding: 40px 0 0;
   position: relative;
 }
 
@@ -55,7 +55,6 @@ s.sdf {
     width: 34%;
   }
 }
-
 
 .headerNavLink:before {
   content: "";
@@ -113,7 +112,6 @@ s.sdf {
       font-size: 16px;
       transition: all .2s ease;
     }
-
     &:hover,
     &:focus-visible {
       color: #618135;
@@ -140,10 +138,6 @@ s.sdf {
   color: #000;
   font-weight: 500;
   transition: all .5s ease;
-  @media (max-width: 1270px) {
-    font-size: 14px;
-    transition: all .2s ease;
-  }
 }
 
 .mobileAccountLink {
@@ -169,6 +163,7 @@ s.sdf {
 
 .headerNav.notMainPage {
   width: 45%;
+  transition: all .3s ease;
 }
 
 @media (max-width: 1280px) {
@@ -188,22 +183,9 @@ s.sdf {
   .headerNavItem {
     font-size: 22px;
     transition: all .2s ease;
-    @media (max-width: 1370px) {
-      font-size: 20px;
-      transition: all .2s ease;
-    }
-    @media (max-width: 1270px) {
-      font-size: 18px;
-      transition: all .2s ease;
-    }
-    @media (max-width: 1040px) {
-      font-size: 16px;
-      transition: all .2s ease;
-    }
-    @media (max-width: 800px) {
-      font-size: 14px;
-      transition: all .2s ease;
-    }
+  }
+  .notMainPage {
+    width: 48%;
   }
 }
 
@@ -212,6 +194,7 @@ s.sdf {
   .headerNavItem {
     font-size: 24px;
     transition: all .2s ease;
+
     @media (max-width: 1370px) {
       font-size: 22px;
       transition: all .2s ease;
@@ -567,19 +550,17 @@ s.sdf {
     }
 
     .blindButton,
-      //.headerNavItem {
-      //  font-size: 14px;
-      //}
+    .headerNavItem {
+      font-size: 14px;
+    }
     .headerNavItem {
       padding: 0 50px;
     }
-
-    //.headerNavLink {
-    //  font-size: 15px;
-    //}
+    .headerNavLink {
+      font-size: 15px;
+    }
   }
 }
-
 
 @media (max-width: 1000px) {
   .blindButton {
@@ -611,7 +592,8 @@ s.sdf {
     &.blueTheme {
       background: #afe2ef;
     }
-
+    position: fixed;
+    background: #f7f5ec;
     .headerTop {
       padding: 25px 15px;
     }
@@ -691,6 +673,9 @@ s.sdf {
       &.blueTheme {
         stroke: #273a64;
       }
+      stroke:#618135;
+      stroke-width:5.5;
+      stroke-linecap:round;
     }
 
     .ham6 .top {
@@ -747,7 +732,6 @@ s.sdf {
 
           address,
           a {
-            font-size: 16px;
             color: #618135;
             text-decoration: none;
 
@@ -791,7 +775,6 @@ s.sdf {
       left: 0;
       opacity: 1;
       transition: all .3s ease;
-
       &.yellowTheme {
         background-color: black;
       }

@@ -8,9 +8,12 @@ import {getWebsitesCategoryThunkCreator} from '../../../Redux/reducers/infoSlice
 import Websites from './InfoContent/Websites/Websites';
 import {useAppSelector} from '../../../utils/Hooks/useAppSelector';
 import {getInfoMenu} from '../../../Redux/selectors/infoSelector';
+import {getFontSize, getThemeStyle} from "../../../Redux/selectors/styleSelector";
 
 const Info = () => {
   const dispatch = useDispatch()
+  const themeStyle = useAppSelector(getThemeStyle)
+  const fontSize = useAppSelector(getFontSize)
   const infoAsideItems:asideItemsType = useAppSelector(getInfoMenu)
   let defaultLinkForRedirect = null
   useEffect(() => {
@@ -20,7 +23,7 @@ const Info = () => {
   if (infoAsideItems[0].topics.length) defaultLinkForRedirect = infoAsideItems[0].topics[0].topicLink
 
   return (
-    <div className={cn('container', s.infoWrapper)}>
+    <div className={cn('container', s.infoWrapper, s[themeStyle ? themeStyle : ''], s[fontSize ? fontSize : ''])}>
       <h1>Info</h1>
       <div className={s.infoContentWrap}>
         <Aside asideItems={infoAsideItems}/>

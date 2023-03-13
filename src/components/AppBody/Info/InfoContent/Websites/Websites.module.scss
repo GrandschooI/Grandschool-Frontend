@@ -14,10 +14,16 @@
 }
 
 .websitesList {
+  margin-left: 60px;
   font-weight: 400;
   font-size: 18px;
   line-height: 26px;
   padding: 0 0 0 1.875rem;
+  @media (max-width: 1280px) {
+    padding: 1.875em 0 0 0;
+    width: 90%;
+    margin: 0 auto;
+  }
   .websitesItem {
     position: relative;
     display: flex;
@@ -35,11 +41,46 @@
       font-weight: 500;
       text-decoration: none;
       cursor: pointer;
-      transition: all .2s ease;
+      transition: all .3s ease;
       &:hover {
         color: #618135;
-        transition: all .2s ease;
+        transition: all .3s ease;
       }
     }
   }
+}
+
+.yellowTheme {
+  &.websitesItem {
+    a {
+      color: yellow;
+      &:hover {
+        color: aqua;
+      }
+    }
+  }
+}
+.whiteTheme {
+  &.websitesItem {
+    a:hover {
+      color: #000;
+    }
+  }
+}
+.blueTheme {
+  &.websitesItem {
+    a {
+      color: black;
+      &:hover {
+        color: #273a64;
+      }
+    }
+  }
+}
+
+.medium {
+  font-size: 20px;
+}
+.large {
+  font-size: 22px;
 }

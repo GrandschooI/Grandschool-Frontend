@@ -3,7 +3,7 @@ import s from './Aside.module.scss'
 import AsideItem from './AsideItem/AsideItem'
 import cn from 'classnames'
 import {useAppSelector} from '../../../utils/Hooks/useAppSelector';
-import {getThemeStyle} from '../../../Redux/selectors/styleSelector';
+import {getFontSize, getThemeStyle} from "../../../Redux/selectors/styleSelector";
 
 type PropsType = {
     asideItems: Array<any>
@@ -11,7 +11,9 @@ type PropsType = {
 
 const Aside: React.FC<PropsType> = ({asideItems}) => {
     const themeStyle = useAppSelector(getThemeStyle)
+
     const aside = cn(s.aside, s[themeStyle ? themeStyle : ''])
+    const fontSize = useAppSelector(getFontSize)
 
     return (
         <aside className={aside}>
@@ -19,7 +21,7 @@ const Aside: React.FC<PropsType> = ({asideItems}) => {
                 <ul>
                     {asideItems.map((el, index) =>
                         <AsideItem key={index} itemTitle={el.itemTitle} itemLink={el.itemLink}
-                                   topics={el.topics ? el.topics : undefined} themeStyle={themeStyle}/>
+                                   topics={el.topics ? el.topics : undefined} themeStyle={themeStyle} fontSize={fontSize}/>
                     )}
                 </ul>
             </nav>

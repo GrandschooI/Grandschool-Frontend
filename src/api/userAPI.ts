@@ -1,5 +1,6 @@
 import {instance} from './api'
-import axios from "axios";
+import {Nullable} from "../Redux/redux-toolkit-store";
+import {setProfileActionType} from "../Redux/reducers/userSlice";
 
 export const userAPI = {
   setProfilePhoto(userId: number, token: string, photoFile: any) {
@@ -15,9 +16,18 @@ export const userAPI = {
       })
     )
   },
-    verifyMail (url: string) {
-        return (
-            axios.create({withCredentials: true}).post(url)
-        )
-    }
+  setProfileIfoForm(userId: Nullable<number>, token: string, userFormData: setProfileActionType) {
+    return (
+      instance.put(`users/${userId}`, userFormData, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        }
+      })
+    )
+  },
+  verifyMail(url: {email: Nullable<string>}) {
+    return (
+      instance.post('send-email-verification', url)
+    )
+  }
 }

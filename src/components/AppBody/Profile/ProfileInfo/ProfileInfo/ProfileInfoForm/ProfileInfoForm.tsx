@@ -7,17 +7,18 @@ import {RadioButton, TextField} from '../../../../../common/Form/FormControls/Fo
 import '../../../../../../style.scss'
 import * as yup from 'yup'
 import {useAppSelector} from '../../../../../../utils/Hooks/useAppSelector';
+import {useDispatch} from 'react-redux';
 import {
-  getAboutUserText,
-  getUserBirthData,
+  setProfileInfoFormThunkCreator
+} from '../../../../../../Redux/reducers/userSlice';
+import FormErrorMessage from '../../../../../utils/FormErrorMessage/FormErrorMessage';
+import {
   getUserCity,
   getUserCountry,
-  getUserName,
-  getUserSex
-} from '../../../../../../Redux/selectors/userSelector';
-import {useDispatch} from 'react-redux';
-import {setProfileInfo} from '../../../../../../Redux/reducers/userSlice';
-import FormErrorMessage from '../../../../../utils/FormErrorMessage/FormErrorMessage';
+  getUserDescription,
+  getUserId,
+  getUserName
+} from "../../../../../../Redux/selectors/userSelector";
 
 const profileInfoFormSchema = yup.object().shape({
   name: yup.string(),
@@ -28,50 +29,47 @@ const profileInfoFormSchema = yup.object().shape({
 })
 
 const ProfileInfoForm = () => {
-  const name = useAppSelector(getUserName)
-  const country = useAppSelector(getUserCountry)
-  const sex = useAppSelector(getUserSex)
-  const birthData = useAppSelector(getUserBirthData)
-  const city = useAppSelector(getUserCity)
-  const aboutUserText = useAppSelector(getAboutUserText)
-
   const dispatch = useDispatch()
-  const [startDate, setStartDate] = useState(new Date())
-  const [aboutMeDescription, setAboutMeDescription] = useState('')
-  const [statusAssessment, setStatusAssessment] = useState('')
-  const [localName, setLocalName] = useState(name)
+  const token = localStorage.getItem('token') as string
 
-  const onChangeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
-    setAboutMeDescription(e.currentTarget.value);
-  };
+  const currentUserId = useAppSelector(getUserId)
+  const currentUserName = useAppSelector(getUserName)
+  const currentUserCountry = useAppSelector(getUserCountry)
+  const currentUserCity = useAppSelector(getUserCity)
+  // const currentUserDescription = useAppSelector(getUserDescription)
+
+  const [startDate, setStartDate] = useState(new Date())
+  const [statusAssessment, setStatusAssessment] = useState('')
+
+
   const getRadioStatus = (status: string) => {
     setStatusAssessment(status)
   };
   return (
     <Formik
       initialValues={{
-        name: '',
+        name: currentUserName,
         gender: statusAssessment,
-        birthDate: new Date(),
-        country: '',
-        city: '',
-        aboutUserText: ''
+        birthday: new Date(),
+        country: currentUserCountry,
+        city: currentUserCity,
+        description: ''
       }}
       validationSchema={profileInfoFormSchema}
       validateOnBlur={true}
       validateOnChange={true}
       onSubmit={(formData) => {
-        const {name, gender, birthDate, country, city} = formData
-        dispatch(setProfileInfo({name, gender, birthDate, country, city, aboutMeDescription}))
+        dispatch(setProfileInfoFormThunkCreator(currentUserId, token, formData))
       }}
     >
-      {({isSubmitting, touched, errors}) => (
+      {({touched, errors, values, handleChange}) => (
         <Form className={s.profileInfoForm}>
           <label className={'formLabel'}>
             <span>Full name</span>
             {TextField({
               type: 'text',
               name: 'name',
+              propValue: values.name,
               placeholder: 'Wpisz Name',
               className: `textField ${errors.name && touched.name ? 'errorTextField' : ''}`
             })}
@@ -109,7 +107,7 @@ const ProfileInfoForm = () => {
           <label className={'formLabel'}>
             <span>Birth Date</span>
             <DatePicker selected={startDate} onChange={(date: Date) => setStartDate(date)}/>
-            {errors.birthDate && touched.birthDate && <FormErrorMessage>{errors.birthDate}</FormErrorMessage>}
+            {errors.birthday && touched.birthday && <FormErrorMessage>{errors.birthday}</FormErrorMessage>}
           </label>
 
           <label className={'formLabel'}>
@@ -117,6 +115,7 @@ const ProfileInfoForm = () => {
             {TextField({
               type: 'text',
               name: 'country',
+              propValue: values.country,
               placeholder: 'Wpisz Country',
               className: `textField ${errors.country && touched.country ? 'errorTextField' : ''}`
             })}
@@ -128,6 +127,7 @@ const ProfileInfoForm = () => {
             {TextField({
               type: 'text',
               name: 'city',
+              propValue: values.city,
               placeholder: 'Wpisz City',
               className: `textField ${errors.city && touched.city ? 'errorTextField' : ''}`
             })}
@@ -136,11 +136,14 @@ const ProfileInfoForm = () => {
 
           <label className={'formLabel'}>
             <span>A little about yourself</span>
-            <textarea onChange={onChangeHandler}
-                      value={aboutUserText ? aboutUserText : aboutMeDescription}
-                      placeholder={'Tell us a little about yourself'}/>
+            <textarea
+              name={'description'}
+              onChange={handleChange}
+              value={values.description}
+              placeholder={'Tell us a little about yourself'}
+            />
           </label>
-          {!isSubmitting ? <button type="submit" className="submitBtn">Wyślij</button> : <span>Pending</span>}
+          <button type="submit" className="submitBtn">Wyślij</button>
         </Form>
       )}
     </Formik>

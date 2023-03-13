@@ -74,7 +74,7 @@
 }
 
 .blindButton.blueTheme {
-  background: #fff;
+  background: #afe2ef;
   color: #273a64;
   border-color: #273a64;
   svg {
@@ -82,10 +82,10 @@
   }
   &:hover {
     background: #273a64;
-    color: #fff;
-    border-color: #fff;
+    color: #afe2ef;
+    border-color: #afe2ef;
     svg {
-      fill: #fff;
+      fill: #afe2ef;
     }
   }
 }
@@ -103,53 +103,6 @@
 @media (max-width: 1220px) {
   .blindButton {
     font-size: 14px;
-  }
-}
-
-@media (max-width: 1100px) {
-  .blindButton.large {
-    font-size: 0;
-    margin-right: 30px;
-    width: 150px;
-
-    svg {
-      margin: 0;
-      width: 60px;
-    }
-  }
-}
-@media (max-width: 870px) {
-  .blindButton.large {
-    font-size: 0;
-    width: 100px;
-
-    svg {
-      margin: 0;
-      width: 40px;
-    }
-  }
-}
-
-@media (max-width: 1100px) {
-  .blindButton.medium {
-    font-size: 0;
-    margin-right: 30px;
-    width: 130px;
-
-    svg {
-      margin: 0;
-      width: 45px;
-    }
-  }
-}
-@media (max-width: 870px) {
-  .blindButton.medium {
-    font-size: 0;
-    width: 90px;
-
-    svg {
-      margin: 0;
-    }
   }
 }
 

@@ -11,7 +11,7 @@ import Info from './Info/Info';
 import NotFound from './NotFound/NotFound';
 import Profile from './Profile/Profile';
 import {useAppSelector} from '../../utils/Hooks/useAppSelector';
-import {getOptionsState} from '../../Redux/selectors/styleSelector';
+import {getOptionsState, getThemeStyle} from "../../Redux/selectors/styleSelector";
 import AuthPage from './AuthPages/AuthPage';
 import ConfirmMail from "./ConfirmMail/ConfirmMail";
 import CourseActivation from "./CourseActivation/CourseActivation";
@@ -39,6 +39,9 @@ const AppBody = () => {
             </Switch>
         </div>
     )
+
+    </div>
+  )
 }
 
 export default AppBody

@@ -1,5 +1,3 @@
-import {useState} from "react";
-
 type LocalStorageKey = string;
 
 const setDataToLocalStorage = (key: LocalStorageKey, value: string): void => {

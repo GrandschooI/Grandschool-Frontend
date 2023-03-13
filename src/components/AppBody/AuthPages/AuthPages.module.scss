@@ -36,6 +36,7 @@
       color: #000;
       text-decoration: none;
       border-bottom: 2px solid #EAEAEA;
+      transition: all .3s ease;
       &.active {
         border-color: #31477C;
       }
@@ -50,6 +51,7 @@
 
 .authBackground.yellowTheme {
   background: #000;
+  border-bottom: 1px solid yellow;
   .authWrapper {
     background: rgb(25, 25, 1);
     .authHeader {
@@ -60,6 +62,7 @@
       a {
         color: yellow;
         border-color: #000;
+        transition: all .3s ease;
         &.active {
           border-color: aqua;
         }
