@@ -179,14 +179,14 @@ s.sdf {
 }
 
 .medium {
+
   .headerNavLink,
   .headerNavItem {
+
     font-size: 22px;
     transition: all .2s ease;
   }
-  .notMainPage {
-    width: 48%;
-  }
+
 }
 
 .large {
@@ -319,7 +319,9 @@ s.sdf {
   display: none;
 }
 
+
 .header.yellowTheme {
+  background-color: #000;
   .headerNavLink {
     color: yellow;
 
@@ -459,6 +461,7 @@ s.sdf {
 }
 
 .header.blueTheme {
+  background-color: #afe2ef;
   .headerNavLink {
     color: #273a64;
 

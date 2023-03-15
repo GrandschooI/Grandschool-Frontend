@@ -4,6 +4,7 @@
     max-width: 100%;
   }
 }
+
 .asideLink {
   display: flex;
   flex-direction: column;
@@ -69,9 +70,11 @@
   max-height: 800px;
   transition: all 1.5s ease;
 }
+
 .optionExit {
   max-height: 800px;
 }
+
 .optionExitActive {
   max-height: 0;
   overflow: hidden;
@@ -84,6 +87,7 @@ span.activeItem {
   position: relative;
   transition: all .3s ease;
   z-index: 10;
+
   &:after {
     opacity: 1;
     transition: all .3s ease;
@@ -155,37 +159,46 @@ span.activeItem {
 .yellowTheme {
   &.asideItem {
     background-color: yellow;
+
     & li {
       a {
         color: black;
       }
+
       &:not(.activeItem):hover {
-        background-color:aqua;
+        background-color: aqua;
       }
     }
+
     .activeTopic {
       background-color: aqua;
     }
+
     .asideLink {
       transition: all .3s ease;
       color: black;
+
       &:not(.activeItem):hover {
         background-color: yellow;
       }
     }
   }
+
   a.activeItem {
     background: #00ffff;
     color: #000;
   }
+
   .asideLink {
     background-color: transparent;
     color: yellow;
     font-size: 18px;
+
     &:after {
       background: url('../../../../assets/images/asideBlackMode.svg') no-repeat;
     }
   }
+
   .asideLink:not(.activeItem):hover {
     background: #000;
     color: inherit;
@@ -195,37 +208,47 @@ span.activeItem {
 .whiteTheme {
   &.asideItem {
     background-color: #000;
+
     & li {
       a {
         color: #fff;
       }
+
       &:not(.activeItem):hover {
-        background-color:white;
+        background-color: white;
+
         a {
           color: #000
         }
       }
     }
+
     .activeTopic {
       background-color: #fff;
+
       a {
         color: #000;
       }
     }
+
     .asideLink {
       transition: all .3s ease;
       color: #fff;
+
       &:not(.activeItem):hover {
         background-color: white;
+
         &:after {
           background: url('../../../../assets/images/asideBlackMode.svg') no-repeat;
         }
       }
     }
   }
+
   .rightArrow {
     background-color: black;
   }
+
   a.activeItem {
     background: #000;
     color: #fff;
@@ -247,38 +270,48 @@ span.activeItem {
 .blueTheme {
   &.asideItem {
     background-color: #273a64;
+
     & li {
       a {
         color: #afe2ef;
       }
+
       &:not(.activeItem):hover {
-        background-color:#afe2ef;
+        background-color: #afe2ef;
+
         a {
           color: #273a64
         }
       }
     }
+
     .activeTopic {
       background-color: #afe2ef;
+
       a {
         color: #273a64;
       }
     }
+
     .asideLink {
       transition: all .3s ease;
       color: #afe2ef;
+
       &:not(.activeItem):hover {
         background-color: #afe2ef;
         color: #273a64;
+
         &:after {
           background: url('../../../../assets/images/asideBlackMode.svg') no-repeat;
         }
       }
     }
   }
+
   .rightArrow {
     background-color: #273a64;
   }
+
   a.activeItem {
     background: #273a64;
     color: #afe2ef;
@@ -312,27 +345,31 @@ span.activeItem {
   .title {
     font-size: 22px;
   }
-.medium {
-  .asideLink {
-    font-size: 20px;
-  }
-  .asideSubmenu {
-    li {
-      a {
-        font-size: 20px;
+
+  .medium {
+    .asideLink {
+      font-size: 20px;
+    }
+
+    .asideSubmenu {
+      li {
+        a {
+          font-size: 20px;
+        }
       }
     }
   }
-}
 
-.large {
-  .asideLink {
-    font-size: 22px;
-  }
-  .asideSubmenu {
-    li {
-      a {
-        font-size: 22px;
+  .large {
+    .asideLink {
+      font-size: 22px;
+    }
+
+    .asideSubmenu {
+      li {
+        a {
+          font-size: 22px;
+        }
       }
     }
   }
