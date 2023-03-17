@@ -130,13 +130,12 @@ const Header = () => {
 
             </div>
             <div className={cn(s[(isBurgerActive ? 'active' : '')])}>{!isHeaderChange &&
-                <HeaderNav themeStyle={themeStyle}/>}</div>
+                <HeaderNav themeStyle={themeStyle} fontSize={fontSize}/>}</div>
         </div>
     )
-      </div>
-      {!isHeaderChange && <HeaderNav themeStyle={themeStyle} fontSize={fontSize}/>}
-    </div>
-  )
+    //     <div>
+    //   {!isHeaderChange && <HeaderNav themeStyle={themeStyle} fontSize={fontSize}/>}
+    // </div>
 }
 export default Header
 

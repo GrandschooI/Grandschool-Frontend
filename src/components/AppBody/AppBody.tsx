@@ -20,7 +20,6 @@ const AppBody = () => {
     const isOptionsOpen = useAppSelector(getOptionsState)
     return (
         <div className={cn(s.appBody, isOptionsOpen ? s.openedBlindOption : '')}>
-
             <Switch>
                 <Route exact path={"/"} render={() => <HomePage/>}/>
                 <Route path="/registration" render={() => <AuthPage/>}/>
@@ -39,9 +38,6 @@ const AppBody = () => {
             </Switch>
         </div>
     )
-
-    </div>
-  )
 }
 
 export default AppBody
