@@ -8,7 +8,7 @@ import {loginDataType} from '../AuthPage'
 import cn from 'classnames'
 import GoogleLogin from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
-import Popup from '../../../common/Popup/Popup';
+import Popup from '../../../common/PopupSection/Popup/Popup';
 import {useAppSelector} from '../../../../utils/Hooks/useAppSelector';
 import {getFontSize, getThemeStyle} from '../../../../Redux/selectors/styleSelector';
 import {FACEBOOK_CLIENT_ID, GOOGLE_CLIENT_ID} from '../../../../Redux/reducers/userSlice';

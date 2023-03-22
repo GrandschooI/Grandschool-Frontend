@@ -4,7 +4,7 @@ import {Redirect, Route, Switch} from 'react-router-dom';
 import ProfileInfo from './ProfileInfo/ProfileInfo/ProfileInfo';
 import cn from 'classnames';
 import AccountSettings from './AccountSettings/AccountSettings'
-import Popup from '../../common/Popup/Popup';
+import Popup from '../../common/PopupSection/Popup/Popup';
 import {CSSTransition} from 'react-transition-group'
 import Aside from '../../common/Aside/Aside';
 import {useAppSelector} from '../../../utils/Hooks/useAppSelector';
