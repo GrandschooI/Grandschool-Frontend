@@ -1,0 +1,68 @@
+section.popupSectionWrapper {
+  padding-top: 240px;
+  padding-bottom: 200px;
+  max-width: 2000px;
+
+  .title {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 46px;
+    margin: 42px 0 58px;
+    transition: all .2s linear;
+  }
+
+  &.yellowTheme {
+    background-color: #191901;
+
+    .title {
+      color: #FFFF00FF;
+    }
+  }
+
+  &.whiteTheme {
+    background-color: transparent;
+
+    .title {
+      color: black;
+    }
+  }
+
+  &.blueTheme {
+    background-color: #aee2ef;
+
+    .title {
+      color: #273A64FF;
+    }
+  }
+
+  &.small {
+    .title {
+      font-size: 26px;
+    }
+  }
+
+  &.medium {
+    .title {
+      font-size: 30px;
+    }
+  }
+
+  &.large {
+    .title {
+      font-size: 36px;
+    }
+  }
+
+
+}
+
+@media screen and (max-width: 1000px) {
+  section.popupSectionWrapper {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+}
+
+.center {
+  margin: 0 auto;
+}
