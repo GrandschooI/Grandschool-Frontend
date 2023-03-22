@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {NavLink, useLocation} from 'react-router-dom'
 import cn from 'classnames'
 import '../../style.scss'
@@ -129,8 +129,8 @@ const Header = () => {
                 </div>
 
             </div>
-            <div className={cn(s[(isBurgerActive ? 'active' : '')])}>{!isHeaderChange &&
-                <HeaderNav themeStyle={themeStyle} fontSize={fontSize}/>}</div>
+            <div className={cn(s[(isBurgerActive ? 'active' : '')])}>
+                {!isHeaderChange && <HeaderNav themeStyle={themeStyle} fontSize={fontSize}/>}</div>
         </div>
     )
     //     <div>

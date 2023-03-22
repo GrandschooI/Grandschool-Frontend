@@ -10,7 +10,7 @@ import cn from 'classnames'
 import {toast} from 'react-toastify'
 import ForgotPassword from './ForgotPassword/ForgotPassword';
 import {gapi} from 'gapi-script';
-import Popup from '../../common/Popup/Popup';
+import Popup from '../../common/PopupSection/Popup/Popup';
 import {useDispatch} from 'react-redux';
 import {
   forgotPasswordThunkCreator,

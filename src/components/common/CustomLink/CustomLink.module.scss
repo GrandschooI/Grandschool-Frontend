@@ -1,0 +1,88 @@
+.customLinkDef {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 26px;
+  padding: 19px 61px;
+  border: 1px solid #618135;
+  border-radius: 50px;
+  color: #fff;
+  background: #618135;
+
+  text-decoration: none;
+  transition: all .2s ease;
+
+  &.medium {
+    font-size: 22px;
+  }
+
+  &.large {
+    font-size: 24px;
+  }
+
+  &.yellowTheme {
+    color: var(--color-theme);
+    border: 1px solid var(--color-theme);
+    background: var(--background-theme);
+    transition: all .5s ease;
+    &:hover{
+      background:var(--color-theme);
+      color :var(--background-theme);
+    }
+  }
+
+  &.whiteTheme {
+    color: var(--color-theme);
+    background: var(--background-theme);
+    border: 1px solid var(--color-theme);
+    transition: all .5s ease;
+    &:hover{
+      background:var(--color-theme);
+      color :var(--background-theme);
+    }
+  }
+
+  &.blueTheme {
+    color: var(--color-theme);
+    background: var(--background-theme);
+    border: 1px solid var(--color-theme);
+    transition: all .5s ease;
+    &:hover{
+      background:var(--color-theme);
+      color :var(--background-theme);
+    }
+  }
+
+  &:disabled{
+    opacity: 0.7;
+  }
+}
+
+
+.default {
+  color: #fff;
+  background: #618135;
+
+  &:hover {
+    background: #fff;
+    color: #618135;
+
+  }
+
+}
+
+.invert {
+  background: #fff;
+  color: #618135;
+
+  &:hover {
+    color: #fff;
+    background: #618135;
+  }
+}
+
+
+
+
+
+
+
