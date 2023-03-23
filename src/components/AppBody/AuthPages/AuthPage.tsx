@@ -17,7 +17,7 @@ import {
 import { getFontSize, getOptionsState, getThemeStyle } from '../../../Redux/selectors/styleSelector'
 import { getAuthStatus } from '../../../Redux/selectors/userSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
-import Popup from '../../common/Popup/Popup'
+import Popup from '../../common/PopupSection/Popup/Popup'
 
 import s from './AuthPages.module.scss'
 import ConfirmRegistrationForm from './ConfirmRegistration/ConfirmRegistrationForm'

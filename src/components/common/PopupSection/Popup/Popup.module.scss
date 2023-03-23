@@ -1,10 +1,26 @@
+.yellowTheme {
+  --background-theme: #191901;
+  --color-theme: #ffff00ff;
+}
+
+.whiteTheme {
+  --background-theme: #000;
+  --color-theme: #fff;
+}
+
+.blueTheme {
+  --background-theme: #aee2ef;
+  --color-theme: #273a64ff;
+}
+
 .popupWrapper {
-  width: 700px;
+  max-width: 700px;
+  width: 100%;
   border-radius: 25px;
   overflow: hidden;
   background: #fff;
   box-shadow: 0 0 30px rgba(97, 129, 53, 0.1);
-  padding: 0 0 60px 0;
+  //padding: 0 0 60px 0;
   .popupHeader {
     display: flex;
     align-items: center;
@@ -12,6 +28,7 @@
     height: 88px;
     background: #f7f5ec;
   }
+
   .popupSwitcherWrapper {
     display: flex;
     background: #fff;
@@ -20,23 +37,26 @@
   }
 
   &.yellowTheme {
-    background: #191901;
+    background: var(--background-theme);
+
     .popupHeader {
       background: transparent;
     }
   }
 
   &.whiteTheme {
-    background: #000;
+    background: var(--background-theme);
+
     .popupHeader {
-      background: #000;
+      background: var(--background-theme);
     }
   }
 
   &.blueTheme {
-    background: #aee2ef;
+    background: var(--background-theme);
+
     .popupHeader {
-      background: #aee2ef;
+      background: var(--background-theme);
     }
   }
 }

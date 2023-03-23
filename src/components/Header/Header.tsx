@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
+import '../../style.scss'
+import './HeaderGlobal.scss'
 import cn from 'classnames'
 import { useDispatch } from 'react-redux'
 import { NavLink, useLocation } from 'react-router-dom'
-import '../../style.scss'
-import './HeaderGlobal.scss'
 
 import { setOptionsMode, switchBlindMode } from '../../Redux/reducers/styleSlice'
 import {

@@ -1,11 +1,11 @@
 .callToActionBGWrap {
   background-image: -webkit-image-set(
-                  url('../../../../assets/images/mainPageBackground.png') 1x,
-                  url('../../../../assets/images/mainPageBackgroundRetina.png') 2x
+    url('../../../../assets/images/mainPageBackground.png') 1x,
+    url('../../../../assets/images/mainPageBackgroundRetina.png') 2x
   );
   background-image: image-set(
-                  url('../../../../assets/images/mainPageBackground.png') 1x,
-                  url('../../../../assets/images/mainPageBackgroundRetina.png') 2x
+    url('../../../../assets/images/mainPageBackground.png') 1x,
+    url('../../../../assets/images/mainPageBackgroundRetina.png') 2x
   );
   background-size: cover;
 
@@ -64,12 +64,12 @@
 
   @media (max-width: 768px) {
     background: linear-gradient(
-                    145deg,
-                    #f7f5ec,
-                    #f7f5ec calc(60% - 10px),
-                    transparent calc(50% - 10px)
-    ),
-    url('../../../../assets/images/webp/mainbgmobile.webp') 70% bottom no-repeat;
+        145deg,
+        #f7f5ec,
+        #f7f5ec calc(60% - 10px),
+        transparent calc(50% - 10px)
+      ),
+      url('../../../../assets/images/webp/mainbgmobile.webp') 70% bottom no-repeat;
     background-size: contain;
     .callToAction {
       height: calc(60vh - 10px);
@@ -105,7 +105,7 @@
 
 .callToActionBGWrap.yellowTheme {
   background: linear-gradient(90deg, #000, #000 40%, transparent 80%),
-  url('../../../../assets/images/webp/preload.webp') 70% center no-repeat;
+    url('../../../../assets/images/webp/preload.webp') 70% center no-repeat;
   background-size: cover;
 
   .mainTitle {
@@ -178,7 +178,7 @@
 
 .callToActionBGWrap.whiteTheme {
   background: linear-gradient(90deg, #fff, #fff 40%, transparent 80%),
-  url('../../../../assets/images/webp/preload.webp') 70% center no-repeat;
+    url('../../../../assets/images/webp/preload.webp') 70% center no-repeat;
   background-size: cover;
 
   @media (max-width: 900px) {
@@ -250,7 +250,7 @@
 
 .callToActionBGWrap.blueTheme {
   background: linear-gradient(90deg, #b8eefb, #b8eefb 40%, transparent 80%),
-  url('../../../../assets/images/webp/preload.webp') 70% center no-repeat;
+    url('../../../../assets/images/webp/preload.webp') 70% center no-repeat;
   background-size: cover;
 
   @media (max-width: 900px) {

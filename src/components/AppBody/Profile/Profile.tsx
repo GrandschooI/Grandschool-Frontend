@@ -11,7 +11,7 @@ import { getThemeStyle } from '../../../Redux/selectors/styleSelector'
 import { getAuthStatus } from '../../../Redux/selectors/userSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
 import Aside from '../../common/Aside/Aside'
-import Popup from '../../common/Popup/Popup'
+import Popup from '../../common/PopupSection/Popup/Popup'
 
 import AccountSettings from './AccountSettings/AccountSettings'
 import s from './Profile.module.scss'
