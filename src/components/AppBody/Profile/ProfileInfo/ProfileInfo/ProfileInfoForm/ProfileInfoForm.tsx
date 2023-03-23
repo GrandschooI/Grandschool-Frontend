@@ -1,31 +1,35 @@
-import React, {useState} from 'react'
-import DatePicker from 'react-datepicker';
+import React, { useState } from 'react'
+
+import { Form, Formik } from 'formik'
+// eslint-disable-next-line import/order
+import DatePicker from 'react-datepicker'
+
 import './dataPicker.scss'
-import s from './ProfileInfoForm.module.scss'
-import {Form, Formik} from 'formik';
-import {RadioButton, TextField} from '../../../../../common/Form/FormControls/FormControls';
+
 import '../../../../../../style.scss'
+import { useDispatch } from 'react-redux'
 import * as yup from 'yup'
-import {useAppSelector} from '../../../../../../utils/Hooks/useAppSelector';
-import {useDispatch} from 'react-redux';
-import {
-  setProfileInfoFormThunkCreator
-} from '../../../../../../Redux/reducers/userSlice';
-import FormErrorMessage from '../../../../../utils/FormErrorMessage/FormErrorMessage';
+
+import { setProfileInfoFormThunkCreator } from '../../../../../../Redux/reducers/userSlice'
 import {
   getUserCity,
   getUserCountry,
   getUserDescription,
   getUserId,
-  getUserName
-} from "../../../../../../Redux/selectors/userSelector";
+  getUserName,
+} from '../../../../../../Redux/selectors/userSelector'
+import { useAppSelector } from '../../../../../../utils/Hooks/useAppSelector'
+import { RadioButton, TextField } from '../../../../../common/Form/FormControls/FormControls'
+import FormErrorMessage from '../../../../../utils/FormErrorMessage/FormErrorMessage'
+
+import s from './ProfileInfoForm.module.scss'
 
 const profileInfoFormSchema = yup.object().shape({
   name: yup.string(),
   birthDate: yup.date(),
   country: yup.string(),
   city: yup.string(),
-  aboutUserText: yup.string()
+  aboutUserText: yup.string(),
 })
 
 const ProfileInfoForm = () => {
@@ -41,10 +45,10 @@ const ProfileInfoForm = () => {
   const [startDate, setStartDate] = useState(new Date())
   const [statusAssessment, setStatusAssessment] = useState('')
 
-
   const getRadioStatus = (status: string) => {
     setStatusAssessment(status)
-  };
+  }
+
   return (
     <Formik
       initialValues={{
@@ -53,16 +57,16 @@ const ProfileInfoForm = () => {
         birthday: new Date(),
         country: currentUserCountry,
         city: currentUserCity,
-        description: ''
+        description: '',
       }}
       validationSchema={profileInfoFormSchema}
       validateOnBlur={true}
       validateOnChange={true}
-      onSubmit={(formData) => {
+      onSubmit={formData => {
         dispatch(setProfileInfoFormThunkCreator(currentUserId, token, formData))
       }}
     >
-      {({touched, errors, values, handleChange}) => (
+      {({ touched, errors, values, handleChange }) => (
         <Form className={s.profileInfoForm}>
           <label className={'formLabel'}>
             <span>Full name</span>
@@ -71,7 +75,7 @@ const ProfileInfoForm = () => {
               name: 'name',
               propValue: values.name,
               placeholder: 'Wpisz Name',
-              className: `textField ${errors.name && touched.name ? 'errorTextField' : ''}`
+              className: `textField ${errors.name && touched.name ? 'errorTextField' : ''}`,
             })}
             {errors.name && touched.name && <FormErrorMessage>{errors.name}</FormErrorMessage>}
           </label>
@@ -86,8 +90,7 @@ const ProfileInfoForm = () => {
                   label: 'Male',
                   checked: statusAssessment === 'male',
                   getRadioStatus: getRadioStatus,
-                  handleChange: () => {
-                  }
+                  handleChange: () => {},
                 })}
               </label>
               <label>
@@ -97,8 +100,7 @@ const ProfileInfoForm = () => {
                   label: 'Female',
                   checked: statusAssessment === 'female',
                   getRadioStatus: getRadioStatus,
-                  handleChange: () => {
-                  }
+                  handleChange: () => {},
                 })}
               </label>
             </div>
@@ -106,8 +108,10 @@ const ProfileInfoForm = () => {
 
           <label className={'formLabel'}>
             <span>Birth Date</span>
-            <DatePicker selected={startDate} onChange={(date: Date) => setStartDate(date)}/>
-            {errors.birthday && touched.birthday && <FormErrorMessage>{errors.birthday}</FormErrorMessage>}
+            <DatePicker selected={startDate} onChange={(date: Date) => setStartDate(date)} />
+            {errors.birthday && touched.birthday && (
+              <FormErrorMessage>{errors.birthday}</FormErrorMessage>
+            )}
           </label>
 
           <label className={'formLabel'}>
@@ -117,9 +121,11 @@ const ProfileInfoForm = () => {
               name: 'country',
               propValue: values.country,
               placeholder: 'Wpisz Country',
-              className: `textField ${errors.country && touched.country ? 'errorTextField' : ''}`
+              className: `textField ${errors.country && touched.country ? 'errorTextField' : ''}`,
             })}
-            {errors.country && touched.country && <FormErrorMessage>{errors.country}</FormErrorMessage>}
+            {errors.country && touched.country && (
+              <FormErrorMessage>{errors.country}</FormErrorMessage>
+            )}
           </label>
 
           <label className={'formLabel'}>
@@ -129,7 +135,7 @@ const ProfileInfoForm = () => {
               name: 'city',
               propValue: values.city,
               placeholder: 'Wpisz City',
-              className: `textField ${errors.city && touched.city ? 'errorTextField' : ''}`
+              className: `textField ${errors.city && touched.city ? 'errorTextField' : ''}`,
             })}
             {errors.city && touched.city && <FormErrorMessage>{errors.city}</FormErrorMessage>}
           </label>
@@ -143,7 +149,9 @@ const ProfileInfoForm = () => {
               placeholder={'Tell us a little about yourself'}
             />
           </label>
-          <button type="submit" className="submitBtn">Wyślij</button>
+          <button type="submit" className="submitBtn">
+            Wyślij
+          </button>
         </Form>
       )}
     </Formik>
@@ -151,4 +159,3 @@ const ProfileInfoForm = () => {
 }
 
 export default ProfileInfoForm
-

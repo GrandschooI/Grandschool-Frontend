@@ -11,13 +11,13 @@ div.aboutUsBody {
     font-size: 36px;
     line-height: 46px;
     color: #000000;
-    transition: all .2s linear;
+    transition: all 0.2s linear;
   }
 }
 
 .aboutUsSection {
   padding-top: 0;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .yellowTheme {
@@ -30,7 +30,6 @@ div.aboutUsBody {
     }
   }
 }
-
 
 .whiteTheme {
   background: #fff;
@@ -47,7 +46,6 @@ div.aboutUsBody {
   background: #afe2ef;
   color: #273a64;
 
-
   .aboutUsBody {
     h2 {
       color: #273a64;
@@ -57,7 +55,7 @@ div.aboutUsBody {
 
 .aboutUsSection.blindOptionsOpen {
   padding-top: 3px;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 @media (max-width: 997px) {

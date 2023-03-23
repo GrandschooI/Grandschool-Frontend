@@ -20,7 +20,7 @@
   font-size: 18px;
   line-height: 18px;
   color: #717070;
-  transition: opacity .5s ease;
+  transition: opacity 0.5s ease;
 
   &:after {
     content: '';
@@ -31,7 +31,7 @@
     right: 22px;
     background: url('../../../../assets/images/Shape.png') no-repeat;
     opacity: 0;
-    transition: opacity .5s ease;
+    transition: opacity 0.5s ease;
   }
 }
 
@@ -40,7 +40,7 @@
     &:after {
       background: url('../../../../assets/images/Shape.png') no-repeat;
       transform: rotate(-90deg);
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
   }
 }
@@ -51,13 +51,13 @@
   margin: 0 1.875rem;
   width: auto;
   height: 1px;
-  background: rgba(0, 0, 0, .05);
+  background: rgba(0, 0, 0, 0.05);
   content: '';
 }
 
 .asideLink:hover,
 .asideLink:focus {
-  background: #F7F5EC;
+  background: #f7f5ec;
   color: inherit;
 }
 
@@ -83,14 +83,14 @@
 
 a.activeItem,
 span.activeItem {
-  background: #F7F5EC;
+  background: #f7f5ec;
   position: relative;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   z-index: 10;
 
   &:after {
     opacity: 1;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
 }
 
@@ -98,7 +98,7 @@ span.activeItem {
   li {
     position: relative;
     cursor: pointer;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
 
     a {
       display: flex;
@@ -108,7 +108,7 @@ span.activeItem {
       line-height: 23px;
       color: #717070;
       text-decoration: none;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
 
     &:first-child {
@@ -126,7 +126,7 @@ span.activeItem {
     &.activeTopic,
     &:hover {
       background: #f7f5ec;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
   }
 }
@@ -135,24 +135,23 @@ span.activeItem {
   &:after {
     background: url('../../../../assets/images/Shape.png') no-repeat;
     transform: rotate(-90deg);
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
 }
 
-
 .rightArrow {
-  background: #F7F5EC;
+  background: #f7f5ec;
   color: inherit;
   z-index: 10;
 
   &:hover {
-    background: #F7F5EC;
+    background: #f7f5ec;
   }
 
   &:after {
     opacity: 1;
     background: url('../../../../assets/images/Shape.png') no-repeat;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
 }
 
@@ -175,7 +174,7 @@ span.activeItem {
     }
 
     .asideLink {
-      transition: all .3s ease;
+      transition: all 0.3s ease;
       color: black;
 
       &:not(.activeItem):hover {
@@ -218,7 +217,7 @@ span.activeItem {
         background-color: white;
 
         a {
-          color: #000
+          color: #000;
         }
       }
     }
@@ -232,7 +231,7 @@ span.activeItem {
     }
 
     .asideLink {
-      transition: all .3s ease;
+      transition: all 0.3s ease;
       color: #fff;
 
       &:not(.activeItem):hover {
@@ -253,7 +252,6 @@ span.activeItem {
     background: #000;
     color: #fff;
   }
-
 
   .asideLink {
     &:after {
@@ -280,7 +278,7 @@ span.activeItem {
         background-color: #afe2ef;
 
         a {
-          color: #273a64
+          color: #273a64;
         }
       }
     }
@@ -294,7 +292,7 @@ span.activeItem {
     }
 
     .asideLink {
-      transition: all .3s ease;
+      transition: all 0.3s ease;
       color: #afe2ef;
 
       &:not(.activeItem):hover {
@@ -332,7 +330,7 @@ span.activeItem {
 }
 
 .title {
-  transition: all .2s linear;
+  transition: all 0.2s linear;
 }
 
 .medium {

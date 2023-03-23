@@ -2,7 +2,7 @@ div.infoWrapper {
   padding-top: 210px;
   padding-bottom: 195px;
   h1 {
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     margin-top: 42px;
     font-weight: 600;
     font-size: 36px;
@@ -30,10 +30,9 @@ div.infoWrapper {
   }
   .infoContentWrap {
     display: flex;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     @media (max-width: 1280px) {
       display: block;
     }
   }
 }
-

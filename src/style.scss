@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Proba';
   src: url('assets/fonts/ProbaPro-Light.woff2') format('woff2'),
-  url('assets/fonts/ProbaPro-Light.woff') format('woff');
+    url('assets/fonts/ProbaPro-Light.woff') format('woff');
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -9,7 +9,7 @@
 @font-face {
   font-family: 'Proba';
   src: url('assets/fonts/ProbaPro-Regular.woff2') format('woff2'),
-  url('assets/fonts/ProbaPro-Regular.woff') format('woff');
+    url('assets/fonts/ProbaPro-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -17,7 +17,7 @@
 @font-face {
   font-family: 'Proba';
   src: url('assets/fonts/ProbaPro-Medium.woff2') format('woff2'),
-  url('assets/fonts/ProbaPro-Medium.woff') format('woff');
+    url('assets/fonts/ProbaPro-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 @font-face {
   font-family: 'Proba';
   src: url('assets/fonts/ProbaPro-Bold.woff2') format('woff2'),
-  url('assets/fonts/ProbaPro-Bold.woff') format('woff');
+    url('assets/fonts/ProbaPro-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -58,10 +58,10 @@ input[type='file'] {
   border-radius: 5px;
   cursor: pointer;
   position: relative;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 
   &:before {
-    content: "";
+    content: '';
     display: block;
     position: relative;
     top: 0;
@@ -71,12 +71,12 @@ input[type='file'] {
     animation: bounce-out-bck 1.5s both;
     width: 24px;
     height: 24px;
-    border: 3px solid #E5E5E5;
+    border: 3px solid #e5e5e5;
     margin-right: 15px;
   }
 
   &:after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     transition: 1.1s;
@@ -132,14 +132,13 @@ input[type='radio']:checked + .radioLabel:after {
 }
 
 #root form input.errorTextField,
-#root form textarea.errorTextField
-{
+#root form textarea.errorTextField {
   border: 1px solid red;
   &::placeholder {
     color: red;
   }
 }
-#root form textarea.errorTextField::placeholder{
+#root form textarea.errorTextField::placeholder {
   color: red;
 }
 
@@ -170,7 +169,7 @@ input[type='radio']:checked + .radioLabel:after {
     min-height: 30px;
     cursor: text;
     background: #fff;
-    border: 1px solid #EAEAEA;
+    border: 1px solid #eaeaea;
     border-radius: 4px;
     font-size: 18px;
 
@@ -178,7 +177,7 @@ input[type='radio']:checked + .radioLabel:after {
       font-weight: 400;
       font-size: 16px;
       line-height: 20px;
-      color: #A0A0A0;
+      color: #a0a0a0;
     }
   }
 
@@ -191,7 +190,7 @@ input[type='radio']:checked + .radioLabel:after {
     margin: 0;
 
     &:before {
-      content: "";
+      content: '';
       display: block;
       position: relative;
       top: 0;
@@ -201,12 +200,12 @@ input[type='radio']:checked + .radioLabel:after {
       animation: bounce-out-bck 1.5s both;
       width: 25px;
       height: 24px;
-      border: 3px solid #E5E5E5;
+      border: 3px solid #e5e5e5;
       margin-right: 15px;
     }
 
     &:after {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       left: 8px;
@@ -270,7 +269,7 @@ input[type='radio']:checked + .radioLabel:after {
   }
 }
 
-input[type=number] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
 
@@ -331,7 +330,7 @@ address {
   }
 
   &:disabled {
-    opacity: .7;
+    opacity: 0.7;
   }
 }
 
@@ -361,14 +360,15 @@ address {
     color: #ffffff !important;
     transition: all 0.2s linear;
 
-    svg, path {
+    svg,
+    path {
       fill: #fff;
       transition: all 0.2s linear;
     }
   }
 
   &:disabled {
-    opacity: .7;
+    opacity: 0.7;
   }
 }
 
@@ -398,14 +398,15 @@ address {
     &:hover {
       background-color: #191901;
       border: 1px solid yellow;
-      color: yellow!important;
+      color: yellow !important;
     }
   }
   .inverseBtn {
     background-color: #000;
     color: yellow;
     border: 1px solid yellow;
-    svg, path {
+    svg,
+    path {
       fill: yellow;
       transition: all 0.3s linear;
     }
@@ -415,25 +416,26 @@ address {
       color: #000 !important;
       transition: all 0.3s linear;
 
-      svg, path {
+      svg,
+      path {
         fill: #000;
         transition: all 0.2s linear;
       }
     }
 
     &:disabled {
-      opacity: .7;
+      opacity: 0.7;
     }
   }
   .anotherTypeLogin {
-    background: #000!important;
+    background: #000 !important;
     color: yellow;
     div {
-      background: #000!important;
+      background: #000 !important;
     }
     span {
       color: yellow;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
   }
 }
@@ -447,14 +449,15 @@ address {
     &:hover {
       background-color: #000;
       border: 1px solid #fff;
-      color: #fff!important;
+      color: #fff !important;
     }
   }
   .inverseBtn {
     background-color: #fff;
     color: #000;
     border: 1px solid #000;
-    svg, path {
+    svg,
+    path {
       fill: yellow;
       transition: all 0.2s linear;
     }
@@ -464,21 +467,22 @@ address {
       color: #fff !important;
       transition: all 0.2s linear;
 
-      svg, path {
+      svg,
+      path {
         fill: #000;
         transition: all 0.2s linear;
       }
     }
 
     &:disabled {
-      opacity: .7;
+      opacity: 0.7;
     }
   }
   .anotherTypeLogin {
-    background: #000!important;
+    background: #000 !important;
     color: white;
     div {
-      background: #000!important;
+      background: #000 !important;
     }
     span {
       color: #fff;
@@ -495,14 +499,15 @@ address {
     &:hover {
       background-color: #afe2ef;
       border: 1px solid #273a64;
-      color: #273a64!important;
+      color: #273a64 !important;
     }
   }
   .inverseBtn {
     background-color: #fff;
     color: #273a64;
     border: 1px solid #273a64;
-    svg, path {
+    svg,
+    path {
       fill: yellow;
       transition: all 0.2s linear;
     }
@@ -512,22 +517,23 @@ address {
       color: #fff !important;
       transition: all 0.2s linear;
 
-      svg, path {
+      svg,
+      path {
         fill: #000;
         transition: all 0.2s linear;
       }
     }
 
     &:disabled {
-      opacity: .7;
+      opacity: 0.7;
     }
   }
   .anotherTypeLogin {
-    background: #273a64!important;
+    background: #273a64 !important;
     color: #afe2ef;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     div {
-      background: #273a64!important;
+      background: #273a64 !important;
     }
     span {
       color: #afe2ef;
@@ -541,18 +547,18 @@ address {
   justify-content: center;
   width: 190px;
   height: 61px;
-  border: 0.5px solid #31477C!important;
-  border-radius: 4px!important;
+  border: 0.5px solid #31477c !important;
+  border-radius: 4px !important;
   background: #fff;
   cursor: pointer;
-  box-shadow: none!important;
+  box-shadow: none !important;
   color: #000;
-  font-weight: 600!important;
+  font-weight: 600 !important;
   font-size: 18px;
   text-transform: uppercase;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   div {
-    padding: 0!important;
+    padding: 0 !important;
   }
   &:first-child {
     margin-right: 8px;
@@ -568,9 +574,9 @@ address {
     margin-right: 15px;
   }
   span {
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     color: #000;
-    font-weight: 600!important;
+    font-weight: 600 !important;
     font-size: 18px;
     text-transform: uppercase;
   }

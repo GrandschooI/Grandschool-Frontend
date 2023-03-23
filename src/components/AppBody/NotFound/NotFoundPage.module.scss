@@ -18,8 +18,8 @@
       font-size: 240px;
       line-height: 240px;
       letter-spacing: 0.195em;
-      color: #CCCCCC;
-      transition: all .3s ease;
+      color: #cccccc;
+      transition: all 0.3s ease;
       img {
         position: absolute;
         top: 50%;
@@ -33,9 +33,9 @@
       font-weight: 400;
       font-size: 44px;
       line-height: 44px;
-      color: #5D5D5D;
+      color: #5d5d5d;
       margin: 20px auto 15px;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
 
     p {
@@ -43,16 +43,17 @@
       font-weight: 400;
       font-size: 20px;
       line-height: 20px;
-      color: #5D5D5D;
+      color: #5d5d5d;
       margin-bottom: 22px;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
 
     .buttonWrap {
       display: flex;
       justify-content: space-between;
       min-width: 450px;
-      button, a {
+      button,
+      a {
         width: 45%;
         text-align: center;
         text-decoration: none;
@@ -77,7 +78,8 @@
       .buttonWrap {
         max-width: 100%;
         min-width: 320px;
-        button, a {
+        button,
+        a {
           width: 45%;
           white-space: nowrap;
         }
@@ -88,7 +90,9 @@
   &.yellowTheme {
     background: #000;
     & .contentWrap {
-      & .notFoundNumber, h1, p {
+      & .notFoundNumber,
+      h1,
+      p {
         color: yellow;
       }
     }
@@ -102,7 +106,9 @@
   &.whiteTheme {
     background: #fff;
     & .contentWrap {
-      & .notFoundNumber, h1, p {
+      & .notFoundNumber,
+      h1,
+      p {
         color: #000;
       }
     }
@@ -111,7 +117,9 @@
   &.blueTheme {
     background: #b8eefb;
     & .contentWrap {
-      & .notFoundNumber, h1, p {
+      & .notFoundNumber,
+      h1,
+      p {
         color: #273a64;
       }
     }
@@ -120,18 +128,19 @@
   &.medium {
     .notFoundNumber {
       font-size: 270px;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
     h1 {
       font-size: 46px;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
     p {
       font-size: 22px;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
     .buttonWrap {
-      button, a {
+      button,
+      a {
         font-size: 22px;
       }
     }
@@ -139,18 +148,19 @@
   &.large {
     .notFoundNumber {
       font-size: 280px;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
     h1 {
       font-size: 48px;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
     p {
       font-size: 24px;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
     .buttonWrap {
-      button, a {
+      button,
+      a {
         font-size: 24px;
       }
     }

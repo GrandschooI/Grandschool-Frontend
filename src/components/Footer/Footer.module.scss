@@ -4,11 +4,13 @@
   justify-content: space-between;
   color: #fff;
   background-image: -webkit-image-set(
-                  url('../../assets/images/footerbg.png') 1x,
-                  url('../../assets/images/footerbgretina.png') 2x);
+    url('../../assets/images/footerbg.png') 1x,
+    url('../../assets/images/footerbgretina.png') 2x
+  );
   background-image: image-set(
-                  url('../../assets/images/footerbg.png') 1x,
-                  url('../../assets/images/footerbgretina.png') 2x);
+    url('../../assets/images/footerbg.png') 1x,
+    url('../../assets/images/footerbgretina.png') 2x
+  );
   background-position: right top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -25,11 +27,13 @@
 @media (min-width: 600px) and (max-width: 1285px) {
   .footer {
     background-image: -webkit-image-set(
-                    url('../../assets/images/footerbg.png') 1x,
-                    url('../../assets/images/footerbgretina.png') 2x);
+      url('../../assets/images/footerbg.png') 1x,
+      url('../../assets/images/footerbgretina.png') 2x
+    );
     background-image: image-set(
-                    url('../../assets/images/footerbg.png') 1x,
-                    url('../../assets/images/footerbgretina.png') 2x);
+      url('../../assets/images/footerbg.png') 1x,
+      url('../../assets/images/footerbgretina.png') 2x
+    );
     background-size: 200% 100%;
     background-position: 100%;
 
@@ -46,12 +50,12 @@
 @media (max-width: 686px) {
   .footer {
     background-image: -webkit-image-set(
-                    url('../../assets/images/greenBg.png') 1x,
-                    url('../../assets/images/greenBgRetina.png') 2x
+      url('../../assets/images/greenBg.png') 1x,
+      url('../../assets/images/greenBgRetina.png') 2x
     );
     background-image: image-set(
-                    url('../../assets/images/greenBg.png') 1x,
-                    url('../../assets/images/greenBgRetina.png') 2x
+      url('../../assets/images/greenBg.png') 1x,
+      url('../../assets/images/greenBgRetina.png') 2x
     );
     height: 700px;
     background-size: 100% 115%;
@@ -84,11 +88,13 @@ address,
 
 .footer.yellowTheme {
   background-image: -webkit-image-set(
-                  url('../../assets/images/footerbgBlack.png') 1x,
-                  url('../../assets/images/footerbgBlackRetina.png') 2x);
+    url('../../assets/images/footerbgBlack.png') 1x,
+    url('../../assets/images/footerbgBlackRetina.png') 2x
+  );
   background-image: image-set(
-                  url('../../assets/images/footerbgBlack.png') 1x,
-                  url('../../assets/images/footerbgBlackRetina.png') 2x);
+    url('../../assets/images/footerbgBlack.png') 1x,
+    url('../../assets/images/footerbgBlackRetina.png') 2x
+  );
   background-position: right;
   background-repeat: no-repeat;
   color: yellow;
@@ -125,7 +131,6 @@ address,
     background: transparent;
     opacity: 1;
     fill: rgb(0, 255, 255);
-
   }
 
   .footerBottom {
@@ -136,11 +141,13 @@ address,
 @media (min-width: 600px) and (max-width: 1285px) {
   .footer.yellowTheme {
     background-image: -webkit-image-set(
-                    url('../../assets/images/footerbgBlack.png') 1x,
-                    url('../../assets/images/footerbgBlack.png') 2x);
+      url('../../assets/images/footerbgBlack.png') 1x,
+      url('../../assets/images/footerbgBlack.png') 2x
+    );
     background-image: image-set(
-                    url('../../assets/images/footerbgBlackRetina.png') 1x,
-                    url('../../assets/images/footerbgBlackRetina.png') 2x);
+      url('../../assets/images/footerbgBlackRetina.png') 1x,
+      url('../../assets/images/footerbgBlackRetina.png') 2x
+    );
     background-size: 200% 100%;
     background-position: 100%;
 
@@ -153,12 +160,12 @@ address,
 @media (max-width: 686px) {
   .footer.yellowTheme {
     background-image: -webkit-image-set(
-                    url('../../assets/images/blackBg.png') 1x,
-                    url('../../assets/images/blackBgRetina.png') 2x
+      url('../../assets/images/blackBg.png') 1x,
+      url('../../assets/images/blackBgRetina.png') 2x
     );
     background-image: image-set(
-                    url('../../assets/images/blackBg.png') 1x,
-                    url('../../assets/images/blackBgRetina.png') 2x
+      url('../../assets/images/blackBg.png') 1x,
+      url('../../assets/images/blackBgRetina.png') 2x
     );
     height: 700px;
     background-size: 100% 115%;
@@ -170,14 +177,15 @@ address,
   }
 }
 
-
 .footer.whiteTheme {
   background-image: -webkit-image-set(
-                  url('../../assets/images/footerbgBlack.png') 1x,
-                  url('../../assets/images/footerbgBlackRetina.png') 2x);
+    url('../../assets/images/footerbgBlack.png') 1x,
+    url('../../assets/images/footerbgBlackRetina.png') 2x
+  );
   background-image: image-set(
-                  url('../../assets/images/footerbgBlack.png') 1x,
-                  url('../../assets/images/footerbgBlackRetina.png') 2x);
+    url('../../assets/images/footerbgBlack.png') 1x,
+    url('../../assets/images/footerbgBlackRetina.png') 2x
+  );
   background-position: right;
   background-repeat: no-repeat;
   color: #fff;
@@ -207,7 +215,7 @@ address,
   .socialLink:hover,
   .socialLink:focus {
     background: transparent;
-    opacity: .6;
+    opacity: 0.6;
 
     svg {
       fill: #fff;
@@ -222,11 +230,13 @@ address,
 @media (min-width: 600px) and (max-width: 1285px) {
   .footer.whiteTheme {
     background-image: -webkit-image-set(
-                    url('../../assets/images/footerbgBlack.png') 1x,
-                    url('../../assets/images/footerbgBlack.png') 2x);
+      url('../../assets/images/footerbgBlack.png') 1x,
+      url('../../assets/images/footerbgBlack.png') 2x
+    );
     background-image: image-set(
-                    url('../../assets/images/footerbgBlackRetina.png') 1x,
-                    url('../../assets/images/footerbgBlackRetina.png') 2x);
+      url('../../assets/images/footerbgBlackRetina.png') 1x,
+      url('../../assets/images/footerbgBlackRetina.png') 2x
+    );
     background-size: 200% 100%;
     background-position: 100%;
 
@@ -239,12 +249,12 @@ address,
 @media (max-width: 686px) {
   .footer.whiteTheme {
     background-image: -webkit-image-set(
-                    url('../../assets/images/blackBg.png') 1x,
-                    url('../../assets/images/blackBgRetina.png') 2x
+      url('../../assets/images/blackBg.png') 1x,
+      url('../../assets/images/blackBgRetina.png') 2x
     );
     background-image: image-set(
-                    url('../../assets/images/blackBg.png') 1x,
-                    url('../../assets/images/blackBgRetina.png') 2x
+      url('../../assets/images/blackBg.png') 1x,
+      url('../../assets/images/blackBgRetina.png') 2x
     );
     height: 700px;
     background-size: 100% 115%;
@@ -258,11 +268,13 @@ address,
 
 .footer.blueTheme {
   background-image: -webkit-image-set(
-                  url('../../assets/images/footerbgBlue.png') 1x,
-                  url('../../assets/images/footerbgBlueRetina.png') 2x);
+    url('../../assets/images/footerbgBlue.png') 1x,
+    url('../../assets/images/footerbgBlueRetina.png') 2x
+  );
   background-image: image-set(
-                  url('../../assets/images/footerbgBlue.png') 1x,
-                  url('../../assets/images/footerbgBlueRetina.png') 2x);
+    url('../../assets/images/footerbgBlue.png') 1x,
+    url('../../assets/images/footerbgBlueRetina.png') 2x
+  );
   background-position: right;
   background-repeat: no-repeat;
   color: #b8eefb;
@@ -307,7 +319,7 @@ address,
       background-color: #273a64;
 
       svg {
-        opacity: .6;
+        opacity: 0.6;
         fill: #b8eefb;
       }
     }
@@ -321,11 +333,13 @@ address,
 @media (min-width: 600px) and (max-width: 1285px) {
   .footer.blueTheme {
     background-image: -webkit-image-set(
-                    url('../../assets/images/footerbgBlue.png') 1x,
-                    url('../../assets/images/footerbgBlue.png') 2x);
+      url('../../assets/images/footerbgBlue.png') 1x,
+      url('../../assets/images/footerbgBlue.png') 2x
+    );
     background-image: image-set(
-                    url('../../assets/images/footerbgBlueRetina.png') 1x,
-                    url('../../assets/images/footerbgBlueRetina.png') 2x);
+      url('../../assets/images/footerbgBlueRetina.png') 1x,
+      url('../../assets/images/footerbgBlueRetina.png') 2x
+    );
     background-size: 200% 100%;
     background-position: 100%;
 
@@ -338,12 +352,12 @@ address,
 @media (max-width: 686px) {
   .footer.blueTheme {
     background-image: -webkit-image-set(
-                    url('../../assets/images/blueBg.png') 1x,
-                    url('../../assets/images/blackBgRetina.png') 2x
+      url('../../assets/images/blueBg.png') 1x,
+      url('../../assets/images/blackBgRetina.png') 2x
     );
     background-image: image-set(
-                    url('../../assets/images/blueBg.png') 1x,
-                    url('../../assets/images/blueBgRetina.png') 2x
+      url('../../assets/images/blueBg.png') 1x,
+      url('../../assets/images/blueBgRetina.png') 2x
     );
     height: 700px;
     background-size: 100% 115%;
@@ -357,16 +371,16 @@ address,
 
 .footerLogo:hover,
 .footerLogo:focus-visible {
-  opacity: .7;
-  transition: all .2s ease;
+  opacity: 0.7;
+  transition: all 0.2s ease;
 }
 
 .footerLogo:active {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .footerLogo {
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   outline: none;
 }
 
@@ -418,7 +432,7 @@ address,
   position: relative;
   color: #fff;
   text-decoration: none;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
 }
 
 .footerNavLink:not(:last-child) {
@@ -428,7 +442,7 @@ address,
 .footerNavLink:not(:first-child):before {
   background-color: #618135;
   position: absolute;
-  content: "";
+  content: '';
   display: block;
   width: 5px;
   height: 3px;
@@ -440,7 +454,7 @@ address,
 .footerNavLink:hover,
 .footerNavLink:focus {
   color: #618135;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
 }
 
 .footerSlogan {
@@ -451,14 +465,14 @@ address,
   font-size: 18px;
 }
 
-@media(max-width: 686px) {
+@media (max-width: 686px) {
   .footerSlogan {
     max-width: 560px;
     margin-bottom: -60px;
   }
 }
 
-@media(min-width: 686px) and (max-width: 1000px) {
+@media (min-width: 686px) and (max-width: 1000px) {
   .footerSlogan {
     max-width: 400px;
     margin-bottom: -60px;
@@ -474,7 +488,6 @@ address,
 @media (max-width: 550px) {
   .footerPosition {
     margin-top: -90px;
-
   }
 }
 
@@ -517,7 +530,7 @@ address,
 }
 
 .footerTitle:before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   height: 3px;
@@ -600,14 +613,14 @@ address,
   justify-content: center;
   width: 100%;
   height: 100%;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
 }
 
 .socialLink:hover,
 .socialLink:focus {
   background-color: #618135;
-  opacity: .6;
-  transition: all .2s linear;
+  opacity: 0.6;
+  transition: all 0.2s linear;
 }
 
 .contactWrap {
@@ -618,13 +631,13 @@ address,
 .contactWrap a {
   color: #fff;
   text-decoration: none;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
 }
 
 .contactWrap a:hover,
 .contactWrap a:focus {
-  opacity: .6;
-  transition: all .2s linear;
+  opacity: 0.6;
+  transition: all 0.2s linear;
 }
 
 .icon {
