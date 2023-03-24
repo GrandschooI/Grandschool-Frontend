@@ -1,35 +1,34 @@
 // @ts-ignore
-import userReducer, {setPhoto, setAuth, setProfileInfo, initialStateType} from '../userSlice'
+import userReducer, { setPhoto, setAuth, setProfileInfo, initialStateType } from '../userSlice'
 
 let state: initialStateType
 
 beforeEach(() => {
-    state = {
-        currentUser: {
-            birthday: null,
-            city: null,
-            country: null,
-            created_at: null,
-            description: null,
-            email: null,
-            email_verified: false,
-            gender: null,
-            id: null,
-            name: null,
-            phone: null,
-            photo: null,
-            roles: [],
-            updated_at: null
-        },
-        asideMenuItems: [
-            {itemTitle: 'Personal information', itemLink: '/profile/personal-info'},
-            {itemTitle: 'Personal achievements', itemLink: '/profile/personal-achievements'},
-            {itemTitle: 'Account Settings', itemLink: '/profile/account-settings'}
-        ],
-        isAuth: false
-    }
+  state = {
+    currentUser: {
+      birthday: null,
+      city: null,
+      country: null,
+      created_at: null,
+      description: null,
+      email: null,
+      email_verified: false,
+      gender: null,
+      id: null,
+      name: null,
+      phone: null,
+      photo: null,
+      roles: [],
+      updated_at: null,
+    },
+    asideMenuItems: [
+      { itemTitle: 'Personal information', itemLink: '/profile/personal-info' },
+      { itemTitle: 'Personal achievements', itemLink: '/profile/personal-achievements' },
+      { itemTitle: 'Account Settings', itemLink: '/profile/account-settings' },
+    ],
+    isAuth: false,
+  }
 })
-
 
 // test('Set auth', () => {
 //     const newState = userReducer(state, setAuth({
@@ -64,7 +63,6 @@ beforeEach(() => {
 //          'testText'
 //     ))
 
-
 //     expect(newState.currentUser.name).toBe('Eugene Kuhot')
 //     expect(newState.currentUser.gender).toBe('male')
 //     expect(newState.currentUser.birthday).toEqual(new Date('2019-05-14T11:01:58.135Z'))
@@ -73,8 +71,8 @@ beforeEach(() => {
 //     expect(newState.currentUser.description).toBe('testText')
 // })
 
-test ('Set user photo', () => {
-    const newState = userReducer(state, setPhoto('/photoUrl'))
+test('Set user photo', () => {
+  const newState = userReducer(state, setPhoto('/photoUrl'))
 
-    expect(newState.currentUser.photo).toBe('/photoUrl')
+  expect(newState.currentUser.photo).toBe('/photoUrl')
 })

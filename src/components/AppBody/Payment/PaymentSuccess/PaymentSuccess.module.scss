@@ -1,0 +1,106 @@
+.paymentSuccessContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 46px 108px 52px;
+  flex-wrap: nowrap;
+
+  .successMessage {
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 48px;
+    margin: 0;
+    text-align: center;
+    color: #000000ff;
+  }
+
+  .successCheckEmail {
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 33px;
+    margin: 11px 0 36px 0;
+    text-align: center;
+    align-items: center;
+    color: #717070;
+  }
+
+  &.yellowTheme {
+    transition: all 0.2s ease;
+    .successMessage {
+      color: var(--color-theme);
+    }
+
+    .successCheckEmail {
+      color: var(--color-theme);
+    }
+  }
+
+  &.whiteTheme {
+    transition: all 0.2s ease;
+    .successMessage {
+      color: var(--color-theme);
+    }
+
+    .successCheckEmail {
+      color: var(--color-theme);
+    }
+  }
+
+  &.blueTheme {
+    transition: all 0.2s ease;
+    .successMessage {
+      color: var(--color-theme);
+    }
+
+    .successCheckEmail {
+      color: var(--color-theme);
+    }
+  }
+
+  &.small {
+    transition: all 0.2s ease;
+    .successMessage {
+      font-size: 38px;
+    }
+
+    .successCheckEmail {
+      font-size: 25px;
+    }
+  }
+
+  &.medium {
+    transition: all 0.2s ease;
+    .successMessage {
+      font-size: 42px;
+    }
+
+    .successCheckEmail {
+      font-size: 28px;
+    }
+  }
+
+  &.large {
+    transition: all 0.2s ease;
+    .successMessage {
+      font-size: 44px;
+    }
+    .successCheckEmail {
+      font-size: 32px;
+    }
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .paymentSuccessContent {
+    padding: 24px 32px 40px;
+    flex-wrap: nowrap;
+  }
+  .media {
+    padding: 13px 39px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+  }
+}

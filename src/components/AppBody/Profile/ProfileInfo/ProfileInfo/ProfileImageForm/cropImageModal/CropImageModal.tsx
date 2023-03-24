@@ -1,13 +1,19 @@
-import React, {ChangeEvent, useState} from 'react';
-import Cropper from 'react-easy-crop';
-import getCroppedImg from '../utils/cropImage';
-import {errorHandler, setUserPhotoThunkCreator} from '../../../../../../../Redux/reducers/userSlice';
-import {useDispatch} from 'react-redux';
-import {useAppSelector} from '../../../../../../../utils/Hooks/useAppSelector';
-import {Area, Point} from './types/cropImageTypes';
+import React, { ChangeEvent, useState } from 'react'
+
+import cn from 'classnames'
+import Cropper from 'react-easy-crop'
+import { useDispatch } from 'react-redux'
+
+import {
+  errorHandler,
+  setUserPhotoThunkCreator,
+} from '../../../../../../../Redux/reducers/userSlice'
+import { Nullable } from '../../../../../../../Redux/redux-toolkit-store'
+import { useAppSelector } from '../../../../../../../utils/Hooks/useAppSelector'
+import getCroppedImg from '../utils/cropImage'
+
+import { Area, Point } from './types/cropImageTypes'
 import s from './сropImageModal.module.scss'
-import cn from "classnames";
-import {Nullable} from "../../../../../../../Redux/redux-toolkit-store";
 
 type PropsType = {
   photoUrl: any
@@ -16,13 +22,11 @@ type PropsType = {
   setFile: (file: File) => void
 }
 
-
-const CropImageModal: React.FC<PropsType> = ({photoUrl, setOpenCrop, setPhotoUrl, setFile}) => {
-
+const CropImageModal: React.FC<PropsType> = ({ photoUrl, setOpenCrop, setPhotoUrl, setFile }) => {
   const userId = useAppSelector(state => state.userData.currentUser.id) as number
   const token = localStorage.getItem('token') as string
 
-  const [crop, setCrop] = useState<Point>({x: 0, y: 0})
+  const [crop, setCrop] = useState<Point>({ x: 0, y: 0 })
   const [zoom, setZoom] = useState(1)
   const [rotation, setRotation] = useState(0)
   const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area | null>(null)
@@ -38,7 +42,8 @@ const CropImageModal: React.FC<PropsType> = ({photoUrl, setOpenCrop, setPhotoUrl
   const onCroppedImageConfirm = async () => {
     try {
       //@ts-ignore
-      const {file, url} = await getCroppedImg(photoUrl, croppedAreaPixels as Area, rotation)
+      const { file, url } = await getCroppedImg(photoUrl, croppedAreaPixels as Area, rotation)
+
       setPhotoUrl(url)
       setFile(file)
       setOpenCrop(false)
@@ -57,6 +62,7 @@ const CropImageModal: React.FC<PropsType> = ({photoUrl, setOpenCrop, setPhotoUrl
   const toggleImageCrop = () => {
     setOpenCrop(false)
   }
+
   return (
     <>
       <div className={s.cropperWrapper}>
@@ -76,26 +82,39 @@ const CropImageModal: React.FC<PropsType> = ({photoUrl, setOpenCrop, setPhotoUrl
         <div className={s.cropperSlidersContainer}>
           <div className={s.sliderWrapper}>
             <p className={s.cropperInputValue}> Zoom : {zoomPercent(zoom)}</p>
-            <input className={s.cropper__range} type={'range'} min={1} max={3} step={0.1}
-                   value={zoom}
-                   onChange={onZoomChangeHandler}
+            <input
+              className={s.cropper__range}
+              type={'range'}
+              min={1}
+              max={3}
+              step={0.1}
+              value={zoom}
+              onChange={onZoomChangeHandler}
             />
           </div>
           <div className={s.sliderWrapper}>
             <p className={s.cropperInputValue}> Rotation : {rotation}</p>
-            <input className={s.cropper__range} type={'range'} min={0} max={360}
-                   value={rotation}
-                   onChange={onRotationChangeHandler}
+            <input
+              className={s.cropper__range}
+              type={'range'}
+              min={0}
+              max={360}
+              value={rotation}
+              onChange={onRotationChangeHandler}
             />
           </div>
         </div>
         <div className={s.cropperBtnContainer}>
-          <button className={cn(s.cropperBtn, 'inverseBtn')} onClick={toggleImageCrop}>Cancel</button>
-          <button className={cn(s.cropperBtn, 'submitBtn')} onClick={onCroppedImageConfirm}>Save</button>
+          <button className={cn(s.cropperBtn, 'inverseBtn')} onClick={toggleImageCrop}>
+            Cancel
+          </button>
+          <button className={cn(s.cropperBtn, 'submitBtn')} onClick={onCroppedImageConfirm}>
+            Save
+          </button>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default CropImageModal;
+export default CropImageModal

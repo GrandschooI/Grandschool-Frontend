@@ -1,24 +1,27 @@
-import {WebsiteItemType} from '../../api/infoAPI'
-import {topicType} from '../reducers/courseSlice'
-import {AppStateType} from "../redux-toolkit-store";
-import {reviewsRecordsType} from "../reducers/infoSlice";
+import { WebsiteItemType } from '../../api/infoAPI'
+import { topicType } from '../reducers/courseSlice'
+import { reviewsRecordsType } from '../reducers/infoSlice'
+import { AppStateType } from '../redux-toolkit-store'
 
 export const getWebsites = (state: any): Array<WebsiteItemType> => {
   return state.info.websites.map((el: any) => {
-    return {itemTitle: el.name, itemLink: el.link}
+    return { itemTitle: el.name, itemLink: el.link }
   })
 }
 export const getInfoMenu = (state: AppStateType): Array<object> => {
   return state.info.infoPageAsideMenu.map(el => {
-    return {itemLink: el.itemLink, itemTitle: el.itemTitle, topics: el.topics}
+    return { itemLink: el.itemLink, itemTitle: el.itemTitle, topics: el.topics }
   })
 }
 export const getInfoAboutUs = (state: AppStateType): Array<AsideItemType> => state.info.aboutUs
 export const getTotalCount = (state: AppStateType): number => state.info.reviews.meta.total
-export const getReviewData = (state: AppStateType): Array<reviewsRecordsType> => state.info.reviews.records
+export const getReviewData = (state: AppStateType): Array<reviewsRecordsType> =>
+  state.info.reviews.records
 export const getLastPage = (state: AppStateType): number => state.info.reviews.meta.last_page
 export const getCurrentPage = (state: AppStateType): number => state.info.reviews.meta.current_page
-export const getNextPageURL = (state: AppStateType): string | null => state.info.reviews.meta.next_page_url
-export const getPrevPageURL = (state: AppStateType): string | null => state.info.reviews.meta.previous_page_url
+export const getNextPageURL = (state: AppStateType): string | null =>
+  state.info.reviews.meta.next_page_url
+export const getPrevPageURL = (state: AppStateType): string | null =>
+  state.info.reviews.meta.previous_page_url
 
-type AsideItemType = { itemTitle: string, itemLink: string, topics?: Array<topicType> }
+type AsideItemType = { itemTitle: string; itemLink: string; topics?: Array<topicType> }

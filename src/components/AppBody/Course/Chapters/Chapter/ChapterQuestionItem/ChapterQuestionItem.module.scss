@@ -9,13 +9,13 @@
     line-height: 23px;
     color: #717070;
     text-decoration: none;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
     &:hover {
       font-weight: 600;
       font-size: 18px;
       line-height: 23px;
       color: #618135;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
   }
 }
@@ -23,7 +23,7 @@
 .chapterItem::before {
   display: block;
   position: absolute;
-  left: .125rem;
+  left: 0.125rem;
   top: 12px;
   margin-top: -3px;
   width: 6px;

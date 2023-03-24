@@ -17,7 +17,7 @@
   cursor: pointer;
   position: absolute;
   right: 50%;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
 .headerTop {
@@ -34,16 +34,16 @@ s.sdf {
 
 .headerLogo:hover,
 .headerLogo:focus-visible {
-  opacity: .7;
-  transition: all .2s ease;
+  opacity: 0.7;
+  transition: all 0.2s ease;
 }
 
 .headerLogo:active {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .headerLogo {
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   outline: none;
 }
 
@@ -57,13 +57,13 @@ s.sdf {
 }
 
 .headerNavLink:before {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   width: 0;
   left: 50%;
   border-bottom: 1px solid #618135;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .headerNavLink:hover,
@@ -71,24 +71,24 @@ s.sdf {
 .headerNavLink.headerActiveNavLink {
   position: relative;
   color: #618135;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 
   .headerNavLinkLabel {
     display: block;
     transform: translateY(-10px);
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
 
   &:before {
     width: 100%;
     left: 0;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
 }
 
 .headerNavLinkLabel {
   display: block;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .headerBtnWrap {
@@ -101,22 +101,22 @@ s.sdf {
     border: 1px solid #618135;
     border-radius: 50px;
     align-items: center;
-    padding:0 50px;
+    padding: 0 50px;
     color: #fff;
     text-decoration: none;
     font-size: 20px;
     line-height: 26px;
     font-weight: 600;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
     @media (max-width: 1270px) {
       font-size: 16px;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
     &:hover,
     &:focus-visible {
       color: #618135;
       background-color: #fff;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
 
     &:hover:before {
@@ -137,7 +137,7 @@ s.sdf {
   text-decoration: none;
   color: #000;
   font-weight: 500;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
 .mobileAccountLink {
@@ -163,7 +163,7 @@ s.sdf {
 
 .headerNav.notMainPage {
   width: 45%;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 @media (max-width: 1280px) {
@@ -175,41 +175,38 @@ s.sdf {
 
 .revert {
   transform: rotate(180deg);
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
 .medium {
-
   .headerNavLink,
   .headerNavItem {
-
     font-size: 22px;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
   }
-
 }
 
 .large {
   .headerNavLink,
   .headerNavItem {
     font-size: 24px;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
 
     @media (max-width: 1370px) {
       font-size: 22px;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
     @media (max-width: 1270px) {
       font-size: 20px;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
     @media (max-width: 1040px) {
       font-size: 18px;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
     @media (max-width: 800px) {
       font-size: 16px;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
   }
 }
@@ -220,7 +217,7 @@ s.sdf {
   margin-top: 30px;
   align-items: center;
   height: 88px;
-  background: #F7F5EC;
+  background: #f7f5ec;
 }
 
 .headerSearch {
@@ -235,7 +232,7 @@ s.sdf {
   input {
     width: 100%;
     padding: 20px;
-    border: 1px solid #E5E5E5;
+    border: 1px solid #e5e5e5;
 
     &:focus,
     &:hover {
@@ -247,12 +244,12 @@ s.sdf {
     background: transparent;
     margin-left: auto;
     padding: 15px;
-    border: 1px solid #E5E5E5;
+    border: 1px solid #e5e5e5;
     border-left: none;
     outline: none;
 
     svg {
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
 
     &:focus,
@@ -261,7 +258,7 @@ s.sdf {
 
       svg {
         transform: scale(1.1);
-        transition: all .2s ease;
+        transition: all 0.2s ease;
       }
     }
   }
@@ -289,7 +286,7 @@ s.sdf {
     0%,
     50%,
     100% {
-      opacity: .5;
+      opacity: 0.5;
     }
     25%,
     75% {
@@ -300,7 +297,7 @@ s.sdf {
     0%,
     50%,
     100% {
-      opacity: .5;
+      opacity: 0.5;
     }
     25%,
     75% {
@@ -318,7 +315,6 @@ s.sdf {
 .burgerContactWrap {
   display: none;
 }
-
 
 .header.yellowTheme {
   background-color: #000;
@@ -360,12 +356,12 @@ s.sdf {
     background: yellow;
     color: #000;
     border: 1px solid yellow;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
 
     &:hover {
       background: #000;
       color: yellow;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
   }
 
@@ -431,12 +427,12 @@ s.sdf {
     background: #000;
     color: #fff;
     border: 1px solid #000;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
 
     &:hover {
       background: #fff;
       color: #000;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
   }
 
@@ -503,12 +499,12 @@ s.sdf {
     background: #273a64;
     color: #afe2ef;
     border: 1px solid #273a64;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
 
     &:hover {
       background:#afe2ef;
       color: #273a64;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
   }
 
@@ -676,9 +672,9 @@ s.sdf {
       &.blueTheme {
         stroke: #273a64;
       }
-      stroke:#618135;
-      stroke-width:5.5;
-      stroke-linecap:round;
+      stroke: #618135;
+      stroke-width: 5.5;
+      stroke-linecap: round;
     }
 
     .ham6 .top {
@@ -719,7 +715,7 @@ s.sdf {
       font-weight: 400;
       font-size: 20px;
       line-height: 23px;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
 
       .headerNavLink {
         padding: 10px 0;
@@ -742,7 +738,8 @@ s.sdf {
               color: yellow;
             }
 
-            &.whiteTheme, &.blueTheme {
+            &.whiteTheme,
+            &.blueTheme {
               color: black;
             }
 
@@ -777,12 +774,13 @@ s.sdf {
     .active .headerNav {
       left: 0;
       opacity: 1;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
       &.yellowTheme {
         background-color: black;
       }
 
-      &.whiteTheme, &.blueTheme {
+      &.whiteTheme,
+      &.blueTheme {
         background-color: white;
       }
     }
