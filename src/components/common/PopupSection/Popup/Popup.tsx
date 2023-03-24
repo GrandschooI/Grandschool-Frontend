@@ -21,17 +21,16 @@ type PropsType = {
 }
 
 const Popup: React.FC<PropsType> = ({ children, className = '' }) => {
-  const blindMode = useAppSelector(getThemeStyle)
   const themeStyle = useAppSelector(getThemeStyle)
 
   return (
     <div className={cn(`${s.popupWrapper} ${className}`, themeStyle ? s[themeStyle] : '')}>
       <div className={cn(s.popupHeader, 'popupHeader')}>
-        {!blindMode && <LogoPicture />}
+        {!themeStyle && <LogoPicture />}
         {themeStyle === 'yellowTheme' && <LogoPictureYellowTheme />}
         {themeStyle === 'whiteTheme' && <LogoPictureWhiteTheme />}
         {themeStyle === 'blueTheme' && <LogoPictureBlueTheme />}
-        {!blindMode && <LogoWords />}
+        {!themeStyle && <LogoWords />}
         {themeStyle === 'yellowTheme' && <LogoWordsYellowTheme />}
         {themeStyle === 'whiteTheme' && <LogoWordsWhiteThemeForLogin />}
         {themeStyle === 'blueTheme' && <LogoWordsBlueTheme />}

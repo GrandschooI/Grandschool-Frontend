@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
+import cn from 'classnames'
 import { useDispatch } from 'react-redux'
 import { Redirect, useLocation } from 'react-router-dom'
 import { toast } from 'react-toastify'
@@ -43,8 +44,8 @@ const ConfirmMail = () => {
   if (isMailConfirmed) return <Redirect to={'/profile'} />
 
   return (
-    <section className={s.confirmMailPage}>
-      <div className={s.confirmMailPage__wrapper}>
+    <section className={cn(s.confirmMailPage, s[themeStyle ? themeStyle : ''])}>
+      <div className={cn(s.confirmMailPage__wrapper, s[themeStyle ? themeStyle : ''])}>
         <ConfirmRegistrationForm
           onSubmit={onConfirmRegistrationSubmit}
           themeStyle={themeStyle}

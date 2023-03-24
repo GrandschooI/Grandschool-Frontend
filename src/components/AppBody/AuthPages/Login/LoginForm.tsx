@@ -191,7 +191,14 @@ const LoginForm: React.FC<propsType> = ({
         }}
         unmountOnExit
       >
-        <section className={cn('overlay', s.resultForgotPassPopup)}>
+        <section
+          className={cn(
+            'overlay',
+            s.resultForgotPassPopup,
+            themeStyle ? themeStyle : '',
+            s[themeStyle ? themeStyle : '']
+          )}
+        >
           <Popup>
             <p className={s.desc}>
               На указанный тобой адрес электронной почты было отправлено письмо с дальнейшими
