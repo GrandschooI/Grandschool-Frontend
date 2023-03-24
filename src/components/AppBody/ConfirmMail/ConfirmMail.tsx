@@ -1,15 +1,18 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
+
+import { useDispatch } from 'react-redux'
+import { Redirect, useLocation } from 'react-router-dom'
+import { toast } from 'react-toastify'
+
+import { HttpStatusCode } from '../../../api/api'
+import { userAPI } from '../../../api/userAPI'
+import { toggleIsLoaded } from '../../../Redux/reducers/styleSlice'
+import { getFontSize, getThemeStyle } from '../../../Redux/selectors/styleSelector'
+import { getUserEmail } from '../../../Redux/selectors/userSelector'
+import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
+import ConfirmRegistrationForm from '../AuthPages/ConfirmRegistration/ConfirmRegistrationForm'
+
 import s from './ConfirmMail.module.scss'
-import {Redirect, useLocation} from 'react-router-dom';
-import {userAPI} from '../../../api/userAPI';
-import {HttpStatusCode} from '../../../api/api';
-import ConfirmRegistrationForm from '../AuthPages/ConfirmRegistration/ConfirmRegistrationForm';
-import {useAppSelector} from '../../../utils/Hooks/useAppSelector';
-import {getFontSize, getThemeStyle} from '../../../Redux/selectors/styleSelector';
-import {toast} from 'react-toastify';
-import {getUserEmail} from "../../../Redux/selectors/userSelector";
-import {useDispatch} from "react-redux";
-import {toggleIsLoaded} from "../../../Redux/reducers/styleSlice";
 
 const ConfirmMail = () => {
   const dispatch = useDispatch()
@@ -22,22 +25,31 @@ const ConfirmMail = () => {
   const [isMailConfirmed, setMailConfirmStatus] = useState(false)
 
   useEffect(() => {
-    dispatch(toggleIsLoaded({isLoaded: false}))
-    userAPI.verifyMail({email: emailCurrentUser}).then(res => {
-      if (res.status === HttpStatusCode.OK) setMailConfirmStatus(true)
-    }).finally(() => {
-      dispatch(toggleIsLoaded({isLoaded: true}))
-    })
+    dispatch(toggleIsLoaded({ isLoaded: false }))
+    userAPI
+      .verifyMail({ email: emailCurrentUser })
+      .then(res => {
+        if (res.status === HttpStatusCode.OK) setMailConfirmStatus(true)
+      })
+      .finally(() => {
+        dispatch(toggleIsLoaded({ isLoaded: true }))
+      })
   }, [])
 
   const onConfirmRegistrationSubmit = () => {
     toast('In progress')
   }
-  if (isMailConfirmed) return <Redirect to={'/profile'}/>
+
+  if (isMailConfirmed) return <Redirect to={'/profile'} />
+
   return (
     <section className={s.confirmMailPage}>
       <div className={s.confirmMailPage__wrapper}>
-        <ConfirmRegistrationForm onSubmit={onConfirmRegistrationSubmit} themeStyle={themeStyle} fontSize={fontSize}/>
+        <ConfirmRegistrationForm
+          onSubmit={onConfirmRegistrationSubmit}
+          themeStyle={themeStyle}
+          fontSize={fontSize}
+        />
       </div>
     </section>
   )

@@ -15,10 +15,9 @@
     color: #618135;
   }
 
-
   .reviewDescWrap {
     display: flex;
-    background: #F7F5EC;
+    background: #f7f5ec;
     margin-bottom: 35px;
 
     p {
@@ -62,79 +61,79 @@
         }
 
         &.activeGreen {
-          transition: .5s;
+          transition: 0.5s;
 
           svg {
             opacity: 1;
 
             path {
               fill: green;
-              transition: .5s;
+              transition: 0.5s;
             }
           }
         }
 
         &.activeLightOrange {
-          transition: .5s;
+          transition: 0.5s;
 
           svg {
             opacity: 1;
 
             path {
               fill: #738000;
-              transition: .5s;
+              transition: 0.5s;
             }
           }
         }
 
         &.activeOrange {
-          transition: .5s;
+          transition: 0.5s;
 
           svg {
             opacity: 1;
 
             path {
               fill: orange;
-              transition: .5s;
+              transition: 0.5s;
             }
           }
         }
 
         &.activeDarkOrange {
-          transition: .5s;
+          transition: 0.5s;
 
           svg {
             opacity: 1;
 
             path {
               fill: #e16527;
-              transition: .5s;
+              transition: 0.5s;
             }
           }
         }
 
         &.activeRed {
-          transition: .5s;
+          transition: 0.5s;
 
           svg {
             opacity: 1;
 
             path {
               fill: red;
-              transition: .5s;
+              transition: 0.5s;
             }
           }
         }
 
         svg {
-          transition: all .3s ease;
-          opacity: .7;
+          transition: all 0.3s ease;
+          opacity: 0.7;
         }
 
         &:hover svg {
           opacity: 1;
           transform: scale(1.1);
-          transition: all .3s ease;
+          transition: all 0.3s ease;
         }
       }
     }
@@ -250,7 +249,8 @@
 //}
 
 .reviewBody.yellowTheme {
-  h3, .reviewCAT {
+  h3,
+  .reviewCAT {
     color: yellow;
   }
 
@@ -261,7 +261,6 @@
       color: #00ffff;
     }
   }
-
 
   .assesmentRadioList {
     li {
@@ -276,8 +275,8 @@
       }
 
       svg {
-        transition: all .3s ease;
-        opacity: .5;
+        transition: all 0.3s ease;
+        opacity: 0.5;
 
         path {
           fill: yellow;
@@ -287,7 +286,7 @@
       &:hover svg {
         opacity: 1;
         transform: scale(1.1);
-        transition: all .3s ease;
+        transition: all 0.3s ease;
       }
     }
   }
@@ -305,7 +304,6 @@
 
 .reviewTitle.whiteTheme {
   color: #000;
-
 }
 
 .reviewDescWrap.blueTheme {
@@ -358,14 +356,14 @@
   }
 }
 
-.medium{
-  .reviewList{
+.medium {
+  .reviewList {
     font-size: 20px;
   }
 }
 
-.large{
-  .reviewList{
+.large {
+  .reviewList {
     font-size: 22px;
   }
 }

@@ -1,19 +1,15 @@
-import React from 'react';
+import React from 'react'
 
+import { PopupSection } from '../../common/PopupSection/PopupSection'
 
-import {CourseActivationContent} from './CourseActivationContent/CourseActivationContent';
-import {PopupSection} from '../../common/PopupSection/PopupSection';
+import { CourseActivationContent } from './CourseActivationContent/CourseActivationContent'
 
 const CourseActivation = () => {
+  return (
+    <PopupSection title="Активация курса">
+      <CourseActivationContent />
+    </PopupSection>
+  )
+}
 
-    return (
-        <PopupSection title='Активация курса'>
-            <CourseActivationContent/>
-        </PopupSection>
-
-    );
-};
-
-export default CourseActivation;
-
-
+export default CourseActivation

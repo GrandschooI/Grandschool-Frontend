@@ -1,9 +1,9 @@
 .donateSection {
   padding: 35px 0;
-  background: url('../../../../assets/images/donatebg.png') no-repeat left, #F7F5EC;
+  background: url('../../../../assets/images/donatebg.png') no-repeat left, #f7f5ec;
   background-size: contain;
   &.withoutImg {
-    background: #F7F5EC;
+    background: #f7f5ec;
   }
   .contentWrap {
     width: 45%;
@@ -32,7 +32,7 @@
       line-height: 25px;
       color: #fff;
       text-decoration: none;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
       &.yellowTheme {
         border: 1px solid aqua;
         color: aqua;
@@ -40,7 +40,7 @@
       &:hover,
       &:focus {
         background: #32487d;
-        transition: all .2s ease;
+        transition: all 0.2s ease;
       }
     }
   }
@@ -122,31 +122,31 @@
 
 .medium {
   h2 {
-    font-size: 40px!important;
-    transition: all .2s ease;
+    font-size: 40px !important;
+    transition: all 0.2s ease;
   }
   p {
-    font-size: 24px!important;
-    transition: all .2s ease;
+    font-size: 24px !important;
+    transition: all 0.2s ease;
   }
   a {
-    font-size: 20px!important;
-    transition: all .2s ease;
+    font-size: 20px !important;
+    transition: all 0.2s ease;
   }
 }
 
 .large {
   h2 {
-    font-size: 44px!important;
-    transition: all .2s ease;
+    font-size: 44px !important;
+    transition: all 0.2s ease;
   }
   p {
-    font-size: 26px!important;
-    transition: all .2s ease;
+    font-size: 26px !important;
+    transition: all 0.2s ease;
   }
   a {
-    font-size: 22px!important;
-    transition: all .2s ease;
+    font-size: 22px !important;
+    transition: all 0.2s ease;
   }
 }
 
@@ -183,5 +183,4 @@
       }
     }
   }
-
 }

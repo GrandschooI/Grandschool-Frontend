@@ -1,18 +1,19 @@
 import React from 'react'
+
+import ProfileImageForm from './ProfileImageForm/ProfileImageForm'
 import s from './ProfileInfo.module.scss'
-import ProfileImageForm from './ProfileImageForm/ProfileImageForm';
-import ProfileInfoForm from './ProfileInfoForm/ProfileInfoForm';
+import ProfileInfoForm from './ProfileInfoForm/ProfileInfoForm'
 
 const ProfileInfo = () => {
-    return (
-        <section className={s.profileInfoWrap}>
-            <h2 className={s.title}>Personal information</h2>
-            <div className={s.formWrap}>
-                <ProfileInfoForm/>
-                <ProfileImageForm/>
-            </div>
-        </section>
-    )
+  return (
+    <section className={s.profileInfoWrap}>
+      <h2 className={s.title}>Personal information</h2>
+      <div className={s.formWrap}>
+        <ProfileInfoForm />
+        <ProfileImageForm />
+      </div>
+    </section>
+  )
 }
 
 export default ProfileInfo

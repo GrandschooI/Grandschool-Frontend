@@ -1,4 +1,3 @@
-
 .paymentSuccessContent {
   width: 100%;
   display: flex;
@@ -13,8 +12,7 @@
     line-height: 48px;
     margin: 0;
     text-align: center;
-    color: #000000FF;
-
+    color: #000000ff;
   }
 
   .successCheckEmail {
@@ -25,11 +23,10 @@
     text-align: center;
     align-items: center;
     color: #717070;
-
   }
 
   &.yellowTheme {
-    transition: all .2s ease;
+    transition: all 0.2s ease;
     .successMessage {
       color: var(--color-theme);
     }
@@ -40,7 +37,7 @@
   }
 
   &.whiteTheme {
-    transition: all .2s ease;
+    transition: all 0.2s ease;
     .successMessage {
       color: var(--color-theme);
     }
@@ -51,7 +48,7 @@
   }
 
   &.blueTheme {
-    transition: all .2s ease;
+    transition: all 0.2s ease;
     .successMessage {
       color: var(--color-theme);
     }
@@ -62,7 +59,7 @@
   }
 
   &.small {
-    transition: all .2s ease;
+    transition: all 0.2s ease;
     .successMessage {
       font-size: 38px;
     }
@@ -73,7 +70,7 @@
   }
 
   &.medium {
-    transition: all .2s ease;
+    transition: all 0.2s ease;
     .successMessage {
       font-size: 42px;
     }
@@ -84,7 +81,7 @@
   }
 
   &.large {
-    transition: all .2s ease;
+    transition: all 0.2s ease;
     .successMessage {
       font-size: 44px;
     }
@@ -92,12 +89,10 @@
       font-size: 32px;
     }
   }
-
-
 }
 
 @media screen and (max-width: 390px) {
-  .paymentSuccessContent{
+  .paymentSuccessContent {
     padding: 24px 32px 40px;
     flex-wrap: nowrap;
   }

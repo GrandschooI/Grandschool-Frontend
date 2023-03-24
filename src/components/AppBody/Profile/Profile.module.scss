@@ -14,19 +14,19 @@ section.profilePage {
   .optionEnter {
     opacity: 0;
     transform: translate(1000px, 1000px);
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
 
   .optionEnterActive {
     opacity: 1;
     transform: translate(0);
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
 
   .optionExitActive {
     opacity: 0;
     transform: translate(1000px, 1000px);
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
 
   .logoutBtn {
@@ -44,23 +44,23 @@ section.profilePage {
       font-size: 18px;
       line-height: 18px;
       color: #717070;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
 
     svg {
       fill: #717070;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
 
     &:hover {
       span {
         color: red;
-        transition: all .3s ease;
+        transition: all 0.3s ease;
       }
 
       svg {
         fill: red;
-        transition: all .3s ease;
+        transition: all 0.3s ease;
       }
     }
   }

@@ -1,16 +1,16 @@
 .yellowTheme {
-  --background-theme:  #191901;
-  --color-theme: #FFFF00FF;
+  --background-theme: #191901;
+  --color-theme: #ffff00ff;
 }
 
 .whiteTheme {
-  --background-theme:#000 ;
-  --color-theme:#fff;
+  --background-theme: #000;
+  --color-theme: #fff;
 }
 
 .blueTheme {
   --background-theme: #aee2ef;
-  --color-theme: #273A64FF;
+  --color-theme: #273a64ff;
 }
 
 .popupWrapper {
@@ -26,7 +26,7 @@
     align-items: center;
     justify-content: center;
     height: 88px;
-    background: #F7F5EC;
+    background: #f7f5ec;
   }
 
   .popupSwitcherWrapper {
@@ -60,4 +60,3 @@
     }
   }
 }
-

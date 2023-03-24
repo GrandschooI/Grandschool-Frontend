@@ -1,42 +1,43 @@
-import React, {useEffect, useState} from 'react'
-import {Form, Formik} from 'formik'
-import {CSSTransition} from 'react-transition-group'
-import {TextField} from '../../../common/Form/FormControls/FormControls'
-import FacebookLoginIcon from '../../../SVGConponents/Forms/FacebookLoginIcon'
-import s from './Login.module.scss'
-import {loginDataType} from '../AuthPage'
-import cn from 'classnames'
-import GoogleLogin from 'react-google-login';
-import FacebookLogin from 'react-facebook-login';
-import Popup from '../../../common/PopupSection/Popup/Popup';
-import {useAppSelector} from '../../../../utils/Hooks/useAppSelector';
-import {getFontSize, getThemeStyle} from '../../../../Redux/selectors/styleSelector';
-import {FACEBOOK_CLIENT_ID, GOOGLE_CLIENT_ID} from '../../../../Redux/reducers/userSlice';
-import * as yup from 'yup'
-import FormErrorMessage from '../../../utils/FormErrorMessage/FormErrorMessage';
+import React, { useEffect, useState } from 'react'
 
+import cn from 'classnames'
+import { Form, Formik } from 'formik'
+import FacebookLogin from 'react-facebook-login'
+// eslint-disable-next-line import/no-named-as-default
+import GoogleLogin from 'react-google-login'
+import { CSSTransition } from 'react-transition-group'
+import * as yup from 'yup'
+
+import { FACEBOOK_CLIENT_ID, GOOGLE_CLIENT_ID } from '../../../../Redux/reducers/userSlice'
+import { getFontSize, getThemeStyle } from '../../../../Redux/selectors/styleSelector'
+import { useAppSelector } from '../../../../utils/Hooks/useAppSelector'
+import { TextField } from '../../../common/Form/FormControls/FormControls'
+import Popup from '../../../common/PopupSection/Popup/Popup'
+import FacebookLoginIcon from '../../../SVGConponents/Forms/FacebookLoginIcon'
+import FormErrorMessage from '../../../utils/FormErrorMessage/FormErrorMessage'
+import { loginDataType } from '../AuthPage'
+
+import s from './Login.module.scss'
 
 const loginFormValidationSchema = yup.object().shape({
   email: yup.string().email('Invalid email address').required('Email address is required'),
-  password: yup.string()
+  password: yup
+    .string()
     .required('Password is required')
     .min(8, 'Password must be at least 8 characters')
     .max(50, 'Password must not be greater than 50 characters.'),
 })
 const forgotPasswordSchema = yup.object().shape({
-  email: yup.string().required('Email is required').email('Invalid email address')
+  email: yup.string().required('Email is required').email('Invalid email address'),
 })
 
-
-const LoginForm: React.FC<propsType> = (
-  {
-    onSubmit,
-    onGoogleButtonClick,
-    onFacebookButtonClick,
-    onForgotPasswordFormSubmit,
-    startGoogleAPI,
-  }) => {
-
+const LoginForm: React.FC<propsType> = ({
+  onSubmit,
+  onGoogleButtonClick,
+  onFacebookButtonClick,
+  onForgotPasswordFormSubmit,
+  startGoogleAPI,
+}) => {
   const themeStyle = useAppSelector(getThemeStyle)
   const fontSize = useAppSelector(getFontSize)
 
@@ -54,26 +55,32 @@ const LoginForm: React.FC<propsType> = (
     setForgotPassPopupStatus(!isForgotPassPopup)
     setIsForgotPassResultPopupStatus(!isForgotPassResultPopup)
   }
+
   return (
     <section>
       <Formik
-        initialValues={{email: '', password: ''}}
+        initialValues={{ email: '', password: '' }}
         validationSchema={loginFormValidationSchema}
         onSubmit={onSubmit}
         validateOnChange={true}
         validateOnBlur={true}
       >
-        {({isSubmitting, errors, touched}) => (
+        {({ isSubmitting, errors, touched }) => (
           <Form
-            className={cn(themeStyle ? themeStyle : '', s[themeStyle ? themeStyle : ''], s[fontSize ? fontSize : ''],
-              [fontSize ? fontSize : ''])}>
+            className={cn(
+              themeStyle ? themeStyle : '',
+              s[themeStyle ? themeStyle : ''],
+              s[fontSize ? fontSize : ''],
+              [fontSize ? fontSize : '']
+            )}
+          >
             <label className={'formLabel'}>
               <span>Login</span>
               {TextField({
                 type: 'email',
                 name: 'email',
                 placeholder: 'Wpisz adres e-mail',
-                className: `textField ${errors.email && touched.email ? 'errorTextField' : ''}`
+                className: `textField ${errors.email && touched.email ? 'errorTextField' : ''}`,
               })}
               {errors.email && touched.email && <FormErrorMessage>{errors.email}</FormErrorMessage>}
             </label>
@@ -83,16 +90,25 @@ const LoginForm: React.FC<propsType> = (
                 type: 'password',
                 name: 'password',
                 placeholder: 'Wpisz hasło',
-                  className: `textField ${errors.password && touched.password ? 'errorTextField' : ''}`,
-                changeToText: true
+                className: `textField ${
+                  errors.password && touched.password ? 'errorTextField' : ''
+                }`,
+                changeToText: true,
               })}
-              {errors.password && touched.password && <FormErrorMessage>{errors.password}</FormErrorMessage>}
+              {errors.password && touched.password && (
+                <FormErrorMessage>{errors.password}</FormErrorMessage>
+              )}
             </label>
-            {
-              !isSubmitting ? <button type="submit" className="submitBtn">Wyślij</button>
-                : <span>Pending</span>
-            }
-            <button onClick={onForgotBtnClick} className={s.forgotPassword}>Forgot password?</button>
+            {!isSubmitting ? (
+              <button type="submit" className="submitBtn">
+                Wyślij
+              </button>
+            ) : (
+              <span>Pending</span>
+            )}
+            <button onClick={onForgotBtnClick} className={s.forgotPassword}>
+              Forgot password?
+            </button>
             <p className={s.signWithTitle}>Or sign in with...</p>
             <div className={s.anotherTypeLoginBtnWrap}>
               <GoogleLogin
@@ -104,7 +120,7 @@ const LoginForm: React.FC<propsType> = (
               <FacebookLogin
                 appId={FACEBOOK_CLIENT_ID}
                 callback={onFacebookButtonClick}
-                icon={<FacebookLoginIcon/>}
+                icon={<FacebookLoginIcon />}
                 textButton={'Facebook'}
                 cssClass="anotherTypeLogin"
               />
@@ -118,19 +134,20 @@ const LoginForm: React.FC<propsType> = (
         classNames={{
           enter: s.optionEnter,
           enterActive: s.optionEnterActive,
-          exitActive: s.optionExitActive
+          exitActive: s.optionExitActive,
         }}
         unmountOnExit
       >
         <section className="overlay">
           <Popup>
-            <Formik initialValues={{email: ''}}
-                    validationSchema={forgotPasswordSchema}
-                    onSubmit={sendResetPasswordFlow}
-                    validateOnBlur={true}
-                    validateOnChange={true}
+            <Formik
+              initialValues={{ email: '' }}
+              validationSchema={forgotPasswordSchema}
+              onSubmit={sendResetPasswordFlow}
+              validateOnBlur={true}
+              validateOnChange={true}
             >
-              {({touched, errors}) => (
+              {({ touched, errors }) => (
                 <Form>
                   <label className={'formLabel'}>
                     <span>Укажи адрес электронной почты</span>
@@ -138,14 +155,23 @@ const LoginForm: React.FC<propsType> = (
                       type: 'email',
                       name: 'email',
                       placeholder: 'Wpisz adres e-mail',
-                        className: `textField ${errors.email && touched.email ? 'errorTextField' : ''}`
+                      className: `textField ${
+                        errors.email && touched.email ? 'errorTextField' : ''
+                      }`,
                     })}
-                    {errors.email && touched.email && <FormErrorMessage>{errors.email}</FormErrorMessage>}
+                    {errors.email && touched.email && (
+                      <FormErrorMessage>{errors.email}</FormErrorMessage>
+                    )}
                   </label>
                   <div className={s.popupBtnWrapper}>
-                    <button type="submit" className="submitBtn">Wyślij</button>
-                    <button onClick={() => setForgotPassPopupStatus(!isForgotPassPopup)}
-                            className={'inverseBtn'}>Zamknij
+                    <button type="submit" className="submitBtn">
+                      Wyślij
+                    </button>
+                    <button
+                      onClick={() => setForgotPassPopupStatus(!isForgotPassPopup)}
+                      className={'inverseBtn'}
+                    >
+                      Zamknij
                     </button>
                   </div>
                 </Form>
@@ -161,27 +187,30 @@ const LoginForm: React.FC<propsType> = (
         classNames={{
           enter: s.optionEnter,
           enterActive: s.optionEnterActive,
-          exitActive: s.optionExitActive
+          exitActive: s.optionExitActive,
         }}
-        unmountOnExit>
+        unmountOnExit
+      >
         <section className={cn('overlay', s.resultForgotPassPopup)}>
           <Popup>
             <p className={s.desc}>
-              На указанный тобой адрес электронной почты было отправлено письмо с дальнейшими инструкциями
+              На указанный тобой адрес электронной почты было отправлено письмо с дальнейшими
+              инструкциями
             </p>
-            <button className="submitBtn"
-                    onClick={() => setIsForgotPassResultPopupStatus(!isForgotPassResultPopup)}>Close
+            <button
+              className="submitBtn"
+              onClick={() => setIsForgotPassResultPopupStatus(!isForgotPassResultPopup)}
+            >
+              Close
             </button>
           </Popup>
         </section>
       </CSSTransition>
-
     </section>
   )
 }
 
 export default LoginForm
-
 
 type propsType = {
   onSubmit: (formData: loginDataType, onSubmitProps: any) => void

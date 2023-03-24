@@ -1,57 +1,57 @@
+import store, { AppStateType } from '../../redux-toolkit-store'
 import {
-    getFontSize,
-    getImgAvailability,
-    getLoadedInfo,
-    getOptionsState,
-    getStyleMode,
-    getThemeStyle
-} from "../styleSelector";
-import store, {AppStateType} from "../../redux-toolkit-store";
+  getFontSize,
+  getImgAvailability,
+  getLoadedInfo,
+  getOptionsState,
+  getStyleMode,
+  getThemeStyle,
+} from '../styleSelector'
 
-let rootState: AppStateType;
+let rootState: AppStateType
 
 beforeEach(() => {
-    rootState = store.getState();
+  rootState = store.getState()
 })
 
 test('get style mode', () => {
-    const styleModeData = getStyleMode(rootState)
+  const styleModeData = getStyleMode(rootState)
 
-    expect(styleModeData).toBeDefined()
-    expect(styleModeData).toBe(rootState.styleMode.blindMode)
+  expect(styleModeData).toBeDefined()
+  expect(styleModeData).toBe(rootState.styleMode.blindMode)
 })
 
 test('get fontSize', () => {
-    const fontSizeData = getFontSize(rootState)
+  const fontSizeData = getFontSize(rootState)
 
-    expect(fontSizeData).toBeDefined()
-    expect(fontSizeData).toBe(rootState.styleMode.fontSize)
+  expect(fontSizeData).toBeDefined()
+  expect(fontSizeData).toBe(rootState.styleMode.fontSize)
 })
 
 test('get themeStyle', () => {
-    const themeStyleData = getThemeStyle(rootState)
+  const themeStyleData = getThemeStyle(rootState)
 
-    expect(themeStyleData).toBeDefined()
-    expect(themeStyleData).toBe(rootState.styleMode.themeStyle)
+  expect(themeStyleData).toBeDefined()
+  expect(themeStyleData).toBe(rootState.styleMode.themeStyle)
 })
 
 test('get img availability', () => {
-    const imgAvailabilityData = getImgAvailability(rootState)
+  const imgAvailabilityData = getImgAvailability(rootState)
 
-    expect(imgAvailabilityData).toBeDefined()
-    expect(imgAvailabilityData).toBe(rootState.styleMode.images)
+  expect(imgAvailabilityData).toBeDefined()
+  expect(imgAvailabilityData).toBe(rootState.styleMode.images)
 })
 
 test('get load info', () => {
-    const loadedInfoData = getLoadedInfo(rootState)
+  const loadedInfoData = getLoadedInfo(rootState)
 
-    expect(loadedInfoData).toBeDefined()
-    expect(loadedInfoData).toBe(rootState.styleMode.isLoaded)
+  expect(loadedInfoData).toBeDefined()
+  expect(loadedInfoData).toBe(rootState.styleMode.isLoaded)
 })
 
 test('get options state', () => {
-    const optionsStateData = getOptionsState(rootState)
+  const optionsStateData = getOptionsState(rootState)
 
-    expect(optionsStateData).toBeDefined()
-    expect(optionsStateData).toBe(rootState.styleMode.isOptionsOpen)
+  expect(optionsStateData).toBeDefined()
+  expect(optionsStateData).toBe(rootState.styleMode.isOptionsOpen)
 })
