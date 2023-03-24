@@ -4,7 +4,6 @@ import cn from 'classnames'
 
 import s from './Payment.module.scss'
 
-console.log(1213)
 const Payment = () => {
   return (
     <section className={cn(s.paymentWrapper, 'container')}>
