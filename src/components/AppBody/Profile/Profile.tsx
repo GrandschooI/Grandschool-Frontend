@@ -59,7 +59,7 @@ const Profile = () => {
             }}
             unmountOnExit
           >
-            <div className="overlay">
+            <div className={cn("overlay", themeStyle ? themeStyle : "", s[themeStyle ? themeStyle : ""])}>
               <Popup>
                 <p className={s.logoutDesc}>Вы уверены что хотите покинуть свою учётную запись</p>
                 <div className={s.logoutBtnWrap}>

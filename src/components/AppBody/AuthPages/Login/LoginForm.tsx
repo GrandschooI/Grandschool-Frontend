@@ -131,9 +131,10 @@ const LoginForm: React.FC<propsType> = (
                     validateOnChange={true}
             >
               {({touched, errors}) => (
-                <Form>
+                <Form className={cn(themeStyle ? themeStyle : '', s[themeStyle ? themeStyle : ''], s[fontSize ? fontSize : ''],
+                    [fontSize ? fontSize : ''])}>
                   <label className={'formLabel'}>
-                    <span>Укажи адрес электронной почты</span>
+                    <span>Enter your email:</span>
                     {TextField({
                       type: 'email',
                       name: 'email',
@@ -164,7 +165,7 @@ const LoginForm: React.FC<propsType> = (
           exitActive: s.optionExitActive
         }}
         unmountOnExit>
-        <section className={cn('overlay', s.resultForgotPassPopup)}>
+        <section className={cn('overlay', s.resultForgotPassPopup, themeStyle ? themeStyle : '', s[themeStyle ? themeStyle : ''])}>
           <Popup>
             <p className={s.desc}>
               На указанный тобой адрес электронной почты было отправлено письмо с дальнейшими инструкциями

@@ -10,6 +10,7 @@ import {toast} from 'react-toastify';
 import {getUserEmail} from "../../../Redux/selectors/userSelector";
 import {useDispatch} from "react-redux";
 import {toggleIsLoaded} from "../../../Redux/reducers/styleSlice";
+import cn from "classnames";
 
 const ConfirmMail = () => {
   const dispatch = useDispatch()
@@ -35,8 +36,8 @@ const ConfirmMail = () => {
   }
   if (isMailConfirmed) return <Redirect to={'/profile'}/>
   return (
-    <section className={s.confirmMailPage}>
-      <div className={s.confirmMailPage__wrapper}>
+    <section className={cn(s.confirmMailPage, s[themeStyle ? themeStyle : ''])}>
+      <div className={cn(s.confirmMailPage__wrapper, s[themeStyle ? themeStyle : ''])}>
         <ConfirmRegistrationForm onSubmit={onConfirmRegistrationSubmit} themeStyle={themeStyle} fontSize={fontSize}/>
       </div>
     </section>

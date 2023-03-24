@@ -16,18 +16,16 @@ import LogoWordsWhiteThemeForLogin from "../../SVGConponents/Forms/LogoWordsWhit
 
 const Popup: React.FC<PropsWithChildren<ReactNode>> = ({children}) => {
 
-  const blindMode = useAppSelector(getThemeStyle)
   const themeStyle = useAppSelector(getThemeStyle)
-
 
   return (
     <div className={cn(s.popupWrapper, themeStyle ? s[themeStyle] : '')}>
       <div className={cn(s.popupHeader, 'popupHeader')}>
-        {!blindMode && <LogoPicture/>}
+        {!themeStyle && <LogoPicture/>}
         {themeStyle === 'yellowTheme' && <LogoPictureYellowTheme/>}
         {themeStyle === 'whiteTheme' && <LogoPictureWhiteTheme/>}
         {themeStyle === 'blueTheme' && <LogoPictureBlueTheme/>}
-        {!blindMode && <LogoWords/>}
+        {!themeStyle && <LogoWords/>}
         {themeStyle === 'yellowTheme' && <LogoWordsYellowTheme/>}
         {themeStyle === 'whiteTheme' && <LogoWordsWhiteThemeForLogin/>}
         {themeStyle === 'blueTheme' && <LogoWordsBlueTheme/>}

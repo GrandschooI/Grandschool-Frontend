@@ -17,5 +17,35 @@
       stroke: #618135;
       fill: transparent;
     }
+    .yellowTheme .preloader {
+      circle {
+        stroke: aqua;
+      }
+    }
+  }
+}
+.yellowTheme {
+  background-color: black;
+  .preloader {
+    circle {
+      stroke: yellow;
+    }
+  }
+}
+
+.whiteTheme {
+  .preloader {
+    circle {
+      stroke: black;
+    }
+  }
+}
+
+.blueTheme {
+  background-color: #b8eefb;
+  .preloader {
+    circle {
+      stroke: #273a64;
+    }
   }
 }
