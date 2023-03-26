@@ -1,13 +1,4 @@
 .profileInfoForm {
-
-  @media (max-width: 1064px) {
-    .fullName {
-      position: absolute;
-      top: -330px;
-    }
-
-  }
-
   span {
     transition: all .3s ease;
   }
@@ -66,6 +57,47 @@
 
 }
 
+@media (max-width: 1200px) {
+  .profileInfoForm {
+    .fullName {
+      width: 100%;
+      position: absolute;
+      top: -300px;
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      width: 370px;
+    }
+
+    .gender {
+      margin-top: 65px;
+    }
+
+  }
+}
+
+@media(min-width: 374px) and (max-width: 500px) {
+  .profileInfoForm {
+    .fullName {
+      top: -200px;
+    }
+
+    max-width: 300px;
+
+    textarea {
+      width: 280px;
+    }
+
+    .gender {
+      margin-top: 270px;
+    }
+
+    .btn {
+      width: 300px;
+    }
+  }
+}
 
 .profileInfoForm.yellowTheme {
   span {

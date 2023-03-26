@@ -1,18 +1,17 @@
 .profileImageForm {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
-  flex-wrap: wrap;
   height: fit-content;
-  min-height: 100%;
   padding: 23px 0 23px 43px;
   background: #f7f5ec;
   border-radius: 26px 0 0 26px;
   max-width: 500px;
   min-width: 430px;
-  width: 35%;
+  width: 32%;
 
   h3 {
     width: 100%;
@@ -83,19 +82,26 @@
     display: flex;
     height: inherit;
     min-height: 100%;
-    width: 100%;
     position: absolute;
     top: 0;
   }
 }
 
-@media (max-width: 1064px) {
-  .profileImageForm{
+@media (max-width: 1200px) {
+  .profileImageForm {
     position: absolute;
-    top: 720px;
+    top: 790px;
     min-height: 100px;
     border-radius: 0 26px 26px 0;
     //display: none;
+  }
+}
+
+
+@media(min-width: 374px) and (max-width: 430px){
+  .profileImageForm {
+    top: 785px;
+    min-width: 300px;
   }
 }
 

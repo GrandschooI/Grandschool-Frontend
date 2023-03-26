@@ -74,30 +74,32 @@ const ProfileInfoForm = () => {
                         </div>
                     </label>
                     <label className='formLabel'>
-                        <span>Gender</span>
-                        <div className={s.radioWrap}>
-                            <label>
-                                {RadioButton({
-                                    name: 'gender',
-                                    propValue: 'male',
-                                    label: 'Male',
-                                    checked: statusAssessment === 'male',
-                                    getRadioStatus: getRadioStatus,
-                                    handleChange: () => {
-                                    }
-                                })}
-                            </label>
-                            <label>
-                                {RadioButton({
-                                    name: 'gender',
-                                    propValue: 'female',
-                                    label: 'Female',
-                                    checked: statusAssessment === 'female',
-                                    getRadioStatus: getRadioStatus,
-                                    handleChange: () => {
-                                    }
-                                })}
-                            </label>
+                        <div className={s.gender}>
+                            <span>Gender</span>
+                            <div className={s.radioWrap}>
+                                <label>
+                                    {RadioButton({
+                                        name: 'gender',
+                                        propValue: 'male',
+                                        label: 'Male',
+                                        checked: statusAssessment === 'male',
+                                        getRadioStatus: getRadioStatus,
+                                        handleChange: () => {
+                                        }
+                                    })}
+                                </label>
+                                <label>
+                                    {RadioButton({
+                                        name: 'gender',
+                                        propValue: 'female',
+                                        label: 'Female',
+                                        checked: statusAssessment === 'female',
+                                        getRadioStatus: getRadioStatus,
+                                        handleChange: () => {
+                                        }
+                                    })}
+                                </label>
+                            </div>
                         </div>
                     </label>
                     <label className={'formLabel'}>

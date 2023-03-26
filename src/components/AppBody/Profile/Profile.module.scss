@@ -1,4 +1,6 @@
 section.profilePage {
+  display: flex;
+  flex-wrap: wrap;
   padding-top: 210px;
   padding-bottom: 160px;
 
@@ -10,15 +12,6 @@ section.profilePage {
 
   .profilePageInfoWrap {
     display: flex;
-  }
-
-  @media (max-width: 1064px) {
-    .aside{
-      position: absolute;
-      top: 60%;
-      margin: auto 0;
-      width: 95%;
-    }
   }
 
   .optionEnter {
@@ -161,6 +154,47 @@ section.profilePage {
 
     &:disabled {
       opacity: .7;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .profilePage {
+    .profileTitle {
+      padding-top: 20px;
+    }
+
+    .aside {
+      position: absolute;
+      margin: auto 0;
+      width: 95%;
+    }
+
+    .logoutBtn {
+      position: absolute;
+      top: 610px;
+      left: 30px;
+    }
+  }
+}
+
+@media (min-width: 374px) and (max-width: 500px) {
+  .profilePage {
+    .aside {
+      position: absolute;
+
+      margin: auto 0;
+      width: 95%;
+    }
+
+    .logoutBtn {
+      position: absolute;
+      top: 610px;
+      left: 30px;
+
+      .logout {
+        display: none;
+      }
     }
   }
 }
