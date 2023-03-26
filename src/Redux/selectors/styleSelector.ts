@@ -1,4 +1,4 @@
-import {AppStateType, Nullable} from "../redux-toolkit-store";
+import { AppStateType, Nullable } from '../redux-toolkit-store'
 
 export const getStyleMode = (state: AppStateType): boolean => state.styleMode.blindMode
 export const getFontSize = (state: AppStateType): string => state.styleMode.fontSize

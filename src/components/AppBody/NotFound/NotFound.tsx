@@ -1,36 +1,48 @@
 import React from 'react'
-import s from './NotFoundPage.module.scss'
+
+import cn from 'classnames'
+import { NavLink, useHistory } from 'react-router-dom'
+
 import notFoundNumber from '../../../assets/images/404.png'
-import {NavLink, useHistory} from 'react-router-dom'
-import cn from 'classnames';
-import {useAppSelector} from '../../../utils/Hooks/useAppSelector';
-import {getFontSize, getThemeStyle} from '../../../Redux/selectors/styleSelector';
+import { getFontSize, getThemeStyle } from '../../../Redux/selectors/styleSelector'
+import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
+
+import s from './NotFoundPage.module.scss'
 
 const NotFound = () => {
-
   const themeStyle = useAppSelector(getThemeStyle)
   const fontSize = useAppSelector(getFontSize)
 
-    let history = useHistory();
+  let history = useHistory()
 
-    return (
-        <section className={cn(s.notFoundWrapper, s[themeStyle ? themeStyle : ''], themeStyle ? themeStyle : '',
-            s[fontSize ? fontSize : ''])}>
-            <div className={cn(s.contentWrap, 'container')}>
-                <span className={s.notFoundNumber}>
-            404
-            <img src={notFoundNumber} alt="404"/>
+  return (
+    <section
+      className={cn(
+        s.notFoundWrapper,
+        s[themeStyle ? themeStyle : ''],
+        themeStyle ? themeStyle : '',
+        s[fontSize ? fontSize : '']
+      )}
+    >
+      <div className={cn(s.contentWrap, 'container')}>
+        <span className={s.notFoundNumber}>
+          404
+          <img src={notFoundNumber} alt="404" />
         </span>
 
-                <h1>Страница не найдена</h1>
-                <p>Неправильно набран адрес или такой страницы не существует</p>
-                <div className={s.buttonWrap}>
-                    <button onClick={history.goBack} className={'inverseBtn'}>Назад</button>
-                    <NavLink to='/' className={'submitBtn'}>На главную</NavLink>
-                </div>
-            </div>
-        </section>
-    )
+        <h1>Страница не найдена</h1>
+        <p>Неправильно набран адрес или такой страницы не существует</p>
+        <div className={s.buttonWrap}>
+          <button onClick={history.goBack} className={'inverseBtn'}>
+            Назад
+          </button>
+          <NavLink to="/" className={'submitBtn'}>
+            На главную
+          </NavLink>
+        </div>
+      </div>
+    </section>
+  )
 }
 
 export default NotFound

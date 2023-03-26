@@ -1,0 +1,170 @@
+.courseActivationContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 41px 68px 50px;
+
+  .bodyDescription {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #717070;
+    margin: 0;
+  }
+
+  .bodyBoxCode {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    margin: 28px;
+
+    input {
+      text-align: center;
+      width: 56px;
+      height: 56px;
+      border: 1px solid #a0a0a0;
+      border-radius: 4px;
+
+      &:focus {
+        border: 1px solid #618135;
+      }
+    }
+  }
+
+  .activateBtn {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+    width: 221px;
+    height: 64px;
+    background: #618135;
+    border: 1px solid #717070;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: #fff;
+      color: #618135;
+      border: 1px solid #618135;
+    }
+  }
+
+  &.yellowTheme {
+    transition: all 0.2s ease;
+
+    .activateBtn {
+      background: var(--color-theme);
+      border-color: var(--color-theme);
+      color: var(--background-theme);
+
+      &:hover {
+        background: var(--background-theme);
+        color: var(--color-theme);
+      }
+    }
+
+    .bodyDescription {
+      color: var(--color-theme);
+    }
+
+    input {
+      color: var(--color-theme);
+
+      &:focus {
+        border: 1px solid var(--color-theme);
+      }
+    }
+  }
+
+  &.whiteTheme {
+    transition: all 0.2s ease;
+
+    .activateBtn {
+      background: var(--color-theme);
+      border-color: var(--color-theme);
+      color: var(--background-theme);
+
+      &:hover {
+        background: var(--background-theme);
+        color: var(--color-theme);
+      }
+    }
+
+    .bodyDescription {
+      color: var(--color-theme);
+    }
+
+    input {
+      color: var(--color-theme);
+
+      &:focus {
+        border: 1px solid var(--color-theme);
+      }
+    }
+  }
+
+  &.blueTheme {
+    transition: all 0.2s ease;
+
+    .activateBtn {
+      background: var(--color-theme);
+      border-color: var(--color-theme);
+      color: var(--background-theme);
+
+      &:hover {
+        background: var(--background-theme);
+        color: var(--color-theme);
+      }
+    }
+
+    .bodyDescription {
+      color: var(--color-theme);
+    }
+
+    input {
+      color: var(--color-theme);
+
+      &:focus {
+        border: 1px solid var(--color-theme);
+      }
+    }
+  }
+}
+
+.medium {
+  .bodyDescription {
+    font-size: 26px;
+  }
+
+  .activateBtn {
+    font-size: 22px;
+  }
+}
+
+.large {
+  .bodyDescription {
+    font-size: 28px;
+  }
+
+  .activateBtn {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .courseActivationContent {
+    padding: 31px 15px 40px;
+
+    .bodyDescription {
+      text-align: left;
+    }
+  }
+}

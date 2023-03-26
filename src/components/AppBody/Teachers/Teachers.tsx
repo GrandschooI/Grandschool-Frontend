@@ -1,6 +1,8 @@
 import React from 'react'
-import s from './Teachers.module.scss'
+
 import cn from 'classnames'
+
+import s from './Teachers.module.scss'
 
 const Teachers = () => {
   return (
