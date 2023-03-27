@@ -12,7 +12,7 @@ const AccountSettings = () => {
 
     return (
         <section className={cn(s.settingsWrap, s[themeStyle ? themeStyle : ''], s[fontSize])}>
-            <h2>Account Settings</h2>
+            <h2 className={s.title}>Account Settings</h2>
             <ChangePasswordForm/>
             <ChangeEmailForm/>
         </section>

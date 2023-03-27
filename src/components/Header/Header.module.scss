@@ -162,13 +162,13 @@ s.sdf {
 }
 
 .headerNav.notMainPage {
-  width: 45%;
+  width: 200%;
   transition: all 0.3s ease;
 }
 
 @media (max-width: 1280px) {
   .headerNav.notMainPage {
-    width: 100%;
+    width: 200%;
     justify-content: space-around;
   }
 }

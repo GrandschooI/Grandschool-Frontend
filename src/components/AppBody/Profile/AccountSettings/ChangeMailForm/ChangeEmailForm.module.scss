@@ -51,6 +51,15 @@
 
 }
 
+@media(min-width: 374px) and (max-width: 500px) {
+  .changeEmailForm {
+    max-width: 300px;
+    .btn {
+      width: 300px;
+    }
+  }
+}
+
 .yellowTheme.changeEmailForm {
   h3 {
     color: #ff0;
@@ -74,6 +83,8 @@
     }
   }
 }
+
+
 
 .whiteTheme.changeEmailForm {
   h3 {
