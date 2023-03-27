@@ -105,6 +105,12 @@ input[type='radio']:checked + .radioLabel:after {
     background: none;
     animation: bounce-in-fwd 1.1s both;
   }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: yellow;
+    -webkit-box-shadow: 0 0 0 40rem #000 inset;
+  }
 }
 .whiteTheme {
   input[type='checkbox']:checked + .checkboxLabel:before,
@@ -112,12 +118,24 @@ input[type='radio']:checked + .radioLabel:after {
     background: none;
     animation: bounce-in-fwd 1.1s both;
   }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #fff;
+    -webkit-box-shadow: 0 0 0 40rem #000 inset;
+  }
 }
 .blueTheme {
   input[type='checkbox']:checked + .checkboxLabel:before,
   input[type='radio']:checked + .radioLabel:after {
     background: #273a64;
     animation: bounce-in-fwd 1.1s both;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #aee2ef;
+    -webkit-box-shadow: 0 0 0 40rem #273a64 inset;
   }
 }
 
@@ -396,13 +414,13 @@ address {
     border: 1px solid yellow;
 
     &:hover {
-      background-color: #191901;
+      background-color: inherit;
       border: 1px solid yellow;
       color: yellow !important;
     }
   }
   .inverseBtn {
-    background-color: #000;
+    background-color: inherit;
     color: yellow;
     border: 1px solid yellow;
     svg,
@@ -503,7 +521,7 @@ address {
     }
   }
   .inverseBtn {
-    background-color: #fff;
+    background-color: inherit;
     color: #273a64;
     border: 1px solid #273a64;
     svg,
@@ -514,7 +532,7 @@ address {
     &:hover {
       background-color: #273a64;
       border: 1px solid #273a64;
-      color: #fff !important;
+      color: #afe2ef !important;
       transition: all 0.2s linear;
 
       svg,

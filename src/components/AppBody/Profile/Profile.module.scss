@@ -72,6 +72,9 @@ section.profilePage {
     line-height: 33px;
     text-align: center;
     color: #717070;
+    .yellowTheme {
+      color: yellow;
+    }
   }
 
   .logoutBtnWrap {
@@ -87,6 +90,11 @@ section.profilePage {
   }
 }
 
-.yellowTheme.profilePage {
-  background: #000;
+.yellowTheme {
+  &.profilePage {
+    background: #000;
+  }
+  p.logoutDesc {
+    color: yellow;
+  }
 }
