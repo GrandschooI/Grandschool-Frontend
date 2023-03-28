@@ -74,6 +74,10 @@
     max-width: 150px;
     background: #fff;
     color: #618135;
+    &:hover {
+      background-color: #618135;
+      color: #fff;
+    }
   }
   .continue {
     max-width: 220px;
@@ -105,6 +109,7 @@
       font-weight: 400;
       font-size: 22px;
       line-height: 28px;
+      transition: all .3s ease;
     }
   }
 }
@@ -192,16 +197,19 @@
 }
 
 .yellowTheme {
+  .continue:hover {
+    background-color: inherit;
+  }
   .phone {
     color: aqua;
   }
   .goBack {
-    background: #000;
+    background: inherit;
     color: yellow;
     transition: all 0.3s ease;
     &:hover {
       background: yellow;
-      color: #000;
+      color: #000 !important;
       transition: all 0.3s ease;
     }
   }
@@ -211,34 +219,43 @@
 }
 
 .whiteTheme {
+  .continue {
+    background-color: inherit;
+  }
+  .confirmLabel {
+    span {
+      color: #000;
+    }
+  }
   .phone {
-    color: #fff;
+    color: #000;
   }
   .goBack {
     background: #000;
     color: #fff;
     transition: all 0.3s ease;
     &:hover {
-      background: #fff;
-      color: #000;
+      border: 1px solid black;
+      background: inherit;
+      color: #000 !important;
       transition: all 0.3s ease;
     }
   }
   .repeatCode {
-    color: #fff;
+    color: #3a3a3a;
   }
 }
 
 .blueTheme {
   .phone {
-    color: #000;
+    color: #273a64;
   }
   .goBack {
     background: #273a64;
     color: #afe2ef;
     transition: all 0.3s ease;
     &:hover {
-      background: #afe2ef;
+      background: inherit;
       color: #273a64;
       transition: all 0.3s ease;
     }
@@ -249,6 +266,12 @@
 }
 
 .medium {
+  .confirmLabel {
+    span {
+      font-size: 24px;
+      transition: all .3s ease;
+    }
+  }
   .phone {
     font-size: 24px;
     transition: all 0.3s ease;
@@ -260,6 +283,12 @@
 }
 
 .large {
+  .confirmLabel {
+    span {
+      font-size: 26px;
+      transition: all .3s ease;
+    }
+  }
   .phone {
     font-size: 26px;
     transition: all 0.3s ease;

@@ -4,7 +4,6 @@ import cn from 'classnames'
 import { useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 
-import './CallToActionGlobal.scss'
 import { switchBlindMode } from '../../../../Redux/reducers/styleSlice'
 import {
   getFontSize,
@@ -14,6 +13,7 @@ import {
 } from '../../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../../utils/Hooks/useAppSelector'
 import BlindButton from '../../../utils/BlindButton/BlindButton'
+import './CallToActionGlobal.scss'
 
 import s from './CallToAction.module.scss'
 

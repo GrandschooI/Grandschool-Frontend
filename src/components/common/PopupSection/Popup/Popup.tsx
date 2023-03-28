@@ -8,10 +8,12 @@ import { useAppSelector } from '../../../../utils/Hooks/useAppSelector'
 import LogoWordsWhiteThemeForLogin from '../../../SVGConponents/Forms/LogoWordsWhiteThemeForLogin'
 import LogoPicture from '../../../SVGConponents/Header/LogoPicture'
 import LogoPictureBlueTheme from '../../../SVGConponents/Header/LogoPictureBlueTheme'
+import LogoPictureBlueThemeForLogin from '../../../SVGConponents/Header/LogoPictureBlueThemeForLogin'
 import LogoPictureWhiteTheme from '../../../SVGConponents/Header/LogoPictureWhiteTheme'
 import LogoPictureYellowTheme from '../../../SVGConponents/Header/LogoPictureYellowTheme'
 import LogoWords from '../../../SVGConponents/Header/LogoWords'
 import LogoWordsBlueTheme from '../../../SVGConponents/Header/LogoWordsBlueTheme'
+import LogoWordsBlueThemeForLogin from '../../../SVGConponents/Header/LogoWordsBlueThemeForLogin'
 import LogoWordsYellowTheme from '../../../SVGConponents/Header/LogoWordsYellowTheme'
 
 import s from './Popup.module.scss'
@@ -21,20 +23,19 @@ type PropsType = {
 }
 
 const Popup: React.FC<PropsType> = ({ children, className = '' }) => {
-  const blindMode = useAppSelector(getThemeStyle)
   const themeStyle = useAppSelector(getThemeStyle)
 
   return (
     <div className={cn(`${s.popupWrapper} ${className}`, themeStyle ? s[themeStyle] : '')}>
       <div className={cn(s.popupHeader, 'popupHeader')}>
-        {!blindMode && <LogoPicture />}
+        {!themeStyle && <LogoPicture />}
         {themeStyle === 'yellowTheme' && <LogoPictureYellowTheme />}
         {themeStyle === 'whiteTheme' && <LogoPictureWhiteTheme />}
-        {themeStyle === 'blueTheme' && <LogoPictureBlueTheme />}
-        {!blindMode && <LogoWords />}
+        {themeStyle === 'blueTheme' && <LogoPictureBlueThemeForLogin />}
+        {!themeStyle && <LogoWords />}
         {themeStyle === 'yellowTheme' && <LogoWordsYellowTheme />}
         {themeStyle === 'whiteTheme' && <LogoWordsWhiteThemeForLogin />}
-        {themeStyle === 'blueTheme' && <LogoWordsBlueTheme />}
+        {themeStyle === 'blueTheme' && <LogoWordsBlueThemeForLogin />}
       </div>
       <>{children}</>
     </div>
