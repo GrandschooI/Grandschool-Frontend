@@ -9,7 +9,6 @@ import { useAppSelector } from '../../utils/Hooks/useAppSelector'
 import AboutUs from './AboutUs/AboutUs'
 import s from './AppBody.module.scss'
 import AuthPage from './AuthPages/AuthPage'
-import ConfirmMail from './ConfirmMail/ConfirmMail'
 import Course from './Course/Course'
 import CourseActivation from './CourseActivation/CourseActivation'
 import HomePage from './HomePage/HomePage'
@@ -35,7 +34,6 @@ const AppBody = () => {
         <Route path="/teachers" render={() => <Teachers />} />
         <Route path="/info" render={() => <Info />} />
         <Route path="/payment" render={() => <Payment />} />
-        <Route path="/email-verification" render={() => <ConfirmMail />} />
         <Route path="/not-found" render={() => <NotFound />} />
         <Route path="/course-activation" render={() => <CourseActivation />} />
         <Redirect path="*" to={'/not-found'} />
