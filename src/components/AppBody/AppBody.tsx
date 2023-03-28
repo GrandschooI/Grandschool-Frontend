@@ -21,8 +21,6 @@ import Teachers from './Teachers/Teachers'
 const AppBody = () => {
   const isOptionsOpen = useAppSelector(getOptionsState)
 
-  console.log('1')
-
   return (
     <div className={cn(s.appBody, isOptionsOpen ? s.openedBlindOption : '')}>
       <Switch>
