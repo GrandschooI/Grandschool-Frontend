@@ -19,7 +19,6 @@ import {
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
 
 import s from './BlindModeOptions.module.scss'
-
 const BlindModeOptions = () => {
   const dispatch = useDispatch()
   const fontSizeFromLocalStorage = localStorage.getItem('fontSizeFromLocalStorage')
