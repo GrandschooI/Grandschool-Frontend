@@ -1,11 +1,19 @@
 import React, { FC } from 'react'
 
+import cn from 'classnames'
+
 import { CommentItem } from './CommentItem/CommentItem'
 import s from './Comments.module.scss'
 
+import { getFontSize, getThemeStyle } from 'Redux/selectors/styleSelector'
+import { useAppSelector } from 'utils/Hooks/useAppSelector'
+
 const Comments: FC = () => {
+  const themeStyle = useAppSelector(getThemeStyle)
+  const fontSize = useAppSelector(getFontSize)
+
   return (
-    <section className={s.comments}>
+    <section className={cn(s.comments, s[themeStyle ? themeStyle : ''], 'comments', s[fontSize])}>
       <div className={s.profile}>
         <img className={s.avatar} src="" alt="" />
         <div className={s.name_wrapper}>
