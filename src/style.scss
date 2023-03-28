@@ -161,6 +161,7 @@ input[type='radio']:checked + .radioLabel:after {
 }
 
 .formLabel {
+  padding-top: 1px;
   position: relative;
   display: block;
   margin: auto;
@@ -454,6 +455,16 @@ address {
     span {
       color: yellow;
       transition: all 0.3s ease;
+      @media (max-width: 470px) {
+        font-size: 0;
+      }
+    }
+    @media (max-width: 470px) {
+      font-size: 0 !important;
+      width: auto;
+      svg {
+        margin: 0 15px;
+      }
     }
   }
 }
@@ -504,6 +515,16 @@ address {
     }
     span {
       color: #fff;
+      @media (max-width: 470px) {
+        font-size: 0;
+      }
+    }
+    @media (max-width: 470px) {
+      font-size: 0 !important;
+      width: auto;
+      svg {
+        margin: 0 15px;
+      }
     }
   }
 }
@@ -515,7 +536,7 @@ address {
     border: 1px solid #273a64;
 
     &:hover {
-      background-color: #afe2ef;
+      background-color: transparent;
       border: 1px solid #273a64;
       color: #273a64 !important;
     }
@@ -555,6 +576,16 @@ address {
     }
     span {
       color: #afe2ef;
+      @media (max-width: 470px) {
+        font-size: 0;
+      }
+    }
+    @media (max-width: 470px) {
+      font-size: 0 !important;
+      width: auto;
+      svg {
+        margin: 0 15px;
+      }
     }
   }
 }
@@ -577,6 +608,7 @@ address {
   transition: all 0.3s ease;
   div {
     padding: 0 !important;
+    margin: 0 10px;
   }
   &:first-child {
     margin-right: 8px;
@@ -597,6 +629,9 @@ address {
     font-weight: 600 !important;
     font-size: 18px;
     text-transform: uppercase;
+    @media (max-width: 470px) {
+      font-size: 0;
+    }
   }
   @media (max-width: 470px) {
     font-size: 0;

@@ -148,7 +148,14 @@ const LoginForm: React.FC<propsType> = ({
               validateOnChange={true}
             >
               {({ touched, errors }) => (
-                <Form>
+                <Form
+                  className={cn(
+                    themeStyle ? themeStyle : '',
+                    s[themeStyle ? themeStyle : ''],
+                    s[fontSize ? fontSize : ''],
+                    [fontSize ? fontSize : '']
+                  )}
+                >
                   <label className={'formLabel'}>
                     <span>Укажи адрес электронной почты</span>
                     {TextField({

@@ -248,14 +248,14 @@
 
 .blueTheme {
   .phone {
-    color: #000;
+    color: #273a64;
   }
   .goBack {
     background: #273a64;
     color: #afe2ef;
     transition: all 0.3s ease;
     &:hover {
-      background: #afe2ef;
+      background: inherit;
       color: #273a64;
       transition: all 0.3s ease;
     }
