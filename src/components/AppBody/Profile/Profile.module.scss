@@ -5,7 +5,7 @@ section.profilePage {
   padding-bottom: 160px;
 
   .profileTitle {
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     font-weight: 600;
     font-size: 36px;
   }
@@ -17,19 +17,19 @@ section.profilePage {
   .optionEnter {
     opacity: 0;
     transform: translate(1000px, 1000px);
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
 
   .optionEnterActive {
     opacity: 1;
     transform: translate(0);
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
 
   .optionExitActive {
     opacity: 0;
     transform: translate(1000px, 1000px);
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
 
   .logoutBtn {
@@ -47,26 +47,25 @@ section.profilePage {
       font-size: 18px;
       line-height: 18px;
       color: #717070;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
 
     svg {
       fill: #717070;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
 
     &:hover {
       span {
         color: red;
-        transition: all .3s ease;
+        transition: all 0.3s ease;
       }
 
       svg {
         fill: red;
-        transition: all .3s ease;
+        transition: all 0.3s ease;
       }
     }
-
   }
 
   .logoutDesc {
@@ -116,7 +115,7 @@ section.profilePage {
     }
 
     &:disabled {
-      opacity: .7;
+      opacity: 0.7;
     }
   }
 
@@ -146,14 +145,15 @@ section.profilePage {
       color: #fff;
       transition: all 0.2s linear;
 
-      svg, path {
+      svg,
+      path {
         fill: #fff;
         transition: all 0.2s linear;
       }
     }
 
     &:disabled {
-      opacity: .7;
+      opacity: 0.7;
     }
   }
 }
@@ -210,7 +210,6 @@ section.profilePage {
   .logoutBtn {
     svg {
       fill: #ff0;
-
     }
 
     span {
@@ -251,7 +250,6 @@ section.profilePage {
   .logoutBtn {
     svg {
       fill: #000;
-
     }
 
     span {
@@ -294,7 +292,6 @@ section.profilePage {
   .logoutBtn {
     svg {
       fill: #273a64;
-
     }
 
     span {
@@ -337,7 +334,6 @@ section.profilePage {
       font-size: 20px;
     }
   }
-
 }
 
 .large.profilePage {

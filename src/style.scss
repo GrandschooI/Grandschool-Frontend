@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Proba';
   src: url('assets/fonts/ProbaPro-Light.woff2') format('woff2'),
-  url('assets/fonts/ProbaPro-Light.woff') format('woff');
+    url('assets/fonts/ProbaPro-Light.woff') format('woff');
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -10,7 +10,7 @@
 @font-face {
   font-family: 'Proba';
   src: url('assets/fonts/ProbaPro-Regular.woff2') format('woff2'),
-  url('assets/fonts/ProbaPro-Regular.woff') format('woff');
+    url('assets/fonts/ProbaPro-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -19,7 +19,7 @@
 @font-face {
   font-family: 'Proba';
   src: url('assets/fonts/ProbaPro-Medium.woff2') format('woff2'),
-  url('assets/fonts/ProbaPro-Medium.woff') format('woff');
+    url('assets/fonts/ProbaPro-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -28,7 +28,7 @@
 @font-face {
   font-family: 'Proba';
   src: url('assets/fonts/ProbaPro-Bold.woff2') format('woff2'),
-  url('assets/fonts/ProbaPro-Bold.woff') format('woff');
+    url('assets/fonts/ProbaPro-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -109,7 +109,6 @@ input[type='radio']:checked + .radioLabel:after {
     background: none;
     animation: bounce-in-fwd 1.1s both;
   }
-
 
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
@@ -195,7 +194,7 @@ input[type='radio']:checked + .radioLabel:after {
     min-height: 30px;
     cursor: text;
     background: #fff;
-    border: 1px solid #EAEAEA;
+    border: 1px solid #eaeaea;
     border-radius: 4px;
     font-size: 18px;
 
@@ -203,7 +202,7 @@ input[type='radio']:checked + .radioLabel:after {
       font-weight: 400;
       font-size: 16px;
       line-height: 20px;
-      color: #A0A0A0;
+      color: #a0a0a0;
     }
   }
 
@@ -216,7 +215,7 @@ input[type='radio']:checked + .radioLabel:after {
     margin: 0;
 
     &:before {
-      content: "";
+      content: '';
       display: block;
       position: relative;
       top: 0;
@@ -226,12 +225,12 @@ input[type='radio']:checked + .radioLabel:after {
       animation: bounce-out-bck 1.5s both;
       width: 25px;
       height: 24px;
-      border: 3px solid #E5E5E5;
+      border: 3px solid #e5e5e5;
       margin-right: 15px;
     }
 
     &:after {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       left: 8px;
@@ -359,7 +358,7 @@ address {
   }
 
   &:disabled {
-    opacity: .7;
+    opacity: 0.7;
   }
 }
 
@@ -389,14 +388,15 @@ address {
     color: #ffffff !important;
     transition: all 0.2s linear;
 
-    svg, path {
+    svg,
+    path {
       fill: #fff;
       transition: all 0.2s linear;
     }
   }
 
   &:disabled {
-    opacity: .7;
+    opacity: 0.7;
   }
 }
 
@@ -435,7 +435,8 @@ address {
     color: yellow;
     border: 1px solid yellow;
 
-    svg, path {
+    svg,
+    path {
       fill: yellow;
       transition: all 0.3s linear;
     }
@@ -446,14 +447,15 @@ address {
       color: #000 !important;
       transition: all 0.3s linear;
 
-      svg, path {
+      svg,
+      path {
         fill: #000;
         transition: all 0.2s linear;
       }
     }
 
     &:disabled {
-      opacity: .7;
+      opacity: 0.7;
     }
   }
 
@@ -467,7 +469,7 @@ address {
 
     span {
       color: yellow;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
   }
 }
@@ -491,7 +493,8 @@ address {
     color: #000;
     border: 1px solid #000;
 
-    svg, path {
+    svg,
+    path {
       fill: yellow;
       transition: all 0.2s linear;
     }
@@ -502,14 +505,15 @@ address {
       color: #fff !important;
       transition: all 0.2s linear;
 
-      svg, path {
+      svg,
+      path {
         fill: #000;
         transition: all 0.2s linear;
       }
     }
 
     &:disabled {
-      opacity: .7;
+      opacity: 0.7;
     }
   }
 
@@ -546,7 +550,8 @@ address {
     color: #273a64;
     border: 1px solid #273a64;
 
-    svg, path {
+    svg,
+    path {
       fill: yellow;
       transition: all 0.2s linear;
     }
@@ -557,7 +562,8 @@ address {
       color: #fff !important;
       transition: all 0.2s linear;
 
-      svg, path {
+      svg,
+      path {
         fill: #000;
         transition: all 0.2s linear;
       }
@@ -571,7 +577,7 @@ address {
   .anotherTypeLogin {
     background: #273a64 !important;
     color: #afe2ef;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
 
     div {
       background: #273a64 !important;
@@ -589,7 +595,7 @@ address {
   justify-content: center;
   width: 190px;
   height: 61px;
-  border: 0.5px solid #31477C !important;
+  border: 0.5px solid #31477c !important;
   border-radius: 4px !important;
   background: #fff;
   cursor: pointer;
@@ -598,7 +604,7 @@ address {
   font-weight: 600 !important;
   font-size: 18px;
   text-transform: uppercase;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 
   div {
     padding: 0 !important;
@@ -622,7 +628,7 @@ address {
   }
 
   span {
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     color: #000;
     font-weight: 600 !important;
     font-size: 18px;
