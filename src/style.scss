@@ -1,31 +1,34 @@
 @font-face {
   font-family: 'Proba';
   src: url('assets/fonts/ProbaPro-Light.woff2') format('woff2'),
-    url('assets/fonts/ProbaPro-Light.woff') format('woff');
+  url('assets/fonts/ProbaPro-Light.woff') format('woff');
   font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Proba';
   src: url('assets/fonts/ProbaPro-Regular.woff2') format('woff2'),
-    url('assets/fonts/ProbaPro-Regular.woff') format('woff');
+  url('assets/fonts/ProbaPro-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Proba';
   src: url('assets/fonts/ProbaPro-Medium.woff2') format('woff2'),
-    url('assets/fonts/ProbaPro-Medium.woff') format('woff');
+  url('assets/fonts/ProbaPro-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Proba';
   src: url('assets/fonts/ProbaPro-Bold.woff2') format('woff2'),
-    url('assets/fonts/ProbaPro-Bold.woff') format('woff');
+  url('assets/fonts/ProbaPro-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -99,12 +102,14 @@ input[type='radio']:checked + .radioLabel:after {
   background: #618135;
   animation: bounce-in-fwd 1.1s both;
 }
+
 .yellowTheme {
   input[type='checkbox']:checked + .checkboxLabel:before,
   input[type='radio']:checked + .radioLabel:after {
     background: none;
     animation: bounce-in-fwd 1.1s both;
   }
+
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus {
@@ -112,12 +117,14 @@ input[type='radio']:checked + .radioLabel:after {
     -webkit-box-shadow: 0 0 0 40rem #000 inset;
   }
 }
+
 .whiteTheme {
   input[type='checkbox']:checked + .checkboxLabel:before,
   input[type='radio']:checked + .radioLabel:after {
     background: none;
     animation: bounce-in-fwd 1.1s both;
   }
+
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus {
@@ -125,12 +132,14 @@ input[type='radio']:checked + .radioLabel:after {
     -webkit-box-shadow: 0 0 0 40rem #000 inset;
   }
 }
+
 .blueTheme {
   input[type='checkbox']:checked + .checkboxLabel:before,
   input[type='radio']:checked + .radioLabel:after {
     background: #273a64;
     animation: bounce-in-fwd 1.1s both;
   }
+
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus {
@@ -152,10 +161,12 @@ input[type='radio']:checked + .radioLabel:after {
 #root form input.errorTextField,
 #root form textarea.errorTextField {
   border: 1px solid red;
+
   &::placeholder {
     color: red;
   }
 }
+
 #root form textarea.errorTextField::placeholder {
   color: red;
 }
@@ -182,7 +193,7 @@ input[type='radio']:checked + .radioLabel:after {
   }
 
   .textField {
-    padding: 15px;
+    padding: 15px 40px 15px 15px;
     min-width: 100%;
     min-height: 30px;
     cursor: text;
@@ -419,15 +430,18 @@ address {
       color: yellow !important;
     }
   }
+
   .inverseBtn {
     background-color: inherit;
     color: yellow;
     border: 1px solid yellow;
+
     svg,
     path {
       fill: yellow;
       transition: all 0.3s linear;
     }
+
     &:hover {
       background-color: yellow;
       border: 1px solid #000;
@@ -445,18 +459,22 @@ address {
       opacity: 0.7;
     }
   }
+
   .anotherTypeLogin {
     background: #000 !important;
     color: yellow;
+
     div {
       background: #000 !important;
     }
+
     span {
       color: yellow;
       transition: all 0.3s ease;
     }
   }
 }
+
 .whiteTheme {
   .submitBtn {
     background-color: #fff;
@@ -470,15 +488,18 @@ address {
       color: #fff !important;
     }
   }
+
   .inverseBtn {
     background-color: #fff;
     color: #000;
     border: 1px solid #000;
+
     svg,
     path {
       fill: yellow;
       transition: all 0.2s linear;
     }
+
     &:hover {
       background-color: #000;
       border: 1px solid #fff;
@@ -496,17 +517,21 @@ address {
       opacity: 0.7;
     }
   }
+
   .anotherTypeLogin {
     background: #000 !important;
     color: white;
+
     div {
       background: #000 !important;
     }
+
     span {
       color: #fff;
     }
   }
 }
+
 .blueTheme {
   .submitBtn {
     background-color: #273a64;
@@ -520,15 +545,18 @@ address {
       color: #273a64 !important;
     }
   }
+
   .inverseBtn {
     background-color: inherit;
     color: #273a64;
     border: 1px solid #273a64;
+
     svg,
     path {
       fill: yellow;
       transition: all 0.2s linear;
     }
+
     &:hover {
       background-color: #273a64;
       border: 1px solid #273a64;
@@ -546,13 +574,16 @@ address {
       opacity: 0.7;
     }
   }
+
   .anotherTypeLogin {
     background: #273a64 !important;
     color: #afe2ef;
     transition: all 0.3s ease;
+
     div {
       background: #273a64 !important;
     }
+
     span {
       color: #afe2ef;
     }
@@ -575,22 +606,28 @@ address {
   font-size: 18px;
   text-transform: uppercase;
   transition: all 0.3s ease;
+
   div {
     padding: 0 !important;
   }
+
   &:first-child {
     margin-right: 8px;
   }
+
   &:last-child {
     margin-right: 8px;
+
     svg {
       transform: none;
     }
   }
+
   svg {
     transform: scale(1.2);
     margin-right: 15px;
   }
+
   span {
     transition: all 0.3s ease;
     color: #000;
@@ -598,6 +635,7 @@ address {
     font-size: 18px;
     text-transform: uppercase;
   }
+
   @media (max-width: 470px) {
     font-size: 0;
     width: auto;
