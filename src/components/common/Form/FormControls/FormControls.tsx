@@ -9,7 +9,7 @@ import EyeIcon from '../../../SVGConponents/Forms/EyeIcon'
 
 import s from './FormControls.module.scss'
 
-export const TextField: React.FC<propsForTextFieldType> = ({
+export const TextField: React.FC<PropsTextField> = ({
   type,
   name,
   placeholder,
@@ -20,7 +20,7 @@ export const TextField: React.FC<propsForTextFieldType> = ({
   const [value, setValue] = useState(type)
   const fieldTextType = 'text'
   const fieldPasswordType = 'password'
-  const onChange = (e: MouseEvent) => {
+  const showPassword = (e: MouseEvent) => {
     e.preventDefault()
     setValue(value === fieldPasswordType ? fieldTextType : fieldPasswordType)
   }
@@ -35,13 +35,14 @@ export const TextField: React.FC<propsForTextFieldType> = ({
         validate={validators}
         value={propValue}
       />
+
       {type === 'password' && value === fieldPasswordType && (
-        <button onClick={onChange} className={s.changeType}>
+        <button onClick={showPassword} className={s.changeType}>
           <EyeIcon />
         </button>
       )}
       {type === 'password' && value === fieldTextType && (
-        <button onClick={onChange} className={cn(s.changeType, s.hidePassword)}>
+        <button onClick={showPassword} className={cn(s.changeType, s.hidePassword)}>
           <CrossEyeIcon />
         </button>
       )}
@@ -49,7 +50,7 @@ export const TextField: React.FC<propsForTextFieldType> = ({
   )
 }
 
-export const RadioButton: React.FC<propsForRadioType> = ({
+export const RadioButton: React.FC<PropsRadioType> = ({
   name,
   className,
   errorClassname,
@@ -78,7 +79,7 @@ export const RadioButton: React.FC<propsForRadioType> = ({
   )
 }
 
-export const Checkbox: React.FC<propsForCheckboxType> = ({
+export const Checkbox: React.FC<PropsCheckBoxType<boolean>> = ({
   name,
   className,
   errorClassname,
@@ -105,8 +106,21 @@ export const Checkbox: React.FC<propsForCheckboxType> = ({
     </div>
   )
 }
+type PropsRadioType = {
+  checked?: boolean
+  handleChange: () => void
+  getRadioStatus?: (status: string) => void
+} & PropsCheckBoxType<string>
 
-type propsForTextFieldType = {
+type PropsCheckBoxType<T> = {
+  name: string
+  className?: string
+  errorClassname?: string
+  label: string
+  propValue: T
+}
+
+type PropsTextField = {
   type: string
   name: string
   placeholder?: string
@@ -114,21 +128,4 @@ type propsForTextFieldType = {
   validators?: object
   changeToText?: boolean
   propValue?: Nullable<string>
-}
-type propsForRadioType = {
-  name: string
-  className?: string
-  errorClassname?: string
-  label: string
-  propValue: string
-  checked?: boolean
-  handleChange: () => void
-  getRadioStatus?: (status: string) => void
-}
-type propsForCheckboxType = {
-  name: string
-  className?: string
-  errorClassname?: string
-  label: string
-  propValue: boolean
 }
