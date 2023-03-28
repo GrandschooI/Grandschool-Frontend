@@ -318,6 +318,7 @@ s.sdf {
 
 .header.yellowTheme {
   background-color: #000;
+
   .headerNavLink {
     color: yellow;
 
@@ -458,6 +459,7 @@ s.sdf {
 
 .header.blueTheme {
   background-color: #afe2ef;
+
   .headerNavLink {
     color: #273a64;
 
@@ -502,7 +504,7 @@ s.sdf {
     transition: all 0.2s ease;
 
     &:hover {
-      background:#afe2ef;
+      background: #afe2ef;
       color: #273a64;
       transition: all 0.2s ease;
     }
@@ -552,9 +554,11 @@ s.sdf {
     .headerNavItem {
       font-size: 14px;
     }
+
     .headerNavItem {
       padding: 0 50px;
     }
+
     .headerNavLink {
       font-size: 15px;
     }
@@ -591,8 +595,10 @@ s.sdf {
     &.blueTheme {
       background: #afe2ef;
     }
+
     position: fixed;
     background: #f7f5ec;
+
     .headerTop {
       padding: 25px 15px;
     }
@@ -672,6 +678,7 @@ s.sdf {
       &.blueTheme {
         stroke: #273a64;
       }
+
       stroke: #618135;
       stroke-width: 5.5;
       stroke-linecap: round;
@@ -775,6 +782,7 @@ s.sdf {
       left: 0;
       opacity: 1;
       transition: all 0.3s ease;
+
       &.yellowTheme {
         background-color: black;
       }
