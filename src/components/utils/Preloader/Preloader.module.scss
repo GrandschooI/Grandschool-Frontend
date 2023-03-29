@@ -9,42 +9,49 @@
   height: 100vh;
   z-index: 1000;
   background: #ffffffd9;
+
   .preloader {
     width: 400px;
     height: 100px;
     position: absolute;
+
     circle {
       stroke: #618135;
       fill: transparent;
     }
-    .yellowTheme .preloader {
-      circle {
-        stroke: aqua;
-      }
-    }
   }
 }
+
 .yellowTheme {
-  background-color: black;
+  background-color: #191901;
+  opacity: 0.9;
+
   .preloader {
     circle {
       stroke: yellow;
     }
   }
 }
+
 .whiteTheme {
+  background: #000;
+  opacity: 0.9;
+
   .preloader {
     circle {
-      stroke: black;
+      stroke: #fff;
     }
   }
 }
 
+
 .blueTheme {
-  background-color: #b8eefb;
+  background-color: #273a64;
+  opacity: 0.9;
+
   .preloader {
     circle {
-      stroke: #273a64;
+      stroke: #afe2ef;
     }
   }
 }
