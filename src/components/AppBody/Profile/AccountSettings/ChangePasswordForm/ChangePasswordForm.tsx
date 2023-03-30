@@ -1,13 +1,17 @@
 import React from 'react'
 
 import '../../../../../style.scss'
+import cn from 'classnames'
 import { Form, Formik } from 'formik'
 import * as yup from 'yup'
 
-import { TextField } from '../../../../common/Form/FormControls/FormControls'
 import FormErrorMessage from '../../../../utils/FormErrorMessage/FormErrorMessage'
 
 import s from './ChangePasswordForm.module.scss'
+
+import { TextField } from 'components/common/Form/FormControls/FormControls'
+import { getFontSize, getThemeStyle } from 'Redux/selectors/styleSelector'
+import { useAppSelector } from 'utils/Hooks/useAppSelector'
 
 type propsType = {}
 const changePasswordValidationSchema = yup.object().shape({
@@ -27,6 +31,9 @@ const changePasswordValidationSchema = yup.object().shape({
     .required('This field is required'),
 })
 const ProfileInfoForm: React.FC<propsType> = () => {
+  const themeStyle = useAppSelector(getThemeStyle)
+  const fontSize = useAppSelector(getFontSize)
+
   return (
     <Formik
       initialValues={{ password: '', newPassword: '', reenteredNewPassword: '' }}
@@ -36,7 +43,7 @@ const ProfileInfoForm: React.FC<propsType> = () => {
       onSubmit={() => {}}
     >
       {({ isSubmitting, errors, touched }) => (
-        <Form className={s.changePasswordForm}>
+        <Form className={cn(s.changePasswordForm, s[themeStyle ? themeStyle : ''], s[fontSize])}>
           <h3>Change password</h3>
           <label className={'formLabel'}>
             <span>Enter current password</span>
@@ -81,7 +88,7 @@ const ProfileInfoForm: React.FC<propsType> = () => {
             )}
           </label>
           {!isSubmitting ? (
-            <button type="submit" className="submitBtn">
+            <button type="submit" className={s.btn}>
               Wyślij
             </button>
           ) : (

@@ -7,7 +7,7 @@ import { CSSTransition } from 'react-transition-group'
 
 import { logoutThunkCreator } from '../../../Redux/reducers/userSlice'
 import { getProfileAsideItems } from '../../../Redux/selectors/profileSelector'
-import { getThemeStyle } from '../../../Redux/selectors/styleSelector'
+import { getFontSize, getThemeStyle } from '../../../Redux/selectors/styleSelector'
 import { getAuthStatus } from '../../../Redux/selectors/userSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
 import Aside from '../../common/Aside/Aside'
@@ -21,6 +21,7 @@ const Profile = () => {
   const [isPopup, setPopupStatus] = useState(false)
 
   const themeStyle = useAppSelector(getThemeStyle)
+  const fontSize = useAppSelector(getFontSize)
   const isAuth = useAppSelector(getAuthStatus)
   const profileAsideItems = useAppSelector(getProfileAsideItems)
   const dispatch = useDispatch()
@@ -34,12 +35,15 @@ const Profile = () => {
   }
 
   return (
-    <section className={cn(s.profilePage, s[themeStyle ? themeStyle : ''])}>
+    <section className={cn(s.profilePage, s[themeStyle ? themeStyle : ''], s[fontSize])}>
       <div className={'container'}>
         <h1 className={s.profileTitle}>Profile page</h1>
         <div className={s.profilePageInfoWrap}>
           <div>
-            <Aside asideItems={profileAsideItems} />
+            <div className={s.aside}>
+              <Aside asideItems={profileAsideItems} />
+            </div>
+
             <button onClick={() => setPopupStatus(!isPopup)} className={s.logoutBtn}>
               <svg
                 width="25px"
@@ -49,7 +53,7 @@ const Profile = () => {
               >
                 <path d="M115.99219,124.00281v-76a12,12,0,0,1,24,0v76a12,12,0,0,1-24,0Zm66.564-79.82178a11.99994,11.99994,0,0,0-13.10888,20.10352,75.99962,75.99962,0,1,1-82.89454-.00049A11.99981,11.99981,0,0,0,73.44434,44.18054a100.00013,100.00013,0,1,0,109.11181.00049Z" />
               </svg>
-              <span>Log out</span>
+              <span className={s.logout}>Log out</span>
             </button>
           </div>
           <Switch>
@@ -67,20 +71,14 @@ const Profile = () => {
             }}
             unmountOnExit
           >
-            <div
-              className={cn(
-                'overlay',
-                themeStyle ? themeStyle : '',
-                s[themeStyle ? themeStyle : '']
-              )}
-            >
+            <div className="overlay">
               <Popup>
                 <p className={s.logoutDesc}>Вы уверены что хотите покинуть свою учётную запись</p>
                 <div className={s.logoutBtnWrap}>
-                  <button className={'submitBtn'} onClick={onLogoutClickHandler}>
+                  <button className={s.submitBtn} onClick={onLogoutClickHandler}>
                     Logout
                   </button>
-                  <button className={'inverseBtn'} onClick={() => setPopupStatus(!isPopup)}>
+                  <button className={s.inverseBtn} onClick={() => setPopupStatus(!isPopup)}>
                     Close
                   </button>
                 </div>
