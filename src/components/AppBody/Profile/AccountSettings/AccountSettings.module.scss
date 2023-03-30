@@ -2,7 +2,7 @@
   margin-left: 40px;
 
   h2 {
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     margin-top: 0;
     font-size: 28px;
     line-height: 36px;
@@ -11,7 +11,7 @@
   }
 }
 
-@media(max-width: 1200px) {
+@media (max-width: 1200px) {
   .title {
     position: absolute;
     top: 580px;
@@ -19,7 +19,7 @@
   }
 }
 
-@media(min-width: 374px) and (max-width: 500px) {
+@media (min-width: 374px) and (max-width: 500px) {
   .title {
     left: 25%;
   }

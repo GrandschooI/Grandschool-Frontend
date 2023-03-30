@@ -69,7 +69,8 @@
         color: #fff;
         transition: all 0.2s linear;
 
-        svg, path {
+        svg,
+        path {
           fill: #fff;
           transition: all 0.2s linear;
         }
@@ -97,8 +98,7 @@
   }
 }
 
-
-@media(min-width: 374px) and (max-width: 430px){
+@media (min-width: 374px) and (max-width: 430px) {
   .profileImageForm {
     top: 785px;
     min-width: 300px;
