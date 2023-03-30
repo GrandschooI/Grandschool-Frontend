@@ -1,9 +1,8 @@
 .profileInfoForm {
-  span {
-    transition: all .3s ease;
-  }
-
   max-width: 388px;
+  span {
+    transition: all 0.3s ease;
+  }
 
   .radioWrap {
     display: flex;
@@ -14,55 +13,65 @@
   }
 
   textarea {
+    resize: none;
+
     width: 388px;
     min-height: 123px;
     padding: 15px;
+
+    font-family: 'Proba', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     font-size: 18px;
-    border: 1px solid #EAEAEA;
+
+    border: 1px solid #eaeaea;
     border-radius: 4px;
-    resize: none;
     outline: none;
-    font-family: 'Proba', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;;
   }
 
   .btn {
-    padding: 13px 20px;
-    background-color: #618135;
-    color: #ffffff;
     cursor: pointer;
-    outline: none;
-    transition: all 0.2s linear;
-    margin: 30px auto;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #618135;
-    border-radius: 50px;
+
     width: 388px;
     max-width: 100%;
     height: 64px;
-    font-weight: 600;
+    margin: 30px auto;
+    padding: 13px 20px;
+
     font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+
+    background-color: #618135;
+    border: 1px solid #618135;
+    border-radius: 50px;
+    outline: none;
+
+    transition: all 0.2s linear;
 
     &:hover {
+      color: #618135;
+
       background-color: #fff;
       border: 1px solid #618135;
-      color: #618135;
     }
 
     &:disabled {
-      opacity: .7;
+      opacity: 0.7;
     }
   }
-
 }
 
 @media (max-width: 1200px) {
   .profileInfoForm {
     .fullName {
-      width: 100%;
       position: absolute;
       top: -300px;
+
+      width: 100%;
       margin-bottom: 20px;
     }
 
@@ -73,17 +82,15 @@
     .gender {
       margin-top: 65px;
     }
-
   }
 }
 
-@media(min-width: 374px) and (max-width: 500px) {
+@media (min-width: 374px) and (max-width: 500px) {
   .profileInfoForm {
+    max-width: 300px;
     .fullName {
       top: -200px;
     }
-
-    max-width: 300px;
 
     textarea {
       width: 280px;
@@ -106,11 +113,13 @@
 
   .btn {
     color: #000;
+
     background: #ff0;
     border-color: #ff0;
 
     &:hover {
       color: #ff0;
+
       background: #000;
       border-color: #ff0;
     }
@@ -124,11 +133,13 @@
 
   .btn {
     color: #fff;
+
     background: #000;
     border-color: #fff;
 
     &:hover {
       color: #000;
+
       background: #fff;
       border-color: #000;
     }
@@ -142,11 +153,13 @@
 
   .btn {
     color: #fff;
+
     background: #273a64;
     border-color: #273a64;
 
     &:hover {
       color: #273a64;
+
       background: #fff;
       border-color: #273a64;
     }

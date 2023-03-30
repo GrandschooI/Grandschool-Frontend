@@ -1,54 +1,66 @@
 .blindButton {
+  cursor: pointer;
+
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
   height: 64px;
-  padding: 0 30px;
   margin-right: 25px;
+  padding: 0 30px;
+
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #618135;
+
   background: #ffffff;
   border: 1px solid #618135;
   border-radius: 50px;
-  color: #618135;
-  cursor: pointer;
-  font-size: 18px;
-  line-height: 18px;
-  font-weight: 400;
-  transition: all 0.2s ease;
   outline: none;
+
+  transition: all 0.2s ease;
   svg {
-    fill: #618135;
     margin-right: 10px;
+
+    fill: #618135;
   }
 }
 
 .blindButton:hover,
 .blindButton:focus {
   color: #fff;
+
   background: #618135;
+
   transition: all 0.2s ease;
 }
 
 .blindButton svg {
   margin-right: 10px;
+
   transition: all 0.2s ease;
 }
 
 .blindButton:hover svg,
 .blindButton:focus svg {
   fill: #fff;
+
   transition: all 0.2s ease;
 }
 
 .blindButton.yellowTheme {
-  background: #000;
   color: yellow;
+
+  background: #000;
   border-color: yellow;
   svg {
     fill: yellow;
   }
   &:hover {
-    background: yellow;
     color: #000;
+
+    background: yellow;
     border-color: #000;
     svg {
       fill: #000;
@@ -57,15 +69,17 @@
 }
 
 .blindButton.whiteTheme {
-  background: #fff;
   color: #000;
+
+  background: #fff;
   border-color: #000;
   svg {
     fill: #000;
   }
   &:hover {
-    background: #000;
     color: #fff;
+
+    background: #000;
     border-color: #fff;
     svg {
       fill: #fff;
@@ -74,15 +88,17 @@
 }
 
 .blindButton.blueTheme {
-  background: #afe2ef;
   color: #273a64;
+
+  background: #afe2ef;
   border-color: #273a64;
   svg {
     fill: #273a64;
   }
   &:hover {
-    background: #273a64;
     color: #afe2ef;
+
+    background: #273a64;
     border-color: #afe2ef;
     svg {
       fill: #afe2ef;
@@ -92,11 +108,13 @@
 
 .blindButton.medium {
   font-size: 22px;
+
   transition: all 0.2s ease;
 }
 
 .blindButton.large {
   font-size: 24px;
+
   transition: all 0.2s ease;
 }
 

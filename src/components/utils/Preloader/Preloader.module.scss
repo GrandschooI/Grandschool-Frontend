@@ -1,21 +1,25 @@
 .preloaderOverlay {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
+
   width: 100vw;
   height: 100vh;
-  z-index: 1000;
+
   background: #ffffffd9;
   .preloader {
+    position: absolute;
+
     width: 400px;
     height: 100px;
-    position: absolute;
     circle {
-      stroke: #618135;
       fill: transparent;
+      stroke: #618135;
     }
     .yellowTheme .preloader {
       circle {

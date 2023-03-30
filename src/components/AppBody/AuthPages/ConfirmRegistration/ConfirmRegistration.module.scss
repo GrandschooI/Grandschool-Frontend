@@ -1,25 +1,31 @@
 .loginBackground {
-  background: url('../../../../assets/images/reviews.png') center 33vh no-repeat;
-  background-size: cover;
   overflow: hidden;
-  padding: 190px 0 160px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  padding: 190px 0 160px;
+
+  background: url('../../../../assets/images/reviews.png') center 33vh no-repeat;
+  background-size: cover;
 }
 
 .loginWrapper {
+  overflow: hidden;
+
   width: 700px;
   padding-bottom: 80px;
-  border-radius: 25px;
-  overflow: hidden;
+
   background: #fff;
+  border-radius: 25px;
   box-shadow: 0 0 30px rgba(97, 129, 53, 0.1);
   .authHeader {
     display: flex;
     align-items: center;
     justify-content: center;
+
     height: 88px;
+
     background: #f7f5ec;
     .logoText {
       margin-left: 10px;
@@ -27,30 +33,39 @@
   }
   .authSwitcherWrapper {
     display: flex;
-    background: #fff;
-    padding: 0 23px;
+
     margin-bottom: 10px;
+    padding: 0 23px;
+
+    background: #fff;
     .authSwitcher {
       position: relative;
+
       width: 50%;
       padding: 37px 0 17px;
-      font-weight: 600;
+
       font-size: 24px;
-      text-transform: uppercase;
-      text-align: center;
+      font-weight: 600;
       color: #000;
+      text-align: center;
       text-decoration: none;
+      text-transform: uppercase;
+
       border-bottom: 2px solid #eaeaea;
       &:first-child {
         border-color: #31477c;
       }
       &:first-child:before {
         content: '';
+
+        position: absolute;
+        right: -1px;
+
         display: block;
+
         width: 2px;
         height: 27px;
-        right: -1px;
-        position: absolute;
+
         background: #eaeaea;
       }
     }
@@ -58,25 +73,30 @@
 }
 
 .signWithTitle {
-  font-weight: 600;
+  margin: 30px 25px;
+
   font-size: 24px;
+  font-weight: 600;
   text-align: center;
   text-transform: uppercase;
-  margin: 30px 25px;
 }
 
 .buttonWrapper {
   display: flex;
   justify-content: space-between;
+
   max-width: 400px;
   margin: 5px auto 10px;
   .goBack {
     max-width: 150px;
-    background: #fff;
+
     color: #618135;
+
+    background: #fff;
     &:hover {
-      background-color: #618135;
       color: #fff;
+
+      background-color: #618135;
     }
   }
   .continue {
@@ -85,19 +105,24 @@
 }
 
 .phone {
+  margin: 0 auto 20px;
+
+  font-size: 22px;
   font-weight: bold;
   color: #000;
-  margin: 0 auto 20px;
-  font-size: 22px;
 }
 
 .repeatCode {
-  display: flex;
-  border: none;
-  background: transparent;
-  margin: 32px auto 20px;
-  color: #717070;
   cursor: pointer;
+
+  display: flex;
+
+  margin: 32px auto 20px;
+
+  color: #717070;
+
+  background: transparent;
+  border: none;
   outline: none;
 }
 
@@ -105,11 +130,13 @@
   .confirmLabel {
     span {
       margin: 35px auto 15px;
-      font-style: normal;
-      font-weight: 400;
+
       font-size: 22px;
+      font-weight: 400;
+      font-style: normal;
       line-height: 28px;
-      transition: all .3s ease;
+
+      transition: all 0.3s ease;
     }
   }
 }
@@ -132,8 +159,9 @@
       .authSwitcherWrapper {
         padding: 0 15px;
         .authSwitcher {
-          font-size: 18px;
           padding: 22px 0 13px;
+
+          font-size: 18px;
         }
       }
 
@@ -158,10 +186,11 @@
 
       .anotherTypeLoginBtnWrap {
         .anotherTypeLogin {
-          width: 63px;
-          height: 58px;
           align-items: center;
           justify-content: center;
+
+          width: 63px;
+          height: 58px;
           padding: 0 17px;
           svg {
             margin: 0;
@@ -186,9 +215,10 @@
       font-size: 18px;
     }
     .buttonWrapper {
-      padding: 0 15px;
-      max-width: 100%;
       justify-content: space-around;
+
+      max-width: 100%;
+      padding: 0 15px;
     }
     .loginWrapper {
       padding-bottom: 50px;
@@ -204,12 +234,16 @@
     color: aqua;
   }
   .goBack {
-    background: inherit;
     color: yellow;
+
+    background: inherit;
+
     transition: all 0.3s ease;
     &:hover {
-      background: yellow;
       color: #000 !important;
+
+      background: yellow;
+
       transition: all 0.3s ease;
     }
   }
@@ -231,13 +265,17 @@
     color: #000;
   }
   .goBack {
-    background: #000;
     color: #fff;
+
+    background: #000;
+
     transition: all 0.3s ease;
     &:hover {
-      border: 1px solid black;
-      background: inherit;
       color: #000 !important;
+
+      background: inherit;
+      border: 1px solid black;
+
       transition: all 0.3s ease;
     }
   }
@@ -251,12 +289,16 @@
     color: #273a64;
   }
   .goBack {
-    background: #273a64;
     color: #afe2ef;
+
+    background: #273a64;
+
     transition: all 0.3s ease;
     &:hover {
-      background: inherit;
       color: #273a64;
+
+      background: inherit;
+
       transition: all 0.3s ease;
     }
   }
@@ -269,15 +311,18 @@
   .confirmLabel {
     span {
       font-size: 24px;
-      transition: all .3s ease;
+
+      transition: all 0.3s ease;
     }
   }
   .phone {
     font-size: 24px;
+
     transition: all 0.3s ease;
   }
   .repeatCode {
     font-size: 15px;
+
     transition: all 0.3s ease;
   }
 }
@@ -286,15 +331,18 @@
   .confirmLabel {
     span {
       font-size: 26px;
-      transition: all .3s ease;
+
+      transition: all 0.3s ease;
     }
   }
   .phone {
     font-size: 26px;
+
     transition: all 0.3s ease;
   }
   .repeatCode {
     font-size: 17px;
+
     transition: all 0.3s ease;
   }
 }

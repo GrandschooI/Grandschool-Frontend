@@ -1,18 +1,23 @@
 .inputWrap {
   position: relative;
+
   display: flex;
   justify-content: center;
   .changeType {
+    cursor: pointer;
+
+    position: absolute;
+    top: 32%;
+    right: 12px;
+
     display: flex;
-    padding: 0;
+
     width: 24px;
     height: 20px;
-    position: absolute;
-    right: 12px;
-    top: 32%;
-    border: none;
+    padding: 0;
+
     background: transparent;
-    cursor: pointer;
+    border: none;
     &.hidePassword {
       top: 26%;
     }

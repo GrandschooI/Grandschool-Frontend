@@ -1,33 +1,39 @@
 .courseActivationContent {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  width: 100%;
   padding: 41px 68px 50px;
 
   .bodyDescription {
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 33px;
     display: flex;
     align-items: center;
-    text-align: center;
-    color: #717070;
+
     margin: 0;
+
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 33px;
+    color: #717070;
+    text-align: center;
   }
 
   .bodyBoxCode {
     display: flex;
-    gap: 10px;
     flex-wrap: nowrap;
+    gap: 10px;
     align-items: center;
     justify-content: center;
+
     margin: 28px;
 
     input {
-      text-align: center;
       width: 56px;
       height: 56px;
+
+      text-align: center;
+
       border: 1px solid #a0a0a0;
       border-radius: 4px;
 
@@ -38,21 +44,26 @@
   }
 
   .activateBtn {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 26px;
+    cursor: pointer;
+
     width: 221px;
     height: 64px;
+
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 26px;
+    color: #fff;
+
     background: #618135;
     border: 1px solid #717070;
     border-radius: 50px;
-    color: #fff;
-    cursor: pointer;
+
     transition: 0.5s;
 
     &:hover {
-      background-color: #fff;
       color: #618135;
+
+      background-color: #fff;
       border: 1px solid #618135;
     }
   }
@@ -61,13 +72,15 @@
     transition: all 0.2s ease;
 
     .activateBtn {
-      background: var(--color-theme);
-      border-color: var(--color-theme);
       color: var(--background-theme);
 
+      background: var(--color-theme);
+      border-color: var(--color-theme);
+
       &:hover {
-        background: var(--background-theme);
         color: var(--color-theme);
+
+        background: var(--background-theme);
       }
     }
 
@@ -88,13 +101,15 @@
     transition: all 0.2s ease;
 
     .activateBtn {
-      background: var(--color-theme);
-      border-color: var(--color-theme);
       color: var(--background-theme);
 
+      background: var(--color-theme);
+      border-color: var(--color-theme);
+
       &:hover {
-        background: var(--background-theme);
         color: var(--color-theme);
+
+        background: var(--background-theme);
       }
     }
 
@@ -115,13 +130,15 @@
     transition: all 0.2s ease;
 
     .activateBtn {
-      background: var(--color-theme);
-      border-color: var(--color-theme);
       color: var(--background-theme);
 
+      background: var(--color-theme);
+      border-color: var(--color-theme);
+
       &:hover {
-        background: var(--background-theme);
         color: var(--color-theme);
+
+        background: var(--background-theme);
       }
     }
 
