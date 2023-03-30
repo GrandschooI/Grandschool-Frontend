@@ -24,6 +24,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   padding: 40px 0 0;
   position: relative;
 }
@@ -586,7 +587,6 @@ s.sdf {
 
 @media (max-width: 769px) {
   .header {
-    background: #f5f5f5;
 
     &.yellowTheme {
       background: rgb(25, 25, 1);
@@ -678,10 +678,6 @@ s.sdf {
       &.blueTheme {
         stroke: #273a64;
       }
-
-      stroke: #618135;
-      stroke-width: 5.5;
-      stroke-linecap: round;
     }
 
     .ham6 .top {
