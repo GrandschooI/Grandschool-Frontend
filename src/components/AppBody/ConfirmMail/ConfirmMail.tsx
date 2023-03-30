@@ -46,11 +46,11 @@ const ConfirmMail = () => {
   return (
     <section className={cn(s.confirmMailPage, s[themeStyle ? themeStyle : ''])}>
       <div className={cn(s.confirmMailPage__wrapper, s[themeStyle ? themeStyle : ''])}>
-        <ConfirmRegistrationForm
-          onSubmit={onConfirmRegistrationSubmit}
-          themeStyle={themeStyle}
-          fontSize={fontSize}
-        />
+        {/*<ConfirmRegistrationForm*/}
+        {/*  onSubmit={onConfirmRegistrationSubmit}*/}
+        {/*  themeStyle={themeStyle}*/}
+        {/*  fontSize={fontSize}*/}
+        {/*/>*/}
       </div>
     </section>
   )

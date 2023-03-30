@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { AxiosError } from 'axios'
 import { toast } from 'react-toastify'
 import { Dispatch } from 'redux'
@@ -37,6 +37,7 @@ const initialState = {
     { itemTitle: 'Account Settings', itemLink: '/profile/account-settings' },
   ],
   isAuth: false,
+  isRegistered: false,
 }
 
 const userSlice = createSlice({
@@ -58,6 +59,9 @@ const userSlice = createSlice({
     setPhoto(state = initialState, action: PayloadAction<setPhotoActionType>) {
       state.currentUser.photo = action.payload
     },
+    setIsRegistered(state, action: PayloadAction<{ isRegistered: boolean }>) {
+      state.isRegistered = action.payload.isRegistered
+    },
   },
 })
 
@@ -68,15 +72,18 @@ export const registerThunkCreator =
       const response = await AuthAPI.register(email, password, confirmPassword)
       const userData = response.data
 
+      dispatch(setIsRegistered({ isRegistered: true }))
       if (userData) {
         setUserToStateAndStorage(dispatch, userData.user, true, 'token', userData.access_token)
         accessHandler(userData)
       } else {
         toast.error('Coś poszło nie tak', { autoClose: 5000 })
+        dispatch(setIsRegistered({ isRegistered: false }))
       }
     } catch (error: any) {
       const errorMessage = error?.response?.data.message
 
+      dispatch(setIsRegistered({ isRegistered: false }))
       toast.error(errorMessage)
     } finally {
       dispatch(toggleIsLoaded({ isLoaded: true }))
@@ -119,6 +126,7 @@ export const logoutThunkCreator = () => async (dispatch: Dispatch) => {
       dispatch(setAuth({ authData: {}, isAuth: false }))
       removeDataFromLocalStorage('token')
       removeDataFromLocalStorage('user')
+      dispatch(setIsRegistered({ isRegistered: false }))
     } else {
       toast.error('Coś poszło nie tak', { autoClose: 5000 })
     }
@@ -129,16 +137,35 @@ export const logoutThunkCreator = () => async (dispatch: Dispatch) => {
   }
 }
 
-export const forgotPasswordThunkCreator = (email: string) => async (dispatch: Dispatch) => {
-  try {
+export const forgotPassword = createAsyncThunk(
+  'auth/forgot-password',
+  async (email: string, { dispatch }) => {
     dispatch(toggleIsLoaded({ isLoaded: false }))
-    await AuthAPI.forgotPassword(email)
-  } catch (error) {
-    toast.error((error as AxiosError).response?.data.message)
-  } finally {
-    dispatch(toggleIsLoaded({ isLoaded: true }))
+    try {
+      const response = await AuthAPI.forgotPassword(email)
+
+      return response.message
+    } catch (error) {
+      //  console.log(error, 'err')
+      //  toast.error((error as AxiosError).response?.data.message)
+
+      return (error as AxiosError).response?.data.message
+    } finally {
+      dispatch(toggleIsLoaded({ isLoaded: true }))
+    }
   }
-}
+)
+
+// export const forgotPasswordThunkCreator = (email: string) => async (dispatch: Dispatch) => {
+//   try {
+//     dispatch(toggleIsLoaded({ isLoaded: false }))
+//     await AuthAPI.forgotPassword(email)
+//   } catch (error) {
+//     toast.error((error as AxiosError).response?.data.message)
+//   } finally {
+//     dispatch(toggleIsLoaded({ isLoaded: true }))
+//   }
+// }
 
 export const setUserPhotoThunkCreator =
   (userId: number, token: string, file: any) => async (dispatch: Dispatch) => {
@@ -191,6 +218,7 @@ export const setUserFromLocalStorage = () => (dispatch: Dispatch) => {
 
   if (userFromLocalstorage) {
     dispatch(setAuth({ authData: JSON.parse(userFromLocalstorage), isAuth: true }))
+    dispatch(setIsRegistered({ isRegistered: true }))
   }
 }
 
@@ -209,7 +237,7 @@ export const errorHandler = (error: any) => {
 }
 
 export default userSlice.reducer
-export const { setAuth, setProfileInfo, setPhoto } = userSlice.actions
+export const { setAuth, setProfileInfo, setPhoto, setIsRegistered } = userSlice.actions
 
 export type setProfileActionType = {
   name: Nullable<string>
@@ -224,3 +252,52 @@ type setAuthActionType = {
   isAuth: boolean
 }
 type setPhotoActionType = Nullable<string>
+
+export const sendPhoneVerify = createAsyncThunk(
+  'verify/phone',
+  async (payload: string, { dispatch }) => {
+    dispatch(toggleIsLoaded({ isLoaded: false }))
+
+    try {
+      const { data } = await userAPI.sendPhoneVerify({ phone: payload })
+
+      toast(data.message)
+    } catch (error: any) {
+      toast(error.response?.data?.message)
+    } finally {
+      dispatch(toggleIsLoaded({ isLoaded: true }))
+    }
+  }
+)
+
+export const confirmPhoneVerify = createAsyncThunk(
+  'verify/confirm-phone',
+  async (payload: { phone: string; code: number }, { dispatch }) => {
+    dispatch(toggleIsLoaded({ isLoaded: false }))
+
+    try {
+      await userAPI.confirmPhoneUser(payload)
+
+      return 'success'
+    } catch (err: any) {
+      return err.response?.data?.message
+    } finally {
+      dispatch(toggleIsLoaded({ isLoaded: true }))
+    }
+  }
+)
+export const sendEmailVerify = createAsyncThunk(
+  'verify/email',
+  async (payload: string, { dispatch }) => {
+    dispatch(toggleIsLoaded({ isLoaded: false }))
+
+    try {
+      await userAPI.verifyMail({ email: payload })
+      toast('Success')
+    } catch (err: any) {
+      toast(err.message)
+    } finally {
+      dispatch(toggleIsLoaded({ isLoaded: true }))
+    }
+  }
+)

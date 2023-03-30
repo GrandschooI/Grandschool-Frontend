@@ -68,6 +68,7 @@
 .buttonWrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   max-width: 400px;
   margin: 5px auto 10px;
   .goBack {
@@ -248,14 +249,14 @@
 
 .blueTheme {
   .phone {
-    color: #273a64;
+    color: #000;
   }
   .goBack {
     background: #273a64;
     color: #afe2ef;
     transition: all 0.3s ease;
     &:hover {
-      background: inherit;
+      background: #afe2ef;
       color: #273a64;
       transition: all 0.3s ease;
     }

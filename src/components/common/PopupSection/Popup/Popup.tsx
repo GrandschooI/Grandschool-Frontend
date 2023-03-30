@@ -8,12 +8,10 @@ import { useAppSelector } from '../../../../utils/Hooks/useAppSelector'
 import LogoWordsWhiteThemeForLogin from '../../../SVGConponents/Forms/LogoWordsWhiteThemeForLogin'
 import LogoPicture from '../../../SVGConponents/Header/LogoPicture'
 import LogoPictureBlueTheme from '../../../SVGConponents/Header/LogoPictureBlueTheme'
-import LogoPictureBlueThemeForLogin from '../../../SVGConponents/Header/LogoPictureBlueThemeForLogin'
 import LogoPictureWhiteTheme from '../../../SVGConponents/Header/LogoPictureWhiteTheme'
 import LogoPictureYellowTheme from '../../../SVGConponents/Header/LogoPictureYellowTheme'
 import LogoWords from '../../../SVGConponents/Header/LogoWords'
 import LogoWordsBlueTheme from '../../../SVGConponents/Header/LogoWordsBlueTheme'
-import LogoWordsBlueThemeForLogin from '../../../SVGConponents/Header/LogoWordsBlueThemeForLogin'
 import LogoWordsYellowTheme from '../../../SVGConponents/Header/LogoWordsYellowTheme'
 
 import s from './Popup.module.scss'
@@ -31,11 +29,11 @@ const Popup: React.FC<PropsType> = ({ children, className = '' }) => {
         {!themeStyle && <LogoPicture />}
         {themeStyle === 'yellowTheme' && <LogoPictureYellowTheme />}
         {themeStyle === 'whiteTheme' && <LogoPictureWhiteTheme />}
-        {themeStyle === 'blueTheme' && <LogoPictureBlueThemeForLogin />}
+        {themeStyle === 'blueTheme' && <LogoPictureBlueTheme />}
         {!themeStyle && <LogoWords />}
         {themeStyle === 'yellowTheme' && <LogoWordsYellowTheme />}
         {themeStyle === 'whiteTheme' && <LogoWordsWhiteThemeForLogin />}
-        {themeStyle === 'blueTheme' && <LogoWordsBlueThemeForLogin />}
+        {themeStyle === 'blueTheme' && <LogoWordsBlueTheme />}
       </div>
       <>{children}</>
     </div>

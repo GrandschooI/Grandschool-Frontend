@@ -5,23 +5,18 @@ import './AuthPagesGlobal.scss'
 import cn from 'classnames'
 import { gapi } from 'gapi-script'
 import { useDispatch } from 'react-redux'
-import { NavLink, Redirect, Route, Switch, useLocation } from 'react-router-dom'
-import { toast } from 'react-toastify'
+import { NavLink, Route, Switch, useLocation } from 'react-router-dom'
 
 import {
-  forgotPasswordThunkCreator,
   GOOGLE_CLIENT_ID,
   loginThunkCreator,
   registerThunkCreator,
 } from '../../../Redux/reducers/userSlice'
 import { getFontSize, getOptionsState, getThemeStyle } from '../../../Redux/selectors/styleSelector'
-import { getAuthStatus } from '../../../Redux/selectors/userSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
 import Popup from '../../common/PopupSection/Popup/Popup'
 
 import s from './AuthPages.module.scss'
-import ConfirmRegistrationForm from './ConfirmRegistration/ConfirmRegistrationForm'
-import ForgotPassword from './ForgotPassword/ForgotPassword'
 import LoginForm from './Login/LoginForm'
 import RegistrationForm from './Registration/RegistrationForm'
 
@@ -29,13 +24,12 @@ const AuthPage = () => {
   const themeStyle = useAppSelector(getThemeStyle)
   const isOptionsOpen = useAppSelector(getOptionsState)
   const fontSize = useAppSelector(getFontSize)
-  const isAuth = useAppSelector(getAuthStatus)
 
   const dispatch = useDispatch()
 
   const location: string = useLocation().pathname
 
-  const onRegistrationSubmit = (formData: registrationFormDataType) => {
+  const onRegistrationSubmit = (formData: RegistrationFormDataType) => {
     dispatch(
       registerThunkCreator(formData.emailOrPhone, formData.password, formData.confirmPassword)
     )
@@ -47,9 +41,9 @@ const AuthPage = () => {
   const onSocialRegistrationButtonClick = (driver: string, access_token: string) => {
     dispatch(loginThunkCreator(undefined, undefined, driver, access_token))
   }
-  const onConfirmRegistrationSubmit = () => {
-    toast('In progress')
-  }
+  // const onConfirmRegistrationSubmit = () => {
+  //   toast('In progress')
+  // }
 
   const startGoogleAPI = () => {
     gapi.load('client:auth2', () => {
@@ -65,13 +59,6 @@ const AuthPage = () => {
   }
   const onFacebookButtonClick = (res: any) => {
     onSocialRegistrationButtonClick('facebook', res.accessToken)
-  }
-  const onForgotPasswordFormSubmit = (email: any) => {
-    dispatch(forgotPasswordThunkCreator(email.email))
-  }
-
-  if (isAuth) {
-    return <Redirect to={'/email-verification'} />
   }
 
   return (
@@ -119,30 +106,19 @@ const AuthPage = () => {
                   onGoogleButtonClick={onGoogleButtonClick}
                   onFacebookButtonClick={onFacebookButtonClick}
                   onSubmit={onLoginSubmit}
-                  onForgotPasswordFormSubmit={onForgotPasswordFormSubmit}
                 />
               )}
             />
-            <Route
-              path="/confirm-registration"
-              render={() => (
-                <ConfirmRegistrationForm
-                  fontSize={fontSize}
-                  themeStyle={themeStyle}
-                  onSubmit={onConfirmRegistrationSubmit}
-                />
-              )}
-            />
-            <Route
-              path="/forgot-password"
-              render={() => (
-                <ForgotPassword
-                  fontSize={fontSize}
-                  themeStyle={themeStyle}
-                  onSubmit={onConfirmRegistrationSubmit}
-                />
-              )}
-            />
+            {/*<Route*/}
+            {/*  path="/forgot-password"*/}
+            {/*  render={() => (*/}
+            {/*    <ForgotPassword*/}
+            {/*      fontSize={fontSize}*/}
+            {/*      themeStyle={themeStyle}*/}
+            {/*      onSubmit={onConfirmRegistrationSubmit}*/}
+            {/*    />*/}
+            {/*  )}*/}
+            {/*/>*/}
           </Switch>
         </div>
       </Popup>
@@ -152,7 +128,7 @@ const AuthPage = () => {
 
 export default AuthPage
 
-export type registrationFormDataType = {
+export type RegistrationFormDataType = {
   emailOrPhone: string
   password: string
   confirmPassword: string

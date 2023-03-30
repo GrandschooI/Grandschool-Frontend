@@ -1,4 +1,5 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { AnyAction, configureStore, ThunkDispatch } from '@reduxjs/toolkit'
+import { useDispatch } from 'react-redux'
 import { Action } from 'redux'
 import thunkMiddleware, { ThunkAction } from 'redux-thunk'
 
@@ -30,3 +31,5 @@ export type BaseThunkType<A extends Action, R = Promise<void>> = ThunkAction<
   unknown,
   A
 >
+type AppDispatch = ThunkDispatch<AppStateType, any, AnyAction>
+export const useAppDispatch: () => AppDispatch = useDispatch

@@ -8,6 +8,7 @@
   @media (max-height: 680px) {
     height: 120vh;
   }
+
   .confirmMailPage__wrapper {
     transition: all 0.3s ease;
     padding: 0 40px;
@@ -22,20 +23,25 @@
       width: 90%;
       padding: 0 10px;
     }
+
     &.yellowTheme {
       background-color: #191901;
     }
+
     &.whiteTheme {
       background-color: #f5f5f5;
     }
+
     &.blueTheme {
-      background-color: #e5f9ff;
+      background-color: #afe2ef;
     }
   }
+
   &.yellowTheme {
     background-color: black;
     border-bottom: 1px solid yellow;
   }
+
   &.blueTheme {
     background-color: #b8eefb;
   }

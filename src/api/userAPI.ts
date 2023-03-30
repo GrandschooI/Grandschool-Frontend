@@ -25,6 +25,18 @@ export const userAPI = {
     })
   },
   verifyMail(url: { email: Nullable<string> }) {
-    return instance.post('send-email-verification', url)
+    const { email } = url
+
+    return instance.post('send-email-verification', { email })
+  },
+  sendPhoneVerify(payload: { phone: string }) {
+    const { phone } = payload
+
+    return instance.post('send-phone-verification', { phone })
+  },
+  confirmPhoneUser(payload: { phone: string; code: number }) {
+    const { phone, code } = payload
+
+    return instance.post('verification-phone', { phone, code })
   },
 }
