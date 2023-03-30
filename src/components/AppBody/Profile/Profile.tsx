@@ -5,17 +5,18 @@ import { useDispatch } from 'react-redux'
 import { Redirect, Route, Switch } from 'react-router-dom'
 import { CSSTransition } from 'react-transition-group'
 
-import { logoutThunkCreator } from '../../../Redux/reducers/userSlice'
-import { getProfileAsideItems } from '../../../Redux/selectors/profileSelector'
-import { getFontSize, getThemeStyle } from '../../../Redux/selectors/styleSelector'
-import { getAuthStatus } from '../../../Redux/selectors/userSelector'
-import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
 import Aside from '../../common/Aside/Aside'
 import Popup from '../../common/PopupSection/Popup/Popup'
 
 import AccountSettings from './AccountSettings/AccountSettings'
 import s from './Profile.module.scss'
 import ProfileInfo from './ProfileInfo/ProfileInfo/ProfileInfo'
+
+import { logoutThunkCreator } from 'Redux/reducers/userSlice'
+import { getProfileAsideItems } from 'Redux/selectors/profileSelector'
+import { getFontSize, getThemeStyle } from 'Redux/selectors/styleSelector'
+import { getAuthStatus } from 'Redux/selectors/userSelector'
+import { useAppSelector } from 'utils/Hooks/useAppSelector'
 
 const Profile = () => {
   const [isPopup, setPopupStatus] = useState(false)

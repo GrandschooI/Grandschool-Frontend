@@ -3,14 +3,15 @@ import React, { ChangeEvent, useState } from 'react'
 import cn from 'classnames'
 
 import userPhoto from '../../../../../../assets/images/webp/userHiddenAvatar.webp'
-import { Nullable } from '../../../../../../Redux/redux-toolkit-store'
-import { getFontSize, getThemeStyle } from '../../../../../../Redux/selectors/styleSelector'
-import { getUserPhotoLink } from '../../../../../../Redux/selectors/userSelector'
-import { useAppSelector } from '../../../../../../utils/Hooks/useAppSelector'
 import Modal from '../../../../../Modal/Modal'
 
 import CropImageModal from './cropImageModal/CropImageModal'
 import s from './ProfileImageForm.module.scss'
+
+import { Nullable } from 'Redux/redux-toolkit-store'
+import { getFontSize, getThemeStyle } from 'Redux/selectors/styleSelector'
+import { getUserPhotoLink } from 'Redux/selectors/userSelector'
+import { useAppSelector } from 'utils/Hooks/useAppSelector'
 
 const ProfileImageForm = () => {
   const userPhotoLink = useAppSelector(getUserPhotoLink)

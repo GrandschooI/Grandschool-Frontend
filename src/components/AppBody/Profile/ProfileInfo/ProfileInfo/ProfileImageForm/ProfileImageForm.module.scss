@@ -98,12 +98,15 @@
     min-height: 100px;
     border-radius: 0 26px 26px 0;
     //display: none;
+    &:after {
+      display: none;
+    }
   }
 }
 
 @media (min-width: 374px) and (max-width: 430px) {
   .profileImageForm {
-    top: 785px;
+    top: 755px;
     min-width: 300px;
   }
 }
@@ -131,6 +134,13 @@
       border-color: #ff0;
     }
   }
+
+  &:after {
+    top: -2px;
+    background: #000;
+    border: 2px solid #ff0;
+    border-left: none;
+  }
 }
 
 .whiteTheme.profileImageForm {
@@ -154,6 +164,13 @@
       background: #f5f5f5;
       border-color: #000;
     }
+  }
+
+  &:after {
+    top: -2px;
+    background: #f5f5f5;
+    border: 2px solid #000;
+    border-left: none;
   }
 }
 
@@ -179,6 +196,13 @@
       background: #f5f5f5;
       border-color: #273a64;
     }
+  }
+
+  &:after {
+    top: -2px;
+    background: #afe2ef;
+    border: 2px solid #273a64;
+    border-left: none;
   }
 }
 

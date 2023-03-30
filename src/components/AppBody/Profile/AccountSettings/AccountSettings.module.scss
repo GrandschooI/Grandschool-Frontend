@@ -1,5 +1,5 @@
 .settingsWrap {
-  margin-left: 40px;
+  padding-left: 70px;
 
   h2 {
     transition: all 0.3s ease;
@@ -12,17 +12,27 @@
 }
 
 @media (max-width: 1200px) {
-  .title {
-    position: absolute;
-    top: 580px;
-    left: 40%;
+  .settingsWrap{
+    margin: 0 auto;
+    .title {
+      position: absolute;
+      top: 580px;
+      left: 40%;
+    }
   }
+
 }
 
 @media (min-width: 374px) and (max-width: 500px) {
-  .title {
-    left: 25%;
+  .settingsWrap{
+    margin-left: -30px;
+    .title {
+      position: absolute;
+      top: 590px;
+      left: 25%;
+    }
   }
+
 }
 
 .yellowTheme.settingsWrap {
