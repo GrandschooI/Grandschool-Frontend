@@ -1,0 +1,181 @@
+.comments {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #666666;
+}
+
+.profile {
+  h5, p {
+    margin: 0;
+  }
+
+  display: flex;
+  gap: 17px;
+  margin-bottom: 23px;
+
+  .avatar {
+    background-color: red;
+    width: 67px;
+    height: 67px;
+  }
+
+  .name_wrapper {
+    .name {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 31px;
+      color: #717070;
+    }
+
+    .location {
+      margin-top: 4px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 23px;
+      color: #A0A0A0;
+    }
+  }
+}
+
+.comments_area {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 70px;
+
+  .comments_title {
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: #31477C;
+
+    span {
+      color: #EB001B;
+    }
+  }
+
+  .new_comment {
+    height: 156px;
+    resize: none;
+    padding: 15px 8px 15px 15px;
+  }
+
+  .new_comment_checkbox {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .new_comment_label {
+    display: flex;
+    align-items: center;
+    margin-top: 17px;
+  }
+
+  .btn_publish {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    margin-top: 24px;
+    width: 264px;
+    height: 56px;
+    border-radius: 50px;
+    background: #618135;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s linear;
+
+    &:hover {
+      border: 1px solid #618135;
+      background: white;
+      color: #618135;
+    }
+  }
+}
+
+.comments_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .title {
+    margin: 0 0 30px 0;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 500;
+    color: #618135;
+  }
+
+  .select {
+    position: relative;
+
+    select {
+      appearance: none;
+      height: 43px;
+      width: 205px;
+      padding-left: 20px;
+      font-size: 18px;
+      line-height: 21px;
+      &::selection {
+        background-color: red;
+      }
+    }
+
+    &:after {
+      content: url("../../../../../src/assets/images/webp/select_arrow.svg");
+      position: absolute;
+      top: 11px;
+      right: 15px;
+    }
+
+  }
+}
+
+.comments.whiteTheme {
+}
+
+.comments.yellowTheme {
+
+}
+
+.comments.blueTheme {
+}
+
+@media (max-width: 730px) {
+  .profile {
+    margin-bottom: 20px;
+
+    .avatar {
+      width: 55px;
+      height: 55px;
+    }
+
+    .name_wrapper {
+      .name {
+        font-size: 18px;
+        line-height: 23px;
+      }
+
+      .location {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  .comments_info {
+    .select {
+      display: none;
+    }
+  }
+}
+@media (max-width: 425px) {
+  .comments_area {
+    .btn_publish{
+      width: 100%;
+    }
+  }
+}
