@@ -83,8 +83,11 @@
     display: flex;
     height: inherit;
     min-height: 100%;
+    width: 100%;
     position: absolute;
+    right: -100%;
     top: 0;
+    background: #f8f5ec;
   }
 }
 
