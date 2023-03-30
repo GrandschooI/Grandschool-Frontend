@@ -12,7 +12,7 @@ const Chapter: React.FC<PropsType> = () => {
         url="https://www.youtube.com/watch?v=S_zMbLa_nAE"
         controls={true}
         loop={true}
-        width={'861px'}
+        width={'70%'}
         height={'485px'}
         className={s.movie}
       />
@@ -61,7 +61,7 @@ const Chapter: React.FC<PropsType> = () => {
         компьютер, и какие темы вы бы хотели видеть в будущих IT-уроках.
       </div>
 
-      <h3>Общение и обмен опытом (2 комментария):</h3>
+      <h3 className={s.comments_count}>Общение и обмен опытом (2 комментария):</h3>
     </section>
   )
 }

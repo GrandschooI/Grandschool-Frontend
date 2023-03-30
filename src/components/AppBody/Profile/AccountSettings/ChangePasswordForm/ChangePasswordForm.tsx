@@ -1,16 +1,17 @@
 import React from 'react'
 
+import '../../../../../style.scss'
 import cn from 'classnames'
 import { Form, Formik } from 'formik'
-import '../../../../../style.scss'
 import * as yup from 'yup'
 
-import { getFontSize, getThemeStyle } from '../../../../../Redux/selectors/styleSelector'
-import { useAppSelector } from '../../../../../utils/Hooks/useAppSelector'
-import { TextField } from '../../../../common/Form/FormControls/FormControls'
 import FormErrorMessage from '../../../../utils/FormErrorMessage/FormErrorMessage'
 
 import s from './ChangePasswordForm.module.scss'
+
+import { TextField } from 'components/common/Form/FormControls/FormControls'
+import { getFontSize, getThemeStyle } from 'Redux/selectors/styleSelector'
+import { useAppSelector } from 'utils/Hooks/useAppSelector'
 
 type propsType = {}
 const changePasswordValidationSchema = yup.object().shape({

@@ -1,39 +1,31 @@
 .header {
-  position: absolute;
-  z-index: 5;
-
   width: 100%;
-
+  z-index: 5;
   background: transparent;
+  position: absolute;
 }
 
 .closeBlindOptions {
-  cursor: pointer;
-
-  position: absolute;
   top: -15px;
-  right: 50%;
-
-  width: 45px;
-  height: 45px;
   margin-bottom: 100px;
   padding: 0;
-
   background: #fff;
   border: none;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
-
+  cursor: pointer;
+  position: absolute;
+  right: 50%;
   transition: all 0.5s ease;
 }
 
 .headerTop {
-  position: relative;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 40px 0 0;
+  position: relative;
 }
 
 s.sdf {
@@ -43,7 +35,6 @@ s.sdf {
 .headerLogo:hover,
 .headerLogo:focus-visible {
   opacity: 0.7;
-
   transition: all 0.2s ease;
 }
 
@@ -52,17 +43,14 @@ s.sdf {
 }
 
 .headerLogo {
-  outline: none;
-
   transition: all 0.2s ease;
+  outline: none;
 }
 
 .headerNav {
+  width: 32%;
   display: flex;
   justify-content: space-between;
-
-  width: 32%;
-
   @media (max-width: 1100px) {
     width: 34%;
   }
@@ -70,15 +58,11 @@ s.sdf {
 
 .headerNavLink:before {
   content: '';
-
   position: absolute;
   bottom: 0;
-  left: 50%;
-
   width: 0;
-
+  left: 50%;
   border-bottom: 1px solid #618135;
-
   transition: all 0.2s ease-in-out;
 }
 
@@ -86,31 +70,24 @@ s.sdf {
 .headerNavLink:focus,
 .headerNavLink.headerActiveNavLink {
   position: relative;
-
   color: #618135;
-
   transition: all 0.2s ease;
 
   .headerNavLinkLabel {
-    transform: translateY(-10px);
-
     display: block;
-
+    transform: translateY(-10px);
     transition: all 0.2s ease-in-out;
   }
 
   &:before {
-    left: 0;
-
     width: 100%;
-
+    left: 0;
     transition: all 0.2s ease-in-out;
   }
 }
 
 .headerNavLinkLabel {
   display: block;
-
   transition: all 0.2s ease-in-out;
 }
 
@@ -119,29 +96,26 @@ s.sdf {
 
   .headerNavItem {
     display: flex;
-    align-items: center;
-
-    padding: 0 50px;
-
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 26px;
-    color: #fff;
-    text-decoration: none;
-
+    outline: none;
     background: #618135;
     border: 1px solid #618135;
     border-radius: 50px;
-    outline: none;
-
+    align-items: center;
+    padding: 0 50px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 600;
     transition: all 0.2s ease;
-
+    @media (max-width: 1270px) {
+      font-size: 16px;
+      transition: all 0.2s ease;
+    }
     &:hover,
     &:focus-visible {
       color: #618135;
-
       background-color: #fff;
-
       transition: all 0.2s ease;
     }
 
@@ -150,27 +124,19 @@ s.sdf {
     }
 
     &:hover:after {
-      background-color: #618135;
       border-color: #618135;
-    }
-
-    @media (max-width: 1270px) {
-      font-size: 16px;
-
-      transition: all 0.2s ease;
+      background-color: #618135;
     }
   }
 }
 
 .headerNavLink {
   position: relative;
-
   font-size: 18px;
-  font-weight: 500;
   line-height: 21px;
-  color: #000;
   text-decoration: none;
-
+  color: #000;
+  font-weight: 500;
   transition: all 0.5s ease;
 }
 
@@ -181,7 +147,6 @@ s.sdf {
 .mobileWrap {
   display: flex;
   justify-content: space-between;
-
   width: 74%;
 
   .mobileLogo,
@@ -191,29 +156,25 @@ s.sdf {
 }
 
 .mobileNav {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-
-  width: 100%;
 }
 
 .headerNav.notMainPage {
   width: 200%;
-
   transition: all 0.3s ease;
 }
 
 @media (max-width: 1280px) {
   .headerNav.notMainPage {
-    justify-content: space-around;
-
     width: 200%;
+    justify-content: space-around;
   }
 }
 
 .revert {
   transform: rotate(180deg);
-
   transition: all 0.5s ease;
 }
 
@@ -221,7 +182,6 @@ s.sdf {
   .headerNavLink,
   .headerNavItem {
     font-size: 22px;
-
     transition: all 0.2s ease;
   }
 }
@@ -230,30 +190,22 @@ s.sdf {
   .headerNavLink,
   .headerNavItem {
     font-size: 24px;
-
     transition: all 0.2s ease;
 
     @media (max-width: 1370px) {
       font-size: 22px;
-
       transition: all 0.2s ease;
     }
-
     @media (max-width: 1270px) {
       font-size: 20px;
-
       transition: all 0.2s ease;
     }
-
     @media (max-width: 1040px) {
       font-size: 18px;
-
       transition: all 0.2s ease;
     }
-
     @media (max-width: 800px) {
       font-size: 16px;
-
       transition: all 0.2s ease;
     }
   }
@@ -262,31 +214,24 @@ s.sdf {
 .notMainPageWrapper {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-
-  height: 88px;
   margin-top: 30px;
-
+  align-items: center;
+  height: 88px;
   background: #f7f5ec;
 }
 
 .headerSearch {
   display: flex;
   align-items: center;
-  position: relative;
-  transition: all .3s ease;
-
   width: 30%;
   height: 63px;
-
-  font-size: 18px;
   font-weight: 400;
+  font-size: 18px;
   line-height: 21px;
 
   input {
     width: 100%;
     padding: 20px;
-
     border: 1px solid #e5e5e5;
 
     &:focus,
@@ -296,10 +241,9 @@ s.sdf {
   }
 
   button {
+    background: transparent;
     margin-left: auto;
     padding: 15px;
-
-    background: transparent;
     border: 1px solid #e5e5e5;
     border-left: none;
     outline: none;
@@ -314,7 +258,6 @@ s.sdf {
 
       svg {
         transform: scale(1.1);
-
         transition: all 0.2s ease;
       }
     }
@@ -325,7 +268,6 @@ s.sdf {
   .headerSearch {
     position: absolute;
     top: 120px;
-
     width: 90%;
   }
 }
@@ -351,7 +293,6 @@ s.sdf {
       opacity: 0;
     }
   }
-
   @keyframes blink-1 {
     0%,
     50%,
@@ -377,7 +318,6 @@ s.sdf {
 
 .header.yellowTheme {
   background-color: #000;
-
   .headerNavLink {
     color: yellow;
 
@@ -387,13 +327,11 @@ s.sdf {
   }
 
   .blindButton {
-    padding: 10px 15px;
-
-    font-weight: 600;
     color: yellow;
-
+    font-weight: 600;
     background: #000;
     border: 1px solid yellow;
+    padding: 10px 15px;
 
     svg {
       fill: yellow;
@@ -401,7 +339,6 @@ s.sdf {
 
     &:hover {
       color: #000;
-
       background: rgb(0, 255, 255);
       border: 1px solid rgb(0, 255, 255);
 
@@ -416,18 +353,14 @@ s.sdf {
   }
 
   .headerNavItem {
-    color: #000;
-
     background: yellow;
+    color: #000;
     border: 1px solid yellow;
-
     transition: all 0.2s ease;
 
     &:hover {
-      color: yellow;
-
       background: #000;
-
+      color: yellow;
       transition: all 0.2s ease;
     }
   }
@@ -462,12 +395,10 @@ s.sdf {
   }
 
   .blindButton {
-    padding: 10px 15px;
-
-    font-weight: 600;
     color: #000;
-
+    font-weight: 600;
     border: 1px solid #000;
+    padding: 10px 15px;
 
     svg {
       fill: #000;
@@ -475,7 +406,6 @@ s.sdf {
 
     &:hover {
       color: #fff;
-
       background: #000;
       border: 1px solid #000;
 
@@ -494,18 +424,14 @@ s.sdf {
   }
 
   .headerNavItem {
-    color: #fff;
-
     background: #000;
+    color: #fff;
     border: 1px solid #000;
-
     transition: all 0.2s ease;
 
     &:hover {
-      color: #000;
-
       background: #fff;
-
+      color: #000;
       transition: all 0.2s ease;
     }
   }
@@ -532,7 +458,6 @@ s.sdf {
 
 .header.blueTheme {
   background-color: #afe2ef;
-
   .headerNavLink {
     color: #273a64;
 
@@ -542,12 +467,10 @@ s.sdf {
   }
 
   .blindButton {
-    padding: 10px 15px;
-
-    font-weight: 600;
     color: #273a64;
-
+    font-weight: 600;
     border: 1px solid #273a64;
+    padding: 10px 15px;
 
     svg {
       fill: #273a64;
@@ -555,7 +478,6 @@ s.sdf {
 
     &:hover {
       color: #fff;
-
       background: #273a64;
       border: 1px solid #273a64;
 
@@ -574,18 +496,14 @@ s.sdf {
   }
 
   .headerNavItem {
-    color: #afe2ef;
-
     background: #273a64;
+    color: #afe2ef;
     border: 1px solid #273a64;
-
     transition: all 0.2s ease;
 
     &:hover {
-      color: #273a64;
-
       background: #afe2ef;
-
+      color: #273a64;
       transition: all 0.2s ease;
     }
   }
@@ -634,11 +552,9 @@ s.sdf {
     .headerNavItem {
       font-size: 14px;
     }
-
     .headerNavItem {
       padding: 0 50px;
     }
-
     .headerNavLink {
       font-size: 15px;
     }
@@ -666,10 +582,7 @@ s.sdf {
 
 @media (max-width: 769px) {
   .header {
-    position: fixed;
-
     background: #f5f5f5;
-    background: #f7f5ec;
 
     &.yellowTheme {
       background: rgb(25, 25, 1);
@@ -678,7 +591,8 @@ s.sdf {
     &.blueTheme {
       background: #afe2ef;
     }
-
+    position: fixed;
+    background: #f7f5ec;
     .headerTop {
       padding: 25px 15px;
     }
@@ -695,9 +609,8 @@ s.sdf {
     .mobileAccountLink {
       display: flex;
       align-items: center;
-
-      font-weight: 600;
       color: #618135;
+      font-weight: 600;
 
       svg {
         margin-right: 8px;
@@ -706,39 +619,31 @@ s.sdf {
 
     .burgerBtn {
       position: relative;
-      right: 0;
-
       display: block;
-
+      right: 0;
+      border: none;
+      background: transparent;
       width: 60px;
       height: 60px;
       padding: 0;
-
-      background: transparent;
-      border: none;
     }
 
     .burger-btn-line {
-      position: absolute;
-      transform-origin: 50% 50%;
-
       display: block;
-
+      position: absolute;
       width: 35px;
-
       border-top: 2px solid #202020;
+      transform-origin: 50% 50%;
     }
 
     .ham {
       cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform 400ms;
       -moz-user-select: none;
       -webkit-user-select: none;
       -ms-user-select: none;
       user-select: none;
-
-      transition: transform 400ms;
-
-      -webkit-tap-highlight-color: transparent;
     }
 
     .hamRotate.active {
@@ -751,14 +656,10 @@ s.sdf {
 
     .line {
       fill: none;
-      stroke: #618135;
-      stroke: #618135;
-      stroke-linecap: round;
-      stroke-linecap: round;
-      stroke-width: 5.5;
-      stroke-width: 5.5;
-
       transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+      stroke: #618135;
+      stroke-width: 5.5;
+      stroke-linecap: round;
 
       &.yellowTheme {
         stroke: yellow;
@@ -771,6 +672,9 @@ s.sdf {
       &.blueTheme {
         stroke: #273a64;
       }
+      stroke: #618135;
+      stroke-width: 5.5;
+      stroke-linecap: round;
     }
 
     .ham6 .top {
@@ -799,23 +703,18 @@ s.sdf {
 
     .headerNav {
       position: fixed;
+      opacity: 0;
       top: 110px;
       left: -1000px;
-
       flex-direction: column;
       justify-content: flex-start;
-
-      width: 100vw;
       height: calc(100vh - 110px);
+      width: 100vw;
       padding: 20px 45px 45px;
-
-      font-size: 20px;
-      font-weight: 400;
-      line-height: 23px;
-
-      opacity: 0;
       background: #f7f5ec;
-
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 23px;
       transition: all 0.3s ease;
 
       .headerNavLink {
@@ -824,12 +723,10 @@ s.sdf {
 
       .burgerContactWrap {
         display: block;
-
         margin-top: 55px;
 
         .row {
           display: flex;
-
           padding: 10px 0;
 
           address,
@@ -864,9 +761,8 @@ s.sdf {
 
       .socialList {
         display: flex;
-        justify-content: space-evenly;
-
         width: 70%;
+        justify-content: space-evenly;
         margin: auto auto 0;
 
         svg {
@@ -877,11 +773,8 @@ s.sdf {
 
     .active .headerNav {
       left: 0;
-
       opacity: 1;
-
       transition: all 0.3s ease;
-
       &.yellowTheme {
         background-color: black;
       }
@@ -898,180 +791,6 @@ s.sdf {
   .header {
     .headerNav {
       padding: 20px 25px 45px;
-    }
-  }
-}
-
-.searchRequestField {
-  min-height: 63px;
-  width: 100%;
-  position: absolute;
-  background-color: #fff;
-  top: 63px;
-  transition: all .3s ease;
-  opacity: 1;
-  border: 1px solid #618135;
-  z-index: 9999999;
-  &.yellowTheme {
-    background-color: #000;
-    border: 1px solid yellow;
-    .noSearch {
-      opacity: 1;
-      color: aqua;
-    }
-    .searchList {
-      ul {
-        color: aqua;
-        li {
-          &:last-child {
-            border-bottom: 1px solid yellow;
-          }
-          &:first-child {
-            border-top: 1px solid yellow;
-          }
-          &:before {
-            content: url('../../assets/images/hashtagYellowTheme.svg');
-          }
-          &:hover {
-            background-color: yellow;
-          }
-          a {
-            color: yellow;
-            &:hover {
-              color: black;
-              &:after {
-                content: url("../../assets/images/enterYellowTheme.svg");
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  &.whiteTheme {
-    background-color: #fff;
-    border: 1px solid #000;
-    .noSearch {
-      color: #000;
-    }
-    .searchList {
-      ul {
-        color: black;
-        li {
-          &:before {
-            content: url('../../assets/images/hashtagWhiteTheme.svg');
-          }
-          a {
-            &:hover {
-              color: black;
-              &:after {
-                content: url("../../assets/images/enterWhiteTheme.svg");
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  &.blueTheme {
-    background-color: #aee2ef;
-    border: 1px solid #273a64;
-    .noSearch {
-      opacity: 1;
-      color: #273a64;
-    }
-    .searchList {
-      ul {
-        color: #273a64;
-        li {
-          &:before {
-            content: url('../../assets/images/hashtagBlueTheme.svg');
-          }
-          &:hover {
-            background-color: #fff;
-          }
-          a {
-            color: #273a64;
-            &:hover {
-              color: #273a64;
-              &:after {
-                content: url("../../assets/images/enterBlueTheme.svg");
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-.searchRequestNoField {
-  height: 0;
-  display: none;
-  transition: all .3s ease;
-}
-
-.noSearch {
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
-  font-weight: 700;
-  opacity: 0.4;
-}
-.searchList {
-  padding: 0 20px;
-  line-height: 30px;
-  ul {
-    padding-left: 10px;
-    font-size: 24px;
-    margin-top: 20px;
-    font-weight: 700;
-    color: #618135;
-    &:last-child {
-      margin-bottom: 20px;
-    }
-
-    li {
-      position: relative;
-      font-weight: 300;
-      font-size: 20px;
-      color: #000;
-      &:last-child {
-        border-bottom: 1px solid #c4c4c4;
-      }
-      &:first-child {
-        border-top: 1px solid #c4c4c4;
-      }
-      &:before {
-        content: url('../../assets/images/hashtag.svg');
-        position: absolute;
-        top: 3px;
-        left: 10px;
-      }
-      &:hover {
-        background-color: #c4c4c4;
-      }
-      a {
-        position: relative;
-        padding-left: 40px;
-        color: #737373;
-        div {
-          display: inline-block;
-          width: 100%;
-        }
-        &:after {
-          content: '';
-        }
-        &:hover {
-          color: black;
-          &:after {
-            content: url("../../assets/images/enter.svg");
-            position: absolute;
-            right: 40px;
-            top: 0;
-          }
-        }
-      }
     }
   }
 }

@@ -3,3 +3,9 @@
 
   padding-bottom: 195px;
 }
+
+@media (max-width: 1280px) {
+  .courseBody {
+    flex-wrap: wrap;
+  }
+}

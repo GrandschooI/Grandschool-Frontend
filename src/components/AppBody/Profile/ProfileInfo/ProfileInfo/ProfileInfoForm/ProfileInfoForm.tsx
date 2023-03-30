@@ -1,25 +1,21 @@
 import React, { useState } from 'react'
 
+import './dataPicker.scss'
 import cn from 'classnames'
 import { Form, Formik } from 'formik'
 import DatePicker from 'react-datepicker'
-import './dataPicker.scss'
 import { useDispatch } from 'react-redux'
 import * as yup from 'yup'
 
-import { setProfileInfoFormThunkCreator } from '../../../../../../Redux/reducers/userSlice'
-import { getFontSize, getThemeStyle } from '../../../../../../Redux/selectors/styleSelector'
-import {
-  getUserCity,
-  getUserCountry,
-  getUserId,
-  getUserName,
-} from '../../../../../../Redux/selectors/userSelector'
-import { useAppSelector } from '../../../../../../utils/Hooks/useAppSelector'
-import { RadioButton, TextField } from '../../../../../common/Form/FormControls/FormControls'
 import FormErrorMessage from '../../../../../utils/FormErrorMessage/FormErrorMessage'
 
 import s from './ProfileInfoForm.module.scss'
+
+import { RadioButton, TextField } from 'components/common/Form/FormControls/FormControls'
+import { setProfileInfoFormThunkCreator } from 'Redux/reducers/userSlice'
+import { getFontSize, getThemeStyle } from 'Redux/selectors/styleSelector'
+import { getUserCity, getUserCountry, getUserId, getUserName } from 'Redux/selectors/userSelector'
+import { useAppSelector } from 'utils/Hooks/useAppSelector'
 
 import '../../../../../../style.scss'
 

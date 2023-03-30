@@ -2,14 +2,12 @@
   margin-left: 40px;
 
   h2 {
+    transition: all 0.3s ease;
     margin-top: 0;
-
     font-size: 28px;
     line-height: 36px;
-    color: #618135;
     text-transform: capitalize;
-
-    transition: all 0.3s ease;
+    color: #618135;
   }
 }
 

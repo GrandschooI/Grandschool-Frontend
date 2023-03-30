@@ -51,10 +51,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-legacy": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "yarn eslint --fix --ext .js,.jsx,.ts,.tsx src --color",
+    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx src --color",
     "format": "prettier . --write --color",
     "style-format": "stylelint yarn stylelint \"**/*.{css,scss}\" --fix --color",
     "fix-code": "yarn lint && yarn format && style-format --color",

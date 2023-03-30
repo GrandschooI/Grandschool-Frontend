@@ -3,9 +3,6 @@ import React from 'react'
 import cn from 'classnames'
 import { Redirect, Route, Switch } from 'react-router-dom'
 
-import { getOptionsState } from '../../Redux/selectors/styleSelector'
-import { useAppSelector } from '../../utils/Hooks/useAppSelector'
-
 import AboutUs from './AboutUs/AboutUs'
 import s from './AppBody.module.scss'
 import AuthPage from './AuthPages/AuthPage'
@@ -18,6 +15,9 @@ import NotFound from './NotFound/NotFound'
 import Payment from './Payment/Payment'
 import Profile from './Profile/Profile'
 import Teachers from './Teachers/Teachers'
+
+import { getOptionsState } from 'Redux/selectors/styleSelector'
+import { useAppSelector } from 'utils/Hooks/useAppSelector'
 
 const AppBody = () => {
   const isOptionsOpen = useAppSelector(getOptionsState)

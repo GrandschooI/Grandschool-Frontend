@@ -1,54 +1,57 @@
 .preloaderOverlay {
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
-
+  z-index: 1000;
   background: #ffffffd9;
-  .preloader {
-    position: absolute;
 
+  .preloader {
     width: 400px;
     height: 100px;
+    position: absolute;
+
     circle {
-      fill: transparent;
       stroke: #618135;
-    }
-    .yellowTheme .preloader {
-      circle {
-        stroke: aqua;
-      }
+      fill: transparent;
     }
   }
 }
+
 .yellowTheme {
-  background-color: black;
+  background-color: #191901;
+  opacity: 0.9;
+
   .preloader {
     circle {
       stroke: yellow;
     }
   }
 }
+
 .whiteTheme {
+  background: #000;
+  opacity: 0.9;
+
   .preloader {
     circle {
-      stroke: black;
+      stroke: #fff;
     }
   }
 }
 
+
 .blueTheme {
-  background-color: #b8eefb;
+  background-color: #273a64;
+  opacity: 0.9;
+
   .preloader {
     circle {
-      stroke: #273a64;
+      stroke: #afe2ef;
     }
   }
 }
