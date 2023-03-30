@@ -1,3 +1,10 @@
+.asideItem {
+  max-width: 310px;
+  @media (max-width: 1280px) {
+    max-width: 100%;
+  }
+}
+
 .asideLink {
   display: flex;
   flex-direction: column;
@@ -13,7 +20,7 @@
   font-size: 18px;
   line-height: 18px;
   color: #717070;
-  transition: opacity .5s ease;
+  transition: opacity 0.5s ease;
 
   &:after {
     content: '';
@@ -24,7 +31,7 @@
     right: 22px;
     background: url('../../../../assets/images/Shape.png') no-repeat;
     opacity: 0;
-    transition: opacity .5s ease;
+    transition: opacity 0.5s ease;
   }
 }
 
@@ -33,7 +40,7 @@
     &:after {
       background: url('../../../../assets/images/Shape.png') no-repeat;
       transform: rotate(-90deg);
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
   }
 }
@@ -44,25 +51,28 @@
   margin: 0 1.875rem;
   width: auto;
   height: 1px;
-  background: rgba(0, 0, 0, .05);
+  background: rgba(0, 0, 0, 0.05);
   content: '';
 }
 
 .asideLink:hover,
 .asideLink:focus {
-  background: #F7F5EC;
+  background: #f7f5ec;
   color: inherit;
 }
 
 .optionEnter {
   max-height: 0;
-  transition: all 1s ease;
+  overflow: hidden;
 }
 
 .optionEnterActive {
-  max-height: 300px;
-  overflow: hidden;
-  transition: all 1s ease;
+  max-height: 800px;
+  transition: all 1.5s ease;
+}
+
+.optionExit {
+  max-height: 800px;
 }
 
 .optionExitActive {
@@ -73,14 +83,14 @@
 
 a.activeItem,
 span.activeItem {
-  background: #F7F5EC;
+  background: #f7f5ec;
   position: relative;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   z-index: 10;
 
   &:after {
     opacity: 1;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
 }
 
@@ -88,7 +98,7 @@ span.activeItem {
   li {
     position: relative;
     cursor: pointer;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
 
     a {
       display: flex;
@@ -98,6 +108,7 @@ span.activeItem {
       line-height: 23px;
       color: #717070;
       text-decoration: none;
+      transition: all 0.3s ease;
     }
 
     &:first-child {
@@ -115,7 +126,7 @@ span.activeItem {
     &.activeTopic,
     &:hover {
       background: #f7f5ec;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
   }
 }
@@ -124,35 +135,63 @@ span.activeItem {
   &:after {
     background: url('../../../../assets/images/Shape.png') no-repeat;
     transform: rotate(-90deg);
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
 }
 
-
 .rightArrow {
-  background: #F7F5EC;
+  background: #f7f5ec;
   color: inherit;
   z-index: 10;
 
   &:hover {
-    background: #F7F5EC;
+    background: #f7f5ec;
   }
 
   &:after {
     opacity: 1;
     background: url('../../../../assets/images/Shape.png') no-repeat;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
 }
 
 .yellowTheme {
+  &.asideItem {
+    background-color: yellow;
+
+    & li {
+      a {
+        color: black;
+      }
+
+      &:not(.activeItem):hover {
+        background-color: aqua;
+      }
+    }
+
+    .activeTopic {
+      background-color: aqua;
+    }
+
+    .asideLink {
+      transition: all 0.3s ease;
+      color: black;
+
+      &:not(.activeItem):hover {
+        background-color: yellow;
+      }
+    }
+  }
+
   a.activeItem {
     background: #00ffff;
     color: #000;
   }
 
   .asideLink {
+    background-color: transparent;
     color: yellow;
+    font-size: 18px;
 
     &:after {
       background: url('../../../../assets/images/asideBlackMode.svg') no-repeat;
@@ -166,14 +205,55 @@ span.activeItem {
 }
 
 .whiteTheme {
+  &.asideItem {
+    background-color: #000;
+
+    & li {
+      a {
+        color: #fff;
+      }
+
+      &:not(.activeItem):hover {
+        background-color: white;
+
+        a {
+          color: #000;
+        }
+      }
+    }
+
+    .activeTopic {
+      background-color: #fff;
+
+      a {
+        color: #000;
+      }
+    }
+
+    .asideLink {
+      transition: all 0.3s ease;
+      color: #fff;
+
+      &:not(.activeItem):hover {
+        background-color: white;
+
+        &:after {
+          background: url('../../../../assets/images/asideBlackMode.svg') no-repeat;
+        }
+      }
+    }
+  }
+
+  .rightArrow {
+    background-color: black;
+  }
+
   a.activeItem {
     background: #000;
     color: #fff;
   }
 
   .asideLink {
-    color: #000;
-
     &:after {
       background: url('../../../../assets/images/asideWhiteMode.svg') no-repeat;
     }
@@ -186,9 +266,53 @@ span.activeItem {
 }
 
 .blueTheme {
+  &.asideItem {
+    background-color: #273a64;
+
+    & li {
+      a {
+        color: #afe2ef;
+      }
+
+      &:not(.activeItem):hover {
+        background-color: #afe2ef;
+
+        a {
+          color: #273a64;
+        }
+      }
+    }
+
+    .activeTopic {
+      background-color: #afe2ef;
+
+      a {
+        color: #273a64;
+      }
+    }
+
+    .asideLink {
+      transition: all 0.3s ease;
+      color: #afe2ef;
+
+      &:not(.activeItem):hover {
+        background-color: #afe2ef;
+        color: #273a64;
+
+        &:after {
+          background: url('../../../../assets/images/asideBlackMode.svg') no-repeat;
+        }
+      }
+    }
+  }
+
+  .rightArrow {
+    background-color: #273a64;
+  }
+
   a.activeItem {
     background: #273a64;
-    color: #fff;
+    color: #afe2ef;
   }
 
   .asideLink {
@@ -202,5 +326,49 @@ span.activeItem {
   .asideLink:not(.activeItem):hover {
     background: #f5f5f5;
     color: inherit;
+  }
+}
+
+.title {
+  transition: all 0.2s linear;
+}
+
+.medium {
+  .title {
+    font-size: 20px;
+  }
+}
+
+.large {
+  .title {
+    font-size: 22px;
+  }
+
+  .medium {
+    .asideLink {
+      font-size: 20px;
+    }
+
+    .asideSubmenu {
+      li {
+        a {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .large {
+    .asideLink {
+      font-size: 22px;
+    }
+
+    .asideSubmenu {
+      li {
+        a {
+          font-size: 22px;
+        }
+      }
+    }
   }
 }

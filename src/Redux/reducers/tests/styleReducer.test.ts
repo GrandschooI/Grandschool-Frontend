@@ -1,5 +1,6 @@
 // @ts-ignore
-import styleReducer, {styleActions, styleInitialStateType} from '../styleReducer'
+// eslint-disable-next-line import/no-unresolved
+import styleReducer, { styleActions, styleInitialStateType } from '../styleReducer'
 
 let state: styleInitialStateType
 
@@ -10,10 +11,9 @@ beforeEach(() => {
     themeStyle: null, // has yellowTheme, whiteTheme and blueTheme
     images: true,
     isLoaded: true,
-    isOptionsOpen: false
+    isOptionsOpen: false,
   }
 })
-
 
 test('Blind mode activated', () => {
   const newState = styleReducer(state, styleActions.switchBlindModeAC(true))

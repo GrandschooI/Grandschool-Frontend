@@ -1,20 +1,17 @@
-import {GetItemsType, instance} from './api'
-
+import { GetItemsType, instance } from './api'
 
 export const InfoAPI = {
-  getWebsiteCategories () {
-    return (
-        instance.get<GetItemsType<WebsiteCategoryItemType>>('website-categories')
-            .then(response => response.data.data.records)
-    )
+  getWebsiteCategories() {
+    return instance
+      .get<GetItemsType<WebsiteCategoryItemType>>('website-categories')
+      .then(response => response.data.data.records)
   },
-  getWebsites (category: string) {
-    return (
-        instance.get<GetItemsType<WebsiteItemType>>(`websites?category=${category}`).then(response => response.data.data.records)
-    )
-  }
+  getWebsites(category: string) {
+    return instance
+      .get<GetItemsType<WebsiteItemType>>(`websites?category=${category}`)
+      .then(response => response.data.data.records)
+  },
 }
-
 
 export type WebsiteCategoryItemType = {
   id: number

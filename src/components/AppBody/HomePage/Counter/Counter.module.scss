@@ -32,7 +32,7 @@
       line-height: 25px;
       color: #fff;
       text-decoration: none;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
       border: none;
       &.yellowTheme {
         color: aqua;
@@ -40,7 +40,7 @@
       }
       &:hover {
         background: #32487d;
-        transition: all .2s ease;
+        transition: all 0.2s ease;
       }
     }
   }
@@ -51,15 +51,15 @@
   bottom: 20px;
   right: 20px;
   fill: #618135;
-  opacity: .8;
-  transition: all .5s ease;
+  opacity: 0.8;
+  transition: all 0.5s ease;
 }
 
 .counterItem:hover .counterIcon,
 .counterItem:focus .counterIcon {
   opacity: 1;
-  transform: scale(.8) translate(20%, 15%);
-  transition: all .5s ease;
+  transform: scale(0.8) translate(20%, 15%);
+  transition: all 0.5s ease;
 }
 
 .yellowTheme,
@@ -101,11 +101,11 @@
 
   a {
     background: #000;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
     &:hover {
       color: #000;
       background: aqua;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
   }
 }
@@ -120,12 +120,12 @@
 
   a {
     background: #000;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
     border: 1px solid #000;
     &:hover {
       background: #fff;
       color: #000;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
   }
 
@@ -186,12 +186,12 @@
 
   a {
     background: #273a64;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
     border: 1px solid #273a64;
     &:hover {
       background: #fff;
       color: #273a64;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
   }
 }
@@ -214,9 +214,6 @@ ul.counterWrap {
   border-radius: 10px;
   h4 {
     color: #618135;
-  }
-  @media (min-width: 1150px) and (max-width: 1400px){
-    height: 19em;
   }
 }
 
@@ -248,16 +245,16 @@ ul.counterWrap {
       font-size: 16px;
     }
     h3 {
-      font-size: 38px!important;
-      transition: all .2s ease;
+      font-size: 38px !important;
+      transition: all 0.2s ease;
     }
     p {
-      font-size: 20px!important;
-      transition: all .2s ease;
+      font-size: 20px !important;
+      transition: all 0.2s ease;
     }
     a {
       font-size: 20px;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
   }
 }
@@ -275,16 +272,16 @@ ul.counterWrap {
       font-size: 18px;
     }
     h3 {
-      font-size: 40px!important;
-      transition: all .2s ease;
+      font-size: 40px !important;
+      transition: all 0.2s ease;
     }
     p {
-      font-size: 22px!important;
-      transition: all .2s ease;
+      font-size: 22px !important;
+      transition: all 0.2s ease;
     }
     a {
       font-size: 22px;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
   }
 }

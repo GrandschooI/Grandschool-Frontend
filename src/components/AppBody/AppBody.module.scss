@@ -2,5 +2,11 @@
   padding-top: 88px;
 }
 .appBody {
-  transition: all .2s ease;
+  transition: all 0.2s ease;
+  &.yellowTheme {
+    background-color: #000;
+  }
+  &.blueTheme {
+    background-color: #afe2ef;
+  }
 }

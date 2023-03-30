@@ -1,65 +1,208 @@
 .profileImageForm {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
-  flex-wrap: wrap;
   height: fit-content;
-  min-height: 100%;
   padding: 23px 0 23px 43px;
-  background: #F7F5EC;
+  background: #f7f5ec;
   border-radius: 26px 0 0 26px;
   max-width: 500px;
   min-width: 430px;
-  width: 35%;
+  width: 32%;
+
   h3 {
     width: 100%;
     margin: 0 0 10px;
     font-size: 18px;
     line-height: 23px;
-    color: #717070;
   }
+
   .userPhoto {
     max-width: 132px;
     max-height: 132px;
     display: block;
     margin-right: 30px;
   }
+
   .inputControlsWrap {
+    padding-right: 7px;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 220px;
+    transition: all 0.2s linear;
+
     .userPhotoSizeInfo {
+      transition: all 0.2s linear;
       font-size: 12px;
       line-height: 15px;
       color: #717070;
       margin-top: 10px;
     }
+
     .userPhotoLabel {
+      transition: all 0.2s linear;
+      margin: 20px auto;
       width: 100%;
-      display: flex;
+      max-width: 390px;
       justify-content: center;
       padding: 12px;
       font-weight: 600;
-      font-size: 18px;
+      font-size: 20px;
       line-height: 23px;
-      color: #618135;
-      border: 1px solid #618135;
       border-radius: 50px;
       cursor: pointer;
+      background-color: #ffffff;
+      color: #618135;
+      border: 1px solid #618135;
+      font-family: 'Proba', sans-serif;
+      align-items: center;
+      height: 64px;
+      display: flex;
+
+      &:hover {
+        background-color: #618135;
+        border: 1px solid #618135;
+        color: #fff;
+        transition: all 0.2s linear;
+
+        svg, path {
+          fill: #fff;
+          transition: all 0.2s linear;
+        }
+      }
     }
   }
+
   &:after {
-    content: "";
+    content: '';
     display: flex;
     height: inherit;
     min-height: 100%;
-    width: 100%;
     position: absolute;
-    right: -100%;
     top: 0;
-    background: #f8f5ec;
+  }
+}
+
+@media (max-width: 1200px) {
+  .profileImageForm {
+    position: absolute;
+    top: 790px;
+    min-height: 100px;
+    border-radius: 0 26px 26px 0;
+    //display: none;
+  }
+}
+
+
+@media(min-width: 374px) and (max-width: 430px){
+  .profileImageForm {
+    top: 785px;
+    min-width: 300px;
+  }
+}
+
+.yellowTheme.profileImageForm {
+  border: 2px solid #ff0;
+  background: #000;
+
+  h3 {
+    color: #ff0;
+  }
+
+  .userPhotoSizeInfo {
+    color: #ff0;
+  }
+
+  .userPhotoLabel {
+    color: #000;
+    background: #ff0;
+    border-color: #ff0;
+
+    &:hover {
+      color: #ff0;
+      background: #000;
+      border-color: #ff0;
+    }
+  }
+}
+
+.whiteTheme.profileImageForm {
+  border: 2px solid #000;
+
+  h3 {
+    color: #000;
+  }
+
+  .userPhotoSizeInfo {
+    color: #000;
+  }
+
+  .userPhotoLabel {
+    color: #f5f5f5;
+    background: #000;
+    border-color: #000;
+
+    &:hover {
+      color: #000;
+      background: #f5f5f5;
+      border-color: #000;
+    }
+  }
+}
+
+.blueTheme.profileImageForm {
+  border: 2px solid #273a64;
+  background: #afe2ef;
+
+  h3 {
+    color: #273a64;
+  }
+
+  .userPhotoSizeInfo {
+    color: #273a64;
+  }
+
+  .userPhotoLabel {
+    color: #f5f5f5;
+    background: #273a64;
+    border-color: #273a64;
+
+    &:hover {
+      color: #273a64;
+      background: #f5f5f5;
+      border-color: #273a64;
+    }
+  }
+}
+
+.medium.profileImageForm {
+  h3 {
+    font-size: 20px;
+  }
+
+  .userPhotoLabel {
+    font-size: 22px;
+  }
+
+  .userPhotoSizeInfo {
+    font-size: 14px;
+  }
+}
+
+.large.profileImageForm {
+  h3 {
+    font-size: 22px;
+  }
+
+  .userPhotoLabel {
+    font-size: 24px;
+  }
+
+  .userPhotoSizeInfo {
+    font-size: 16px;
   }
 }

@@ -3,6 +3,7 @@ div.aboutUsBody {
   flex-wrap: wrap;
   padding-top: 210px;
   padding-bottom: 165px;
+
   h2 {
     width: 100%;
     margin: 40px 0;
@@ -10,18 +11,19 @@ div.aboutUsBody {
     font-size: 36px;
     line-height: 46px;
     color: #000000;
+    transition: all 0.2s linear;
   }
 }
 
 .aboutUsSection {
   padding-top: 0;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .yellowTheme {
   background: #000;
   color: yellow;
-  margin-top: -60px;
+
   .aboutUsBody {
     h2 {
       color: yellow;
@@ -32,7 +34,7 @@ div.aboutUsBody {
 .whiteTheme {
   background: #fff;
   color: #000;
-  margin-top: -60px;
+
   .aboutUsBody {
     h2 {
       color: #000;
@@ -43,7 +45,7 @@ div.aboutUsBody {
 .blueTheme {
   background: #afe2ef;
   color: #273a64;
-  margin-top: -60px;
+
   .aboutUsBody {
     h2 {
       color: #273a64;
@@ -52,6 +54,28 @@ div.aboutUsBody {
 }
 
 .aboutUsSection.blindOptionsOpen {
-  padding-top: 90px;
-  transition: all .3s ease;
+  padding-top: 3px;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 997px) {
+  .aboutUsSection.blindOptionsOpen {
+    padding-top: 228px;
+  }
+}
+
+.medium {
+  .aboutUsBody {
+    h2 {
+      font-size: 41px;
+    }
+  }
+}
+
+.large {
+  .aboutUsBody {
+    h2 {
+      font-size: 50px;
+    }
+  }
 }

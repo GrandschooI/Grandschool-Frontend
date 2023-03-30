@@ -3,8 +3,7 @@ import axios from 'axios'
 export const instance = axios.create({
   withCredentials: true,
   baseURL: 'https://api.staging.grandschool.pl/api/',
-  headers: {
-  }
+  headers: {},
 })
 
 export enum HttpStatusCode {
@@ -68,9 +67,8 @@ export enum HttpStatusCode {
   INSUFFICIENT_STORAGE = 507,
   LOOP_DETECTED = 508,
   NOT_EXTENDED = 510,
-  NETWORK_AUTHENTICATION_REQUIRED = 511
+  NETWORK_AUTHENTICATION_REQUIRED = 511,
 }
-
 
 export type GetItemsType<I> = {
   data: {

@@ -1,25 +1,15 @@
 .callToActionBGWrap {
   background-image: -webkit-image-set(
-                  url('../../../../assets/images/mainPageBackground.png') 1x,
-                  url('../../../../assets/images/mainPageBackgroundRetina.png') 2x  );
+    url('../../../../assets/images/mainPageBackground.png') 1x,
+    url('../../../../assets/images/mainPageBackgroundRetina.png') 2x
+  );
   background-image: image-set(
-                  url('../../../../assets/images/mainPageBackground.png') 1x,
-                  url('../../../../assets/images/mainPageBackgroundRetina.png') 2x  );
+    url('../../../../assets/images/mainPageBackground.png') 1x,
+    url('../../../../assets/images/mainPageBackgroundRetina.png') 2x
+  );
   background-size: cover;
 
-  .isOptionOpen {
-    @media (max-width: 1000px) {
-      margin-top: 200px;
-      transition: all .2s ease;
-    }
-    @media (max-width: 768px) {
-      margin-top: 220px;
-      transition: all .2s ease;
-    }
-  }
-
   .callToAction {
-    transition: all .2s ease;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -27,15 +17,18 @@
     align-items: flex-start;
     padding-top: 120px;
     padding-bottom: 120px;
+
     .mainTitle {
       font-weight: 500;
       font-size: 45px;
       line-height: 58px;
       margin: 0 0 20px;
+
       .firmNameInMainTitle {
         color: #618135;
       }
     }
+
     .slogan {
       margin: 0;
       font-size: 22px;
@@ -43,6 +36,7 @@
       color: #717070;
       width: 45%;
     }
+
     .mainToCourseLink {
       display: flex;
       justify-content: center;
@@ -57,46 +51,53 @@
       font-size: 18px;
       line-height: 23px;
       text-decoration: none;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
+
       &:hover,
       &:focus {
         color: #fff;
         background: #618135;
-        transition: all .2s ease;
+        transition: all 0.2s ease;
       }
     }
   }
 
   @media (max-width: 768px) {
-    background: linear-gradient(145deg, #F7F5EC, #F7F5EC calc(60% - 10px), transparent calc(50% - 10px)),
-    url('../../../../assets/images/webp/mainbgmobile.webp') 70% bottom no-repeat;
+    background: linear-gradient(
+        145deg,
+        #f7f5ec,
+        #f7f5ec calc(60% - 10px),
+        transparent calc(50% - 10px)
+      ),
+      url('../../../../assets/images/webp/mainbgmobile.webp') 70% bottom no-repeat;
     background-size: contain;
     .callToAction {
       height: calc(60vh - 10px);
       padding-bottom: 25px;
       padding-top: 150px;
       justify-content: flex-start;
+
       .mainTitle {
         font-weight: 600;
         font-size: 30px;
         line-height: 38px;
         text-align: center;
         width: 100%;
+
         .firmNameInMainTitle {
           display: block;
         }
       }
+
       .slogan {
         width: 100%;
         text-align: center;
       }
+
       .mainToCourseLink {
         background: #618135;
         color: #fff;
         margin: 20px auto 0;
-        &.yellowTheme, &.blueTheme, &.whiteTheme {
-          background-color: rgba(1, 1, 1, 0);
-        }
       }
     }
   }
@@ -104,27 +105,32 @@
 
 .callToActionBGWrap.yellowTheme {
   background: linear-gradient(90deg, #000, #000 40%, transparent 80%),
-  url('../../../../assets/images/webp/preload.webp') 70% center no-repeat;
+    url('../../../../assets/images/webp/preload.webp') 70% center no-repeat;
   background-size: cover;
+
   .mainTitle {
     .firmNameInMainTitle {
       color: aqua;
     }
   }
+
   .slogan {
     color: yellow;
   }
+
   .mainToCourseLink {
     color: aqua;
     border: 1px solid aqua;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
+
     &:hover,
     &:focus {
       color: #000;
       background: aqua;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
   }
+
   @media (max-width: 900px) {
     background: #000;
   }
@@ -161,18 +167,18 @@
   .donateLink {
     color: #000;
     background: yellow;
+
     &:hover,
     &:focus {
       background: aqua;
       opacity: 1;
     }
   }
-
 }
 
 .callToActionBGWrap.whiteTheme {
   background: linear-gradient(90deg, #fff, #fff 40%, transparent 80%),
-  url('../../../../assets/images/webp/preload.webp') 70% center no-repeat;
+    url('../../../../assets/images/webp/preload.webp') 70% center no-repeat;
   background-size: cover;
 
   @media (max-width: 900px) {
@@ -192,12 +198,13 @@
   .mainToCourseLink {
     color: #000;
     border: 1px solid #000;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
+
     &:hover,
     &:focus {
       color: #fff;
       background: #000;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
   }
 
@@ -233,17 +240,17 @@
   .donateLink {
     color: #fff;
     background: #000;
+
     &:hover,
     &:focus {
-      opacity: .8;
+      opacity: 0.8;
     }
   }
-
 }
 
 .callToActionBGWrap.blueTheme {
   background: linear-gradient(90deg, #b8eefb, #b8eefb 40%, transparent 80%),
-  url('../../../../assets/images/webp/preload.webp') 70% center no-repeat;
+    url('../../../../assets/images/webp/preload.webp') 70% center no-repeat;
   background-size: cover;
 
   @media (max-width: 900px) {
@@ -263,12 +270,13 @@
   .mainToCourseLink {
     color: #273a64;
     border: 1px solid #273a64;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
+
     &:hover,
     &:focus {
       color: #fff;
       background: #273a64;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
   }
 
@@ -304,14 +312,13 @@
   .donateLink {
     color: #fff;
     background: #273a64;
+
     &:hover,
     &:focus {
-      opacity: .8;
+      opacity: 0.8;
     }
   }
-
 }
-
 
 .title {
   margin-top: 0;
@@ -403,7 +410,7 @@
   margin-top: 0;
   color: #666666;
   @media (max-width: 768px) {
-    &{
+    & {
       font-size: 20px;
     }
   }
@@ -416,12 +423,12 @@
   font-size: 25px;
   margin-bottom: 5px;
   @media (max-width: 768px) {
-    &{
+    & {
       font-size: 23px;
     }
   }
   @media (max-width: 425px) {
-    &{
+    & {
       font-size: 18px;
     }
   }
@@ -435,12 +442,12 @@
   margin: 0;
   padding-left: 3px;
   @media (max-width: 768px) {
-    &{
+    & {
       font-size: 16px;
     }
   }
   @media (max-width: 425px) {
-    &{
+    & {
       font-size: 14px;
     }
   }
@@ -499,13 +506,13 @@
   -webkit-animation: heartbeat 2s ease-in-out infinite both;
   animation: heartbeat 2s ease-in-out infinite both;
   cursor: pointer;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
 }
 
 .donateLink:hover,
 .donateLink:focus {
-  opacity: .7;
-  transition: all .2s linear;
+  opacity: 0.7;
+  transition: all 0.2s linear;
 }
 
 @keyframes heartbeat {
@@ -529,17 +536,20 @@
 
 .medium {
   .mainTitle {
-    font-size: 47px!important;
-    transition: all .2s ease;
+    font-size: 47px !important;
+    transition: all 0.2s ease;
   }
+
   .slogan {
-     font-size: 24px!important;
-    transition: all .2s ease;
-   }
-  .mainToCourseLink {
-    font-size: 20px!important;
-    transition: all .2s ease;
+    font-size: 24px !important;
+    transition: all 0.2s ease;
   }
+
+  .mainToCourseLink {
+    font-size: 20px !important;
+    transition: all 0.2s ease;
+  }
+
   .title,
   .firstCTA {
     font-size: 40px;
@@ -550,6 +560,7 @@
       font-size: 27px;
     }
   }
+
   .featureTitle,
   .secondCTA {
     font-size: 30px;
@@ -560,6 +571,7 @@
       font-size: 20px;
     }
   }
+
   .featureDesc {
     font-size: 22px;
     @media (max-width: 768px) {
@@ -569,6 +581,7 @@
       font-size: 16px;
     }
   }
+
   .donateLink {
     font-size: 20px;
     @media (max-width: 768px) {
@@ -582,17 +595,20 @@
 
 .large {
   .mainTitle {
-    font-size: 50px!important;
-    transition: all .2s ease;
+    font-size: 50px !important;
+    transition: all 0.2s ease;
   }
+
   .slogan {
-    font-size: 27px!important;
-    transition: all .2s ease;
+    font-size: 27px !important;
+    transition: all 0.2s ease;
   }
+
   .mainToCourseLink {
-    font-size: 22px!important;
-    transition: all .2s ease;
+    font-size: 22px !important;
+    transition: all 0.2s ease;
   }
+
   .title,
   .firstCTA {
     font-size: 42px;
@@ -604,6 +620,7 @@
       font-size: 27px;
     }
   }
+
   .featureTitle,
   .secondCTA {
     font-size: 32px;
@@ -615,6 +632,7 @@
       font-size: 27px;
     }
   }
+
   .featureDesc {
     font-size: 22px;
     line-height: 25px;
@@ -625,6 +643,7 @@
       font-size: 18px;
     }
   }
+
   .donateLink {
     font-size: 19px;
     line-height: 20px;

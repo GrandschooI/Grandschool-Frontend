@@ -7,6 +7,7 @@
 
 .closeBlindOptions {
   top: -15px;
+  margin-bottom: 100px;
   padding: 0;
   background: #fff;
   border: none;
@@ -16,29 +17,33 @@
   cursor: pointer;
   position: absolute;
   right: 50%;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
 .headerTop {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 0 0;
+  padding: 40px 0 0;
   position: relative;
+}
+
+s.sdf {
+  display: block;
 }
 
 .headerLogo:hover,
 .headerLogo:focus-visible {
-  opacity: .7;
-  transition: all .2s ease;
+  opacity: 0.7;
+  transition: all 0.2s ease;
 }
 
 .headerLogo:active {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .headerLogo {
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   outline: none;
 }
 
@@ -47,19 +52,18 @@
   display: flex;
   justify-content: space-between;
   @media (max-width: 1100px) {
-      width: 34%;
+    width: 34%;
   }
 }
 
-
 .headerNavLink:before {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   width: 0;
   left: 50%;
   border-bottom: 1px solid #618135;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .headerNavLink:hover,
@@ -67,26 +71,29 @@
 .headerNavLink.headerActiveNavLink {
   position: relative;
   color: #618135;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
+
   .headerNavLinkLabel {
     display: block;
     transform: translateY(-10px);
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
+
   &:before {
     width: 100%;
     left: 0;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
 }
 
 .headerNavLinkLabel {
   display: block;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .headerBtnWrap {
   display: flex;
+
   .headerNavItem {
     display: flex;
     outline: none;
@@ -94,26 +101,28 @@
     border: 1px solid #618135;
     border-radius: 50px;
     align-items: center;
-    padding: 0 80px;
+    padding: 0 50px;
     color: #fff;
     text-decoration: none;
     font-size: 20px;
     line-height: 26px;
     font-weight: 600;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
     @media (max-width: 1270px) {
       font-size: 16px;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
     &:hover,
     &:focus-visible {
       color: #618135;
       background-color: #fff;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
+
     &:hover:before {
       opacity: 1;
     }
+
     &:hover:after {
       border-color: #618135;
       background-color: #618135;
@@ -128,11 +137,7 @@
   text-decoration: none;
   color: #000;
   font-weight: 500;
-  transition: all .5s ease;
-  @media (max-width: 1270px) {
-    font-size: 14px;
-    transition: all .2s ease;
-  }
+  transition: all 0.5s ease;
 }
 
 .mobileAccountLink {
@@ -157,35 +162,27 @@
 }
 
 .headerNav.notMainPage {
-  width: 45%;
+  width: 200%;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 1280px) {
+  .headerNav.notMainPage {
+    width: 200%;
+    justify-content: space-around;
+  }
 }
 
 .revert {
   transform: rotate(180deg);
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
 .medium {
   .headerNavLink,
   .headerNavItem {
     font-size: 22px;
-    transition: all .2s ease;
-    @media (max-width: 1370px) {
-      font-size: 20px;
-      transition: all .2s ease;
-    }
-    @media (max-width: 1270px) {
-      font-size: 18px;
-      transition: all .2s ease;
-    }
-    @media (max-width: 1040px) {
-      font-size: 16px;
-      transition: all .2s ease;
-    }
-    @media (max-width: 800px) {
-      font-size: 14px;
-      transition: all .2s ease;
-    }
+    transition: all 0.2s ease;
   }
 }
 
@@ -193,32 +190,34 @@
   .headerNavLink,
   .headerNavItem {
     font-size: 24px;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
+
     @media (max-width: 1370px) {
       font-size: 22px;
-      transition: all .2s ease;
-  }
+      transition: all 0.2s ease;
+    }
     @media (max-width: 1270px) {
       font-size: 20px;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
     @media (max-width: 1040px) {
       font-size: 18px;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
     @media (max-width: 800px) {
       font-size: 16px;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
-}
+  }
 }
 
 .notMainPageWrapper {
   display: flex;
+  flex-wrap: wrap;
   margin-top: 30px;
   align-items: center;
   height: 88px;
-  background: #F7F5EC;
+  background: #f7f5ec;
 }
 
 .headerSearch {
@@ -229,33 +228,47 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
+
   input {
     width: 100%;
     padding: 20px;
-    border: 1px solid #E5E5E5;
+    border: 1px solid #e5e5e5;
+
     &:focus,
     &:hover {
       border: 1px solid #618135;
     }
   }
+
   button {
     background: transparent;
     margin-left: auto;
     padding: 15px;
-    border: 1px solid #E5E5E5;
+    border: 1px solid #e5e5e5;
     border-left: none;
     outline: none;
+
     svg {
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
+
     &:focus,
     &:hover {
       border: 1px solid #618135;
+
       svg {
         transform: scale(1.1);
-        transition: all .2s ease;
+        transition: all 0.2s ease;
       }
     }
+  }
+}
+
+@media (max-width: 769px) {
+  .headerSearch {
+    position: absolute;
+    top: 120px;
+    width: 90%;
   }
 }
 
@@ -273,7 +286,7 @@
     0%,
     50%,
     100% {
-      opacity: .5;
+      opacity: 0.5;
     }
     25%,
     75% {
@@ -284,7 +297,7 @@
     0%,
     50%,
     100% {
-      opacity: .5;
+      opacity: 0.5;
     }
     25%,
     75% {
@@ -292,6 +305,7 @@
     }
   }
 }
+
 .logoText {
   padding-left: 10px;
 }
@@ -303,12 +317,15 @@
 }
 
 .header.yellowTheme {
+  background-color: #000;
   .headerNavLink {
     color: yellow;
+
     &:before {
       border-bottom: 1px solid yellow;
     }
   }
+
   .blindButton {
     color: yellow;
     font-weight: 600;
@@ -330,30 +347,37 @@
       }
     }
   }
+
   .closeBlindOptions {
     background: aqua;
   }
+
   .headerNavItem {
     background: yellow;
     color: #000;
     border: 1px solid yellow;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
+
     &:hover {
       background: #000;
       color: yellow;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
   }
+
   .headerSearch {
     input {
       border-color: yellow;
+
       &::placeholder {
         color: yellow;
       }
     }
+
     button {
       border-color: yellow;
       border-left: none;
+
       svg path {
         fill: yellow;
       }
@@ -364,10 +388,12 @@
 .header.whiteTheme {
   .headerNavLink {
     color: #000;
+
     &:before {
       border-bottom: 1px solid #000;
     }
   }
+
   .blindButton {
     color: #000;
     font-weight: 600;
@@ -388,33 +414,41 @@
       }
     }
   }
+
   .closeBlindOptions {
     background: #000;
+
     path {
       fill: #fff;
     }
   }
+
   .headerNavItem {
     background: #000;
     color: #fff;
     border: 1px solid #000;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
+
     &:hover {
       background: #fff;
       color: #000;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
   }
+
   .headerSearch {
     input {
       border-color: #000;
+
       &::placeholder {
         color: #000;
       }
     }
+
     button {
       border-color: #000;
       border-left: none;
+
       svg path {
         fill: #000;
       }
@@ -423,12 +457,15 @@
 }
 
 .header.blueTheme {
+  background-color: #afe2ef;
   .headerNavLink {
     color: #273a64;
+
     &:before {
       border-bottom: 1px solid #273a64;
     }
   }
+
   .blindButton {
     color: #273a64;
     font-weight: 600;
@@ -449,27 +486,41 @@
       }
     }
   }
+
+  .closeBlindOptions {
+    background: #273a64;
+
+    path {
+      fill: #0ff;
+    }
+  }
+
   .headerNavItem {
     background: #273a64;
     color: #afe2ef;
     border: 1px solid #273a64;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
+
     &:hover {
-      background: #afe2ef;
+      background:#afe2ef;
       color: #273a64;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
   }
+
   .headerSearch {
     input {
       border-color: #273a64;
+
       &::placeholder {
         color: #273a64;
       }
     }
+
     button {
       border-color: #273a64;
       border-left: none;
+
       svg path {
         fill: #273a64;
       }
@@ -492,24 +543,23 @@
 @media (max-width: 1220px) {
   .header {
     .headerTop {
-      padding: 25px 0;
       img {
         width: 105px;
       }
     }
+
     .blindButton,
-    //.headerNavItem {
-    //  font-size: 14px;
-    //}
+    .headerNavItem {
+      font-size: 14px;
+    }
     .headerNavItem {
       padding: 0 50px;
     }
-    //.headerNavLink {
-    //  font-size: 15px;
-    //}
+    .headerNavLink {
+      font-size: 15px;
+    }
   }
 }
-
 
 @media (max-width: 1000px) {
   .blindButton {
@@ -530,32 +580,43 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .header {
-    position: fixed;
-    background: #f7f5ec;
+    background: #f5f5f5;
+
     &.yellowTheme {
       background: rgb(25, 25, 1);
     }
+
+    &.blueTheme {
+      background: #afe2ef;
+    }
+    position: fixed;
+    background: #f7f5ec;
     .headerTop {
       padding: 25px 15px;
     }
+
     .blindButton,
     .headerNavItem {
       display: none;
     }
+
     .logoText {
       display: block;
     }
+
     .mobileAccountLink {
       display: flex;
       align-items: center;
       color: #618135;
       font-weight: 600;
+
       svg {
         margin-right: 8px;
       }
     }
+
     .burgerBtn {
       position: relative;
       display: block;
@@ -566,6 +627,7 @@
       height: 60px;
       padding: 0;
     }
+
     .burger-btn-line {
       display: block;
       position: absolute;
@@ -573,6 +635,7 @@
       border-top: 2px solid #202020;
       transform-origin: 50% 50%;
     }
+
     .ham {
       cursor: pointer;
       -webkit-tap-highlight-color: transparent;
@@ -582,46 +645,62 @@
       -ms-user-select: none;
       user-select: none;
     }
+
     .hamRotate.active {
       transform: rotate(45deg);
     }
+
     .hamRotate180.active {
       transform: rotate(180deg);
     }
+
     .line {
-      fill:none;
+      fill: none;
       transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-      stroke:#618135;
-      stroke-width:5.5;
-      stroke-linecap:round;
+      stroke: #618135;
+      stroke-width: 5.5;
+      stroke-linecap: round;
+
       &.yellowTheme {
         stroke: yellow;
       }
+
       &.whiteTheme {
         stroke: black;
       }
+
       &.blueTheme {
         stroke: #273a64;
       }
+      stroke: #618135;
+      stroke-width: 5.5;
+      stroke-linecap: round;
     }
+
     .ham6 .top {
       stroke-dasharray: 40 172;
     }
+
     .ham6 .middle {
       stroke-dasharray: 40 111;
     }
+
     .ham6 .bottom {
       stroke-dasharray: 40 172;
     }
+
     .ham6.active .top {
       stroke-dashoffset: -132px;
     }
+
     .ham6.active .middle {
       stroke-dashoffset: -71px;
     }
+
     .ham6.active .bottom {
       stroke-dashoffset: -132px;
     }
+
     .headerNav {
       position: fixed;
       opacity: 0;
@@ -636,58 +715,72 @@
       font-weight: 400;
       font-size: 20px;
       line-height: 23px;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
+
       .headerNavLink {
         padding: 10px 0;
       }
+
       .burgerContactWrap {
         display: block;
         margin-top: 55px;
+
         .row {
           display: flex;
           padding: 10px 0;
+
           address,
           a {
-            font-size: 16px;
             color: #618135;
             text-decoration: none;
+
             &.yellowTheme {
               color: yellow;
             }
-            &.whiteTheme, &.blueTheme {
+
+            &.whiteTheme,
+            &.blueTheme {
               color: black;
             }
+
             &.large {
               font-size: 20px;
             }
+
             &.medium {
               font-size: 18px;
             }
           }
+
           svg {
             min-width: 20px;
             margin-right: 15px;
           }
         }
       }
+
       .socialList {
         display: flex;
         width: 70%;
         justify-content: space-evenly;
         margin: auto auto 0;
+
         svg {
           fill: #618135;
         }
       }
     }
+
     .active .headerNav {
       left: 0;
       opacity: 1;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
       &.yellowTheme {
         background-color: black;
       }
-      &.whiteTheme, &.blueTheme {
+
+      &.whiteTheme,
+      &.blueTheme {
         background-color: white;
       }
     }

@@ -12,6 +12,7 @@
     font-size: 18px;
     line-height: 23px;
     color: #717070;
+    transition: all 0.2s linear;
   }
 
   .paginationItem.yellowTheme {
@@ -32,11 +33,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #FFFFFF;
-    background-color: #83A358;
+    color: #ffffff;
+    background-color: #83a358;
     width: 34px;
     height: 34px;
     border-radius: 50%;
+    transition: all 0.2s linear;
   }
 }
 
@@ -53,3 +55,26 @@
   background-color: #273a64;
 }
 
+.medium {
+  .paginationItem {
+    font-size: 22px;
+  }
+}
+
+.medium {
+  .active {
+    font-size: 22px;
+  }
+}
+
+.large {
+  .paginationItem {
+    font-size: 24px;
+  }
+}
+
+.large {
+  .active {
+    font-size: 24px;
+  }
+}

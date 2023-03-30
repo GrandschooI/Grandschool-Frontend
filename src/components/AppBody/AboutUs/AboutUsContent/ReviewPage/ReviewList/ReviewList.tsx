@@ -1,26 +1,36 @@
-import React, {useEffect} from 'react';
-import s from "../ReviewPage.module.scss";
-import ReviewItem from "./ReviewItem/ReviewItem";
-import {useAppSelector} from "../../../../../../utils/Hooks/useAppSelector";
-import {useDispatch} from "react-redux";
-import Pagination from "../../../../../common/Pagination/Pagination";
+import React, { useEffect } from 'react'
+
+import cn from 'classnames'
+import { useDispatch } from 'react-redux'
+
+import {
+  getReviewsThunkCreator,
+  reviewsRecordsType,
+} from '../../../../../../Redux/reducers/infoSlice'
 import {
   getCurrentPage,
-  getLastPage, getNextPageURL, getPrevPageURL,
+  getLastPage,
+  getNextPageURL,
+  getPrevPageURL,
   getReviewData,
-  getTotalCount
-} from "../../../../../../Redux/selectors/infoSelector";
-import {getReviewsThunkCreator, reviewsRecordsType} from "../../../../../../Redux/reducers/infoSlice";
+  getTotalCount,
+} from '../../../../../../Redux/selectors/infoSelector'
+import { getFontSize } from '../../../../../../Redux/selectors/styleSelector'
+import { useAppSelector } from '../../../../../../utils/Hooks/useAppSelector'
+import Pagination from '../../../../../common/Pagination/Pagination'
+import s from '../ReviewPage.module.scss'
+
+import ReviewItem from './ReviewItem/ReviewItem'
 
 const ReviewList = () => {
   const dispatch = useDispatch()
   const reviewTotalCount = useAppSelector<number>(getTotalCount)
   const reviewsData = useAppSelector<Array<reviewsRecordsType>>(getReviewData)
   const lastPage = useAppSelector<number>(getLastPage)
-  const currentPage  = useAppSelector<number>(getCurrentPage)
-  const nextPageURL  = useAppSelector<string | null>(getNextPageURL)
+  const currentPage = useAppSelector<number>(getCurrentPage)
+  const nextPageURL = useAppSelector<string | null>(getNextPageURL)
   const prevPageURL = useAppSelector<string | null>(getPrevPageURL)
-
+  const fontSize = useAppSelector(getFontSize)
   const sendCurrentPage = (page: number) => {
     dispatch(getReviewsThunkCreator(page))
   }
@@ -28,18 +38,14 @@ const ReviewList = () => {
   useEffect(() => {
     dispatch(getReviewsThunkCreator(1))
   }, [])
-  return (
-    <>
-      <p>Łączna liczba recenzji: {reviewTotalCount}</p>
 
+  return (
+    <div className={cn(s[fontSize])}>
+      <p className={s.reviewTotalCount}>Łączna liczba recenzji: {reviewTotalCount}</p>
       <ul className={s.reviewList}>
-        {
-          reviewsData.map(review => {
-            return (
-              <ReviewItem key={review.id} review={review}/>
-            )
-          })
-        }
+        {reviewsData.map(review => {
+          return <ReviewItem key={review.id} review={review} />
+        })}
       </ul>
       <Pagination
         sendCurrentPage={sendCurrentPage}
@@ -48,8 +54,8 @@ const ReviewList = () => {
         prevPageURL={prevPageURL}
         nextPageURL={nextPageURL}
       />
-    </>
+    </div>
   )
 }
 
-export default ReviewList;
+export default ReviewList

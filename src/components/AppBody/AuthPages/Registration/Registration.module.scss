@@ -1,5 +1,5 @@
 .signWithTitle {
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   font-weight: 600;
   font-size: 24px;
   text-align: center;
@@ -14,7 +14,7 @@
 }
 
 .orWord {
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   position: relative;
   margin: 37px auto 48px;
   max-width: 388px;
@@ -30,7 +30,7 @@
     top: 50%;
     width: 40%;
     height: 1px;
-    background: #EAEAEA;
+    background: #eaeaea;
   }
   &:before {
     right: 0;
@@ -75,13 +75,13 @@
   }
   a {
     color: aqua;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
   .termsCheck {
-      span {
-       &:before {
-         border: 3px solid yellow;
-       }
+    span {
+      &:before {
+        border: 3px solid yellow;
+      }
     }
   }
 }
@@ -104,7 +104,7 @@
   }
   a {
     color: gray;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
 }
 
@@ -126,12 +126,12 @@
   }
   a {
     color: black;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
   .termsCheck {
     span {
       &:before {
-        border: 3px solid #fff;
+        border: 3px solid #273a64;
       }
     }
   }
@@ -140,32 +140,32 @@
 .medium {
   .signWithTitle {
     font-size: 26px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
   .formLabel {
     span {
       font-size: 18px;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
   }
   .orWord {
     font-size: 18px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
   a {
     font-size: 18px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
   .termsCheck {
     span {
       font-size: 18px;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
   }
   .anotherTypeLoginBtnWrap {
     button {
       font-size: 20px;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
   }
 }
@@ -173,32 +173,32 @@
 .large {
   .signWithTitle {
     font-size: 28px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
   .formLabel {
     span {
       font-size: 20px;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
   }
   .orWord {
     font-size: 20px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
   a {
     font-size: 20px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
   .termsCheck {
     span {
       font-size: 20px;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
   }
   .anotherTypeLoginBtnWrap {
     button {
       font-size: 22px;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
   }
 }

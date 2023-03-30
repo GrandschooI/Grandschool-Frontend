@@ -1,0 +1,63 @@
+.yellowTheme {
+  --background-theme: #191901;
+  --color-theme: #ffff00ff;
+}
+
+.whiteTheme {
+  --background-theme: #000;
+  --color-theme: #fff;
+}
+
+.blueTheme {
+  --background-theme: #273a64;
+  --color-theme: #273a64;
+}
+
+.popupWrapper {
+  max-width: 700px;
+  width: 100%;
+  border-radius: 25px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 30px rgba(97, 129, 53, 0.1);
+  //padding: 0 0 60px 0;
+  .popupHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 88px;
+    background: #f7f5ec;
+  }
+
+  .popupSwitcherWrapper {
+    display: flex;
+    background: #fff;
+    padding: 0 23px;
+    margin-bottom: 10px;
+  }
+
+  &.yellowTheme {
+    background: var(--background-theme);
+
+    .popupHeader {
+      background: transparent;
+    }
+  }
+
+  &.whiteTheme {
+    background: var(--background-theme);
+    border: 1px solid white;
+
+    .popupHeader {
+      background: var(--background-theme);
+    }
+  }
+
+  &.blueTheme {
+    //background: var(--background-theme);
+
+    .popupHeader {
+      background: var(--background-theme);
+    }
+  }
+}

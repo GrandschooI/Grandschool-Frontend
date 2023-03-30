@@ -1,6 +1,6 @@
 section.featureWrap {
   padding-top: 50px;
-  background: #F7F5EC;
+  background: #f7f5ec;
 }
 
 .yellowTheme,
@@ -90,13 +90,13 @@ section.featureWrap {
   text-align: center;
   margin: 0 auto 25px;
   cursor: pointer;
-  transition: .3s all ease;
+  transition: 0.3s all ease;
 }
 
 .featureTitle:hover,
 .featureTitle:focus {
   color: #3a7b76;
-  transition: .3s all ease;
+  transition: 0.3s all ease;
 }
 
 .featureMainTitle {
@@ -120,7 +120,7 @@ section.featureWrap {
   font-size: 22px;
   margin: auto;
   text-align: center;
-  line-height: 28px
+  line-height: 28px;
 }
 
 .featureItem {
@@ -155,12 +155,11 @@ section.featureWrap {
   color: #000;
   position: relative;
   text-transform: capitalize;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
   font-weight: 600;
   font-size: 24px;
   letter-spacing: 0.5px;
 }
-
 
 @media (max-width: 1000px) {
   .featureMainTitle {
