@@ -25,5 +25,8 @@ export const getUserPhotoLink = (state: AppStateType): Nullable<string> =>
 export const getUserAsideItems = (state: AppStateType): AsideItemsType =>
   state.userData.asideMenuItems
 export const getIsRegistered = (state: AppStateType) => state.userData.isRegistered
+export const getIsVerify = (state: AppStateType) => state.userData.currentUser.verified
+export const getIsAuthGoogleOrFacebook = (state: AppStateType) =>
+  state.userData.isAuth2GoogleOrFacebook
 export type AsideItemsType = Array<AsideItemType>
 export type AsideItemType = { itemTitle: string; itemLink: string }

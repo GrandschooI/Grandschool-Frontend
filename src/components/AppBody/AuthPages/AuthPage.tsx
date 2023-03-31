@@ -41,9 +41,6 @@ const AuthPage = () => {
   const onSocialRegistrationButtonClick = (driver: string, access_token: string) => {
     dispatch(loginThunkCreator(undefined, undefined, driver, access_token))
   }
-  // const onConfirmRegistrationSubmit = () => {
-  //   toast('In progress')
-  // }
 
   const startGoogleAPI = () => {
     gapi.load('client:auth2', () => {
@@ -109,16 +106,6 @@ const AuthPage = () => {
                 />
               )}
             />
-            {/*<Route*/}
-            {/*  path="/forgot-password"*/}
-            {/*  render={() => (*/}
-            {/*    <ForgotPassword*/}
-            {/*      fontSize={fontSize}*/}
-            {/*      themeStyle={themeStyle}*/}
-            {/*      onSubmit={onConfirmRegistrationSubmit}*/}
-            {/*    />*/}
-            {/*  )}*/}
-            {/*/>*/}
           </Switch>
         </div>
       </Popup>

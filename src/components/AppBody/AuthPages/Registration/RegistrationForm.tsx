@@ -3,13 +3,18 @@ import React, { useEffect } from 'react'
 import cn from 'classnames'
 import { Form, Formik } from 'formik'
 import FacebookLogin from 'react-facebook-login'
+// eslint-disable-next-line import/no-named-as-default
 import GoogleLogin from 'react-google-login'
+import { Redirect } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import * as yup from 'yup'
 
 import { FACEBOOK_CLIENT_ID, GOOGLE_CLIENT_ID } from '../../../../Redux/reducers/userSlice'
 import { getFontSize, getThemeStyle } from '../../../../Redux/selectors/styleSelector'
-import { getIsRegistered } from '../../../../Redux/selectors/userSelector'
+import {
+  getIsAuthGoogleOrFacebook,
+  getIsRegistered,
+} from '../../../../Redux/selectors/userSelector'
 import { useAppSelector } from '../../../../utils/Hooks/useAppSelector'
 import { Checkbox, TextField } from '../../../common/Form/FormControls/FormControls'
 import FacebookLoginIcon from '../../../SVGConponents/Forms/FacebookLoginIcon'
@@ -53,7 +58,7 @@ const validatePhone = (phone: string | undefined) => {
   return yup.string().matches(phoneRegExp, 'Phone must be valid').isValidSync(phone)
 }
 
-const RegistrationForm: React.FC<propsType> = ({
+const RegistrationForm: React.FC<PropsType> = ({
   onSubmit,
   onGoogleButtonClick,
   onFacebookButtonClick,
@@ -62,10 +67,13 @@ const RegistrationForm: React.FC<propsType> = ({
   const themeStyle = useAppSelector(getThemeStyle)
   const fontSize = useAppSelector(getFontSize)
   const isRegistered = useAppSelector(getIsRegistered)
+  const isAuthGoogleOrFacebook = useAppSelector(getIsAuthGoogleOrFacebook)
 
   useEffect(() => {
     startGoogleAPI()
   }, [])
+
+  if (isAuthGoogleOrFacebook) return <Redirect to={'/'} />
 
   return (
     <div
@@ -196,7 +204,7 @@ const RegistrationForm: React.FC<propsType> = ({
 
 export default RegistrationForm
 
-type propsType = {
+type PropsType = {
   onSubmit: (formData: RegistrationFormDataType) => void
   onGoogleButtonClick: any
   onFacebookButtonClick: any

@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 import { setProfileActionType } from '../Redux/reducers/userSlice'
 import { Nullable } from '../Redux/redux-toolkit-store'
 
@@ -24,8 +26,8 @@ export const userAPI = {
       },
     })
   },
-  verifyMail(url: { email: Nullable<string> }) {
-    const { email } = url
+  sendVerifyMail(payload: { email: Nullable<string> }) {
+    const { email } = payload
 
     return instance.post('send-email-verification', { email })
   },
@@ -38,5 +40,11 @@ export const userAPI = {
     const { phone, code } = payload
 
     return instance.post('verification-phone', { phone, code })
+  },
+  verifyEmail(url: string) {
+    return axios.post(url)
+  },
+  resetPassword(token: string, password: string) {
+    return instance.post('reset-password', { token, password })
   },
 }

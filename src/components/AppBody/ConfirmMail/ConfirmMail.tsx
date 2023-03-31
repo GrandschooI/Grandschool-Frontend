@@ -1,56 +1,41 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 
 import cn from 'classnames'
 import { useDispatch } from 'react-redux'
-import { Redirect, useLocation } from 'react-router-dom'
-import { toast } from 'react-toastify'
+import { useLocation } from 'react-router-dom'
 
-import { HttpStatusCode } from '../../../api/api'
-import { userAPI } from '../../../api/userAPI'
-import { toggleIsLoaded } from '../../../Redux/reducers/styleSlice'
+import { verifyEmail } from '../../../Redux/reducers/userSlice'
 import { getFontSize, getThemeStyle } from '../../../Redux/selectors/styleSelector'
-import { getUserEmail } from '../../../Redux/selectors/userSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
-import ConfirmRegistrationForm from '../AuthPages/ConfirmRegistration/ConfirmRegistrationForm'
+import { CustomLink } from '../../common/CustomLink/CustomLink'
+import Popup from '../../common/PopupSection/Popup/Popup'
 
 import s from './ConfirmMail.module.scss'
 
 const ConfirmMail = () => {
   const dispatch = useDispatch()
-
   const themeStyle = useAppSelector(getThemeStyle)
   const fontSize = useAppSelector(getFontSize)
-  const emailCurrentUser = useAppSelector(getUserEmail)
 
-  // const urlForConfirmRequest = useLocation().search.replace('?url=', '');
-  const [isMailConfirmed, setMailConfirmStatus] = useState(false)
+  const urlForConfirmRequest = useLocation().search.replace('?url=', '')
 
   useEffect(() => {
-    dispatch(toggleIsLoaded({ isLoaded: false }))
-    userAPI
-      .verifyMail({ email: emailCurrentUser })
-      .then(res => {
-        if (res.status === HttpStatusCode.OK) setMailConfirmStatus(true)
-      })
-      .finally(() => {
-        dispatch(toggleIsLoaded({ isLoaded: true }))
-      })
+    dispatch(verifyEmail({ url: urlForConfirmRequest }))
   }, [])
-
-  const onConfirmRegistrationSubmit = () => {
-    toast('In progress')
-  }
-
-  if (isMailConfirmed) return <Redirect to={'/profile'} />
 
   return (
     <section className={cn(s.confirmMailPage, s[themeStyle ? themeStyle : ''])}>
       <div className={cn(s.confirmMailPage__wrapper, s[themeStyle ? themeStyle : ''])}>
-        {/*<ConfirmRegistrationForm*/}
-        {/*  onSubmit={onConfirmRegistrationSubmit}*/}
-        {/*  themeStyle={themeStyle}*/}
-        {/*  fontSize={fontSize}*/}
-        {/*/>*/}
+        <Popup>
+          <div className={`${s.contentContainer} ${s[fontSize]}`}>
+            <p className={s.text}>
+              Congratulations, you have successfully passed verification. Good Luck in your studies
+            </p>
+            <CustomLink to="/" variant="default" className={s.textLinkCenter}>
+              На главную
+            </CustomLink>
+          </div>
+        </Popup>
       </div>
     </section>
   )
