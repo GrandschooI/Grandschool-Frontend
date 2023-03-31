@@ -38,7 +38,7 @@ const PhoneForm: React.FC<PropsType> = ({ userPhone }) => {
             .unwrap()
             .then(message => {
               if (message === 'success') return <Redirect to="/profile" />
-              toast(message)
+              toast.error(message)
             })
 
           setSubmitting(false)
