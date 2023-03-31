@@ -20,7 +20,7 @@ const EmailNotification: React.FC<PropsType> = ({ email }) => {
 
   const didNotReceiveMessageEmail = () => dispatch(sendEmailVerify(email))
 
-  if (redirect) return <Redirect to={'/profile'} />
+  if (redirect) return <Redirect to={'/'} />
 
   return (
     <div>
