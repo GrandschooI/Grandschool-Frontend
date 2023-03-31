@@ -64,15 +64,15 @@ const LoginForm: React.FC<PropsType> = ({
     dispatch(forgotPassword(email.email))
       .unwrap()
       .then(res => {
-        if (res !== 'Success') return toast(res)
+        if (res !== 'Success') return toast.error(res)
 
-        toast(res)
+        toast.success(res)
         setIsForgotPassResultPopupStatus(true)
         setForgotPassPopupStatus(false)
       })
   }
 
-  if (isAuth) return <Redirect to={'/profile'} />
+  if (isAuth) return <Redirect to={'/'} />
 
   return (
     <section>
