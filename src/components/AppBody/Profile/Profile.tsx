@@ -39,11 +39,8 @@ const Profile = () => {
       <div className={'container'}>
         <h1 className={s.profileTitle}>Profile page</h1>
         <div className={s.profilePageInfoWrap}>
-          <div>
-            <div className={s.aside}>
-              <Aside asideItems={profileAsideItems} />
-            </div>
-
+          <div className={cn(s.aside, 'profileAsideWrap')}>
+            <Aside asideItems={profileAsideItems} />
             <button onClick={() => setPopupStatus(!isPopup)} className={s.logoutBtn}>
               <svg
                 width="25px"

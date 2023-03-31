@@ -9,8 +9,8 @@
 }
 
 .blueTheme {
-  --background-theme: #273a64;
-  --color-theme: #273a64;
+  --background-theme: #aee2ef;
+  --color-theme: #273a64ff;
 }
 
 .popupWrapper {
@@ -53,7 +53,6 @@
 
   &.whiteTheme {
     background: var(--background-theme);
-    border: 1px solid white;
 
     .popupHeader {
       background: var(--background-theme);
@@ -61,7 +60,7 @@
   }
 
   &.blueTheme {
-    //background: var(--background-theme);
+    background: var(--background-theme);
 
     .popupHeader {
       background: var(--background-theme);

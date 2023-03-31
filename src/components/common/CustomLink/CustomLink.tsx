@@ -15,6 +15,7 @@ type PropsType = {
   to: string
   className: React.CSSProperties | string
   variant: Variant
+  onClick: () => void
 }
 
 export const CustomLink: React.FC<Partial<PropsType>> = ({
@@ -22,6 +23,7 @@ export const CustomLink: React.FC<Partial<PropsType>> = ({
   to = '/',
   className = '',
   variant = 'default',
+  onClick,
   ...restProps
 }) => {
   const fontSize = useAppSelector(getFontSize)

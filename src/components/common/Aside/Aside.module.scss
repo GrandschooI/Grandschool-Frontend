@@ -1,17 +1,14 @@
 .asideList {
-  overflow: hidden;
-
   width: 25%;
   min-width: 397px;
-  margin: 0;
-  padding: 0;
-
   list-style: none;
-
   background: #fff;
+  box-shadow: 0 0 3px rgb(0 0 0 / 5%);
+  padding: 0;
+  margin: 0;
   border: 1px solid #e5e5e5;
   border-radius: 10px;
-  box-shadow: 0 0 3px rgb(0 0 0 / 5%);
+  overflow: hidden;
 
   li {
     border-bottom: 1px solid #e5e5e5;
@@ -19,21 +16,17 @@
 }
 
 .aside {
-  overflow: hidden;
-
-  min-width: 310px;
-  max-width: 1440px;
+  min-width: 340px;
+  width: 25%;
   height: fit-content;
-
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 0 3px rgb(0 0 0 / 5%);
-
+  overflow: hidden;
   @media (max-width: 1280px) {
     width: 90%;
     margin: 0 auto;
   }
-
   @media (max-width: 390px) {
     min-width: 280px;
   }
@@ -54,22 +47,17 @@
 .sidebarItem {
   display: flex;
   align-items: center;
-
-  height: 4.5rem;
-  padding: 0 1.875rem;
-
   color: #000;
   text-decoration: none;
-
+  padding: 0 1.875rem;
+  height: 4.5rem;
   transition: all 0.2s ease;
 }
 
 .sidebarItem:hover,
 .sidebarItem:focus {
   color: #e62e2d;
-
   background: rgba(0, 0, 0, 0.02);
-
   transition: all 0.2s ease;
 }
 
@@ -77,9 +65,8 @@
   background: rgb(25, 25, 1);
 
   .activeItem {
-    color: #000;
-
     background: #00ffff;
+    color: #000;
   }
 }
 

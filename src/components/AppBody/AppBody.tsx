@@ -6,6 +6,7 @@ import { Redirect, Route, Switch } from 'react-router-dom'
 import AboutUs from './AboutUs/AboutUs'
 import s from './AppBody.module.scss'
 import AuthPage from './AuthPages/AuthPage'
+import { ResetPassword } from './AuthPages/ResetPassword/ResetPassword'
 import ConfirmMail from './ConfirmMail/ConfirmMail'
 import Course from './Course/Course'
 import CourseActivation from './CourseActivation/CourseActivation'
@@ -36,6 +37,7 @@ const AppBody = () => {
         <Route path="/info" render={() => <Info />} />
         <Route path="/payment" render={() => <Payment />} />
         <Route path="/email-verification" render={() => <ConfirmMail />} />
+        <Route path="/reset-password" render={() => <ResetPassword />} />
         <Route path="/not-found" render={() => <NotFound />} />
         <Route path="/course-activation" render={() => <CourseActivation />} />
         <Redirect path="*" to={'/not-found'} />

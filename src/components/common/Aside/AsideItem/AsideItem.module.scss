@@ -1,47 +1,29 @@
-.asideItem {
-  max-width: 310px;
-
-  @media (max-width: 1280px) {
-    max-width: 100%;
-  }
-}
-
 .asideLink {
-  cursor: pointer;
-
-  position: relative;
-
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   justify-content: center;
-
-  height: 4.5rem;
+  flex-wrap: wrap;
+  position: relative;
   padding: 0 25px;
-
-  font-size: 18px;
-  font-weight: 500;
+  height: 4.5rem;
+  text-decoration: none;
+  cursor: pointer;
   font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
   line-height: 18px;
   color: #717070;
-  text-decoration: none;
-
   transition: opacity 0.5s ease;
 
   &:after {
     content: '';
-
-    position: absolute;
-    right: 22px;
-
     display: block;
-
     width: 38px;
     height: 38px;
-
-    opacity: 0;
+    position: absolute;
+    right: 22px;
     background: url('../../../../assets/images/Shape.png') no-repeat;
-
+    opacity: 0;
     transition: opacity 0.5s ease;
   }
 }
@@ -49,45 +31,36 @@
 @media (max-width: 1280px) {
   .asideLink {
     &:after {
-      transform: rotate(-90deg);
-
       background: url('../../../../assets/images/Shape.png') no-repeat;
-
+      transform: rotate(-90deg);
       transition: all 0.3s ease;
     }
   }
 }
 
 .asideLink:not(:first-child):before {
-  content: '';
-
-  position: static;
-
   display: block;
-
+  position: static;
+  margin: 0 1.875rem;
   width: auto;
   height: 1px;
-  margin: 0 1.875rem;
-
   background: rgba(0, 0, 0, 0.05);
+  content: '';
 }
 
 .asideLink:hover,
 .asideLink:focus {
-  color: inherit;
-
   background: #f7f5ec;
+  color: inherit;
 }
 
 .optionEnter {
-  overflow: hidden;
-
   max-height: 0;
+  overflow: hidden;
 }
 
 .optionEnterActive {
   max-height: 800px;
-
   transition: all 1.5s ease;
 }
 
@@ -96,48 +69,38 @@
 }
 
 .optionExitActive {
-  overflow: hidden;
-
   max-height: 0;
-
+  overflow: hidden;
   transition: all 1s ease;
 }
 
 a.activeItem,
 span.activeItem {
-  position: relative;
-  z-index: 10;
-
   background: #f7f5ec;
-
+  position: relative;
   transition: all 0.3s ease;
+  z-index: 10;
 
   &:after {
     opacity: 1;
-
     transition: all 0.3s ease;
   }
 }
 
 .asideSubmenu {
   li {
-    cursor: pointer;
-
     position: relative;
-
+    cursor: pointer;
     transition: all 0.3s ease;
 
     a {
       display: flex;
-
       padding: 10px 24px;
-
-      font-size: 18px;
       font-weight: 400;
+      font-size: 18px;
       line-height: 23px;
       color: #717070;
       text-decoration: none;
-
       transition: all 0.3s ease;
     }
 
@@ -156,7 +119,6 @@ span.activeItem {
     &.activeTopic,
     &:hover {
       background: #f7f5ec;
-
       transition: all 0.3s ease;
     }
   }
@@ -164,20 +126,16 @@ span.activeItem {
 
 .upArrow {
   &:after {
-    transform: rotate(-90deg);
-
     background: url('../../../../assets/images/Shape.png') no-repeat;
-
+    transform: rotate(-90deg);
     transition: all 0.3s ease;
   }
 }
 
 .rightArrow {
-  z-index: 10;
-
-  color: inherit;
-
   background: #f7f5ec;
+  color: inherit;
+  z-index: 10;
 
   &:hover {
     background: #f7f5ec;
@@ -186,7 +144,6 @@ span.activeItem {
   &:after {
     opacity: 1;
     background: url('../../../../assets/images/Shape.png') no-repeat;
-
     transition: all 0.3s ease;
   }
 }
@@ -210,9 +167,8 @@ span.activeItem {
     }
 
     .asideLink {
-      color: black;
-
       transition: all 0.3s ease;
+      color: black;
 
       &:not(.activeItem):hover {
         background-color: yellow;
@@ -221,16 +177,14 @@ span.activeItem {
   }
 
   a.activeItem {
-    color: #000;
-
     background: #00ffff;
+    color: #000;
   }
 
   .asideLink {
-    font-size: 18px;
-    color: yellow;
-
     background-color: transparent;
+    color: yellow;
+    font-size: 18px;
 
     &:after {
       background: url('../../../../assets/images/asideBlackMode.svg') no-repeat;
@@ -238,9 +192,8 @@ span.activeItem {
   }
 
   .asideLink:not(.activeItem):hover {
-    color: inherit;
-
     background: #000;
+    color: inherit;
   }
 }
 
@@ -271,9 +224,8 @@ span.activeItem {
     }
 
     .asideLink {
-      color: #fff;
-
       transition: all 0.3s ease;
+      color: #fff;
 
       &:not(.activeItem):hover {
         background-color: white;
@@ -290,9 +242,8 @@ span.activeItem {
   }
 
   a.activeItem {
-    color: #fff;
-
     background: #000;
+    color: #fff;
   }
 
   .asideLink {
@@ -302,9 +253,8 @@ span.activeItem {
   }
 
   .asideLink:not(.activeItem):hover {
-    color: inherit;
-
     background: #f5f5f5;
+    color: inherit;
   }
 }
 
@@ -335,14 +285,12 @@ span.activeItem {
     }
 
     .asideLink {
+      transition: all 0.3s ease;
       color: #afe2ef;
 
-      transition: all 0.3s ease;
-
       &:not(.activeItem):hover {
-        color: #273a64;
-
         background-color: #afe2ef;
+        color: #273a64;
 
         &:after {
           background: url('../../../../assets/images/asideBlackMode.svg') no-repeat;
@@ -356,9 +304,8 @@ span.activeItem {
   }
 
   a.activeItem {
-    color: #afe2ef;
-
     background: #273a64;
+    color: #afe2ef;
   }
 
   .asideLink {
@@ -370,9 +317,8 @@ span.activeItem {
   }
 
   .asideLink:not(.activeItem):hover {
-    color: inherit;
-
     background: #f5f5f5;
+    color: inherit;
   }
 }
 
