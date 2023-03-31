@@ -1,6 +1,6 @@
 .confirmMailPage {
   position: relative;
-  height: 100vh;
+  height: 90.5vh;
   transition: all 0.3s ease;
   @media (max-height: 753px) {
     height: 110vh;
@@ -12,7 +12,8 @@
   .confirmMailPage__wrapper {
     transition: all 0.3s ease;
     padding: 0 40px;
-    width: 500px;
+    max-width: 600px;
+    width: 100%;
     position: absolute;
     top: 60%;
     left: 50%;
@@ -23,26 +24,72 @@
       width: 90%;
       padding: 0 10px;
     }
+  }
 
-    &.yellowTheme {
-      background-color: #191901;
+  .contentContainer {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .text {
+      font-weight: 600;
+      font-size: 26px;
+      line-height: 33px;
+      margin: 11px 0 36px 0;
+      text-align: center;
+      align-items: center;
+      color: #717070;
     }
 
-    &.whiteTheme {
-      background-color: #f5f5f5;
+    .textLinkCenter {
+      text-align: center;
     }
 
-    &.blueTheme {
-      background-color: #afe2ef;
+    &.small {
+      .text {
+        font-size: 22px;
+      }
+    }
+
+    &.medium {
+      .text {
+        font-size: 28px;
+      }
+    }
+
+    &.large {
+      .text {
+        font-size: 30px;
+      }
     }
   }
 
+
   &.yellowTheme {
-    background-color: black;
+    background-color: #191901FF;
     border-bottom: 1px solid yellow;
+
+    .text {
+      color: var(--color-theme);
+    }
   }
 
   &.blueTheme {
-    background-color: #b8eefb;
+    background-color: #AEE2EFFF;
+
+    .text {
+      color: var(--color-theme);
+    }
   }
+
+  &.whiteTheme {
+    background-color: #000000FF;
+
+    .text {
+      color: var(--color-theme);
+    }
+  }
+
+
 }
