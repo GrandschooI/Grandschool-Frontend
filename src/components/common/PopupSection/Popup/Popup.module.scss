@@ -14,33 +14,26 @@
 }
 
 .popupWrapper {
-  overflow: hidden;
-
-  width: 100%;
   max-width: 700px;
-
-  background: #fff;
+  width: 100%;
   border-radius: 25px;
+  overflow: hidden;
+  background: #fff;
   box-shadow: 0 0 30px rgba(97, 129, 53, 0.1);
-
-  //padding: 0 0 60px 0;
+  padding-bottom: 80px;
   .popupHeader {
     display: flex;
     align-items: center;
     justify-content: center;
-
     height: 88px;
-
     background: #f7f5ec;
   }
 
   .popupSwitcherWrapper {
     display: flex;
-
-    margin-bottom: 10px;
-    padding: 0 23px;
-
     background: #fff;
+    padding: 0 23px;
+    margin-bottom: 10px;
   }
 
   &.yellowTheme {
@@ -60,10 +53,8 @@
   }
 
   &.blueTheme {
-    background: var(--background-theme);
-
     .popupHeader {
-      background: var(--background-theme);
+      background-color: #273a64ff;
     }
   }
 }

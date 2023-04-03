@@ -1,20 +1,15 @@
 .forgotPassword {
-  cursor: pointer;
-
   display: flex;
-  justify-content: center;
-
   width: 100%;
+  justify-content: center;
   margin: 20px 0 45px;
-
   font-size: 18px;
   line-height: 23px;
   color: #717070;
   text-decoration: none;
-
   background: transparent;
   border: none;
-
+  cursor: pointer;
   transition: all 0.3s ease;
   &:hover {
     text-decoration: underline;
@@ -22,38 +17,30 @@
 }
 
 .signWithTitle {
-  margin-bottom: 50px;
-
-  font-size: 24px;
   font-weight: 600;
+  font-size: 24px;
   text-align: center;
   text-transform: uppercase;
-
+  margin-bottom: 50px;
   transition: all 0.3s ease;
 }
 .anotherTypeLoginBtnWrap {
   display: flex;
-  align-items: center;
   justify-content: center;
-
-  margin-bottom: 20px;
+  align-items: center;
   .anotherTypeLogin {
-    cursor: pointer;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 190px;
     height: 61px;
-
-    font-size: 18px;
-    font-weight: 600;
-    text-transform: uppercase;
-
-    background: #fff;
     border: 0.5px solid #31477c;
     border-radius: 4px;
+    background: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
     &:first-child {
       margin-right: 8px;
     }
@@ -65,9 +52,8 @@
 
 .popupBtnWrapper {
   display: flex;
-  align-items: center;
   justify-content: center;
-
+  align-items: center;
   width: 80%;
   margin: auto;
   button {
@@ -75,26 +61,20 @@
   }
 }
 .optionEnter {
-  transform: translate(1000px, 1000px);
-
   opacity: 0;
-
+  transform: translate(1000px, 1000px);
   transition: all 0.3s ease;
 }
 
 .optionEnterActive {
-  transform: translate(0);
-
   opacity: 1;
-
+  transform: translate(0);
   transition: all 0.3s ease;
 }
 
 .optionExitActive {
-  transform: translate(1000px, 1000px);
-
   opacity: 0;
-
+  transform: translate(1000px, 1000px);
   transition: all 0.3s ease;
 }
 
@@ -102,11 +82,10 @@
   .desc {
     width: 80%;
     margin: 25px auto 0;
-
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 20px;
     text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
   }
 }
 
@@ -118,9 +97,8 @@
     color: yellow;
   }
   .anotherTypeLogin {
-    color: yellow;
-
     background: #000;
+    color: yellow;
     border: 0.5px solid aqua;
   }
   .desc {
@@ -136,9 +114,8 @@
     color: #fff;
   }
   .anotherTypeLogin {
-    color: #fff;
-
     background: #000;
+    color: #fff;
     border: 0.5px solid #000;
   }
 }
@@ -151,9 +128,8 @@
     color: #273a64;
   }
   .anotherTypeLogin {
-    color: #afe2ef;
-
     background: #273a64;
+    color: #afe2ef;
     border: 0.5px solid #fff;
   }
 }
@@ -161,18 +137,15 @@
 .medium {
   .signWithTitle {
     font-size: 26px;
-
     transition: all 0.3s ease;
   }
   .forgotPassword {
     font-size: 20px;
-
     transition: all 0.3s ease;
   }
   .anotherTypeLoginBtnWrap {
     button {
       font-size: 20px;
-
       transition: all 0.3s ease;
     }
   }
@@ -181,18 +154,15 @@
 .large {
   .signWithTitle {
     font-size: 28px;
-
     transition: all 0.3s ease;
   }
   .forgotPassword {
     font-size: 22px;
-
     transition: all 0.3s ease;
   }
   .anotherTypeLoginBtnWrap {
     button {
       font-size: 22px;
-
       transition: all 0.3s ease;
     }
   }

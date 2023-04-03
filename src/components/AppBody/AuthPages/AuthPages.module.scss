@@ -1,66 +1,47 @@
 .authBackground {
+  background: url('../../../assets/images/reviews.png') center 33vh no-repeat;
+  background-size: cover;
   overflow: hidden;
+  padding: 190px 0 160px;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  padding: 190px 0 160px;
-
-  background: url('../../../assets/images/reviews.png') center 33vh no-repeat;
-  background-size: cover;
-
   transition: padding 0.3s ease;
 }
 
 .authWrapper {
-  overflow: hidden;
-
   width: 700px;
-
   border-radius: 25px;
+  overflow: hidden;
   .authHeader {
     display: flex;
     align-items: center;
     justify-content: center;
-
     height: 88px;
-
     background: #f7f5ec;
   }
   .authSwitcherWrapper {
     display: flex;
-
-    margin-bottom: 10px;
-    padding: 0 23px;
-
     background: #fff;
+    padding: 0 23px;
+    margin-bottom: 10px;
     .authSwitcher {
       position: relative;
-
       width: 50%;
       padding: 37px 0 17px;
-
-      font-size: 24px;
       font-weight: 600;
-      color: #000;
-      text-align: center;
-      text-decoration: none;
+      font-size: 24px;
       text-transform: uppercase;
-
+      text-align: center;
+      color: #000;
+      text-decoration: none;
       border-bottom: 2px solid #eaeaea;
-
       transition: all 0.3s ease;
       &.active {
         border-color: #31477c;
       }
     }
   }
-}
-
-.authBackground.blindOptionsOpen {
-  padding-top: 298px;
-
-  transition: all 0.3s ease;
 }
 
 .authBackground.yellowTheme {
@@ -75,9 +56,7 @@
       background: transparent;
       a {
         color: yellow;
-
         border-color: #000;
-
         transition: all 0.3s ease;
         &.active {
           border-color: aqua;
@@ -92,7 +71,6 @@
     .authSwitcherWrapper {
       a {
         font-size: 26px;
-
         transition: all 0.3s ease;
       }
     }
@@ -103,7 +81,6 @@
     .authSwitcherWrapper {
       a {
         font-size: 28px;
-
         transition: all 0.3s ease;
       }
     }
@@ -121,7 +98,6 @@
       background: transparent;
       a {
         color: #fff;
-
         border-color: #666;
         &.active {
           border-color: #fff;
@@ -134,7 +110,7 @@
 .authBackground.blueTheme {
   background: #afe2ef;
   .authWrapper {
-    background: #afe2ef;
+    background: #fff;
     .authHeader {
       background: #afe2ef;
     }
@@ -142,10 +118,9 @@
       background: transparent;
       a {
         color: #273a64;
-
-        border-color: #fff;
+        border-color: #273a64;
         &.active {
-          border-color: #273a64;
+          border-color: #afe2ef;
         }
       }
     }
@@ -176,9 +151,8 @@
       .authSwitcherWrapper {
         padding: 0 15px;
         .authSwitcher {
-          padding: 22px 0 13px;
-
           font-size: 18px;
+          padding: 22px 0 13px;
         }
       }
 
@@ -203,11 +177,10 @@
 
       .anotherTypeLoginBtnWrap {
         .anotherTypeLogin {
-          align-items: center;
-          justify-content: center;
-
           width: 63px;
           height: 58px;
+          align-items: center;
+          justify-content: center;
           padding: 0 17px;
           svg {
             margin: 0;
