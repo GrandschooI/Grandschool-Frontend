@@ -3,10 +3,47 @@
   font-size: 16px;
   line-height: 19px;
   color: #666666;
-
+  padding: 10px;
 
   &.whiteTheme {
-    background: black;
+    color: white;
+    padding: 0;
+
+    .profile {
+      .name {
+        color: black;
+      }
+
+      .location {
+        color: black;
+      }
+    }
+
+    .comments_area {
+      background: black;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 50px;
+
+      .comments_title, span {
+        color: white;
+      }
+
+      .btn_publish {
+        background: white;
+        color: black;
+
+        &:hover {
+          background: black;
+          color: white;
+          border: 1px solid white;
+        }
+      }
+    }
+
+    .title {
+      color: black;
+    }
   }
 
   &.yellowTheme {
@@ -70,8 +107,39 @@
   }
 
   &.blueTheme {
-    background: black;
+    background: #273a64;
+    color: white;
 
+    .profile {
+      .name {
+        color: white;
+      }
+
+      .location {
+        color: white;
+      }
+    }
+
+    .comments_area {
+      .comments_title, span {
+        color: white;
+      }
+
+      .btn_publish {
+        background: white;
+        color: black;
+
+        &:hover {
+          background: #b8eefb;
+          color: #273a64;
+          border: 1px solid #273a64;
+        }
+      }
+    }
+
+    .title {
+      color: white;
+    }
   }
 
   &.large {
@@ -222,16 +290,6 @@
     }
 
   }
-}
-
-.comments.whiteTheme {
-}
-
-.comments.yellowTheme {
-
-}
-
-.comments.blueTheme {
 }
 
 @media (max-width: 730px) {
