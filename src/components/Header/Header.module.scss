@@ -872,7 +872,7 @@ s.sdf {
     }
   }
   &.blueTheme {
-    background-color: #aee2ef;
+    background-color: #fff;
     border: 1px solid #273a64;
     .noSearch {
       opacity: 1;
@@ -886,7 +886,7 @@ s.sdf {
             content: url('../../assets/images/hashtagBlueTheme.svg');
           }
           &:hover {
-            background-color: #fff;
+            background-color: #afe2ef;
           }
           a {
             color: #273a64;
