@@ -115,7 +115,7 @@
 .authBackground.blueTheme {
   background: #afe2ef;
   .authWrapper {
-    background: #afe2ef;
+    background: #fff;
     .authHeader {
       background: #afe2ef;
     }
@@ -123,9 +123,9 @@
       background: transparent;
       a {
         color: #273a64;
-        border-color: #fff;
+        border-color: #273a64;
         &.active {
-          border-color: #273a64;
+          border-color: #afe2ef;
         }
       }
     }
