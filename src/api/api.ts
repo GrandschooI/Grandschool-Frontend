@@ -73,7 +73,17 @@ export enum HttpStatusCode {
 export type GetItemsType<I> = {
   data: {
     records: Array<I>
-    meta: any
+    meta: {
+      current_page: number
+      per_page: number
+      from: number
+      to: number
+      previous_page_url: null
+      next_page_url: null
+      has_more_pages: boolean
+      last_page: number
+      total: number
+    }
   }
   message: string
 }

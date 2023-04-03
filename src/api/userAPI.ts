@@ -6,7 +6,7 @@ import { Nullable } from '../Redux/redux-toolkit-store'
 import { instance } from './api'
 
 export const userAPI = {
-  setProfilePhoto(userId: number, token: string, photoFile: any) {
+  setProfilePhoto(userId: number, token: string, photoFile: string) {
     const formData = new FormData()
 
     formData.append('photo', photoFile)

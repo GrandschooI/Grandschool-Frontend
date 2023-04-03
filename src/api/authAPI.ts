@@ -48,7 +48,7 @@ export type AuthDataType = {
 }
 export type AuthResponseType = {
   data: AuthDataType
-  message: string
+  message?: string
   errors: [{ message: string }]
 }
 export type UserDataResponseType = {

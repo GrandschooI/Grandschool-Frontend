@@ -1,7 +1,9 @@
 import { instance } from './api'
 
+import { sendFeedbackType } from 'Redux/reducers/infoSlice'
+
 export const reviewsAPI = {
-  sendFeedback(reviewsFormData: any) {
+  sendFeedback(reviewsFormData: sendFeedbackType) {
     const formData = new FormData()
 
     if (reviewsFormData.attachment) {

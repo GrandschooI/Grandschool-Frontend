@@ -84,8 +84,9 @@ export const registerThunkCreator =
         toast.error('Coś poszło nie tak', { autoClose: 5000 })
         dispatch(setIsRegistered({ isRegistered: false }))
       }
-    } catch (error: any) {
-      const errorMessage = error?.response?.data.message
+    } catch (error) {
+      const err = error as AxiosError
+      const errorMessage = err?.response?.data.message
 
       dispatch(setIsRegistered({ isRegistered: false }))
       toast.error(errorMessage)
@@ -113,8 +114,10 @@ export const loginThunkCreator = (
           dispatch(setIsAuth2GoogleOrFacebook({ isAuth2GoogleOrFacebook: true }))
         }
       }
-    } catch (error: any) {
-      toast.error(error?.response?.data.message)
+    } catch (error) {
+      const err = error as AxiosError
+
+      toast.error(err?.response?.data.message)
     } finally {
       dispatch(toggleIsLoaded({ isLoaded: true }))
       dispatch(setIsAuth2GoogleOrFacebook({ isAuth2GoogleOrFacebook: false }))
@@ -162,7 +165,7 @@ export const forgotPassword = createAsyncThunk(
 )
 
 export const setUserPhotoThunkCreator =
-  (userId: number, token: string, file: any) => async (dispatch: Dispatch) => {
+  (userId: number, token: string, file: string) => async (dispatch: Dispatch) => {
     try {
       dispatch(toggleIsLoaded({ isLoaded: false }))
       const response = await userAPI.setProfilePhoto(userId, token, file)
