@@ -53,9 +53,8 @@
     }
   }
 
-
   &.yellowTheme {
-    background-color: #191901FF;
+    background-color: #191901ff;
     border-bottom: 1px solid yellow;
 
     .text {
@@ -64,7 +63,7 @@
   }
 
   &.blueTheme {
-    background-color: #AEE2EFFF;
+    background-color: #aee2efff;
 
     .text {
       color: var(--color-theme);
@@ -72,12 +71,10 @@
   }
 
   &.whiteTheme {
-    background-color: #000000FF;
+    background-color: #000000ff;
 
     .text {
       color: var(--color-theme);
     }
   }
-
-
 }

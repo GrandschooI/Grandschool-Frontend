@@ -6,7 +6,8 @@
 }
 
 .profile {
-  h5, p {
+  h5,
+  p {
     margin: 0;
   }
 
@@ -33,7 +34,7 @@
       font-weight: 400;
       font-size: 18px;
       line-height: 23px;
-      color: #A0A0A0;
+      color: #a0a0a0;
     }
   }
 }
@@ -48,10 +49,10 @@
     font-weight: 700;
     font-size: 18px;
     line-height: 21px;
-    color: #31477C;
+    color: #31477c;
 
     span {
-      color: #EB001B;
+      color: #eb001b;
     }
   }
 
@@ -125,12 +126,11 @@
     }
 
     &:after {
-      content: url("../../../../../src/assets/images/webp/select_arrow.svg");
+      content: url('../../../../../src/assets/images/webp/select_arrow.svg');
       position: absolute;
       top: 11px;
       right: 15px;
     }
-
   }
 }
 
@@ -138,7 +138,6 @@
 }
 
 .comments.yellowTheme {
-
 }
 
 .comments.blueTheme {
@@ -174,7 +173,7 @@
 }
 @media (max-width: 425px) {
   .comments_area {
-    .btn_publish{
+    .btn_publish {
       width: 100%;
     }
   }
