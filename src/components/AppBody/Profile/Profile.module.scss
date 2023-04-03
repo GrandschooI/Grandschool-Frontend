@@ -168,13 +168,11 @@ section.profilePage {
     }
 
     .aside {
-      position: absolute;
       left: 20px;
       width: 95%;
     }
 
     .logoutBtn {
-      position: absolute;
       top: 610px;
       left: 30px;
     }
@@ -184,12 +182,10 @@ section.profilePage {
 @media (min-width: 374px) and (max-width: 500px) {
   .profilePage {
     .aside {
-      position: absolute;
       left: 10px;
     }
 
     .logoutBtn {
-      position: absolute;
       top: 610px;
       left: 30px;
 
