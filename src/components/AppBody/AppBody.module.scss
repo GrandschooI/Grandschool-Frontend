@@ -1,8 +1,13 @@
 .openedBlindOption {
-  padding-top: 88px;
+  padding-top: 288px;
+  transition: all 0.2s ease;
 }
 .appBody {
-  transition: all 0.2s ease;
+  padding-top: 217px;
+
+  &.defaultBody {
+    padding-top: 0;
+  }
   &.yellowTheme {
     background-color: #000;
   }
