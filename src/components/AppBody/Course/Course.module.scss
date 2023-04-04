@@ -1,6 +1,29 @@
 .courseBody {
   display: flex;
   padding-bottom: 195px;
+  transition: all 0.2s ease;
+}
+
+.whiteTheme {
+  background: white;
+  color: black;
+}
+
+.yellowTheme {
+  background: black;
+  color: yellow;
+}
+
+.blueTheme {
+  background: #b8eefb;
+}
+
+.large {
+  font-size: 20px;
+}
+
+.medium {
+  font-size: 18px;
 }
 
 @media (max-width: 1280px) {
