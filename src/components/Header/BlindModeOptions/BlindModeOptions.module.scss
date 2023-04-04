@@ -1,25 +1,31 @@
 .optionsBlock {
   background: #f6f6f6;
+  transition: all .2s ease;
 
   .button {
-    margin-right: 10px;
-    font-weight: 600;
-    font-size: 16px;
-    min-height: 30px;
+    cursor: pointer;
+
     min-width: 30px;
+    min-height: 30px;
+    margin-right: 10px;
+
+    font-size: 16px;
+    font-weight: 600;
     line-height: 0;
+    color: #000;
+
+    background-color: transparent;
     border: none;
     border-radius: 5px;
-    background-color: transparent;
     outline: none;
-    color: #000;
-    cursor: pointer;
 
     &:hover,
     &.active {
-      background-color: #000;
-      color: #fff;
       position: relative;
+
+      color: #fff;
+
+      background-color: #000;
     }
   }
 
@@ -35,6 +41,7 @@
 
       .optionLabel {
         display: block;
+
         margin-top: 30px;
         margin-bottom: 15px;
       }
@@ -51,36 +58,37 @@
 }
 
 .yellowTheme {
+  color: rgb(255, 255, 0);
+
   background: rgb(25, 25, 1);
   background-size: 50%;
   border-bottom: 1px solid yellow;
-  @media (max-width: 1000px) {
-    background: url('../../../assets/images/glassesyellow.svg') no-repeat 90% 95%, rgb(25, 25, 1);
-    background-size: 50%;
-  }
-  color: rgb(255, 255, 0);
 
   .button {
     color: rgb(255, 255, 0);
 
     &.active,
     &:hover {
-      background: rgb(0, 255, 255);
       color: #000;
+
+      background: rgb(0, 255, 255);
     }
 
     &.yellow {
-      background: rgb(0, 255, 255);
       color: #000;
+
+      background: rgb(0, 255, 255);
     }
 
     &.white {
-      background: #ffffff;
       color: #000;
+
+      background: #ffffff;
     }
 
     &.blue {
       color: #273a64;
+
       background: #b8eefb;
     }
   }
@@ -88,32 +96,37 @@
   .closeBlindOptions {
     background: aqua;
   }
+
+  @media (max-width: 1000px) {
+    background: url('../../../assets/images/glassesyellow.svg') no-repeat 90% 95%, rgb(25, 25, 1);
+    background-size: 50%;
+  }
 }
 
 .whiteTheme {
-  background: #f5f5f5;
   color: #000;
+
+  background: #f5f5f5;
   border-bottom: 1px solid black;
-  @media (max-width: 1000px) {
-    background: url('../../../assets/images/glasseswhite.svg') no-repeat 90% 95%, #f5f5f5;
-    background-size: 50%;
-  }
 
   .button {
     color: #000;
 
     &.yellow {
-      background: #000;
       color: rgb(255, 255, 0);
+
+      background: #000;
     }
 
     &.white {
-      background: #000;
       color: #fff;
+
+      background: #000;
     }
 
     &.blue {
       color: #273a64;
+
       background: #b8eefb;
     }
   }
@@ -125,17 +138,18 @@
       fill: #fff;
     }
   }
+
+  @media (max-width: 1000px) {
+    background: url('../../../assets/images/glasseswhite.svg') no-repeat 90% 95%, #f5f5f5;
+    background-size: 50%;
+  }
 }
 
 .blueTheme {
-  background: #fff;
   color: #273a64;
-  border-bottom: 1px solid #273a64;
 
-  @media (max-width: 1000px) {
-    background: url('../../../assets/images/glasseswhite.svg') no-repeat 90% 95%, #afe2ef;
-    background-size: 50%;
-  }
+  background: #fff;
+  border-bottom: 1px solid #273a64;
 
   .button {
     color: #273a64;
@@ -143,32 +157,43 @@
     &.active,
     &:hover {
       color: #fff;
+
       background: #273a64;
     }
 
     &.yellow {
-      background: #000;
       color: rgb(255, 255, 0);
+
+      background: #000;
     }
 
     &.white {
-      background: #fff;
       color: #000;
+
+      background: #fff;
     }
 
     &.blue {
       color: #fff;
+
       background: #273a64;
     }
+  }
+
+  @media (max-width: 1000px) {
+    background: url('../../../assets/images/glasseswhite.svg') no-repeat 90% 95%, #afe2ef;
+    background-size: 50%;
   }
 }
 
 .optionsWrap {
+  position: relative;
+
   display: flex;
   justify-content: space-between;
+
   padding-top: 25px;
   padding-bottom: 25px;
-  position: relative;
 
   .imagesSwitcher {
     min-width: 80px;
@@ -176,10 +201,12 @@
 }
 
 .optionLabel {
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
   margin: 0 0.625rem 0 0;
+
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+
   transition: all 0.3s ease;
 }
 
@@ -192,38 +219,44 @@
 }
 
 .optionsBlock .button.medium {
+  min-width: 33px;
+
   font-size: 20px !important;
   line-height: 33px;
-  min-width: 33px;
 }
 
 .optionsBlock .button.large {
+  min-width: 35px;
+
   font-size: 24px !important;
   line-height: 35px;
-  min-width: 35px;
 }
 
 .white {
   color: #000;
+
   background: #fff;
   border: 3px solid #000;
 }
 
 .white:hover,
 .white.active {
-  background: #fff;
   color: #000;
+
+  background: #fff;
 }
 
 .blue:hover,
 .blue.active {
   color: #273a64;
+
   background: #b8eefb;
 }
 
 .blue.active {
-  background: #b8eefb;
   color: #273a64;
+
+  background: #b8eefb;
 }
 
 .optionEnter {
@@ -232,11 +265,13 @@
 
 .optionEnterActive {
   margin-top: 0;
+
   transition: all 200ms, transform 200ms;
 }
 
 .optionExitActive {
   margin-top: -85px;
+
   transition: all 200ms, transform 200ms;
 }
 

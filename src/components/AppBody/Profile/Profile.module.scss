@@ -1,13 +1,14 @@
 section.profilePage {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 210px;
   padding-bottom: 160px;
 
   .profileTitle {
-    transition: all 0.3s ease;
     font-weight: 600;
     font-size: 36px;
+    line-height: 46px;
+    margin: 40px 0;
+    transition: all 0.3s ease;
   }
 
   .profilePageInfoWrap {

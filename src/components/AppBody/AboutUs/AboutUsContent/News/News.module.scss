@@ -1,12 +1,14 @@
 .newsList {
-  list-style: none;
   width: 70%;
   margin-left: 40px;
+
+  list-style: none;
 }
 
 .newsItem {
-  border-bottom: 1px solid #ededed;
   padding: 10px 15px;
+
+  border-bottom: 1px solid #ededed;
 }
 
 h3 {

@@ -5,14 +5,17 @@
 @media (max-width: 768px) {
   .burger-btn {
     position: relative;
-    display: block;
-    right: 0;
     top: -5px;
-    border: 0;
-    background: 0 0;
+    right: 0;
+
+    display: block;
+
     width: 60px;
     height: 60px;
     padding: 0;
+
+    background: 0 0;
+    border: 0;
   }
 
   .ham6 .top {
@@ -21,11 +24,12 @@
 
   .line {
     fill: none;
+    stroke: #3b8b87;
+    stroke-linecap: round;
+    stroke-width: 5.5;
+
     -webkit-transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
     transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-    stroke: #3b8b87;
-    stroke-width: 5.5;
-    stroke-linecap: round;
   }
 
   .ham6 .middle {

@@ -4,7 +4,7 @@ import '../../style.scss'
 import './HeaderGlobal.scss'
 import cn from 'classnames'
 import { useDispatch } from 'react-redux'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import { setOptionsMode, switchBlindMode } from '../../Redux/reducers/styleSlice'
 import {
@@ -30,15 +30,8 @@ import BlindButton from '../utils/BlindButton/BlindButton'
 import BlindModeOptions from './BlindModeOptions/BlindModeOptions'
 import s from './Header.module.scss'
 
-const Header = () => {
+const Header: React.FC<propsType> = ({ isHeaderChange }) => {
   const blindModeFromLocalStorage = localStorage.getItem('blindModeFromLocalStorage')
-  const routesWithDefaultHeader = [
-    '/',
-    '/login',
-    '/registration',
-    '/confirm-registration',
-    '/not-found',
-  ]
   const themeStyle = useAppSelector(getThemeStyle)
   const fontSize = useAppSelector(getFontSize)
   const blindMode = useAppSelector(getStyleMode)
@@ -47,16 +40,6 @@ const Header = () => {
   const dispatch = useDispatch()
 
   const [isBurgerActive, setBurgerClass] = useState(false)
-
-  useEffect(() => {
-    if (blindModeFromLocalStorage === 'true' && !blindMode) {
-      switchBlindMode({ blindMode: true })
-    }
-  })
-  const location: string = useLocation().pathname
-  const isHeaderChange: boolean = routesWithDefaultHeader.some(
-    (element: string) => element === location
-  )
 
   const toggleBlindModeHandler = () => {
     dispatch(switchBlindMode({ blindMode: !blindMode }))
@@ -79,22 +62,6 @@ const Header = () => {
       dispatch(switchBlindMode({ blindMode: true }))
     }
   }, [blindModeFromLocalStorage])
-  const getWindowSize = () => {
-    const { innerWidth } = window
-
-    return { innerWidth }
-  }
-  const [windowSize, setWindowSize] = useState(getWindowSize())
-
-  useEffect(() => {
-    const handleWindowSize = () => setWindowSize(getWindowSize)
-
-    window.addEventListener('resize', handleWindowSize)
-
-    return () => window.removeEventListener('resize', handleWindowSize)
-  }, [])
-
-  const screen = windowSize.innerWidth <= 768
 
   return (
     <div className={cn(s.header, s[themeStyle ? themeStyle : ''], 'header', s[fontSize])}>
@@ -136,14 +103,12 @@ const Header = () => {
             </button>
           )}
           <div className={s.headerBtnWrap}>
-            {useLocation().pathname === '/' && screen ? null : (
-              <BlindButton
-                switchBlindModeAC={toggleBlindModeHandler}
-                themeStyle={themeStyle}
-                blindMode={blindMode}
-                fontSize={fontSize}
-              />
-            )}
+            <BlindButton
+              switchBlindModeAC={toggleBlindModeHandler}
+              themeStyle={themeStyle}
+              blindMode={blindMode}
+              fontSize={fontSize}
+            />
 
             <NavLink className={cn(s.headerNavItem, s[fontSize ? fontSize : ''])} to="/profile">
               Twoje konto
@@ -176,9 +141,10 @@ const Header = () => {
       </div>
     </div>
   )
-  //     <div>
-  //   {!isHeaderChange && <HeaderNav themeStyle={themeStyle} fontSize={fontSize}/>}
-  // </div>
 }
 
 export default Header
+
+type propsType = {
+  isHeaderChange: boolean
+}

@@ -1,5 +1,6 @@
 section.featureWrap {
   padding-top: 50px;
+
   background: #f7f5ec;
 }
 
@@ -82,32 +83,38 @@ section.featureWrap {
 }
 
 .featureTitle {
-  display: block;
-  font-weight: 400;
-  letter-spacing: 3px;
-  color: #fd6ca3;
-  font-size: 14px;
-  text-align: center;
-  margin: 0 auto 25px;
   cursor: pointer;
+
+  display: block;
+
+  margin: 0 auto 25px;
+
+  font-size: 14px;
+  font-weight: 400;
+  color: #fd6ca3;
+  text-align: center;
+  letter-spacing: 3px;
+
   transition: 0.3s all ease;
 }
 
 .featureTitle:hover,
 .featureTitle:focus {
   color: #3a7b76;
+
   transition: 0.3s all ease;
 }
 
 .featureMainTitle {
   width: 480px;
-  font-weight: 600;
-  font-size: 36px;
-  line-height: 46px;
   margin: 0 auto 15px;
+
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 46px;
   color: #000;
-  letter-spacing: normal;
   text-align: center;
+  letter-spacing: normal;
 }
 
 .featureMainTitle strong {
@@ -116,11 +123,12 @@ section.featureWrap {
 
 .featureDesc {
   width: 820px;
-  font-weight: 400;
-  font-size: 22px;
   margin: auto;
-  text-align: center;
+
+  font-size: 22px;
+  font-weight: 400;
   line-height: 28px;
+  text-align: center;
 }
 
 .featureItem {
@@ -137,49 +145,57 @@ section.featureWrap {
   min-width: 75%;
   p {
     width: 90%;
-    font-weight: 400;
+
     font-size: 18px;
+    font-weight: 400;
   }
 }
 
 .featureList {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
+
   margin: 65px 0 0;
 }
 
 .featureItemTitle {
+  position: relative;
+
   margin-top: 10px;
   margin-bottom: 15px;
-  color: #000;
-  position: relative;
-  text-transform: capitalize;
-  transition: all 0.2s linear;
-  font-weight: 600;
+
   font-size: 24px;
+  font-weight: 600;
+  color: #000;
+  text-transform: capitalize;
   letter-spacing: 0.5px;
+
+  transition: all 0.2s linear;
 }
 
 @media (max-width: 1000px) {
   .featureMainTitle {
+    width: 100%;
+    margin-top: 50px;
+
     font-size: 45px;
     line-height: 50px;
-    margin-top: 50px;
-    width: 100%;
   }
   .featureDesc {
     width: 100%;
+
     font-size: 16px;
   }
 }
 
 @media (max-width: 768px) {
   .featureMainTitle {
-    font-size: 29px;
-    line-height: 30px;
     margin-top: 50px;
     margin-bottom: 40px;
+
+    font-size: 29px;
+    line-height: 30px;
   }
   .featureItem {
     width: 100%;
@@ -209,21 +225,26 @@ section.featureWrap {
   .featureTitle,
   .featureText p {
     font-size: 20px;
+
     @media (max-width: 768px) {
       font-size: 14px;
     }
+
     @media (max-width: 425px) {
       font-size: 12px;
     }
   }
   .featureMainTitle {
+    width: 100%;
+
     font-size: 40px;
     line-height: 50px;
-    width: 100%;
+
     @media (max-width: 768px) {
       font-size: 55px;
       line-height: 55px;
     }
+
     @media (max-width: 425px) {
       font-size: 35px;
       line-height: 35px;
@@ -231,18 +252,22 @@ section.featureWrap {
   }
   .featureDesc {
     font-size: 25px;
+
     @media (max-width: 768px) {
       font-size: 18px;
     }
+
     @media (max-width: 425px) {
       font-size: 16px;
     }
   }
   .featureItemTitle {
     font-size: 26px;
+
     @media (max-width: 768px) {
       font-size: 16px;
     }
+
     @media (max-width: 425px) {
       font-size: 14px;
     }
@@ -253,23 +278,28 @@ section.featureWrap {
   .featureTitle,
   .featureText p {
     font-size: 22px;
+
     @media (max-width: 768px) {
       font-size: 16px;
       line-height: 16px;
     }
+
     @media (max-width: 425px) {
       font-size: 14px;
       line-height: 14px;
     }
   }
   .featureMainTitle {
+    width: 100%;
+
     font-size: 44px;
     line-height: 54px;
-    width: 100%;
+
     @media (max-width: 768px) {
       font-size: 50px;
       line-height: 50px;
     }
+
     @media (max-width: 425px) {
       font-size: 40px;
       line-height: 40px;
@@ -277,18 +307,22 @@ section.featureWrap {
   }
   .featureDesc {
     font-size: 28px;
+
     @media (max-width: 768px) {
       font-size: 20px;
     }
+
     @media (max-width: 425px) {
       font-size: 18px;
     }
   }
   .featureItemTitle {
     font-size: 29px;
+
     @media (max-width: 768px) {
       font-size: 18px;
     }
+
     @media (max-width: 425px) {
       font-size: 16px;
     }

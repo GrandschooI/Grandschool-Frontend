@@ -1,34 +1,42 @@
 .chapterItem {
-  display: block;
   position: relative;
+
+  display: block;
+
   margin-bottom: 1rem;
   padding-left: 20px;
   a {
-    font-weight: 400;
     font-size: 18px;
+    font-weight: 400;
     line-height: 23px;
     color: #717070;
     text-decoration: none;
+
     transition: all 0.2s ease;
     &:hover {
-      font-weight: 600;
       font-size: 18px;
+      font-weight: 600;
       line-height: 23px;
       color: #618135;
+
       transition: all 0.2s ease;
     }
   }
 }
 
 .chapterItem::before {
-  display: block;
+  content: '';
+
   position: absolute;
-  left: 0.125rem;
   top: 12px;
-  margin-top: -3px;
+  left: 0.125rem;
+
+  display: block;
+
   width: 6px;
   height: 6px;
+  margin-top: -3px;
+
   background: #618135;
   border-radius: 100%;
-  content: '';
 }

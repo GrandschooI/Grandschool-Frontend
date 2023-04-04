@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
 import { useDispatch } from 'react-redux'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, useLocation } from 'react-router-dom'
 import { VerticleButton as ScrollUpButton } from 'react-scroll-up-button'
 
 import AppBody from './components/AppBody/AppBody'
@@ -16,6 +16,16 @@ const App = () => {
   const dispatch = useDispatch()
   const isLoaded = useAppSelector(getLoadedInfo)
 
+  const routesWithDefaultHeader = [
+    '/',
+    '/login',
+    '/registration',
+    '/confirm-registration',
+    '/not-found',
+  ]
+  const location = useLocation().pathname
+  const isHeaderChange = routesWithDefaultHeader.some(element => element === location)
+
   useEffect(() => {
     dispatch(setUserFromLocalStorage())
   }, [dispatch])
@@ -25,8 +35,8 @@ const App = () => {
       <Switch>
         <Route path="/">
           <section>
-            <Header />
-            <AppBody />
+            <Header isHeaderChange={isHeaderChange} />
+            <AppBody isHeaderChange={isHeaderChange} />
             <Footer />
             <ScrollUpButton />
           </section>
