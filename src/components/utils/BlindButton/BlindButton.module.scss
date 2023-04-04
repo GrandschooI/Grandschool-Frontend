@@ -54,6 +54,7 @@
 
   background: #000;
   border-color: yellow;
+  transition: all 0.2s ease;
   svg {
     fill: yellow;
   }
@@ -73,6 +74,7 @@
 
   background: #fff;
   border-color: #000;
+  transition: all 0.2s ease;
   svg {
     fill: #000;
   }
@@ -92,6 +94,7 @@
 
   background: #afe2ef;
   border-color: #273a64;
+  transition: all 0.2s ease;
   svg {
     fill: #273a64;
   }
