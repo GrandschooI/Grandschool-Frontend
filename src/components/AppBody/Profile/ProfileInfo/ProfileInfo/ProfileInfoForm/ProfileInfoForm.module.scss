@@ -23,7 +23,7 @@
     resize: none;
     outline: none;
     font-family: 'Proba', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   }
 
   .btn {
@@ -53,46 +53,6 @@
 
     &:disabled {
       opacity: 0.7;
-    }
-  }
-}
-
-@media (max-width: 1200px) {
-  .profileInfoForm {
-    .fullName {
-      width: 100%;
-      top: -300px;
-      margin-bottom: 20px;
-    }
-
-    textarea {
-      width: 370px;
-    }
-
-    .gender {
-      margin-top: 65px;
-    }
-  }
-}
-
-@media (min-width: 374px) and (max-width: 500px) {
-  .profileInfoForm {
-    .fullName {
-      top: -200px;
-    }
-
-    max-width: 300px;
-
-    textarea {
-      width: 280px;
-    }
-
-    .gender {
-      margin-top: 270px;
-    }
-
-    .btn {
-      width: 300px;
     }
   }
 }

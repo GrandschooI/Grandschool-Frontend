@@ -159,44 +159,6 @@ section.profilePage {
   }
 }
 
-@media (max-width: 1200px) {
-  .profilePage {
-    justify-content: center;
-    flex-wrap: wrap;
-
-    .profileTitle {
-      padding-top: 20px;
-    }
-
-    .aside {
-      left: 20px;
-      width: 95%;
-    }
-
-    .logoutBtn {
-      top: 610px;
-      left: 30px;
-    }
-  }
-}
-
-@media (min-width: 374px) and (max-width: 500px) {
-  .profilePage {
-    .aside {
-      left: 10px;
-    }
-
-    .logoutBtn {
-      top: 610px;
-      left: 30px;
-
-      .logout {
-        display: none;
-      }
-    }
-  }
-}
-
 .yellowTheme.profilePage {
   background: #000;
 
