@@ -5,9 +5,15 @@ import ReactPlayer from 'react-player/youtube'
 
 import s from './Chapter.module.scss'
 
+import { getFontSize, getThemeStyle } from 'Redux/selectors/styleSelector'
+import { useAppSelector } from 'utils/Hooks/useAppSelector'
+
 const Chapter: React.FC<PropsType> = () => {
+  const themeStyle = useAppSelector(getThemeStyle)
+  const fontSize = useAppSelector(getFontSize)
+
   return (
-    <section className={s.chapter}>
+    <section className={cn(s.chapter, s[themeStyle ? themeStyle : ''], 'chapter', s[fontSize])}>
       <ReactPlayer
         url="https://www.youtube.com/watch?v=S_zMbLa_nAE"
         controls={true}

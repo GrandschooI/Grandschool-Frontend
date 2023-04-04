@@ -3,6 +3,164 @@
   font-size: 16px;
   line-height: 19px;
   color: #666666;
+  padding: 10px;
+
+  &.whiteTheme {
+    color: white;
+    padding: 0;
+
+    .profile {
+      .name {
+        color: black;
+      }
+
+      .location {
+        color: black;
+      }
+    }
+
+    .comments_area {
+      background: black;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 50px;
+
+      .comments_title, span {
+        color: white;
+      }
+
+      .btn_publish {
+        background: white;
+        color: black;
+
+        &:hover {
+          background: black;
+          color: white;
+          border: 1px solid white;
+        }
+      }
+    }
+
+    .title {
+      color: black;
+    }
+  }
+
+  &.yellowTheme {
+    background: black;
+    color: yellow;
+
+    .name_wrapper {
+      .name {
+        color: inherit;
+      }
+
+      .location {
+        color: inherit;
+
+      }
+    }
+
+    .comments_area {
+      p.comments_title {
+        color: yellow;
+
+        span {
+          color: rgb(0, 255, 255);
+        }
+      }
+
+      .new_comment {
+        background: transparent;
+        border: 1px solid yellow;
+        color: yellow;
+
+        &::placeholder {
+          color: yellow;
+        }
+      }
+
+      .btn_publish {
+        background: transparent;
+        border: 1px solid rgb(0, 255, 255);
+        color: rgb(0, 255, 255);
+
+        &:hover {
+
+        }
+      }
+    }
+
+    .comments_info {
+      .title {
+        color: yellow;
+      }
+
+      .select {
+        select {
+          border: 1px solid yellow;
+          background: transparent;
+          color: yellow;
+        }
+      }
+    }
+  }
+
+  &.blueTheme {
+    background: #273a64;
+    color: white;
+
+    .profile {
+      .name {
+        color: white;
+      }
+
+      .location {
+        color: white;
+      }
+    }
+
+    .comments_area {
+      .comments_title, span {
+        color: white;
+      }
+
+      .btn_publish {
+        background: white;
+        color: black;
+
+        &:hover {
+          background: #b8eefb;
+          color: #273a64;
+          border: 1px solid #273a64;
+        }
+      }
+    }
+
+    .title {
+      color: white;
+    }
+  }
+
+  &.large {
+    font-size: 20px;
+
+    .comments_info {
+      .title {
+        font-size: 26px;
+      }
+    }
+  }
+
+  &.medium {
+    font-size: 18px;
+
+    .comments_info {
+      .title {
+        font-size: 24px;
+      }
+    }
+  }
 }
 
 .profile {
@@ -15,7 +173,6 @@
   margin-bottom: 23px;
 
   .avatar {
-    background-color: red;
     width: 67px;
     height: 67px;
   }
@@ -59,6 +216,7 @@
     height: 156px;
     resize: none;
     padding: 15px 8px 15px 15px;
+    font-size: inherit;
   }
 
   .new_comment_checkbox {
@@ -132,16 +290,6 @@
     }
 
   }
-}
-
-.comments.whiteTheme {
-}
-
-.comments.yellowTheme {
-
-}
-
-.comments.blueTheme {
 }
 
 @media (max-width: 730px) {

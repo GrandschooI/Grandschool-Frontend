@@ -4,6 +4,7 @@ import cn from 'classnames'
 
 import s from '../CommentItem.module.scss'
 
+import img from 'assets/images/webp/comment-img.png'
 import { getFontSize, getThemeStyle } from 'Redux/selectors/styleSelector'
 import { useAppSelector } from 'utils/Hooks/useAppSelector'
 
@@ -25,7 +26,7 @@ export const CommentBlock: FC<PropsType> = memo(({ withImg = true }) => {
 
   return (
     <div className={cn(s.comment, s[themeStyle ? themeStyle : ''], 'comment', s[fontSize])}>
-      {withImg && <img className={s.avatar} src="" alt="" />}
+      {withImg && <img className={s.avatar} src={img} alt="profile image" />}
       <div className={s.profile_wrapper}>
         <div className={s.profile_info}>
           <p className={s.name}>Евгения</p>
@@ -41,9 +42,11 @@ export const CommentBlock: FC<PropsType> = memo(({ withImg = true }) => {
           </button>
         </div>
         {isAnswer && (
-          <div className={s.answer}>
-            <textarea placeholder={'Оставьте свой ответ'} />
-            <button onClick={sendAnswer}>Ответить</button>
+          <div className={cn(s.answer, s[themeStyle ? themeStyle : ''], 'answer', s[fontSize])}>
+            <textarea className={s.answer_textarea} placeholder={'Оставьте свой ответ'} />
+            <button className={s.answer_btn} onClick={sendAnswer}>
+              Ответить
+            </button>
           </div>
         )}
       </div>

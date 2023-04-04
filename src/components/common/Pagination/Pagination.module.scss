@@ -1,17 +1,20 @@
 .paginationList {
   display: flex;
-  align-items: center;
   gap: 20px;
+  align-items: center;
 
   .paginationItem {
     cursor: pointer;
-    border: none;
-    background-color: transparent;
+
     font-family: 'Proba Pro', Arial, sans-serif;
-    font-weight: 400;
     font-size: 18px;
+    font-weight: 400;
     line-height: 23px;
     color: #717070;
+
+    background-color: transparent;
+    border: none;
+
     transition: all 0.2s linear;
   }
 
@@ -29,21 +32,27 @@
 
   .active {
     cursor: pointer;
-    border: none;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
-    background-color: #83a358;
+
     width: 34px;
     height: 34px;
+
+    color: #ffffff;
+
+    background-color: #83a358;
+    border: none;
     border-radius: 50%;
+
     transition: all 0.2s linear;
   }
 }
 
 .active.yellowTheme {
   color: #191901;
+
   background-color: #0ff;
 }
 

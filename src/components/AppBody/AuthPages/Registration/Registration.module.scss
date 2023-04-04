@@ -1,53 +1,44 @@
 .signWithTitle {
-  transition: all 0.3s ease;
-  font-weight: 600;
+  margin: 30px 25px;
+
   font-size: 24px;
+  font-weight: 600;
   text-align: center;
   text-transform: uppercase;
-  margin: 30px 25px;
+
+  transition: all 0.3s ease;
 }
 
 .anotherTypeLoginBtnWrap {
   display: flex;
-  justify-content: center;
   align-items: center;
-  @media (max-width: 470px) {
-    span {
-      button {
-        font-size: 0 !important;
-      }
-    }
-    button {
-      div {
-        margin-left: 10px;
-        svg {
-          padding-left: 1px;
-        }
-      }
-      span {
-        font-size: 0 !important;
-      }
-    }
-  }
+  justify-content: center;
 }
 
 .orWord {
-  transition: all 0.3s ease;
   position: relative;
-  margin: 37px auto 48px;
+
   max-width: 388px;
+  margin: 37px auto 48px;
+
   font-size: 16px;
+  color: #717070;
   text-align: center;
   text-transform: capitalize;
-  color: #717070;
+
+  transition: all 0.3s ease;
   &:before,
   &:after {
     content: '';
-    display: block;
+
     position: absolute;
     top: 50%;
+
+    display: block;
+
     width: 40%;
     height: 1px;
+
     background: #eaeaea;
   }
   &:before {
@@ -59,12 +50,15 @@
 }
 
 .termsCheck {
+  cursor: pointer;
+
   position: relative;
+
   display: flex;
   align-items: center;
+
   width: 388px;
   margin: 25px auto 35px;
-  cursor: pointer;
   .termsLabel {
     padding-left: 7px;
   }
@@ -73,14 +67,16 @@
   position: absolute;
   top: 30px;
   left: 0;
+
   color: #e50707;
 }
 .yellowTheme {
   color: yellow;
   .anotherTypeLoginBtnWrap {
     button {
-      background: #000;
       color: yellow;
+
+      background: #000;
       border: 0.5px solid aqua;
     }
   }
@@ -93,6 +89,7 @@
   }
   a {
     color: aqua;
+
     transition: all 0.3s ease;
   }
   .termsCheck {
@@ -108,8 +105,9 @@
   color: #fff;
   .anotherTypeLoginBtnWrap {
     button {
-      background: #000;
       color: #fff;
+
+      background: #000;
       border: 0.5px solid #fff;
     }
   }
@@ -122,6 +120,7 @@
   }
   a {
     color: gray;
+
     transition: all 0.3s ease;
   }
 }
@@ -130,8 +129,9 @@
   color: #273a64;
   .anotherTypeLoginBtnWrap {
     button {
-      background: #273a64;
       color: #afe2ef;
+
+      background: #273a64;
       border: 0.5px solid #fff;
     }
   }
@@ -144,6 +144,7 @@
   }
   a {
     color: black;
+
     transition: all 0.3s ease;
   }
   .termsCheck {
@@ -158,31 +159,37 @@
 .medium {
   .signWithTitle {
     font-size: 26px;
+
     transition: all 0.3s ease;
   }
   .formLabel {
     span {
       font-size: 18px;
+
       transition: all 0.3s ease;
     }
   }
   .orWord {
     font-size: 18px;
+
     transition: all 0.3s ease;
   }
   a {
     font-size: 18px;
+
     transition: all 0.3s ease;
   }
   .termsCheck {
     span {
       font-size: 18px;
+
       transition: all 0.3s ease;
     }
   }
   .anotherTypeLoginBtnWrap {
     button {
       font-size: 20px;
+
       transition: all 0.3s ease;
     }
   }
@@ -191,31 +198,37 @@
 .large {
   .signWithTitle {
     font-size: 28px;
+
     transition: all 0.3s ease;
   }
   .formLabel {
     span {
       font-size: 20px;
+
       transition: all 0.3s ease;
     }
   }
   .orWord {
     font-size: 20px;
+
     transition: all 0.3s ease;
   }
   a {
     font-size: 20px;
+
     transition: all 0.3s ease;
   }
   .termsCheck {
     span {
       font-size: 20px;
+
       transition: all 0.3s ease;
     }
   }
   .anotherTypeLoginBtnWrap {
     button {
       font-size: 22px;
+
       transition: all 0.3s ease;
     }
   }
@@ -240,8 +253,9 @@
       .authSwitcherWrapper {
         padding: 0 15px;
         .authSwitcher {
-          font-size: 18px;
           padding: 22px 0 13px;
+
+          font-size: 18px;
         }
       }
 
@@ -265,13 +279,14 @@
 
       .anotherTypeLoginBtnWrap {
         .anotherTypeLogin {
-          width: 63px;
-          height: 58px;
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 0;
+
+          width: 63px;
+          height: 58px;
           margin-bottom: 0;
+          padding: 0;
           svg {
             margin: 0;
           }
@@ -289,8 +304,8 @@
       }
       .termsCheck,
       .orWord {
-        margin: 40px auto;
         max-width: calc(100% - 20px);
+        margin: 40px auto;
       }
     }
   }

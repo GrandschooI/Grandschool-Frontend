@@ -1,6 +1,6 @@
 .topicTitle {
-  font-weight: 600;
   font-size: 22px;
+  font-weight: 600;
   line-height: 28px;
   color: #618135;
 }
@@ -10,23 +10,26 @@
 }
 
 .questionWrap {
-  background: #f7f5ec;
   padding: 20px 24px;
+
+  background: #f7f5ec;
   .topicTitle {
     margin: 0;
   }
   .question {
-    font-weight: 600;
     font-size: 18px;
+    font-weight: 600;
     line-height: 23px;
     color: #000000;
   }
 
   .answer {
     display: block;
+
     margin-bottom: 15px;
-    font-weight: 400;
+
     font-size: 16px;
+    font-weight: 400;
     line-height: 20px;
     color: #717070;
   }
@@ -42,3 +45,134 @@
   line-height: 23px;
   color: #618135;
 }
+
+.chapter {
+  &.whiteTheme {
+    background: white;
+    color: black;
+
+    .topicTitle {
+      color: black;
+    }
+
+    .questionWrap {
+      background: black;
+      color: white;
+
+      .topicTitle {
+        color: white;
+      }
+
+      .question {
+        color: white;
+      }
+
+      .answer {
+        color: white;
+      }
+
+      .submitBtn {
+        color: black;
+        background: white;
+        transition: all 0.2s ease;
+
+        &:hover {
+          color: white;
+          background: black;
+          border: 1px solid white;
+        }
+      }
+    }
+    .comments_count{
+      color: black;
+    }
+  }
+
+  &.yellowTheme {
+    background: black;
+    color: yellow;
+
+    .topicTitle {
+      color: yellow;
+    }
+
+    .questionWrap {
+      background: #191901;
+
+      .question {
+        color: yellow;
+      }
+
+      .answer {
+        color: yellow;
+      }
+
+      .submitBtn {
+        color: aqua;
+        background: black;
+        transition: all 0.2s ease;
+        border: 1px solid aqua;
+
+        &:hover {
+          color: black;
+          background: aqua;
+        }
+      }
+    }
+    .comments_count{
+      color: aqua;
+    }
+  }
+
+  &.blueTheme {
+    background: #273a64;
+    color: white;
+    padding: 0 10px;
+
+    .topicTitle {
+      color: white;
+    }
+
+    .questionWrap {
+      background: white;
+      color: #273a64;
+      margin: 0 -10px;
+
+      .topicTitle {
+        color: #273a64;
+      }
+
+      .question {
+        color: #273a64;
+      }
+
+      .answer {
+        color: #273a64;
+      }
+
+      .submitBtn {
+        color: white;
+        background: #273a64;
+        transition: all 0.2s ease;
+
+        &:hover {
+          color: #273a64;
+          background: white;
+          border: 1px solid #273a64;
+        }
+      }
+    }
+    .comments_count{
+      color: white;
+    }
+  }
+
+  .large {
+    font-size: 20px;
+  }
+
+  .medium {
+    font-size: 18px;
+  }
+}
+
