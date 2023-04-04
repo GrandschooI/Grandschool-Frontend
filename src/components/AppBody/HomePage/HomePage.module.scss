@@ -1,21 +1,25 @@
 .homepage {
   background: #fff;
+
   transition: all 0.2s ease;
 }
 
 .homepage.yellowTheme {
-  background: #000;
   color: yellow;
+
+  background: #000;
 }
 
 .homepage.whiteTheme {
-  background: #fff;
   color: #000;
+
+  background: #fff;
 }
 
 .homepage.blueTheme {
-  background: #b8eefb;
   color: #273a64;
+
+  background: #b8eefb;
 }
 
 .yellowTheme,

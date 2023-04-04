@@ -1,29 +1,94 @@
 .wrapper {
-  border-bottom: 1px solid #c4c4c4;
+  border-bottom: 1px solid #C4C4C4;
   margin-bottom: 25px;
+
+  &.whiteTheme {
+    background: black;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 30px;
+
+    .btn_answer {
+      color: white;
+    }
+
+    .answer_btn {
+      background: transparent;
+      border: 1px solid white;
+
+      &:hover {
+        background: white;
+        color: black;
+      }
+
+    }
+
+    .answers {
+      &::before {
+        background-color: white;
+      }
+    }
+  }
+
+  &.yellowTheme {
+    background: #191901;
+    color: yellow;
+    margin-top: 30px;
+    border-bottom: 1px solid yellow;
+    padding: 10px;
+    border-radius: 10px;
+    .answers {
+      &::before {
+        background-color: yellow;
+      }
+    }
+  }
+
+  &.blueTheme {
+    margin-top: 30px;
+    background: #b8eefb;
+    padding: 10px;
+    color: #273a64;
+    border-radius: 10px;
+    .answers {
+      &::before {
+        background-color: #273a64;
+      }
+    }
+  }
+
+  &.large {
+    font-size: 20px;
+  }
+
+  &.medium {
+    font-size: 18px;
+  }
+
 }
 
 .wrapper + .wrapper:last-child {
   border: none;
+
+  &.yellowTheme {
+    border-bottom: 1px solid yellow;
+  }
 }
 
 .answers {
   position: relative;
-  margin-left: 34px;
+  margin-left: 46px;
 
   &::before {
     position: absolute;
-    content: '';
+    content: "";
     height: 97%;
     width: 2px;
     background-color: #618135;
     top: 9px;
     left: -6px;
   }
-}
-
-.comment.whiteTheme {
-  background-color: red;
 }
 
 .comment {
@@ -33,6 +98,49 @@
 
   display: flex;
   margin-bottom: 25px;
+
+
+  &.whiteTheme {
+    .name, .time {
+      color: white;
+    }
+  }
+
+  &.yellowTheme {
+    .name, .time {
+      color: rgb(0, 255, 255)
+    }
+
+    textarea {
+      background: #191901;
+      border: 1px solid yellow;
+      color: yellow;
+
+      &::placeholder {
+        color: yellow;
+      }
+    }
+
+    button {
+      color: rgb(0, 255, 255);
+    }
+
+    .answer_btn {
+      background: transparent;
+      border: 1px solid rgb(0, 255, 255);
+    }
+  }
+
+  &.blueTheme {
+  }
+
+  &.large {
+    font-size: 20px;
+  }
+
+  &.medium {
+    font-size: 18px;
+  }
 }
 
 .profile_wrapper {
@@ -46,7 +154,6 @@
   width: 34px;
   min-width: 34px;
   height: 33px;
-  background-color: red;
   border-radius: 30px;
 }
 
@@ -58,7 +165,7 @@
 
   .name {
     font-weight: 600;
-    color: #31477c;
+    color: #31477C;
   }
 
   .time {
@@ -76,9 +183,10 @@
   .btn_answer {
     padding: 0;
     border: none;
-    color: #31477c;
+    color: #31477C;
     background-color: transparent;
     cursor: pointer;
+    font-size: inherit;
   }
 }
 
@@ -89,15 +197,39 @@
   width: 100%;
   margin-top: 10px;
 
-  textarea {
+  .answer_textarea {
     width: 100%;
-    resize: vertical;
-    padding: 5px;
+    resize: none;
+    padding: 15px 8px 15px 15px;
+    font-size: inherit;
   }
 
-  button {
+  .answer_btn {
+    font-weight: 600;
+    font-size: inherit;
+    line-height: 23px;
+    width: 150px;
+    height: 50px;
+    border-radius: 50px;
+    background: #618135;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s linear;
+  }
+  &.blueTheme{
+    .answer_btn{
+      background: white;
+      color: black;
+      &:hover {
+        background: #b8eefb;
+        color: #273a64;
+        border: 1px solid #273a64;
+      }
+    }
   }
 }
+
 
 @media (max-width: 730px) {
   .comment {

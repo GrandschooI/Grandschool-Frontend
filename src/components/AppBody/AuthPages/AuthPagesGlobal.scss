@@ -4,9 +4,10 @@
       color: yellow;
     }
     input {
+      color: yellow;
+
       background: #000;
       border: 1px solid aqua;
-      color: yellow;
     }
     path,
     line {
@@ -22,9 +23,10 @@
       color: #fff;
     }
     input {
+      color: #fff;
+
       background: #000;
       border: 1px solid #fff;
-      color: #fff;
     }
     path,
     line {
@@ -40,9 +42,10 @@
       color: #273a64;
     }
     input {
+      color: #afe2ef;
+
       background: #273a64;
       border: 1px solid #fff;
-      color: #afe2ef;
     }
     path,
     line {
@@ -56,6 +59,7 @@
   .formLabel {
     span {
       font-size: 16px;
+
       transition: all 0.3s ease;
     }
   }
@@ -65,11 +69,13 @@
   .formLabel {
     span {
       font-size: 18px;
+
       transition: all 0.3s ease;
     }
   }
   .submitBtn {
     font-size: 22px;
+
     transition: all 0.3s ease;
   }
 }
@@ -78,11 +84,13 @@
   .formLabel {
     span {
       font-size: 20px;
+
       transition: all 0.3s ease;
     }
   }
   .submitBtn {
     font-size: 24px;
+
     transition: all 0.3s ease;
   }
 }

@@ -186,7 +186,7 @@ export type initialInfoStateType = {
       topics: Array<topicType>
     }
   ]
-  reviews?: {
+  reviews: {
     records: Array<reviewsRecordsType>
     meta: reviewsMetaType
   }

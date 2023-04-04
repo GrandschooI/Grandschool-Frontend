@@ -3,7 +3,7 @@ import { AxiosError } from 'axios'
 import { toast } from 'react-toastify'
 import { Dispatch } from 'redux'
 
-import { AuthAPI } from '../../api/authAPI'
+import { AuthAPI, UserDataResponseType } from '../../api/authAPI'
 import { userAPI } from '../../api/userAPI'
 import { removeDataFromLocalStorage, setDataToLocalStorage } from '../../utils/scaffolding'
 import { Nullable } from '../redux-toolkit-store'
@@ -198,7 +198,7 @@ export const setProfileInfoFormThunkCreator =
 
 export const setUserToStateAndStorage = (
   dispatch: Dispatch,
-  authData: any,
+  authData: UserDataResponseType,
   isAuth: boolean,
   accessTokenName?: string | undefined,
   accessTokenData?: string | undefined

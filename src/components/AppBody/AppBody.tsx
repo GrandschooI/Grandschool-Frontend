@@ -20,11 +20,17 @@ import Teachers from './Teachers/Teachers'
 import { getOptionsState } from 'Redux/selectors/styleSelector'
 import { useAppSelector } from 'utils/Hooks/useAppSelector'
 
-const AppBody = () => {
+const AppBody: React.FC<propsType> = ({ isHeaderChange }) => {
   const isOptionsOpen = useAppSelector(getOptionsState)
 
   return (
-    <div className={cn(s.appBody, isOptionsOpen ? s.openedBlindOption : '')}>
+    <div
+      className={cn(
+        s.appBody,
+        isHeaderChange ? s.defaultBody : '',
+        isOptionsOpen ? s.openedBlindOption : ''
+      )}
+    >
       <Switch>
         <Route exact path={'/'} render={() => <HomePage />} />
         <Route path="/registration" render={() => <AuthPage />} />
@@ -47,3 +53,7 @@ const AppBody = () => {
 }
 
 export default AppBody
+
+type propsType = {
+  isHeaderChange: boolean
+}
