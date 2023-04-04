@@ -15,7 +15,7 @@
   );
   background-repeat: no-repeat;
   background-position: right top;
-  background-size: 100% 100%;
+  background-size: cover;
 
   &.withoutImg {
     background: linear-gradient(115deg, #618135, #618135 75%, transparent 50%);
