@@ -6,7 +6,7 @@ import { NavLink, useLocation } from 'react-router-dom'
 import { Nullable } from '../../Redux/redux-toolkit-store'
 import s from '../Header/Header.module.scss'
 
-const HeaderNav: React.FC<PropsType> = ({ themeStyle, fontSize }) => {
+const HeaderNav: React.FC<PropsType> = ({ themeStyle, fontSize, callback }) => {
   const location: string = useLocation().pathname
 
   return (
@@ -19,11 +19,12 @@ const HeaderNav: React.FC<PropsType> = ({ themeStyle, fontSize }) => {
     >
       <div className={'container'}>
         <nav className={cn(s.headerNav, s.notMainPage)}>
-          <NavLink to="/" className={s.headerNavLink}>
+          <NavLink to="/" className={s.headerNavLink} onClick={callback}>
             <span className={s.headerNavLinkLabel}>Strona główna</span>
           </NavLink>
           <NavLink
             to="/about-us/project"
+            onClick={callback}
             className={cn(
               s.headerNavLink,
               location.includes('/about-us') ? s.headerActiveNavLink : ''
@@ -32,6 +33,7 @@ const HeaderNav: React.FC<PropsType> = ({ themeStyle, fontSize }) => {
             <span className={s.headerNavLinkLabel}>O nas</span>
           </NavLink>
           <NavLink
+            onClick={callback}
             to="/course"
             className={cn(
               s.headerNavLink,
@@ -41,6 +43,7 @@ const HeaderNav: React.FC<PropsType> = ({ themeStyle, fontSize }) => {
             <span className={s.headerNavLinkLabel}>Zajęcia</span>
           </NavLink>
           <NavLink
+            onClick={callback}
             to="/teachers"
             className={cn(
               s.headerNavLink,
@@ -50,6 +53,7 @@ const HeaderNav: React.FC<PropsType> = ({ themeStyle, fontSize }) => {
             <span className={s.headerNavLinkLabel}>Nauczycielowi</span>
           </NavLink>
           <NavLink
+            onClick={callback}
             to="/info"
             className={cn(
               s.headerNavLink,
@@ -69,4 +73,5 @@ export default HeaderNav
 type PropsType = {
   themeStyle: Nullable<string>
   fontSize: Nullable<string>
+  callback: () => void
 }

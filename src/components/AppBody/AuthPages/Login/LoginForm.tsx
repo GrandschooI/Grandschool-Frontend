@@ -72,7 +72,7 @@ const LoginForm: React.FC<PropsType> = ({
       })
   }
 
-  if (isAuth) return <Redirect to={'/'} />
+  if (isAuth) return <Redirect to={'/profile'} />
 
   return (
     <section>

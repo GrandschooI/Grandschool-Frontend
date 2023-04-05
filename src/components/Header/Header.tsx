@@ -41,6 +41,8 @@ const Header: React.FC<propsType> = ({ isHeaderChange }) => {
 
   const [isBurgerActive, setBurgerClass] = useState(false)
 
+  const toggleBurgerMenu = () => setBurgerClass(false)
+
   const toggleBlindModeHandler = () => {
     dispatch(switchBlindMode({ blindMode: !blindMode }))
   }
@@ -78,7 +80,11 @@ const Header: React.FC<propsType> = ({ isHeaderChange }) => {
             {themeStyle === 'whiteTheme' && <LogoWordsWhiteTheme />}
             {themeStyle === 'blueTheme' && <LogoWordsBlueTheme />}
           </a>
-          {!isHeaderChange ? <SearchField themeStyle={themeStyle} /> : <HeaderNavForMainPage />}
+          {!isHeaderChange ? (
+            <SearchField themeStyle={themeStyle} />
+          ) : (
+            <HeaderNavForMainPage callback={toggleBurgerMenu} />
+          )}
           {blindMode && (
             <button
               onClick={optionsModeHandler}
@@ -137,7 +143,9 @@ const Header: React.FC<propsType> = ({ isHeaderChange }) => {
         </div>
       </div>
       <div className={cn(s[isBurgerActive ? 'active' : ''])}>
-        {!isHeaderChange && <HeaderNav themeStyle={themeStyle} fontSize={fontSize} />}
+        {!isHeaderChange && (
+          <HeaderNav themeStyle={themeStyle} fontSize={fontSize} callback={toggleBurgerMenu} />
+        )}
       </div>
     </div>
   )
