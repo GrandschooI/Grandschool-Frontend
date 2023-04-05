@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 
 import cn from 'classnames'
 import { NavLink } from 'react-router-dom'
@@ -11,23 +11,25 @@ import MailIcon from '../SVGConponents/HeaderNav/MailIcon'
 import MobileAccountIcon from '../SVGConponents/HeaderNav/MobileAccountIcon'
 import YoutubeIcon from '../SVGConponents/HeaderNav/YoutubeIcon'
 
-const HeaderNavForMainPage = () => {
+const HeaderNavForMainPage: FC<{ callback: () => void }> = ({ callback }) => {
+  console.log('maim page')
+
   return (
     <nav className={cn(s.headerNav)}>
-      <NavLink className={cn(s.headerNavLink, s.mobileAccountLink)} to="/login">
+      <NavLink className={cn(s.headerNavLink, s.mobileAccountLink)} to="/login" onClick={callback}>
         <MobileAccountIcon />
         <span className={s.headerNavLinkLabel}>Twoje konto</span>
       </NavLink>
-      <NavLink to="/about-us/project" className={s.headerNavLink}>
+      <NavLink to="/about-us/project" className={s.headerNavLink} onClick={callback}>
         <span className={s.headerNavLinkLabel}>O nas</span>
       </NavLink>
-      <NavLink to="/course" className={s.headerNavLink}>
+      <NavLink to="/course" className={s.headerNavLink} onClick={callback}>
         <span className={s.headerNavLinkLabel}>Zajęcia</span>
       </NavLink>
-      <NavLink to="/teachers" className={s.headerNavLink}>
+      <NavLink to="/teachers" className={s.headerNavLink} onClick={callback}>
         <span className={s.headerNavLinkLabel}>Nauczycielowi</span>
       </NavLink>
-      <NavLink to="/info" className={s.headerNavLink}>
+      <NavLink to="/info" className={s.headerNavLink} onClick={callback}>
         <span className={s.headerNavLinkLabel}>Więcej</span>
       </NavLink>
 
