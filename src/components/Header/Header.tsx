@@ -4,7 +4,7 @@ import '../../style.scss'
 import './HeaderGlobal.scss'
 import cn from 'classnames'
 import { useDispatch } from 'react-redux'
-import { NavLink, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 import { setOptionsMode, switchBlindMode } from '../../Redux/reducers/styleSlice'
 import {
@@ -29,6 +29,7 @@ import BlindButton from '../utils/BlindButton/BlindButton'
 
 import BlindModeOptions from './BlindModeOptions/BlindModeOptions'
 import s from './Header.module.scss'
+import { useAccessToPersonaProfile } from './hooks/useAccessToPersonaProfile'
 
 const Header: React.FC<propsType> = ({ isHeaderChange }) => {
   const blindModeFromLocalStorage = localStorage.getItem('blindModeFromLocalStorage')
@@ -38,6 +39,8 @@ const Header: React.FC<propsType> = ({ isHeaderChange }) => {
   const isOptionsOpen = useAppSelector(getOptionsState)
   const isMainPage = useLocation().pathname === '/'
   const mobileWindowSize = window.screen.width <= 768
+
+  const ProfileLink = useAccessToPersonaProfile()
 
   const dispatch = useDispatch()
 
@@ -121,9 +124,7 @@ const Header: React.FC<propsType> = ({ isHeaderChange }) => {
               />
             )}
 
-            <NavLink className={cn(s.headerNavItem, s[fontSize ? fontSize : ''])} to="/profile">
-              Twoje konto
-            </NavLink>
+            {ProfileLink}
             <button className={s.burgerBtn} onClick={onBurgerClickHandler}>
               <svg
                 className={cn(s.ham, s.ham6, s[isBurgerActive ? 'active' : ''])}
