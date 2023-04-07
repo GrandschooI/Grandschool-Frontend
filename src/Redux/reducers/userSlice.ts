@@ -3,7 +3,7 @@ import { AxiosError } from 'axios'
 import { toast } from 'react-toastify'
 import { Dispatch } from 'redux'
 
-import { AuthAPI, UserDataResponseType } from '../../api/authAPI'
+import { AuthAPI, AuthDataType, AuthResponseType, UserDataResponseType } from '../../api/authAPI'
 import { userAPI } from '../../api/userAPI'
 import { removeDataFromLocalStorage, setDataToLocalStorage } from '../../utils/scaffolding'
 import { Nullable } from '../redux-toolkit-store'
@@ -219,7 +219,7 @@ export const setUserFromLocalStorage = () => (dispatch: Dispatch) => {
   }
 }
 
-const accessHandler = (response: any) => {
+const accessHandler = (response: AuthResponseType | AuthDataType) => {
   if (response) {
     toast('Jesteś zalogowany', { autoClose: 5000 })
   }
