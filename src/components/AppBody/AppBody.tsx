@@ -34,7 +34,6 @@ const AppBody: React.FC<propsType> = ({ isHeaderChange }) => {
       <Switch>
         <Route exact path={'/'} render={() => <HomePage />} />
         <Route path="/registration" render={() => <AuthPage />} />
-        <Route path="/confirm-registration" render={() => <AuthPage />} />
         <Route path="/login" render={() => <AuthPage />} />
         <Route path="/profile" render={() => <Profile />} />
         <Route path="/about-us" render={() => <AboutUs />} />

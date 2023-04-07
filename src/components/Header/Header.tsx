@@ -4,7 +4,7 @@ import '../../style.scss'
 import './HeaderGlobal.scss'
 import cn from 'classnames'
 import { useDispatch } from 'react-redux'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 
 import { setOptionsMode, switchBlindMode } from '../../Redux/reducers/styleSlice'
 import {
@@ -36,10 +36,14 @@ const Header: React.FC<propsType> = ({ isHeaderChange }) => {
   const fontSize = useAppSelector(getFontSize)
   const blindMode = useAppSelector(getStyleMode)
   const isOptionsOpen = useAppSelector(getOptionsState)
+  const isMainPage = useLocation().pathname === '/'
+  const mobileWindowSize = window.screen.width <= 768
 
   const dispatch = useDispatch()
 
   const [isBurgerActive, setBurgerClass] = useState(false)
+
+  const toggleBurgerMenu = () => setBurgerClass(false)
 
   const toggleBlindModeHandler = () => {
     dispatch(switchBlindMode({ blindMode: !blindMode }))
@@ -78,7 +82,11 @@ const Header: React.FC<propsType> = ({ isHeaderChange }) => {
             {themeStyle === 'whiteTheme' && <LogoWordsWhiteTheme />}
             {themeStyle === 'blueTheme' && <LogoWordsBlueTheme />}
           </a>
-          {!isHeaderChange ? <SearchField themeStyle={themeStyle} /> : <HeaderNavForMainPage />}
+          {!isHeaderChange ? (
+            <SearchField themeStyle={themeStyle} />
+          ) : (
+            <HeaderNavForMainPage callback={toggleBurgerMenu} />
+          )}
           {blindMode && (
             <button
               onClick={optionsModeHandler}
@@ -102,13 +110,16 @@ const Header: React.FC<propsType> = ({ isHeaderChange }) => {
               </svg>
             </button>
           )}
+
           <div className={s.headerBtnWrap}>
-            <BlindButton
-              switchBlindModeAC={toggleBlindModeHandler}
-              themeStyle={themeStyle}
-              blindMode={blindMode}
-              fontSize={fontSize}
-            />
+            {isMainPage && mobileWindowSize ? null : (
+              <BlindButton
+                switchBlindModeAC={toggleBlindModeHandler}
+                themeStyle={themeStyle}
+                blindMode={blindMode}
+                fontSize={fontSize}
+              />
+            )}
 
             <NavLink className={cn(s.headerNavItem, s[fontSize ? fontSize : ''])} to="/profile">
               Twoje konto
@@ -137,7 +148,9 @@ const Header: React.FC<propsType> = ({ isHeaderChange }) => {
         </div>
       </div>
       <div className={cn(s[isBurgerActive ? 'active' : ''])}>
-        {!isHeaderChange && <HeaderNav themeStyle={themeStyle} fontSize={fontSize} />}
+        {!isHeaderChange && (
+          <HeaderNav themeStyle={themeStyle} fontSize={fontSize} callback={toggleBurgerMenu} />
+        )}
       </div>
     </div>
   )
