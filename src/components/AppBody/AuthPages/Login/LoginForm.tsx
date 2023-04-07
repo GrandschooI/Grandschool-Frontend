@@ -17,7 +17,7 @@ import {
 } from '../../../../Redux/reducers/userSlice'
 import { useAppDispatch } from '../../../../Redux/redux-toolkit-store'
 import { getFontSize, getThemeStyle } from '../../../../Redux/selectors/styleSelector'
-import { getAuthStatus } from '../../../../Redux/selectors/userSelector'
+import { getAuthStatus, getIsVerify } from '../../../../Redux/selectors/userSelector'
 import { useAppSelector } from '../../../../utils/Hooks/useAppSelector'
 import { TextField } from '../../../common/Form/FormControls/FormControls'
 import Popup from '../../../common/PopupSection/Popup/Popup'
@@ -49,6 +49,7 @@ const LoginForm: React.FC<PropsType> = ({
   const fontSize = useAppSelector(getFontSize)
   const isAuth = useAppSelector(getAuthStatus)
   const dispatch = useAppDispatch()
+  const isUserVerify = useAppSelector(getIsVerify)
 
   useEffect(() => {
     startGoogleAPI()
@@ -72,7 +73,8 @@ const LoginForm: React.FC<PropsType> = ({
       })
   }
 
-  if (isAuth) return <Redirect to={'/profile'} />
+  if (isAuth && !isUserVerify) return <Redirect to={'/registration'} />
+  if (isAuth && isUserVerify) return <Redirect to={'/profile'} />
 
   return (
     <section>
