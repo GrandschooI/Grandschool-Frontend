@@ -47,8 +47,8 @@ const HeaderNavForMainPage: FC<PropsType> = ({
         to={to}
         key={id}
         className={s.headerNavLink}
-        onClick={callback}
         activeClassName={s.headerActiveNavLink}
+        onClick={callback}
       >
         <span className={s.headerNavLinkLabel}>{nameLink}</span>
       </NavLink>
