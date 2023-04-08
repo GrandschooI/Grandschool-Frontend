@@ -66,6 +66,9 @@ const userSlice = createSlice({
     setIsAuth2GoogleOrFacebook(state, action: PayloadAction<{ isAuth2GoogleOrFacebook: boolean }>) {
       state.isAuth2GoogleOrFacebook = action.payload.isAuth2GoogleOrFacebook
     },
+    setUserVerifyConfirm: (state, action) => {
+      state.currentUser.verified = action.payload
+    },
   },
 })
 
@@ -76,10 +79,11 @@ export const registerThunkCreator =
       const response = await AuthAPI.register(email, password, confirmPassword)
       const userData = response.data
 
+      //console.log(userData, 'REGISTER')
+
       dispatch(setIsRegistered({ isRegistered: true }))
       if (userData) {
         setUserToStateAndStorage(dispatch, userData.user, true, 'token', userData.access_token)
-        accessHandler(userData)
       } else {
         toast.error('Coś poszło nie tak', { autoClose: 5000 })
         dispatch(setIsRegistered({ isRegistered: false }))
@@ -231,8 +235,14 @@ export const errorHandler = (error: any) => {
 }
 
 export default userSlice.reducer
-export const { setAuth, setProfileInfo, setPhoto, setIsRegistered, setIsAuth2GoogleOrFacebook } =
-  userSlice.actions
+export const {
+  setAuth,
+  setProfileInfo,
+  setPhoto,
+  setIsRegistered,
+  setIsAuth2GoogleOrFacebook,
+  setUserVerifyConfirm,
+} = userSlice.actions
 
 export type setProfileActionType = {
   name: Nullable<string>
@@ -316,10 +326,11 @@ export const verifyEmail = createAsyncThunk(
 
         setDataToLocalStorage('user', JSON.stringify(newData))
       }
-
+      dispatch(setUserVerifyConfirm(true))
       toast.success(`${response?.data?.message} Verify Email`)
     } catch (err: any) {
       toast.error(err.response?.data?.message)
+      dispatch(setUserVerifyConfirm(false))
     } finally {
       dispatch(toggleIsLoaded({ isLoaded: true }))
     }

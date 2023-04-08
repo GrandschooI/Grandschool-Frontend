@@ -221,23 +221,24 @@
 
 .whiteTheme {
   .continue {
-    background-color: inherit;
+    background-color: #fff;
   }
   .confirmLabel {
     span {
-      color: #000;
+      color: #fff;
     }
   }
   .phone {
-    color: #000;
+    color: #fff;
   }
   .goBack {
     background: #000;
     color: #fff;
     transition: all 0.3s ease;
+    border: 1px solid #fff;
     &:hover {
       border: 1px solid black;
-      background: inherit;
+      background: #fff;
       color: #000 !important;
       transition: all 0.3s ease;
     }
@@ -249,15 +250,15 @@
 
 .blueTheme {
   .phone {
-    color: #000;
+    color: #273a64;
   }
   .goBack {
-    background: #273a64;
-    color: #afe2ef;
+    background: #afe2ef;
+    color: #273a64;
     transition: all 0.3s ease;
     &:hover {
-      background: #afe2ef;
-      color: #273a64;
+      background: #273a64;
+      color: #aee2ef !important;
       transition: all 0.3s ease;
     }
   }

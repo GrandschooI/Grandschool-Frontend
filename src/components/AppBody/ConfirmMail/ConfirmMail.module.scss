@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   padding: 88px 0 160px;
+  transition: all .2s ease;
   .confirmMailPage__wrapper {
     padding: 0 40px;
     max-width: 600px;
@@ -55,11 +56,11 @@
 
 
   &.yellowTheme {
-    background-color: #191901FF;
+    background-color: #000;
     border-bottom: 1px solid yellow;
 
     .text {
-      color: var(--color-theme);
+      color: aqua;
     }
   }
 
@@ -72,12 +73,14 @@
   }
 
   &.whiteTheme {
-    background-color: #000000FF;
+    background-color: #ffffffff;
 
     .text {
       color: var(--color-theme);
     }
   }
 
-
+  &.blindOptionsOpen {
+    padding-top: 180px;
+  }
 }
