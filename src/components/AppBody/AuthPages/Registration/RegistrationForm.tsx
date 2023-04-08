@@ -69,11 +69,12 @@ const RegistrationForm: React.FC<PropsType> = ({
   const isRegistered = useAppSelector(getIsRegistered)
   const isAuthGoogleOrFacebook = useAppSelector(getIsAuthGoogleOrFacebook)
 
+  console.log(isAuthGoogleOrFacebook)
   useEffect(() => {
     startGoogleAPI()
   }, [])
 
-  if (isAuthGoogleOrFacebook) return <Redirect to={'/'} />
+  if (isAuthGoogleOrFacebook) return <Redirect to={'/profile'} />
 
   return (
     <div
