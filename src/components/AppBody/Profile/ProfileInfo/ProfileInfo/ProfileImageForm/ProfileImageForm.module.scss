@@ -91,23 +91,6 @@
   }
 }
 
-@media (max-width: 1200px) {
-  .profileImageForm {
-    position: absolute;
-    top: 790px;
-    min-height: 100px;
-    border-radius: 0 26px 26px 0;
-    //display: none;
-  }
-}
-
-@media (min-width: 374px) and (max-width: 430px) {
-  .profileImageForm {
-    top: 785px;
-    min-width: 300px;
-  }
-}
-
 .yellowTheme.profileImageForm {
   border: 2px solid #ff0;
   background: #000;
