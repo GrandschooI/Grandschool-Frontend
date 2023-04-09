@@ -49,6 +49,38 @@
   transition: all 0.2s ease;
 }
 
+@media (max-width: 1220px) {
+  .blindButton {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .blindButton {
+    font-size: 0;
+    border: none;
+    background: transparent;
+    margin: 0;
+    svg {
+      margin: 0;
+      width: 35px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .blindButton {
+    font-size: 0!important;
+    background: transparent!important;
+    border: none!important;
+
+    &:hover svg,
+    &:focus svg {
+      fill: #618135;
+    }
+  }
+}
+
 .blindButton.yellowTheme {
   color: yellow;
 
@@ -65,6 +97,13 @@
     border-color: #000;
     svg {
       fill: #000;
+    }
+  }
+  @media (max-width: 767px) {
+    &:hover {
+      svg {
+        fill: yellow;
+      }
     }
   }
 }
@@ -87,6 +126,13 @@
       fill: #fff;
     }
   }
+  @media (max-width: 767px) {
+    &:hover {
+      svg {
+        fill: #000;
+      }
+    }
+  }
 }
 
 .blindButton.blueTheme {
@@ -107,6 +153,13 @@
       fill: #afe2ef;
     }
   }
+  @media (max-width: 767px) {
+    &:hover {
+      svg {
+        fill: #273a64;
+      }
+    }
+  }
 }
 
 .blindButton.medium {
@@ -119,32 +172,4 @@
   font-size: 24px;
 
   transition: all 0.2s ease;
-}
-
-@media (max-width: 1220px) {
-  .blindButton {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 1000px) {
-  .blindButton {
-    font-size: 0;
-
-    svg {
-      margin: 0;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .blindButton {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 440px) {
-  .blindButton {
-    min-width: auto;
-  }
 }

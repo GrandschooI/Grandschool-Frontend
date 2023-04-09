@@ -7,7 +7,11 @@ import * as yup from 'yup'
 
 import { sendNewPassword } from '../../../../Redux/reducers/userSlice'
 import { useAppDispatch } from '../../../../Redux/redux-toolkit-store'
-import { getFontSize, getThemeStyle } from '../../../../Redux/selectors/styleSelector'
+import {
+  getFontSize,
+  getOptionsState,
+  getThemeStyle,
+} from '../../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../../utils/Hooks/useAppSelector'
 import { TextField } from '../../../common/Form/FormControls/FormControls'
 import Popup from '../../../common/PopupSection/Popup/Popup'
@@ -29,6 +33,7 @@ export const ResetPassword = () => {
   const dispatch = useAppDispatch()
   const themeStyle = useAppSelector(getThemeStyle)
   const fontSize = useAppSelector(getFontSize)
+  const isOptionsOpen = useAppSelector(getOptionsState)
 
   const { search } = useLocation()
   const searchParams = new URLSearchParams(search)
@@ -50,7 +55,13 @@ export const ResetPassword = () => {
   if (redirect) return <Redirect to={'/login'} />
 
   return (
-    <section className={cn(s.resetPasswordPage, s[themeStyle ? themeStyle : ''])}>
+    <section
+      className={cn(
+        s.resetPasswordPage,
+        s[themeStyle ? themeStyle : ''],
+        s[isOptionsOpen ? 'blindOptionsOpen' : '']
+      )}
+    >
       <div className={cn(s.resetPasswordPage__wrapper, s[themeStyle ? themeStyle : ''])}>
         <Popup>
           <div className={cn(s.contentContainer, s[themeStyle ? themeStyle : ''], s[fontSize])}>

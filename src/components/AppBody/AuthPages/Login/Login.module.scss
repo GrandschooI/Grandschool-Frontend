@@ -48,6 +48,24 @@
       margin-right: 15px;
     }
   }
+  @media (max-width: 470px) {
+    span {
+      button {
+        font-size: 0 !important;
+      }
+    }
+    button {
+      div {
+        margin-left: 10px;
+        svg {
+          padding-left: 1px;
+        }
+      }
+      span {
+        font-size: 0 !important;
+      }
+    }
+  }
 }
 
 .popupBtnWrapper {

@@ -76,7 +76,7 @@ const Footer = () => {
           </div>
           <div className={s.topWrapColumn}>
             <div className={s.footerPosition}>
-              <h3 className={s.footerTitle}>Follow Us</h3>
+              <h3 className={cn(s.footerTitle, s.mobileTitle)}>Follow Us</h3>
               <ul className={s.socialList}>
                 <li className={s.socialItem}>
                   <a

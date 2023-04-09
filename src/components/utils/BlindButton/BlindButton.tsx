@@ -21,6 +21,7 @@ const BlindButton: React.FC<propsType> = ({
   themeStyle,
   fontSize,
   switchBlindModeAC,
+  images,
 }) => {
   return (
     <button
@@ -40,8 +41,8 @@ const BlindButton: React.FC<propsType> = ({
         }
       }}
     >
-      {!blindMode && <GlassesIcon />}
-      {blindMode && <EyesIcon />}
+      {!blindMode && images && <GlassesIcon />}
+      {blindMode && images && <EyesIcon />}
       {blindMode ? 'Zwykły wygląd' : 'Słaby wzrok?'}
     </button>
   )

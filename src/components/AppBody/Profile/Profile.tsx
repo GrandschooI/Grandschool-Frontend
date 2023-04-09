@@ -18,21 +18,18 @@ import s from './Profile.module.scss'
 import ProfileInfo from './ProfileInfo/ProfileInfo/ProfileInfo'
 
 const Profile = () => {
+  const dispatch = useDispatch()
   const [isPopup, setPopupStatus] = useState(false)
 
   const themeStyle = useAppSelector(getThemeStyle)
   const fontSize = useAppSelector(getFontSize)
   const isAuth = useAppSelector(getAuthStatus)
   const profileAsideItems = useAppSelector(getProfileAsideItems)
-  const dispatch = useDispatch()
+  const userFromLocalstorage = window.localStorage.getItem('user')
 
-  if (!isAuth) {
-    return <Redirect to={'/login'} />
-  }
+  if (!isAuth && !userFromLocalstorage) return <Redirect to={'/login'} />
 
-  const onLogoutClickHandler = () => {
-    dispatch(logoutThunkCreator())
-  }
+  const onLogoutClickHandler = () => dispatch(logoutThunkCreator())
 
   return (
     <section className={cn(s.profilePage, s[themeStyle ? themeStyle : ''], s[fontSize])}>

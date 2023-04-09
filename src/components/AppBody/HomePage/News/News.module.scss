@@ -385,7 +385,7 @@ ul.newsList {
 }
 
 @media (max-width: 768px) {
-  .newsList {
+  ul.newsList {
     flex-direction: column;
 
     margin: 0;

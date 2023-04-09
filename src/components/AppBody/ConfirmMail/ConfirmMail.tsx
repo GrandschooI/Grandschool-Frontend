@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 
 import { verifyEmail } from '../../../Redux/reducers/userSlice'
-import { getFontSize, getThemeStyle } from '../../../Redux/selectors/styleSelector'
+import { getFontSize, getOptionsState, getThemeStyle } from '../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
 import { CustomLink } from '../../common/CustomLink/CustomLink'
 import Popup from '../../common/PopupSection/Popup/Popup'
@@ -16,6 +16,7 @@ const ConfirmMail = () => {
   const dispatch = useDispatch()
   const themeStyle = useAppSelector(getThemeStyle)
   const fontSize = useAppSelector(getFontSize)
+  const isOptionsOpen = useAppSelector(getOptionsState)
 
   const urlForConfirmRequest = useLocation().search.replace('?url=', '')
 
@@ -24,7 +25,13 @@ const ConfirmMail = () => {
   }, [])
 
   return (
-    <section className={cn(s.confirmMailPage, s[themeStyle ? themeStyle : ''])}>
+    <section
+      className={cn(
+        s.confirmMailPage,
+        s[themeStyle ? themeStyle : ''],
+        s[isOptionsOpen ? 'blindOptionsOpen' : '']
+      )}
+    >
       <div className={cn(s.confirmMailPage__wrapper, s[themeStyle ? themeStyle : ''])}>
         <Popup>
           <div className={`${s.contentContainer} ${s[fontSize]}`}>

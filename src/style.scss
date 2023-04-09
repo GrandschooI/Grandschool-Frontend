@@ -139,6 +139,13 @@ input[type='radio']:checked + .radioLabel:after {
     background: #273a64;
     animation: bounce-in-fwd 1.1s both;
   }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #afe2ef;
+    -webkit-box-shadow: 0 0 0 40rem #273a64 inset;
+  }
 }
 
 input[type='checkbox']:checked + .checkboxLabel:after,
@@ -337,7 +344,7 @@ address {
   cursor: pointer;
   outline: none;
   transition: all 0.2s linear;
-  margin: 30px auto;
+  margin: 20px auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -658,14 +665,11 @@ address {
 @media (max-width: 768px) {
   .container {
     padding: 0 15px;
+    width: 100%;
   }
 }
 
 @media (max-width: 620px) {
-  .container {
-    padding: 0 10px;
-    width: 100%;
-  }
   .submitBtn {
     width: calc(100% - 20px);
     margin: 24px auto 20px;

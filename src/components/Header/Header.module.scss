@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  z-index: 5;
+  z-index: 20;
   background: transparent;
   position: absolute;
 }
@@ -17,6 +17,7 @@
   cursor: pointer;
   position: absolute;
   right: 50%;
+  transform: translate(50%, 0);
   transition: all 0.5s ease;
 
   svg {
@@ -31,10 +32,6 @@
   width: 100%;
   padding: 35px 0 0;
   position: relative;
-}
-
-s.sdf {
-  display: block;
 }
 
 .headerLogo:hover,
@@ -111,7 +108,7 @@ s.sdf {
     text-decoration: none;
     font-size: 20px;
     line-height: 26px;
-    font-weight: 600;
+    font-weight: 500;
     transition: all 0.2s ease;
     @media (max-width: 1270px) {
       font-size: 16px;
@@ -176,11 +173,13 @@ s.sdf {
   .headerNav.notMainPage {
     width: 100%;
     justify-content: space-around;
+    z-index: 1000;
+    transition: all 0.3s ease;
   }
 }
 
 .revert {
-  transform: rotate(180deg);
+  transform: rotate(180deg) translateX(-50%);
   transition: all 0.5s ease;
 }
 
@@ -267,14 +266,6 @@ s.sdf {
         transition: all 0.2s ease;
       }
     }
-  }
-}
-
-@media (max-width: 769px) {
-  .headerSearch {
-    position: absolute;
-    top: 120px;
-    width: 90%;
   }
 }
 
@@ -575,11 +566,9 @@ s.sdf {
       margin: 0;
     }
   }
-  .logoText {
-    display: none;
-  }
   .logoWrap {
     width: auto;
+    max-width: 40%;
   }
   .headerNav {
     width: 40%;
@@ -590,6 +579,10 @@ s.sdf {
   .header {
     &.yellowTheme {
       background: rgb(25, 25, 1);
+      .blindButton:hover svg,
+      .blindButton:focus svg {
+        fill: yellow;
+      }
     }
 
     &.blueTheme {
@@ -600,16 +593,12 @@ s.sdf {
     background: #f7f5ec;
 
     .headerTop {
-      padding: 25px 15px;
+      padding: 24px 0;
     }
 
     .blindButton,
     .headerNavItem {
       display: none;
-    }
-
-    .logoText {
-      display: block;
     }
 
     .mobileAccountLink {
@@ -625,13 +614,19 @@ s.sdf {
 
     .burgerBtn {
       position: relative;
-      display: block;
-      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: right;
       border: none;
       background: transparent;
-      width: 60px;
       height: 60px;
       padding: 0;
+      svg {
+        box-sizing: border-box;
+        display: flex;
+        overflow: hidden;
+        width: 40px;
+      }
     }
 
     .burger-btn-line {
@@ -805,7 +800,7 @@ s.sdf {
   position: absolute;
   background-color: #fff;
   top: 103px;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   opacity: 1;
   border: 1px solid #618135;
   z-index: 9999999;
@@ -837,7 +832,7 @@ s.sdf {
             &:hover {
               color: black;
               &:after {
-                content: url("../../assets/images/enterYellowTheme.svg");
+                content: url('../../assets/images/enterYellowTheme.svg');
               }
             }
           }
@@ -862,7 +857,7 @@ s.sdf {
             &:hover {
               color: black;
               &:after {
-                content: url("../../assets/images/enterWhiteTheme.svg");
+                content: url('../../assets/images/enterWhiteTheme.svg');
               }
             }
           }
@@ -892,7 +887,7 @@ s.sdf {
             &:hover {
               color: #273a64;
               &:after {
-                content: url("../../assets/images/enterBlueTheme.svg");
+                content: url('../../assets/images/enterBlueTheme.svg');
               }
             }
           }
@@ -905,7 +900,7 @@ s.sdf {
 .searchRequestNoField {
   height: 0;
   display: none;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .noSearch {
@@ -962,7 +957,7 @@ s.sdf {
         &:hover {
           color: black;
           &:after {
-            content: url("../../assets/images/enter.svg");
+            content: url('../../assets/images/enter.svg');
             position: absolute;
             right: 40px;
             top: 0;

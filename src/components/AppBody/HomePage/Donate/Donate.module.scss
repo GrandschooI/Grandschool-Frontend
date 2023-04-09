@@ -181,7 +181,7 @@
 
 @media (max-width: 1155px) {
   .donateSection {
-    padding: calc(50% - 10px) 0 35px;
+    padding: 50% 0 35px;
 
     background-position: top;
     background-size: contain;
@@ -193,11 +193,10 @@
 
 @media (max-width: 768px) {
   .donateSection {
-    padding: calc(57% - 10px) 0 35px;
     .contentWrap {
       h2 {
         font-size: 26px;
-        font-weight: 500;
+        font-weight: 600;
         line-height: 115%;
         strong {
           font-weight: 500;
