@@ -8,6 +8,7 @@
     url('../../../../assets/images/mainPageBackgroundRetina.png') 2x
   );
   background-size: cover;
+  background-position: 65%;
 
   .callToAction {
     display: flex;
@@ -41,49 +42,23 @@
     }
 
     .mainToCourseLink {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      height: 64px;
-      margin-top: 45px;
-      padding: 0 65px;
-
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 23px;
-      color: #618135;
-      text-decoration: none;
-
-      border: 2px solid #618135;
-      border-radius: 50px;
-
-      transition: all 0.2s ease;
-
-      &:hover,
-      &:focus {
-        color: #fff;
-
-        background: #618135;
-
-        transition: all 0.2s ease;
-      }
+      max-width: 233px;
+      margin-left: 0;
+      background: transparent;
     }
   }
 
   @media (max-width: 768px) {
-    background: linear-gradient(
-        145deg,
-        #f7f5ec,
-        #f7f5ec calc(60% - 10px),
-        transparent calc(50% - 10px)
-      ),
-      url('../../../../assets/images/webp/mainbgmobile.webp') 70% bottom no-repeat;
-    background-size: contain;
+    background-image: image-set(
+                    url('../../../../assets/images/CAT-mobile-background.png') 1x,
+                    url('../../../../assets/images/CAT-mobile-background-retina.png') 2x
+    );
+    background-size: cover;
+    background-position: bottom;
     .callToAction {
       justify-content: flex-start;
 
-      height: calc(60vh - 10px);
+      height: 110vh;
       padding-top: 150px;
       padding-bottom: 25px;
 
@@ -134,7 +109,7 @@
 
   .mainToCourseLink {
     color: aqua;
-
+    background: #000;
     border: 1px solid aqua;
 
     transition: all 0.2s ease;
@@ -213,7 +188,7 @@
 
   .mainToCourseLink {
     color: #000;
-
+    background: #fff;
     border: 1px solid #000;
 
     transition: all 0.2s ease;
@@ -291,7 +266,7 @@
 
   .mainToCourseLink {
     color: #273a64;
-
+    background: #b8eefb;
     border: 1px solid #273a64;
 
     transition: all 0.2s ease;
