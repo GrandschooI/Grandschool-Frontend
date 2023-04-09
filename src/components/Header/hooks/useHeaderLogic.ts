@@ -19,7 +19,6 @@ export const useHeaderLogic = () => {
   const blindMode = useAppSelector(getStyleMode)
   const isOptionsOpen = useAppSelector(getOptionsState)
   const isMainPage = useLocation().pathname === '/'
-  const mobileWindowSize = window.screen.width <= 768
   const dispatch = useDispatch()
 
   const [isBurgerActive, setBurgerClass] = useState(false)
@@ -52,7 +51,6 @@ export const useHeaderLogic = () => {
     themeStyle,
     fontSize,
     isMainPage,
-    mobileWindowSize,
     blindMode,
     isBurgerActive,
     toggleBurgerMenu,
