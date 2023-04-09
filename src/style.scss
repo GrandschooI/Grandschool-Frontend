@@ -665,14 +665,11 @@ address {
 @media (max-width: 768px) {
   .container {
     padding: 0 15px;
+    width: 100%;
   }
 }
 
 @media (max-width: 620px) {
-  .container {
-    padding: 0 10px;
-    width: 100%;
-  }
   .submitBtn {
     width: calc(100% - 20px);
     margin: 24px auto 20px;
