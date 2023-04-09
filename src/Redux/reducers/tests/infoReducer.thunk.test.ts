@@ -41,6 +41,20 @@ const result: initialInfoStateType = {
       topics: [] as Array<topicType>,
     },
   ],
+  reviews: {
+    records: [],
+    meta: {
+      current_page: 1,
+      per_page: 1,
+      from: 1,
+      to: 1,
+      previous_page_url: null,
+      next_page_url: 'https://api.staging.grandschool.pl/api/reviews?page=2',
+      has_more_pages: true,
+      last_page: 1,
+      total: 0,
+    },
+  },
   websites: [] as Array<WebsiteItemType>,
 }
 

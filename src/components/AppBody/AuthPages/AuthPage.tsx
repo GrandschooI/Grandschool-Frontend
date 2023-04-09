@@ -3,7 +3,14 @@ import React from 'react'
 import '../../../style.scss'
 import './AuthPagesGlobal.scss'
 import cn from 'classnames'
+import { FormikHelpers, FormikValues } from 'formik/dist/types'
 import { gapi } from 'gapi-script'
+import { ReactFacebookFailureResponse, ReactFacebookLoginInfo } from 'react-facebook-login'
+import {
+  GoogleLoginProps,
+  GoogleLoginResponse,
+  GoogleLoginResponseOffline,
+} from 'react-google-login'
 import { useDispatch } from 'react-redux'
 import { NavLink, Route, Switch, useLocation } from 'react-router-dom'
 
@@ -34,7 +41,7 @@ const AuthPage = () => {
       registerThunkCreator(formData.emailOrPhone, formData.password, formData.confirmPassword)
     )
   }
-  const onLoginSubmit = (formData: loginDataType, onSubmitProps: any) => {
+  const onLoginSubmit = (formData: loginDataType, onSubmitProps: FormikValues) => {
     dispatch(loginThunkCreator(formData.email, formData.password))
     onSubmitProps.setSubmitting(false)
   }
@@ -51,11 +58,15 @@ const AuthPage = () => {
       })
     })
   }
-  const onGoogleButtonClick = (res: any) => {
-    onSocialRegistrationButtonClick('google', res.accessToken)
+  const onGoogleButtonClick = (res: GoogleLoginResponse | GoogleLoginResponseOffline) => {
+    if ('accessToken' in res) {
+      onSocialRegistrationButtonClick('google', res.accessToken)
+    }
   }
-  const onFacebookButtonClick = (res: any) => {
-    onSocialRegistrationButtonClick('facebook', res.accessToken)
+  const onFacebookButtonClick = (res: ReactFacebookLoginInfo | ReactFacebookFailureResponse) => {
+    if ('accessToken' in res) {
+      onSocialRegistrationButtonClick('facebook', res.accessToken)
+    }
   }
 
   return (

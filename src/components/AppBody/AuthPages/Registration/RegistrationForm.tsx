@@ -2,9 +2,12 @@ import React, { useEffect } from 'react'
 
 import cn from 'classnames'
 import { Form, Formik } from 'formik'
-import FacebookLogin from 'react-facebook-login'
+import FacebookLogin, {
+  ReactFacebookFailureResponse,
+  ReactFacebookLoginInfo,
+} from 'react-facebook-login'
 // eslint-disable-next-line import/no-named-as-default
-import GoogleLogin from 'react-google-login'
+import GoogleLogin, { GoogleLoginResponse, GoogleLoginResponseOffline } from 'react-google-login'
 import { Redirect } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import * as yup from 'yup'
@@ -206,7 +209,7 @@ export default RegistrationForm
 
 type PropsType = {
   onSubmit: (formData: RegistrationFormDataType) => void
-  onGoogleButtonClick: any
-  onFacebookButtonClick: any
-  startGoogleAPI: any
+  onGoogleButtonClick: (res: GoogleLoginResponse | GoogleLoginResponseOffline) => void
+  onFacebookButtonClick: (res: ReactFacebookLoginInfo | ReactFacebookFailureResponse) => void
+  startGoogleAPI: () => void
 }

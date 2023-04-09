@@ -4,6 +4,7 @@ import cn from 'classnames'
 import { useDispatch } from 'react-redux'
 import { Redirect, Route, Switch } from 'react-router-dom'
 
+import { topicType } from '../../../Redux/reducers/courseSlice'
 import { getWebsitesCategoryThunkCreator } from '../../../Redux/reducers/infoSlice'
 import { getInfoMenu } from '../../../Redux/selectors/infoSelector'
 import { getFontSize, getThemeStyle } from '../../../Redux/selectors/styleSelector'
@@ -17,7 +18,7 @@ const Info = () => {
   const dispatch = useDispatch()
   const themeStyle = useAppSelector(getThemeStyle)
   const fontSize = useAppSelector(getFontSize)
-  const infoAsideItems: asideItemsType = useAppSelector(getInfoMenu)
+  const infoAsideItems = useAppSelector(getInfoMenu)
   let defaultLinkForRedirect = null
 
   useEffect(() => {
@@ -49,5 +50,3 @@ const Info = () => {
 }
 
 export default Info
-
-type asideItemsType = Array<any>

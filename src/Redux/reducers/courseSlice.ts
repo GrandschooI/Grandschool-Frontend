@@ -43,7 +43,7 @@ export const {} = courseSlice.actions
 export type courseType = {
   itemTitle: Nullable<string>
   itemLink: string
-  topics: Nullable<Array<topicType>>
+  topics?: Nullable<Array<topicType>>
 }
 export type topicType = {
   topicTitle: string

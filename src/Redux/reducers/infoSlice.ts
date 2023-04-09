@@ -163,6 +163,11 @@ export default infoSlice.reducer
 export const { setWebsites, setWebsiteCategories, setReviewsData } = infoSlice.actions
 
 // Types
+export type infoPageAsideMenuType = {
+  itemLink: string
+  itemTitle: string
+  topics: Array<topicType>
+}
 
 export type initialInfoStateType = {
   aboutUs: [
@@ -179,13 +184,7 @@ export type initialInfoStateType = {
       itemTitle: string
     }
   ]
-  infoPageAsideMenu: [
-    {
-      itemLink: string
-      itemTitle: string
-      topics: Array<topicType>
-    }
-  ]
+  infoPageAsideMenu: Array<infoPageAsideMenuType>
   reviews: {
     records: Array<reviewsRecordsType>
     meta: reviewsMetaType
