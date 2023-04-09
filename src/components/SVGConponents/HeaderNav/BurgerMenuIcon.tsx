@@ -13,7 +13,7 @@ const BurgerMenuIcon = ({ isBurgerActive, themeStyle }: PropsType) => {
   return (
     <svg
       className={cn(s.ham, s.ham6, s[isBurgerActive ? 'active' : ''])}
-      viewBox="0 0 100 100"
+      viewBox="25 25 60 50"
       width="60"
     >
       <path
