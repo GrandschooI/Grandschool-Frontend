@@ -4,10 +4,11 @@ import '../../style.scss'
 import './HeaderGlobal.scss'
 import cn from 'classnames'
 
+import { getImgAvailability } from '../../Redux/selectors/styleSelector'
+import { useAppSelector } from '../../utils/Hooks/useAppSelector'
 import HeaderNavForMainPage from '../common/HeaderNav/HeaderNavForMainPage'
 import { LogoGrandSchool } from '../common/LogoGrandSchool/LogoGrandSchool'
 import SearchField from '../common/SearchField'
-// eslint-disable-next-line import/no-named-as-default
 import ArrowIcon from '../SVGConponents/BlindButton/ArrowIcon'
 import BurgerMenuIcon from '../SVGConponents/HeaderNav/BurgerMenuIcon'
 import BlindButton from '../utils/BlindButton/BlindButton'
@@ -18,11 +19,10 @@ import { useAccessToPersonaProfile } from './hooks/useAccessToPersonaProfile'
 import { useHeaderLogic } from './hooks/useHeaderLogic'
 
 const Header: React.FC<propsType> = ({ isHeaderChange }) => {
+  const images = useAppSelector(getImgAvailability)
   const {
-    isMainPage,
     themeStyle,
     fontSize,
-    mobileWindowSize,
     toggleBlindModeHandler,
     optionsModeHandler,
     onBurgerClickHandler,
@@ -59,14 +59,13 @@ const Header: React.FC<propsType> = ({ isHeaderChange }) => {
           )}
 
           <div className={s.headerBtnWrap}>
-            {isMainPage && mobileWindowSize ? null : (
-              <BlindButton
-                switchBlindModeAC={toggleBlindModeHandler}
-                themeStyle={themeStyle}
-                blindMode={blindMode}
-                fontSize={fontSize}
-              />
-            )}
+            <BlindButton
+              switchBlindModeAC={toggleBlindModeHandler}
+              themeStyle={themeStyle}
+              blindMode={blindMode}
+              fontSize={fontSize}
+              images={images}
+            />
 
             {ProfileLink}
             <button className={s.burgerBtn} onClick={onBurgerClickHandler}>
