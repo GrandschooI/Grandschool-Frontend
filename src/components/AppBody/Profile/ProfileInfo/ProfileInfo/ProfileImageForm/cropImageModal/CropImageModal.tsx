@@ -69,7 +69,7 @@ const CropImageModal: React.FC<PropsType> = ({ photoUrl, setOpenCrop, setPhotoUr
     <>
       <div className={s.cropperWrapper}>
         <Cropper
-          image={photoUrl}
+          image={photoUrl as string}
           crop={crop}
           zoom={zoom}
           rotation={rotation}
