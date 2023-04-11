@@ -1,5 +1,11 @@
-import { WebsiteItemType, InfoAPI } from '../../../api/infoAPI'
-import { getWebsitesCategoryThunkCreator, getWebsitesThunkCreator } from '../infoSlice'
+import { InfoAPI, WebsiteItemType } from '../../../api/infoAPI'
+import {
+  getWebsitesCategoryThunkCreator,
+  getWebsitesThunkCreator,
+  initialInfoStateType,
+} from '../infoSlice'
+
+import { topicType } from 'Redux/reducers/courseSlice'
 //import {getWebsitesCategoryThunkCreator, getWebsitesThunkCreator} from "../infoReducer";
 
 jest.mock('../../../api/infoAPI')
@@ -13,7 +19,7 @@ beforeEach(() => {
   getStateMock.mockClear()
 })
 
-const result: any = {
+const result: initialInfoStateType = {
   aboutUs: [
     {
       itemLink: '/about-us/project',
@@ -32,13 +38,28 @@ const result: any = {
     {
       itemLink: '/info/websites',
       itemTitle: 'Websites',
-      topics: [] as any,
+      topics: [] as Array<topicType>,
     },
   ],
+  reviews: {
+    records: [],
+    meta: {
+      current_page: 1,
+      per_page: 1,
+      from: 1,
+      to: 1,
+      previous_page_url: null,
+      next_page_url: 'https://api.staging.grandschool.pl/api/reviews?page=2',
+      has_more_pages: true,
+      last_page: 1,
+      total: 0,
+    },
+  },
   websites: [] as Array<WebsiteItemType>,
 }
 
 test('Get Websites', async () => {
+  // @ts-ignore
   InfoAPIMock.getWebsites.mockResolvedValue(result)
 
   const thunk = getWebsitesThunkCreator('News')
@@ -52,6 +73,7 @@ test('Get Websites', async () => {
 // todo test Get Websites Category : Expected number of calls: 1 -> Received number of calls: 0
 
 test('Get Websites Category', async () => {
+  // @ts-ignore
   InfoAPIMock.getWebsiteCategories.mockResolvedValue(result)
 
   const thunk = getWebsitesCategoryThunkCreator()

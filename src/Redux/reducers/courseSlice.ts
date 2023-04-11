@@ -39,10 +39,11 @@ export default courseSlice.reducer
 export const {} = courseSlice.actions
 
 // Types
+
 export type courseType = {
   itemTitle: Nullable<string>
   itemLink: string
-  topics: Nullable<Array<topicType>>
+  topics?: Nullable<Array<topicType>>
 }
 export type topicType = {
   topicTitle: string

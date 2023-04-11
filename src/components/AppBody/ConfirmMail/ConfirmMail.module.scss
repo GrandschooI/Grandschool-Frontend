@@ -54,7 +54,6 @@
     }
   }
 
-
   &.yellowTheme {
     background-color: #000;
     border-bottom: 1px solid yellow;
@@ -65,7 +64,7 @@
   }
 
   &.blueTheme {
-    background-color: #AEE2EFFF;
+    background-color: #aee2efff;
 
     .text {
       color: var(--color-theme);
@@ -79,7 +78,6 @@
       color: var(--color-theme);
     }
   }
-
   &.blindOptionsOpen {
     padding-top: 180px;
   }

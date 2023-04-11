@@ -1,19 +1,21 @@
 import { WebsiteItemType } from '../../api/infoAPI'
-import { topicType } from '../reducers/courseSlice'
-import { reviewsRecordsType } from '../reducers/infoSlice'
+import { courseType, topicType } from '../reducers/courseSlice'
+import { infoPageAsideMenuType, reviewsRecordsType } from '../reducers/infoSlice'
 import { AppStateType } from '../redux-toolkit-store'
 
-export const getWebsites = (state: any): Array<WebsiteItemType> => {
-  return state.info.websites.map((el: any) => {
+export const getWebsites = (
+  state: AppStateType
+): { itemTitle: string; itemLink: string; id?: number }[] => {
+  return state.info.websites.map((el: WebsiteItemType) => {
     return { itemTitle: el.name, itemLink: el.link }
   })
 }
-export const getInfoMenu = (state: AppStateType): Array<object> => {
+export const getInfoMenu = (state: AppStateType): Array<infoPageAsideMenuType> => {
   return state.info.infoPageAsideMenu.map(el => {
     return { itemLink: el.itemLink, itemTitle: el.itemTitle, topics: el.topics }
   })
 }
-export const getInfoAboutUs = (state: AppStateType): Array<AsideItemType> => state.info.aboutUs
+export const getInfoAboutUs = (state: AppStateType): Array<courseType> => state.info.aboutUs
 export const getTotalCount = (state: AppStateType): number => state.info.reviews.meta.total
 export const getReviewData = (state: AppStateType): Array<reviewsRecordsType> =>
   state.info.reviews.records

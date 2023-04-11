@@ -41,7 +41,7 @@ const AsideItem: React.FC<PropsType> = ({ itemTitle, itemLink, topics, themeStyl
 export default AsideItem
 
 type PropsType = {
-  itemTitle: string
+  itemTitle: Nullable<string>
   itemLink: string
   topics?: Array<topicType>
   themeStyle: Nullable<string>

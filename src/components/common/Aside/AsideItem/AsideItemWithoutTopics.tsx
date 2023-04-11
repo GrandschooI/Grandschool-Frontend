@@ -3,6 +3,7 @@ import React from 'react'
 import cn from 'classnames'
 import { NavLink } from 'react-router-dom'
 
+import { Nullable } from '../../../../Redux/redux-toolkit-store'
 import {
   getFontSize,
   getImgAvailability,
@@ -30,5 +31,5 @@ export default AsideItemWithoutTopics
 type PropsType = {
   location: string
   itemLink: string
-  itemTitle: string
+  itemTitle: Nullable<string>
 }

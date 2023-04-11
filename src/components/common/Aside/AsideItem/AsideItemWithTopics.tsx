@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom'
 import { CSSTransition } from 'react-transition-group'
 
 import { topicType } from '../../../../Redux/reducers/courseSlice'
+import { Nullable } from '../../../../Redux/redux-toolkit-store'
 
 import s from './AsideItem.module.scss'
 
@@ -59,6 +60,6 @@ type PropsType = {
   location: string
   itemLink: string
   setActiveItem: (activeItem: boolean) => void
-  itemTitle: string
+  itemTitle: Nullable<string>
   topics: Array<topicType>
 }

@@ -8,7 +8,10 @@ import { useAppSelector } from '../../../../../utils/Hooks/useAppSelector'
 import s from './Websites.module.scss'
 
 type propsType = {
-  websitesData: any
+  websitesData: {
+    itemTitle: string
+    itemLink: string
+  }
 }
 
 const WebsitesTopic: React.FC<propsType> = ({ websitesData }) => {

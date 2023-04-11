@@ -2,9 +2,13 @@ import React, { useEffect, useState } from 'react'
 
 import cn from 'classnames'
 import { Form, Formik } from 'formik'
-import FacebookLogin from 'react-facebook-login'
+import { FormikValues } from 'formik/dist/types'
+import FacebookLogin, {
+  ReactFacebookFailureResponse,
+  ReactFacebookLoginInfo,
+} from 'react-facebook-login'
 // eslint-disable-next-line import/no-named-as-default
-import GoogleLogin from 'react-google-login'
+import GoogleLogin, { GoogleLoginResponse, GoogleLoginResponseOffline } from 'react-google-login'
 import { Redirect } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { CSSTransition } from 'react-transition-group'
@@ -61,7 +65,7 @@ const LoginForm: React.FC<PropsType> = ({
     setForgotPassPopupStatus(true)
   }
 
-  const onForgotPasswordFormSubmit = (email: any) => {
+  const onForgotPasswordFormSubmit = (email: { email: string }) => {
     dispatch(forgotPassword(email.email))
       .unwrap()
       .then(res => {
@@ -157,7 +161,7 @@ const LoginForm: React.FC<PropsType> = ({
         <section className="overlay">
           <Popup>
             <Formik
-              initialValues={{ email: '' }}
+              initialValues={{ email: '' as string }}
               validationSchema={forgotPasswordSchema}
               onSubmit={onForgotPasswordFormSubmit}
               validateOnBlur={true}
@@ -245,8 +249,8 @@ const LoginForm: React.FC<PropsType> = ({
 export default LoginForm
 
 type PropsType = {
-  onSubmit: (formData: loginDataType, onSubmitProps: any) => void
-  onGoogleButtonClick: any
-  onFacebookButtonClick: any
-  startGoogleAPI: any
+  onSubmit: (formData: loginDataType, onSubmitProps: FormikValues) => void
+  onGoogleButtonClick: (res: GoogleLoginResponse | GoogleLoginResponseOffline) => void
+  onFacebookButtonClick: (res: ReactFacebookLoginInfo | ReactFacebookFailureResponse) => void
+  startGoogleAPI: () => void
 }

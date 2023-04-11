@@ -28,7 +28,7 @@ const Websites = () => {
   return (
     <ul className={s.websitesList}>
       {!loadedStatus && <Preloader />}
-      {websitesData.map((el: any) => (
+      {websitesData.map(el => (
         <WebsitesTopic websitesData={el} key={el.id} />
       ))}
     </ul>

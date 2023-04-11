@@ -16,7 +16,7 @@ import { Area, Point } from './types/cropImageTypes'
 import s from './сropImageModal.module.scss'
 
 type PropsType = {
-  photoUrl: any
+  photoUrl: Nullable<string>
   setOpenCrop: (open: boolean) => void
   setPhotoUrl: (photoURL: Nullable<string>) => void
   setFile: (file: File) => void
@@ -48,8 +48,10 @@ const CropImageModal: React.FC<PropsType> = ({ photoUrl, setOpenCrop, setPhotoUr
       setFile(file)
       setOpenCrop(false)
       dispatch(setUserPhotoThunkCreator(userId, token, file))
-    } catch (e) {
-      errorHandler(e)
+    } catch (error) {
+      if (error instanceof Error) {
+        errorHandler(error.message)
+      }
     }
   }
   const onZoomChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {

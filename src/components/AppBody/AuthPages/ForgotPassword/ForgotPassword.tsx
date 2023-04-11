@@ -1,7 +1,8 @@
 import React from 'react'
 
 import cn from 'classnames'
-import { Form, Formik } from 'formik'
+import { Form, Formik, FormikErrors } from 'formik'
+import { FormikValues } from 'formik/dist/types'
 import * as yup from 'yup'
 
 import '../../../../style.scss'
@@ -11,6 +12,7 @@ import { TextField } from '../../../common/Form/FormControls/FormControls'
 import FormErrorMessage from '../../../utils/FormErrorMessage/FormErrorMessage'
 
 import s from './ForgotPassword.module.scss'
+
 const forgotPasswordSchema = yup.object().shape({
   forgotPasswordEmailField: yup
     .string()
@@ -68,7 +70,7 @@ const ForgotPassword: React.FC<propsType> = ({ onSubmit, themeStyle, fontSize })
 export default ForgotPassword
 
 type propsType = {
-  onSubmit: (formData: any) => void
+  onSubmit: (formData: FormikErrors<FormikValues>) => void
   themeStyle: Nullable<string>
   fontSize: Nullable<string>
 }
