@@ -72,7 +72,6 @@ const RegistrationForm: React.FC<PropsType> = ({
   const isRegistered = useAppSelector(getIsRegistered)
   const isAuthGoogleOrFacebook = useAppSelector(getIsAuthGoogleOrFacebook)
 
-  console.log(isAuthGoogleOrFacebook)
   useEffect(() => {
     startGoogleAPI()
   }, [])

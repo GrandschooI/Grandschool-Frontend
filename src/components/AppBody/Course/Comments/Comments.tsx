@@ -21,7 +21,6 @@ const Comments: FC = () => {
       initialValues={{ newComment: '', checkbox: false }}
       onSubmit={(values, { setSubmitting }) => {
         setSubmitting(true)
-        console.log(values)
         setSubmitting(false)
       }}
       validateOnChange={true}
