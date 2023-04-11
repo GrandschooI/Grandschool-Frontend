@@ -26,7 +26,7 @@ const Comments: FC = () => {
       validateOnChange={true}
       validateOnBlur={true}
     >
-      {({ isSubmitting, errors, touched }) => (
+      {({ isSubmitting }) => (
         <section
           className={cn(s.comments, s[themeStyle ? themeStyle : ''], 'comments', s[fontSize])}
         >
