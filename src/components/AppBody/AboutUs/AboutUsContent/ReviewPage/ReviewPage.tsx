@@ -41,7 +41,12 @@ const ReviewPage = () => {
           alt="Feedback background"
         />
       </div>
-      {isAuth ? <ReviewsForm /> : <NavLink to={'/registration'}>go to register</NavLink>}
+      {isAuth && <ReviewsForm />}
+      {!isAuth && (
+        <NavLink className={cn('submitBtn', s.link)} to={'/registration'}>
+          Go to registration
+        </NavLink>
+      )}
       <ReviewList />
     </div>
   )

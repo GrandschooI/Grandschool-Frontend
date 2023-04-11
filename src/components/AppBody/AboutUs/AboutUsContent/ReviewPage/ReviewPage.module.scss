@@ -320,12 +320,14 @@
   .reviewTitle {
     font-size: 32px;
   }
+
 }
 
 .large {
   .reviewTitle {
     font-size: 37px;
   }
+
 }
 
 .medium {
@@ -354,16 +356,31 @@
   .reviewTotalCount {
     font-size: 18px;
   }
+
 }
 
 .medium {
   .reviewList {
     font-size: 20px;
   }
+
+  .link {
+    font-size: 28px;
+  }
 }
 
 .large {
   .reviewList {
     font-size: 22px;
+  }
+
+  .link {
+    font-size: 32px;
+  }
+}
+
+.small {
+  .link {
+    font-size: 24px;
   }
 }
