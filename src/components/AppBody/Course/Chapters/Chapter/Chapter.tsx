@@ -18,7 +18,7 @@ const Chapter: React.FC<PropsType> = () => {
         url="https://www.youtube.com/watch?v=S_zMbLa_nAE"
         controls={true}
         loop={true}
-        width={'70%'}
+        width={'100%'}
         height={'485px'}
         className={s.movie}
       />
