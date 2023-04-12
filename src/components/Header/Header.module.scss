@@ -1,6 +1,5 @@
 .header {
   width: 100%;
-  z-index: 20;
   background: transparent;
   position: absolute;
 }
@@ -53,8 +52,8 @@
   width: 32%;
   display: flex;
   justify-content: space-between;
-  @media (max-width: 1100px) {
-    width: 34%;
+  @media (max-width: 1200px) {
+    width: 40%;
   }
 }
 
@@ -167,15 +166,6 @@
 .headerNav.notMainPage {
   width: 45%;
   transition: all 0.3s ease;
-}
-
-@media (max-width: 1280px) {
-  .headerNav.notMainPage {
-    width: 100%;
-    justify-content: space-around;
-    z-index: 1000;
-    transition: all 0.3s ease;
-  }
 }
 
 .revert {
@@ -535,60 +525,24 @@
   background: #afe2ef;
 }
 
-@media (max-width: 1220px) {
-  .header {
-    .headerTop {
-      img {
-        width: 105px;
-      }
-    }
-
-    .blindButton,
-    .headerNavItem {
-      font-size: 14px;
-    }
-
-    .headerNavItem {
-      padding: 0 50px;
-    }
-
-    .headerNavLink {
-      font-size: 15px;
-    }
+@media (max-width: 1200px) {
+  .headerNav.notMainPage {
+    width: 55%;
   }
 }
 
 @media (max-width: 1000px) {
-  .blindButton {
-    font-size: 0 !important;
-
-    svg {
-      margin: 0;
-    }
-  }
   .logoWrap {
     width: auto;
     max-width: 40%;
   }
-  .headerNav {
-    width: 40%;
+  .headerNav.notMainPage {
+    width: 75%;
   }
 }
 
-@media (max-width: 769px) {
+@media (max-width: 1000px) {
   .header {
-    &.yellowTheme {
-      background: rgb(25, 25, 1);
-      .blindButton:hover svg,
-      .blindButton:focus svg {
-        fill: yellow;
-      }
-    }
-
-    &.blueTheme {
-      background: #afe2ef;
-    }
-
     position: fixed;
     background: #f7f5ec;
 
@@ -597,7 +551,8 @@
     }
 
     .blindButton,
-    .headerNavItem {
+    .headerNavItem,
+    .notMainPageWrapper {
       display: none;
     }
 
@@ -783,6 +738,22 @@
         background-color: white;
       }
     }
+
+    &.subPageHeader {
+      background: #fff;
+    }
+
+    &.yellowTheme {
+      background: rgb(25, 25, 1);
+      .blindButton:hover svg,
+      .blindButton:focus svg {
+        fill: yellow;
+      }
+    }
+
+    &.blueTheme {
+      background: #afe2ef;
+    }
   }
 }
 
@@ -803,7 +774,6 @@
   transition: all 0.3s ease;
   opacity: 1;
   border: 1px solid #618135;
-  z-index: 9999999;
   &.yellowTheme {
     background-color: #000;
     border: 1px solid yellow;
