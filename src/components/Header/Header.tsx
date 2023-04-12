@@ -6,7 +6,7 @@ import cn from 'classnames'
 
 import { getImgAvailability } from '../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../utils/Hooks/useAppSelector'
-import HeaderNavForMainPage from '../common/HeaderNav/HeaderNavForMainPage'
+import HeaderNav from '../common/HeaderNav/HeaderNav'
 import { LogoGrandSchool } from '../common/LogoGrandSchool/LogoGrandSchool'
 import SearchField from '../common/SearchField'
 import ArrowIcon from '../SVGConponents/BlindButton/ArrowIcon'
@@ -35,15 +35,23 @@ const Header: React.FC<propsType> = ({ isHeaderChange }) => {
   const ProfileLink = useAccessToPersonaProfile()
 
   return (
-    <div className={cn(s.header, s[themeStyle ? themeStyle : ''], 'header', s[fontSize])}>
+    <div
+      className={cn(
+        s.header,
+        s[themeStyle ? themeStyle : ''],
+        'header',
+        s[fontSize],
+        s[!isHeaderChange ? 'subPageHeader' : '']
+      )}
+    >
       <BlindModeOptions />
       <div className={cn('container', s[isBurgerActive ? 'active' : ''])}>
         <div className={cn(s.headerTop)}>
           <LogoGrandSchool />
           {!isHeaderChange && <SearchField themeStyle={themeStyle} />}
           {isHeaderChange && (
-            <HeaderNavForMainPage
-              callback={toggleBurgerMenu}
+            <HeaderNav
+              toggleBurgerMenu={toggleBurgerMenu}
               isHeaderChange={isHeaderChange}
               themeStyle={themeStyle}
               fontSize={fontSize}
@@ -76,9 +84,9 @@ const Header: React.FC<propsType> = ({ isHeaderChange }) => {
       </div>
       <div className={cn(s[isBurgerActive ? 'active' : ''])}>
         {!isHeaderChange && (
-          <HeaderNavForMainPage
+          <HeaderNav
             isHeaderChange={isHeaderChange}
-            callback={toggleBurgerMenu}
+            toggleBurgerMenu={toggleBurgerMenu}
             fontSize={fontSize}
             themeStyle={themeStyle}
           />
