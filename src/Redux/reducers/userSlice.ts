@@ -83,7 +83,6 @@ export const registerThunkCreator =
       dispatch(setIsRegistered({ isRegistered: true }))
       if (userData) {
         setUserToStateAndStorage(dispatch, userData.user, true, 'token', userData.access_token)
-        accessHandler(userData)
       } else {
         toast.error('Coś poszło nie tak', { autoClose: 5000 })
         dispatch(setIsRegistered({ isRegistered: false }))

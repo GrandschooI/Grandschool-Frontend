@@ -77,7 +77,6 @@ const LoginForm: React.FC<PropsType> = ({
       })
   }
 
-  if (isAuth && !isUserVerify) return <Redirect to={'/registration'} />
   if (isAuth && isUserVerify) return <Redirect to={'/profile'} />
 
   return (
