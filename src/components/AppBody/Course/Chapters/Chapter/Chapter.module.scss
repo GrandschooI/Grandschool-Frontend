@@ -39,12 +39,29 @@
   }
 }
 
-.comments_count {
-  font-weight: 600;
+.inference_wrapper {
   font-size: 18px;
   line-height: 23px;
+  color: #717070;
+
+  .inference_title {
+    margin: 22px 0 8px 0;
+    font-size: 22px;
+    line-height: 28px;
+    color: #000000;
+  }
+
+  .inference_text {
+    margin: 0;
+  }
+}
+
+.comments_count {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 23px;
   color: #618135;
-  margin: 80px 0 28px 0;
+  margin: 70px 0 28px 0;
 }
 
 .chapter {
@@ -84,6 +101,7 @@
         }
       }
     }
+
     .comments_count{
       color: black;
     }
@@ -120,8 +138,17 @@
         }
       }
     }
-    .comments_count{
+
+    .comments_count {
       color: aqua;
+    }
+
+    .inference_wrapper {
+      color: yellow;
+
+      .inference_title {
+        color: aqua;
+      }
     }
   }
 
@@ -163,16 +190,30 @@
         }
       }
     }
-    .comments_count{
+
+    .comments_count {
       color: white;
+    }
+
+    .inference_wrapper {
+      color: #fff;
+
+      .inference_title {
+        color: #fff;
+      }
     }
   }
 
-  .large {
+  &.large {
     font-size: 20px;
+
+    .inference_wrapper {
+      font-size: 20px;
+    }
+
   }
 
-  .medium {
+  &.medium {
     font-size: 18px;
   }
 }
