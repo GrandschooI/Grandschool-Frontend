@@ -21,13 +21,12 @@ const Comments: FC = () => {
       initialValues={{ newComment: '', checkbox: false }}
       onSubmit={(values, { setSubmitting }) => {
         setSubmitting(true)
-        console.log(values)
         setSubmitting(false)
       }}
       validateOnChange={true}
       validateOnBlur={true}
     >
-      {({ isSubmitting, errors, touched }) => (
+      {({ isSubmitting }) => (
         <section
           className={cn(s.comments, s[themeStyle ? themeStyle : ''], 'comments', s[fontSize])}
         >

@@ -33,7 +33,7 @@ const Profile = () => {
 
   return (
     <section className={cn(s.profilePage, s[themeStyle ? themeStyle : ''], s[fontSize])}>
-      <div className={'container'}>
+      <div className="container">
         <h1 className={s.profileTitle}>Profile page</h1>
         <div className={s.profilePageInfoWrap}>
           <div className={cn(s.aside, 'profileAsideWrap')}>

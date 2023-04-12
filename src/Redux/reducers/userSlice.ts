@@ -14,42 +14,27 @@ export const FACEBOOK_CLIENT_ID = '1166464030893684'
 export const GOOGLE_CLIENT_ID =
   '959593221954-sl41n7108b6se8uqtm4c64q81g1v49ap.apps.googleusercontent.com'
 
-export type currentUserType = {
-  birthday: Nullable<Date>
-  city: Nullable<string>
-  country: Nullable<string>
-  created_at: Nullable<string>
-  description: Nullable<string>
-  email: Nullable<string>
-  verified: boolean
-  gender: Nullable<string>
-  id: Nullable<number>
-  name: Nullable<string>
-  phone: Nullable<string>
-  photo: Nullable<string>
-  roles: []
-  updated_at: Nullable<string>
-  authData: UserDataResponseType | {}
+type setAuthActionType = {
+  authData: any
+  isAuth: boolean
 }
-
 const initialState = {
   currentUser: {
-    birthday: null,
-    city: null,
-    country: null,
-    created_at: null,
-    description: null,
-    email: null,
+    birthday: null as Nullable<Date>,
+    city: null as Nullable<string>,
+    country: null as Nullable<string>,
+    created_at: null as Nullable<string>,
+    description: null as Nullable<string>,
+    email: null as Nullable<string>,
     verified: false,
-    gender: null,
-    id: null,
-    name: null,
-    phone: null,
-    photo: null,
+    gender: null as Nullable<string>,
+    id: null as Nullable<number>,
+    name: null as Nullable<string>,
+    phone: null as Nullable<string>,
+    photo: null as Nullable<string>,
     roles: [],
-    updated_at: null,
-    authData: {},
-  } as currentUserType,
+    updated_at: null as Nullable<string>,
+  },
   asideMenuItems: [
     { itemTitle: 'Personal information', itemLink: '/profile/personal-info' },
     { itemTitle: 'Personal achievements', itemLink: '/profile/personal-achievements' },
@@ -65,7 +50,7 @@ const userSlice = createSlice({
   initialState: initialState,
   reducers: {
     setAuth(state = initialState, action: PayloadAction<setAuthActionType>) {
-      state.currentUser.authData = action.payload.authData
+      state.currentUser = action.payload.authData
       state.isAuth = action.payload.isAuth
     },
     setProfileInfo(state = initialState, action: PayloadAction<setProfileActionType>) {
@@ -85,9 +70,6 @@ const userSlice = createSlice({
     setIsAuth2GoogleOrFacebook(state, action: PayloadAction<{ isAuth2GoogleOrFacebook: boolean }>) {
       state.isAuth2GoogleOrFacebook = action.payload.isAuth2GoogleOrFacebook
     },
-    setUserVerifyConfirm: (state, action) => {
-      state.currentUser.verified = action.payload
-    },
   },
 })
 
@@ -97,8 +79,6 @@ export const registerThunkCreator =
       dispatch(toggleIsLoaded({ isLoaded: false }))
       const response = await AuthAPI.register(email, password, confirmPassword)
       const userData = response.data
-
-      //console.log(userData, 'REGISTER')
 
       dispatch(setIsRegistered({ isRegistered: true }))
       if (userData) {
@@ -259,14 +239,8 @@ export const errorHandler = (error: string | []) => {
 }
 
 export default userSlice.reducer
-export const {
-  setAuth,
-  setProfileInfo,
-  setPhoto,
-  setIsRegistered,
-  setIsAuth2GoogleOrFacebook,
-  setUserVerifyConfirm,
-} = userSlice.actions
+export const { setAuth, setProfileInfo, setPhoto, setIsRegistered, setIsAuth2GoogleOrFacebook } =
+  userSlice.actions
 
 export type setProfileActionType = {
   name: Nullable<string>
@@ -276,10 +250,7 @@ export type setProfileActionType = {
   city: Nullable<string>
   description: string
 }
-type setAuthActionType = {
-  authData: UserDataResponseType | {}
-  isAuth: boolean
-}
+
 type setPhotoActionType = Nullable<string>
 
 export const sendPhoneVerify = createAsyncThunk(
@@ -352,7 +323,7 @@ export const verifyEmail = createAsyncThunk(
 
         setDataToLocalStorage('user', JSON.stringify(newData))
       }
-      dispatch(setUserVerifyConfirm(true))
+
       toast.success(`${response?.data?.message} Verify Email`)
     } catch (err) {
       toast.error((err as AxiosError).response?.data?.message)
