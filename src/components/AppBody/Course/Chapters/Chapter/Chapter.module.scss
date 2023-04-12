@@ -44,6 +44,7 @@
   font-size: 18px;
   line-height: 23px;
   color: #618135;
+  margin: 80px 0 28px 0;
 }
 
 .chapter {
@@ -176,3 +177,8 @@
   }
 }
 
+@media (max-width: 730px) {
+  .comments_count {
+    margin: 76px 0 18px 0;
+  }
+}
