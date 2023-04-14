@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { AxiosError } from 'axios'
+import { FormikValues } from 'formik/dist/types'
 import { toast } from 'react-toastify'
 import { Dispatch } from 'redux'
 
@@ -14,13 +15,30 @@ export const FACEBOOK_CLIENT_ID = '1166464030893684'
 export const GOOGLE_CLIENT_ID =
   '959593221954-sl41n7108b6se8uqtm4c64q81g1v49ap.apps.googleusercontent.com'
 
+// type ProfileType = {
+//   birthday: null | string | Date
+//   city: null | string
+//   country: null | string
+//   created_at: Date | string
+//   description: null | string
+//   email: null | string
+//   verified: boolean
+//   gender: null | string
+//   id: null | string
+//   name: null | string
+//   phone: null | string
+//   photo: null | string
+//   roles: null | string[] | string
+//   updated_at: Date | string
+// }
+
 type setAuthActionType = {
   authData: any
   isAuth: boolean
 }
 const initialState = {
   currentUser: {
-    birthday: null as Nullable<Date>,
+    birthday: null as Date | null,
     city: null as Nullable<string>,
     country: null as Nullable<string>,
     created_at: null as Nullable<string>,
@@ -183,13 +201,26 @@ export const setUserPhotoThunkCreator =
   }
 
 export const setProfileInfoFormThunkCreator =
-  (userId: Nullable<number>, token: string, userFormData: setProfileActionType) =>
+  (userId: Nullable<number>, token: string, userFormData: FormikValues) =>
   async (dispatch: Dispatch) => {
     try {
       dispatch(toggleIsLoaded({ isLoaded: false }))
+      const userFromLocalstorage = window.localStorage.getItem('user')
+
       const response = await userAPI.setProfileIfoForm(userId, token, userFormData)
 
-      dispatch(setProfileInfo(response.data.data))
+      if (userFromLocalstorage) {
+        const profileData = response?.data?.data
+        const parseUser = JSON.parse(userFromLocalstorage)
+
+        const newData = {
+          ...parseUser,
+          ...profileData,
+        }
+
+        dispatch(setProfileInfo(response.data.data))
+        setDataToLocalStorage('user', JSON.stringify(newData))
+      }
     } catch (error) {
       toast.error((error as AxiosError).response?.data.message)
     } finally {
@@ -243,12 +274,12 @@ export const { setAuth, setProfileInfo, setPhoto, setIsRegistered, setIsAuth2Goo
   userSlice.actions
 
 export type setProfileActionType = {
-  name: Nullable<string>
-  gender: string
-  birthday: Date
-  country: Nullable<string>
-  city: Nullable<string>
-  description: string
+  name: null | string
+  gender: null | string
+  birthday: null | Date
+  country: null | string
+  city: null | string
+  description: null | string
 }
 
 type setPhotoActionType = Nullable<string>
