@@ -532,28 +532,38 @@
 }
 
 @media (max-width: 1000px) {
-  .logoWrap {
-    width: auto;
-    max-width: 40%;
-  }
-  .headerNav.notMainPage {
-    width: 75%;
-  }
-}
-
-@media (max-width: 1000px) {
   .header {
     position: fixed;
     background: #f7f5ec;
+    z-index: 10;
 
     .headerTop {
-      padding: 24px 0;
+      flex-wrap: wrap;
+      padding: 24px 0 0;
+      .logoWrap {
+        width: auto;
+        max-width: 40%;
+        min-width: 150px;
+        order: 1;
+      }
+      .headerSearch {
+        order: 3;
+        width: 100%;
+        margin: 30px auto 0;
+      }
+      .headerBtnWrap {
+        order: 2;
+      }
     }
 
     .blindButton,
     .headerNavItem,
     .notMainPageWrapper {
       display: none;
+    }
+
+    .headerNav.notMainPage {
+      width: 75%;
     }
 
     .mobileAccountLink {
