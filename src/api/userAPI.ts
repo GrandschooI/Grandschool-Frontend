@@ -1,6 +1,6 @@
 import axios from 'axios'
+import { FormikValues } from 'formik/dist/types'
 
-import { setProfileActionType } from '../Redux/reducers/userSlice'
 import { Nullable } from '../Redux/redux-toolkit-store'
 
 import { instance } from './api'
@@ -19,7 +19,7 @@ export const userAPI = {
       },
     })
   },
-  setProfileIfoForm(userId: Nullable<number>, token: string, userFormData: setProfileActionType) {
+  setProfileIfoForm(userId: Nullable<number>, token: string, userFormData: FormikValues) {
     return instance.put(`users/${userId}`, userFormData, {
       headers: {
         Authorization: `Bearer ${token}`,

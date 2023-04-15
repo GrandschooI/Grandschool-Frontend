@@ -1,60 +1,66 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 
 import './dataPicker.scss'
 import cn from 'classnames'
 import { Form, Formik } from 'formik'
-import DatePicker from 'react-datepicker'
 import { useDispatch } from 'react-redux'
 import * as yup from 'yup'
 
 import FormErrorMessage from '../../../../../utils/FormErrorMessage/FormErrorMessage'
 
+import DatePickerWrapper from './DatePickerWrapper'
 import s from './ProfileInfoForm.module.scss'
 
 import { RadioButton, TextField } from 'components/common/Form/FormControls/FormControls'
 import { setProfileInfoFormThunkCreator } from 'Redux/reducers/userSlice'
 import { getFontSize, getThemeStyle } from 'Redux/selectors/styleSelector'
-import { getUserCity, getUserCountry, getUserId, getUserName } from 'Redux/selectors/userSelector'
+import { getUserId } from 'Redux/selectors/userSelector'
 import { useAppSelector } from 'utils/Hooks/useAppSelector'
 
 import '../../../../../../style.scss'
 
 const profileInfoFormSchema = yup.object().shape({
   name: yup.string(),
-  birthDate: yup.date(),
+  birthday: yup
+    .date()
+    .max(new Date(), 'Date of birth cannot be in the future')
+    .typeError('Date of birth has to be a valid date'),
   country: yup.string(),
   city: yup.string(),
-  aboutUserText: yup.string(),
+  description: yup.string(),
 })
 
-const ProfileInfoForm = () => {
+type PropsType = {
+  initialProfileData: {
+    currentUserName: null | string
+    currentUserCountry: null | string
+    currentUserCity: null | string
+    currentUserBirthday: null | string | Date
+    currentUserDescription: null | string
+    currentUserGender: null | string
+  }
+}
+
+const ProfileInfoForm: FC<PropsType> = ({ initialProfileData }) => {
   const dispatch = useDispatch()
   const token = localStorage.getItem('token') as string
-
-  const currentUserId = useAppSelector(getUserId)
-  const currentUserName = useAppSelector(getUserName)
-  const currentUserCountry = useAppSelector(getUserCountry)
-  const currentUserCity = useAppSelector(getUserCity)
   const themeStyle = useAppSelector(getThemeStyle)
   const fontSize = useAppSelector(getFontSize)
-  // const currentUserDescription = useAppSelector(getUserDescription)
+  const currentUserId = useAppSelector(getUserId)
 
-  const [startDate, setStartDate] = useState(new Date())
-  const [statusAssessment, setStatusAssessment] = useState('')
+  const [statusAssessment, setStatusAssessment] = useState(initialProfileData.currentUserGender)
 
-  const getRadioStatus = (status: string) => {
-    setStatusAssessment(status)
-  }
+  const getRadioStatus = (status: string) => setStatusAssessment(status)
 
   return (
     <Formik
       initialValues={{
-        name: currentUserName,
+        name: initialProfileData.currentUserName,
         gender: statusAssessment,
-        birthday: new Date(),
-        country: currentUserCountry,
-        city: currentUserCity,
-        description: '',
+        birthday: initialProfileData.currentUserBirthday,
+        country: initialProfileData.currentUserCountry,
+        city: initialProfileData.currentUserCity,
+        description: initialProfileData.currentUserDescription,
       }}
       validationSchema={profileInfoFormSchema}
       validateOnBlur={true}
@@ -71,7 +77,7 @@ const ProfileInfoForm = () => {
               {TextField({
                 type: 'text',
                 name: 'name',
-                propValue: values.name,
+                propValue: values?.name,
                 placeholder: 'Wpisz Name',
                 className: `textField ${errors.name && touched.name ? 'errorTextField' : ''}`,
               })}
@@ -107,12 +113,8 @@ const ProfileInfoForm = () => {
           </label>
           <label className={'formLabel'}>
             <span>Birth Date</span>
-            <DatePicker selected={startDate} onChange={(date: Date) => setStartDate(date)} />
-            {errors.birthday && touched.birthday && (
-              <FormErrorMessage>{errors.birthday}</FormErrorMessage>
-            )}
+            <DatePickerWrapper birthDate={initialProfileData.currentUserBirthday as Date} />
           </label>
-
           <label className={'formLabel'}>
             <span>Country</span>
             {TextField({
@@ -144,7 +146,7 @@ const ProfileInfoForm = () => {
             <textarea
               name={'description'}
               onChange={handleChange}
-              value={values.description}
+              value={values.description as string}
               placeholder={'Tell us a little about yourself'}
             />
           </label>
