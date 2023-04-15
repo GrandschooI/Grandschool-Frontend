@@ -69,10 +69,10 @@ const Profile = () => {
               <Popup>
                 <p className={s.logoutDesc}>Вы уверены что хотите покинуть свою учётную запись</p>
                 <div className={s.logoutBtnWrap}>
-                  <button className={s.submitBtn} onClick={onLogoutClickHandler}>
+                  <button className="submitBtn" onClick={onLogoutClickHandler}>
                     Logout
                   </button>
-                  <button className={s.inverseBtn} onClick={() => setPopupStatus(!isPopup)}>
+                  <button className="inverseBtn" onClick={() => setPopupStatus(!isPopup)}>
                     Close
                   </button>
                 </div>
