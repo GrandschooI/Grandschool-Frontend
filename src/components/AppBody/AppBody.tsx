@@ -17,18 +17,20 @@ import Payment from './Payment/Payment'
 import Profile from './Profile/Profile'
 import Teachers from './Teachers/Teachers'
 
-import { getOptionsState } from 'Redux/selectors/styleSelector'
+import { getOptionsState, getThemeStyle } from 'Redux/selectors/styleSelector'
 import { useAppSelector } from 'utils/Hooks/useAppSelector'
 
 const AppBody: React.FC<propsType> = ({ isHeaderChange }) => {
   const isOptionsOpen = useAppSelector(getOptionsState)
+  const themeStyle = useAppSelector(getThemeStyle)
 
   return (
     <div
       className={cn(
         s.appBody,
         isHeaderChange ? s.defaultBody : '',
-        isOptionsOpen ? s.openedBlindOption : ''
+        isOptionsOpen ? s.openedBlindOption : '',
+        s[themeStyle ? themeStyle : '']
       )}
     >
       <Switch>
