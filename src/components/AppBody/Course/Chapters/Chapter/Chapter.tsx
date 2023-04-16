@@ -59,9 +59,9 @@ const Chapter: React.FC<PropsType> = () => {
         <button className={cn(s.submitBtn, 'submitBtn')}>Завершить изучение главы</button>
       </div>
 
-      <div className={s.inference_wrapper}>
-        <p className={s.inference_title}>Основные выводы</p>
-        <p className={s.inference_text}>
+      <div className={s.inferenceWrapper}>
+        <p className={s.inferenceTitle}>Основные выводы</p>
+        <p className={s.inferenceText}>
           Итак, сегодня мы узнали, зачем обычному человеку может быть нужен компьютер. Оказывается,
           в каждом случае вы можете встретить проблемы, но всегда можно найти решение этих проблем и
           применять компьютер с наибольшей эффективностью.
@@ -72,7 +72,7 @@ const Chapter: React.FC<PropsType> = () => {
         </p>
       </div>
 
-      <h3 className={s.comments_count}>Общение и обмен опытом (2 комментария):</h3>
+      <h3 className={s.commentsCount}>Общение и обмен опытом (2 комментария):</h3>
     </section>
   )
 }

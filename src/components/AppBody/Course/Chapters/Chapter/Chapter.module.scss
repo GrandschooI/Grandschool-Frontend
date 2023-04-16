@@ -39,24 +39,24 @@
   }
 }
 
-.inference_wrapper {
+.inferenceWrapper {
   font-size: 18px;
   line-height: 23px;
   color: #717070;
 
-  .inference_title {
+  .inferenceTitle {
     margin: 22px 0 8px 0;
     font-size: 22px;
     line-height: 28px;
     color: #000000;
   }
 
-  .inference_text {
+  .inferenceText {
     margin: 0;
   }
 }
 
-.comments_count {
+.commentsCount {
   font-weight: 600;
   font-size: 22px;
   line-height: 23px;
@@ -102,7 +102,7 @@
       }
     }
 
-    .comments_count{
+    .commentsCount{
       color: black;
     }
   }
@@ -139,14 +139,14 @@
       }
     }
 
-    .comments_count {
+    .commentsCount {
       color: aqua;
     }
 
-    .inference_wrapper {
+    .inferenceWrapper {
       color: yellow;
 
-      .inference_title {
+      .inferenceTitle {
         color: aqua;
       }
     }
@@ -191,14 +191,14 @@
       }
     }
 
-    .comments_count {
+    .commentsCount {
       color: white;
     }
 
-    .inference_wrapper {
+    .inferenceWrapper {
       color: #fff;
 
-      .inference_title {
+      .inferenceTitle {
         color: #fff;
       }
     }
@@ -207,7 +207,7 @@
   &.large {
     font-size: 20px;
 
-    .inference_wrapper {
+    .inferenceWrapper {
       font-size: 20px;
     }
 
@@ -219,7 +219,7 @@
 }
 
 @media (max-width: 730px) {
-  .comments_count {
+  .commentsCount {
     margin: 76px 0 18px 0;
   }
 }
