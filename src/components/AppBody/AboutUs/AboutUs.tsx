@@ -25,11 +25,12 @@ const AboutUs = () => {
         s.aboutUsSection,
         s[themeStyle ? themeStyle : ''],
         s[isOptionsOpen ? 'blindOptionsOpen' : ''],
-        s[fontSize]
+        s[fontSize],
+        'container'
       )}
     >
-      <div className={cn(s.aboutUsBody, 'container')}>
-        <h2>O nas</h2>
+      <h1>O nas</h1>
+      <div className={cn(s.aboutUsBody)}>
         <Aside asideItems={asideItems} />
         <Switch>
           <Route path="/about-us/project" render={() => <Project />} />

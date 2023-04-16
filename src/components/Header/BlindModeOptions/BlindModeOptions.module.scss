@@ -28,11 +28,6 @@
     }
   }
 
-  .yellow.active,
-  .yellow:hover {
-    color: rgb(255, 255, 0);
-  }
-
   @media (max-width: 1000px) {
     .optionsWrap {
       display: flex;
@@ -145,19 +140,19 @@
 }
 
 .blueTheme {
-  color: #273a64;
+  color: #fff;
 
-  background: #fff;
+  background: #273a64;
   border-bottom: 1px solid #273a64;
 
   .button {
-    color: #273a64;
-
+    color: #afe2ef;
+    background: #273a64;
     &.active,
     &:hover {
-      color: #fff;
+      color: #273a64;
 
-      background: #273a64;
+      background: #afe2ef;
     }
 
     &.yellow {
@@ -173,9 +168,9 @@
     }
 
     &.blue {
-      color: #fff;
+      color: #273a64;
 
-      background: #273a64;
+      background: #afe2ef;
     }
   }
 

@@ -1,6 +1,6 @@
 .chapterBlock {
   display: flex;
-  width: 70%;
+  flex-grow: 1;
   margin-left: 40px;
   flex-direction: column;
   transition: all 0.2s linear;

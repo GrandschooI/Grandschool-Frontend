@@ -4,7 +4,7 @@
 }
 
 .projectBody {
-  width: 70%;
+  flex-grow: 1;
   margin-left: 40px;
 
   font-size: 18px;
@@ -35,17 +35,4 @@ p {
 
 .large {
   font-size: 22px;
-}
-
-@media (min-width: 985px) and (max-width: 1280px) {
-  .projectBody {
-    margin-left: 41px;
-  }
-}
-
-@media (max-width: 1280px) {
-  .projectBody {
-    width: 90%;
-    margin: 20px auto;
-  }
 }

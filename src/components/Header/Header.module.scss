@@ -304,6 +304,9 @@
 }
 
 .header.yellowTheme {
+  &.subPageHeader {
+    background: #000;
+  }
   .headerNavLink {
     color: yellow;
 
@@ -443,6 +446,10 @@
 }
 
 .header.blueTheme {
+  &.subPageHeader {
+    background: #aee2ef;
+  }
+
   .headerNavLink {
     color: #273a64;
 
@@ -482,7 +489,7 @@
 
   .headerNavItem {
     background: #273a64;
-    color: #afe2ef;
+    color: #fff;
     border: 1px solid #273a64;
     transition: all 0.2s ease;
 
@@ -514,7 +521,7 @@
 }
 
 .notMainPageWrapper.yellowTheme {
-  background: rgb(25, 25, 1);
+  background: #191901;
 }
 
 .notMainPageWrapper.whiteTheme {
@@ -522,7 +529,13 @@
 }
 
 .notMainPageWrapper.blueTheme {
-  background: #afe2ef;
+  background: #273a64;
+  .headerNavLink {
+    color: #fff;
+    &:before {
+      border-bottom: 1px solid #fff;
+    }
+  }
 }
 
 @media (max-width: 1200px) {
@@ -532,28 +545,38 @@
 }
 
 @media (max-width: 1000px) {
-  .logoWrap {
-    width: auto;
-    max-width: 40%;
-  }
-  .headerNav.notMainPage {
-    width: 75%;
-  }
-}
-
-@media (max-width: 1000px) {
   .header {
     position: fixed;
     background: #f7f5ec;
+    z-index: 10;
 
     .headerTop {
-      padding: 24px 0;
+      flex-wrap: wrap;
+      padding: 24px 0 0;
+      .logoWrap {
+        width: auto;
+        max-width: 40%;
+        min-width: 150px;
+        order: 1;
+      }
+      .headerSearch {
+        order: 3;
+        width: 100%;
+        margin: 30px auto 0;
+      }
+      .headerBtnWrap {
+        order: 2;
+      }
     }
 
     .blindButton,
     .headerNavItem,
     .notMainPageWrapper {
       display: none;
+    }
+
+    .headerNav.notMainPage {
+      width: 75%;
     }
 
     .mobileAccountLink {
@@ -737,10 +760,6 @@
       &.blueTheme {
         background-color: white;
       }
-    }
-
-    &.subPageHeader {
-      background: #fff;
     }
 
     &.yellowTheme {
