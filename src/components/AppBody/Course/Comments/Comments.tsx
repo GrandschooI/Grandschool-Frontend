@@ -32,20 +32,20 @@ const Comments: FC = () => {
         >
           <div className={s.profile}>
             <img className={s.avatar} src={img} alt="profile image" />
-            <div className={s.name_wrapper}>
+            <div className={s.nameWrapper}>
               <h5 className={s.name}>User Name</h5>
               <p className={s.location}>Ukraine, Kharkiv</p>
             </div>
           </div>
-          <Form className={s.comments_area}>
-            <p className={s.comments_title}>
+          <Form className={s.commentsArea}>
+            <p className={s.commentsTitle}>
               Комментарий
               <span>*</span>
             </p>
             <Field
               name={'newComment'}
               as={'textarea'}
-              className={s.new_comment}
+              className={s.newComment}
               placeholder={'Оставьте свой комментарий'}
             />
             <label
@@ -62,11 +62,11 @@ const Comments: FC = () => {
                 className={`checkboxLabel ${s.checkbox}`}
               />
             </label>
-            <button disabled={isSubmitting} type={'submit'} className={s.btn_publish}>
+            <button disabled={isSubmitting} type={'submit'} className={s.btnPublish}>
               Опубликовать
             </button>
           </Form>
-          <div className={s.comments_info}>
+          <div className={s.commentsInfo}>
             <h4 className={s.title}>Комментарии</h4>
             <div className={s.select}>
               <select defaultValue={'today'}>

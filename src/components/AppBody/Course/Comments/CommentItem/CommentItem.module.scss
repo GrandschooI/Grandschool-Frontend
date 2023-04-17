@@ -9,11 +9,11 @@
     border-radius: 10px;
     margin-top: 30px;
 
-    .btn_answer {
+    .btnAnswer {
       color: white;
     }
 
-    .answer_btn {
+    .answerBtn {
       background: transparent;
       border: 1px solid white;
 
@@ -125,7 +125,7 @@
       color: rgb(0, 255, 255);
     }
 
-    .answer_btn {
+    .answerBtn {
       background: transparent;
       border: 1px solid rgb(0, 255, 255);
     }
@@ -143,7 +143,7 @@
   }
 }
 
-.profile_wrapper {
+.profileWrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -158,7 +158,7 @@
   border-radius: 30px;
 }
 
-.profile_info {
+.profileInfo {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -175,13 +175,13 @@
   }
 }
 
-.text_wrapper {
+.textWrapper {
   .text {
     margin: 5px 0;
     overflow-wrap: anywhere;
   }
 
-  .btn_answer {
+  .btnAnswer {
     padding: 0;
     border: none;
     color: #31477C;
@@ -191,7 +191,7 @@
     margin-top: 7px;
 
     &:hover {
-      font-weight: 600;
+      text-decoration: underline;
     }
 
   }
@@ -204,14 +204,14 @@
   width: 100%;
   margin-top: 10px;
 
-  .answer_textarea {
+  .answerTextarea {
     width: 100%;
     resize: none;
     padding: 15px 8px 15px 15px;
     font-size: inherit;
   }
 
-  .answer_btn {
+  .answerBtn {
     font-weight: 600;
     font-size: inherit;
     line-height: 23px;
@@ -225,7 +225,7 @@
     transition: all 0.2s linear;
   }
   &.blueTheme{
-    .answer_btn{
+    .answerBtn{
       background: white;
       color: black;
       &:hover {
@@ -247,25 +247,25 @@
     margin-bottom: 20px;
   }
 
-  .text_wrapper {
+  .textWrapper {
     .text {
       margin: 8px 0;
     }
   }
 
-  .text_wrapper {
+  .textWrapper {
     margin-left: 0;
   }
 }
 
 @media (max-width: 425px) {
-  .text_wrapper {
+  .textWrapper {
     margin-left: -40px;
   }
   .answers {
     margin-left: 7px;
   }
-  .answers .text_wrapper {
+  .answers .textWrapper {
     margin-left: 0;
   }
 }
