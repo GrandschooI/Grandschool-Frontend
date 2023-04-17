@@ -789,10 +789,11 @@
   width: 30%;
   position: absolute;
   background-color: #fff;
-  top: 103px;
+  top: 97px;
   transition: all 0.3s ease;
   opacity: 1;
   border: 1px solid #618135;
+  z-index: 1;
   &.yellowTheme {
     background-color: #000;
     border: 1px solid yellow;
