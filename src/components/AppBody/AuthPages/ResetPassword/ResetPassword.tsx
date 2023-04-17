@@ -62,7 +62,7 @@ export const ResetPassword = () => {
         s[isOptionsOpen ? 'blindOptionsOpen' : '']
       )}
     >
-      <div className={cn(s.resetPasswordPage__wrapper, s[themeStyle ? themeStyle : ''])}>
+      <div className={cn(s.resetPasswordPageWrapper, s[themeStyle ? themeStyle : ''])}>
         <Popup>
           <div className={cn(s.contentContainer, s[themeStyle ? themeStyle : ''], s[fontSize])}>
             <Formik

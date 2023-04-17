@@ -32,7 +32,7 @@ const ConfirmMail = () => {
         s[isOptionsOpen ? 'blindOptionsOpen' : '']
       )}
     >
-      <div className={cn(s.confirmMailPage__wrapper, s[themeStyle ? themeStyle : ''])}>
+      <div className={cn(s.confirmMailPageWrapper, s[themeStyle ? themeStyle : ''])}>
         <Popup>
           <div className={`${s.contentContainer} ${s[fontSize]}`}>
             <p className={s.text}>

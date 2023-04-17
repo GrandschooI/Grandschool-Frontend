@@ -182,7 +182,7 @@ const RegistrationForm: React.FC<PropsType> = ({
                     terms & conditions
                   </a>
                   {errors.terms && touched.terms && (
-                    <span className={s.terms__error}>{errors.terms}</span>
+                    <span className={s.termsError}>{errors.terms}</span>
                   )}
                 </label>
                 <button
