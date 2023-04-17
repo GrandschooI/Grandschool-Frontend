@@ -3,7 +3,6 @@
   font-size: 16px;
   line-height: 19px;
   color: #666666;
-  //padding: 10px;
 
   textarea {
     font-family: 'Proba', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
@@ -24,17 +23,17 @@
       }
     }
 
-    .comments_area {
+    .commentsArea {
       background: black;
       padding: 10px;
       border-radius: 10px;
       margin-bottom: 50px;
 
-      .comments_title, span {
+      .commentsTitle, span {
         color: white;
       }
 
-      .btn_publish {
+      .btnPublish {
         background: white;
         color: black;
 
@@ -55,7 +54,7 @@
     background: black;
     color: yellow;
 
-    .name_wrapper {
+    .nameWrapper {
       .name {
         color: inherit;
       }
@@ -66,8 +65,8 @@
       }
     }
 
-    .comments_area {
-      p.comments_title {
+    .commentsArea {
+      p.commentsTitle {
         color: yellow;
 
         span {
@@ -75,7 +74,7 @@
         }
       }
 
-      .new_comment {
+      .newComment {
         background: transparent;
         border: 1px solid yellow;
         color: yellow;
@@ -85,7 +84,7 @@
         }
       }
 
-      .btn_publish {
+      .btnPublish {
         background: transparent;
         border: 1px solid rgb(0, 255, 255);
         color: rgb(0, 255, 255);
@@ -96,7 +95,7 @@
       }
     }
 
-    .comments_info {
+    .commentsInfo {
       .title {
         color: yellow;
       }
@@ -110,7 +109,7 @@
       }
     }
 
-    .comments_area {
+    .commentsArea {
       span:before {
         border: 3px solid yellow;
       }
@@ -120,6 +119,7 @@
   &.blueTheme {
     background: #273a64;
     color: white;
+    padding: 10px;
 
     .profile {
       .name {
@@ -131,12 +131,12 @@
       }
     }
 
-    .comments_area {
-      .comments_title, span {
+    .commentsArea {
+      .commentsTitle, span {
         color: white;
       }
 
-      .btn_publish {
+      .btnPublish {
         background: white;
         color: black;
 
@@ -152,7 +152,7 @@
       color: white;
     }
 
-    .comments_area {
+    .commentsArea {
       span:before {
         border: 3px solid #fff;
         animation: bounce-out-bck 1.5s both;
@@ -163,7 +163,7 @@
   &.large {
     font-size: 20px;
 
-    .comments_info {
+    .commentsInfo {
       .title {
         font-size: 26px;
       }
@@ -173,7 +173,7 @@
   &.medium {
     font-size: 18px;
 
-    .comments_info {
+    .commentsInfo {
       .title {
         font-size: 24px;
       }
@@ -195,7 +195,7 @@
     height: 67px;
   }
 
-  .name_wrapper {
+  .nameWrapper {
     .name {
       font-weight: 600;
       font-size: 24px;
@@ -213,12 +213,12 @@
   }
 }
 
-.comments_area {
+.commentsArea {
   display: flex;
   flex-direction: column;
   margin-bottom: 70px;
 
-  .comments_title {
+  .commentsTitle {
     margin: 0 0 10px 0;
     font-weight: 700;
     font-size: 18px;
@@ -230,27 +230,27 @@
     }
   }
 
-  .new_comment {
+  .newComment {
     height: 156px;
     resize: none;
     padding: 15px 8px 15px 15px;
     font-size: inherit;
   }
 
-  .new_comment_checkbox {
+  .newCommentCheckbox {
     width: 16px;
     height: 16px;
     display: inline-block;
     cursor: pointer;
   }
 
-  .new_comment_label {
+  .newCommentLabel {
     display: flex;
     align-items: center;
     margin-top: 17px;
   }
 
-  .btn_publish {
+  .btnPublish {
     font-weight: 600;
     font-size: 18px;
     line-height: 23px;
@@ -272,7 +272,7 @@
   }
 }
 
-.comments_info {
+.commentsInfo {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -331,7 +331,7 @@
       height: 55px;
     }
 
-    .name_wrapper {
+    .nameWrapper {
       .name {
         font-size: 18px;
         line-height: 23px;
@@ -344,15 +344,15 @@
     }
   }
 
-  .comments_info {
+  .commentsInfo {
     .select {
       display: none;
     }
   }
 }
 @media (max-width: 425px) {
-  .comments_area {
-    .btn_publish{
+  .commentsArea {
+    .btnPublish{
       width: 100%;
     }
   }
