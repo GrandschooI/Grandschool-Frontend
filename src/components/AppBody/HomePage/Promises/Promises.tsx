@@ -182,6 +182,7 @@ const Promises = () => {
       </ul>
 
       <Carousel
+        showThumbs={false}
         autoPlay={false}
         swipeable={true}
         infiniteLoop={false}
