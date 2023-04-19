@@ -9,7 +9,7 @@ import { useAppSelector } from '../../utils/Hooks/useAppSelector'
 import HeaderNav from '../common/HeaderNav/HeaderNav'
 import { LogoGrandSchool } from '../common/LogoGrandSchool/LogoGrandSchool'
 import SearchField from '../common/SearchField'
-import ArrowIcon from '../SVGConponents/BlindButton/ArrowIcon'
+import { ArrowIcon } from '../SVGConponents/BlindButton/ArrowIcon'
 import BurgerMenuIcon from '../SVGConponents/HeaderNav/BurgerMenuIcon'
 import BlindButton from '../utils/BlindButton/BlindButton'
 
