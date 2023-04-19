@@ -11,14 +11,12 @@ import reportWebVitals from './reportWebVitals'
 import './index.css'
 
 render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-      <ToastContainer />
-    </Provider>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+    <ToastContainer />
+  </Provider>,
   document.getElementById('root')
 )
 
