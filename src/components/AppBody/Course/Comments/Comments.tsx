@@ -69,10 +69,8 @@ const Comments: FC = () => {
           <div className={s.commentsInfo}>
             <h4 className={s.title}>Комментарии</h4>
             <div className={s.select}>
-              <select defaultValue={'today'}>
-                <option value="today" selected>
-                  За сегодня
-                </option>
+              <select defaultValue="today">
+                <option value="today">За сегодня</option>
               </select>
             </div>
           </div>

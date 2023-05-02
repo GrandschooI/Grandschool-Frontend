@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
@@ -10,15 +10,13 @@ import store from './Redux/redux-toolkit-store'
 import reportWebVitals from './reportWebVitals'
 import './index.css'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-      <ToastContainer />
-    </Provider>
-  </React.StrictMode>,
+render(
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+    <ToastContainer />
+  </Provider>,
   document.getElementById('root')
 )
 

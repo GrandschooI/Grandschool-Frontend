@@ -7,7 +7,7 @@ export const getWebsites = (
   state: AppStateType
 ): { itemTitle: string; itemLink: string; id?: number }[] => {
   return state.info.websites.map((el: WebsiteItemType) => {
-    return { itemTitle: el.name, itemLink: el.link }
+    return { itemTitle: el.name, itemLink: el.link, id: el.id }
   })
 }
 export const getInfoMenu = (state: AppStateType): Array<infoPageAsideMenuType> => {

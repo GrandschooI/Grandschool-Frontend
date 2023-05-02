@@ -20,5 +20,3 @@ export const ArrowIcon = () => {
     </svg>
   )
 }
-
-export default ArrowIcon
