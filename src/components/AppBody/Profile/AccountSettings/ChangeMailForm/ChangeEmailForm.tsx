@@ -5,6 +5,7 @@ import cn from 'classnames'
 import { Form, Formik } from 'formik'
 import * as yup from 'yup'
 
+import { activeThemeStyle } from '../../../../../utils/scaffolding'
 import FormErrorMessage from '../../../../utils/FormErrorMessage/FormErrorMessage'
 
 import s from './ChangeEmailForm.module.scss'
@@ -30,7 +31,7 @@ const ProfileInfoForm: React.FC<propsType> = () => {
       onSubmit={() => {}}
     >
       {({ isSubmitting, errors, touched }) => (
-        <Form className={cn(s.changeEmailForm, s[themeStyle ? themeStyle : ''], s[fontSize])}>
+        <Form className={cn(s.changeEmailForm, s[activeThemeStyle(themeStyle)], s[fontSize])}>
           <h3>Change e-mail</h3>
           <label className={'formLabel'}>
             <span>Enter new e-mail</span>

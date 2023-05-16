@@ -7,10 +7,13 @@ import { Redirect } from 'react-router-dom'
 import { sendEmailVerify, sendPhoneVerify } from '../../../../Redux/reducers/userSlice'
 import { Nullable } from '../../../../Redux/redux-toolkit-store'
 import { getIsVerify, getUserEmail, getUserPhone } from '../../../../Redux/selectors/userSelector'
+// eslint-disable-next-line import/order
 import { useAppSelector } from '../../../../utils/Hooks/useAppSelector'
 
 import '../../../../style.scss'
 import 'react-toastify/dist/ReactToastify.css'
+
+import { activeFontSize, activeThemeStyle } from '../../../../utils/scaffolding'
 
 import s from './ConfirmRegistration.module.scss'
 import EmailNotification from './EmailNotification/EmailNotification'
@@ -36,10 +39,10 @@ const ConfirmRegistrationForm: React.FC<PropsType> = ({ themeStyle, fontSize }) 
     <div
       className={cn(
         s.confirmRegistrationWrap,
-        themeStyle ? themeStyle : '',
-        s[themeStyle ? themeStyle : ''],
-        s[fontSize ? fontSize : ''],
-        [fontSize ? fontSize : '']
+        activeThemeStyle(themeStyle),
+        s[activeThemeStyle(themeStyle)],
+        s[activeFontSize(fontSize)],
+        [activeFontSize(fontSize)]
       )}
     >
       {email && <EmailNotification email={email} />}

@@ -7,6 +7,7 @@ import { toast } from 'react-toastify'
 import { getFontSize } from '../../../Redux/selectors/styleSelector'
 import { getIsVerify } from '../../../Redux/selectors/userSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
+import { activeFontSize } from '../../../utils/scaffolding'
 import s from '../Header.module.scss'
 
 export const useAccessToPersonaProfile = () => {
@@ -21,7 +22,7 @@ export const useAccessToPersonaProfile = () => {
   return !!userFromLocalstorage && !isUserVerify ? (
     <>
       <NavLink
-        className={cn(s.headerNavItem, s[fontSize ? fontSize : ''])}
+        className={cn(s.headerNavItem, s[activeFontSize(fontSize)])}
         to={'/registration'}
         onClick={toastErrorIsNotVerify}
       >
@@ -30,7 +31,7 @@ export const useAccessToPersonaProfile = () => {
     </>
   ) : (
     <>
-      <NavLink className={cn(s.headerNavItem, s[fontSize ? fontSize : ''])} to={'/profile'}>
+      <NavLink className={cn(s.headerNavItem, s[activeFontSize(fontSize)])} to={'/profile'}>
         Twoje konto
       </NavLink>
     </>

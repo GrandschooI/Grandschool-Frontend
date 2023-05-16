@@ -10,6 +10,7 @@ import {
   getThemeStyle,
 } from '../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../utils/Hooks/useAppSelector'
+import { activeThemeStyle } from '../../utils/scaffolding'
 import FacebookIcon from '../SVGConponents/Footer/FacebookIcon'
 import FooterLogoWords from '../SVGConponents/Footer/FooterLogoWords'
 import FooterLogoWordsBlueTheme from '../SVGConponents/Footer/FooterLogoWordsBlueTheme'
@@ -38,7 +39,7 @@ const Footer = () => {
     <div
       data-aos="fade"
       data-aos-once="true"
-      className={cn(s.footer, s[themeStyle ? themeStyle : ''], s[fontSize], s[withoutImgClassName])}
+      className={cn(s.footer, s[activeThemeStyle(themeStyle)], s[fontSize], s[withoutImgClassName])}
     >
       <div className={s.footerTop}>
         <div className={cn(s.footerTopWrap, 'container')}>

@@ -4,6 +4,7 @@ import cn from 'classnames'
 
 import { getOptionsState, getThemeStyle } from '../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
+import { activeThemeStyle } from '../../../utils/scaffolding'
 
 import CallToAction from './CallToAction/CallToAction'
 import Counter from './Counter/Counter'
@@ -23,7 +24,7 @@ const HomePage = () => {
     <div
       className={cn(
         s.homepage,
-        themeStyle ? s[themeStyle] : '',
+        activeThemeStyle(themeStyle),
         isOptionsOpen ? s.openedBlindOption : ''
       )}
     >

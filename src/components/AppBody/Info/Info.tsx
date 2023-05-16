@@ -9,6 +9,7 @@ import { getWebsitesCategoryThunkCreator } from '../../../Redux/reducers/infoSli
 import { getInfoMenu } from '../../../Redux/selectors/infoSelector'
 import { getFontSize, getThemeStyle } from '../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
+import { activeFontSize, activeThemeStyle } from '../../../utils/scaffolding'
 import Aside from '../../common/Aside/Aside'
 
 import s from './Info.module.scss'
@@ -33,8 +34,8 @@ const Info = () => {
       className={cn(
         'container',
         s.infoWrapper,
-        s[themeStyle ? themeStyle : ''],
-        s[fontSize ? fontSize : '']
+        s[activeThemeStyle(themeStyle)],
+        s[activeFontSize(fontSize)]
       )}
     >
       <h1>Info</h1>

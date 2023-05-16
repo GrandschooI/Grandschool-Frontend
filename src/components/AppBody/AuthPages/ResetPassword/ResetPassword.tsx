@@ -13,6 +13,7 @@ import {
   getThemeStyle,
 } from '../../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../../utils/Hooks/useAppSelector'
+import {activeFontSize, activeThemeStyle} from '../../../../utils/scaffolding'
 import { TextField } from '../../../common/Form/FormControls/FormControls'
 import Popup from '../../../common/PopupSection/Popup/Popup'
 import FormErrorMessage from '../../../utils/FormErrorMessage/FormErrorMessage'
@@ -58,13 +59,13 @@ export const ResetPassword = () => {
     <section
       className={cn(
         s.resetPasswordPage,
-        s[themeStyle ? themeStyle : ''],
+        s[activeThemeStyle(themeStyle)],
         s[isOptionsOpen ? 'blindOptionsOpen' : '']
       )}
     >
-      <div className={cn(s.resetPasswordPageWrapper, s[themeStyle ? themeStyle : ''])}>
+      <div className={cn(s.resetPasswordPageWrapper, s[activeThemeStyle(themeStyle)])}>
         <Popup>
-          <div className={cn(s.contentContainer, s[themeStyle ? themeStyle : ''], s[fontSize])}>
+          <div className={cn(s.contentContainer, s[activeThemeStyle(themeStyle)], s[fontSize])}>
             <Formik
               initialValues={{ newPassword: '' }}
               validationSchema={newPasswordSchema}
@@ -75,10 +76,10 @@ export const ResetPassword = () => {
               {({ touched, errors }) => (
                 <Form
                   className={cn(
-                    themeStyle ? themeStyle : '',
-                    s[themeStyle ? themeStyle : ''],
-                    s[fontSize ? fontSize : ''],
-                    [fontSize ? fontSize : '']
+                    activeThemeStyle(themeStyle),
+                    s[activeThemeStyle(themeStyle)],
+                    s[activeFontSize(fontSize)],
+                    [activeFontSize(fontSize)]
                   )}
                 >
                   <label className={'formLabel'}>

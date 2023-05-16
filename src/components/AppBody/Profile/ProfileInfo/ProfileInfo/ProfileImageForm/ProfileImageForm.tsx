@@ -7,6 +7,7 @@ import { Nullable } from '../../../../../../Redux/redux-toolkit-store'
 import { getFontSize, getThemeStyle } from '../../../../../../Redux/selectors/styleSelector'
 import { getUserPhotoLink } from '../../../../../../Redux/selectors/userSelector'
 import { useAppSelector } from '../../../../../../utils/Hooks/useAppSelector'
+import { activeThemeStyle } from '../../../../../../utils/scaffolding'
 import Modal from '../../../../../Modal/Modal'
 
 import CropImageModal from './cropImageModal/CropImageModal'
@@ -33,7 +34,7 @@ const ProfileImageForm = () => {
   }
 
   return (
-    <section className={cn(s.profileImageForm, s[themeStyle ? themeStyle : ''], s[fontSize])}>
+    <section className={cn(s.profileImageForm, s[activeThemeStyle(themeStyle)], s[fontSize])}>
       <h3>Profile picture</h3>
       <img
         src={userPhotoLink ? userPhotoLink : userPhoto}

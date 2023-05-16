@@ -5,8 +5,8 @@
   color: #666666;
 
   textarea {
-    font-family: 'Proba', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Proba', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   }
 
   &.whiteTheme {
@@ -29,7 +29,8 @@
       border-radius: 10px;
       margin-bottom: 50px;
 
-      .commentsTitle, span {
+      .commentsTitle,
+      span {
         color: white;
       }
 
@@ -61,7 +62,6 @@
 
       .location {
         color: inherit;
-
       }
     }
 
@@ -90,7 +90,6 @@
         color: rgb(0, 255, 255);
 
         &:hover {
-
         }
       }
     }
@@ -132,7 +131,8 @@
     }
 
     .commentsArea {
-      .commentsTitle, span {
+      .commentsTitle,
+      span {
         color: white;
       }
 
@@ -182,7 +182,8 @@
 }
 
 .profile {
-  h5, p {
+  h5,
+  p {
     margin: 0;
   }
 
@@ -208,7 +209,7 @@
       font-weight: 400;
       font-size: 18px;
       line-height: 23px;
-      color: #A0A0A0;
+      color: #a0a0a0;
     }
   }
 }
@@ -223,10 +224,10 @@
     font-weight: 700;
     font-size: 18px;
     line-height: 21px;
-    color: #31477C;
+    color: #31477c;
 
     span {
-      color: #EB001B;
+      color: #eb001b;
     }
   }
 
@@ -343,7 +344,7 @@
 }
 @media (max-width: 425px) {
   .commentsArea {
-    .btnPublish{
+    .btnPublish {
       width: 100%;
     }
   }

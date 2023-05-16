@@ -11,6 +11,7 @@ import {
   getThemeStyle,
 } from '../../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../../utils/Hooks/useAppSelector'
+import { activeFontSize, activeThemeStyle } from '../../../../utils/scaffolding'
 
 import s from './Promises.module.scss'
 
@@ -24,8 +25,8 @@ const Promises = () => {
       className={cn(
         s.promisesWrap,
         'container',
-        s[themeStyle ? themeStyle : ''],
-        s[fontSize ? fontSize : '']
+        s[activeThemeStyle(themeStyle)],
+        s[activeFontSize(fontSize)]
       )}
     >
       <h2 className={s.promisesMainTitle}>

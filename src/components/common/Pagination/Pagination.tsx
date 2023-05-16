@@ -4,6 +4,7 @@ import cn from 'classnames'
 
 import { getFontSize, getThemeStyle } from '../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
+import { activeThemeStyle } from '../../../utils/scaffolding'
 
 import s from './Pagination.module.scss'
 
@@ -18,7 +19,7 @@ const Pagination: FC<paginationPropsType> = ({
 
   const fontSize = useAppSelector(getFontSize)
   const changeTheme = (name: string) =>
-    cn(name, s[themeStyle ? themeStyle : ''], [themeStyle ? themeStyle : ''])
+    cn(name, s[activeThemeStyle(themeStyle)], [activeThemeStyle(themeStyle)])
   const paginationItem = changeTheme(s.paginationItem)
   const active = changeTheme(s.active)
 

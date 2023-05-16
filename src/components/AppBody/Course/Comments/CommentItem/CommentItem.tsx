@@ -4,6 +4,7 @@ import cn from 'classnames'
 
 import { getFontSize, getThemeStyle } from '../../../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../../../utils/Hooks/useAppSelector'
+import { activeThemeStyle } from '../../../../../utils/scaffolding'
 
 import { CommentBlock } from './CommentBlock/CommentBlock'
 import s from './CommentItem.module.scss'
@@ -13,7 +14,7 @@ export const CommentItem: FC = memo(() => {
   const fontSize = useAppSelector(getFontSize)
 
   return (
-    <div className={cn(s.wrapper, s[themeStyle ? themeStyle : ''], 'commentItem', s[fontSize])}>
+    <div className={cn(s.wrapper, s[activeThemeStyle(themeStyle)], 'commentItem', s[fontSize])}>
       <CommentBlock />
       <div className={s.answers}>
         <CommentBlock withImg={false} />

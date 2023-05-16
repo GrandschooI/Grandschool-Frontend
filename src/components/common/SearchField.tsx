@@ -3,6 +3,7 @@ import React, { ChangeEvent, useState } from 'react'
 import cn from 'classnames'
 
 import { Nullable } from '../../Redux/redux-toolkit-store'
+import { activeThemeStyle } from '../../utils/scaffolding'
 import s from '../Header/Header.module.scss'
 import SearchIcon from '../SVGConponents/SearchField/SearchIcon'
 
@@ -18,7 +19,7 @@ const SearchField: React.FC<PropsType> = ({ themeStyle }) => {
 
   return (
     <>
-      <div className={cn(s.headerSearch, s[themeStyle ? themeStyle : ''])}>
+      <div className={cn(s.headerSearch, s[activeThemeStyle(themeStyle)])}>
         <input
           type="search"
           placeholder={'Czego szukasz?'}

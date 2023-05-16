@@ -29,6 +29,8 @@ import s from './Registration.module.scss'
 
 import '../../../../style.scss'
 import 'react-toastify/dist/ReactToastify.css'
+// eslint-disable-next-line import/order
+import { activeFontSize, activeThemeStyle } from '../../../../utils/scaffolding'
 
 const MIN_PASSWORD_LENGTH = 8
 const MAX_PASSWORD_LENGTH = 50
@@ -81,17 +83,17 @@ const RegistrationForm: React.FC<PropsType> = ({
   return (
     <div
       className={cn(
-        themeStyle ? themeStyle : '',
-        s[themeStyle ? themeStyle : ''],
-        s[fontSize ? fontSize : ''],
-        [fontSize ? fontSize : '']
+        activeThemeStyle(themeStyle),
+        s[activeThemeStyle(themeStyle)],
+        s[activeFontSize(fontSize)],
+        [activeFontSize(fontSize)]
       )}
     >
       {isRegistered && <ConfirmRegistrationForm themeStyle={themeStyle} fontSize={fontSize} />}
       {!isRegistered && (
         <>
           <p className={s.signWithTitle}>Sign up with...</p>
-          <div className={cn(s.anotherTypeLoginBtnWrap, [fontSize ? fontSize : ''])}>
+          <div className={cn(s.anotherTypeLoginBtnWrap, [activeFontSize(fontSize)])}>
             <GoogleLogin
               className="anotherTypeLogin"
               clientId={GOOGLE_CLIENT_ID}
@@ -168,8 +170,8 @@ const RegistrationForm: React.FC<PropsType> = ({
                 <label
                   className={cn(
                     s.termsCheck,
-                    [fontSize ? fontSize : ''],
-                    [themeStyle ? themeStyle : '']
+                    [activeFontSize(fontSize)],
+                    [activeThemeStyle(themeStyle)]
                   )}
                 >
                   <Checkbox

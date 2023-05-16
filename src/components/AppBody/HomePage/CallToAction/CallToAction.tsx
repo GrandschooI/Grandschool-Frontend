@@ -9,6 +9,7 @@ import {
   getThemeStyle,
 } from '../../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../../utils/Hooks/useAppSelector'
+import { activeThemeStyle } from '../../../../utils/scaffolding'
 
 import s from './CallToAction.module.scss'
 
@@ -23,7 +24,7 @@ const CallToAction = () => {
     <section
       className={cn(
         s.callToActionBGWrap,
-        s[themeStyle ? themeStyle : ''],
+        s[activeThemeStyle(themeStyle)],
         s[withoutImgClassName],
         s[fontSize]
       )}

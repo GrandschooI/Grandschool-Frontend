@@ -17,6 +17,7 @@ import {
   getThemeStyle,
 } from '../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
+import { activeFontSize, activeThemeStyle } from '../../../utils/scaffolding'
 
 import s from './BlindModeOptions.module.scss'
 
@@ -48,9 +49,6 @@ const BlindModeOptions = () => {
       }
     }
   })
-  const isFontSizeActive = (fontSizeMode: string) => (fontSize === fontSizeMode ? s.active : '')
-  const isThemeStyleActive = (themeStyleMode: string) =>
-    themeStyle === themeStyleMode ? s.active : ''
 
   return (
     <CSSTransition
@@ -64,13 +62,13 @@ const BlindModeOptions = () => {
       unmountOnExit
     >
       <section
-        className={cn(s.optionsBlock, s.active, s[themeStyle ? themeStyle : ''], s[fontSize])}
+        className={cn(s.optionsBlock, s.active, s[activeThemeStyle(themeStyle)], s[fontSize])}
       >
         <div className={cn(s.optionsWrap, 'container')}>
           <div>
             <span className={cn(s.optionLabel, s.first)}>Rozmiar czcionki:</span>
             <button
-              className={cn(s.button, s.small, isFontSizeActive('small'))}
+              className={cn(s.button, s.small, s[activeFontSize(fontSize)])}
               onClick={() => {
                 dispatch(setFontSizeMode({ fontSizeMode: 'small' }))
                 window.localStorage.setItem('fontSizeFromLocalStorage', 'small')
@@ -79,7 +77,7 @@ const BlindModeOptions = () => {
               A
             </button>
             <button
-              className={cn(s.button, s.medium, isFontSizeActive('medium'))}
+              className={cn(s.button, s.medium, s[activeFontSize(fontSize)])}
               onClick={() => {
                 dispatch(setFontSizeMode({ fontSizeMode: 'medium' }))
                 window.localStorage.setItem('fontSizeFromLocalStorage', 'medium')
@@ -88,7 +86,7 @@ const BlindModeOptions = () => {
               A
             </button>
             <button
-              className={cn(s.button, s.large, isFontSizeActive('large'))}
+              className={cn(s.button, s.large, s[activeFontSize(fontSize)])}
               onClick={() => {
                 dispatch(setFontSizeMode({ fontSizeMode: 'large' }))
                 window.localStorage.setItem('fontSizeFromLocalStorage', 'large')
@@ -101,7 +99,7 @@ const BlindModeOptions = () => {
           <div>
             <span className={s.optionLabel}>Kolor:</span>
             <button
-              className={cn(s.button, s.yellow, isThemeStyleActive('yellowTheme'))}
+              className={cn(s.button, s.yellow, s[activeThemeStyle(themeStyle)])}
               onClick={() => {
                 dispatch(setThemeStyleMode({ themeStyleMode: 'yellowTheme' }))
                 window.localStorage.setItem('themeStyleFromLocalStorage', 'yellowTheme')
@@ -110,7 +108,7 @@ const BlindModeOptions = () => {
               K
             </button>
             <button
-              className={cn(s.button, s.white, isThemeStyleActive('whiteTheme'))}
+              className={cn(s.button, s.white, s[activeThemeStyle(themeStyle)])}
               onClick={() => {
                 dispatch(setThemeStyleMode({ themeStyleMode: 'whiteTheme' }))
                 window.localStorage.setItem('themeStyleFromLocalStorage', 'whiteTheme')
@@ -119,7 +117,7 @@ const BlindModeOptions = () => {
               K
             </button>
             <button
-              className={cn(s.button, s.blue, isThemeStyleActive('blueTheme'))}
+              className={cn(s.button, s.blue, s[activeThemeStyle(themeStyle)])}
               onClick={() => {
                 dispatch(setThemeStyleMode({ themeStyleMode: 'blueTheme' }))
                 window.localStorage.setItem('themeStyleFromLocalStorage', 'blueTheme')

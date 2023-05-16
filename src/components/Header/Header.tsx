@@ -6,6 +6,7 @@ import cn from 'classnames'
 
 import { getImgAvailability } from '../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../utils/Hooks/useAppSelector'
+import { activeThemeStyle } from '../../utils/scaffolding'
 import HeaderNav from '../common/HeaderNav/HeaderNav'
 import { LogoGrandSchool } from '../common/LogoGrandSchool/LogoGrandSchool'
 import SearchField from '../common/SearchField'
@@ -38,7 +39,7 @@ const Header: React.FC<propsType> = ({ isHeaderChange }) => {
     <div
       className={cn(
         s.header,
-        s[themeStyle ? themeStyle : ''],
+        s[activeThemeStyle(themeStyle)],
         'header',
         s[fontSize],
         s[!isHeaderChange ? 'subPageHeader' : '']

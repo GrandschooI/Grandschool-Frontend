@@ -8,6 +8,7 @@ import {
   getThemeStyle,
 } from '../../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../../utils/Hooks/useAppSelector'
+import { activeFontSize, activeThemeStyle } from '../../../../utils/scaffolding'
 
 import s from './Donate.module.scss'
 
@@ -22,9 +23,9 @@ const Donate = () => {
     <section
       className={cn(
         s.donateSection,
-        s[themeStyle ? themeStyle : ''],
+        s[activeThemeStyle(themeStyle)],
         s[withoutImgClassName],
-        s[fontSize ? fontSize : '']
+        s[activeFontSize(fontSize)]
       )}
     >
       <div className={cn('container')}>
@@ -34,7 +35,7 @@ const Donate = () => {
           </h2>
           <p>Wnieś swój wkład w rozwój swoich bliskich</p>
           <a
-            className={s[themeStyle ? themeStyle : '']}
+            className={s[activeThemeStyle(themeStyle)]}
             href="https://zrzutka.pl/znu2ed"
             rel="noreferrer"
           >

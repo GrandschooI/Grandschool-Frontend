@@ -10,6 +10,7 @@ import { getProfileAsideItems } from '../../../Redux/selectors/profileSelector'
 import { getFontSize, getThemeStyle } from '../../../Redux/selectors/styleSelector'
 import { getAuthStatus } from '../../../Redux/selectors/userSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
+import { activeThemeStyle } from '../../../utils/scaffolding'
 import Aside from '../../common/Aside/Aside'
 import Popup from '../../common/PopupSection/Popup/Popup'
 
@@ -32,7 +33,7 @@ const Profile = () => {
   const onLogoutClickHandler = () => dispatch(logoutThunkCreator())
 
   return (
-    <section className={cn(s.profilePage, s[themeStyle ? themeStyle : ''], s[fontSize])}>
+    <section className={cn(s.profilePage, s[activeThemeStyle(themeStyle)], s[fontSize])}>
       <div className="container">
         <h1 className={s.profileTitle}>Profile page</h1>
         <div className={s.profilePageInfoWrap}>

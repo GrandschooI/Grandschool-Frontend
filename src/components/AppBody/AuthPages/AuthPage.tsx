@@ -3,14 +3,10 @@ import React from 'react'
 import '../../../style.scss'
 import './AuthPagesGlobal.scss'
 import cn from 'classnames'
-import { FormikHelpers, FormikValues } from 'formik/dist/types'
+import { FormikValues } from 'formik/dist/types'
 import { gapi } from 'gapi-script'
 import { ReactFacebookFailureResponse, ReactFacebookLoginInfo } from 'react-facebook-login'
-import {
-  GoogleLoginProps,
-  GoogleLoginResponse,
-  GoogleLoginResponseOffline,
-} from 'react-google-login'
+import { GoogleLoginResponse, GoogleLoginResponseOffline } from 'react-google-login'
 import { useDispatch } from 'react-redux'
 import { NavLink, Route, Switch, useLocation } from 'react-router-dom'
 
@@ -21,6 +17,7 @@ import {
 } from '../../../Redux/reducers/userSlice'
 import { getFontSize, getOptionsState, getThemeStyle } from '../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
+import { activeFontSize, activeThemeStyle } from '../../../utils/scaffolding'
 import Popup from '../../common/PopupSection/Popup/Popup'
 
 import s from './AuthPages.module.scss'
@@ -73,9 +70,9 @@ const AuthPage = () => {
     <section
       className={cn(
         s.authBackground,
-        s[themeStyle ? themeStyle : ''],
+        s[activeThemeStyle(themeStyle)],
         s[isOptionsOpen ? 'blindOptionsOpen' : ''],
-        s[fontSize ? fontSize : '']
+        s[activeFontSize(fontSize)]
       )}
     >
       <Popup>

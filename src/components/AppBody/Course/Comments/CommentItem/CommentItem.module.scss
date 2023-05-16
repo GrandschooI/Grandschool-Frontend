@@ -1,5 +1,5 @@
 .wrapper {
-  border-bottom: 1px solid #C4C4C4;
+  border-bottom: 1px solid #c4c4c4;
   margin-bottom: 25px;
 
   &.whiteTheme {
@@ -21,7 +21,6 @@
         background: white;
         color: black;
       }
-
     }
 
     .answers {
@@ -65,7 +64,6 @@
   &.medium {
     font-size: 18px;
   }
-
 }
 
 .wrapper + .wrapper:last-child {
@@ -82,7 +80,7 @@
 
   &::before {
     position: absolute;
-    content: "";
+    content: '';
     height: 100%;
     width: 2px;
     background-color: #618135;
@@ -99,16 +97,17 @@
   display: flex;
   margin-bottom: 28px;
 
-
   &.whiteTheme {
-    .name, .time {
+    .name,
+    .time {
       color: white;
     }
   }
 
   &.yellowTheme {
-    .name, .time {
-      color: rgb(0, 255, 255)
+    .name,
+    .time {
+      color: rgb(0, 255, 255);
     }
 
     textarea {
@@ -166,7 +165,7 @@
 
   .name {
     font-weight: 600;
-    color: #31477C;
+    color: #31477c;
   }
 
   .time {
@@ -184,7 +183,7 @@
   .btnAnswer {
     padding: 0;
     border: none;
-    color: #31477C;
+    color: #31477c;
     background-color: transparent;
     cursor: pointer;
     font-size: inherit;
@@ -193,7 +192,6 @@
     &:hover {
       text-decoration: underline;
     }
-
   }
 }
 
@@ -224,8 +222,8 @@
     cursor: pointer;
     transition: all 0.2s linear;
   }
-  &.blueTheme{
-    .answerBtn{
+  &.blueTheme {
+    .answerBtn {
       background: white;
       color: black;
       &:hover {
@@ -236,7 +234,6 @@
     }
   }
 }
-
 
 @media (max-width: 730px) {
   .comment {

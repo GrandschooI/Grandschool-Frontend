@@ -6,6 +6,7 @@ import { Redirect, useLocation } from 'react-router-dom'
 import { getCourseData } from '../../../Redux/selectors/courseSelector'
 import { getFontSize, getThemeStyle } from '../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
+import { activeThemeStyle } from '../../../utils/scaffolding'
 import Aside from '../../common/Aside/Aside'
 
 import Chapters from './Chapters/Chapters'
@@ -20,7 +21,7 @@ const Course = () => {
   const fontSize = useAppSelector(getFontSize)
 
   return (
-    <div className={cn('container', s[themeStyle ? themeStyle : ''], 'course', s[fontSize])}>
+    <div className={cn('container', s[activeThemeStyle(themeStyle)], 'course', s[fontSize])}>
       {location === '/course' && <Redirect to={courseData[0].itemLink} />}
       <CourseHeader />
       <div className={s.courseBody}>

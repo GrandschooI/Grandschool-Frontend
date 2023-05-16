@@ -6,6 +6,7 @@ import { Form, Formik } from 'formik'
 import { useDispatch } from 'react-redux'
 import * as yup from 'yup'
 
+import { activeThemeStyle } from '../../../../../../utils/scaffolding'
 import FormErrorMessage from '../../../../../utils/FormErrorMessage/FormErrorMessage'
 
 import DatePickerWrapper from './DatePickerWrapper'
@@ -70,7 +71,7 @@ const ProfileInfoForm: FC<PropsType> = ({ initialProfileData }) => {
       }}
     >
       {({ touched, errors, values, handleChange }) => (
-        <Form className={cn(s.profileInfoForm, s[themeStyle ? themeStyle : ''], s[fontSize])}>
+        <Form className={cn(s.profileInfoForm, s[activeThemeStyle(themeStyle)], s[fontSize])}>
           <label className="formLabel">
             <div className={s.fullName}>
               <span>Full name</span>

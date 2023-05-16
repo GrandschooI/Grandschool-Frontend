@@ -505,12 +505,12 @@ address,
 @media (max-width: 1000px) {
   .footer {
     background-image: -webkit-image-set(
-                    url('../../assets/images/greenBg.png') 1x,
-                    url('../../assets/images/greenBgRetina.png') 2x
+      url('../../assets/images/greenBg.png') 1x,
+      url('../../assets/images/greenBgRetina.png') 2x
     );
     background-image: image-set(
-                    url('../../assets/images/greenBg.png') 1x,
-                    url('../../assets/images/greenBgRetina.png') 2x
+      url('../../assets/images/greenBg.png') 1x,
+      url('../../assets/images/greenBgRetina.png') 2x
     );
     background-position: 100% 80%;
     background-size: cover;

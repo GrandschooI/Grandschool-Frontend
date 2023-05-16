@@ -5,6 +5,7 @@ import cn from 'classnames'
 
 import { getThemeStyle } from '../../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../../utils/Hooks/useAppSelector'
+import { activeThemeStyle } from '../../../../utils/scaffolding'
 import LogoWordsWhiteThemeForLogin from '../../../SVGConponents/Forms/LogoWordsWhiteThemeForLogin'
 import LogoPicture from '../../../SVGConponents/Header/LogoPicture'
 import LogoPictureBlueThemeForLogin from '../../../SVGConponents/Header/LogoPictureBlueThemeForLogin'
@@ -25,7 +26,7 @@ const Popup: React.FC<PropsType> = ({ children, className = '' }) => {
   const themeStyle = useAppSelector(getThemeStyle)
 
   return (
-    <div className={cn(`${s.popupWrapper} ${className}`, themeStyle ? s[themeStyle] : '')}>
+    <div className={cn(`${s.popupWrapper} ${className}`, activeThemeStyle(themeStyle))}>
       <div className={cn(s.popupHeader, 'popupHeader')}>
         {!themeStyle && <LogoPicture />}
         {themeStyle === 'yellowTheme' && <LogoPictureYellowTheme />}

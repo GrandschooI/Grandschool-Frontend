@@ -3,6 +3,8 @@ import React from 'react'
 import cn from 'classnames'
 import { Redirect, Route, Switch } from 'react-router-dom'
 
+import { activeThemeStyle } from '../../utils/scaffolding'
+
 import AboutUs from './AboutUs/AboutUs'
 import s from './AppBody.module.scss'
 import AuthPage from './AuthPages/AuthPage'
@@ -30,7 +32,7 @@ const AppBody: React.FC<propsType> = ({ isHeaderChange }) => {
         s.appBody,
         isHeaderChange ? s.defaultBody : '',
         isOptionsOpen ? s.openedBlindOption : '',
-        s[themeStyle ? themeStyle : '']
+        s[activeThemeStyle(themeStyle)]
       )}
     >
       <Switch>

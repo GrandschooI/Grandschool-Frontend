@@ -4,6 +4,7 @@ import cn from 'classnames'
 import { NavLink } from 'react-router-dom'
 
 import { Nullable } from '../../../Redux/redux-toolkit-store'
+import { activeFontSize, activeThemeStyle } from '../../../utils/scaffolding'
 import s from '../../Header/Header.module.scss'
 import MobileAccountIcon from '../../SVGConponents/HeaderNav/MobileAccountIcon'
 
@@ -58,11 +59,7 @@ const HeaderNav: FC<PropsType> = ({
 
   const notMainNavLinks = (
     <div
-      className={cn(
-        s.notMainPageWrapper,
-        themeStyle ? s[themeStyle] : '',
-        fontSize ? s[fontSize] : ''
-      )}
+      className={cn(s.notMainPageWrapper, activeThemeStyle(themeStyle), activeFontSize(fontSize))}
     >
       <div className="container">
         <nav className={cn(s.headerNav, s.notMainPage)}>
@@ -78,7 +75,7 @@ const HeaderNav: FC<PropsType> = ({
   )
 
   const navPageLayout = isHeaderChange ? (
-    <nav className={cn(s.headerNav, themeStyle ? s[themeStyle] : '', fontSize ? s[fontSize] : '')}>
+    <nav className={cn(s.headerNav, activeThemeStyle(themeStyle), activeFontSize(fontSize))}>
       {mainNavLinks}
     </nav>
   ) : (

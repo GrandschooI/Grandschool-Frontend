@@ -23,6 +23,7 @@ import { useAppDispatch } from '../../../../Redux/redux-toolkit-store'
 import { getFontSize, getThemeStyle } from '../../../../Redux/selectors/styleSelector'
 import { getAuthStatus, getIsVerify } from '../../../../Redux/selectors/userSelector'
 import { useAppSelector } from '../../../../utils/Hooks/useAppSelector'
+import { activeFontSize, activeThemeStyle } from '../../../../utils/scaffolding'
 import { TextField } from '../../../common/Form/FormControls/FormControls'
 import Popup from '../../../common/PopupSection/Popup/Popup'
 import FacebookLoginIcon from '../../../SVGConponents/Forms/FacebookLoginIcon'
@@ -91,10 +92,10 @@ const LoginForm: React.FC<PropsType> = ({
         {({ errors, touched }) => (
           <Form
             className={cn(
-              themeStyle ? themeStyle : '',
-              s[themeStyle ? themeStyle : ''],
-              s[fontSize ? fontSize : ''],
-              [fontSize ? fontSize : '']
+              activeThemeStyle(themeStyle),
+              s[activeThemeStyle(themeStyle)],
+              s[activeFontSize(fontSize)],
+              [activeFontSize(fontSize)]
             )}
           >
             <label className={'formLabel'}>
@@ -169,10 +170,10 @@ const LoginForm: React.FC<PropsType> = ({
               {({ touched, errors }) => (
                 <Form
                   className={cn(
-                    themeStyle ? themeStyle : '',
-                    s[themeStyle ? themeStyle : ''],
-                    s[fontSize ? fontSize : ''],
-                    [fontSize ? fontSize : '']
+                    activeThemeStyle(themeStyle),
+                    s[activeThemeStyle(themeStyle)],
+                    s[activeFontSize(fontSize)],
+                    [activeFontSize(fontSize)]
                   )}
                 >
                   <label className={'formLabel'}>
@@ -222,8 +223,8 @@ const LoginForm: React.FC<PropsType> = ({
           className={cn(
             'overlay',
             s.resultForgotPassPopup,
-            themeStyle ? themeStyle : '',
-            s[themeStyle ? themeStyle : '']
+            activeThemeStyle(themeStyle),
+            s[activeThemeStyle(themeStyle)]
           )}
         >
           <Popup>

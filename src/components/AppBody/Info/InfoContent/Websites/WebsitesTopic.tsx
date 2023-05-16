@@ -4,6 +4,7 @@ import cn from 'classnames'
 
 import { getFontSize, getThemeStyle } from '../../../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../../../utils/Hooks/useAppSelector'
+import { activeFontSize, activeThemeStyle } from '../../../../../utils/scaffolding'
 
 import s from './Websites.module.scss'
 
@@ -33,7 +34,7 @@ const WebsitesTopic: React.FC<propsType> = ({ websitesData }) => {
     <>
       {/*{websitesData.category && <h2 className={s.websiteTopicName}>{websitesData.category}</h2>}*/}
       <li
-        className={cn(s.websitesItem, s[themeStyle ? themeStyle : ''], s[fontSize ? fontSize : ''])}
+        className={cn(s.websitesItem, s[activeThemeStyle(themeStyle)], s[activeFontSize(fontSize)])}
       >
         <svg
           width="25"

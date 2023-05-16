@@ -2,6 +2,8 @@ import React from 'react'
 
 import cn from 'classnames'
 
+import { activeThemeStyle } from '../../../../utils/scaffolding'
+
 import s from './CourseActivationContent.module.scss'
 import { useCourseActivation } from './useCourseActivation'
 
@@ -27,7 +29,7 @@ export const CourseActivationContent: React.FC<Partial<PropsType>> = ({ classNam
     <div
       className={cn(
         `${s.courseActivationContent} ${className}`,
-        themeStyle ? s[themeStyle] : '',
+        activeThemeStyle(themeStyle),
         s[fontSize]
       )}
     >

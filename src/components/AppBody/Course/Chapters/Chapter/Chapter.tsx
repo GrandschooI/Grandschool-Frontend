@@ -3,6 +3,8 @@ import React from 'react'
 import cn from 'classnames'
 import ReactPlayer from 'react-player/youtube'
 
+import { activeThemeStyle } from '../../../../../utils/scaffolding'
+
 import s from './Chapter.module.scss'
 
 import { getFontSize, getThemeStyle } from 'Redux/selectors/styleSelector'
@@ -13,7 +15,7 @@ const Chapter: React.FC<PropsType> = () => {
   const fontSize = useAppSelector(getFontSize)
 
   return (
-    <section className={cn(s.chapter, s[themeStyle ? themeStyle : ''], 'chapter', s[fontSize])}>
+    <section className={cn(s.chapter, s[activeThemeStyle(themeStyle)], 'chapter', s[fontSize])}>
       <ReactPlayer
         url="https://www.youtube.com/watch?v=S_zMbLa_nAE"
         controls={true}

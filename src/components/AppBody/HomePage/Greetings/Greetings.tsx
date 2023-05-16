@@ -5,6 +5,7 @@ import ReactPlayer from 'react-player/youtube'
 
 import { getThemeStyle } from '../../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../../utils/Hooks/useAppSelector'
+import { activeThemeStyle } from '../../../../utils/scaffolding'
 
 import s from './Greetings.module.scss'
 
@@ -12,7 +13,7 @@ const Greetings = () => {
   const themeStyle = useAppSelector(getThemeStyle)
 
   return (
-    <section className={cn(s.videoBlock, s[themeStyle ? themeStyle : ''])}>
+    <section className={cn(s.videoBlock, s[activeThemeStyle(themeStyle)])}>
       <ReactPlayer
         url="https://www.youtube.com/watch?v=S_zMbLa_nAE"
         controls={true}

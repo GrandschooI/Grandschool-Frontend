@@ -4,6 +4,7 @@ import cn from 'classnames'
 
 import { getFontSize, getThemeStyle } from '../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
+import { activeThemeStyle } from '../../../utils/scaffolding'
 
 import Popup from './Popup/Popup'
 import s from './PopupSection.module.scss'
@@ -23,7 +24,7 @@ export const PopupSection: React.FC<
       className={cn(
         `${s.popupSectionWrapper} ${className}`,
         'container',
-        themeStyle ? s[themeStyle] : '',
+        activeThemeStyle(themeStyle),
         s[fontSize]
       )}
     >

@@ -1,6 +1,6 @@
 .profileInfoForm {
   span {
-    transition: all .2s ease;
+    transition: all 0.2s ease;
   }
 
   max-width: 388px;
@@ -23,7 +23,7 @@
     resize: none;
     outline: none;
     font-family: 'Proba', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   }
 
   .btn {

@@ -4,6 +4,7 @@ import cn from 'classnames'
 
 import { getThemeStyle } from '../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
+import { activeThemeStyle } from '../../../utils/scaffolding'
 
 import s from './Preloader.module.scss'
 
@@ -11,9 +12,9 @@ const Preloader = () => {
   const themeStyle = useAppSelector(getThemeStyle)
 
   return (
-    <div className={cn(s.preloaderOverlay, s[themeStyle ? themeStyle : ''])}>
+    <div className={cn(s.preloaderOverlay, s[activeThemeStyle(themeStyle)])}>
       <svg
-        className={cn(s.preloader, s[themeStyle ? themeStyle : ''])}
+        className={cn(s.preloader, s[activeThemeStyle(themeStyle)])}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 32 32"
       >

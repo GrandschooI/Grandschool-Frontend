@@ -3,6 +3,7 @@ import React, { FC } from 'react'
 import cn from 'classnames'
 import { Field, Form, Formik } from 'formik'
 
+import { activeFontSize, activeThemeStyle } from '../../../../utils/scaffolding'
 import { Checkbox } from '../../../common/Form/FormControls/FormControls'
 
 import { CommentItem } from './CommentItem/CommentItem'
@@ -28,7 +29,7 @@ const Comments: FC = () => {
     >
       {({ isSubmitting }) => (
         <section
-          className={cn(s.comments, s[themeStyle ? themeStyle : ''], 'comments', s[fontSize])}
+          className={cn(s.comments, s[activeThemeStyle(themeStyle)], 'comments', s[fontSize])}
         >
           <div className={s.profile}>
             <img className={s.avatar} src={img} alt="profile image" />
@@ -51,8 +52,8 @@ const Comments: FC = () => {
             <label
               className={cn(
                 s.termsCheck,
-                [fontSize ? fontSize : ''],
-                [themeStyle ? themeStyle : '']
+                [activeFontSize(fontSize)],
+                [activeThemeStyle(themeStyle)]
               )}
             >
               <Checkbox

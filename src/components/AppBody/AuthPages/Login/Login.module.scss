@@ -10,7 +10,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   &:hover {
     text-decoration: underline;
   }
@@ -22,7 +22,7 @@
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 50px;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 .anotherTypeLoginBtnWrap {
   display: flex;
@@ -81,19 +81,19 @@
 .optionEnter {
   opacity: 0;
   transform: translate(1000px, 1000px);
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 .optionEnterActive {
   opacity: 1;
   transform: translate(0);
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 .optionExitActive {
   opacity: 0;
   transform: translate(1000px, 1000px);
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 .resultForgotPassPopup {
@@ -155,16 +155,16 @@
 .medium {
   .signWithTitle {
     font-size: 26px;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
   }
   .forgotPassword {
     font-size: 20px;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
   }
   .anotherTypeLoginBtnWrap {
     button {
       font-size: 20px;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
   }
 }
@@ -172,16 +172,16 @@
 .large {
   .signWithTitle {
     font-size: 28px;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
   }
   .forgotPassword {
     font-size: 22px;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
   }
   .anotherTypeLoginBtnWrap {
     button {
       font-size: 22px;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
     }
   }
 }

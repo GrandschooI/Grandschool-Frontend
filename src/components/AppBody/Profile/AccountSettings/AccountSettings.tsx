@@ -4,6 +4,7 @@ import cn from 'classnames'
 
 import { getFontSize, getThemeStyle } from '../../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../../utils/Hooks/useAppSelector'
+import { activeThemeStyle } from '../../../../utils/scaffolding'
 
 import s from './AccountSettings.module.scss'
 import ChangeEmailForm from './ChangeMailForm/ChangeEmailForm'
@@ -14,7 +15,7 @@ const AccountSettings = () => {
   const fontSize = useAppSelector(getFontSize)
 
   return (
-    <section className={cn(s.settingsWrap, s[themeStyle ? themeStyle : ''], s[fontSize])}>
+    <section className={cn(s.settingsWrap, s[activeThemeStyle(themeStyle)], s[fontSize])}>
       <h2 className={s.title}>Account Settings</h2>
       <ChangePasswordForm />
       <ChangeEmailForm />

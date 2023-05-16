@@ -4,6 +4,7 @@ import cn from 'classnames'
 
 import { getFontSize, getThemeStyle } from '../../../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../../../utils/Hooks/useAppSelector'
+import { activeThemeStyle } from '../../../../../utils/scaffolding'
 import Preloader from '../../../../utils/Preloader/Preloader'
 
 import ProfileImageForm from './ProfileImageForm/ProfileImageForm'
@@ -28,7 +29,7 @@ const ProfileInfo = () => {
   if (!userFromLocalstorage) return <Preloader />
 
   return (
-    <section className={cn(s.profileInfoWrap, s[themeStyle ? themeStyle : ''], s[fontSize])}>
+    <section className={cn(s.profileInfoWrap, s[activeThemeStyle(themeStyle)], s[fontSize])}>
       <h2 className={s.title}>Personal information</h2>
       <div className={s.formWrap}>
         <ProfileInfoForm

@@ -6,6 +6,7 @@ import { Redirect, Route, Switch } from 'react-router-dom'
 import { getInfoAboutUs } from '../../../Redux/selectors/infoSelector'
 import { getFontSize, getOptionsState, getThemeStyle } from '../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
+import { activeThemeStyle } from '../../../utils/scaffolding'
 import Aside from '../../common/Aside/Aside'
 
 import s from './AboutUs.module.scss'
@@ -23,7 +24,7 @@ const AboutUs = () => {
     <section
       className={cn(
         s.aboutUsSection,
-        s[themeStyle ? themeStyle : ''],
+        s[activeThemeStyle(themeStyle)],
         s[isOptionsOpen ? 'blindOptionsOpen' : ''],
         s[fontSize],
         'container'

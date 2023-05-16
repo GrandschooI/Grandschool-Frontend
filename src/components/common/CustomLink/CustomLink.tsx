@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom'
 
 import { getFontSize, getThemeStyle } from '../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
+import { activeThemeStyle } from '../../../utils/scaffolding'
 
 import s from './CustomLink.module.scss'
 
@@ -32,10 +33,13 @@ export const CustomLink: React.FC<Partial<PropsType>> = ({
   const finalClassName = `${s.customLinkDef} ${
     variant === 'invert' ? s.invert : s.default
   } ${className}`
-  const theme = themeStyle ? s[themeStyle] : ''
 
   return (
-    <NavLink to={to} {...restProps} className={cn(`${finalClassName}`, theme, s[fontSize])}>
+    <NavLink
+      to={to}
+      {...restProps}
+      className={cn(`${finalClassName}`, activeThemeStyle(themeStyle), s[fontSize])}
+    >
       {children}
     </NavLink>
   )

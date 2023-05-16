@@ -1,6 +1,6 @@
 .optionsBlock {
   background: #f6f6f6;
-
+  transition: all 0.2s ease;
   .button {
     cursor: pointer;
 
@@ -203,11 +203,11 @@
   font-weight: 500;
   line-height: 21px;
 
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 .pics {
-  transition: all .2s linear;
+  transition: all 0.2s linear;
 }
 
 .optionsBlock .button.small {
