@@ -1,13 +1,16 @@
 .newsWrap {
   position: relative;
+
   margin: 0;
-  background-size: cover;
+
   background: url('../../../../assets/images/features-top.png') bottom;
+  background-size: cover;
 }
 
 .yellowTheme {
-  background: #000;
   color: yellow;
+
+  background: #000;
 
   .featureTitle,
   .featureMainTitle {
@@ -47,8 +50,9 @@
 }
 
 .whiteTheme {
-  background: #fff;
   color: #000;
+
+  background: #fff;
 
   .featureTitle,
   .featureMainTitle {
@@ -60,8 +64,9 @@
   }
 
   .newsDescBlock {
-    background: #000;
     color: #fff;
+
+    background: #000;
   }
 
   .btnBlock {
@@ -97,8 +102,9 @@
 }
 
 .blueTheme {
-  background: #b8eefb;
   color: #273a64;
+
+  background: #b8eefb;
 
   .featureTitle,
   .featureMainTitle {
@@ -118,8 +124,9 @@
   }
 
   .newsDescBlock {
-    background: #273a64;
     color: #b8eefb;
+
+    background: #273a64;
   }
 
   .btnBlock {
@@ -156,147 +163,184 @@
 ul.newsList {
   display: flex;
   justify-content: space-between;
+
+  margin: 0;
   padding-top: 100px;
   padding-bottom: 75px;
-  margin: 0;
 }
 
 .newsItem {
+  position: relative;
+
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   width: 30%;
-  border-radius: 26px;
+
   background: #fff;
+  border-radius: 26px;
   box-shadow: 0 0 25px rgba(97, 129, 53, 0.1);
-  position: relative;
-  overflow: hidden;
+
   transition: all 0.2s ease-in-out;
 }
 
 .newsItemTitle {
   margin: 0 0 5px;
-  font-weight: 600;
+
   font-size: 24px;
+  font-weight: 600;
 }
 
 .newsPhotoWrap {
-  height: auto;
   overflow: hidden;
+
+  height: auto;
   padding: 25px;
 }
 
 .newsPhoto {
-  width: 100%;
   display: block;
-  border: 1px dashed #618135;
+
+  width: 100%;
   padding: 5px;
+
+  border: 1px dashed #618135;
   border-radius: 26px;
 }
 
 .newsDescBlock {
   flex-grow: 1;
+
   padding: 25px 30px;
+
   transition: all 0.2s linear;
 }
 
 .newsDescription {
-  font-weight: 400;
-  font-size: 18px;
   margin-top: 15px;
+
+  font-size: 18px;
+  font-weight: 400;
+
   transition: all 0.2s linear;
 }
 
 .btnBlock {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
-  padding: 5px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   min-height: 60px;
+  padding: 5px 20px;
+
   background-color: #618135;
 }
 
 .itemBtn {
+  transform: scale(1.5);
+
   display: flex;
-  justify-content: center;
   align-items: center;
-  border: none;
-  font-size: 16px;
-  height: 40px;
-  line-height: 30px;
-  margin: 0 10px 0 0;
-  text-align: center;
+  justify-content: center;
+
   width: 40px;
+  height: 40px;
+  margin: 0 10px 0 0;
+
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+
   opacity: 0;
   background: #f7f5ec;
-  transform: scale(1.5);
-  transition: all 0.2s linear;
+  border: none;
+
   fill: #31477c;
+
+  transition: all 0.2s linear;
 }
 
 .newsItem:hover .itemBtn {
-  opacity: 1;
   transform: scale(1);
+
+  opacity: 1;
   border-radius: 50%;
+
   transition: all 0.2s linear;
 }
 
 .newsItem:hover .btnBlock {
   background-color: #618135;
+
   transition: all 0.2s linear;
 }
 
 .btnBlock:before {
   content: '';
-  border-radius: 50%;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
   width: 50px;
   height: 50px;
-  position: absolute;
-  left: 0;
-  right: 0;
   margin: auto;
-  top: 0;
-  bottom: 0;
+
   background: url('../../../../assets/images/love-hand-drawn-heart-symbol-outline.svg') no-repeat
       center,
     #618135;
   background-size: 50%;
+  border-radius: 50%;
+
   transition: all 0.2s linear;
 }
 
 .newsItem:hover .btnBlock:before {
-  border-radius: 0;
   width: 100%;
+
   opacity: 0;
+  border-radius: 0;
+
   transition: all 0.2s linear;
 }
 
 .featureTitle {
-  display: block;
-  font-weight: 400;
-  letter-spacing: 3px;
-  color: #fd6ca3;
-  font-size: 14px;
-  text-align: center;
-  margin: 50px auto 25px;
   cursor: pointer;
+
+  display: block;
+
+  margin: 50px auto 25px;
+
+  font-size: 14px;
+  font-weight: 400;
+  color: #fd6ca3;
+  text-align: center;
+  letter-spacing: 3px;
+
   transition: 0.2s all ease;
 }
 
 .featureTitle:hover {
   color: #3a7b76;
+
   transition: 0.2s all ease;
 }
 
 .featureMainTitle {
-  color: #000;
-  font-weight: 600;
-  font-size: 36px;
-  line-height: 46px;
   margin: 160px 0 15px;
-  letter-spacing: normal;
+
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 46px;
+  color: #000;
   text-align: center;
+  letter-spacing: normal;
 }
 
 .featureMainTitle strong {
@@ -306,9 +350,10 @@ ul.newsList {
 .featureDesc {
   width: 90%;
   margin: auto;
-  text-align: center;
+
   font-size: 18px;
   line-height: 28px;
+  text-align: center;
 }
 
 @media (max-width: 1000px) {
@@ -318,28 +363,34 @@ ul.newsList {
   }
   .newsItem .btnBlock {
     background-color: #618135;
+
     transition: all 0.2s linear;
   }
   .newsItem .btnBlock:before {
-    border-radius: 0;
     width: 100%;
+
     opacity: 0;
+    border-radius: 0;
+
     transition: all 0.2s linear;
   }
   .newsItem .itemBtn {
-    opacity: 1;
     transform: scale(1);
+
+    opacity: 1;
     border-radius: 50%;
+
     transition: all 0.2s linear;
   }
 }
 
 @media (max-width: 768px) {
-  .newsList {
+  ul.newsList {
     flex-direction: column;
+
+    margin: 0;
     padding-top: 25px;
     padding-bottom: 25px;
-    margin: 0;
   }
   .newsItem {
     width: 100%;
@@ -348,15 +399,17 @@ ul.newsList {
     margin-bottom: 35px;
   }
   .featureMainTitle {
+    margin-top: 50px;
+    margin-bottom: 40px;
+
     font-size: 30px;
     line-height: 38px;
-    margin-bottom: 40px;
-    margin-top: 50px;
   }
   .featureDesc {
     width: 100%;
-    font-weight: 400;
+
     font-size: 18px;
+    font-weight: 400;
   }
   .featureItem {
     width: 100%;
@@ -380,9 +433,11 @@ ul.newsList {
   .featureTitle,
   .newsDescription {
     font-size: 20px;
+
     @media (max-width: 768px) {
       font-size: 14px;
     }
+
     @media (max-width: 425px) {
       font-size: 12px;
     }
@@ -390,11 +445,14 @@ ul.newsList {
   .featureMainTitle {
     font-size: 44px;
     line-height: 45px;
+
     transition: all 0.2s ease;
+
     @media (max-width: 768px) {
       font-size: 55px;
       line-height: 55px;
     }
+
     @media (max-width: 425px) {
       font-size: 35px;
       line-height: 35px;
@@ -402,19 +460,24 @@ ul.newsList {
   }
   .featureDesc {
     font-size: 20px;
+
     transition: all 0.2s ease;
+
     @media (max-width: 768px) {
       font-size: 18px;
     }
+
     @media (max-width: 425px) {
       font-size: 16px;
     }
   }
   .newsItemTitle {
     font-size: 26px;
+
     @media (max-width: 768px) {
       font-size: 20px;
     }
+
     @media (max-width: 425px) {
       font-size: 18px;
     }
@@ -425,9 +488,11 @@ ul.newsList {
   .featureTitle,
   .newsDescription {
     font-size: 22px;
+
     @media (max-width: 768px) {
       font-size: 16px;
     }
+
     @media (max-width: 425px) {
       font-size: 14px;
     }
@@ -435,11 +500,14 @@ ul.newsList {
   .featureMainTitle {
     font-size: 48px;
     line-height: 58px;
+
     transition: all 0.2s ease;
+
     @media (max-width: 768px) {
       font-size: 50px;
       line-height: 50px;
     }
+
     @media (max-width: 425px) {
       font-size: 40px;
       line-height: 40px;
@@ -447,6 +515,7 @@ ul.newsList {
   }
   .featureDesc {
     font-size: 22px;
+
     transition: all 0.2s ease;
   }
   .newsItemTitle {

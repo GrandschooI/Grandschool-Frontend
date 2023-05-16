@@ -13,6 +13,8 @@ const Project = () => {
 
   return (
     <div className={cn(s.projectBody, s[fontSize])}>
+      <h3 className={s.title}>O Grand School</h3>
+
       <p>
         Program szkoleniowy GrandSchool to wysokiej jakości system szkoleniowy dla seniorów. Program
         jest systemem nauczania seniorów podstaw obsługi komputera i Internetu.
@@ -23,7 +25,7 @@ const Project = () => {
           url="https://www.youtube.com/watch?v=S_zMbLa_nAE"
           controls={true}
           loop={true}
-          width={'861px'}
+          width={'100%'}
           height={'485px'}
         />
       </div>

@@ -3,16 +3,24 @@ import React from 'react'
 import cn from 'classnames'
 import ReactPlayer from 'react-player/youtube'
 
+import { activeThemeStyle } from '../../../../../utils/scaffolding'
+
 import s from './Chapter.module.scss'
 
+import { getFontSize, getThemeStyle } from 'Redux/selectors/styleSelector'
+import { useAppSelector } from 'utils/Hooks/useAppSelector'
+
 const Chapter: React.FC<PropsType> = () => {
+  const themeStyle = useAppSelector(getThemeStyle)
+  const fontSize = useAppSelector(getFontSize)
+
   return (
-    <section className={s.chapter}>
+    <section className={cn(s.chapter, s[activeThemeStyle(themeStyle)], 'chapter', s[fontSize])}>
       <ReactPlayer
         url="https://www.youtube.com/watch?v=S_zMbLa_nAE"
         controls={true}
         loop={true}
-        width={'861px'}
+        width={'100%'}
         height={'485px'}
         className={s.movie}
       />
@@ -53,15 +61,20 @@ const Chapter: React.FC<PropsType> = () => {
         <button className={cn(s.submitBtn, 'submitBtn')}>Завершить изучение главы</button>
       </div>
 
-      <div>
-        <p>Основные выводы</p>
-        Итак, сегодня мы узнали, зачем обычному человеку может быть нужен компьютер. Оказывается, в
-        каждом случае вы можете встретить проблемы, но всегда можно найти решение этих проблем и
-        применять компьютер с наибольшей эффективностью. Напишите в комментариях, как вы используете
-        компьютер, и какие темы вы бы хотели видеть в будущих IT-уроках.
+      <div className={s.inferenceWrapper}>
+        <p className={s.inferenceTitle}>Основные выводы</p>
+        <p className={s.inferenceText}>
+          Итак, сегодня мы узнали, зачем обычному человеку может быть нужен компьютер. Оказывается,
+          в каждом случае вы можете встретить проблемы, но всегда можно найти решение этих проблем и
+          применять компьютер с наибольшей эффективностью.
+        </p>
+        <p>
+          Напишите в комментариях, как вы используете компьютер, и какие темы вы бы хотели видеть в
+          будущих IT-уроках.
+        </p>
       </div>
 
-      <h3>Общение и обмен опытом (2 комментария):</h3>
+      <h3 className={s.commentsCount}>Общение и обмен опытом (2 комментария):</h3>
     </section>
   )
 }

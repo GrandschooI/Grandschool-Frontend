@@ -1,16 +1,19 @@
 import React from 'react'
 
 import cn from 'classnames'
-import { Form, Formik } from 'formik'
+import { Form, Formik, FormikErrors } from 'formik'
+import { FormikValues } from 'formik/dist/types'
 import * as yup from 'yup'
 
 import '../../../../style.scss'
 import 'react-toastify/dist/ReactToastify.css'
 import { Nullable } from '../../../../Redux/redux-toolkit-store'
+import { activeFontSize, activeThemeStyle } from '../../../../utils/scaffolding'
 import { TextField } from '../../../common/Form/FormControls/FormControls'
 import FormErrorMessage from '../../../utils/FormErrorMessage/FormErrorMessage'
 
 import s from './ForgotPassword.module.scss'
+
 const forgotPasswordSchema = yup.object().shape({
   forgotPasswordEmailField: yup
     .string()
@@ -22,10 +25,10 @@ const ForgotPassword: React.FC<propsType> = ({ onSubmit, themeStyle, fontSize })
   return (
     <Formik
       className={cn(
-        themeStyle ? themeStyle : '',
-        s[themeStyle ? themeStyle : ''],
-        s[fontSize ? fontSize : ''],
-        [fontSize ? fontSize : '']
+        activeThemeStyle(themeStyle),
+        s[activeThemeStyle(themeStyle)],
+        s[activeFontSize(fontSize)],
+        [activeFontSize(fontSize)]
       )}
       initialValues={{ forgotPasswordEmailField: '' }}
       validationSchema={forgotPasswordSchema}
@@ -68,7 +71,7 @@ const ForgotPassword: React.FC<propsType> = ({ onSubmit, themeStyle, fontSize })
 export default ForgotPassword
 
 type propsType = {
-  onSubmit: (formData: any) => void
+  onSubmit: (formData: FormikErrors<FormikValues>) => void
   themeStyle: Nullable<string>
   fontSize: Nullable<string>
 }

@@ -24,6 +24,7 @@
 
   .promisesItem {
     box-shadow: 0 0 0 rgba(2, 248, 212, 0.1);
+
     transition: all 0.2s ease;
     &:hover {
       box-shadow: 0 0 30px rgba(97, 129, 53, 0.1);
@@ -69,29 +70,35 @@
 }
 
 .promisesTitle {
-  display: block;
-  font-weight: 400;
-  letter-spacing: 3px;
-  color: #fd6ca3;
-  font-size: 14px;
-  text-align: center;
-  margin: 0 auto 25px;
   cursor: pointer;
-  transition: 0.3s all ease;
+
+  display: block;
+
+  margin: 0 auto 25px;
+
+  font-size: 14px;
+  font-weight: 400;
+  color: #fd6ca3;
+  text-align: center;
+  letter-spacing: 3px;
+
+  transition: 0.2s all ease;
 }
 
 .promisesTitle:hover {
   color: #3a7b76;
-  transition: 0.3s all ease;
+
+  transition: 0.2s all ease;
 }
 
 .promisesMainTitle {
-  color: #000;
+  margin: 25px 0 0;
+
   font-size: 36px;
   line-height: 46px;
-  margin: 25px 0 0;
-  letter-spacing: normal;
+  color: #000;
   text-align: center;
+  letter-spacing: normal;
 }
 
 .promisesMainTitle strong {
@@ -101,44 +108,57 @@
 .promisesDesc {
   width: 90%;
   margin: auto;
-  text-align: center;
+
   font-size: 18px;
   line-height: 28px;
+  text-align: center;
 }
 
 .promisesItem {
   display: flex;
   flex-direction: column;
+
   width: 24%;
   padding: 30px 25px;
+
   box-shadow: 0 0 0 rgba(97, 129, 53, 0.1);
+
   transition: all 0.2s ease;
   &:hover {
     transform: scale(1.01);
+
     box-shadow: 0 0 30px rgba(97, 129, 53, 0.1);
+
     transition: all 0.2s ease;
   }
 }
 
 .promisesIconWrap {
-  height: 85px;
-  width: 85px;
   position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  width: 85px;
+  height: 85px;
   &:before {
     content: '';
-    display: block;
+
     position: absolute;
+
+    display: block;
+
     width: 85px;
     height: 85px;
-    border-radius: 50%;
+
     background-color: #efffec;
+    border-radius: 50%;
   }
   .promisesIcon {
-    min-width: 60px;
     z-index: 1;
+
+    min-width: 60px;
   }
 }
 
@@ -152,27 +172,32 @@
 
 .promisesList {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
+
   margin: 60px 0;
 }
 
 .promisesItemTitle {
-  color: #000;
   position: relative;
+
   margin: 35px 0 15px;
   padding: 0 0 15px 0;
-  text-transform: capitalize;
-  transition: all 0.2s linear;
+
   font-size: 24px;
   line-height: 33px;
+  color: #000;
+  text-transform: capitalize;
   letter-spacing: 0.5px;
+
+  transition: all 0.2s linear;
 }
 
 @media (max-width: 1000px) {
   .promisesMainTitle {
-    font-size: 45px;
     margin-top: 50px;
+
+    font-size: 45px;
   }
   .promisesItem {
     width: 45%;
@@ -181,26 +206,31 @@
 
 @media (max-width: 768px) {
   .promisesMainTitle {
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 45px;
     margin-top: 50px;
     margin-bottom: 40px;
+
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 45px;
   }
   .promisesDesc {
     width: 100%;
+
     font-size: 16px;
   }
   .promisesList {
     display: none;
   }
   .promisesItem {
+    transform: scale(0.9);
+
     width: auto;
     min-height: inherit;
-    transform: scale(0.9);
+
     box-shadow: 0 0 30px rgba(97, 129, 53, 0.1);
     &:hover {
       transform: scale(0.9);
+
       box-shadow: 0 0 30px rgba(97, 129, 53, 0.1);
     }
   }
@@ -229,9 +259,11 @@
   .promisesTitle,
   .promisesText p {
     font-size: 20px;
+
     @media (max-width: 768px) {
       font-size: 14px;
     }
+
     @media (max-width: 425px) {
       font-size: 12px;
     }
@@ -239,11 +271,14 @@
   .promisesMainTitle {
     font-size: 40px;
     line-height: 50px;
+
     transition: all 0.2s ease;
+
     @media (max-width: 768px) {
       font-size: 55px;
       line-height: 55px;
     }
+
     @media (max-width: 425px) {
       font-size: 35px;
       line-height: 35px;
@@ -251,18 +286,22 @@
   }
   .promisesDesc {
     font-size: 20px;
+
     @media (max-width: 768px) {
       font-size: 18px;
     }
+
     @media (max-width: 425px) {
       font-size: 16px;
     }
   }
   .promisesItemTitle {
     font-size: 27px;
+
     @media (max-width: 768px) {
       font-size: 16px;
     }
+
     @media (max-width: 425px) {
       font-size: 14px;
     }
@@ -273,10 +312,12 @@
   .promisesTitle,
   .promisesText p {
     font-size: 24px;
+
     @media (max-width: 768px) {
       font-size: 16px;
       line-height: 16px;
     }
+
     @media (max-width: 425px) {
       font-size: 14px;
       line-height: 14px;
@@ -285,11 +326,14 @@
   .promisesMainTitle {
     font-size: 44px;
     line-height: 55px;
+
     transition: all 0.2s ease;
+
     @media (max-width: 768px) {
       font-size: 50px;
       line-height: 50px;
     }
+
     @media (max-width: 425px) {
       font-size: 40px;
       line-height: 40px;
@@ -297,18 +341,22 @@
   }
   .promisesDesc {
     font-size: 22px;
+
     @media (max-width: 768px) {
       font-size: 20px;
     }
+
     @media (max-width: 425px) {
       font-size: 18px;
     }
   }
   .promisesItemTitle {
     font-size: 30px;
+
     @media (max-width: 768px) {
       font-size: 18px;
     }
+
     @media (max-width: 425px) {
       font-size: 16px;
     }

@@ -4,11 +4,21 @@
 }
 
 .projectBody {
-  width: 70%;
+  flex-grow: 1;
   margin-left: 40px;
-  font-weight: 400;
+
   font-size: 18px;
+  font-weight: 400;
   line-height: 20px;
+
+  h3.title {
+    margin: 0 0 25px 0;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 36px;
+    text-transform: capitalize;
+    color: #618135;
+  }
 
   & > p:first-child {
     margin-top: 0;
@@ -25,17 +35,4 @@ p {
 
 .large {
   font-size: 22px;
-}
-
-@media (min-width: 985px) and (max-width: 1280px) {
-  .projectBody {
-    margin-left: 41px;
-  }
-}
-
-@media (max-width: 1280px) {
-  .projectBody {
-    margin: 20px auto;
-    width: 90%;
-  }
 }

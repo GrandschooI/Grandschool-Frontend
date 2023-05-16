@@ -1,4 +1,5 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { AnyAction, configureStore, ThunkDispatch } from '@reduxjs/toolkit'
+import { useDispatch } from 'react-redux'
 import { Action } from 'redux'
 import thunkMiddleware, { ThunkAction } from 'redux-thunk'
 
@@ -21,7 +22,7 @@ export type AppStateType = ReturnType<typeof store.getState>
 export default store
 
 export type Nullable<T> = null | T
-export type InferActionType<T> = T extends { [key: string]: (...args: any[]) => infer U }
+export type InferActionType<T> = T extends { [key: string]: (...args: void[]) => infer U }
   ? U
   : never
 export type BaseThunkType<A extends Action, R = Promise<void>> = ThunkAction<
@@ -30,3 +31,5 @@ export type BaseThunkType<A extends Action, R = Promise<void>> = ThunkAction<
   unknown,
   A
 >
+type AppDispatch = ThunkDispatch<AppStateType, void, AnyAction>
+export const useAppDispatch: () => AppDispatch = useDispatch

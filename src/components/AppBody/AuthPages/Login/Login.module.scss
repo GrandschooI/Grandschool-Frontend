@@ -10,7 +10,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   &:hover {
     text-decoration: underline;
   }
@@ -22,13 +22,12 @@
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 50px;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 .anotherTypeLoginBtnWrap {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
   .anotherTypeLogin {
     display: flex;
     align-items: center;
@@ -49,6 +48,24 @@
       margin-right: 15px;
     }
   }
+  @media (max-width: 470px) {
+    span {
+      button {
+        font-size: 0 !important;
+      }
+    }
+    button {
+      div {
+        margin-left: 10px;
+        svg {
+          padding-left: 1px;
+        }
+      }
+      span {
+        font-size: 0 !important;
+      }
+    }
+  }
 }
 
 .popupBtnWrapper {
@@ -64,19 +81,19 @@
 .optionEnter {
   opacity: 0;
   transform: translate(1000px, 1000px);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .optionEnterActive {
   opacity: 1;
   transform: translate(0);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .optionExitActive {
   opacity: 0;
   transform: translate(1000px, 1000px);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .resultForgotPassPopup {
@@ -122,7 +139,6 @@
 }
 
 .blueTheme {
-  background-color: #e5f9ff;
   .forgotPassword {
     color: #273a64;
   }
@@ -139,16 +155,16 @@
 .medium {
   .signWithTitle {
     font-size: 26px;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
   }
   .forgotPassword {
     font-size: 20px;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
   }
   .anotherTypeLoginBtnWrap {
     button {
       font-size: 20px;
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
     }
   }
 }
@@ -156,16 +172,16 @@
 .large {
   .signWithTitle {
     font-size: 28px;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
   }
   .forgotPassword {
     font-size: 22px;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
   }
   .anotherTypeLoginBtnWrap {
     button {
       font-size: 22px;
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
     }
   }
 }

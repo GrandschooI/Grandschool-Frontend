@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom'
 
 import { topicType } from '../../../../Redux/reducers/courseSlice'
 import { Nullable } from '../../../../Redux/redux-toolkit-store'
+import { activeFontSize, activeThemeStyle } from '../../../../utils/scaffolding'
 
 import s from './AsideItem.module.scss'
 import AsideItemWithoutTopics from './AsideItemWithoutTopics'
@@ -21,7 +22,7 @@ const AsideItem: React.FC<PropsType> = ({ itemTitle, itemLink, topics, themeStyl
   }, [location, itemLink])
 
   return (
-    <li className={cn(s.asideItem, s[themeStyle ? themeStyle : ''], s[fontSize ? fontSize : ''])}>
+    <li className={cn(s.asideItem, s[activeThemeStyle(themeStyle)], s[activeFontSize(fontSize)])}>
       {!topics ? (
         <AsideItemWithoutTopics itemTitle={itemTitle} itemLink={itemLink} location={location} />
       ) : (
@@ -41,7 +42,7 @@ const AsideItem: React.FC<PropsType> = ({ itemTitle, itemLink, topics, themeStyl
 export default AsideItem
 
 type PropsType = {
-  itemTitle: string
+  itemTitle: Nullable<string>
   itemLink: string
   topics?: Array<topicType>
   themeStyle: Nullable<string>

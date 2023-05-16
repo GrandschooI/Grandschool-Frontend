@@ -6,10 +6,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: padding 0.3s ease;
+  transition: padding 0.2s ease;
+  &.blindOptionsOpen {
+    padding-top: 288px;
+  }
 }
 
 .authWrapper {
+  margin: 0 auto;
   width: 700px;
   border-radius: 25px;
   overflow: hidden;
@@ -36,17 +40,12 @@
       color: #000;
       text-decoration: none;
       border-bottom: 2px solid #eaeaea;
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
       &.active {
         border-color: #31477c;
       }
     }
   }
-}
-
-.authBackground.blindOptionsOpen {
-  padding-top: 298px;
-  transition: all 0.3s ease;
 }
 
 .authBackground.yellowTheme {
@@ -62,7 +61,7 @@
       a {
         color: yellow;
         border-color: #000;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
         &.active {
           border-color: aqua;
         }
@@ -76,7 +75,7 @@
     .authSwitcherWrapper {
       a {
         font-size: 26px;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
       }
     }
   }
@@ -86,7 +85,7 @@
     .authSwitcherWrapper {
       a {
         font-size: 28px;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
       }
     }
   }
@@ -115,7 +114,7 @@
 .authBackground.blueTheme {
   background: #afe2ef;
   .authWrapper {
-    background: #e5f9ff;
+    background: #fff;
     .authHeader {
       background: #afe2ef;
     }
@@ -123,9 +122,9 @@
       background: transparent;
       a {
         color: #273a64;
-        border-color: #fff;
+        border-color: #273a64;
         &.active {
-          border-color: #273a64;
+          border-color: #afe2ef;
         }
       }
     }
@@ -143,7 +142,6 @@
     padding-top: 155px;
     .authWrapper {
       width: calc(100% - 30px);
-      margin: 0 auto;
       .authHeader {
         svg:first-child {
           width: 55px;

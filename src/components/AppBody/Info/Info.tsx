@@ -8,6 +8,7 @@ import { getWebsitesCategoryThunkCreator } from '../../../Redux/reducers/infoSli
 import { getInfoMenu } from '../../../Redux/selectors/infoSelector'
 import { getFontSize, getThemeStyle } from '../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
+import { activeFontSize, activeThemeStyle } from '../../../utils/scaffolding'
 import Aside from '../../common/Aside/Aside'
 
 import s from './Info.module.scss'
@@ -17,7 +18,7 @@ const Info = () => {
   const dispatch = useDispatch()
   const themeStyle = useAppSelector(getThemeStyle)
   const fontSize = useAppSelector(getFontSize)
-  const infoAsideItems: asideItemsType = useAppSelector(getInfoMenu)
+  const infoAsideItems = useAppSelector(getInfoMenu)
   let defaultLinkForRedirect = null
 
   useEffect(() => {
@@ -32,8 +33,8 @@ const Info = () => {
       className={cn(
         'container',
         s.infoWrapper,
-        s[themeStyle ? themeStyle : ''],
-        s[fontSize ? fontSize : '']
+        s[activeThemeStyle(themeStyle)],
+        s[activeFontSize(fontSize)]
       )}
     >
       <h1>Info</h1>
@@ -49,5 +50,3 @@ const Info = () => {
 }
 
 export default Info
-
-type asideItemsType = Array<any>

@@ -6,6 +6,7 @@ import { NavLink, useHistory } from 'react-router-dom'
 import notFoundNumber from '../../../assets/images/404.png'
 import { getFontSize, getThemeStyle } from '../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
+import { activeFontSize, activeThemeStyle } from '../../../utils/scaffolding'
 
 import s from './NotFoundPage.module.scss'
 
@@ -19,9 +20,9 @@ const NotFound = () => {
     <section
       className={cn(
         s.notFoundWrapper,
-        s[themeStyle ? themeStyle : ''],
-        themeStyle ? themeStyle : '',
-        s[fontSize ? fontSize : '']
+        s[activeThemeStyle(themeStyle)],
+        activeThemeStyle(themeStyle),
+        s[activeFontSize(fontSize)]
       )}
     >
       <div className={cn(s.contentWrap, 'container')}>

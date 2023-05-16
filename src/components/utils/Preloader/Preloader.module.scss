@@ -7,13 +7,12 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 1000;
+  z-index: 99999;
   background: #ffffffd9;
 
   .preloader {
     width: 400px;
     height: 100px;
-    position: absolute;
 
     circle {
       stroke: #618135;
@@ -44,14 +43,13 @@
   }
 }
 
-
 .blueTheme {
-  background-color: #273a64;
+  background-color: #afe2ef;
   opacity: 0.9;
 
   .preloader {
     circle {
-      stroke: #afe2ef;
+      stroke: #273a64;
     }
   }
 }

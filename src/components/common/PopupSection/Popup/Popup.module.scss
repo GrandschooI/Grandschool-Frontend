@@ -9,8 +9,8 @@
 }
 
 .blueTheme {
-  --background-theme: #273a64;
-  --color-theme: #273a64;
+  --background-theme: #aee2ef;
+  --color-theme: #273a64ff;
 }
 
 .popupWrapper {
@@ -20,7 +20,7 @@
   overflow: hidden;
   background: #fff;
   box-shadow: 0 0 30px rgba(97, 129, 53, 0.1);
-  //padding: 0 0 60px 0;
+  padding-bottom: 80px;
   .popupHeader {
     display: flex;
     align-items: center;
@@ -46,7 +46,6 @@
 
   &.whiteTheme {
     background: var(--background-theme);
-    border: 1px solid white;
 
     .popupHeader {
       background: var(--background-theme);
@@ -54,10 +53,8 @@
   }
 
   &.blueTheme {
-    //background: var(--background-theme);
-
     .popupHeader {
-      background: var(--background-theme);
+      background-color: #273a64ff;
     }
   }
 }

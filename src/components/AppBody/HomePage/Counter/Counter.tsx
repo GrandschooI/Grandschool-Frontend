@@ -9,6 +9,7 @@ import {
   getThemeStyle,
 } from '../../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../../utils/Hooks/useAppSelector'
+import { activeFontSize, activeThemeStyle } from '../../../../utils/scaffolding'
 
 import s from './Counter.module.scss'
 
@@ -19,7 +20,7 @@ const Counter = () => {
 
   return (
     <section
-      className={cn(s[themeStyle ? themeStyle : ''], s.counterBlock, s[fontSize ? fontSize : ''])}
+      className={cn(s[activeThemeStyle(themeStyle)], s.counterBlock, s[activeFontSize(fontSize)])}
     >
       <div className={cn('container', s.counterContainer)}>
         <div>
@@ -29,7 +30,7 @@ const Counter = () => {
             единомышлия простым движением руки - нажав на кнопку “Задонатить”
           </p>
           <a
-            className={s[themeStyle ? themeStyle : '']}
+            className={s[activeThemeStyle(themeStyle)]}
             href="https://zrzutka.pl/znu2ed"
             rel="noreferrer"
             target="_blank"

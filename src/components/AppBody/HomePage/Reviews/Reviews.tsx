@@ -27,7 +27,10 @@ import LogoWordsYellowTheme from '../../../SVGConponents/Header/LogoWordsYellowT
 import QuotesIcon from '../../../SVGConponents/Reviews/QuotesIcon'
 
 import s from './Reviews.module.scss'
+
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
+// eslint-disable-next-line import/order
+import { activeFontSize, activeThemeStyle } from '../../../../utils/scaffolding'
 
 const Reviews = () => {
   const images = useAppSelector(getImgAvailability)
@@ -41,9 +44,9 @@ const Reviews = () => {
     <section
       className={cn(
         s.reviewsBlock,
-        themeStyle ? s[themeStyle] : '',
+        activeThemeStyle(themeStyle),
         s[withoutImgClass],
-        fontSize ? s[fontSize] : ''
+        activeFontSize(fontSize)
       )}
     >
       <div className={'container'}>

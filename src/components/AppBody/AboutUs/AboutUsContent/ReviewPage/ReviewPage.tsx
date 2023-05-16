@@ -9,6 +9,7 @@ import feedBackImgWebp from '../../../../../assets/images/webp/feedbackIMG.webp'
 import { getFontSize, getThemeStyle } from '../../../../../Redux/selectors/styleSelector'
 import { getAuthStatus } from '../../../../../Redux/selectors/userSelector'
 import { useAppSelector } from '../../../../../utils/Hooks/useAppSelector'
+import { activeThemeStyle } from '../../../../../utils/scaffolding'
 
 import ReviewList from './ReviewList/ReviewList'
 import s from './ReviewPage.module.scss'
@@ -19,7 +20,7 @@ const ReviewPage = () => {
   const themeStyle = useAppSelector(getThemeStyle)
   const fontSize = useAppSelector(getFontSize)
   const changeTheme = (name: string) =>
-    cn(name, s[themeStyle ? themeStyle : ''], [themeStyle ? themeStyle : ''], s[fontSize])
+    cn(name, s[activeThemeStyle(themeStyle)], [activeThemeStyle(themeStyle)], s[fontSize])
 
   const reviewBody = changeTheme(s.reviewBody)
   const reviewTitle = changeTheme(s.reviewTitle)
@@ -41,7 +42,12 @@ const ReviewPage = () => {
           alt="Feedback background"
         />
       </div>
-      {isAuth ? <ReviewsForm /> : <NavLink to={'/registration'}>go to register</NavLink>}
+      {isAuth && <ReviewsForm />}
+      {!isAuth && (
+        <NavLink className={cn('submitBtn', s.link)} to={'/registration'}>
+          Go to registration
+        </NavLink>
+      )}
       <ReviewList />
     </div>
   )

@@ -6,7 +6,7 @@ import { reviewsAPI } from '../../api/reviewsAPI'
 
 import { toggleIsLoaded } from './styleSlice'
 
-const initialState = {
+const initialState: initialInfoStateType = {
   aboutUs: [
     {
       itemLink: '/about-us/project',
@@ -25,7 +25,7 @@ const initialState = {
     {
       itemLink: '/info/websites',
       itemTitle: 'Websites',
-      topics: [] as any,
+      topics: [] as Array<topicType>,
     },
   ],
   reviews: {
@@ -97,8 +97,10 @@ export const getWebsitesThunkCreator = (category: string) => {
       .then((response: Array<WebsiteItemType>) => {
         dispatch(setWebsites(response))
       })
-      .catch((error: any) => {
-        console.log(error)
+      .catch(error => {
+        if (error instanceof ReferenceError) {
+          console.log(error.message)
+        }
       })
   }
 }
@@ -117,8 +119,10 @@ export const getWebsitesCategoryThunkCreator = () => {
 
         dispatch(setWebsiteCategories(websiteCategories))
       })
-      .catch((error: any) => {
-        console.log(error)
+      .catch(error => {
+        if (error instanceof ReferenceError) {
+          console.log(error.message)
+        }
       })
       .finally(() => {
         dispatch(toggleIsLoaded({ isLoaded: true }))
@@ -131,8 +135,10 @@ export const sendFeedbackReviewsThunkCreator = (reviewsFormData: sendFeedbackTyp
     dispatch(toggleIsLoaded({ isLoaded: false }))
     try {
       await reviewsAPI.sendFeedback(reviewsFormData)
-    } catch (error: any) {
-      console.log(error)
+    } catch (error) {
+      if (error instanceof ReferenceError) {
+        console.log(error.message)
+      }
     } finally {
       dispatch(toggleIsLoaded({ isLoaded: true }))
     }
@@ -145,8 +151,10 @@ export const getReviewsThunkCreator = (page: number) => {
       const response = await reviewsAPI.getFeedback(page)
 
       dispatch(setReviewsData(response.data.data))
-    } catch (error: any) {
-      console.log(error)
+    } catch (error) {
+      if (error instanceof ReferenceError) {
+        console.log(error.message)
+      }
     }
   }
 }
@@ -155,13 +163,47 @@ export default infoSlice.reducer
 export const { setWebsites, setWebsiteCategories, setReviewsData } = infoSlice.actions
 
 // Types
+export type infoPageAsideMenuType = {
+  itemLink: string
+  itemTitle: string
+  topics: Array<topicType>
+}
+
+export type initialInfoStateType = {
+  aboutUs: [
+    {
+      itemLink: string
+      itemTitle: string
+    },
+    {
+      itemLink: string
+      itemTitle: string
+    },
+    {
+      itemLink: string
+      itemTitle: string
+    }
+  ]
+  infoPageAsideMenu: Array<infoPageAsideMenuType>
+  reviews: {
+    records: Array<reviewsRecordsType>
+    meta: reviewsMetaType
+  }
+
+  websites: Array<WebsiteItemType>
+}
 
 type websitesActionType = Array<WebsiteItemType>
-type websiteCategoriesActionType = Array<any>
+type topicType = {
+  topicTitle: string
+  topicLink: string
+}
+type websiteCategoriesActionType = Array<topicType>
 export type reviewsDataType = {
   records: Array<reviewsRecordsType>
   meta: reviewsMetaType
 }
+
 export type reviewsRecordsType = {
   id: number
   user: {
@@ -204,7 +246,7 @@ export type reviewsMetaType = {
 }
 export type sendFeedbackType = {
   user_id?: number
-  assessment: number | string
+  assessment: string
   text: string
   attachment?: null | File
 }

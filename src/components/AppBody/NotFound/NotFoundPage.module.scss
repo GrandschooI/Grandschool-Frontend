@@ -1,25 +1,29 @@
 .notFoundWrapper {
   display: flex;
   align-items: center;
-  padding-top: 90px;
+
   min-height: 100vh;
+  padding-top: 90px;
+
   background: url('../../../assets/images/reviews.png') bottom no-repeat;
   background-size: cover;
 
   .contentWrap {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     .notFoundNumber {
       position: relative;
-      font-weight: 600;
+
       font-size: 240px;
+      font-weight: 600;
       line-height: 240px;
-      letter-spacing: 0.195em;
       color: #cccccc;
-      transition: all 0.3s ease;
+      letter-spacing: 0.195em;
+
+      transition: all 0.2s ease;
       img {
         position: absolute;
         top: 50%;
@@ -29,58 +33,65 @@
     }
 
     h1 {
-      font-style: normal;
-      font-weight: 400;
+      margin: 20px auto 15px;
+
       font-size: 44px;
+      font-weight: 400;
+      font-style: normal;
       line-height: 44px;
       color: #5d5d5d;
-      margin: 20px auto 15px;
-      transition: all 0.3s ease;
+
+      transition: all 0.2s ease;
     }
 
     p {
-      font-style: normal;
-      font-weight: 400;
+      margin-bottom: 22px;
+
       font-size: 20px;
+      font-weight: 400;
+      font-style: normal;
       line-height: 20px;
       color: #5d5d5d;
-      margin-bottom: 22px;
-      transition: all 0.3s ease;
+
+      transition: all 0.2s ease;
     }
 
     .buttonWrap {
       display: flex;
       justify-content: space-between;
+
       min-width: 450px;
       button,
       a {
         width: 45%;
+
         text-align: center;
         text-decoration: none;
       }
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 1000px) {
       .notFoundNumber {
         font-size: 155px;
       }
       h1 {
-        font-weight: 400;
         font-size: 35px;
+        font-weight: 400;
         line-height: 35px;
       }
       p {
-        font-weight: 400;
         font-size: 20px;
+        font-weight: 400;
         line-height: 20px;
         text-align: center;
       }
       .buttonWrap {
-        max-width: 100%;
         min-width: 320px;
+        max-width: 100%;
         button,
         a {
           width: 45%;
+
           white-space: nowrap;
         }
       }
@@ -128,15 +139,18 @@
   &.medium {
     .notFoundNumber {
       font-size: 270px;
-      transition: all 0.3s ease;
+
+      transition: all 0.2s ease;
     }
     h1 {
       font-size: 46px;
-      transition: all 0.3s ease;
+
+      transition: all 0.2s ease;
     }
     p {
       font-size: 22px;
-      transition: all 0.3s ease;
+
+      transition: all 0.2s ease;
     }
     .buttonWrap {
       button,
@@ -148,15 +162,18 @@
   &.large {
     .notFoundNumber {
       font-size: 280px;
-      transition: all 0.3s ease;
+
+      transition: all 0.2s ease;
     }
     h1 {
       font-size: 48px;
-      transition: all 0.3s ease;
+
+      transition: all 0.2s ease;
     }
     p {
       font-size: 24px;
-      transition: all 0.3s ease;
+
+      transition: all 0.2s ease;
     }
     .buttonWrap {
       button,

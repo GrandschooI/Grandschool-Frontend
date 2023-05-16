@@ -1,0 +1,268 @@
+.wrapper {
+  border-bottom: 1px solid #c4c4c4;
+  margin-bottom: 25px;
+
+  &.whiteTheme {
+    background: black;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 30px;
+
+    .btnAnswer {
+      color: white;
+    }
+
+    .answerBtn {
+      background: transparent;
+      border: 1px solid white;
+
+      &:hover {
+        background: white;
+        color: black;
+      }
+    }
+
+    .answers {
+      &::before {
+        background-color: white;
+      }
+    }
+  }
+
+  &.yellowTheme {
+    background: #191901;
+    color: yellow;
+    margin-top: 30px;
+    border-bottom: 1px solid yellow;
+    padding: 10px;
+    border-radius: 10px;
+    .answers {
+      &::before {
+        background-color: yellow;
+      }
+    }
+  }
+
+  &.blueTheme {
+    margin-top: 30px;
+    background: #b8eefb;
+    padding: 10px;
+    color: #273a64;
+    border-radius: 10px;
+    .answers {
+      &::before {
+        background-color: #273a64;
+      }
+    }
+  }
+
+  &.large {
+    font-size: 20px;
+  }
+
+  &.medium {
+    font-size: 18px;
+  }
+}
+
+.wrapper + .wrapper:last-child {
+  border: none;
+
+  &.yellowTheme {
+    border-bottom: 1px solid yellow;
+  }
+}
+
+.answers {
+  position: relative;
+  margin-left: 46px;
+
+  &::before {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 2px;
+    background-color: #618135;
+    top: 0;
+    left: -6px;
+  }
+}
+
+.comment {
+  p {
+    margin: 0;
+  }
+
+  display: flex;
+  margin-bottom: 28px;
+
+  &.whiteTheme {
+    .name,
+    .time {
+      color: white;
+    }
+  }
+
+  &.yellowTheme {
+    .name,
+    .time {
+      color: rgb(0, 255, 255);
+    }
+
+    textarea {
+      background: #191901;
+      border: 1px solid yellow;
+      color: yellow;
+
+      &::placeholder {
+        color: yellow;
+      }
+    }
+
+    button {
+      color: rgb(0, 255, 255);
+    }
+
+    .answerBtn {
+      background: transparent;
+      border: 1px solid rgb(0, 255, 255);
+    }
+  }
+
+  &.blueTheme {
+  }
+
+  &.large {
+    font-size: 20px;
+  }
+
+  &.medium {
+    font-size: 18px;
+  }
+}
+
+.profileWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 0 0 7px;
+}
+
+.avatar {
+  width: 34px;
+  min-width: 34px;
+  margin-top: -7px;
+  height: 33px;
+  border-radius: 30px;
+}
+
+.profileInfo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 7px 0;
+
+  .name {
+    font-weight: 600;
+    color: #31477c;
+  }
+
+  .time {
+    font-weight: 500;
+    color: #666666;
+  }
+}
+
+.textWrapper {
+  .text {
+    margin: 5px 0;
+    overflow-wrap: anywhere;
+  }
+
+  .btnAnswer {
+    padding: 0;
+    border: none;
+    color: #31477c;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: inherit;
+    margin-top: 7px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.answer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin-top: 10px;
+
+  .answerTextarea {
+    width: 100%;
+    resize: none;
+    padding: 15px 8px 15px 15px;
+    font-size: inherit;
+  }
+
+  .answerBtn {
+    font-weight: 600;
+    font-size: inherit;
+    line-height: 23px;
+    width: 150px;
+    height: 50px;
+    border-radius: 50px;
+    background: #618135;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s linear;
+  }
+  &.blueTheme {
+    .answerBtn {
+      background: white;
+      color: black;
+      &:hover {
+        background: #b8eefb;
+        color: #273a64;
+        border: 1px solid #273a64;
+      }
+    }
+  }
+}
+
+@media (max-width: 730px) {
+  .comment {
+    padding-bottom: 0;
+    margin-bottom: 20px;
+  }
+  .wrapper {
+    margin-bottom: 20px;
+  }
+
+  .textWrapper {
+    .text {
+      margin: 8px 0;
+    }
+  }
+
+  .textWrapper {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 425px) {
+  .textWrapper {
+    margin-left: -40px;
+  }
+  .answers {
+    margin-left: 7px;
+  }
+  .answers .textWrapper {
+    margin-left: 0;
+  }
+}

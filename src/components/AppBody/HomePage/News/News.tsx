@@ -15,6 +15,7 @@ import {
   getThemeStyle,
 } from '../../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../../utils/Hooks/useAppSelector'
+import { activeFontSize, activeThemeStyle } from '../../../../utils/scaffolding'
 
 import s from './News.module.scss'
 
@@ -25,7 +26,7 @@ const News = () => {
 
   return (
     <section
-      className={cn(s.newsWrap, s[fontSize ? fontSize : ''], s[themeStyle ? themeStyle : ''])}
+      className={cn(s.newsWrap, s[activeFontSize(fontSize)], s[activeThemeStyle(themeStyle)])}
     >
       <div className={'container'}>
         <h2 className={s.featureMainTitle}>

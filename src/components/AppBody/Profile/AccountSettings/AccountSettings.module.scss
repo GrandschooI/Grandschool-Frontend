@@ -2,26 +2,12 @@
   margin-left: 40px;
 
   h2 {
-    transition: all .3s ease;
+    transition: all 0.2s ease;
     margin-top: 0;
     font-size: 28px;
     line-height: 36px;
     text-transform: capitalize;
     color: #618135;
-  }
-}
-
-@media(max-width: 1200px) {
-  .title {
-    position: absolute;
-    top: 580px;
-    left: 40%;
-  }
-}
-
-@media(min-width: 374px) and (max-width: 500px) {
-  .title {
-    left: 25%;
   }
 }
 

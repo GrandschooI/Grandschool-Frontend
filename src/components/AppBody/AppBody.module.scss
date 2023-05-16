@@ -1,12 +1,25 @@
 .openedBlindOption {
-  padding-top: 88px;
+  padding-top: 288px;
+  transition: all 0.2s ease;
 }
 .appBody {
+  padding-top: 217px;
   transition: all 0.2s ease;
+
+  &.defaultBody {
+    padding-top: 0;
+  }
   &.yellowTheme {
     background-color: #000;
   }
   &.blueTheme {
     background-color: #afe2ef;
+  }
+  @media (max-width: 1000px) {
+    padding-top: 182px;
+    &.openedBlindOption {
+      padding-top: 428px;
+      transition: all 0.2s ease;
+    }
   }
 }

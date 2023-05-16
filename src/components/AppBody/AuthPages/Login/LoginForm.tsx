@@ -2,15 +2,28 @@ import React, { useEffect, useState } from 'react'
 
 import cn from 'classnames'
 import { Form, Formik } from 'formik'
-import FacebookLogin from 'react-facebook-login'
+import { FormikValues } from 'formik/dist/types'
+import FacebookLogin, {
+  ReactFacebookFailureResponse,
+  ReactFacebookLoginInfo,
+} from 'react-facebook-login'
 // eslint-disable-next-line import/no-named-as-default
-import GoogleLogin from 'react-google-login'
+import GoogleLogin, { GoogleLoginResponse, GoogleLoginResponseOffline } from 'react-google-login'
+import { Redirect } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import { CSSTransition } from 'react-transition-group'
 import * as yup from 'yup'
 
-import { FACEBOOK_CLIENT_ID, GOOGLE_CLIENT_ID } from '../../../../Redux/reducers/userSlice'
+import {
+  FACEBOOK_CLIENT_ID,
+  forgotPassword,
+  GOOGLE_CLIENT_ID,
+} from '../../../../Redux/reducers/userSlice'
+import { useAppDispatch } from '../../../../Redux/redux-toolkit-store'
 import { getFontSize, getThemeStyle } from '../../../../Redux/selectors/styleSelector'
+import { getAuthStatus, getIsVerify } from '../../../../Redux/selectors/userSelector'
 import { useAppSelector } from '../../../../utils/Hooks/useAppSelector'
+import { activeFontSize, activeThemeStyle } from '../../../../utils/scaffolding'
 import { TextField } from '../../../common/Form/FormControls/FormControls'
 import Popup from '../../../common/PopupSection/Popup/Popup'
 import FacebookLoginIcon from '../../../SVGConponents/Forms/FacebookLoginIcon'
@@ -31,15 +44,17 @@ const forgotPasswordSchema = yup.object().shape({
   email: yup.string().required('Email is required').email('Invalid email address'),
 })
 
-const LoginForm: React.FC<propsType> = ({
+const LoginForm: React.FC<PropsType> = ({
   onSubmit,
   onGoogleButtonClick,
   onFacebookButtonClick,
-  onForgotPasswordFormSubmit,
   startGoogleAPI,
 }) => {
   const themeStyle = useAppSelector(getThemeStyle)
   const fontSize = useAppSelector(getFontSize)
+  const isAuth = useAppSelector(getAuthStatus)
+  const dispatch = useAppDispatch()
+  const isUserVerify = useAppSelector(getIsVerify)
 
   useEffect(() => {
     startGoogleAPI()
@@ -48,13 +63,22 @@ const LoginForm: React.FC<propsType> = ({
   const [isForgotPassResultPopup, setIsForgotPassResultPopupStatus] = useState(false)
   const onForgotBtnClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault()
-    setForgotPassPopupStatus(!isForgotPassPopup)
+    setForgotPassPopupStatus(true)
   }
-  const sendResetPasswordFlow = (email: any) => {
-    onForgotPasswordFormSubmit(email)
-    setForgotPassPopupStatus(!isForgotPassPopup)
-    setIsForgotPassResultPopupStatus(!isForgotPassResultPopup)
+
+  const onForgotPasswordFormSubmit = (email: { email: string }) => {
+    dispatch(forgotPassword(email.email))
+      .unwrap()
+      .then(res => {
+        if (res !== 'Success') return toast.error(res)
+
+        toast.success(res)
+        setIsForgotPassResultPopupStatus(true)
+        setForgotPassPopupStatus(false)
+      })
   }
+
+  if (isAuth && isUserVerify) return <Redirect to={'/profile'} />
 
   return (
     <section>
@@ -65,13 +89,13 @@ const LoginForm: React.FC<propsType> = ({
         validateOnChange={true}
         validateOnBlur={true}
       >
-        {({ isSubmitting, errors, touched }) => (
+        {({ errors, touched }) => (
           <Form
             className={cn(
-              themeStyle ? themeStyle : '',
-              s[themeStyle ? themeStyle : ''],
-              s[fontSize ? fontSize : ''],
-              [fontSize ? fontSize : '']
+              activeThemeStyle(themeStyle),
+              s[activeThemeStyle(themeStyle)],
+              s[activeFontSize(fontSize)],
+              [activeFontSize(fontSize)]
             )}
           >
             <label className={'formLabel'}>
@@ -99,13 +123,9 @@ const LoginForm: React.FC<propsType> = ({
                 <FormErrorMessage>{errors.password}</FormErrorMessage>
               )}
             </label>
-            {!isSubmitting ? (
-              <button type="submit" className="submitBtn">
-                Wyślij
-              </button>
-            ) : (
-              <span>Pending</span>
-            )}
+            <button type="submit" className="submitBtn">
+              Wyślij
+            </button>
             <button onClick={onForgotBtnClick} className={s.forgotPassword}>
               Forgot password?
             </button>
@@ -141,19 +161,19 @@ const LoginForm: React.FC<propsType> = ({
         <section className="overlay">
           <Popup>
             <Formik
-              initialValues={{ email: '' }}
+              initialValues={{ email: '' as string }}
               validationSchema={forgotPasswordSchema}
-              onSubmit={sendResetPasswordFlow}
+              onSubmit={onForgotPasswordFormSubmit}
               validateOnBlur={true}
               validateOnChange={true}
             >
               {({ touched, errors }) => (
                 <Form
                   className={cn(
-                    themeStyle ? themeStyle : '',
-                    s[themeStyle ? themeStyle : ''],
-                    s[fontSize ? fontSize : ''],
-                    [fontSize ? fontSize : '']
+                    activeThemeStyle(themeStyle),
+                    s[activeThemeStyle(themeStyle)],
+                    s[activeFontSize(fontSize)],
+                    [activeFontSize(fontSize)]
                   )}
                 >
                   <label className={'formLabel'}>
@@ -175,7 +195,8 @@ const LoginForm: React.FC<propsType> = ({
                       Wyślij
                     </button>
                     <button
-                      onClick={() => setForgotPassPopupStatus(!isForgotPassPopup)}
+                      type="button"
+                      onClick={() => setForgotPassPopupStatus(false)}
                       className={'inverseBtn'}
                     >
                       Zamknij
@@ -202,8 +223,8 @@ const LoginForm: React.FC<propsType> = ({
           className={cn(
             'overlay',
             s.resultForgotPassPopup,
-            themeStyle ? themeStyle : '',
-            s[themeStyle ? themeStyle : '']
+            activeThemeStyle(themeStyle),
+            s[activeThemeStyle(themeStyle)]
           )}
         >
           <Popup>
@@ -212,8 +233,9 @@ const LoginForm: React.FC<propsType> = ({
               инструкциями
             </p>
             <button
+              type="button"
               className="submitBtn"
-              onClick={() => setIsForgotPassResultPopupStatus(!isForgotPassResultPopup)}
+              onClick={() => setIsForgotPassResultPopupStatus(false)}
             >
               Close
             </button>
@@ -226,10 +248,9 @@ const LoginForm: React.FC<propsType> = ({
 
 export default LoginForm
 
-type propsType = {
-  onSubmit: (formData: loginDataType, onSubmitProps: any) => void
-  onGoogleButtonClick: any
-  onFacebookButtonClick: any
-  onForgotPasswordFormSubmit: any
-  startGoogleAPI: any
+type PropsType = {
+  onSubmit: (formData: loginDataType, onSubmitProps: FormikValues) => void
+  onGoogleButtonClick: (res: GoogleLoginResponse | GoogleLoginResponseOffline) => void
+  onFacebookButtonClick: (res: ReactFacebookLoginInfo | ReactFacebookFailureResponse) => void
+  startGoogleAPI: () => void
 }

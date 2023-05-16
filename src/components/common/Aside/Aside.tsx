@@ -2,20 +2,22 @@ import React from 'react'
 
 import cn from 'classnames'
 
+import { courseType } from '../../../Redux/reducers/courseSlice'
 import { getFontSize, getThemeStyle } from '../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
+import { activeThemeStyle } from '../../../utils/scaffolding'
 
 import s from './Aside.module.scss'
 import AsideItem from './AsideItem/AsideItem'
 
 type PropsType = {
-  asideItems: Array<any>
+  asideItems: Array<courseType>
 }
 
 const Aside: React.FC<PropsType> = ({ asideItems }) => {
   const themeStyle = useAppSelector(getThemeStyle)
 
-  const aside = cn(s.aside, s[themeStyle ? themeStyle : ''])
+  const aside = cn(s.aside, s[activeThemeStyle(themeStyle)])
   const fontSize = useAppSelector(getFontSize)
 
   return (

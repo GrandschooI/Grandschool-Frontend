@@ -16,26 +16,15 @@
 }
 
 .aside {
-  min-width: 310px;
-  max-width: 1440px;
+  min-width: 340px;
+  width: 25%;
   height: fit-content;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 0 3px rgb(0 0 0 / 5%);
   overflow: hidden;
-  @media (max-width: 1280px) {
-    width: 90%;
-    margin: 0 auto;
-  }
   @media (max-width: 390px) {
     min-width: 280px;
-  }
-}
-
-@media (max-width: 1280px) {
-  .aside {
-    width: 90%;
-    margin: 0 auto;
   }
 }
 

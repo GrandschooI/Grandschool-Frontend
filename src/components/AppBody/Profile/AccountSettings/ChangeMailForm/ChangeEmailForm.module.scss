@@ -10,7 +10,7 @@
 
   label {
     span {
-      transition: all .3s ease;
+      transition: all 0.2s ease;
       font-style: normal;
       font-weight: 600;
       font-size: 18px;
@@ -45,13 +45,12 @@
     }
 
     &:disabled {
-      opacity: .7;
+      opacity: 0.7;
     }
   }
-
 }
 
-@media(min-width: 374px) and (max-width: 500px) {
+@media (min-width: 374px) and (max-width: 500px) {
   .changeEmailForm {
     max-width: 300px;
     .btn {
@@ -83,8 +82,6 @@
     }
   }
 }
-
-
 
 .whiteTheme.changeEmailForm {
   h3 {

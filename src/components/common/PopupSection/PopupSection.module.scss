@@ -1,13 +1,13 @@
 section.popupSectionWrapper {
-  padding-top: 240px;
-  padding-bottom: 200px;
-  max-width: 2000px;
+  padding-bottom: 160px;
 
   .title {
-    font-weight: 600;
-    font-size: 36px;
-    line-height: 46px;
     margin: 42px 0 58px;
+
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 46px;
+
     transition: all 0.2s linear;
   }
 

@@ -1,4 +1,35 @@
 .courseBody {
   display: flex;
-  padding-bottom: 195px;
+
+  padding-bottom: 155px;
+  transition: all 0.2s ease;
+}
+
+.whiteTheme {
+  color: black;
+}
+
+.yellowTheme {
+  color: yellow;
+}
+
+.large {
+  font-size: 20px;
+}
+
+.medium {
+  font-size: 18px;
+}
+
+@media (max-width: 1280px) {
+  .courseBody {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1280px) {
+  .courseBody {
+    padding-bottom: 155px;
+  }
 }
