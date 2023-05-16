@@ -46,12 +46,15 @@
       margin-left: 0;
       background: transparent;
     }
+    .mainToCourseLink:hover{
+      background-color: #618135;
+    }
   }
 
   @media (max-width: 768px) {
     background-image: image-set(
-                    url('../../../../assets/images/CAT-mobile-background.png') 1x,
-                    url('../../../../assets/images/CAT-mobile-background-retina.png') 2x
+      url('../../../../assets/images/CAT-mobile-background.png') 1x,
+      url('../../../../assets/images/CAT-mobile-background-retina.png') 2x
     );
     background-size: cover;
     background-position: bottom;
