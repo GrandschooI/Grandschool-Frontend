@@ -8,7 +8,7 @@ import * as yup from 'yup'
 import '../../../../style.scss'
 import 'react-toastify/dist/ReactToastify.css'
 import { Nullable } from '../../../../Redux/redux-toolkit-store'
-import {activeFontSize, activeThemeStyle} from '../../../../utils/scaffolding'
+import { activeFontSize, activeThemeStyle } from '../../../../utils/scaffolding'
 import { TextField } from '../../../common/Form/FormControls/FormControls'
 import FormErrorMessage from '../../../utils/FormErrorMessage/FormErrorMessage'
 

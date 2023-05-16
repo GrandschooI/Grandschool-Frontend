@@ -13,7 +13,7 @@ import {
   getThemeStyle,
 } from '../../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../../utils/Hooks/useAppSelector'
-import {activeFontSize, activeThemeStyle} from '../../../../utils/scaffolding'
+import { activeFontSize, activeThemeStyle } from '../../../../utils/scaffolding'
 import { TextField } from '../../../common/Form/FormControls/FormControls'
 import Popup from '../../../common/PopupSection/Popup/Popup'
 import FormErrorMessage from '../../../utils/FormErrorMessage/FormErrorMessage'

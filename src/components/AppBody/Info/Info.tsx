@@ -4,7 +4,6 @@ import cn from 'classnames'
 import { useDispatch } from 'react-redux'
 import { Redirect, Route, Switch } from 'react-router-dom'
 
-import { topicType } from '../../../Redux/reducers/courseSlice'
 import { getWebsitesCategoryThunkCreator } from '../../../Redux/reducers/infoSlice'
 import { getInfoMenu } from '../../../Redux/selectors/infoSelector'
 import { getFontSize, getThemeStyle } from '../../../Redux/selectors/styleSelector'

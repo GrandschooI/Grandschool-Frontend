@@ -6,7 +6,7 @@ import { NavLink, useHistory } from 'react-router-dom'
 import notFoundNumber from '../../../assets/images/404.png'
 import { getFontSize, getThemeStyle } from '../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
-import {activeFontSize, activeThemeStyle} from '../../../utils/scaffolding'
+import { activeFontSize, activeThemeStyle } from '../../../utils/scaffolding'
 
 import s from './NotFoundPage.module.scss'
 

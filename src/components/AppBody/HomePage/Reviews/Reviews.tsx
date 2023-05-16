@@ -29,6 +29,7 @@ import QuotesIcon from '../../../SVGConponents/Reviews/QuotesIcon'
 import s from './Reviews.module.scss'
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
+// eslint-disable-next-line import/order
 import { activeFontSize, activeThemeStyle } from '../../../../utils/scaffolding'
 
 const Reviews = () => {

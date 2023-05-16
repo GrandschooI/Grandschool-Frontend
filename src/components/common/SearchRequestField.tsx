@@ -4,8 +4,8 @@ import cn from 'classnames'
 
 import { getFontSize, getThemeStyle } from '../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../utils/Hooks/useAppSelector'
+import { activeThemeStyle } from '../../utils/scaffolding'
 import s from '../Header/Header.module.scss'
-import {activeThemeStyle} from "../../utils/scaffolding";
 
 export const SearchRequestField = ({ searchText, searchStatus }: SearchRequestPropsType) => {
   const themeStyle = useAppSelector(getThemeStyle)
@@ -15,7 +15,7 @@ export const SearchRequestField = ({ searchText, searchStatus }: SearchRequestPr
     <div
       className={cn(
         s[searchStatus ? 'searchRequestField' : 'searchRequestNoField'],
-          activeThemeStyle(themeStyle),
+        activeThemeStyle(themeStyle),
         s[fontSize]
       )}
     >

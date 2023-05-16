@@ -4,10 +4,10 @@ import cn from 'classnames'
 
 import { getFontSize, getThemeStyle } from '../../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../../utils/Hooks/useAppSelector'
+import { activeThemeStyle } from '../../../../utils/scaffolding'
 import { CustomLink } from '../../../common/CustomLink/CustomLink'
 
 import s from './PaymentSuccess.module.scss'
-import {activeThemeStyle} from "../../../../utils/scaffolding";
 
 export const PaymentSuccess: React.FC<Partial<{ className: React.CSSProperties | string }>> = ({
   className,
@@ -19,7 +19,7 @@ export const PaymentSuccess: React.FC<Partial<{ className: React.CSSProperties |
     <div
       className={cn(
         `${s.paymentSuccessContent} ${className}`,
-          activeThemeStyle(themeStyle),
+        activeThemeStyle(themeStyle),
         s[fontSize]
       )}
     >
