@@ -289,7 +289,6 @@
     position: relative;
 
     select {
-      appearance: none;
       height: 43px;
       width: 205px;
       padding-left: 20px;
@@ -299,14 +298,6 @@
         background-color: red;
       }
     }
-
-    &:after {
-      content: url("../../../../../src/assets/images/webp/select_arrow.svg");
-      position: absolute;
-      top: 11px;
-      right: 15px;
-    }
-
   }
 }
 

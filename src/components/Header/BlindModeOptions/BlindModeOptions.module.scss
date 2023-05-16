@@ -189,6 +189,8 @@
   padding-top: 25px;
   padding-bottom: 25px;
 
+  transition: all 200ms, transform 200ms;
+
   .imagesSwitcher {
     min-width: 80px;
   }
@@ -201,11 +203,11 @@
   font-weight: 500;
   line-height: 21px;
 
-  transition: all 0.3s ease;
+  transition: all .2s ease;
 }
 
 .pics {
-  transition: all 0.2s linear;
+  transition: all .2s linear;
 }
 
 .optionsBlock .button.small {
@@ -255,6 +257,7 @@
 
 .optionEnter {
   margin-top: -85px;
+  transition: all 200ms, transform 200ms;
 }
 
 .optionEnterActive {

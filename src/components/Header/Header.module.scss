@@ -165,7 +165,7 @@
 
 .headerNav.notMainPage {
   width: 45%;
-  transition: all 0.3s ease;
+  transition: all .2s ease;
 }
 
 .revert {
@@ -691,7 +691,7 @@
       font-weight: 400;
       font-size: 20px;
       line-height: 23px;
-      transition: all 0.3s ease;
+      transition: all .2s ease;
 
       .headerNavLink {
         padding: 10px 0;
@@ -750,7 +750,7 @@
     .active .headerNav {
       left: 0;
       opacity: 1;
-      transition: all 0.3s ease;
+      transition: all .2s ease;
 
       &.yellowTheme {
         background-color: black;
@@ -790,7 +790,7 @@
   position: absolute;
   background-color: #fff;
   top: 97px;
-  transition: all 0.3s ease;
+  transition: all .2s ease;
   opacity: 1;
   border: 1px solid #618135;
   z-index: 1;
@@ -890,7 +890,7 @@
 .searchRequestNoField {
   height: 0;
   display: none;
-  transition: all 0.3s ease;
+  transition: all .2s ease;
 }
 
 .noSearch {

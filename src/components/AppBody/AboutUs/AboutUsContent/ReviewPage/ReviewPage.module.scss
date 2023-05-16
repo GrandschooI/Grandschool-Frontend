@@ -126,14 +126,14 @@
         }
 
         svg {
-          transition: all 0.3s ease;
+          transition: all .2s ease;
           opacity: 0.7;
         }
 
         &:hover svg {
           opacity: 1;
           transform: scale(1.1);
-          transition: all 0.3s ease;
+          transition: all .2s ease;
         }
       }
     }
@@ -275,7 +275,7 @@
       }
 
       svg {
-        transition: all 0.3s ease;
+        transition: all .2s ease;
         opacity: 0.5;
 
         path {
@@ -286,7 +286,7 @@
       &:hover svg {
         opacity: 1;
         transform: scale(1.1);
-        transition: all 0.3s ease;
+        transition: all .2s ease;
       }
     }
   }

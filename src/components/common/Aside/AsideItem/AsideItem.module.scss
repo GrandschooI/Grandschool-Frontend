@@ -33,7 +33,7 @@
     &:after {
       background: url('../../../../assets/images/Shape.png') no-repeat;
       transform: rotate(-90deg);
-      transition: all 0.3s ease;
+      transition: all .2s ease;
     }
   }
 }
@@ -78,11 +78,11 @@ a.activeItem,
 span.activeItem {
   background: #f7f5ec;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all .2s ease;
 
   &:after {
     opacity: 1;
-    transition: all 0.3s ease;
+    transition: all .2s ease;
   }
 }
 
@@ -90,7 +90,7 @@ span.activeItem {
   li {
     position: relative;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all .2s ease;
 
     a {
       display: flex;
@@ -100,7 +100,7 @@ span.activeItem {
       line-height: 23px;
       color: #717070;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: all .2s ease;
     }
 
     &:first-child {
@@ -118,7 +118,7 @@ span.activeItem {
     &.activeTopic,
     &:hover {
       background: #f7f5ec;
-      transition: all 0.3s ease;
+      transition: all .2s ease;
     }
   }
 }
@@ -127,7 +127,7 @@ span.activeItem {
   &:after {
     background: url('../../../../assets/images/Shape.png') no-repeat;
     transform: rotate(-90deg);
-    transition: all 0.3s ease;
+    transition: all .2s ease;
   }
 }
 
@@ -142,7 +142,7 @@ span.activeItem {
   &:after {
     opacity: 1;
     background: url('../../../../assets/images/Shape.png') no-repeat;
-    transition: all 0.3s ease;
+    transition: all .2s ease;
   }
 }
 
@@ -165,7 +165,7 @@ span.activeItem {
     }
 
     .asideLink {
-      transition: all 0.3s ease;
+      transition: all .2s ease;
       color: black;
 
       &:not(.activeItem):hover {
@@ -222,7 +222,7 @@ span.activeItem {
     }
 
     .asideLink {
-      transition: all 0.3s ease;
+      transition: all .2s ease;
       color: #fff;
 
       &:not(.activeItem):hover {
@@ -283,7 +283,7 @@ span.activeItem {
     }
 
     .asideLink {
-      transition: all 0.3s ease;
+      transition: all .2s ease;
       color: #afe2ef;
 
       &:not(.activeItem):hover {

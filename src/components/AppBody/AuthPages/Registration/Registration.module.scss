@@ -6,7 +6,7 @@
   text-align: center;
   text-transform: uppercase;
 
-  transition: all 0.3s ease;
+  transition: all .2s ease;
 }
 
 .anotherTypeLoginBtnWrap {
@@ -44,7 +44,7 @@
   text-align: center;
   text-transform: capitalize;
 
-  transition: all 0.3s ease;
+  transition: all .2s ease;
   &:before,
   &:after {
     content: '';
@@ -108,7 +108,7 @@
   a {
     color: aqua;
 
-    transition: all 0.3s ease;
+    transition: all .2s ease;
   }
   .termsCheck {
     span {
@@ -139,7 +139,7 @@
   a {
     color: gray;
 
-    transition: all 0.3s ease;
+    transition: all .2s ease;
   }
 }
 
@@ -163,7 +163,7 @@
   a {
     color: black;
 
-    transition: all 0.3s ease;
+    transition: all .2s ease;
   }
   .termsCheck {
     span {
@@ -178,37 +178,37 @@
   .signWithTitle {
     font-size: 26px;
 
-    transition: all 0.3s ease;
+    transition: all .2s ease;
   }
   .formLabel {
     span {
       font-size: 18px;
 
-      transition: all 0.3s ease;
+      transition: all .2s ease;
     }
   }
   .orWord {
     font-size: 18px;
 
-    transition: all 0.3s ease;
+    transition: all .2s ease;
   }
   a {
     font-size: 18px;
 
-    transition: all 0.3s ease;
+    transition: all .2s ease;
   }
   .termsCheck {
     span {
       font-size: 18px;
 
-      transition: all 0.3s ease;
+      transition: all .2s ease;
     }
   }
   .anotherTypeLoginBtnWrap {
     button {
       font-size: 20px;
 
-      transition: all 0.3s ease;
+      transition: all .2s ease;
       @media (max-width: 470px) {
         font-size: 0;
         span {
@@ -223,37 +223,37 @@
   .signWithTitle {
     font-size: 28px;
 
-    transition: all 0.3s ease;
+    transition: all .2s ease;
   }
   .formLabel {
     span {
       font-size: 20px;
 
-      transition: all 0.3s ease;
+      transition: all .2s ease;
     }
   }
   .orWord {
     font-size: 20px;
 
-    transition: all 0.3s ease;
+    transition: all .2s ease;
   }
   a {
     font-size: 20px;
 
-    transition: all 0.3s ease;
+    transition: all .2s ease;
   }
   .termsCheck {
     span {
       font-size: 20px;
 
-      transition: all 0.3s ease;
+      transition: all .2s ease;
     }
   }
   .anotherTypeLoginBtnWrap {
     button {
       font-size: 22px;
 
-      transition: all 0.3s ease;
+      transition: all .2s ease;
       @media (max-width: 470px) {
         font-size: 0;
         span {
