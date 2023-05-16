@@ -96,9 +96,14 @@
 }
 
 .callToActionBGWrap.yellowTheme {
-  background: linear-gradient(90deg, #000, #000 40%, transparent 80%),
-    url('../../../../assets/images/webp/preload.webp') 70% center no-repeat;
-  background-size: cover;
+  background-image: -webkit-image-set(
+                  url('../../../../assets/images/yellowthemeBG.jpg') 1x,
+                  url('../../../../assets/images/YellowthemeBGretina.jpg') 2x
+  );
+  background-image: image-set(
+                  url('../../../../assets/images/yellowthemeBG.jpg') 1x,
+                  url('../../../../assets/images/YellowthemeBGretina.jpg') 2x
+  );
 
   .mainTitle {
     color: yellow;
@@ -176,9 +181,14 @@
 }
 
 .callToActionBGWrap.whiteTheme {
-  background: linear-gradient(90deg, #fff, #fff 40%, transparent 80%),
-    url('../../../../assets/images/webp/preload.webp') 70% center no-repeat;
-  background-size: cover;
+  background-image: -webkit-image-set(
+                  url('../../../../assets/images/whitethemeBG.jpg') 1x,
+                  url('../../../../assets/images/whitethemeBGretina.jpg') 2x
+  );
+  background-image: image-set(
+                  url('../../../../assets/images/whitethemeBG.jpg') 1x,
+                  url('../../../../assets/images/whitethemeBGretina.jpg') 2x
+  );
 
   .mainTitle {
     .firmNameInMainTitle {
@@ -254,9 +264,14 @@
 }
 
 .callToActionBGWrap.blueTheme {
-  background: linear-gradient(90deg, #b8eefb, #b8eefb 40%, transparent 80%),
-    url('../../../../assets/images/webp/preload.webp') 70% center no-repeat;
-  background-size: cover;
+  background-image: -webkit-image-set(
+                  url('../../../../assets/images/whitethemeBG.jpg') 1x,
+                  url('../../../../assets/images/whitethemeBGretina.jpg') 2x
+  );
+  background-image: image-set(
+                  url('../../../../assets/images/whitethemeBG.jpg') 1x,
+                  url('../../../../assets/images/whitethemeBGretina.jpg') 2x
+  );
 
   .mainTitle {
     color: #273a64;
