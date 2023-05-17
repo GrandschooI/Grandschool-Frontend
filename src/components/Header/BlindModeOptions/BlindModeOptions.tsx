@@ -32,6 +32,11 @@ const BlindModeOptions = () => {
   const isOptionsOpen = useAppSelector(getOptionsState)
   const images = useAppSelector(getImgAvailability)
 
+  const handleFontSizeChange = (fontSize: string) => {
+    dispatch(setFontSizeMode({ fontSizeMode: fontSize }))
+    window.localStorage.setItem('fontSizeFromLocalStorage', fontSize)
+  }
+
   useEffect(() => {
     if (blindMode) {
       if (fontSizeFromLocalStorage) {
@@ -68,29 +73,20 @@ const BlindModeOptions = () => {
           <div>
             <span className={cn(s.optionLabel, s.first)}>Rozmiar czcionki:</span>
             <button
-              className={cn(s.button, s.small, s[activeFontSize(fontSize)])}
-              onClick={() => {
-                dispatch(setFontSizeMode({ fontSizeMode: 'small' }))
-                window.localStorage.setItem('fontSizeFromLocalStorage', 'small')
-              }}
+              className={cn(s.button, s.small, s[fontSize === 'small' ? 'active' : ''])}
+              onClick={() => handleFontSizeChange('small')}
             >
               A
             </button>
             <button
-              className={cn(s.button, s.medium, s[activeFontSize(fontSize)])}
-              onClick={() => {
-                dispatch(setFontSizeMode({ fontSizeMode: 'medium' }))
-                window.localStorage.setItem('fontSizeFromLocalStorage', 'medium')
-              }}
+              className={cn(s.button, s.medium, s[fontSize === 'medium' ? 'active' : ''])}
+              onClick={() => handleFontSizeChange('medium')}
             >
               A
             </button>
             <button
-              className={cn(s.button, s.large, s[activeFontSize(fontSize)])}
-              onClick={() => {
-                dispatch(setFontSizeMode({ fontSizeMode: 'large' }))
-                window.localStorage.setItem('fontSizeFromLocalStorage', 'large')
-              }}
+              className={cn(s.button, s.large, s[fontSize === 'large' ? 'active' : ''])}
+              onClick={() => handleFontSizeChange('large')}
             >
               A
             </button>
