@@ -44,7 +44,7 @@ const Reviews = () => {
     <section
       className={cn(
         s.reviewsBlock,
-        activeThemeStyle(themeStyle),
+        s[activeThemeStyle(themeStyle)],
         s[withoutImgClass],
         activeFontSize(fontSize)
       )}

@@ -40,7 +40,7 @@
       background: #618135;
       border-radius: 50px;
 
-      transition: all 0.2s ease;
+      transition: all .2s ease;
       &.yellowTheme {
         color: aqua;
 
@@ -50,7 +50,7 @@
       &:focus {
         background: #32487d;
 
-        transition: all 0.2s ease;
+        transition: all .2s ease;
       }
     }
   }
@@ -139,17 +139,17 @@
   h2 {
     font-size: 40px !important;
 
-    transition: all 0.2s ease;
+    transition: all .2s ease;
   }
   p {
     font-size: 24px !important;
 
-    transition: all 0.2s ease;
+    transition: all .2s ease;
   }
   a {
     font-size: 20px !important;
 
-    transition: all 0.2s ease;
+    transition: all .2s ease;
   }
 }
 
@@ -157,17 +157,17 @@
   h2 {
     font-size: 44px !important;
 
-    transition: all 0.2s ease;
+    transition: all .2s ease;
   }
   p {
     font-size: 26px !important;
 
-    transition: all 0.2s ease;
+    transition: all .2s ease;
   }
   a {
     font-size: 22px !important;
 
-    transition: all 0.2s ease;
+    transition: all .2s ease;
   }
 }
 

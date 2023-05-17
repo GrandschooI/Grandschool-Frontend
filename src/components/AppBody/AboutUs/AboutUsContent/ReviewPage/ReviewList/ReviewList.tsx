@@ -18,9 +18,8 @@ import {
 import { getFontSize } from '../../../../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../../../../utils/Hooks/useAppSelector'
 import Pagination from '../../../../../common/Pagination/Pagination'
+import { CommentItem } from '../../../../Course/Comments/CommentItem/CommentItem'
 import s from '../ReviewPage.module.scss'
-
-import ReviewItem from './ReviewItem/ReviewItem'
 
 const ReviewList = () => {
   const dispatch = useDispatch()
@@ -44,7 +43,7 @@ const ReviewList = () => {
       <p className={s.reviewTotalCount}>Łączna liczba recenzji: {reviewTotalCount}</p>
       <ul className={s.reviewList}>
         {reviewsData.map(review => {
-          return <ReviewItem key={review.id} review={review} />
+          return <CommentItem key={review.id} /> /*review={review}*/
         })}
       </ul>
       <Pagination
