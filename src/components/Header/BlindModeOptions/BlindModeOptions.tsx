@@ -17,7 +17,7 @@ import {
   getThemeStyle,
 } from '../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
-import { activeFontSize, activeThemeStyle } from '../../../utils/scaffolding'
+import { activeThemeStyle } from '../../../utils/scaffolding'
 
 import s from './BlindModeOptions.module.scss'
 
