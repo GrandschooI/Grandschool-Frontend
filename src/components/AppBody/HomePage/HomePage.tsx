@@ -24,7 +24,7 @@ const HomePage = () => {
     <div
       className={cn(
         s.homepage,
-        activeThemeStyle(themeStyle),
+        s[activeThemeStyle(themeStyle)],
         isOptionsOpen ? s.openedBlindOption : ''
       )}
     >
