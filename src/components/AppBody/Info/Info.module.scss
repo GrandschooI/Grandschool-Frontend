@@ -9,7 +9,7 @@ div.infoWrapper {
     font-weight: 600;
     line-height: 46px;
 
-    transition: all 0.2s ease;
+    transition: all .2s ease;
   }
   &.yellowTheme {
     width: 100%;
@@ -33,7 +33,7 @@ div.infoWrapper {
   .infoContentWrap {
     display: flex;
 
-    transition: all 0.2s ease;
+    transition: all .2s ease;
 
     @media (max-width: 1280px) {
       display: block;

@@ -25,7 +25,7 @@
   .promisesItem {
     box-shadow: 0 0 0 rgba(2, 248, 212, 0.1);
 
-    transition: all 0.2s ease;
+    transition: all .2s ease;
     &:hover {
       box-shadow: 0 0 30px rgba(97, 129, 53, 0.1);
     }
@@ -82,13 +82,13 @@
   text-align: center;
   letter-spacing: 3px;
 
-  transition: 0.2s all ease;
+  transition: .2s all ease;
 }
 
 .promisesTitle:hover {
   color: #3a7b76;
 
-  transition: 0.2s all ease;
+  transition: .2s all ease;
 }
 
 .promisesMainTitle {
@@ -123,13 +123,13 @@
 
   box-shadow: 0 0 0 rgba(97, 129, 53, 0.1);
 
-  transition: all 0.2s ease;
+  transition: all .2s ease;
   &:hover {
     transform: scale(1.01);
 
     box-shadow: 0 0 30px rgba(97, 129, 53, 0.1);
 
-    transition: all 0.2s ease;
+    transition: all .2s ease;
   }
 }
 
@@ -190,7 +190,7 @@
   text-transform: capitalize;
   letter-spacing: 0.5px;
 
-  transition: all 0.2s linear;
+  transition: all .2s linear;
 }
 
 @media (max-width: 1000px) {
@@ -272,7 +272,7 @@
     font-size: 40px;
     line-height: 50px;
 
-    transition: all 0.2s ease;
+    transition: all .2s ease;
 
     @media (max-width: 768px) {
       font-size: 55px;
@@ -327,7 +327,7 @@
     font-size: 44px;
     line-height: 55px;
 
-    transition: all 0.2s ease;
+    transition: all .2s ease;
 
     @media (max-width: 768px) {
       font-size: 50px;

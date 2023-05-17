@@ -95,14 +95,14 @@ section.featureWrap {
   text-align: center;
   letter-spacing: 3px;
 
-  transition: 0.2s all ease;
+  transition: .2s all ease;
 }
 
 .featureTitle:hover,
 .featureTitle:focus {
   color: #3a7b76;
 
-  transition: 0.2s all ease;
+  transition: .2s all ease;
 }
 
 .featureMainTitle {
@@ -171,7 +171,7 @@ section.featureWrap {
   text-transform: capitalize;
   letter-spacing: 0.5px;
 
-  transition: all 0.2s linear;
+  transition: all .2s linear;
 }
 
 @media (max-width: 1000px) {
