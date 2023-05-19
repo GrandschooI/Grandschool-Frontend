@@ -59,7 +59,11 @@ const HeaderNav: FC<PropsType> = ({
 
   const notMainNavLinks = (
     <div
-      className={cn(s.notMainPageWrapper, activeThemeStyle(themeStyle), activeFontSize(fontSize))}
+      className={cn(
+        s.notMainPageWrapper,
+        s[activeThemeStyle(themeStyle)],
+        s[activeFontSize(fontSize)]
+      )}
     >
       <div className="container">
         <nav className={cn(s.headerNav, s.notMainPage)}>
