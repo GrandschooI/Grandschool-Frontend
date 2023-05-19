@@ -10,7 +10,8 @@
 .yellowTheme {
   color: yellow;
 
-  background: #000;
+  background: url('../../../../assets/images/yellowThemeBGnews.png') bottom;
+  background-size: cover;
 
   .featureTitle,
   .featureMainTitle {
@@ -23,6 +24,7 @@
 
   .newsItem {
     background: #191901;
+    box-shadow: 0 0 25px rgb(0 0 0);
   }
 
   .btnBlock {
@@ -52,7 +54,8 @@
 .whiteTheme {
   color: #000;
 
-  background: #fff;
+  background: url('../../../../assets/images/whitethemeNewsBG.png') bottom;
+  background-size: cover;
 
   .featureTitle,
   .featureMainTitle {
@@ -104,7 +107,8 @@
 .blueTheme {
   color: #273a64;
 
-  background: #b8eefb;
+  background: url('../../../../assets/images/blueNewsBG.png') bottom;
+  background-size: cover;
 
   .featureTitle,
   .featureMainTitle {

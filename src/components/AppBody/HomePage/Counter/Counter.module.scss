@@ -76,18 +76,51 @@
   transition: all 0.5s ease;
 }
 
-.yellowTheme,
-.whiteTheme,
-.blueTheme {
-  * {
-    font-weight: bold;
+ul.counterWrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  margin: auto;
+  padding: 180px 25px 125px 65px;
+}
+
+.counterItem {
+  position: relative;
+
+  width: 47%;
+  margin-bottom: 55px;
+  padding: 30px 35px 30px;
+
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(97, 129, 53, 0.1);
+  h4 {
+    color: #618135;
   }
+}
+
+.counterNumber {
+  margin-right: 10px;
+
+  font-size: 40px;
+  font-weight: 900;
+  color: #2d2d2d;
+  letter-spacing: 1px;
+}
+
+.description {
+  font-size: 20px;
+  font-weight: 900;
+  color: #2d2d2d;
+  letter-spacing: 1px;
 }
 
 .counterBlock.yellowTheme {
   color: yellow;
 
-  background: #191901;
+  background: url('../../../../assets/images/yellowthemeBGcounter.png') top;
+  background-size: cover;
 
   .counterIcon {
     fill: aqua;
@@ -102,16 +135,14 @@
     color: yellow;
   }
 
-  .counterItem:before {
-    border-color: rgb(0, 255, 255);
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-  }
-
-  .counterItem:after {
-    border-color: rgb(0, 255, 255);
-    border-top-color: transparent;
-    border-left-color: transparent;
+  .counterItem {
+    background: #191901;
+    &:before,
+    &:after {
+      border-color: rgb(0, 255, 255);
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+    }
   }
 
   a {
@@ -131,7 +162,8 @@
 .counterBlock.whiteTheme {
   color: #000;
 
-  background: #fff;
+  background: url('../../../../assets/images/whiteThemeBGCounter.png') top;
+  background-size: cover;
 
   h4 {
     color: #000;
@@ -176,7 +208,8 @@
 .counterBlock.blueTheme {
   color: #273a64;
 
-  background: #b8eefb;
+  background: url('../../../../assets/images/blueCounterBG.png') top;
+  background-size: cover;
 
   .counterIcon {
     fill: #273a64;
@@ -222,44 +255,12 @@
   }
 }
 
-ul.counterWrap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  margin: auto;
-  padding: 180px 25px 125px 65px;
-}
-
-.counterItem {
-  position: relative;
-
-  width: 47%;
-  margin-bottom: 55px;
-  padding: 30px 35px 30px;
-
-  background: transparent;
-  border-radius: 10px;
-  box-shadow: 0 0 30px rgba(97, 129, 53, 0.1);
-  h4 {
-    color: #618135;
+.yellowTheme,
+.whiteTheme,
+.blueTheme {
+  * {
+    font-weight: bold;
   }
-}
-
-.counterNumber {
-  margin-right: 10px;
-
-  font-size: 40px;
-  font-weight: 900;
-  color: #2d2d2d;
-  letter-spacing: 1px;
-}
-
-.description {
-  font-size: 20px;
-  font-weight: 900;
-  color: #2d2d2d;
-  letter-spacing: 1px;
 }
 
 .medium {
