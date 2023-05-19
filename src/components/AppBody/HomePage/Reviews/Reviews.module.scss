@@ -10,7 +10,7 @@
 }
 
 .reviewsBlock.yellowTheme {
-  background: #191901;
+  background: url('../../../../assets/images/reviewsBGyellow.png') bottom no-repeat;
   .reviewsTitle,
   .reviewsMainTitle,
   strong {
@@ -36,6 +36,7 @@
 
   .sliderItem {
     background: #000;
+    box-shadow: 0 0 30px #000;
   }
 
   svg {
@@ -44,7 +45,7 @@
 }
 
 .reviewsBlock.whiteTheme {
-  background: #fff;
+  background: url('../../../../assets/images/whiteThemeReviewBG.png') bottom no-repeat;
   svg {
     fill: #000;
   }
@@ -73,7 +74,7 @@
 }
 
 .reviewsBlock.blueTheme {
-  background: #b8eefb;
+  background: url('../../../../assets/images/blueReviewBG.png') bottom no-repeat;
   .sliderItem svg {
     fill: #b8eefb;
   }
