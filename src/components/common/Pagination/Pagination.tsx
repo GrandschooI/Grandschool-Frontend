@@ -34,39 +34,37 @@ const Pagination: FC<paginationPropsType> = ({
   }
 
   return (
-    <div className={cn(s.paginationWrapper, s[fontSize])}>
-      <ul className={s.paginationList}>
-        <li className={paginationItem}>
+    <ul className={cn(s.paginationList, s[fontSize])}>
+      <li className={paginationItem}>
+        <button
+          className={paginationItem}
+          type="button"
+          onClick={() => onclickHandleCurrentPage(Number(prevPageURL?.split('=')[1]))}
+        >
+          Poprzednia
+        </button>
+      </li>
+      {pagesNumber.map((pageNumber, index) => (
+        <li className={s.paginationItem} key={index}>
           <button
-            className={paginationItem}
             type="button"
-            onClick={() => onclickHandleCurrentPage(Number(prevPageURL?.split('=')[1]))}
+            className={currentPage === pageNumber ? active : paginationItem}
+            onClick={() => onclickHandleCurrentPage(index + 1)}
           >
-            prev
+            {pageNumber}
           </button>
         </li>
-        {pagesNumber.map((pageNumber, index) => (
-          <li className={s.paginationItem} key={index}>
-            <button
-              type="button"
-              className={currentPage === pageNumber ? active : paginationItem}
-              onClick={() => onclickHandleCurrentPage(index + 1)}
-            >
-              {pageNumber}
-            </button>
-          </li>
-        ))}
-        <li className={paginationItem}>
-          <button
-            className={paginationItem}
-            type="button"
-            onClick={() => onclickHandleCurrentPage(Number(nextPageURL?.split('=')[1]))}
-          >
-            next
-          </button>
-        </li>
-      </ul>
-    </div>
+      ))}
+      <li className={paginationItem}>
+        <button
+          className={paginationItem}
+          type="button"
+          onClick={() => onclickHandleCurrentPage(Number(nextPageURL?.split('=')[1]))}
+        >
+          Następna
+        </button>
+      </li>
+    </ul>
   )
 }
 
