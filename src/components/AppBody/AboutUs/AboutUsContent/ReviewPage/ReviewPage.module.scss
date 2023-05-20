@@ -155,7 +155,6 @@
         margin-top: 10px;
         min-height: 210px;
         resize: none;
-        font-family: 'Proba', arial, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
@@ -228,7 +227,12 @@
 
   .reviewList {
     list-style: none;
+    margin-top: 30px;
   }
+}
+
+.reviewListWrap {
+  margin-top: 30px;
 }
 
 @media (max-width: 1280px) {

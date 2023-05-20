@@ -146,13 +146,11 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0 0 0 7px;
+  padding: 7px 0 0 7px;
 }
 
 .avatar {
   width: 34px;
-  min-width: 34px;
-  margin-top: -7px;
   height: 33px;
   border-radius: 30px;
 }
