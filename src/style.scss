@@ -171,6 +171,10 @@ input[type='radio']:checked + .radioLabel:after {
   color: red;
 }
 
+textarea {
+  font-family: 'Proba Pro', Arial, sans-serif;
+}
+
 input[type='radio']:checked + .radioLabel:after {
   background: url('./assets/images/circle.svg') center;
 }

@@ -39,7 +39,7 @@ const ReviewList = () => {
   }, [])
 
   return (
-    <div className={cn(s[fontSize])}>
+    <div className={cn(s[fontSize], s.reviewList)}>
       <p className={s.reviewTotalCount}>Łączna liczba recenzji: {reviewTotalCount}</p>
       <ul className={s.reviewList}>
         {reviewsData.map(review => {

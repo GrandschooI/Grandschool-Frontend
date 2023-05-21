@@ -2,11 +2,16 @@
   display: flex;
   gap: 20px;
   align-items: center;
+  margin-top: 50px;
 
   .paginationItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 34px;
+    width: fit-content;
+    height: 34px;
     cursor: pointer;
-
-    font-family: 'Proba Pro', Arial, sans-serif;
     font-size: 18px;
     font-weight: 400;
     line-height: 23px;
@@ -14,8 +19,12 @@
 
     background-color: transparent;
     border: none;
+    transition: all .2s ease;
 
-    transition: all 0.2s linear;
+    &:hover {
+      color: #618135;
+      transition: all .2s ease;
+    }
   }
 
   .paginationItem.yellowTheme {
@@ -31,22 +40,21 @@
   }
 
   .active {
+    width: 100%;
+    height: 100%;
     cursor: pointer;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    width: 34px;
-    height: 34px;
-
     color: #ffffff;
 
-    background-color: #83a358;
+    background-color: #618135;
     border: none;
     border-radius: 50%;
 
-    transition: all 0.2s linear;
+    transition: all .2s ease;
   }
 }
 
@@ -68,9 +76,7 @@
   .paginationItem {
     font-size: 22px;
   }
-}
 
-.medium {
   .active {
     font-size: 22px;
   }
@@ -80,9 +86,7 @@
   .paginationItem {
     font-size: 24px;
   }
-}
 
-.large {
   .active {
     font-size: 24px;
   }
