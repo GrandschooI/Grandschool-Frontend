@@ -111,6 +111,12 @@
       border-color: #ff0;
     }
   }
+
+  &:after {
+    background: #000;
+    border: 2px solid yellow;
+    border-left: none;
+  }
 }
 
 .whiteTheme.profileImageForm {

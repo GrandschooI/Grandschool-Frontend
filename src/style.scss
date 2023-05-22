@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Proba';
   src: url('assets/fonts/ProbaPro-Light.woff2') format('woff2'),
-    url('assets/fonts/ProbaPro-Light.woff') format('woff');
+  url('assets/fonts/ProbaPro-Light.woff') format('woff');
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -10,7 +10,7 @@
 @font-face {
   font-family: 'Proba';
   src: url('assets/fonts/ProbaPro-Regular.woff2') format('woff2'),
-    url('assets/fonts/ProbaPro-Regular.woff') format('woff');
+  url('assets/fonts/ProbaPro-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -19,7 +19,7 @@
 @font-face {
   font-family: 'Proba';
   src: url('assets/fonts/ProbaPro-Medium.woff2') format('woff2'),
-    url('assets/fonts/ProbaPro-Medium.woff') format('woff');
+  url('assets/fonts/ProbaPro-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -28,7 +28,7 @@
 @font-face {
   font-family: 'Proba';
   src: url('assets/fonts/ProbaPro-Bold.woff2') format('woff2'),
-    url('assets/fonts/ProbaPro-Bold.woff') format('woff');
+  url('assets/fonts/ProbaPro-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -115,6 +115,41 @@ input[type='radio']:checked + .radioLabel:after {
   input:-webkit-autofill:focus {
     -webkit-text-fill-color: yellow;
     -webkit-box-shadow: 0 0 0 40rem #000 inset;
+  }
+
+  .formLabel {
+    span {
+      color: yellow;
+    }
+
+    input, textarea, .react-datepicker__input-container {
+      color: yellow;
+
+      background: #000;
+      border: 1px solid aqua;
+    }
+
+    .react-datepicker__input-container {
+      input {
+        border: none;
+      }
+    }
+
+    path,
+    line {
+      fill: aqua;
+      stroke: aqua;
+    }
+
+    .radioLabel {
+      &:before {
+        border-color: #03ffff;
+      }
+    }
+
+    input[type=radio]:checked + .radioLabel:after {
+      background: yellow;
+    }
   }
 }
 
