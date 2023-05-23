@@ -161,16 +161,15 @@ span.activeItem {
 
 .whiteTheme {
   &.asideItem {
-    background-color: #000;
+    background-color: #f5f5f5;
+    color: #000;
 
     & li {
-      a {
+      .activeItem {
         color: #fff;
       }
-
       &:not(.activeItem):hover {
         background-color: white;
-
         a {
           color: #000;
         }
@@ -186,9 +185,6 @@ span.activeItem {
     }
 
     .asideLink {
-      transition: all 0.2s ease;
-      color: #fff;
-
       &:not(.activeItem):hover {
         background-color: white;
 
