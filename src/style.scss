@@ -125,8 +125,8 @@ input[type='radio']:checked + .radioLabel:after {
     input, textarea, .react-datepicker__input-container {
       color: yellow;
 
-      background: #000;
-      border: 1px solid aqua;
+      background: #191901;
+      border: 1px solid yellow;
     }
 
     .react-datepicker__input-container {
@@ -143,12 +143,12 @@ input[type='radio']:checked + .radioLabel:after {
 
     .radioLabel {
       &:before {
-        border-color: #03ffff;
+        border-color: yellow;
       }
     }
 
     input[type=radio]:checked + .radioLabel:after {
-      background: yellow;
+      background: #03ffff;
     }
   }
 }
