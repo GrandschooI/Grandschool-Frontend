@@ -87,6 +87,9 @@ span.activeItem {
 }
 
 .asideSubmenu {
+  & * {
+    color: #717070;
+  }
   li {
     position: relative;
     cursor: pointer;
@@ -98,7 +101,6 @@ span.activeItem {
       font-weight: 400;
       font-size: 18px;
       line-height: 23px;
-      color: #717070;
       text-decoration: none;
       transition: all 0.2s ease;
     }
@@ -148,20 +150,27 @@ span.activeItem {
 
 .yellowTheme {
   &.asideItem {
-    background-color: yellow;
+    background-color: #191901;
+    color: yellow;
+
+    & * {
+      color: yellow;
+    }
 
     & li {
-      a {
-        color: black;
-      }
-
       &:not(.activeItem):hover {
-        background-color: aqua;
+        background-color: yellow;
+        & * {
+          color: black;
+        }
       }
     }
 
     .activeTopic {
-      background-color: aqua;
+      background-color: yellow;
+      & * {
+        color: #000;
+      }
     }
 
     .asideLink {
@@ -180,7 +189,7 @@ span.activeItem {
   }
 
   .asideLink {
-    background-color: transparent;
+    background-color: yellow;
     color: yellow;
     font-size: 18px;
 
