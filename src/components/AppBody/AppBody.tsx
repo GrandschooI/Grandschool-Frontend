@@ -32,6 +32,7 @@ const AppBody: React.FC<propsType> = ({ isHeaderChange }) => {
         s.appBody,
         isHeaderChange ? s.defaultBody : '',
         isOptionsOpen ? s.openedBlindOption : '',
+        activeThemeStyle(themeStyle),
         s[activeThemeStyle(themeStyle)]
       )}
     >
