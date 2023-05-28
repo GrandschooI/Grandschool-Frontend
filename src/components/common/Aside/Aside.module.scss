@@ -31,3 +31,15 @@
   flex-direction: column;
 }
 
+.yellowTheme {
+  &.aside {
+    border: 1px solid yellow;
+  }
+}
+
+.blueTheme {
+  &.aside {
+    border: 1px solid #273a64;
+  }
+}
+

@@ -71,7 +71,7 @@
 
   &:after {
     opacity: 1;
-    transition: all 0.2s ease;
+    transition: opacity 0.2s ease;
   }
 }
 
@@ -107,7 +107,8 @@
     }
 
     &.activeTopic,
-    &:hover {
+    &:hover,
+    &:focus {
       background: #f7f5ec;
       transition: all 0.2s ease;
     }
@@ -126,7 +127,8 @@
   background: #f7f5ec;
   color: inherit;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: #f7f5ec;
   }
 
@@ -138,32 +140,9 @@
 }
 
 .yellowTheme {
-  &.asideItem {
-    background-color: #191901;
-    color: yellow;
-
-    & * {
-      color: yellow;
-    }
-
-    & li {
-      &:not(.activeItem):hover {
-        background-color: yellow;
-        & * {
-          color: black;
-        }
-      }
-    }
-
-    .activeTopic {
-      background-color: yellow;
-      & * {
-        color: #000;
-      }
-    }
-  }
-
-  .activeItem {
+  .activeItem.asideLink,
+  .asideLink:hover,
+  .asideLink:focus {
     background: yellow;
     color: #000;
   }
@@ -172,134 +151,117 @@
     color: yellow;
     font-size: 18px;
 
+    &.rightArrow {
+      background: yellow;
+      color: #000;
+    }
+
     &:after {
       background: url('../../../../assets/images/asideBlackMode.svg') no-repeat;
+    }
+  }
+
+  .asideSubmenu {
+    & * {
+      color: yellow;
+    }
+    .activeTopic,
+    li:hover,
+    li:focus {
+      background: yellow;
+      color: #000;
+      & * {
+        color: #000;
+      }
+    }
+
+    li {
+      background-color: #191901;
     }
   }
 }
 
 .whiteTheme {
-  &.asideItem {
-    background-color: #000;
+  .activeItem.asideLink,
+  .asideLink:hover,
+  .asideLink:focus {
+    background: #f5f5f5;
+    color: #000;
+  }
 
-    & li {
-      a {
-        color: #fff;
-      }
+  .asideLink {
+    color: #000;
+    font-size: 18px;
 
-      &:not(.activeItem):hover {
-        background-color: white;
-
-        a {
-          color: #000;
-        }
-      }
+    &.rightArrow {
+      background: #f5f5f5;
+      color: #000;
     }
 
-    .activeTopic {
-      background-color: #fff;
+    &:after {
+      background: url('../../../../assets/images/asideBlackMode.svg') no-repeat;
+    }
+  }
 
-      a {
+  .asideSubmenu {
+    & * {
+      color: #000;
+    }
+    .activeTopic,
+    li:hover,
+    li:focus {
+      background: #f5f5f5;
+      color: #000;
+      & * {
         color: #000;
       }
     }
 
-    .asideLink {
-      transition: all 0.2s ease;
-      color: #fff;
-
-      &:not(.activeItem):hover {
-        background-color: white;
-
-        &:after {
-          background: url('../../../../assets/images/asideBlackMode.svg') no-repeat;
-        }
-      }
+    li {
+      background-color: #fff;
     }
-  }
-
-  .rightArrow {
-    background-color: black;
-  }
-
-  a.activeItem {
-    background: #000;
-    color: #fff;
-  }
-
-  .asideLink {
-    &:after {
-      background: url('../../../../assets/images/asideWhiteMode.svg') no-repeat;
-    }
-  }
-
-  .asideLink:not(.activeItem):hover {
-    background: #f5f5f5;
-    color: inherit;
   }
 }
 
 .blueTheme {
-  &.asideItem {
-    background-color: #273a64;
-
-    & li {
-      a {
-        color: #afe2ef;
-      }
-
-      &:not(.activeItem):hover {
-        background-color: #afe2ef;
-
-        a {
-          color: #273a64;
-        }
-      }
-    }
-
-    .activeTopic {
-      background-color: #afe2ef;
-
-      a {
-        color: #273a64;
-      }
-    }
-
-    .asideLink {
-      transition: all 0.2s ease;
-      color: #afe2ef;
-
-      &:not(.activeItem):hover {
-        background-color: #afe2ef;
-        color: #273a64;
-
-        &:after {
-          background: url('../../../../assets/images/asideBlackMode.svg') no-repeat;
-        }
-      }
-    }
-  }
-
-  .rightArrow {
-    background-color: #273a64;
-  }
-
-  a.activeItem {
+  .activeItem.asideLink,
+  .asideLink:hover,
+  .asideLink:focus {
     background: #273a64;
-    color: #afe2ef;
+    color: #fff;
   }
 
   .asideLink {
     color: #273a64;
+    font-size: 18px;
+
+    &.rightArrow {
+      background: #273a64;
+      color: #fff;
+    }
 
     &:after {
       background: url('../../../../assets/images/asideWhiteMode.svg') no-repeat;
     }
   }
 
-  .asideLink:not(.activeItem):hover {
-    background: #f5f5f5;
-    color: inherit;
+  .asideSubmenu {
+    & * {
+      color: #273a64;
+    }
+    .activeTopic,
+    li:hover,
+    li:focus {
+      background: #273a64;
+      color: #fff;
+      & * {
+        color: #fff;
+      }
+    }
+
+    li {
+      background-color: #fff;
+    }
   }
 }
 
