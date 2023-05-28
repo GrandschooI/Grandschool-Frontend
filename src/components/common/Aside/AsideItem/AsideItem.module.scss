@@ -26,32 +26,22 @@
     opacity: 0;
     transition: opacity 0.5s ease;
   }
-}
 
-@media (max-width: 1280px) {
-  .asideLink {
-    &:after {
-      background: url('../../../../assets/images/Shape.png') no-repeat;
-      transform: rotate(-90deg);
-      transition: all 0.2s ease;
-    }
+  &:not(:first-child):before {
+    display: block;
+    position: static;
+    margin: 0 1.875rem;
+    width: auto;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.05);
+    content: '';
   }
-}
 
-.asideLink:not(:first-child):before {
-  display: block;
-  position: static;
-  margin: 0 1.875rem;
-  width: auto;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.05);
-  content: '';
-}
-
-.asideLink:hover,
-.asideLink:focus {
-  background: #f7f5ec;
-  color: inherit;
+  &:hover,
+  &:focus {
+    background: #f7f5ec;
+    color: inherit;
+  }
 }
 
 .optionEnter {
@@ -74,8 +64,7 @@
   transition: all 1s ease;
 }
 
-a.activeItem,
-span.activeItem {
+.activeItem {
   background: #f7f5ec;
   position: relative;
   transition: all 0.2s ease;
@@ -172,23 +161,14 @@ span.activeItem {
         color: #000;
       }
     }
+  }
 
-    .asideLink {
-      transition: all 0.2s ease;
-      color: black;
-  .asideLink {
-    transition: all 0.2s ease;
-    color: yellow;
-    background-color: #191901;
-    font-size: 18px;
-
-    &:not(.activeItem):hover {
-      background-color: yellow;
-      color: #000;
-    }
+  .activeItem {
+    background: yellow;
+    color: #000;
+  }
 
   .asideLink {
-    background-color: yellow;
     color: yellow;
     font-size: 18px;
 
@@ -196,24 +176,20 @@ span.activeItem {
       background: url('../../../../assets/images/asideBlackMode.svg') no-repeat;
     }
   }
-
-  a.activeItem {
-    background: yellow;
-    color: #000;
-  }
 }
 
 .whiteTheme {
   &.asideItem {
-    background-color: #f5f5f5;
-    color: #000;
+    background-color: #000;
 
     & li {
-      .activeItem {
+      a {
         color: #fff;
       }
+
       &:not(.activeItem):hover {
         background-color: white;
+
         a {
           color: #000;
         }
@@ -229,6 +205,9 @@ span.activeItem {
     }
 
     .asideLink {
+      transition: all 0.2s ease;
+      color: #fff;
+
       &:not(.activeItem):hover {
         background-color: white;
 

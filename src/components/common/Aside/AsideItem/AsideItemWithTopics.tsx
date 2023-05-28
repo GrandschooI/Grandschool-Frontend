@@ -12,7 +12,6 @@ import s from './AsideItem.module.scss'
 const AsideItemWithTopics: React.FC<PropsType> = ({
   activeItem,
   location,
-  itemLink,
   setActiveItem,
   itemTitle,
   topics,
@@ -20,11 +19,7 @@ const AsideItemWithTopics: React.FC<PropsType> = ({
   return (
     <>
       <span
-        className={cn(
-          s.asideLink,
-          activeItem ? [s.activeItem, s.upArrow] : '',
-          location.includes(itemLink) ? s.rightArrow : ''
-        )}
+        className={cn(s.asideLink, activeItem ? [s.activeItem, s.upArrow] : '', s.rightArrow)}
         onClick={() => setActiveItem(!activeItem)}
       >
         {itemTitle}
@@ -58,7 +53,6 @@ export default AsideItemWithTopics
 type PropsType = {
   activeItem: boolean
   location: string
-  itemLink: string
   setActiveItem: (activeItem: boolean) => void
   itemTitle: Nullable<string>
   topics: Array<topicType>
