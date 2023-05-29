@@ -9,7 +9,7 @@ import * as yup from 'yup'
 import { activeThemeStyle } from '../../../../../../utils/scaffolding'
 import FormErrorMessage from '../../../../../utils/FormErrorMessage/FormErrorMessage'
 
-import DatePickerWrapper from './DatePickerWrapper'
+/*import DatePickerWrapper from './DatePickerWrapper'*/
 import s from './ProfileInfoForm.module.scss'
 
 import { RadioButton, TextField } from 'components/common/Form/FormControls/FormControls'
@@ -114,7 +114,7 @@ const ProfileInfoForm: FC<PropsType> = ({ initialProfileData }) => {
           </label>
           <label className={'formLabel'}>
             <span>Birth Date</span>
-            <DatePickerWrapper birthDate={initialProfileData.currentUserBirthday as Date} />
+            {/*<DatePickerWrapper birthDate={initialProfileData.currentUserBirthday as Date} />*/}
           </label>
           <label className={'formLabel'}>
             <span>Country</span>

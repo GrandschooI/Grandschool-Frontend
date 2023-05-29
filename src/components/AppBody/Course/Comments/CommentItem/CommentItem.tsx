@@ -14,11 +14,11 @@ export const CommentItem: FC = memo(() => {
   const fontSize = useAppSelector(getFontSize)
 
   return (
-    <div className={cn(s.wrapper, s[activeThemeStyle(themeStyle)], 'commentItem', s[fontSize])}>
+    <li className={cn(s.wrapper, s[activeThemeStyle(themeStyle)], 'commentItem', s[fontSize])}>
       <CommentBlock />
       <div className={s.answers}>
         <CommentBlock withImg={false} />
       </div>
-    </div>
+    </li>
   )
 })

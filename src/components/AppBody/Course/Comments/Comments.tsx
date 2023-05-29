@@ -75,9 +75,11 @@ const Comments: FC = () => {
               </select>
             </div>
           </div>
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
+          <ul>
+            <CommentItem />
+            <CommentItem />
+            <CommentItem />
+          </ul>
         </section>
       )}
     </Formik>

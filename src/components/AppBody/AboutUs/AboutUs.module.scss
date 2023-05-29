@@ -24,9 +24,13 @@ div.aboutUsBody {
 .yellowTheme {
   color: yellow;
 
+  h1 {
+    color: yellow;
+  }
+
   .aboutUsBody {
-    h1 {
-      color: yellow;
+    & > ul li {
+      border-color: aqua;
     }
   }
 }
@@ -34,27 +38,20 @@ div.aboutUsBody {
 .whiteTheme {
   color: #000;
 
-  .aboutUsBody {
-    h1 {
-      color: #000;
-    }
+  h1 {
+    color: #000;
+
   }
 }
 
 .blueTheme {
   color: #273a64;
 
-  .aboutUsBody {
-    h1 {
-      color: #273a64;
-    }
-  }
-}
 
-@media (max-width: 1000px) {
-  .aboutUsSection.blindOptionsOpen {
-    padding-top: 228px;
+  h1 {
+    color: #273a64;
   }
+
 }
 
 .medium {
@@ -70,5 +67,11 @@ div.aboutUsBody {
     h1 {
       font-size: 50px;
     }
+  }
+}
+
+@media (max-width: 1000px) {
+  .aboutUsSection.blindOptionsOpen {
+    padding-top: 228px;
   }
 }
