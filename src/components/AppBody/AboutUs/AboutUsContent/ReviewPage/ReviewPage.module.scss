@@ -237,6 +237,23 @@
     color: yellow;
   }
 
+  .reviewForm {
+    .assesmentRadioList {
+      .activeGreen,
+      .activeLightOrange,
+      .activeOrange,
+      .activeDarkOrange,
+      .activeRed {
+        color: aqua;
+        svg {
+          path {
+            fill: aqua;
+          }
+        }
+      }
+    }
+  }
+
   .reviewDescWrap {
     background: #191901;
 
@@ -279,11 +296,28 @@
   }
 }
 
-.whiteTheme {
+.reviewBody.whiteTheme {
   p span.share,
   .reviewTitle,
-  .reviewDescWrap {
+  .reviewCAT {
     color: #000;
+  }
+
+  .reviewForm {
+    .assesmentRadioList {
+      .activeGreen,
+      .activeLightOrange,
+      .activeOrange,
+      .activeDarkOrange,
+      .activeRed {
+        color: #000;
+        svg {
+          path {
+            fill: #000;
+          }
+        }
+      }
+    }
   }
 
   .reviewDescWrap {
@@ -291,15 +325,39 @@
   }
 }
 
-.blueTheme {
+.reviewBody.blueTheme {
   p span.share,
-  .reviewTitle {
+  .reviewTitle,
+  .reviewCAT {
     color: #273a64;
+  }
+
+  .sendFeedback {
+    &:hover {
+      background: #fff;
+    }
   }
 
   .reviewDescWrap {
     background: #aee2ef;
     border: 1px solid #273a64;
+  }
+
+  .reviewForm {
+    .assesmentRadioList {
+      .activeGreen,
+      .activeLightOrange,
+      .activeOrange,
+      .activeDarkOrange,
+      .activeRed {
+        color: #273a64;
+        svg {
+          path {
+            fill: #273a64;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -355,10 +413,6 @@
     font-size: 24px;
   }
 }
-
-
-
-
 
 @media (max-width: 1280px) {
   .reviewBody {

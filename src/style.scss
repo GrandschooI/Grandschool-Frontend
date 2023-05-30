@@ -518,6 +518,10 @@ address {
     -webkit-box-shadow: 0 0 0 40rem #000 inset;
   }
 
+  textarea {
+    color: yellow;
+  }
+
   .formLabel {
     span {
       color: yellow;
@@ -576,20 +580,20 @@ address {
 
     svg,
     path {
-      fill: yellow;
-      transition: all 0.2s linear;
+      fill: #000;
+      transition: all .2s linear;
     }
 
     &:hover {
       background-color: #000;
       border: 1px solid #fff;
       color: #fff !important;
-      transition: all 0.2s linear;
+      transition: all .2s linear;
 
       svg,
       path {
-        fill: #000;
-        transition: all 0.2s linear;
+        fill: #fff;
+        transition: all .2s linear;
       }
     }
 
@@ -659,7 +663,7 @@ address {
 
   .submitBtn {
     background-color: #273a64;
-    color: #afe2ef;
+    color: #fff;
     transition: all 0.2s linear;
     border: 1px solid #273a64;
 
@@ -677,7 +681,7 @@ address {
 
     svg,
     path {
-      fill: yellow;
+      fill: #273a64;
       transition: all 0.2s linear;
     }
 
@@ -689,7 +693,7 @@ address {
 
       svg,
       path {
-        fill: #000;
+        fill: #fff;
         transition: all 0.2s linear;
       }
     }
