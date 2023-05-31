@@ -26,7 +26,7 @@ const Popup: React.FC<PropsType> = ({ children, className = '' }) => {
   const themeStyle = useAppSelector(getThemeStyle)
 
   return (
-    <div className={cn(`${s.popupWrapper} ${className}`, activeThemeStyle(themeStyle))}>
+    <div className={cn(`${s.popupWrapper} ${className}`, s[activeThemeStyle(themeStyle)])}>
       <div className={cn(s.popupHeader, 'popupHeader')}>
         {!themeStyle && <LogoPicture />}
         {themeStyle === 'yellowTheme' && <LogoPictureYellowTheme />}
