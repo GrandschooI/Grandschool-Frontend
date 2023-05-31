@@ -26,7 +26,7 @@ const AsideItemWithTopics: React.FC<PropsType> = ({
       </span>
       <CSSTransition
         in={activeItem}
-        timeout={2000}
+        timeout={1000}
         classNames={{
           enter: s.optionEnter,
           enterActive: s.optionEnterActive,

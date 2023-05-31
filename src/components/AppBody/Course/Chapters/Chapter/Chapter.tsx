@@ -58,7 +58,7 @@ const Chapter: React.FC<PropsType> = () => {
           Прежде, чем делать покупки, нужно ознакомиться с принципом выбора интернет-магазина
         </label>
 
-        <button className={cn(s.submitBtn, 'submitBtn')}>Завершить изучение главы</button>
+        <button className="submitBtn">Завершить изучение главы</button>
       </div>
 
       <div className={s.inferenceWrapper}>

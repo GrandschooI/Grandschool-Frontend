@@ -125,18 +125,6 @@
       .answer {
         color: yellow;
       }
-
-      .submitBtn {
-        color: aqua;
-        background: black;
-        transition: all 0.2s ease;
-        border: 1px solid aqua;
-
-        &:hover {
-          color: black;
-          background: aqua;
-        }
-      }
     }
 
     .commentsCount {
@@ -153,10 +141,6 @@
   }
 
   &.blueTheme {
-    background: #273a64;
-    color: white;
-    padding: 0 10px;
-
     .topicTitle {
       color: white;
     }
@@ -195,12 +179,9 @@
       color: white;
     }
 
-    .inferenceWrapper {
-      color: #fff;
-
-      .inferenceTitle {
-        color: #fff;
-      }
+    .inferenceWrapper,
+    .inferenceTitle {
+      color: #273a64;
     }
   }
 
