@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 
+import cn from 'classnames'
 import { useDispatch } from 'react-redux'
 import { Route, Switch, useLocation } from 'react-router-dom'
 import { VerticleButton as ScrollUpButton } from 'react-scroll-up-button'
@@ -9,12 +10,13 @@ import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
 import Preloader from './components/utils/Preloader/Preloader'
 import { setUserFromLocalStorage } from './Redux/reducers/userSlice'
-import { getLoadedInfo } from './Redux/selectors/styleSelector'
+import { getLoadedInfo, getStyleMode } from './Redux/selectors/styleSelector'
 import { useAppSelector } from './utils/Hooks/useAppSelector'
 
 const App = () => {
   const dispatch = useDispatch()
   const isLoaded = useAppSelector(getLoadedInfo)
+  const blindMode = useAppSelector(getStyleMode)
 
   const routesWithDefaultHeader = [
     '/',
@@ -31,7 +33,7 @@ const App = () => {
   }, [dispatch])
 
   return (
-    <div className="App">
+    <div className={cn('App', blindMode ? 'activeBlindMode' : '')}>
       <Switch>
         <Route path="/">
           <section>

@@ -19,7 +19,7 @@ import Payment from './Payment/Payment'
 import Profile from './Profile/Profile'
 import Teachers from './Teachers/Teachers'
 
-import { getOptionsState, getThemeStyle } from 'Redux/selectors/styleSelector'
+import { getOptionsState, getStyleMode, getThemeStyle } from 'Redux/selectors/styleSelector'
 import { useAppSelector } from 'utils/Hooks/useAppSelector'
 
 const AppBody: React.FC<propsType> = ({ isHeaderChange }) => {

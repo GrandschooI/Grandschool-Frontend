@@ -448,6 +448,12 @@ address {
   background: #00000091;
 }
 
+.activeBlindMode {
+  * {
+    font-weight: bold !important;
+  }
+}
+
 .yellowTheme {
   .submitBtn {
     background-color: yellow;
