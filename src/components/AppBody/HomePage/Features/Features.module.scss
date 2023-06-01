@@ -14,7 +14,6 @@ section.featureWrap {
 
 .featureWrap.yellowTheme {
   background: #191901;
-  .featureTitle,
   .featureMainTitle,
   strong,
   .featureItemTitle {
@@ -36,7 +35,6 @@ section.featureWrap {
 
 .featureWrap.whiteTheme {
   background: #F5F5F5;
-  .featureTitle,
   .featureMainTitle,
   strong,
   .featureItemTitle {
@@ -58,7 +56,6 @@ section.featureWrap {
 
 .featureWrap.blueTheme {
   background: #fff;
-  .featureTitle,
   .featureMainTitle,
   strong,
   .featureItemTitle {
@@ -82,29 +79,6 @@ section.featureWrap {
   fill: #618135;
 }
 
-.featureTitle {
-  cursor: pointer;
-
-  display: block;
-
-  margin: 0 auto 25px;
-
-  font-size: 14px;
-  font-weight: 400;
-  color: #fd6ca3;
-  text-align: center;
-  letter-spacing: 3px;
-
-  transition: .2s all ease;
-}
-
-.featureTitle:hover,
-.featureTitle:focus {
-  color: #3a7b76;
-
-  transition: .2s all ease;
-}
-
 .featureMainTitle {
   width: 480px;
   margin: 0 auto 15px;
@@ -115,6 +89,7 @@ section.featureWrap {
   color: #000;
   text-align: center;
   letter-spacing: normal;
+  transition: all .2s ease;
 }
 
 .featureMainTitle strong {
@@ -223,7 +198,6 @@ section.featureWrap {
 }
 
 .medium {
-  .featureTitle,
   .featureText p {
     font-size: 20px;
 
@@ -276,7 +250,6 @@ section.featureWrap {
 }
 
 .large {
-  .featureTitle,
   .featureText p {
     font-size: 22px;
 

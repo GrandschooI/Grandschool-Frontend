@@ -28,9 +28,9 @@ const HomePage = () => {
         isOptionsOpen ? s.openedBlindOption : ''
       )}
     >
-      <CallToAction />
+      {/* <CallToAction />
       <Greetings />
-      <Promises />
+      <Promises />*/}
       <Donate />
       <News />
       <Features />
