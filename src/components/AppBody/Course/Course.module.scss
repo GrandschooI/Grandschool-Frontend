@@ -43,12 +43,24 @@
   }
 }
 
-.large {
-  font-size: 20px;
+.medium.course {
+  h1 {
+    font-size: 40px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
 }
 
-.medium {
-  font-size: 18px;
+.large.course {
+  h1 {
+    font-size: 44px;
+  }
+
+  h3 {
+    font-size: 26px;
+  }
 }
 
 @media (max-width: 1280px) {

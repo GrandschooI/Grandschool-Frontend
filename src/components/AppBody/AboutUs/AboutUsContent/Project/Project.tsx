@@ -15,7 +15,7 @@ const Project = () => {
 
   return (
     <div className={cn(s.projectBody, s[activeThemeStyle(themeStyle)], s[fontSize])}>
-      <h3 className={s.title}>O Grand School</h3>
+      <h2 className={s.title}>O Grand School</h2>
 
       <p>
         Program szkoleniowy GrandSchool to wysokiej jakości system szkoleniowy dla seniorów. Program

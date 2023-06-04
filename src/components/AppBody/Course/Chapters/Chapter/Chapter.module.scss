@@ -3,6 +3,7 @@
   font-weight: 600;
   line-height: 28px;
   color: #618135;
+  transition: all .2s ease;
 }
 
 .movie {
@@ -32,6 +33,7 @@
     font-weight: 400;
     line-height: 20px;
     color: #717070;
+    transition: all .2s ease;
   }
 
   .submitBtn {
@@ -185,16 +187,40 @@
     }
   }
 
+  &.medium {
+    p {
+      font-size: 20px;
+    }
+
+    h4 {
+      font-size: 24px;
+      transition: all .2s ease;
+    }
+
+    label {
+      font-size: 18px;
+      transition: all .2s ease;
+    }
+  }
+
   &.large {
-    font-size: 20px;
+    p {
+      font-size: 22px;
+    }
+
+    h4 {
+      font-size: 26px;
+      transition: all .2s ease;
+    }
+
+    label {
+      font-size: 20px;
+      transition: all .2s ease;
+    }
 
     .inferenceWrapper {
       font-size: 20px;
     }
-  }
-
-  &.medium {
-    font-size: 18px;
   }
 }
 

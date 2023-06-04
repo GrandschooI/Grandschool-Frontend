@@ -57,12 +57,20 @@
     }
   }
 
-  &.large {
-    font-size: 20px;
-  }
-
   &.medium {
     font-size: 18px;
+    .profileInfo p,
+    .text {
+      font-size: 20px;
+    }
+  }
+
+  &.large {
+    font-size: 20px;
+    .profileInfo p,x
+    .text {
+      font-size: 22px;
+    }
   }
 }
 
@@ -186,6 +194,7 @@
     cursor: pointer;
     font-size: inherit;
     margin-top: 7px;
+    transition: all .2s ease;
 
     &:hover {
       text-decoration: underline;

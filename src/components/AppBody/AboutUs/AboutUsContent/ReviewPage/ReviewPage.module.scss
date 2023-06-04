@@ -42,6 +42,7 @@
       line-height: 23px;
       color: #717070;
       margin-bottom: 15px;
+      transition: all .2s ease;
     }
 
     .assesmentRadioList {
@@ -58,6 +59,7 @@
           align-items: center;
           row-gap: 10px;
           cursor: pointer;
+          transition: all .2s ease;
         }
 
         &.activeGreen {
@@ -361,9 +363,17 @@
   }
 }
 
+.small {
+  .link {
+    font-size: 24px;
+  }
+}
+
 .medium {
-  .reviewList {
+  .reviewList,
+  .reviewForm span.reviewCAT {
     font-size: 20px;
+    transition: all .2s ease;
   }
 
   .link {
@@ -371,7 +381,7 @@
   }
 
   .reviewTotalCount {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .reviewDescWrap {
@@ -383,14 +393,21 @@
   .reviewTitle {
     font-size: 32px;
   }
+
+  label {
+    font-size: 16px;
+    transition: all .2s ease;
+  }
 }
 
 .large {
   .reviewTotalCount {
-    font-size: 18px;
-  }
-  .reviewList {
     font-size: 22px;
+  }
+  .reviewList,
+  .reviewForm span.reviewCAT {
+    font-size: 22px;
+    transition: all .2s ease;
   }
 
   .link {
@@ -406,11 +423,10 @@
   .reviewTitle {
     font-size: 37px;
   }
-}
 
-.small {
-  .link {
-    font-size: 24px;
+  label {
+    font-size: 18px;
+    transition: all .2s ease;
   }
 }
 

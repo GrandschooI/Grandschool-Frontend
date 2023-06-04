@@ -270,42 +270,14 @@
 }
 
 .medium {
-  .title {
-    font-size: 20px;
+  * {
+    font-size: 20px!important;
   }
 }
 
 .large {
-  .title {
-    font-size: 22px;
-  }
-
-  .medium {
-    .asideLink {
-      font-size: 20px;
-    }
-
-    .asideSubmenu {
-      li {
-        a {
-          font-size: 20px;
-        }
-      }
-    }
-  }
-
-  .large {
-    .asideLink {
-      font-size: 22px;
-    }
-
-    .asideSubmenu {
-      li {
-        a {
-          font-size: 22px;
-        }
-      }
-    }
+  * {
+    font-size: 22px!important;
   }
 }
 

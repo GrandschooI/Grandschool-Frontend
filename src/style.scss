@@ -334,7 +334,6 @@ address {
   background-color: #ffffff;
   color: #618135;
   border: 1px solid #618135;
-  transition: all 0.2s linear;
   margin: 20px auto;
   width: 100%;
   max-width: 390px;
@@ -345,6 +344,7 @@ address {
   line-height: 23px;
   border-radius: 50px;
   cursor: pointer;
+  transition: all .2s ease;
 
   &:hover {
     background-color: #618135;
@@ -355,12 +355,34 @@ address {
     svg,
     path {
       fill: #fff;
-      transition: all 0.2s linear;
+      transition: all .2s linear;
+    }
+    & * {
+      transition: all .2s ease;
     }
   }
 
   &:disabled {
     opacity: 0.7;
+  }
+}
+
+.medium {
+  .anotherTypeLogin {
+    span {
+      font-size: 20px;
+    }
+  }
+  
+  .inverseBtn {
+    span {
+      font-size: 18px!important;
+      transition: all .2s ease;
+    }
+    small {
+      font-size: 12px!important;
+      transition: all .2s ease;
+    }
   }
 }
 
@@ -370,12 +392,14 @@ address {
       font-size: 22px;
     }
   }
-}
-
-.medium {
-  .anotherTypeLogin {
+  .inverseBtn {
     span {
-      font-size: 20px;
+      font-size: 20px!important;
+      transition: all .2s ease;
+    }
+    small {
+      font-size: 14px!important;
+      transition: all .2s ease;
     }
   }
 }

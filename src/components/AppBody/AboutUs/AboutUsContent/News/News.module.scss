@@ -19,22 +19,32 @@ h3 {
   transition: all 0.2s linear;
 }
 
-.medium {
-  font-size: 18px;
+p {
+  transition: all .2s ease;
 }
 
 .medium {
+  .date {
+    font-size: 16px;
+  }
   h3 {
-    font-size: 23px;
+    font-size: 18px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 25px;
   }
 }
 
 .large {
-  font-size: 21px;
-}
-
-.large {
+  .date {
+    font-size: 18px;
+  }
   h3 {
-    font-size: 26px;
+    font-size: 20px;
+  }
+  p {
+    font-size: 22px;
+    line-height: 27px;
   }
 }

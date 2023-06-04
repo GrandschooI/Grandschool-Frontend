@@ -11,7 +11,7 @@
   font-weight: 400;
   line-height: 20px;
 
-  h3.title {
+  h2.title {
     margin: 0 0 25px 0;
     font-weight: 600;
     font-size: 28px;
@@ -28,32 +28,45 @@
 p {
   font-size: 18px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 23px;
   transition: all 0.2s linear;
 }
 
-.medium {
-  font-size: 20px;
+.projectBody.medium {
+  .title {
+    font-size: 32px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 25px;
+  }
 }
 
-.large {
-  font-size: 22px;
+.projectBody.large {
+  .title {
+    font-size: 36px;
+  }
+
+  p {
+    font-size: 22px;
+    line-height: 25px;
+  }
 }
 
 .yellowTheme {
-  h3.title {
+  h2.title {
     color: aqua;
   }
 }
 
 .whiteTheme {
-  h3.title {
+  h2.title {
     color: #000;
   }
 }
 
 .blueTheme {
-  h3.title {
+  h2.title {
     color: #273a64;
   }
 }

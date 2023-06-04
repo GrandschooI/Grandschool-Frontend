@@ -54,19 +54,15 @@ div.aboutUsBody {
 
 }
 
-.medium {
-  .aboutUsBody {
-    h1 {
-      font-size: 41px;
-    }
+.medium.aboutUsSection {
+  h1 {
+    font-size: 40px;
   }
 }
 
-.large {
-  .aboutUsBody {
-    h1 {
-      font-size: 50px;
-    }
+.large.aboutUsSection {
+  h1 {
+    font-size: 44px;
   }
 }
 
