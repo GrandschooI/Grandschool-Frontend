@@ -61,7 +61,7 @@ input[type='file'] {
   border-radius: 5px;
   cursor: pointer;
   position: relative;
-  transition: all 0.2s ease;
+  transition: all .2s ease;
 
   &:before {
     content: '';
@@ -303,7 +303,7 @@ address {
   color: #ffffff;
   cursor: pointer;
   outline: none;
-  transition: all 0.2s linear;
+  transition: all .2s ease;
   margin: 20px auto;
   display: flex;
   align-items: center;
@@ -351,12 +351,12 @@ address {
     background-color: #618135;
     border: 1px solid #618135;
     color: #ffffff !important;
-    transition: all 0.2s linear;
+    transition: all .2s ease;
 
     svg,
     path {
       fill: #fff;
-      transition: all .2s linear;
+      transition: all .2s ease;
     }
     & * {
       transition: all .2s ease;
@@ -445,7 +445,7 @@ address {
   font-weight: 600 !important;
   font-size: 18px;
   text-transform: uppercase;
-  transition: all 0.2s ease;
+  transition: all .2s ease;
 
   div {
     padding: 0 !important;
@@ -469,7 +469,7 @@ address {
   }
 
   span {
-    transition: all 0.2s ease;
+    transition: all .2s ease;
     color: #000;
     font-weight: 600 !important;
     font-size: 18px;
@@ -508,7 +508,7 @@ address {
   .submitBtn {
     background-color: yellow;
     color: #000;
-    transition: all 0.2s linear;
+    transition: all .2s ease;
     border: 1px solid yellow;
 
     &:hover {
@@ -526,19 +526,19 @@ address {
     svg,
     path {
       fill: yellow;
-      transition: all 0.2s linear;
+      transition: all .2s ease;
     }
 
     &:hover {
       background-color: yellow;
       border: 1px solid #000;
       color: #000 !important;
-      transition: all 0.2s linear;
+      transition: all .2s ease;
 
       svg,
       path {
         fill: #000;
-        transition: all 0.2s linear;
+        transition: all .2s ease;
       }
     }
 
@@ -557,7 +557,7 @@ address {
 
     span {
       color: yellow;
-      transition: all 0.2s ease;
+      transition: all .2s ease;
     }
   }
 
@@ -619,7 +619,7 @@ address {
   .submitBtn {
     background-color: #fff;
     color: #000;
-    transition: all 0.2s linear;
+    transition: all .2s ease;
     border: 1px solid #000;
 
     &:hover {
@@ -637,19 +637,19 @@ address {
     svg,
     path {
       fill: #000;
-      transition: all .2s linear;
+      transition: all .2s ease;
     }
 
     &:hover {
       background-color: #000;
       border: 1px solid #fff;
       color: #fff !important;
-      transition: all .2s linear;
+      transition: all .2s ease;
 
       svg,
       path {
         fill: #fff;
-        transition: all .2s linear;
+        transition: all .2s ease;
       }
     }
 
@@ -720,7 +720,7 @@ address {
   .submitBtn {
     background-color: #273a64;
     color: #fff;
-    transition: all 0.2s linear;
+    transition: all .2s ease;
     border: 1px solid #273a64;
 
     &:hover {
@@ -738,19 +738,19 @@ address {
     svg,
     path {
       fill: #273a64;
-      transition: all 0.2s linear;
+      transition: all .2s ease;
     }
 
     &:hover {
       background-color: #273a64;
       border: 1px solid #273a64;
       color: #fff !important;
-      transition: all 0.2s linear;
+      transition: all .2s ease;
 
       svg,
       path {
         fill: #fff;
-        transition: all 0.2s linear;
+        transition: all .2s ease;
       }
     }
 
@@ -762,7 +762,7 @@ address {
   .anotherTypeLogin {
     background: #273a64 !important;
     color: #afe2ef;
-    transition: all 0.2s ease;
+    transition: all .2s ease;
 
     div {
       background: #273a64 !important;

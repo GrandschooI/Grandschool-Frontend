@@ -19,7 +19,7 @@
   border-radius: 50px;
   outline: none;
 
-  transition: all 0.2s ease;
+  transition: all .2s ease;
   svg {
     margin-right: 10px;
 
@@ -33,20 +33,20 @@
 
   background: #618135;
 
-  transition: all 0.2s ease;
+  transition: all .2s ease;
 }
 
 .blindButton svg {
   margin-right: 10px;
 
-  transition: all 0.2s ease;
+  transition: all .2s ease;
 }
 
 .blindButton:hover svg,
 .blindButton:focus svg {
   fill: #fff;
 
-  transition: all 0.2s ease;
+  transition: all .2s ease;
 }
 
 .blindButton.yellowTheme {
@@ -54,7 +54,7 @@
 
   background: #000;
   border-color: yellow;
-  transition: all 0.2s ease;
+  transition: all .2s ease;
   svg {
     fill: yellow;
   }
@@ -82,7 +82,7 @@
 
   background: #fff;
   border-color: #000;
-  transition: all 0.2s ease;
+  transition: all .2s ease;
   svg {
     fill: #000;
   }
@@ -110,7 +110,7 @@
 
   background: #afe2ef;
   border-color: #273a64;
-  transition: all 0.2s ease;
+  transition: all .2s ease;
   svg {
     fill: #273a64;
   }
@@ -136,7 +136,7 @@
 .blindButton.medium {
   font-size: 22px;
 
-  transition: all 0.2s ease;
+  transition: all .2s ease;
   @media (max-width: 1300px) {
     font-size: 0;
     svg {
@@ -148,7 +148,7 @@
 .blindButton.large {
   font-size: 24px;
 
-  transition: all 0.2s ease;
+  transition: all .2s ease;
 
   @media (max-width: 1300px) {
     font-size: 0;

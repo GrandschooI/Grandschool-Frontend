@@ -227,7 +227,7 @@
     color: white;
     border: none;
     cursor: pointer;
-    transition: all 0.2s linear;
+    transition: all .2s ease;
   }
   &.blueTheme {
     .answerBtn {

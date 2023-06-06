@@ -62,7 +62,7 @@
         outline: 0 none;
         box-shadow: none;
 
-        transition: all 0.2s;
+        transition: all .2s;
         &:hover,
         &:focus {
           color: #618135;
@@ -70,11 +70,11 @@
           background-color: #fff;
           border-color: #618135;
 
-          transition: all 0.2s;
+          transition: all .2s;
           svg {
             fill: #618135;
 
-            transition: all 0.2s;
+            transition: all .2s;
           }
         }
 
@@ -100,7 +100,7 @@
         svg {
           fill: #618135;
 
-          transition: all 0.2s;
+          transition: all .2s;
         }
         &:hover,
         &:focus {
@@ -108,11 +108,11 @@
 
           background: #618135;
 
-          transition: all 0.2s;
+          transition: all .2s;
           svg {
             fill: #fff;
 
-            transition: all 0.2s;
+            transition: all .2s;
           }
         }
       }
