@@ -34,7 +34,8 @@ const Comments: FC = () => {
             s[activeThemeStyle(themeStyle)],
             activeThemeStyle(themeStyle),
             'comments',
-            s[fontSize]
+            s[fontSize],
+            fontSize
           )}
         >
           <div className={s.profile}>

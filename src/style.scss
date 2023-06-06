@@ -128,6 +128,7 @@ input[type='radio']:checked + .radioLabel:after {
 
 textarea {
   font-family: 'Proba Pro', Arial, sans-serif;
+  transition: all .2s ease;
 }
 
 input[type='radio']:checked + .radioLabel:after {
@@ -384,6 +385,20 @@ address {
       transition: all .2s ease;
     }
   }
+
+  .submitBtn {
+    font-size: 22px!important;
+  }
+
+  textarea {
+    font-size: 18px !important;
+    transition: all .2s ease;
+  }
+
+  .checkboxLabel {
+    font-size: 18px;
+    line-height: 21px;
+  }
 }
 
 .large {
@@ -401,6 +416,17 @@ address {
       font-size: 14px!important;
       transition: all .2s ease;
     }
+  }
+  .submitBtn {
+    font-size: 24px!important;
+  }
+  textarea {
+    font-size: 20px !important;
+    transition: all .2s ease;
+  }
+  .checkboxLabel {
+    font-size: 20px;
+    line-height: 23px;
   }
 }
 

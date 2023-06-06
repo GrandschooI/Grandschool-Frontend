@@ -15,7 +15,9 @@ const Chapter: React.FC<PropsType> = () => {
   const fontSize = useAppSelector(getFontSize)
 
   return (
-    <section className={cn(s.chapter, s[activeThemeStyle(themeStyle)], 'chapter', s[fontSize])}>
+    <section
+      className={cn(s.chapter, s[activeThemeStyle(themeStyle)], 'chapter', s[fontSize], fontSize)}
+    >
       <ReactPlayer
         url="https://www.youtube.com/watch?v=S_zMbLa_nAE"
         controls={true}

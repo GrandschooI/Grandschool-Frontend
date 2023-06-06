@@ -201,6 +201,12 @@
       font-size: 18px;
       transition: all .2s ease;
     }
+
+    .inferenceTitle {
+      font-size: 24px;
+      line-height: 30px;
+      transition: all .2s ease;
+    }
   }
 
   &.large {
@@ -220,6 +226,11 @@
 
     .inferenceWrapper {
       font-size: 20px;
+    }
+    .inferenceTitle {
+      font-size: 26px;
+      line-height: 32px;
+      transition: all .2s ease;
     }
   }
 }
