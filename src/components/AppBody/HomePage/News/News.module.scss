@@ -294,7 +294,7 @@ ul.newsList {
   background-size: 50%;
   border-radius: 50%;
 
-  transition: all .2s linear;
+  transition: all .2s ease;
 }
 
 .newsItem:hover .btnBlock:before {

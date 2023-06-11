@@ -2,18 +2,16 @@ section.popupSectionWrapper {
   padding-bottom: 160px;
 
   .title {
-    margin: 42px 0 58px;
-
+    width: 100%;
+    margin: 40px 0;
     font-size: 36px;
     font-weight: 600;
     line-height: 46px;
-
-    transition: all .2s ease;
+    color: #000000;
+    transition: all 0.2s ease;
   }
 
   &.yellowTheme {
-    background-color: #191901;
-
     .title {
       color: #ffff00ff;
     }
@@ -28,28 +26,20 @@ section.popupSectionWrapper {
   }
 
   &.blueTheme {
-    background-color: #aee2ef;
-
     .title {
       color: #273a64ff;
     }
   }
 
-  &.small {
-    .title {
-      font-size: 26px;
-    }
-  }
-
   &.medium {
     .title {
-      font-size: 30px;
+      font-size: 40px;
     }
   }
 
   &.large {
     .title {
-      font-size: 36px;
+      font-size: 44px;
     }
   }
 }
