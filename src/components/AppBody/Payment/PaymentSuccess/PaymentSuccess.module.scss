@@ -32,33 +32,33 @@
   &.yellowTheme {
     transition: all .2s ease;
     .successMessage {
-      color: var(--color-theme);
+      color: yellow;
     }
 
     .successCheckEmail {
-      color: var(--color-theme);
+      color: yellow;
     }
   }
 
   &.whiteTheme {
     transition: all .2s ease;
     .successMessage {
-      color: var(--color-theme);
+      color: #fff;
     }
 
     .successCheckEmail {
-      color: var(--color-theme);
+      color: #fff;
     }
   }
 
   &.blueTheme {
     transition: all .2s ease;
     .successMessage {
-      color: var(--color-theme);
+      color: #273a64;
     }
 
     .successCheckEmail {
-      color: var(--color-theme);
+      color: #273a64;
     }
   }
 

@@ -2,11 +2,14 @@ import React from 'react'
 
 import cn from 'classnames'
 
+import Popup from '../../common/PopupSection/Popup/Popup'
+
 import s from './Payment.module.scss'
+import { PaymentSuccess } from './PaymentSuccess/PaymentSuccess'
 
 const Payment = () => {
   return (
-    <section className={cn(s.paymentWrapper, 'container')}>
+    /*<section className={cn(s.paymentWrapper, 'container')}>
       <h1>Покупка курса</h1>
       <div className={s.paymentOffer}>
         <div>
@@ -48,6 +51,11 @@ const Payment = () => {
           </p>
         </div>
       </div>
+    </section>*/
+    <section className="overlay">
+      <Popup>
+        <PaymentSuccess />
+      </Popup>
     </section>
   )
 }
