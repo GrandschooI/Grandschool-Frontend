@@ -1,7 +1,4 @@
 import React from 'react'
-
-import cn from 'classnames'
-
 import s from './Payment.module.scss'
 import { PaymentSuccess } from './PaymentSuccess/PaymentSuccess'
 
