@@ -1,5 +1,115 @@
 .paymentWrapper {
+  background: url('../../../assets/images/reviews.png') bottom no-repeat;
+  background-size: cover;
+  padding-bottom: 190px;
+
   .paymentOffer {
     display: flex;
+    width: 1100px;
+    margin: auto;
+    background: #fff;
+    box-shadow: 0 0 30px rgba(97, 129, 53, 0.1);
+    border-radius: 26px;
+    overflow: hidden;
+
+    h3 {
+      background: #F7F5EC;
+      margin: 0;
+      padding: 22px 42px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    .descWrapper {
+      width: 48%;
+      padding-bottom: 25px;
+      border-right: 1px solid #E5E5E5;
+
+      .priceWrappper {
+        display: flex;
+        margin: 30px auto;
+        padding: 0 40px;
+
+        span:first-child {
+          font-weight: 700;
+          font-size: 34px;
+          line-height: 27px;
+          color: #FF3F15;
+        }
+        span:last-child {
+          display: flex;
+          align-items: end;
+          font-weight: 400;
+          font-size: 24px;
+          line-height: 24px;
+          text-decoration-line: line-through;
+          color: rgba(255, 63, 21, 0.5);
+        }
+        sup {
+          color: #FF3F15;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 16px;
+          margin: 0 10px 0 3px;
+        }
+      }
+
+      ul {
+        margin-bottom: 40px;
+        li {
+          margin-bottom: 18px;
+          padding: 0 20px 0 60px;
+          position: relative;
+          &:after {
+            content: '';
+            display: block;
+            width: 9px;
+            height: 9px;
+            position: absolute;
+            top: 0;
+            left: 40px;
+            background: #FF3F15;
+            border-radius: 50%;
+          }
+
+          h4 {
+            margin: 0 0 10px;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 18px;
+          }
+
+          span {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 16px;
+            color: #666666;
+          }
+        }
+      }
+
+      button {
+        width: inherit;
+      }
+    }
+
+    .bankDetailsWrapper {
+      padding-right: 13%;
+
+      p {
+        padding-left: 40px;
+      }
+
+      p.entryText {
+        margin-top: 30px;
+        color: #666666;
+      }
+
+      p:last-child {
+        font-weight: 500;
+      }
+    }
   }
 }
