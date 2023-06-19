@@ -1,11 +1,20 @@
 import React from 'react'
 
+import cn from 'classnames'
+
+import { getFontSize, getThemeStyle } from '../../../Redux/selectors/styleSelector'
+import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
+import { activeThemeStyle } from '../../../utils/scaffolding'
+
 import s from './Payment.module.scss'
 import { PaymentSuccess } from './PaymentSuccess/PaymentSuccess'
 
 const Payment = () => {
+  const themeStyle = useAppSelector(getThemeStyle)
+  const fontSize = useAppSelector(getFontSize)
+
   return (
-    <section className={s.paymentWrapper}>
+    <section className={cn(s.paymentWrapper, s[activeThemeStyle(themeStyle)])}>
       <div className={'container'}>
         <h1>Покупка курса</h1>
         <div className={s.paymentOffer}>
