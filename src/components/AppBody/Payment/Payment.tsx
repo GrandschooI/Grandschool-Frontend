@@ -4,7 +4,7 @@ import cn from 'classnames'
 
 import { getFontSize, getThemeStyle } from '../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../utils/Hooks/useAppSelector'
-import { activeThemeStyle } from '../../../utils/scaffolding'
+import { activeFontSize, activeThemeStyle } from '../../../utils/scaffolding'
 
 import s from './Payment.module.scss'
 import { PaymentSuccess } from './PaymentSuccess/PaymentSuccess'
@@ -14,7 +14,9 @@ const Payment = () => {
   const fontSize = useAppSelector(getFontSize)
 
   return (
-    <section className={cn(s.paymentWrapper, s[activeThemeStyle(themeStyle)])}>
+    <section
+      className={cn(s.paymentWrapper, s[activeThemeStyle(themeStyle)], s[activeFontSize(fontSize)])}
+    >
       <div className={'container'}>
         <h1>Покупка курса</h1>
         <div className={s.paymentOffer}>

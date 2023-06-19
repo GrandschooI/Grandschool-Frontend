@@ -23,7 +23,7 @@
     }
 
     .descWrapper {
-      width: 48%;
+      min-width: 330px;
       padding-bottom: 25px;
       border-right: 1px solid #E5E5E5;
 
@@ -83,6 +83,7 @@
             font-weight: 700;
             font-size: 18px;
             line-height: 18px;
+            transition: all .2s ease;
           }
 
           span {
@@ -90,12 +91,13 @@
             font-size: 16px;
             line-height: 16px;
             color: #666666;
+            transition: all .2s ease;
           }
         }
       }
 
       button {
-        width: inherit;
+        width: 200px;
       }
     }
 
@@ -119,6 +121,12 @@
 
   &.yellowTheme {
     background: url('../../../assets/images/reviewsBGyellow.png') bottom no-repeat;
+    background-size: cover;
+
+
+    h1 {
+      color: yellow;
+    }
 
     .paymentOffer {
       background: #000;
@@ -163,6 +171,11 @@
   &.whiteTheme {
 
     background: url('../../../assets/images/whiteThemeReviewBG.png') bottom no-repeat;
+    background-size: cover;
+
+    h1 {
+      color: #000;
+    }
 
     .paymentOffer {
       background: #000;
@@ -207,6 +220,11 @@
   &.blueTheme {
 
     background: url('../../../assets/images/whiteThemeReviewBG.png') bottom no-repeat;
+    background-size: cover;
+
+    h1 {
+      color: #273a64;
+    }
 
     .paymentOffer {
       background: #fff;
@@ -245,6 +263,52 @@
           color: #273a64;
         }
       }
+    }
+  }
+
+  &.medium {
+    h1 {
+      font-size: 40px;
+    }
+    h3 {
+      font-size: 22px;
+    }
+    .descWrapper ul li {
+      h4 {
+        font-size: 20px;
+        transition: all .2s ease;
+      }
+      span {
+        font-size: 18px;
+        transition: all .2s ease;
+      }
+    }
+
+    .bankDetailsWrapper p {
+      font-size: 20px;
+    }
+  }
+
+  &.large {
+    h1 {
+      font-size: 44px;
+    }
+    h3 {
+      font-size: 24px;
+    }
+    .descWrapper ul li {
+      h4 {
+        font-size: 22px;
+        transition: all .2s ease;
+      }
+      span {
+        font-size: 20px;
+        transition: all .2s ease;
+      }
+    }
+
+    .bankDetailsWrapper p {
+      font-size: 22px;
     }
   }
 }
