@@ -20,7 +20,6 @@ import { useAccessToPersonaProfile } from './hooks/useAccessToPersonaProfile'
 import { useHeaderLogic } from './hooks/useHeaderLogic'
 
 const Header: React.FC<propsType> = ({ isHeaderChange }) => {
-  const images = useAppSelector(getImgAvailability)
   const {
     themeStyle,
     fontSize,
