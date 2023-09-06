@@ -73,7 +73,6 @@ const Header: React.FC<propsType> = ({ isHeaderChange }) => {
               themeStyle={themeStyle}
               blindMode={blindMode}
               fontSize={fontSize}
-              images={images}
             />
 
             {ProfileLink}

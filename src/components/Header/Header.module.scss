@@ -763,12 +763,33 @@
       transition: all .2s ease;
 
       &.yellowTheme {
-        background-color: black;
+        background-color: #191901;
+        address, a {
+          color: yellow;
+        }
+        path {
+          fill: yellow;
+        }
       }
 
-      &.whiteTheme,
-      &.blueTheme {
+      &.whiteTheme {
         background-color: white;
+        address, a {
+          color: #000;
+        }
+        path {
+          fill: #000;
+        }
+      }
+
+      &.blueTheme {
+        background-color: #aee2ef;
+        address, a, span {
+          color: #273a64;
+        }
+        path {
+          fill: #273a64;
+        }
       }
     }
 

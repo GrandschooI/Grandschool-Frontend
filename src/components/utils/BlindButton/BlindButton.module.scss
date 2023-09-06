@@ -70,6 +70,7 @@
   @media (max-width: 1000px) {
     background: transparent;
     &:hover {
+      background: transparent;
       svg {
         fill: yellow;
       }
@@ -98,6 +99,7 @@
   @media (max-width: 1000px) {
     background: transparent;
     &:hover {
+      background: transparent;
       svg {
         fill: #000;
       }
@@ -126,6 +128,7 @@
   @media (max-width: 1000px) {
     background: transparent;
     &:hover {
+      background: transparent;
       svg {
         fill: #273a64;
       }
@@ -178,6 +181,9 @@
     border: none;
     background: transparent;
     margin: 0;
+    &:hover {
+      background: transparent;
+    }
     svg {
       margin: 0;
       width: 35px;

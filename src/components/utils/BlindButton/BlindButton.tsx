@@ -12,7 +12,6 @@ import s from './BlindButton.module.scss'
 type propsType = {
   blindMode: boolean
   themeStyle: Nullable<string>
-  images?: boolean
   fontSize: Nullable<string>
   switchBlindModeAC: () => void
 }
@@ -22,7 +21,6 @@ const BlindButton: React.FC<propsType> = ({
   themeStyle,
   fontSize,
   switchBlindModeAC,
-  images,
 }) => {
   return (
     <button
@@ -42,8 +40,8 @@ const BlindButton: React.FC<propsType> = ({
         }
       }}
     >
-      {!blindMode && images && <GlassesIcon />}
-      {blindMode && images && <EyesIcon />}
+      {!blindMode && <GlassesIcon />}
+      {blindMode && <EyesIcon />}
       {blindMode ? 'Zwykły wygląd' : 'Słaby wzrok?'}
     </button>
   )

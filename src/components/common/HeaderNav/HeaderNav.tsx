@@ -77,7 +77,7 @@ const HeaderNav: FC<PropsType> = ({
   )
 
   const navPageLayout = isHeaderChange ? (
-    <nav className={cn(s.headerNav, activeThemeStyle(themeStyle), activeFontSize(fontSize))}>
+    <nav className={cn(s.headerNav, s[activeThemeStyle(themeStyle)], activeFontSize(fontSize))}>
       {mainNavLinks}
     </nav>
   ) : (
