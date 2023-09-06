@@ -4,8 +4,6 @@ import '../../style.scss'
 import './HeaderGlobal.scss'
 import cn from 'classnames'
 
-import { getImgAvailability } from '../../Redux/selectors/styleSelector'
-import { useAppSelector } from '../../utils/Hooks/useAppSelector'
 import { activeThemeStyle } from '../../utils/scaffolding'
 import HeaderNav from '../common/HeaderNav/HeaderNav'
 import { LogoGrandSchool } from '../common/LogoGrandSchool/LogoGrandSchool'
