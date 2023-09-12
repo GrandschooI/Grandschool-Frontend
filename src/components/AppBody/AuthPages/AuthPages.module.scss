@@ -135,6 +135,16 @@
   .authHeader .logoText {
     display: block;
   }
+
+  .authWrapper {
+    width: 100%;
+  }
+
+  .authBackground {
+    &.blindOptionsOpen {
+      padding-top: 67px;
+    }
+  }
 }
 
 @media (max-width: 730px) {

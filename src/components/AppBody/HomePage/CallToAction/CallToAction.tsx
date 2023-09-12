@@ -31,12 +31,11 @@ const CallToAction = () => {
     >
       <div className={cn(s.callToAction, 'container', 'callToAction')}>
         <h1 className={s.mainTitle}>
+          Online kursy komputerowe <br /> dla seniorów{' '}
           <span className={s.firmNameInMainTitle}>GRANDSCHOOL</span>
-          <br />
-          Przewodnik po nowoczesnym świecie
         </h1>
         <p className={s.slogan}>
-          Nasze kursy online pomagają seniorom dostosować się do współczesnej rzeczywistości.
+          Новые технологии для взрослого поколения перестали быть их ночным кошмаром
         </p>
         <NavLink to="/course" className={cn(s.mainToCourseLink, 'inverseBtn')}>
           Zacząć naukę

@@ -45,4 +45,8 @@
       background: transparent;
     }
   }
+  
+  @media (max-width: 1000px) {
+    width: 90%;
+  }
 }

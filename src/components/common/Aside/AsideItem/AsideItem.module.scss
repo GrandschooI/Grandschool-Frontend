@@ -13,7 +13,7 @@
   font-size: 18px;
   line-height: 18px;
   color: #717070;
-  transition: opacity 0.5s ease;
+  transition: all 0.5s ease;
 
   &:after {
     content: '';
@@ -272,12 +272,14 @@
 .medium {
   * {
     font-size: 20px!important;
+    transition: all .2s ease;
   }
 }
 
 .large {
   * {
     font-size: 22px!important;
+    transition: all .2s ease;
   }
 }
 
