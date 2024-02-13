@@ -21,7 +21,7 @@ const Course = () => {
   const fontSize = useAppSelector(getFontSize)
 
   return (
-    <div className={cn('container', s[activeThemeStyle(themeStyle)], 'course', s[fontSize])}>
+    <div className={cn('container', s[activeThemeStyle(themeStyle)], s.course, s[fontSize])}>
       {location === '/course' && <Redirect to={courseData[0].itemLink} />}
       <CourseHeader />
       <div className={s.courseBody}>

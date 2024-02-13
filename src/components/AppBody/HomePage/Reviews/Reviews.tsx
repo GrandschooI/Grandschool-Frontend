@@ -46,7 +46,7 @@ const Reviews = () => {
         s.reviewsBlock,
         s[activeThemeStyle(themeStyle)],
         s[withoutImgClass],
-        activeFontSize(fontSize)
+        s[activeFontSize(fontSize)]
       )}
     >
       <div className={'container'}>

@@ -42,6 +42,7 @@
       line-height: 23px;
       color: #717070;
       margin-bottom: 15px;
+      transition: all .2s ease;
     }
 
     .assesmentRadioList {
@@ -58,6 +59,7 @@
           align-items: center;
           row-gap: 10px;
           cursor: pointer;
+          transition: all .2s ease;
         }
 
         &.activeGreen {
@@ -126,14 +128,14 @@
         }
 
         svg {
-          transition: all 0.2s ease;
+          transition: all .2s ease;
           opacity: 0.7;
         }
 
         &:hover svg {
           opacity: 1;
           transform: scale(1.1);
-          transition: all 0.2s ease;
+          transition: all .2s ease;
         }
       }
     }
@@ -231,31 +233,27 @@
   }
 }
 
-.reviewListWrap {
-  margin-top: 30px;
-}
-
-@media (max-width: 1280px) {
-  .reviewBody {
-    width: 91%;
-  }
-  .reviewDescWrap {
-    flex-direction: column;
-  }
-  .reviewBody {
-    margin-top: 20px;
-  }
-}
-
-//.sign{
-//  display: flex;
-//  flex-direction: column;
-//}
-
 .reviewBody.yellowTheme {
   h3,
   .reviewCAT {
     color: yellow;
+  }
+
+  .reviewForm {
+    .assesmentRadioList {
+      .activeGreen,
+      .activeLightOrange,
+      .activeOrange,
+      .activeDarkOrange,
+      .activeRed {
+        color: aqua;
+        svg {
+          path {
+            fill: aqua;
+          }
+        }
+      }
+    }
   }
 
   .reviewDescWrap {
@@ -279,7 +277,7 @@
       }
 
       svg {
-        transition: all 0.2s ease;
+        transition: all .2s ease;
         opacity: 0.5;
 
         path {
@@ -290,7 +288,7 @@
       &:hover svg {
         opacity: 1;
         transform: scale(1.1);
-        transition: all 0.2s ease;
+        transition: all .2s ease;
       }
     }
   }
@@ -300,88 +298,146 @@
   }
 }
 
-.reviewDescWrap.whiteTheme {
-  .share {
+.reviewBody.whiteTheme {
+  p span.share,
+  .reviewTitle,
+  .reviewCAT {
     color: #000;
   }
+
+  .reviewForm {
+    .assesmentRadioList {
+      .activeGreen,
+      .activeLightOrange,
+      .activeOrange,
+      .activeDarkOrange,
+      .activeRed {
+        color: #000;
+        svg {
+          path {
+            fill: #000;
+          }
+        }
+      }
+    }
+  }
+
+  .reviewDescWrap {
+    background: #f5f5f5;
+  }
 }
 
-.reviewTitle.whiteTheme {
-  color: #000;
-}
-
-.reviewDescWrap.blueTheme {
-  .share {
+.reviewBody.blueTheme {
+  p span.share,
+  .reviewTitle,
+  .reviewCAT {
     color: #273a64;
   }
-}
 
-.reviewTitle.blueTheme {
-  color: #273a64;
-}
-
-.medium {
-  .reviewTitle {
-    font-size: 32px;
-  }
-}
-
-.large {
-  .reviewTitle {
-    font-size: 37px;
-  }
-}
-
-.medium {
-  .reviewDescWrap {
-    p {
-      font-size: 24px;
+  .sendFeedback {
+    &:hover {
+      background: #fff;
     }
   }
-}
 
-.large {
   .reviewDescWrap {
-    p {
-      font-size: 27px;
+    background: #aee2ef;
+    border: 1px solid #273a64;
+  }
+
+  .reviewForm {
+    .assesmentRadioList {
+      .activeGreen,
+      .activeLightOrange,
+      .activeOrange,
+      .activeDarkOrange,
+      .activeRed {
+        color: #273a64;
+        svg {
+          path {
+            fill: #273a64;
+          }
+        }
+      }
     }
-  }
-}
-
-.medium {
-  .reviewTotalCount {
-    font-size: 16px;
-  }
-}
-
-.large {
-  .reviewTotalCount {
-    font-size: 18px;
-  }
-}
-
-.medium {
-  .reviewList {
-    font-size: 20px;
-  }
-
-  .link {
-    font-size: 28px;
-  }
-}
-
-.large {
-  .reviewList {
-    font-size: 22px;
-  }
-
-  .link {
-    font-size: 32px;
   }
 }
 
 .small {
   .link {
     font-size: 24px;
+  }
+}
+
+.medium {
+  .reviewList,
+  .reviewForm span.reviewCAT {
+    font-size: 20px;
+    transition: all .2s ease;
+  }
+
+  .link {
+    font-size: 28px;
+  }
+
+  .reviewTotalCount {
+    font-size: 20px;
+  }
+
+  .reviewDescWrap {
+    p {
+      font-size: 24px;
+    }
+  }
+
+  .reviewTitle {
+    font-size: 32px;
+  }
+
+  label {
+    font-size: 16px;
+    transition: all .2s ease;
+  }
+}
+
+.large {
+  .reviewTotalCount {
+    font-size: 22px;
+  }
+  .reviewList,
+  .reviewForm span.reviewCAT {
+    font-size: 22px;
+    transition: all .2s ease;
+  }
+
+  .link {
+    font-size: 32px;
+  }
+
+  .reviewDescWrap {
+    p {
+      font-size: 27px;
+    }
+  }
+
+  .reviewTitle {
+    font-size: 37px;
+  }
+
+  label {
+    font-size: 18px;
+    transition: all .2s ease;
+  }
+}
+
+@media (max-width: 1280px) {
+  .reviewBody {
+    width: 91%;
+  }
+  .reviewDescWrap {
+    flex-direction: column;
+  }
+  .reviewBody {
+    margin-top: 20px;
   }
 }

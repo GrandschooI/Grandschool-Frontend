@@ -2,23 +2,65 @@
   display: flex;
 
   padding-bottom: 155px;
-  transition: all 0.2s ease;
+  transition: all .2s ease;
+}
+
+.blueTheme {
+  h1 {
+    color: #273a64;
+    span {
+      color: #273a64!important;
+    }
+  }
+  h3 {
+    color: #273a64!important;
+  }
 }
 
 .whiteTheme {
   color: black;
+  h1 {
+    color: black;
+    span {
+      color: black!important;
+    }
+  }
+  h3 {
+    color: black!important;
+  }
 }
 
 .yellowTheme {
   color: yellow;
+  h1 {
+    color: yellow;
+    span {
+      color: aqua!important;
+    }
+  }
+  h3 {
+    color: yellow!important;
+  }
 }
 
-.large {
-  font-size: 20px;
+.medium.course {
+  h1 {
+    font-size: 40px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
 }
 
-.medium {
-  font-size: 18px;
+.large.course {
+  h1 {
+    font-size: 44px;
+  }
+
+  h3 {
+    font-size: 26px;
+  }
 }
 
 @media (max-width: 1280px) {

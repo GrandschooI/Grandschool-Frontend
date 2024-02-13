@@ -4,8 +4,6 @@ import '../../style.scss'
 import './HeaderGlobal.scss'
 import cn from 'classnames'
 
-import { getImgAvailability } from '../../Redux/selectors/styleSelector'
-import { useAppSelector } from '../../utils/Hooks/useAppSelector'
 import { activeThemeStyle } from '../../utils/scaffolding'
 import HeaderNav from '../common/HeaderNav/HeaderNav'
 import { LogoGrandSchool } from '../common/LogoGrandSchool/LogoGrandSchool'
@@ -20,7 +18,6 @@ import { useAccessToPersonaProfile } from './hooks/useAccessToPersonaProfile'
 import { useHeaderLogic } from './hooks/useHeaderLogic'
 
 const Header: React.FC<propsType> = ({ isHeaderChange }) => {
-  const images = useAppSelector(getImgAvailability)
   const {
     themeStyle,
     fontSize,
@@ -73,7 +70,6 @@ const Header: React.FC<propsType> = ({ isHeaderChange }) => {
               themeStyle={themeStyle}
               blindMode={blindMode}
               fontSize={fontSize}
-              images={images}
             />
 
             {ProfileLink}

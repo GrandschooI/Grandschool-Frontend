@@ -12,13 +12,6 @@ import { navLinkData } from './constants/nav-link-data'
 import { ContactsBurger } from './ContactsBurger/ContactsBurger'
 import { SocialIcons } from './SocialIcons/SocialIcons'
 
-interface PropsType {
-  themeStyle: Nullable<string>
-  fontSize: Nullable<string>
-  toggleBurgerMenu: () => void
-  isHeaderChange: boolean
-}
-
 const HeaderNav: FC<PropsType> = ({
   toggleBurgerMenu,
   themeStyle = '',
@@ -67,9 +60,14 @@ const HeaderNav: FC<PropsType> = ({
     >
       <div className="container">
         <nav className={cn(s.headerNav, s.notMainPage)}>
-          <NavLink to="/" className={s.headerNavLink} onClick={toggleBurgerMenu}>
+          <NavLink
+            to="/"
+            className={cn(s.headerNavLink, s.mainPageLink)}
+            onClick={toggleBurgerMenu}
+          >
             <span className={s.headerNavLinkLabel}>Strona główna</span>
           </NavLink>
+          {mobileAccountLink}
           {navLinks}
           <ContactsBurger />
           <SocialIcons />
@@ -79,7 +77,7 @@ const HeaderNav: FC<PropsType> = ({
   )
 
   const navPageLayout = isHeaderChange ? (
-    <nav className={cn(s.headerNav, activeThemeStyle(themeStyle), activeFontSize(fontSize))}>
+    <nav className={cn(s.headerNav, s[activeThemeStyle(themeStyle)], activeFontSize(fontSize))}>
       {mainNavLinks}
     </nav>
   ) : (
@@ -90,3 +88,10 @@ const HeaderNav: FC<PropsType> = ({
 }
 
 export default HeaderNav
+
+interface PropsType {
+  themeStyle: Nullable<string>
+  fontSize: Nullable<string>
+  toggleBurgerMenu: () => void
+  isHeaderChange: boolean
+}

@@ -43,56 +43,18 @@
     }
   }
 
-  .activateBtn {
-    cursor: pointer;
-
-    width: 221px;
-    height: 64px;
-
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 26px;
-    color: #fff;
-
-    background: #618135;
-    border: 1px solid #717070;
-    border-radius: 50px;
-
-    transition: 0.5s;
-
-    &:hover {
-      color: #618135;
-
-      background-color: #fff;
-      border: 1px solid #618135;
-    }
-  }
-
   &.yellowTheme {
     transition: all 0.2s ease;
 
-    .activateBtn {
-      color: var(--background-theme);
-
-      background: var(--color-theme);
-      border-color: var(--color-theme);
-
-      &:hover {
-        color: var(--color-theme);
-
-        background: var(--background-theme);
-      }
-    }
-
     .bodyDescription {
-      color: var(--color-theme);
+      color: yellow;
     }
 
     input {
-      color: var(--color-theme);
+      color: yellow;
 
       &:focus {
-        border: 1px solid var(--color-theme);
+        border: 1px solid yellow;
       }
     }
   }
@@ -100,28 +62,15 @@
   &.whiteTheme {
     transition: all 0.2s ease;
 
-    .activateBtn {
-      color: var(--background-theme);
-
-      background: var(--color-theme);
-      border-color: var(--color-theme);
-
-      &:hover {
-        color: var(--color-theme);
-
-        background: var(--background-theme);
-      }
-    }
-
     .bodyDescription {
-      color: var(--color-theme);
+      color: #fff;
     }
 
     input {
-      color: var(--color-theme);
+      color: #fff;
 
       &:focus {
-        border: 1px solid var(--color-theme);
+        border: 1px solid #fff;
       }
     }
   }
@@ -129,28 +78,15 @@
   &.blueTheme {
     transition: all 0.2s ease;
 
-    .activateBtn {
-      color: var(--background-theme);
-
-      background: var(--color-theme);
-      border-color: var(--color-theme);
-
-      &:hover {
-        color: var(--color-theme);
-
-        background: var(--background-theme);
-      }
-    }
-
     .bodyDescription {
-      color: var(--color-theme);
+      color: #273a64;
     }
 
     input {
-      color: var(--color-theme);
+      color: #273a64;
 
       &:focus {
-        border: 1px solid var(--color-theme);
+        border: 1px solid #273a64;
       }
     }
   }

@@ -1,32 +1,7 @@
-.yellowTheme {
-  .formLabel {
-    span {
-      color: yellow;
-    }
-    input {
-      color: yellow;
-
-      background: #000;
-      border: 1px solid aqua;
-    }
-    path,
-    line {
-      fill: aqua;
-      stroke: aqua;
-    }
-  }
-}
-
 .whiteTheme {
   .formLabel {
     span {
       color: #fff;
-    }
-    input {
-      color: #fff;
-
-      background: #000;
-      border: 1px solid #fff;
     }
     path,
     line {
@@ -41,12 +16,6 @@
     span {
       color: #273a64;
     }
-    input {
-      color: #afe2ef;
-
-      background: #273a64;
-      border: 1px solid #fff;
-    }
     path,
     line {
       fill: #afe2ef;
@@ -60,7 +29,7 @@
     span {
       font-size: 16px;
 
-      transition: all 0.2s ease;
+      transition: all .2s ease;
     }
   }
 }
@@ -70,13 +39,13 @@
     span {
       font-size: 18px;
 
-      transition: all 0.2s ease;
+      transition: all .2s ease;
     }
   }
   .submitBtn {
     font-size: 22px;
 
-    transition: all 0.2s ease;
+    transition: all .2s ease;
   }
 }
 
@@ -85,13 +54,13 @@
     span {
       font-size: 20px;
 
-      transition: all 0.2s ease;
+      transition: all .2s ease;
     }
   }
   .submitBtn {
     font-size: 24px;
 
-    transition: all 0.2s ease;
+    transition: all .2s ease;
   }
 }
 

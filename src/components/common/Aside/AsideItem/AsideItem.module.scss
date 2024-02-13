@@ -13,7 +13,7 @@
   font-size: 18px;
   line-height: 18px;
   color: #717070;
-  transition: opacity 0.5s ease;
+  transition: all 0.5s ease;
 
   &:after {
     content: '';
@@ -26,32 +26,22 @@
     opacity: 0;
     transition: opacity 0.5s ease;
   }
-}
 
-@media (max-width: 1280px) {
-  .asideLink {
-    &:after {
-      background: url('../../../../assets/images/Shape.png') no-repeat;
-      transform: rotate(-90deg);
-      transition: all 0.2s ease;
-    }
+  &:not(:first-child):before {
+    display: block;
+    position: static;
+    margin: 0 1.875rem;
+    width: auto;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.05);
+    content: '';
   }
-}
 
-.asideLink:not(:first-child):before {
-  display: block;
-  position: static;
-  margin: 0 1.875rem;
-  width: auto;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.05);
-  content: '';
-}
-
-.asideLink:hover,
-.asideLink:focus {
-  background: #f7f5ec;
-  color: inherit;
+  &:hover,
+  &:focus {
+    background: #f7f5ec;
+    color: inherit;
+  }
 }
 
 .optionEnter {
@@ -74,23 +64,25 @@
   transition: all 1s ease;
 }
 
-a.activeItem,
-span.activeItem {
+.activeItem {
   background: #f7f5ec;
   position: relative;
-  transition: all 0.2s ease;
+  transition: all .2s ease;
 
   &:after {
     opacity: 1;
-    transition: all 0.2s ease;
+    transition: opacity .2s ease;
   }
 }
 
 .asideSubmenu {
+  & * {
+    color: #717070;
+  }
   li {
     position: relative;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all .2s ease;
 
     a {
       display: flex;
@@ -98,9 +90,8 @@ span.activeItem {
       font-weight: 400;
       font-size: 18px;
       line-height: 23px;
-      color: #717070;
       text-decoration: none;
-      transition: all 0.2s ease;
+      transition: all .2s ease;
     }
 
     &:first-child {
@@ -116,9 +107,10 @@ span.activeItem {
     }
 
     &.activeTopic,
-    &:hover {
+    &:hover,
+    &:focus {
       background: #f7f5ec;
-      transition: all 0.2s ease;
+      transition: all .2s ease;
     }
   }
 }
@@ -127,7 +119,7 @@ span.activeItem {
   &:after {
     background: url('../../../../assets/images/Shape.png') no-repeat;
     transform: rotate(-90deg);
-    transition: all 0.2s ease;
+    transition: all .2s ease;
   }
 }
 
@@ -135,231 +127,168 @@ span.activeItem {
   background: #f7f5ec;
   color: inherit;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: #f7f5ec;
   }
 
   &:after {
     opacity: 1;
     background: url('../../../../assets/images/Shape.png') no-repeat;
-    transition: all 0.2s ease;
+    transition: all .2s ease;
   }
 }
 
 .yellowTheme {
-  &.asideItem {
-    background-color: yellow;
-
-    & li {
-      a {
-        color: black;
-      }
-
-      &:not(.activeItem):hover {
-        background-color: aqua;
-      }
-    }
-
-    .activeTopic {
-      background-color: aqua;
-    }
-
-    .asideLink {
-      transition: all 0.2s ease;
-      color: black;
-
-      &:not(.activeItem):hover {
-        background-color: yellow;
-      }
-    }
-  }
-
-  a.activeItem {
-    background: #00ffff;
+  .activeItem.asideLink,
+  .asideLink:hover,
+  .asideLink:focus {
+    background: yellow;
     color: #000;
   }
 
   .asideLink {
-    background-color: transparent;
     color: yellow;
     font-size: 18px;
+
+    &.rightArrow {
+      background: yellow;
+      color: #000;
+    }
 
     &:after {
       background: url('../../../../assets/images/asideBlackMode.svg') no-repeat;
     }
   }
 
-  .asideLink:not(.activeItem):hover {
-    background: #000;
-    color: inherit;
-  }
-}
-
-.whiteTheme {
-  &.asideItem {
-    background-color: #000;
-
-    & li {
-      a {
-        color: #fff;
-      }
-
-      &:not(.activeItem):hover {
-        background-color: white;
-
-        a {
-          color: #000;
-        }
-      }
+  .asideSubmenu {
+    & * {
+      color: yellow;
     }
-
-    .activeTopic {
-      background-color: #fff;
-
-      a {
+    .activeTopic,
+    li:hover,
+    li:focus {
+      background: yellow;
+      color: #000;
+      & * {
         color: #000;
       }
     }
 
-    .asideLink {
-      transition: all 0.2s ease;
-      color: #fff;
-
-      &:not(.activeItem):hover {
-        background-color: white;
-
-        &:after {
-          background: url('../../../../assets/images/asideBlackMode.svg') no-repeat;
-        }
-      }
+    li {
+      background-color: #191901;
     }
   }
+}
 
-  .rightArrow {
-    background-color: black;
-  }
-
-  a.activeItem {
-    background: #000;
-    color: #fff;
+.whiteTheme {
+  .activeItem.asideLink,
+  .asideLink:hover,
+  .asideLink:focus {
+    background: #f5f5f5;
+    color: #000;
   }
 
   .asideLink {
+    color: #000;
+    font-size: 18px;
+
+    &.rightArrow {
+      background: #f5f5f5;
+      color: #000;
+    }
+
     &:after {
-      background: url('../../../../assets/images/asideWhiteMode.svg') no-repeat;
+      background: url('../../../../assets/images/asideBlackMode.svg') no-repeat;
     }
   }
 
-  .asideLink:not(.activeItem):hover {
-    background: #f5f5f5;
-    color: inherit;
+  .asideSubmenu {
+    & * {
+      color: #000;
+    }
+    .activeTopic,
+    li:hover,
+    li:focus {
+      background: #f5f5f5;
+      color: #000;
+      & * {
+        color: #000;
+      }
+    }
+
+    li {
+      background-color: #fff;
+    }
   }
 }
 
 .blueTheme {
-  &.asideItem {
-    background-color: #273a64;
-
-    & li {
-      a {
-        color: #afe2ef;
-      }
-
-      &:not(.activeItem):hover {
-        background-color: #afe2ef;
-
-        a {
-          color: #273a64;
-        }
-      }
-    }
-
-    .activeTopic {
-      background-color: #afe2ef;
-
-      a {
-        color: #273a64;
-      }
-    }
-
-    .asideLink {
-      transition: all 0.2s ease;
-      color: #afe2ef;
-
-      &:not(.activeItem):hover {
-        background-color: #afe2ef;
-        color: #273a64;
-
-        &:after {
-          background: url('../../../../assets/images/asideBlackMode.svg') no-repeat;
-        }
-      }
-    }
-  }
-
-  .rightArrow {
-    background-color: #273a64;
-  }
-
-  a.activeItem {
+  .activeItem.asideLink,
+  .asideLink:hover,
+  .asideLink:focus {
     background: #273a64;
-    color: #afe2ef;
+    color: #fff;
   }
 
   .asideLink {
     color: #273a64;
+    font-size: 18px;
+
+    &.rightArrow {
+      background: #273a64;
+      color: #fff;
+    }
 
     &:after {
       background: url('../../../../assets/images/asideWhiteMode.svg') no-repeat;
     }
   }
 
-  .asideLink:not(.activeItem):hover {
-    background: #f5f5f5;
-    color: inherit;
+  .asideSubmenu {
+    & * {
+      color: #273a64;
+    }
+    .activeTopic,
+    li:hover,
+    li:focus {
+      background: #273a64;
+      color: #fff;
+      & * {
+        color: #fff;
+      }
+    }
+
+    li {
+      background-color: #fff;
+    }
   }
 }
 
 .title {
-  transition: all 0.2s linear;
+  transition: all .2s ease;
 }
 
 .medium {
-  .title {
-    font-size: 20px;
+  * {
+    font-size: 20px!important;
+    transition: all .2s ease;
   }
 }
 
 .large {
-  .title {
-    font-size: 22px;
+  * {
+    font-size: 22px!important;
+    transition: all .2s ease;
   }
+}
 
-  .medium {
-    .asideLink {
-      font-size: 20px;
-    }
-
-    .asideSubmenu {
-      li {
-        a {
-          font-size: 20px;
-        }
-      }
-    }
-  }
-
-  .large {
-    .asideLink {
-      font-size: 22px;
-    }
-
-    .asideSubmenu {
-      li {
-        a {
-          font-size: 22px;
-        }
-      }
+@media (max-width: 1280px) {
+  .asideLink {
+    &:after {
+      background: url('../../../../assets/images/Shape.png') no-repeat;
+      transform: rotate(-90deg);
+      transition: all .2s ease;
     }
   }
 }

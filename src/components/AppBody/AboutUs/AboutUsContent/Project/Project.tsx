@@ -3,17 +3,19 @@ import React from 'react'
 import cn from 'classnames'
 import ReactPlayer from 'react-player/youtube'
 
-import { getFontSize } from '../../../../../Redux/selectors/styleSelector'
+import { getFontSize, getThemeStyle } from '../../../../../Redux/selectors/styleSelector'
 import { useAppSelector } from '../../../../../utils/Hooks/useAppSelector'
+import { activeThemeStyle } from '../../../../../utils/scaffolding'
 
 import s from './Project.module.scss'
 
 const Project = () => {
   const fontSize = useAppSelector(getFontSize)
+  const themeStyle = useAppSelector(getThemeStyle)
 
   return (
-    <div className={cn(s.projectBody, s[fontSize])}>
-      <h3 className={s.title}>O Grand School</h3>
+    <div className={cn(s.projectBody, s[activeThemeStyle(themeStyle)], s[fontSize])}>
+      <h2 className={s.title}>O Grand School</h2>
 
       <p>
         Program szkoleniowy GrandSchool to wysokiej jakości system szkoleniowy dla seniorów. Program

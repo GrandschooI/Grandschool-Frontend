@@ -102,14 +102,6 @@
   }
 }
 
-.yellowTheme,
-.whiteTheme,
-.blueTheme {
-  * {
-    font-weight: bold;
-  }
-}
-
 .reviewsLogo {
   display: flex;
 
@@ -181,6 +173,7 @@ blockquote {
   margin: 0 0 30px;
 
   font-size: 18px;
+  transition: all .2s ease;
 }
 
 .authorDataWrap {
@@ -217,11 +210,126 @@ blockquote {
     font-size: 18px;
     font-weight: 700;
     color: #000;
+    transition: all .2s ease;
 
     small {
       font-size: 13px;
       color: rgba(0, 0, 0, 0.4);
       letter-spacing: normal;
+      transition: all .2s ease;
+    }
+    span {
+      transition: all .2s ease;
+    }
+  }
+}
+
+.medium {
+  .reviewsTitle {
+    font-size: 16px;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 425px) {
+      font-size: 12px;
+    }
+  }
+  .reviewsMainTitle {
+    margin-bottom: 10px;
+
+    font-size: 38px;
+    line-height: 55px;
+
+    @media (max-width: 768px) {
+      font-size: 50px;
+      line-height: 50px;
+    }
+
+    @media (max-width: 425px) {
+      font-size: 40px;
+      line-height: 40px;
+    }
+  }
+  blockquote,
+  cite span {
+    font-size: 20px;
+
+    transition: all .2s ease;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 425px) {
+      font-size: 14px;
+    }
+  }
+  cite small {
+    font-size: 15px;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 425px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.large {
+  .reviewsTitle {
+    font-size: 17px;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 425px) {
+      font-size: 14px;
+    }
+  }
+  .reviewsMainTitle {
+    margin-bottom: 10px;
+
+    font-size: 40px;
+    line-height: 60px;
+
+    @media (max-width: 768px) {
+      font-size: 50px;
+      line-height: 50px;
+    }
+
+    @media (max-width: 425px) {
+      font-size: 40px;
+      line-height: 40px;
+    }
+  }
+  blockquote,
+  cite span {
+    font-size: 22px;
+
+    transition: all 0.2s ease;
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
+
+    @media (max-width: 425px) {
+      font-size: 16px;
+    }
+  }
+  cite small {
+    font-size: 18px;
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
+
+    @media (max-width: 425px) {
+      font-size: 16px;
     }
   }
 }
@@ -270,117 +378,5 @@ blockquote {
 @media (max-width: 425px) {
   .reviewsMainTitle {
     font-size: 20px;
-  }
-}
-
-.medium {
-  .reviewsTitle {
-    font-size: 16px;
-
-    @media (max-width: 768px) {
-      font-size: 14px;
-    }
-
-    @media (max-width: 425px) {
-      font-size: 12px;
-    }
-  }
-  .reviewsMainTitle {
-    margin-bottom: 10px;
-
-    font-size: 38px;
-    line-height: 55px;
-
-    @media (max-width: 768px) {
-      font-size: 50px;
-      line-height: 50px;
-    }
-
-    @media (max-width: 425px) {
-      font-size: 40px;
-      line-height: 40px;
-    }
-  }
-  blockquote,
-  cite span,
-  cite small {
-    font-size: 20px;
-
-    transition: all 0.2s ease;
-
-    @media (max-width: 768px) {
-      font-size: 16px;
-    }
-
-    @media (max-width: 425px) {
-      font-size: 14px;
-    }
-  }
-  cite span {
-    font-size: 18px;
-
-    @media (max-width: 768px) {
-      font-size: 16px;
-    }
-
-    @media (max-width: 425px) {
-      font-size: 14px;
-    }
-  }
-}
-
-.large {
-  .reviewsTitle {
-    font-size: 18px;
-
-    @media (max-width: 768px) {
-      font-size: 16px;
-    }
-
-    @media (max-width: 425px) {
-      font-size: 14px;
-    }
-  }
-  .reviewsMainTitle {
-    margin-bottom: 10px;
-
-    font-size: 40px;
-    line-height: 60px;
-
-    @media (max-width: 768px) {
-      font-size: 50px;
-      line-height: 50px;
-    }
-
-    @media (max-width: 425px) {
-      font-size: 40px;
-      line-height: 40px;
-    }
-  }
-  blockquote,
-  cite span,
-  cite small {
-    font-size: 22px;
-
-    transition: all 0.2s ease;
-
-    @media (max-width: 768px) {
-      font-size: 18px;
-    }
-
-    @media (max-width: 425px) {
-      font-size: 16px;
-    }
-  }
-  cite span {
-    font-size: 20px;
-
-    @media (max-width: 768px) {
-      font-size: 18px;
-    }
-
-    @media (max-width: 425px) {
-      font-size: 16px;
-    }
   }
 }

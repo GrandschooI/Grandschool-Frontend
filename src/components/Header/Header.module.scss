@@ -562,7 +562,7 @@
       .headerSearch {
         order: 3;
         width: 100%;
-        margin: 30px auto 0;
+        margin: 10px auto 0;
       }
       .headerBtnWrap {
         order: 2;
@@ -570,13 +570,13 @@
     }
 
     .blindButton,
-    .headerNavItem,
-    .notMainPageWrapper {
+    .headerNavItem {
       display: none;
     }
 
-    .headerNav.notMainPage {
-      width: 75%;
+    .notMainPageWrapper {
+      height: 0;
+      margin-top: 15px;
     }
 
     .mobileAccountLink {
@@ -680,7 +680,7 @@
     .headerNav {
       position: fixed;
       opacity: 0;
-      top: 110px;
+      top: 88px;
       left: -1000px;
       flex-direction: column;
       justify-content: flex-start;
@@ -695,6 +695,16 @@
 
       .headerNavLink {
         padding: 10px 0;
+        span {
+          transform: translate(0);
+        }
+        &:before {
+          display: none;
+        }
+      }
+
+      .mainPageLink {
+        display: none;
       }
 
       .burgerContactWrap {
@@ -753,12 +763,33 @@
       transition: all .2s ease;
 
       &.yellowTheme {
-        background-color: black;
+        background-color: #191901;
+        address, a {
+          color: yellow;
+        }
+        path {
+          fill: yellow;
+        }
       }
 
-      &.whiteTheme,
-      &.blueTheme {
+      &.whiteTheme {
         background-color: white;
+        address, a {
+          color: #000;
+        }
+        path {
+          fill: #000;
+        }
+      }
+
+      &.blueTheme {
+        background-color: #aee2ef;
+        address, a, span {
+          color: #273a64;
+        }
+        path {
+          fill: #273a64;
+        }
       }
     }
 

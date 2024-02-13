@@ -30,40 +30,40 @@
   }
 
   &.yellowTheme {
-    transition: all 0.2s ease;
+    transition: all .2s ease;
     .successMessage {
-      color: var(--color-theme);
+      color: yellow;
     }
 
     .successCheckEmail {
-      color: var(--color-theme);
+      color: yellow;
     }
   }
 
   &.whiteTheme {
-    transition: all 0.2s ease;
+    transition: all .2s ease;
     .successMessage {
-      color: var(--color-theme);
+      color: #fff;
     }
 
     .successCheckEmail {
-      color: var(--color-theme);
+      color: #fff;
     }
   }
 
   &.blueTheme {
-    transition: all 0.2s ease;
+    transition: all .2s ease;
     .successMessage {
-      color: var(--color-theme);
+      color: #273a64;
     }
 
     .successCheckEmail {
-      color: var(--color-theme);
+      color: #273a64;
     }
   }
 
   &.small {
-    transition: all 0.2s ease;
+    transition: all .2s ease;
     .successMessage {
       font-size: 38px;
     }
@@ -74,7 +74,7 @@
   }
 
   &.medium {
-    transition: all 0.2s ease;
+    transition: all .2s ease;
     .successMessage {
       font-size: 42px;
     }
@@ -85,7 +85,7 @@
   }
 
   &.large {
-    transition: all 0.2s ease;
+    transition: all .2s ease;
     .successMessage {
       font-size: 44px;
     }

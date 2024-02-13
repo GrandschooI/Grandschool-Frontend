@@ -1,10 +1,10 @@
 .appBody {
   padding-top: 217px;
-  transition: all 0.2s ease;
+  transition: all .2s ease;
 
   &.openedBlindOption {
-    padding-top: 288px;
-    transition: all 0.2s ease;
+    padding-top: 305px;
+    transition: all .2s ease;
   }
 
   &.defaultBody {
@@ -23,7 +23,7 @@
     padding-top: 182px;
     &.openedBlindOption {
       padding-top: 428px;
-      transition: all 0.2s ease;
+      transition: all .2s ease;
     }
   }
 }

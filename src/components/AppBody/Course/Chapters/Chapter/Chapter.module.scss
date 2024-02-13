@@ -3,6 +3,7 @@
   font-weight: 600;
   line-height: 28px;
   color: #618135;
+  transition: all .2s ease;
 }
 
 .movie {
@@ -32,6 +33,7 @@
     font-weight: 400;
     line-height: 20px;
     color: #717070;
+    transition: all .2s ease;
   }
 
   .submitBtn {
@@ -92,7 +94,7 @@
       .submitBtn {
         color: black;
         background: white;
-        transition: all 0.2s ease;
+        transition: all .2s ease;
 
         &:hover {
           color: white;
@@ -125,18 +127,6 @@
       .answer {
         color: yellow;
       }
-
-      .submitBtn {
-        color: aqua;
-        background: black;
-        transition: all 0.2s ease;
-        border: 1px solid aqua;
-
-        &:hover {
-          color: black;
-          background: aqua;
-        }
-      }
     }
 
     .commentsCount {
@@ -153,10 +143,6 @@
   }
 
   &.blueTheme {
-    background: #273a64;
-    color: white;
-    padding: 0 10px;
-
     .topicTitle {
       color: white;
     }
@@ -181,7 +167,7 @@
       .submitBtn {
         color: white;
         background: #273a64;
-        transition: all 0.2s ease;
+        transition: all .2s ease;
 
         &:hover {
           color: #273a64;
@@ -195,25 +181,57 @@
       color: white;
     }
 
-    .inferenceWrapper {
-      color: #fff;
-
-      .inferenceTitle {
-        color: #fff;
-      }
-    }
-  }
-
-  &.large {
-    font-size: 20px;
-
-    .inferenceWrapper {
-      font-size: 20px;
+    .inferenceWrapper,
+    .inferenceTitle {
+      color: #273a64;
     }
   }
 
   &.medium {
-    font-size: 18px;
+    p {
+      font-size: 20px;
+    }
+
+    h4 {
+      font-size: 24px;
+      transition: all .2s ease;
+    }
+
+    label {
+      font-size: 18px;
+      transition: all .2s ease;
+    }
+
+    .inferenceTitle {
+      font-size: 24px;
+      line-height: 30px;
+      transition: all .2s ease;
+    }
+  }
+
+  &.large {
+    p {
+      font-size: 22px;
+    }
+
+    h4 {
+      font-size: 26px;
+      transition: all .2s ease;
+    }
+
+    label {
+      font-size: 20px;
+      transition: all .2s ease;
+    }
+
+    .inferenceWrapper {
+      font-size: 20px;
+    }
+    .inferenceTitle {
+      font-size: 26px;
+      line-height: 32px;
+      transition: all .2s ease;
+    }
   }
 }
 

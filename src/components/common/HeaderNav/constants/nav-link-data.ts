@@ -11,11 +11,11 @@ export const navLinkData = [
     to: '/course',
     nameLink: 'Zajęcia',
   },
-  {
+  /*{
     id: nanoid(),
     to: '/teachers',
     nameLink: 'Nauczycielowi',
-  },
+  },*/
   {
     id: nanoid(),
     to: '/info',

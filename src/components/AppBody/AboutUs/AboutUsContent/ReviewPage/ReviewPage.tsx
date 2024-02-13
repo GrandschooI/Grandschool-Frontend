@@ -20,7 +20,7 @@ const ReviewPage = () => {
   const themeStyle = useAppSelector(getThemeStyle)
   const fontSize = useAppSelector(getFontSize)
   const changeTheme = (name: string) =>
-    cn(name, s[activeThemeStyle(themeStyle)], [activeThemeStyle(themeStyle)], s[fontSize])
+    cn(name, s[activeThemeStyle(themeStyle)], [activeThemeStyle(themeStyle)], s[fontSize], fontSize)
 
   const reviewBody = changeTheme(s.reviewBody)
   const reviewTitle = changeTheme(s.reviewTitle)

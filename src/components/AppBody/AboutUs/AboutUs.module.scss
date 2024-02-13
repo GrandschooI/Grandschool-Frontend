@@ -7,7 +7,7 @@ h1 {
   line-height: 46px;
   color: #000000;
 
-  transition: all 0.2s linear;
+  transition: all .2s ease;
 }
 
 div.aboutUsBody {
@@ -18,15 +18,19 @@ div.aboutUsBody {
 .aboutUsSection {
   padding-top: 0;
 
-  transition: all 0.2s ease;
+  transition: all .2s ease;
 }
 
 .yellowTheme {
   color: yellow;
 
+  h1 {
+    color: yellow;
+  }
+
   .aboutUsBody {
-    h1 {
-      color: yellow;
+    & > ul li {
+      border-color: aqua;
     }
   }
 }
@@ -34,41 +38,36 @@ div.aboutUsBody {
 .whiteTheme {
   color: #000;
 
-  .aboutUsBody {
-    h1 {
-      color: #000;
-    }
+  h1 {
+    color: #000;
+
   }
 }
 
 .blueTheme {
   color: #273a64;
 
-  .aboutUsBody {
-    h1 {
-      color: #273a64;
-    }
+
+  h1 {
+    color: #273a64;
+  }
+
+}
+
+.medium.aboutUsSection {
+  h1 {
+    font-size: 40px;
+  }
+}
+
+.large.aboutUsSection {
+  h1 {
+    font-size: 44px;
   }
 }
 
 @media (max-width: 1000px) {
   .aboutUsSection.blindOptionsOpen {
     padding-top: 228px;
-  }
-}
-
-.medium {
-  .aboutUsBody {
-    h1 {
-      font-size: 41px;
-    }
-  }
-}
-
-.large {
-  .aboutUsBody {
-    h1 {
-      font-size: 50px;
-    }
   }
 }

@@ -4,6 +4,10 @@
   line-height: 19px;
   color: #666666;
 
+  .name {
+    transition: all .2s ease;
+  }
+
   &.whiteTheme {
     color: white;
     padding: 0;
@@ -28,21 +32,11 @@
       span {
         color: white;
       }
-
-      .btnPublish {
-        background: white;
-        color: black;
-
-        &:hover {
-          background: black;
-          color: white;
-          border: 1px solid white;
-        }
-      }
     }
 
     .title {
       color: black;
+      transition: all .2s ease;
     }
   }
 
@@ -78,15 +72,6 @@
           color: yellow;
         }
       }
-
-      .btnPublish {
-        background: transparent;
-        border: 1px solid rgb(0, 255, 255);
-        color: rgb(0, 255, 255);
-
-        &:hover {
-        }
-      }
     }
 
     .commentsInfo {
@@ -111,67 +96,94 @@
   }
 
   &.blueTheme {
-    background: #273a64;
-    color: white;
-    padding: 10px;
-
     .profile {
       .name {
-        color: white;
+        color: #273a64;
       }
 
       .location {
-        color: white;
+        color: #273a64;
       }
     }
 
     .commentsArea {
       .commentsTitle,
       span {
-        color: white;
-      }
-
-      .btnPublish {
-        background: white;
-        color: black;
-
-        &:hover {
-          background: #b8eefb;
-          color: #273a64;
-          border: 1px solid #273a64;
-        }
+        color: #273a64;
       }
     }
 
     .title {
-      color: white;
+      color: #273a64;
     }
 
     .commentsArea {
       span:before {
-        border: 3px solid #fff;
+        border: 3px solid #273a64;
         animation: bounce-out-bck 1.5s both;
       }
     }
   }
 
-  &.large {
-    font-size: 20px;
+  &.medium {
+    .nameWrapper {
+      .name {
+        font-size: 26px;
+        transition: all .2s ease;
+      }
+
+      .location {
+        font-size: 20px;
+        line-height: 25px;
+      }
+    }
 
     .commentsInfo {
       .title {
         font-size: 26px;
+        transition: all .2s ease;
       }
+      select {
+        font-size: 20px;
+        line-height: 23px;
+        transition: all .2s ease;
+      }
+    }
+
+    .commentsTitle {
+      font-size: 20px;
+      line-height: 23px;
     }
   }
 
-  &.medium {
-    font-size: 18px;
+  &.large {
+    .nameWrapper {
+      .name {
+        font-size: 28px;
+        transition: all .2s ease;
+      }
+
+      .location {
+        font-size: 22px;
+        line-height: 27px;
+      }
+    }
 
     .commentsInfo {
       .title {
-        font-size: 24px;
+        font-size: 28px;
+        transition: all .2s ease;
       }
+      select {
+        font-size: 22px;
+        line-height: 25px;
+        transition: all .2s ease;
+      }
+    }
+
+    .commentsTitle {
+      font-size: 22px;
+      line-height: 25px;
     }
   }
 }
@@ -245,27 +257,6 @@
     align-items: center;
     margin-top: 17px;
   }
-
-  .btnPublish {
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 23px;
-    margin-top: 24px;
-    width: 264px;
-    height: 56px;
-    border-radius: 50px;
-    background: #618135;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s linear;
-
-    &:hover {
-      border: 1px solid #618135;
-      background: white;
-      color: #618135;
-    }
-  }
 }
 
 .commentsInfo {
@@ -290,6 +281,7 @@
       padding-left: 20px;
       font-size: 18px;
       line-height: 21px;
+
       &::selection {
         background-color: red;
       }
@@ -337,10 +329,4 @@
     }
   }
 }
-@media (max-width: 425px) {
-  .commentsArea {
-    .btnPublish {
-      width: 100%;
-    }
-  }
-}
+

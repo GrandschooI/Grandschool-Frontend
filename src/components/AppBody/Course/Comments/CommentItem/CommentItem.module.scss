@@ -3,14 +3,14 @@
   margin-bottom: 25px;
 
   &.whiteTheme {
-    background: black;
-    color: white;
+    background: whitesmoke;
+    color: #000;
     padding: 10px;
     border-radius: 10px;
     margin-top: 30px;
 
     .btnAnswer {
-      color: white;
+      color: #000;
     }
 
     .answerBtn {
@@ -25,7 +25,7 @@
 
     .answers {
       &::before {
-        background-color: white;
+        background-color: #000;
       }
     }
   }
@@ -46,7 +46,7 @@
 
   &.blueTheme {
     margin-top: 30px;
-    background: #b8eefb;
+    background: #fff;
     padding: 10px;
     color: #273a64;
     border-radius: 10px;
@@ -57,12 +57,20 @@
     }
   }
 
-  &.large {
-    font-size: 20px;
-  }
-
   &.medium {
     font-size: 18px;
+    .profileInfo p,
+    .text {
+      font-size: 20px;
+    }
+  }
+
+  &.large {
+    font-size: 20px;
+    .profileInfo p,
+    .text {
+      font-size: 22px;
+    }
   }
 }
 
@@ -100,7 +108,7 @@
   &.whiteTheme {
     .name,
     .time {
-      color: white;
+      color: #000;
     }
   }
 
@@ -186,6 +194,7 @@
     cursor: pointer;
     font-size: inherit;
     margin-top: 7px;
+    transition: all .2s ease;
 
     &:hover {
       text-decoration: underline;
@@ -218,7 +227,7 @@
     color: white;
     border: none;
     cursor: pointer;
-    transition: all 0.2s linear;
+    transition: all .2s ease;
   }
   &.blueTheme {
     .answerBtn {

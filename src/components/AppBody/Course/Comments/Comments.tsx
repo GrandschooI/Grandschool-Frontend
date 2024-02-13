@@ -29,7 +29,14 @@ const Comments: FC = () => {
     >
       {({ isSubmitting }) => (
         <section
-          className={cn(s.comments, s[activeThemeStyle(themeStyle)], 'comments', s[fontSize])}
+          className={cn(
+            s.comments,
+            s[activeThemeStyle(themeStyle)],
+            activeThemeStyle(themeStyle),
+            'comments',
+            s[fontSize],
+            fontSize
+          )}
         >
           <div className={s.profile}>
             <img className={s.avatar} src={img} alt="profile image" />
@@ -63,7 +70,7 @@ const Comments: FC = () => {
                 className={`checkboxLabel ${s.checkbox}`}
               />
             </label>
-            <button disabled={isSubmitting} type={'submit'} className={s.btnPublish}>
+            <button disabled={isSubmitting} type={'submit'} className="submitBtn">
               Опубликовать
             </button>
           </Form>
@@ -75,9 +82,11 @@ const Comments: FC = () => {
               </select>
             </div>
           </div>
-          <CommentItem />
-          <CommentItem />
-          <CommentItem />
+          <ul>
+            <CommentItem />
+            <CommentItem />
+            <CommentItem />
+          </ul>
         </section>
       )}
     </Formik>

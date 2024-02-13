@@ -15,7 +15,9 @@ const Chapter: React.FC<PropsType> = () => {
   const fontSize = useAppSelector(getFontSize)
 
   return (
-    <section className={cn(s.chapter, s[activeThemeStyle(themeStyle)], 'chapter', s[fontSize])}>
+    <section
+      className={cn(s.chapter, s[activeThemeStyle(themeStyle)], 'chapter', s[fontSize], fontSize)}
+    >
       <ReactPlayer
         url="https://www.youtube.com/watch?v=S_zMbLa_nAE"
         controls={true}
@@ -58,7 +60,7 @@ const Chapter: React.FC<PropsType> = () => {
           Прежде, чем делать покупки, нужно ознакомиться с принципом выбора интернет-магазина
         </label>
 
-        <button className={cn(s.submitBtn, 'submitBtn')}>Завершить изучение главы</button>
+        <button className="submitBtn">Завершить изучение главы</button>
       </div>
 
       <div className={s.inferenceWrapper}>

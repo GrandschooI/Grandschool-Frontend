@@ -29,8 +29,9 @@ export const CourseActivationContent: React.FC<Partial<PropsType>> = ({ classNam
     <div
       className={cn(
         `${s.courseActivationContent} ${className}`,
+        s[activeThemeStyle(themeStyle)],
         activeThemeStyle(themeStyle),
-        s[fontSize]
+        fontSize
       )}
     >
       <p className={s.bodyDescription}>
@@ -39,7 +40,7 @@ export const CourseActivationContent: React.FC<Partial<PropsType>> = ({ classNam
 
       <div className={s.bodyBoxCode}>{otpLayout}</div>
 
-      <button type="button" className={s.activateBtn}>
+      <button type="button" className="submitBtn">
         Активировать
       </button>
     </div>

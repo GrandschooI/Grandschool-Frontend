@@ -30,7 +30,6 @@ const AsideItem: React.FC<PropsType> = ({ itemTitle, itemLink, topics, themeStyl
           activeItem={activeItem}
           itemTitle={itemTitle}
           location={location}
-          itemLink={itemLink}
           setActiveItem={setActiveItem}
           topics={topics}
         />

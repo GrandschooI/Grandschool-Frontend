@@ -97,6 +97,7 @@ ul.counterWrap {
   box-shadow: 0 0 30px rgba(97, 129, 53, 0.1);
   h4 {
     color: #618135;
+    transition: all .2s ease;
   }
 }
 
@@ -107,6 +108,7 @@ ul.counterWrap {
   font-weight: 900;
   color: #2d2d2d;
   letter-spacing: 1px;
+  transition: all .2s ease;
 }
 
 .description {
@@ -114,6 +116,7 @@ ul.counterWrap {
   font-weight: 900;
   color: #2d2d2d;
   letter-spacing: 1px;
+  transition: all .2s ease;
 }
 
 .counterBlock.yellowTheme {

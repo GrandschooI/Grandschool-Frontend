@@ -1,6 +1,6 @@
 .optionsBlock {
   background: #f6f6f6;
-  transition: all 0.2s ease;
+  transition: all .2s ease;
   .button {
     cursor: pointer;
 
@@ -175,7 +175,7 @@
   }
 
   @media (max-width: 1000px) {
-    background: url('../../../assets/images/glasseswhite.svg') no-repeat 90% 95%, #afe2ef;
+    background: url('../../../assets/images/glasseswhite.svg') no-repeat 90% 95%, #273a64;
     background-size: 50%;
   }
 }
@@ -200,14 +200,13 @@
   margin: 0 0.625rem 0 0;
 
   font-size: 18px;
-  font-weight: 500;
   line-height: 21px;
 
-  transition: all 0.2s ease;
+  transition: all .2s ease;
 }
 
 .pics {
-  transition: all 0.2s linear;
+  transition: all .2s ease;
 }
 
 .optionsBlock .button.small {
